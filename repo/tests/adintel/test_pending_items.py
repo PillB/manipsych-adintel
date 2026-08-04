@@ -176,3 +176,106 @@ class MacrocycleProgramTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# ---------------------------------------------------------------------------
+# Item 2: VLM screenshot analysis tests
+# ---------------------------------------------------------------------------
+
+
+class VLMScreenshotTests(unittest.TestCase):
+    """VLM screenshot analysis from live Playwright navigation."""
+
+    def test_vlm_screenshot_results_exist(self):
+        p = ROOT / "data" / "processed" / "vlm_screenshot_analysis.jsonl"
+        self.assertTrue(p.exists())
+        with open(p) as f:
+            first = json.loads(f.readline())
+        self.assertIn("url", first)
+        self.assertIn("analysis", first)
+
+    def test_vlm_screenshot_report_exists(self):
+        p = ROOT / "reports" / "adintel" / "vlm_screenshot_report.json"
+        self.assertTrue(p.exists())
+        data = json.loads(p.read_text())
+        self.assertIn("n_pages_navigated", data)
+        self.assertIn("vp_leaf_estimates", data)
+
+
+# ---------------------------------------------------------------------------
+# Item 5: Annotation deduplication tests
+# ---------------------------------------------------------------------------
+
+
+class AnnotationDedupTests(unittest.TestCase):
+    """Span deduplication tests."""
+
+    def test_dedup_output_exists(self):
+        p = ROOT / "data" / "annotation" / "council_resolved_dedup.jsonl"
+        self.assertTrue(p.exists())
+        with open(p) as f:
+            first = json.loads(f.readline())
+        self.assertIn("dedup_applied", first)
+
+    def test_dedup_report_exists(self):
+        p = ROOT / "docs" / "annotation_improvements" / "dedup_report.json"
+        self.assertTrue(p.exists())
+        data = json.loads(p.read_text())
+        self.assertGreater(data["total_removed"], 0, "Should have removed duplicate spans")
+
+    def test_dedup_reduces_span_count(self):
+        p = ROOT / "docs" / "annotation_improvements" / "dedup_report.json"
+        data = json.loads(p.read_text())
+        self.assertLess(data["total_spans_after"], data["total_spans_before"],
+                       "Dedup should reduce total span count")
+
+
+# ---------------------------------------------------------------------------
+# Item 4: Smart-sampling causal analysis tests
+# ---------------------------------------------------------------------------
+
+
+class SmartCausalTests(unittest.TestCase):
+    """Smart-sampling (propensity-score matching) causal analysis."""
+
+    def test_smart_causal_exists(self):
+        p = ROOT / "reports" / "adintel" / "causal_analysis_smart.json"
+        self.assertTrue(p.exists())
+        data = json.loads(p.read_text())
+        self.assertIn("method", data)
+        self.assertIn("propensity", data["method"])
+
+    def test_smart_causal_no_claims(self):
+        p = ROOT / "reports" / "adintel" / "causal_analysis_smart.json"
+        data = json.loads(p.read_text())
+        self.assertEqual(data["causal_claims_made"], 0)
+        self.assertEqual(data["causal_claims_supported"], 0)
+
+    def test_smart_causal_has_ci(self):
+        p = ROOT / "reports" / "adintel" / "causal_analysis_smart.json"
+        data = json.loads(p.read_text())
+        for r in data["results"]:
+            if r["evidence_level"] in ("quasi_causal", "associative"):
+                self.assertIn("ci_95", r)
+                self.assertEqual(len(r["ci_95"]), 2)
+
+
+# ---------------------------------------------------------------------------
+# Item 1: 10-hour chunked macrocycle plan
+# ---------------------------------------------------------------------------
+
+
+class MacrocyclePlanTests(unittest.TestCase):
+    """10-hour chunked macrocycle plan."""
+
+    def test_plan_exists(self):
+        p = ROOT / "docs" / "annotation_improvements" / "macrocycle_10h_plan.md"
+        self.assertTrue(p.exists())
+
+    def test_audit_log_exists(self):
+        p = ROOT / "docs" / "annotation_improvements" / "audit_log.md"
+        self.assertTrue(p.exists())
+
+    def test_vlm_findings_exist(self):
+        p = ROOT / "docs" / "annotation_improvements" / "vlm_screenshot_findings.md"
+        self.assertTrue(p.exists())
