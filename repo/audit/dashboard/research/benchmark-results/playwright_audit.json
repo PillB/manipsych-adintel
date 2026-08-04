@@ -200,7 +200,7 @@
     },
     "adintel-checkpoints": {
       "present": true,
-      "text_length": 1093,
+      "text_length": 1086,
       "n_tables": 1,
       "n_kpis": 0
     },
@@ -317,6 +317,6 @@
     "errors": 0,
     "error_details": [],
     "dashboard_url": "http://localhost:8765/reports/adintel/adintel_dashboard.html",
-    "audited_at": "2026-08-04T17:41:56Z"
+    "audited_at": "2026-08-04T19:43:43Z"
   }
 }

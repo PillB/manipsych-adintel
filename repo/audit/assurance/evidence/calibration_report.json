@@ -1,0 +1,22 @@
+{
+  "checkpoint_id": "authorship-v1",
+  "calibration_method": "platt_scaling",
+  "calibration_data": {
+    "n_samples": 400,
+    "n_positive": 200,
+    "n_negative": 200,
+    "source": "642 accepted similarity links (positive) + 200 different-campaign-group pairs (negative)"
+  },
+  "calibration_metrics": {
+    "brier_score": 0.0033722594863555173,
+    "nll": 0.05425004226410102,
+    "ece_5bin": 0.052456630826340785
+  },
+  "model_coefficients": [
+    7.6480799531852295
+  ],
+  "model_intercept": -4.24707076467509,
+  "model_artifact": "/home/z/my-project/repo/models/authorship_platt_calibration.pkl",
+  "calibration_status": "platt",
+  "calibrated_at": "2026-08-04T20:00:00Z"
+}

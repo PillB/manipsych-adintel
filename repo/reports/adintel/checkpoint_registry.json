@@ -64,7 +64,9 @@
       "min_tokens_for_verification": 15,
       "min_tokens_for_attribution": 15,
       "reduced_confidence_threshold": 60,
-      "short_text_confidence_floor": 0.3
+      "short_text_confidence_floor": 0.3,
+      "calibration": "Platt scaling fitted on 400 pairs (200 pos, 200 neg); Brier=0.0034, ECE=0.0525",
+      "calibration_artifact": "models/authorship_platt_calibration.pkl"
     },
     "abstention_conditions": [
       "below_min_tokens",
@@ -74,8 +76,8 @@
     "cost_usd_per_1k": 0.0,
     "latency_ms_p50": 20.0,
     "baseline_checkpoint_id": "rule-detector-v1",
-    "calibration_status": "uncalibrated",
-    "description": "Multi-signal authorship / common-source analysis. Length-aware abstention. NEVER names a person from similarity alone."
+    "calibration_status": "platt",
+    "description": "Multi-signal authorship / common-source analysis. Length-aware abstention. NEVER names a person from similarity alone. Platt-calibrated on 400 pairs (Brier=0.0034)."
   },
   "outlier-v1": {
     "checkpoint_id": "outlier-v1",

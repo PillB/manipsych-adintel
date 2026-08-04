@@ -1,0 +1,35 @@
+{
+  "neg_pairs": {
+    "true_positive": 0,
+    "false_negative": 0,
+    "true_negative": 93,
+    "false_positive": 0,
+    "abstained": 7,
+    "insufficient": 7,
+    "total": 100,
+    "tpr": 0.0,
+    "tnr": 1.0,
+    "fpr": 0.0,
+    "fnr": 0.0,
+    "precision": 0.0,
+    "accuracy": 0.93
+  },
+  "pos_pairs": {
+    "true_positive": 9,
+    "false_negative": 12,
+    "true_negative": 0,
+    "false_positive": 0,
+    "abstained": 25,
+    "insufficient": 25,
+    "total": 46,
+    "tpr": 0.42857142857142855,
+    "tnr": 0.0,
+    "fpr": 0.0,
+    "fnr": 0.5714285714285714,
+    "precision": 1.0,
+    "accuracy": 0.1956521739130435
+  },
+  "overall_accuracy": 0.6986301369863014,
+  "overall_fpr": 0.0,
+  "overall_tpr": 0.42857142857142855
+}
