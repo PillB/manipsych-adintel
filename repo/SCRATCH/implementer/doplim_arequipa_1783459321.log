@@ -1,0 +1,9 @@
+[16:22:01] START Doplim arequipa (main li.cnt-list_ads ONLY, tuned)
+[16:22:01] base=https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=arequipa
+[16:22:01] LIST p1: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=arequipa
+[16:23:08]   main li.cnt-list_ads IDs: 0
+[16:23:08] LIST p2: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=arequipa&page=2
+[16:24:01]   main li.cnt-list_ads IDs: 0
+[16:24:02] LIST p3: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=arequipa&page=3
+[16:25:07]   main li.cnt-list_ads IDs: 0
+[16:25:07] DONE Doplim arequipa: added=0

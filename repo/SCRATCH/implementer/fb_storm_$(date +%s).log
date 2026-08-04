@@ -1,0 +1,14 @@
+[15:21:36] === FB PUBLIC POSTS STORM (search-first) ===
+[15:21:36] FETCH FB https://www.facebook.com/groups/3110927955892108/posts/416499014715254
+[15:22:26]   skip inter/login/short
+[15:22:26] FETCH FB https://www.facebook.com/groups/2382711485285084/posts/410569716965316
+[15:23:16]   skip inter/login/short
+[15:23:16] FETCH FB https://www.facebook.com/groups/1225925032152882/posts/166010937206777
+[15:24:09]   skip inter/login/short
+[15:24:09] FETCH FB https://www.facebook.com/groups/2709450222624428/posts/438194647537478
+[15:29:20]   skip inter/login/short
+[15:29:20] FETCH FB https://www.facebook.com/groups/citas.sanmiguel.lima.lima.peru/posts/1
+[15:30:13]   skip inter/login/short
+[15:30:13] FETCH FB https://www.facebook.com/groups/1613538799696840/posts/164320601006345
+[15:31:07]   skip inter/login/short
+[15:31:07] FB DONE added=0

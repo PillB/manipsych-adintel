@@ -1,0 +1,3 @@
+[18:24:31] START evisos_mass target=1500 start_count=0
+[18:26:38] LIST p1 https://www.evisos.com.pe/encuentros.htm: cards=0 new=0 total=0
+[18:29:46] LIST p2 https://www.evisos.com.pe/encuentros/clasificados/2: cards=0 new=0 total=0

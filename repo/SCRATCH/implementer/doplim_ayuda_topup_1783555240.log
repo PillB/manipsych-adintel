@@ -1,0 +1,103 @@
+[19:00:42] after hombre-busca-mujer q='ayuda economica' unique=0
+[19:00:42] after hombre-busca-mujer q='apoyo economico' unique=0
+[19:00:42] after hombre-busca-mujer q='brindo ayuda' unique=0
+[19:00:43] after hombre-busca-mujer q='doy ayuda' unique=0
+[19:00:43] after hombre-busca-mujer q='brindo apoyo' unique=0
+[19:00:43] after hombre-busca-mujer q='ayuda a señoritas' unique=0
+[19:00:43] after hombre-busca-mujer q='doy apoyo' unique=0
+[19:00:44] after hombre-busca-mujer q='ofrezco ayuda' unique=0
+[19:00:44] after hombre-busca-mujer q='ayuda universitaria' unique=0
+[19:00:44] after hombre-busca-mujer q='apoyo a estudiantes' unique=0
+[19:00:45] after hombre-busca-mujer q='sugar' unique=0
+[19:00:45] after hombre-busca-mujer q='caballero ayuda' unique=0
+[19:00:45] after hombre-busca-mujer q='profesional ayuda' unique=0
+[19:00:46] after hombre-busca-mujer q='ayuda discreta' unique=0
+[19:00:46] after hombre-busca-mujer q='apoyo discreto' unique=0
+[19:00:46] after hombre-busca-mujer q='brindo apoyo economico' unique=0
+[19:00:47] after hombre-busca-mujer q='doy apoyo economico' unique=0
+[19:00:47] after hombre-busca-mujer q='ayuda a chicas' unique=0
+[19:00:47] after hombre-busca-mujer q='apoyo a mujeres' unique=0
+[19:00:48] after hombre-busca-mujer q='ayuda maduro' unique=0
+[19:00:48] after relaciones-ocasionales q='ayuda economica' unique=0
+[19:00:48] after relaciones-ocasionales q='apoyo economico' unique=0
+[19:00:49] after relaciones-ocasionales q='brindo ayuda' unique=0
+[19:00:49] after relaciones-ocasionales q='doy ayuda' unique=0
+[19:00:49] after relaciones-ocasionales q='brindo apoyo' unique=0
+[19:00:49] after relaciones-ocasionales q='ayuda a señoritas' unique=0
+[19:00:50] after relaciones-ocasionales q='doy apoyo' unique=0
+[19:00:50] after relaciones-ocasionales q='ofrezco ayuda' unique=0
+[19:00:50] after relaciones-ocasionales q='ayuda universitaria' unique=0
+[19:00:51] after relaciones-ocasionales q='apoyo a estudiantes' unique=0
+[19:00:51] after relaciones-ocasionales q='sugar' unique=0
+[19:00:51] after relaciones-ocasionales q='caballero ayuda' unique=0
+[19:00:52] after relaciones-ocasionales q='profesional ayuda' unique=0
+[19:00:52] after relaciones-ocasionales q='ayuda discreta' unique=0
+[19:00:52] after relaciones-ocasionales q='apoyo discreto' unique=0
+[19:00:53] after relaciones-ocasionales q='brindo apoyo economico' unique=0
+[19:00:53] after relaciones-ocasionales q='doy apoyo economico' unique=0
+[19:00:53] after relaciones-ocasionales q='ayuda a chicas' unique=0
+[19:00:54] after relaciones-ocasionales q='apoyo a mujeres' unique=0
+[19:00:54] after relaciones-ocasionales q='ayuda maduro' unique=0
+[19:00:54] after mujer-busca-hombre q='ayuda economica' unique=0
+[19:00:55] after mujer-busca-hombre q='apoyo economico' unique=0
+[19:00:55] after mujer-busca-hombre q='brindo ayuda' unique=0
+[19:00:55] after mujer-busca-hombre q='doy ayuda' unique=0
+[19:00:56] after mujer-busca-hombre q='brindo apoyo' unique=0
+[19:00:56] after mujer-busca-hombre q='ayuda a señoritas' unique=0
+[19:00:56] after mujer-busca-hombre q='doy apoyo' unique=0
+[19:00:57] after mujer-busca-hombre q='ofrezco ayuda' unique=0
+[19:00:57] after mujer-busca-hombre q='ayuda universitaria' unique=0
+[19:00:57] after mujer-busca-hombre q='apoyo a estudiantes' unique=0
+[19:00:57] after mujer-busca-hombre q='sugar' unique=0
+[19:00:58] after mujer-busca-hombre q='caballero ayuda' unique=0
+[19:00:58] after mujer-busca-hombre q='profesional ayuda' unique=0
+[19:00:58] after mujer-busca-hombre q='ayuda discreta' unique=0
+[19:00:59] after mujer-busca-hombre q='apoyo discreto' unique=0
+[19:00:59] after mujer-busca-hombre q='brindo apoyo economico' unique=0
+[19:00:59] after mujer-busca-hombre q='doy apoyo economico' unique=0
+[19:01:00] after mujer-busca-hombre q='ayuda a chicas' unique=0
+[19:01:00] after mujer-busca-hombre q='apoyo a mujeres' unique=0
+[19:01:00] after mujer-busca-hombre q='ayuda maduro' unique=0
+[19:01:01] after contactos q='ayuda economica' unique=0
+[19:01:01] after contactos q='apoyo economico' unique=0
+[19:01:01] after contactos q='brindo ayuda' unique=0
+[19:01:04] after contactos q='doy ayuda' unique=0
+[19:01:05] after contactos q='brindo apoyo' unique=0
+[19:01:05] after contactos q='ayuda a señoritas' unique=0
+[19:01:05] after contactos q='doy apoyo' unique=0
+[19:01:06] after contactos q='ofrezco ayuda' unique=0
+[19:01:06] after contactos q='ayuda universitaria' unique=0
+[19:01:06] after contactos q='apoyo a estudiantes' unique=0
+[19:01:07] after contactos q='sugar' unique=0
+[19:01:07] after contactos q='caballero ayuda' unique=0
+[19:01:07] after contactos q='profesional ayuda' unique=0
+[19:01:08] after contactos q='ayuda discreta' unique=0
+[19:01:08] after contactos q='apoyo discreto' unique=0
+[19:01:08] after contactos q='brindo apoyo economico' unique=0
+[19:01:08] after contactos q='doy apoyo economico' unique=0
+[19:01:09] after contactos q='ayuda a chicas' unique=0
+[19:01:09] after contactos q='apoyo a mujeres' unique=0
+[19:01:09] after contactos q='ayuda maduro' unique=0
+[19:01:10] after city=lima unique=0
+[19:01:10] after city=arequipa unique=0
+[19:01:10] after city=trujillo unique=0
+[19:01:11] after city=cusco unique=0
+[19:01:11] after city=piura unique=0
+[19:01:11] after city=chiclayo unique=0
+[19:01:12] after city=callao unique=0
+[19:01:12] after city=huancayo unique=0
+[19:01:13] after city=ica unique=0
+[19:01:13] after city=tacna unique=0
+[19:01:14] after city=puno unique=0
+[19:01:14] after city=cajamarca unique=0
+[19:01:15] after city=chimbote unique=0
+[19:01:15] after city=ayacucho unique=0
+[19:01:15] after city=iquitos unique=0
+[19:01:16] after city=tarapoto unique=0
+[19:01:16] after city=pucallpa unique=0
+[19:01:16] after city=juliaca unique=0
+[19:01:17] after city=sullana unique=0
+[19:01:18] after city=huaraz unique=0
+[19:01:18] GATHER unique=0
+[19:01:18] pending=0
+[19:01:35] DONE saved=0 skip=0 err=0

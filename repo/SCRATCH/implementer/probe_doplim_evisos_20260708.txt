@@ -1,0 +1,62 @@
+URL=https://www.doplim.com.pe/s/hombre-busca-mujer/
+  title=Anuncios Clasificados Gratis en Perú | Doplim
+  len=300201 inter=True cards_doplim=24 id-html=24 id-any=24 evisos_id_links=24 show_more=True
+  sample_ids=['1516270', '1516282', '1516283', '1516285', '1516286']
+  pag_sample=[]
+  text_snip=Anuncios Clasificados Gratis en Perú | Doplim UBICACIONES POPULARES Puno Lima Metropolitana y Callao La Libertad Cajamarca Ingresar Publicar Gratis MÁS CATEGORÍAS TODAS LAS CATEGORíAS Autos, Motos y B
+
+URL=https://www.doplim.com.pe/s/hombre-busca-mujer/?page=2
+  title=Anuncios Clasificados Gratis en Perú | Doplim
+  len=440108 inter=True cards_doplim=24 id-html=24 id-any=24 evisos_id_links=24 show_more=True
+  sample_ids=['1516270', '1516282', '1516283', '1516285', '1516286']
+  pag_sample=[]
+  text_snip=Anuncios Clasificados Gratis en Perú | Doplim UBICACIONES POPULARES Puno Lima Metropolitana y Callao La Libertad Cajamarca Ingresar Publicar Gratis MÁS CATEGORÍAS TODAS LAS CATEGORíAS Autos, Motos y B
+
+URL=https://www.doplim.com.pe/s/relaciones-ocasionales/
+  title=Anuncios Clasificados Gratis en Perú | Doplim
+  len=445162 inter=True cards_doplim=24 id-html=24 id-any=24 evisos_id_links=24 show_more=True
+  sample_ids=['1516270', '1516282', '1516283', '1516285', '1516286']
+  pag_sample=[]
+  text_snip=Anuncios Clasificados Gratis en Perú | Doplim UBICACIONES POPULARES Puno Lima Metropolitana y Callao La Libertad Cajamarca Ingresar Publicar Gratis MÁS CATEGORÍAS TODAS LAS CATEGORíAS Autos, Motos y B
+
+URL=https://www.doplim.com.pe/s/contactos/
+  title=Anuncios Clasificados Gratis en Perú | Doplim
+  len=154572 inter=True cards_doplim=24 id-html=24 id-any=24 evisos_id_links=24 show_more=True
+  sample_ids=['1516270', '1516282', '1516283', '1516285', '1516286']
+  pag_sample=[]
+  text_snip=Anuncios Clasificados Gratis en Perú | Doplim UBICACIONES POPULARES Puno Lima Metropolitana y Callao La Libertad Cajamarca Ingresar Publicar Gratis MÁS CATEGORÍAS TODAS LAS CATEGORíAS Autos, Motos y B
+
+URL=https://lima.evisos.com.pe/contactos.htm
+  title=Contactos en Lima, Perú | Evisos
+  len=1145046 inter=False cards_doplim=0 id-html=0 id-any=30 evisos_id_links=30 show_more=False
+  sample_ids=['581794', '602671', '606178', '606181', '606621']
+  pag_sample=['/contactos/clasificados/2', '/contactos/clasificados/3', '/contactos/clasificados/4', '/contactos/clasificados/5', '/contactos/clasificados/6']
+  text_snip=Contactos en Lima, Perú | Evisos ✕ ¿Tu negocio trabaja cuando dormís? Creá tu página con un agente IA que responde consultas por vos,24/7. → Crear mi agente gratis En todo el sitio En todo el sitio Co
+
+URL=https://lima.evisos.com.pe/contactos/clasificados/2
+  title=Contactos en Lima, Perú - página 2 | Evisos
+  len=1443564 inter=False cards_doplim=0 id-html=0 id-any=26 evisos_id_links=26 show_more=False
+  sample_ids=['740517', '740762', '740985', '741052', '741065']
+  pag_sample=['/contactos/clasificados/3', '/contactos/clasificados/4', '/contactos/clasificados/5', '/contactos/clasificados/6', '/contactos/clasificados/7']
+  text_snip=Contactos en Lima, Perú - página 2 | Evisos ✕ ¿Tu negocio trabaja cuando dormís? Creá tu página con un agente IA que responde consultas por vos,24/7. → Crear mi agente gratis En todo el sitio En todo 
+
+URL=https://www.evisos.com.pe/encuentros.htm
+  title=Encuentros en Perú | Evisos
+  len=1437870 inter=False cards_doplim=0 id-html=0 id-any=30 evisos_id_links=30 show_more=False
+  sample_ids=['183340', '223522', '229185', '235137', '291343']
+  pag_sample=['/encuentros/clasificados/2', '/encuentros/clasificados/2', '/encuentros/clasificados/2', '/encuentros/clasificados/2']
+  text_snip=Encuentros en Perú | Evisos ✕ ¿Tu negocio trabaja cuando dormís? Creá tu página con un agente IA que responde consultas por vos,24/7. → Crear mi agente gratis En todo el sitio En todo el sitio Compra 
+
+URL=https://www.evisos.com.pe/contactos-ocasionales-peru.htm
+  title=Contactos ocasionales peru en Perú | Evisos
+  len=1891206 inter=False cards_doplim=0 id-html=0 id-any=29 evisos_id_links=29 show_more=False
+  sample_ids=['178404', '609356', '609357', '613455', '619654']
+  pag_sample=['/contactos-ocasionales-peru/clasificados/2', '/contactos-ocasionales-peru/clasificados/3', '/contactos-ocasionales-peru/clasificados/4', '/contactos-ocasionales-peru/clasificados/5', '/contactos-ocasionales-peru/clasificados/6']
+  text_snip=Contactos ocasionales peru en Perú | Evisos ✕ ¿Tu negocio trabaja cuando dormís? Creá tu página con un agente IA que responde consultas por vos,24/7. → Crear mi agente gratis En todo el sitio En todo 
+
+URL=https://www.evisos.com.pe/hombre-busca-mujer.htm
+  title=Hombre busca mujer en Perú | Evisos
+  len=1030273 inter=False cards_doplim=0 id-html=0 id-any=28 evisos_id_links=28 show_more=False
+  sample_ids=['105205', '105211', '115630', '117471', '154666']
+  pag_sample=[]
+  text_snip=Hombre busca mujer en Perú | Evisos ✕ ¿Tu negocio trabaja cuando dormís? Creá tu página con un agente IA que responde consultas por vos,24/7. → Crear mi agente gratis En todo el sitio En todo el sitio

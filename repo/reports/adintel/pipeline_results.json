@@ -1,0 +1,140 @@
+{
+  "ran_at": "2026-08-04T00:25:35Z",
+  "elapsed_s": 5.35,
+  "taxonomy_version": "adintel-taxonomy-v2",
+  "n_records_total": 5189,
+  "n_council_annotations": 5717,
+  "n_similarity_links": 642,
+  "n_profile_sampled": 200,
+  "n_cluster_sampled": 300,
+  "n_authorship_pairs": 41,
+  "n_outlier_sampled": 1000,
+  "profile_dimension_means": {
+    "urgency": 0.03861692930249544,
+    "scarcity": 0.09748039627707004,
+    "emotional_intensity": 0.11310530374820198,
+    "directiveness": 0.058117957671718797,
+    "certainty": 0.026616241930350597,
+    "specificity": 0.23921736700901383,
+    "benefit_density": 0.3388349420139684,
+    "evidence_density": 0.0005066420036788615,
+    "social_proof": 0.009641223181914243,
+    "objection_handling": 0.0910969984417467,
+    "risk_reversal": 0.0019673467014368327,
+    "claim_extremity": 0.08332747379036094,
+    "readability": 0.39508687101797046,
+    "offer_clarity": 0.40474913974819626,
+    "action_clarity": 0.03824471616617963,
+    "trust_risk": 0.023363432726854486,
+    "manipulation_risk": 0.1309451935524002
+  },
+  "cluster_summary": {
+    "persuasive": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.4333,
+      "resampling_consistency": 0.5734,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {},
+      "topic_leakage": {}
+    },
+    "semantic": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.1108,
+      "resampling_consistency": 0.4059,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {
+        "Facebook Public": 1.0
+      },
+      "topic_leakage": {
+        "facebook": 1.0
+      }
+    },
+    "rhetorical": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.3642,
+      "resampling_consistency": 0.7075,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {},
+      "topic_leakage": {}
+    },
+    "visual": {
+      "n_clusters": 3,
+      "n_noise": 0,
+      "stability_ari": 0.9914,
+      "resampling_consistency": 0.9904,
+      "parameter_sensitivity": 0.4714,
+      "brand_leakage": {
+        "Doplim Peru": 1.0,
+        "Locanto Peru": 0.9629629629629629
+      },
+      "topic_leakage": {
+        "doplim": 1.0,
+        "locanto": 0.9629629629629629
+      }
+    },
+    "multimodal": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.5994,
+      "resampling_consistency": 0.665,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {
+        "Doplim Peru": 1.0,
+        "Locanto Peru": 0.9629629629629629
+      },
+      "topic_leakage": {
+        "doplim": 1.0,
+        "locanto": 0.9629629629629629
+      }
+    },
+    "authorial": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.1438,
+      "resampling_consistency": 0.3268,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {
+        "Facebook Public": 1.0,
+        "Ciudad Anuncios Peru": 0.8048780487804879
+      },
+      "topic_leakage": {
+        "facebook": 1.0,
+        "ciudadanuncios": 0.8048780487804879
+      }
+    },
+    "performance": {
+      "n_clusters": 3,
+      "n_noise": 0,
+      "stability_ari": 0.9888,
+      "resampling_consistency": 0.9962,
+      "parameter_sensitivity": 0.5,
+      "brand_leakage": {
+        "Doplim Peru": 0.9836065573770492,
+        "Facebook Public": 1.0
+      },
+      "topic_leakage": {
+        "doplim": 0.9836065573770492,
+        "facebook": 1.0
+      }
+    }
+  },
+  "authorship_accuracy_against_accepted_links": 0.9756,
+  "outlier_by_kind": {
+    "creative_novelty": 50,
+    "unusual_technique_combination": 22,
+    "style_outlier": 26,
+    "performance_underperformer": 90
+  },
+  "checkpoint_count": 6,
+  "outputs": {
+    "taxonomy_v2": "/home/z/my-project/repo/reports/adintel/taxonomy_v2.json",
+    "profile_sample": "/home/z/my-project/repo/reports/adintel/profile_sample.json",
+    "clustering_summary": "/home/z/my-project/repo/reports/adintel/clustering_summary.json",
+    "authorship_known_pairs": "/home/z/my-project/repo/reports/adintel/authorship_known_pairs.json",
+    "outlier_summary": "/home/z/my-project/repo/reports/adintel/outlier_summary.json",
+    "checkpoint_registry": "/home/z/my-project/repo/reports/adintel/checkpoint_registry.json"
+  }
+}

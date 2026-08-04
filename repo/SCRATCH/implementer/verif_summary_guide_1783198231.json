@@ -1,0 +1,18 @@
+{
+  "ts": 1783198231,
+  "total": 201,
+  "locanto_hombre": 98,
+  "with_raw": 201,
+  "plats": {
+    "Doplim Peru (hombre busca mujer or Contactos)": 69,
+    "Other indexed public": 6,
+    "Facebook Public (indexed)": 26,
+    "Facebook Public (search first)": 1,
+    "Locanto Peru (hombre busca mujer real)": 98,
+    "Facebook public group": 1
+  },
+  "gate": "phase4 passed (prior run)",
+  "exhaustion": "public supply limited; 96 locanto max observed after 100+ att",
+  "guide_updated": true,
+  "proof_dir": "SCRATCH/implementer/"
+}

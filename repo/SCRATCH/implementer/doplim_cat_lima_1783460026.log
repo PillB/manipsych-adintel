@@ -1,0 +1,9 @@
+[16:33:46] START Doplim category lima (main li.cnt-list_ads ONLY, tuned)
+[16:33:46] base=https://www.doplim.com.pe/s/hombre-busca-mujer/
+[16:33:46] LIST p1: https://www.doplim.com.pe/s/hombre-busca-mujer/
+[16:34:46]   main li.cnt-list_ads IDs: 0
+[16:34:47] LIST p2: https://www.doplim.com.pe/s/hombre-busca-mujer/?page=2
+[16:35:51]   main li.cnt-list_ads IDs: 0
+[16:35:52] LIST p3: https://www.doplim.com.pe/s/hombre-busca-mujer/?page=3
+[16:36:58]   main li.cnt-list_ads IDs: 0
+[16:36:58] DONE Doplim cat lima: added=0

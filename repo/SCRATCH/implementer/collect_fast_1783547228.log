@@ -1,0 +1,5 @@
+[16:47:10] START fast_v2 targets={'doplim': 1500, 'evisos': 1500} start_counts={'doplim': 442, 'evisos': 0, 'other': 1930} workers=12
+[16:47:11] LEARN doplim section=hombre-busca-mujer catid=5 subcatid=51
+[16:47:12] LEARN doplim section=relaciones-ocasionales catid=5 subcatid=54
+[16:47:13] LEARN doplim section=mujer-busca-hombre catid=5 subcatid=50
+[16:47:14] LEARN doplim section=contactos catid=5 subcatid=0

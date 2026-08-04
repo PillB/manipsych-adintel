@@ -1,0 +1,94 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+START trujillo v3 section list crawl (main cards ONLY, tuned)
+base=https://www.locanto.com.pe/trujillo/Hombre-busca-mujer/20701
+LIST p1: https://www.locanto.com.pe/trujillo/Hombre-busca-mujer/20701/1/?query=ayuda+economica
+  main IDs: 46
+  + https://www.locanto.com.pe/trujillo/ID_7638712943/COMINICARSE-SOLO-MUJ
+  + https://www.locanto.com.pe/trujillo/ID_7729674694/Ayuda-economica-Para
+  + https://www.locanto.com.pe/trujillo/ID_8199719249/Brindo-ayuda-o-apoyo
+  + https://www.locanto.com.pe/trujillo/ID_8085769747/Hombre-solvente-da-a
+  + https://www.locanto.com.pe/trujillo/ID_8089143995/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_7830685360/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_7826564194/Ayuda-Economica-a-mu
+  + https://www.locanto.com.pe/trujillo/ID_8721112750/Ayuda-Economica-en-T
+  + https://www.locanto.com.pe/trujillo/ID_8507927242/Busco-amiga-para-pas
+  + https://www.locanto.com.pe/trujillo/ID_7545047225/Ayuda-economica-a-ma
+  + https://www.locanto.com.pe/trujillo/ID_8571289382/Hombre-maduro-busca-
+  + https://www.locanto.com.pe/trujillo/ID_8942121221/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_8942104037/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/trujillo/ID_8062503448/AYUDA-ECONOMICA-SENO
+  + https://www.locanto.com.pe/trujillo/ID_7506012277/Ayuda-economica-en-T
+  + https://www.locanto.com.pe/trujillo/ID_8300662889/Ayuda-economica-a-mu
+  + https://www.locanto.com.pe/trujillo/ID_8466770288/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/trujillo/ID_7934935499/BRINDO-AYUDA-ECONOMI
+LIST p2: https://www.locanto.com.pe/trujillo/Hombre-busca-mujer/20701/2/?query=ayuda+economica
+  main IDs: 47
+  + https://www.locanto.com.pe/trujillo/ID_7598185042/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_7698592474/Soy-hombre-de-25-ano
+  + https://www.locanto.com.pe/trujillo/ID_7624118134/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/trujillo/ID_8147904370/Ayuda-economica-para
+  + https://www.locanto.com.pe/trujillo/ID_8865285936/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/trujillo/ID_8144193869/AYUDA-ECONOMICA-TOTA
+  + https://www.locanto.com.pe/trujillo/ID_8861540799/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/trujillo/ID_8436960449/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_8411032298/Busco-mama-soltera-p
+  + https://www.locanto.com.pe/trujillo/ID_8628311753/Entrego-ayuda-a-muje
+  + https://www.locanto.com.pe/trujillo/ID_5228349149/Ayuda-economica-para
+  + https://www.locanto.com.pe/trujillo/ID_6567437408/Ayuda-economica-para
+  + https://www.locanto.com.pe/trujillo/ID_7239657548/Ayuda-economica-para
+  + https://www.locanto.com.pe/trujillo/ID_7066401301/Ayuda-economica-a-Sr
+  + https://www.locanto.com.pe/trujillo/ID_7701652669/AYUDA-ECONOMICA-A-SE
+  + https://www.locanto.com.pe/trujillo/ID_7880156918/Maduro-muy-discreto-
+  + https://www.locanto.com.pe/trujillo/ID_8009882012/busco-chica-de-18-a-
+  + https://www.locanto.com.pe/trujillo/ID_7906311200/Apoyo-Ayuda-economic
+  + https://www.locanto.com.pe/trujillo/ID_7872772958/Ayuda-economica-Truj
+  + https://www.locanto.com.pe/trujillo/ID_8613415276/Busco-chica-para-ayu
+  + https://www.locanto.com.pe/trujillo/ID_8610519103/Ayuda-economica-para
+  + https://www.locanto.com.pe/trujillo/ID_8242296285/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_8595697975/Busco-pasarla-bien-e
+  + https://www.locanto.com.pe/trujillo/ID_8000839583/Busco-senoras-doy-ay
+LIST p3: https://www.locanto.com.pe/trujillo/Hombre-busca-mujer/20701/3/?query=ayuda+economica
+  main IDs: 45
+  + https://www.locanto.com.pe/trujillo/ID_6956399851/Busco-senorita-de-ca
+  + https://www.locanto.com.pe/trujillo/ID_6535421861/Estoy-entregando-ayu
+  + https://www.locanto.com.pe/trujillo/ID_6783681040/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_7326930196/brindo-ayuda-economi
+  + https://www.locanto.com.pe/trujillo/ID_7199916505/BRINDO-AYUDA-ECONOMI
+  + https://www.locanto.com.pe/trujillo/ID_9028861950/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_7557486354/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_7070205657/Entrego-ayuda-econom
+  + https://www.locanto.com.pe/trujillo/ID_7199916421/DOY-AYUDA-ECONOMICA-
+  + https://www.locanto.com.pe/trujillo/ID_7752934951/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/trujillo/ID_7548156979/DOY-AYUDA-A-MUJER-SO
+  + https://www.locanto.com.pe/trujillo/ID_7654759423/Ayuda-economica-a-mu
+  + https://www.locanto.com.pe/trujillo/ID_8768259882/Ofrezco-ayuda-econom
+  + https://www.locanto.com.pe/trujillo/ID_7329395830/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_7554809490/Ayuda-economica-a-se
+  + https://www.locanto.com.pe/trujillo/ID_8247399891/brindo-ayuda-economi
+  + https://www.locanto.com.pe/trujillo/ID_7076003831/ENTREGO-AYUDA-ECONOM
+  + https://www.locanto.com.pe/trujillo/ID_7562134974/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_7562160276/DOY-AYUDA-ECONOMICA-
+  + https://www.locanto.com.pe/trujillo/ID_7562160678/HOLA-SENORITA-SOY-MI
+  + https://www.locanto.com.pe/trujillo/ID_8219702812/Brindo-ayudar-econom
+  + https://www.locanto.com.pe/trujillo/ID_7323881473/DOY-AYUDA-ECONOMICA-
+  + https://www.locanto.com.pe/trujillo/ID_7548266368/HOLA-SENORITAS-YO-LE
+  + https://www.locanto.com.pe/trujillo/ID_7548283243/Brindo-ayuda-economi
+LIST p4: https://www.locanto.com.pe/trujillo/Hombre-busca-mujer/20701/4/?query=ayuda+economica
+  main IDs: 48
+  + https://www.locanto.com.pe/trujillo/ID_8193446986/Ayuda-economica-para
+  + https://www.locanto.com.pe/trujillo/ID_7318312033/DOY-AYUDA-ECONOMICA-
+  + https://www.locanto.com.pe/trujillo/ID_7199917606/DOY-AYUDA-ECONOMICA-
+  + https://www.locanto.com.pe/trujillo/ID_7726548267/Ayuda-economica-a-mu
+  + https://www.locanto.com.pe/trujillo/ID_8068185067/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_4395324425/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/trujillo/ID_7629175997/HOLA-CHICAS-LES-PUED
+  + https://www.locanto.com.pe/trujillo/ID_6535459478/DOY-AYUDA-ECONOMICA-
+  + https://www.locanto.com.pe/trujillo/ID_6774822538/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/trujillo/ID_8188521547/Entrego-ayuda-econom
+  + https://www.locanto.com.pe/trujillo/ID_7625834348/Ayuda-economica-a-ca
+  + https://www.locanto.com.pe/trujillo/ID_8188637297/ENTREGO-AYUDA-A-MUJE
+  + https://www.locanto.com.pe/trujillo/ID_6774821966/DOY-AYUDA-ECONOMICA-
+  + https://www.locanto.com.pe/trujillo/ID_6774822035/Doy-ayuda-economica-
+DONE trujillo: added=80
+SUMMARY trujillo added=80

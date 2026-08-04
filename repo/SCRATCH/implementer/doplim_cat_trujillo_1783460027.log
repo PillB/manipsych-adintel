@@ -1,0 +1,11 @@
+[16:33:47] START Doplim category trujillo (main li.cnt-list_ads ONLY, tuned)
+[16:33:47] base=https://www.doplim.com.pe/s/hombre-busca-mujer/trujillo/
+[16:33:47] LIST p1: https://www.doplim.com.pe/s/hombre-busca-mujer/trujillo/
+[16:34:44]   main li.cnt-list_ads IDs: 3
+[16:35:18]   + https://trujillo.doplim.com.pe/ayudaa-economica-id-1514052.html
+[16:35:53]   + https://trujillo.doplim.com.pe/ayuda-economica-a-chicas-venezolanas-id
+[16:36:35] LIST p2: https://www.doplim.com.pe/s/hombre-busca-mujer/trujillo/?page=2
+[16:37:50]   main li.cnt-list_ads IDs: 3
+[16:38:24] LIST p3: https://www.doplim.com.pe/s/hombre-busca-mujer/trujillo/?page=3
+[16:39:32]   main li.cnt-list_ads IDs: 3
+[16:39:32] DONE Doplim cat trujillo: added=2

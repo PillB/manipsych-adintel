@@ -1,0 +1,35 @@
+[2026-07-06 21:58:36] RESUME FB singlemind. Before FB count: 30 total rids 357
+[2026-07-06 21:58:36] Processing 8 FB candidates with search-seed text for term check
+[2026-07-06 21:58:36] FETCH https://www.facebook.com/groups/1232598207974026/posts/1610922773474899/
+[2026-07-06 21:58:36]   len=801990 inter=False gate=False
+[2026-07-06 21:58:36]   ARCHIVE fb_singlemind_7d2b8fff80f59371.html
+[2026-07-06 21:58:36]   ADDED 1: DOY APOYO A SEÑORITAS Y SEÑORAS INFO SOLO AL PV | Facebook
+[2026-07-06 21:58:47] FETCH https://www.facebook.com/groups/1232598207974026/posts/1611746920059151/
+[2026-07-06 21:58:47]   len=749698 inter=False gate=False
+[2026-07-06 21:58:48]   ARCHIVE fb_singlemind_e911d174c780d5db.html
+[2026-07-06 21:58:48]   ADDED 2: TRUJILLO EMPLEOS - TRABAJOS | DOY APOYO A SEÑORITAS Y SEÑORAS INFO SOL
+[2026-07-06 21:58:58] FETCH https://www.facebook.com/groups/1174722089913834/posts/1780088439377193/
+[2026-07-06 21:58:58]   len=705015 inter=False gate=False
+[2026-07-06 21:58:58]   ARCHIVE fb_singlemind_cdcb0946d593c866.html
+[2026-07-06 21:58:58]   ADDED 3: Doy apoyo económico a señoritas comunicarse al inbox | Facebook
+[2026-07-06 21:59:14] FETCH https://www.facebook.com/groups/citas.jauja.junin.peru/posts/2551308928602364/
+[2026-07-06 21:59:16]   len=793314 inter=False gate=False
+[2026-07-06 21:59:16]   ARCHIVE fb_singlemind_681d66c4d77a20cc.html
+[2026-07-06 21:59:16]   ADDED 4: Doy ayuda económica a señoritas menores de 23 | Facebook
+[2026-07-06 21:59:33] FETCH https://www.facebook.com/groups/1551994621954815/posts/2365159503971652/
+[2026-07-06 21:59:33]   len=729020 inter=False gate=False
+[2026-07-06 21:59:33]   ARCHIVE fb_singlemind_3a44c30d6c485b47.html
+[2026-07-06 21:59:33]   ADDED 5: Empleos huancayo el tambo | Alguna interesada.... | Facebook
+[2026-07-06 21:59:43] FETCH https://www.facebook.com/groups/809402774098443/posts/1558557179182995/
+[2026-07-06 21:59:43]   len=318919 inter=False gate=False
+[2026-07-06 21:59:43]   ARCHIVE fb_singlemind_283ca46e059e3a74.html
+[2026-07-06 21:59:43]   ADDED 6: Facebook
+[2026-07-06 21:59:53] FETCH https://www.facebook.com/groups/222125721478575/posts/2672734406417682/
+[2026-07-06 21:59:54]   len=318946 inter=False gate=False
+[2026-07-06 21:59:54]   ARCHIVE fb_singlemind_917f1d21b84b6a1a.html
+[2026-07-06 21:59:54]   ADDED 7: Facebook
+[2026-07-06 22:00:04] FETCH https://www.facebook.com/groups/1189010878980642/posts/1597347328146993/
+[2026-07-06 22:00:04]   len=318911 inter=False gate=False
+[2026-07-06 22:00:04]   ARCHIVE fb_singlemind_7702b4768e723c09.html
+[2026-07-06 22:00:04]   ADDED 8: Facebook
+[2026-07-06 22:00:17] END batch added=8 now_fb~38

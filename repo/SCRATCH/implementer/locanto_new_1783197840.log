@@ -1,0 +1,13 @@
+[2026-07-04T20:44:00.379497Z] FETCH_NEW: https://www.locanto.com.pe/lima/ID_7555430534/Brindo-ayuda-economica-a-mujer-de-cualquier-edad.html
+[2026-07-04T20:44:45.510912Z] len=105178
+[2026-07-04T20:44:45.634261Z] ARCH locanto_new_18fb68585929d582.html
+[2026-07-04T20:44:45.657419Z] ADD 18fb6858
+[2026-07-04T20:44:45.660470Z] FETCH_NEW: https://www.locanto.com.pe/arequipa/ID_7093231997/Brindo-ayuda-economica-constante-a-una-chica.html
+[2026-07-04T20:45:29.495428Z] len=109631
+[2026-07-04T20:45:29.571640Z] ARCH locanto_new_100ccf1bfbbd110e.html
+[2026-07-04T20:45:29.578519Z] ADD 100ccf1b
+[2026-07-04T20:45:29.578785Z] FETCH_NEW: https://www.locanto.com.pe/lima/ID_5652125249/DOY-AYUDA-ECONOMICA-A-SENORITAS.html
+[2026-07-04T20:46:14.764645Z] len=100262
+[2026-07-04T20:46:14.914712Z] ARCH locanto_new_f455b1b3ecf0b349.html
+[2026-07-04T20:46:14.924713Z] ADD f455b1b3
+[2026-07-04T20:46:14.925178Z] FINAL new_add=3 consec_no_new=0

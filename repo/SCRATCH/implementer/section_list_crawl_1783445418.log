@@ -1,0 +1,4 @@
+  File "<string>", line 15
+    with open(SCRATCH_LOG, "a") as f: f.write(f"[{time.strftime(\"%H:%M:%S\")}] {msg}\n")
+                                                                                        ^
+SyntaxError: f-string expression part cannot include a backslash

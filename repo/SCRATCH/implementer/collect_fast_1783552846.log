@@ -1,0 +1,127 @@
+[18:20:47] START fast_v2 targets={'doplim': 1600, 'evisos': 1500} start_counts={'doplim': 1500, 'evisos': 0, 'other': 1930} workers=12
+[18:20:49] LEARN doplim section=hombre-busca-mujer catid=5 subcatid=51
+[18:20:50] LEARN doplim section=relaciones-ocasionales catid=5 subcatid=54
+[18:20:51] LEARN doplim section=mujer-busca-hombre catid=5 subcatid=50
+[18:20:51] LEARN doplim section=contactos catid=5 subcatid=0
+[18:20:52] API hombre-busca-mujer/lima p1: cards=30 new=30 total=30
+[18:20:53] API hombre-busca-mujer/lima p2: cards=30 new=30 total=60
+[18:20:53] API hombre-busca-mujer/lima p3: cards=30 new=30 total=90
+[18:20:54] API hombre-busca-mujer/lima p4: cards=30 new=30 total=120
+[18:20:54] API hombre-busca-mujer/lima p5: cards=30 new=30 total=150
+[18:20:55] API hombre-busca-mujer/lima p6: cards=30 new=30 total=180
+[18:20:55] API hombre-busca-mujer/lima p7: cards=30 new=30 total=210
+[18:20:56] API hombre-busca-mujer/lima p8: cards=30 new=30 total=240
+[18:20:56] API hombre-busca-mujer/lima p9: cards=30 new=30 total=270
+[18:20:57] API hombre-busca-mujer/lima p10: cards=30 new=30 total=300
+[18:20:57] OK 10+ path hombre-busca-mujer/lima pages=10
+[18:20:58] API hombre-busca-mujer/arequipa p1: cards=30 new=30 total=330
+[18:20:58] API hombre-busca-mujer/arequipa p2: cards=30 new=30 total=360
+[18:20:59] API hombre-busca-mujer/arequipa p3: cards=30 new=30 total=390
+[18:20:59] API hombre-busca-mujer/arequipa p4: cards=30 new=30 total=420
+[18:21:00] API hombre-busca-mujer/arequipa p5: cards=30 new=30 total=450
+[18:21:00] API hombre-busca-mujer/arequipa p6: cards=30 new=30 total=480
+[18:21:01] API hombre-busca-mujer/arequipa p7: cards=30 new=30 total=510
+[18:21:01] API hombre-busca-mujer/arequipa p8: cards=30 new=30 total=540
+[18:21:02] API hombre-busca-mujer/arequipa p9: cards=30 new=30 total=570
+[18:21:03] API hombre-busca-mujer/arequipa p10: cards=30 new=30 total=600
+[18:21:03] OK 10+ path hombre-busca-mujer/arequipa pages=10
+[18:21:03] API hombre-busca-mujer/trujillo p1: cards=30 new=30 total=630
+[18:21:04] API hombre-busca-mujer/trujillo p2: cards=30 new=30 total=660
+[18:21:04] API hombre-busca-mujer/trujillo p3: cards=30 new=30 total=690
+[18:21:05] API hombre-busca-mujer/trujillo p4: cards=30 new=30 total=720
+[18:21:05] API hombre-busca-mujer/trujillo p5: cards=30 new=30 total=750
+[18:21:06] API hombre-busca-mujer/trujillo p6: cards=30 new=30 total=780
+[18:21:06] API hombre-busca-mujer/trujillo p7: cards=30 new=30 total=810
+[18:21:07] API hombre-busca-mujer/trujillo p8: cards=30 new=30 total=840
+[18:21:08] API hombre-busca-mujer/trujillo p9: cards=30 new=30 total=870
+[18:21:08] API hombre-busca-mujer/trujillo p10: cards=30 new=30 total=900
+[18:21:08] OK 10+ path hombre-busca-mujer/trujillo pages=10
+[18:21:09] API hombre-busca-mujer/cusco p1: cards=30 new=30 total=930
+[18:21:09] API hombre-busca-mujer/cusco p2: cards=30 new=29 total=959
+[18:21:10] API hombre-busca-mujer/cusco p3: cards=30 new=30 total=989
+[18:21:10] API hombre-busca-mujer/cusco p4: cards=30 new=30 total=1019
+[18:21:11] API hombre-busca-mujer/cusco p5: cards=30 new=30 total=1049
+[18:21:11] API hombre-busca-mujer/cusco p6: cards=30 new=30 total=1079
+[18:21:12] API hombre-busca-mujer/cusco p7: cards=30 new=30 total=1109
+[18:21:13] API hombre-busca-mujer/cusco p8: cards=30 new=30 total=1139
+[18:21:13] API hombre-busca-mujer/cusco p9: cards=30 new=30 total=1169
+[18:21:14] API hombre-busca-mujer/cusco p10: cards=30 new=30 total=1199
+[18:21:14] OK 10+ path hombre-busca-mujer/cusco pages=10
+[18:21:15] API hombre-busca-mujer/piura p1: cards=30 new=30 total=1229
+[18:21:16] API hombre-busca-mujer/piura p2: cards=30 new=30 total=1259
+[18:21:17] API hombre-busca-mujer/piura p3: cards=30 new=30 total=1289
+[18:21:17] API hombre-busca-mujer/piura p4: cards=30 new=30 total=1319
+[18:21:18] API hombre-busca-mujer/piura p5: cards=30 new=30 total=1349
+[18:21:19] API hombre-busca-mujer/piura p6: cards=30 new=30 total=1379
+[18:21:19] API hombre-busca-mujer/piura p7: cards=30 new=30 total=1409
+[18:21:20] API hombre-busca-mujer/piura p8: cards=30 new=30 total=1439
+[18:21:20] API hombre-busca-mujer/piura p9: cards=30 new=30 total=1469
+[18:21:21] API hombre-busca-mujer/piura p10: cards=30 new=30 total=1499
+[18:21:21] OK 10+ path hombre-busca-mujer/piura pages=10
+[18:21:22] API hombre-busca-mujer/chiclayo p1: cards=30 new=30 total=1529
+[18:21:22] API hombre-busca-mujer/chiclayo p2: cards=30 new=30 total=1559
+[18:21:23] API hombre-busca-mujer/chiclayo p3: cards=30 new=30 total=1589
+[18:21:24] API hombre-busca-mujer/chiclayo p4: cards=30 new=30 total=1619
+[18:21:24] API hombre-busca-mujer/chiclayo p5: cards=30 new=30 total=1649
+[18:21:25] API hombre-busca-mujer/chiclayo p6: cards=30 new=30 total=1679
+[18:21:25] API hombre-busca-mujer/chiclayo p7: cards=30 new=29 total=1708
+[18:21:26] API hombre-busca-mujer/chiclayo p8: cards=30 new=30 total=1738
+[18:21:26] API hombre-busca-mujer/chiclayo p9: cards=30 new=30 total=1768
+[18:21:27] API hombre-busca-mujer/chiclayo p10: cards=30 new=30 total=1798
+[18:21:27] OK 10+ path hombre-busca-mujer/chiclayo pages=10
+[18:21:27] API hombre-busca-mujer/callao p1: cards=30 new=27 total=1825
+[18:21:28] API hombre-busca-mujer/callao p2: cards=30 new=30 total=1855
+[18:21:29] API hombre-busca-mujer/callao p3: cards=30 new=30 total=1885
+[18:21:29] API hombre-busca-mujer/callao p4: cards=30 new=30 total=1915
+[18:21:30] API hombre-busca-mujer/callao p5: cards=30 new=30 total=1945
+[18:21:30] API hombre-busca-mujer/callao p6: cards=30 new=30 total=1975
+[18:21:31] API hombre-busca-mujer/callao p7: cards=30 new=30 total=2005
+[18:21:31] EARLY STOP gather at 2005 unique
+[18:21:31] GATHER doplim unique=2005 in 39.6s
+[18:21:31] wrote /Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/seeds_doplim_fast_1783552846.jsonl
+[18:21:31] FETCH start candidates=2005
+[18:21:47] SAVED doplim n=1525 title='QUIERO CONOCER UNA MUJER DE TES BLANCA SOLTERA MN' file=doplim_fast_31de6ab253ff2290.html
+[18:21:48] PROGRESS done=50/2005 saved=35 doplim=1535 evisos=0 skip=22 rate=127.8/min
+[18:21:55] SAVED doplim n=1550 title='Ayuda economica para las señoritas' file=doplim_fast_b9591dd4c91e28a2.html
+[18:22:00] PROGRESS done=100/2005 saved=70 doplim=1570 evisos=0 skip=43 rate=146.0/min
+[18:22:03] SAVED doplim n=1575 title='Brindo servicio ha señoras' file=doplim_fast_a2abd97ecf5c7770.html
+[18:22:08] PROGRESS done=150/2005 saved=95 doplim=1595 evisos=0 skip=56 rate=154.2/min
+[18:22:11] SAVED doplim n=1600 title='Busco mujer madura para encuentro ocasional' file=doplim_fast_31d2a873375b07f3.html
+[18:22:11] PROGRESS done=200/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.9/min
+[18:22:11] PROGRESS done=250/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.9/min
+[18:22:11] PROGRESS done=300/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=350/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=400/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=450/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=500/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=550/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=600/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=650/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=700/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=750/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=800/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=850/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=900/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=950/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1000/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1050/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1100/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1150/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1200/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1250/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1300/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1350/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1400/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1450/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1500/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1550/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1600/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1650/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1700/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1750/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1800/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1850/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1900/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=1950/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:11] PROGRESS done=2000/2005 saved=100 doplim=1600 evisos=0 skip=56 rate=148.8/min
+[18:22:14] FINAL {'log': '/Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/collect_fast_1783552846.log', 'candidates': 2005, 'counters': {'doplim': 1600, 'evisos': 0, 'skip': 56, 'saved': 100, 'err': 0}, 'start_counts': {'doplim': 1500, 'evisos': 0, 'other': 1930}, 'end_counts': {'doplim': 1600, 'evisos': 0, 'other': 1930}, 'elapsed_s': 41.8, 'ads_per_min': 143.5, 'finished_at': '2026-07-08T23:22:14Z'}

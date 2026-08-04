@@ -1,0 +1,9 @@
+[16:22:07] START Doplim chiclayo (main li.cnt-list_ads ONLY, tuned)
+[16:22:07] base=https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=chiclayo
+[16:22:07] LIST p1: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=chiclayo
+[16:23:29]   main li.cnt-list_ads IDs: 0
+[16:23:30] LIST p2: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=chiclayo&page=2
+[16:24:37]   main li.cnt-list_ads IDs: 0
+[16:24:38] LIST p3: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=chiclayo&page=3
+[16:25:51]   main li.cnt-list_ads IDs: 0
+[16:25:51] DONE Doplim chiclayo: added=0

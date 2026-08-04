@@ -1,0 +1,2 @@
+[2026-07-04T20:25:23.256165Z] === FOCUSED LOCANTO HOMBRE-BUSCA-MUJER COLLECTOR START ===
+[2026-07-04T20:25:23.258366Z] Following scraping_strategy_guide.md exactly: search-first, robust fetch_playwright only on directs, gates, full raw+redact, PII check, dedup sha, append only qualifying to manifest.

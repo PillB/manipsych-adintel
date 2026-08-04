@@ -1,0 +1,68 @@
+[20:11:52] after hombre-busca-mujer q='ayuda economica' unique=300
+[20:12:07] after hombre-busca-mujer q='apoyo economico' unique=548
+[20:12:14] after hombre-busca-mujer q='brindo ayuda' unique=757
+[20:12:20] after hombre-busca-mujer q='doy ayuda' unique=972
+[20:12:25] after hombre-busca-mujer q='brindo apoyo' unique=1200
+[20:12:30] after hombre-busca-mujer q='ayuda a señoritas' unique=1308
+[20:12:37] after hombre-busca-mujer q='doy apoyo' unique=1552
+[20:12:42] after hombre-busca-mujer q='ofrezco ayuda' unique=1765
+[20:12:48] after hombre-busca-mujer q='ayuda universitaria' unique=1952
+[20:12:54] after hombre-busca-mujer q='apoyo a estudiantes' unique=2146
+[20:12:55] after hombre-busca-mujer q='sugar daddy' unique=2154
+[20:13:00] after hombre-busca-mujer q='caballero ayuda' unique=2293
+[20:13:05] after hombre-busca-mujer q='profesional ayuda' unique=2456
+[20:13:11] after hombre-busca-mujer q='ayuda discreta' unique=2615
+[20:13:17] after hombre-busca-mujer q='apoyo a mujeres' unique=2718
+[20:13:20] after hombre-busca-mujer q='ayudo economicamente' unique=2811
+[20:13:21] after hombre-busca-mujer q='brindo apoyo economico' unique=2811
+[20:13:22] after relaciones-ocasionales q='ayuda economica' unique=2814
+[20:13:23] after relaciones-ocasionales q='apoyo economico' unique=2820
+[20:13:24] after relaciones-ocasionales q='brindo ayuda' unique=2820
+[20:13:26] after relaciones-ocasionales q='doy ayuda' unique=2823
+[20:13:26] after relaciones-ocasionales q='brindo apoyo' unique=2823
+[20:13:27] after relaciones-ocasionales q='ayuda a señoritas' unique=2823
+[20:13:28] after relaciones-ocasionales q='doy apoyo' unique=2823
+[20:13:29] after relaciones-ocasionales q='ofrezco ayuda' unique=2823
+[20:13:30] after relaciones-ocasionales q='ayuda universitaria' unique=2823
+[20:13:31] after relaciones-ocasionales q='apoyo a estudiantes' unique=2825
+[20:13:32] after relaciones-ocasionales q='sugar daddy' unique=2825
+[20:13:33] after relaciones-ocasionales q='caballero ayuda' unique=2828
+[20:13:34] after relaciones-ocasionales q='profesional ayuda' unique=2828
+[20:13:36] after relaciones-ocasionales q='ayuda discreta' unique=2828
+[20:13:37] after relaciones-ocasionales q='apoyo a mujeres' unique=2828
+[20:13:37] after relaciones-ocasionales q='ayudo economicamente' unique=2828
+[20:13:38] after relaciones-ocasionales q='brindo apoyo economico' unique=2828
+[20:13:44] after contactos q='ayuda economica' unique=2919
+[20:13:49] after contactos q='apoyo economico' unique=3020
+[20:13:55] after contactos q='brindo ayuda' unique=3047
+[20:14:00] after contactos q='doy ayuda' unique=3088
+[20:14:05] after contactos q='brindo apoyo' unique=3133
+[20:14:07] after contactos q='ayuda a señoritas' unique=3134
+[20:14:12] after contactos q='doy apoyo' unique=3178
+[20:14:18] after contactos q='ofrezco ayuda' unique=3237
+[20:14:23] after contactos q='ayuda universitaria' unique=3346
+[20:14:29] after contactos q='apoyo a estudiantes' unique=3437
+[20:14:31] after contactos q='sugar daddy' unique=3471
+[20:14:37] after contactos q='caballero ayuda' unique=3596
+[20:14:43] after contactos q='profesional ayuda' unique=3631
+[20:14:48] after contactos q='ayuda discreta' unique=3674
+[20:14:54] after contactos q='apoyo a mujeres' unique=3708
+[20:14:59] after contactos q='ayudo economicamente' unique=3733
+[20:15:00] after contactos q='brindo apoyo economico' unique=3733
+[20:15:00] GATHER unique=3733
+[20:15:00] pending=3733
+[20:15:16] PROGRESS done=1/3733 saved=1 skip=0 err=0 rate=29.7/min doplim_ayuda_c55b3fcff6439ec7.html
+[20:15:18] PROGRESS done=10/3733 saved=10 skip=0 err=0 rate=153.0/min doplim_ayuda_82a7f1f140ec7075.html
+[20:15:21] PROGRESS done=25/3733 saved=25 skip=0 err=0 rate=220.3/min doplim_ayuda_60f8b9437fe17160.html
+[20:15:24] PROGRESS done=50/3733 saved=50 skip=0 err=0 rate=284.9/min doplim_ayuda_b8cc668a3c3750e7.html
+[20:15:32] PROGRESS done=100/3733 saved=99 skip=1 err=0 rate=320.7/min doplim_ayuda_d1f13b173b5e88fa.html
+[20:15:32] PROGRESS done=101/3733 saved=100 skip=1 err=0 rate=322.5/min doplim_ayuda_f5819b8d0c795540.html
+[20:15:40] PROGRESS done=150/3733 saved=149 skip=1 err=0 rate=338.3/min doplim_ayuda_ad77d831bb73b5c1.html
+[20:15:48] PROGRESS done=200/3733 saved=199 skip=1 err=0 rate=348.0/min doplim_ayuda_4a503e6a7415383d.html
+[20:15:48] PROGRESS done=201/3733 saved=200 skip=1 err=0 rate=348.4/min doplim_ayuda_3e1f355b876f526b.html
+[20:15:56] PROGRESS done=250/3733 saved=247 skip=3 err=0 rate=351.7/min doplim_ayuda_f85a8eeb97c6e37c.html
+[20:16:04] PROGRESS done=300/3733 saved=295 skip=5 err=0 rate=350.0/min doplim_ayuda_582d8783583ee0e7.html
+[20:16:06] PROGRESS done=305/3733 saved=300 skip=5 err=0 rate=346.8/min doplim_ayuda_7fa588537141cb68.html
+[20:16:13] PROGRESS done=350/3733 saved=345 skip=5 err=0 rate=350.0/min doplim_ayuda_d00e9c2a5252f4cf.html
+[20:16:21] PROGRESS done=400/3733 saved=393 skip=7 err=0 rate=351.4/min doplim_ayuda_f9ac536e356c5018.html
+[20:16:22] PROGRESS done=407/3733 saved=400 skip=7 err=0 rate=352.4/min doplim_ayuda_00bcd0ba4acc57fd.html

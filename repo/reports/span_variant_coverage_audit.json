@@ -1,0 +1,632 @@
+{
+  "missed_examples": [
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_0077371399bd6d105d10a6073d0a88d5a772a041210963a3ae9dbac1c54ee712",
+      "span": [
+        57,
+        77
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_01d396114f9ad4d20662cd181ef78a54674951ac0b3e1ba13032b43db2d39a8d",
+      "span": [
+        3,
+        23
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_030762cb4ed7a09001c8fbdcda4fbdcfa92a2516be811f3ded3deaba38936368",
+      "span": [
+        48,
+        68
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_030764e186d6b4a7f65d5ea3c21d082e4a0f1dda3d0fee79a4dd3f197a45b63f",
+      "span": [
+        49,
+        69
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_0d80accb4773bba90d2226ae415fc29871b9e6ea212bcf51bfdcd64d973b8eb9",
+      "span": [
+        49,
+        69
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_0e00346e7162fc50d37f75f8740bc8929c5b81962c13ce16ebf9f8da6aa95a92",
+      "span": [
+        29,
+        49
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_15380221c7cb4ec0ea95a38cf53d214acc295b1ea5aecb706b4d025235719de4",
+      "span": [
+        12,
+        32
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_1b6fce52c6101b0d0aa4986505840601a691ab135e5a952d5af51e9641bf6d86",
+      "span": [
+        31,
+        51
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_1cf81fd979e917fa8a3ed256ed186763bce3368315b25677dbae8cdab522bfde",
+      "span": [
+        8,
+        28
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_20b108592a9f28fe5f9fd8703d36da15102862c1f73ff759c8c08b550b9d03e6",
+      "span": [
+        0,
+        20
+      ],
+      "text": "Ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_247d09bfd2e661a908eaa4a8d2e4fb41d78f12531c89ce16fd71111b9b09aa4b",
+      "span": [
+        0,
+        20
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_26e85b8ae58d3b331dd49c76997db344e55e84d9a25f047e5a75c297bda9f7df",
+      "span": [
+        65,
+        85
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_29682c16613db45c0e37123b9caef187953b9f744780e65cab08593d2a039956",
+      "span": [
+        5,
+        25
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_2d38260514893375264bb5241d06c749cad8bc0a01260e03056ac0c1c26cce38",
+      "span": [
+        58,
+        78
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_2db53ce83953025d00ff5f7ae2bfbefb1c56692f00a37bc95a67bcea6df5ab38",
+      "span": [
+        0,
+        20
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_2db53ce83953025d00ff5f7ae2bfbefb1c56692f00a37bc95a67bcea6df5ab38",
+      "span": [
+        48,
+        68
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_34147d194197e0b2ad0132fdd983f6aff2921d619973a871185f3282cb921ca6",
+      "span": [
+        0,
+        20
+      ],
+      "text": "ayuda economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_35659f7315e11122223723ae592708a1f84aa56c305cd395f5c81b250c7af3b3",
+      "span": [
+        0,
+        20
+      ],
+      "text": "Ayudo Economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_3a813151c299ec7a448c60ba23a32aafa832137be8f2856227530a63d588598d",
+      "span": [
+        3,
+        23
+      ],
+      "text": "apoyo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_3aade6d951942feec332196e2dc152627137b627a61919d67c30c5c908d53170",
+      "span": [
+        3,
+        23
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_3d5ce9df2488353022385b48850aa319ddb966be72292fdc1bf3c719b77cdfb7",
+      "span": [
+        98,
+        118
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_4582638252a1c2c2b760caab8e5b2c142036fb72f87bf36c6cb9df990cc216e2",
+      "span": [
+        3,
+        23
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_474b725d5816d4d9f1551fc4dfbad749d110168394cc1981449c3a9077b8695c",
+      "span": [
+        36,
+        56
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_4fe11ecd12a3b3b5aaf673f8aacf07391b2a998aea8cc93c656519f965e7b676",
+      "span": [
+        0,
+        20
+      ],
+      "text": "Ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_50311ef769b22b1c4af00f3c9c1d74f1498f21eeaa1571e28eb29abef16368c6",
+      "span": [
+        66,
+        86
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_5d4a6f17d12c980f5609110268d866333725a71fec8aa944743a65912094943b",
+      "span": [
+        40,
+        60
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_6374e4993acef7943abae9a8f48ee99b4a67ed0a5032753fc222059bc81ed599",
+      "span": [
+        124,
+        144
+      ],
+      "text": "apoyo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_6a15c93494b587daddb8913f3cc772946366b5b3e32b344f8d18afff50b93d9e",
+      "span": [
+        4,
+        24
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_742edc88806a956799eb0ca91bf095d5f3faac92bd99bea8cc4b1cb51b6cb648",
+      "span": [
+        76,
+        96
+      ],
+      "text": "apoyo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_832f7e8a5f0f5fad46dc544ddf50e62cbf0c78dada48d8104f1c512bf8b0f198",
+      "span": [
+        3,
+        23
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_90734a9948c57c166b2fa43a700e253d0ebd7246be0716a26afd2cbc77e2416d",
+      "span": [
+        0,
+        20
+      ],
+      "text": "Ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_9f6000e9f57a54af87da004df7f6889ff7c551c757d9acfc27d2070d67027068",
+      "span": [
+        70,
+        90
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_b0013562b50f7d592f452dfdb69f140f7f2e122b72eeba9c822b6cdd0d13635d",
+      "span": [
+        26,
+        46
+      ],
+      "text": "Apoyo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_b1c6bdc4c2c9f1fc1557ffaf9a2cf2ec2aa8b684d136e1ada647d227e7c3a7a8",
+      "span": [
+        40,
+        60
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_b924c075fcd7ae6cde12e3232b108d1c76e41609d12722c91ae0cb9a632728c3",
+      "span": [
+        37,
+        57
+      ],
+      "text": "ayuda ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_bb9a30301042609949f0307bfbca15836fec477e2f3b106f87c776a758d59901",
+      "span": [
+        0,
+        20
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_bbe018d113163e9cd8cca12259238294995eec81644c24ab9e202b9a8943c5d1",
+      "span": [
+        44,
+        64
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_bddd195be33551be269658ca57b23ffd3eabe851b36375ce0642e3fb3b47688e",
+      "span": [
+        0,
+        20
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_c26d501cc826f88a2b2a498cab5cfc05275e7494eb47cc23cd4afcd7003d83b6",
+      "span": [
+        95,
+        115
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_c47efd765a0f4934f56f42956c2eca2a395a81d2901dcdcc5e1b822db959dd13",
+      "span": [
+        3,
+        23
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_cea3fa11a6f413a788a0efafa506d95935aef2691df1634ea3dc6009759ab986",
+      "span": [
+        120,
+        140
+      ],
+      "text": "AYUDO ECONOMICAMENTE",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_d3196f534e19da2d81ef63edd867dc7f48dd58120780af1fbf4fb0cb3bf20122",
+      "span": [
+        0,
+        20
+      ],
+      "text": "Ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_d6dfee4aabd8f02203fa0b08cde8c7a4ba761adc8c7f14b415187496fdcd2908",
+      "span": [
+        0,
+        20
+      ],
+      "text": "Ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_d98c9fe0c7bc342671eb6e316f121daabc86397cf7109b30fbdfbcd860aa5749",
+      "span": [
+        58,
+        78
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_dae0a866aa67ce9b2f66ec086db20a26c79883ca45c4f91c1236c34eac83e324",
+      "span": [
+        57,
+        77
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_e131e9023fa7eeb80e68ec2165be666f81cde121545eb5fd4c756ad6288e3efe",
+      "span": [
+        3,
+        23
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_e131e9023fa7eeb80e68ec2165be666f81cde121545eb5fd4c756ad6288e3efe",
+      "span": [
+        52,
+        72
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_e142b9e2aed1bee8408b71b6032bdfdbe32580507ae500a0ecd8e8d6e72ea7de",
+      "span": [
+        8,
+        28
+      ],
+      "text": "ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "reciprocity_obligation"
+      ],
+      "record_id": "h_f2363b575e39021763ecef8856560b0bd9c4e34c410a36e4f50569f4eadbf006",
+      "span": [
+        0,
+        20
+      ],
+      "text": "Ayudo economicamente",
+      "variant_group": "support_economic_adverbial"
+    },
+    {
+      "expected_labels": [
+        "conditional_financial_support"
+      ],
+      "record_id": "h_1c0672f0e63052a55777ed8364396f5dc1fc6e48cfde88b70630b11f79357a02",
+      "span": [
+        229,
+        244
+      ],
+      "text": "por cada salida",
+      "variant_group": "conditional_exchange"
+    }
+  ],
+  "status": "review_needed",
+  "variant_groups": {
+    "conditional_exchange": {
+      "coverage": 0.9906,
+      "hits": 1602,
+      "missed": 15
+    },
+    "platform_slang_typo": {
+      "coverage": 0.981,
+      "hits": 736,
+      "missed": 14
+    },
+    "privacy_typo": {
+      "coverage": 0.9417,
+      "hits": 2589,
+      "missed": 151
+    },
+    "support_economic_adverbial": {
+      "coverage": 0.125,
+      "hits": 56,
+      "missed": 49
+    },
+    "support_economic_gender_typo": {
+      "coverage": 1.0,
+      "hits": 9474,
+      "missed": 0
+    }
+  }
+}

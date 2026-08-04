@@ -1,0 +1,13 @@
+[16:33:50] START Doplim category arequipa (main li.cnt-list_ads ONLY, tuned)
+[16:33:50] base=https://www.doplim.com.pe/s/hombre-busca-mujer/arequipa/
+[16:33:50] LIST p1: https://www.doplim.com.pe/s/hombre-busca-mujer/arequipa/
+[16:34:51]   main li.cnt-list_ads IDs: 4
+[16:35:27]   + https://camana.doplim.com.pe/doy-sexo-gratis-a-senoras-maduras-id-1516
+[16:35:57]   + https://arequipa-capital.doplim.com.pe/busco-srta-o-sra-gorditagorda-d
+[16:36:27]   + https://arequipa-capital.doplim.com.pe/se-brinda-apoyo-economico-a-uni
+[16:37:04]   + https://arequipa-capital.doplim.com.pe/ayuda-economica-sin-prejuicios-
+[16:37:05] LIST p2: https://www.doplim.com.pe/s/hombre-busca-mujer/arequipa/?page=2
+[16:38:02]   main li.cnt-list_ads IDs: 4
+[16:38:03] LIST p3: https://www.doplim.com.pe/s/hombre-busca-mujer/arequipa/?page=3
+[16:39:20]   main li.cnt-list_ads IDs: 4
+[16:39:20] DONE Doplim cat arequipa: added=4

@@ -1,0 +1,73 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+START Doplim category chiclayo (main li.cnt-list_ads ONLY, tuned)
+base=https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/
+LIST p1: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/
+  main li.cnt-list_ads IDs: 10
+  + https://chiclayo.doplim.com.pe/soy-un-joven-que-busca-pagar-sus-estudi
+  + https://chiclayo.doplim.com.pe/brindo-ayuda-economica-id-1515832.html
+  + https://chiclayo.doplim.com.pe/ofrezco-apoyo-economico-a-mujer-soltera
+  + https://chiclayo.doplim.com.pe/universitario-busca-apoyo-economico-id-
+  + https://chiclayo.doplim.com.pe/se-ofrece-apoyo-economico-a-mujer-de-25
+  + https://chiclayo.doplim.com.pe/se-brinda-ayuda-economica-a-mujer-25-30
+LIST p2: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=2
+  main li.cnt-list_ads IDs: 10
+LIST p3: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=3
+  main li.cnt-list_ads IDs: 10
+LIST p4: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=4
+  main li.cnt-list_ads IDs: 10
+LIST p5: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=5
+  main li.cnt-list_ads IDs: 10
+LIST p6: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=6
+  main li.cnt-list_ads IDs: 10
+  + https://chiclayo.doplim.com.pe/busco-mujeres-de-toda-edad-no-importa-s
+LIST p7: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=7
+  main li.cnt-list_ads IDs: 10
+LIST p8: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=8
+  main li.cnt-list_ads IDs: 10
+LIST p9: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=9
+  main li.cnt-list_ads IDs: 10
+LIST p10: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=10
+  main li.cnt-list_ads IDs: 10
+LIST p11: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=11
+  main li.cnt-list_ads IDs: 10
+LIST p12: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=12
+  main li.cnt-list_ads IDs: 10
+LIST p13: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=13
+  main li.cnt-list_ads IDs: 10
+LIST p14: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=14
+  main li.cnt-list_ads IDs: 10
+LIST p15: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=15
+  main li.cnt-list_ads IDs: 10
+LIST p16: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=16
+  main li.cnt-list_ads IDs: 10
+LIST p17: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=17
+  main li.cnt-list_ads IDs: 10
+LIST p18: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=18
+  main li.cnt-list_ads IDs: 10
+LIST p19: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=19
+  main li.cnt-list_ads IDs: 10
+LIST p20: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=20
+  main li.cnt-list_ads IDs: 10
+LIST p21: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=21
+  main li.cnt-list_ads IDs: 10
+LIST p22: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=22
+  main li.cnt-list_ads IDs: 10
+  + https://chiclayo.doplim.com.pe/busco-mujeres-maduras-id-1447258.html
+LIST p23: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=23
+  main li.cnt-list_ads IDs: 10
+  + https://chiclayo.doplim.com.pe/servicio-a-mujeres-de-18-a-30-anos-id-1
+LIST p24: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=24
+  main li.cnt-list_ads IDs: 10
+LIST p25: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=25
+  main li.cnt-list_ads IDs: 10
+LIST p26: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=26
+  main li.cnt-list_ads IDs: 10
+LIST p27: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=27
+  main li.cnt-list_ads IDs: 10
+LIST p28: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=28
+  main li.cnt-list_ads IDs: 10
+LIST p29: https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/?page=29
+  main li.cnt-list_ads IDs: 10
+DONE Doplim cat chiclayo: added=9
+DONE chiclayo added=9

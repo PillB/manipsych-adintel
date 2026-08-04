@@ -1,0 +1,38 @@
+{
+  "constraints_observed": [
+    "No ad detail pages fetched.",
+    "No login, CAPTCHA solving, proxies, stealth bypass, or access-control circumvention used.",
+    "Main manifest, harvested seeds, rejected seed list, phase4 search log, and shared docs were not modified."
+  ],
+  "counts": {
+    "candidate_seeds_written": 464,
+    "duplicates_collapsed": 1174,
+    "locanto_direct_mentions": 5164,
+    "manifest_original_urls_loaded": 127,
+    "raw_url_mentions": 20668,
+    "rejected_urls_loaded": 1,
+    "skipped_known_manifest_or_rejected": 618,
+    "skipped_no_male_offering_cue_in_url_or_title": 1642,
+    "skipped_no_priority_terms_in_url_or_title": 1129,
+    "skipped_seeker_side": 137,
+    "source_files_scanned": 484
+  },
+  "filter_note": "Candidate URL/title must contain ayuda/apoyo economico/economica signal and a male-offering cue; text provides local artifact context only.",
+  "network_search_note": "Tried public search-result queries through available web search; no usable fresh direct Locanto results were returned, so output is mined from existing local artifacts only.",
+  "outputs": {
+    "candidate_seeds": "data/agent_runs/seed_d/candidate_seeds.jsonl",
+    "summary": "reports/agent_runs/seed_d/summary.json"
+  },
+  "search_queries_used": [
+    "site:locanto.com.pe/ ID_ \"Brindo ayuda economica\" \"Hombre busca Mujer\"",
+    "site:locanto.com.pe/ ID_ \"Doy ayuda\" \"apoyo economico\" \"Hombre busca Mujer\"",
+    "site:locanto.com.pe/ ID_ \"Brindo apoyo economico\" \"senorita\" \"Peru\"",
+    "site:locanto.com.pe/ ID_ \"ayuda económica\" \"caballero\"",
+    "locanto.com.pe ID_ \"Brindo apoyo economico\"",
+    "locanto.com.pe ID_ \"Brindo ayuda económica\"",
+    "locanto.com.pe ID_ \"Doy ayuda economica\"",
+    "locanto.com.pe ID_ \"apoyo económico\" \"chicas\""
+  ],
+  "task_focus": "Locanto Peru /ID_ direct URL candidates for hombre-busca-mujer with ayuda/apoyo economico and male-offering cues",
+  "worker": "seed_d"
+}

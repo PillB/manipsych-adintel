@@ -1,0 +1,4 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[Selenium Harvester] Browser launch failed: No chromedriver found. Install ChromeDriver or set SELENIUM_CHROMEDRIVER_PATH, CHROMEDRIVER_PATH, or add chromedriver to PATH. On this Mac, Chrome exists but the driver is missing, which is a common cause of 'Chrome closed unexpectedly'. For a quick recovery, run this script with Playwright instead or install a matching driver.
+[Selenium Harvester] Recovery path: install chromedriver, set SELENIUM_CHROMEDRIVER_PATH, or use Playwright fallback.

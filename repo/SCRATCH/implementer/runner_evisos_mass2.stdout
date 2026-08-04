@@ -1,0 +1,16 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[18:22:00] START evisos_mass target=1500 start_count=0
+[18:22:00] LIST p1 https://www.evisos.com.pe/encuentros.htm: cards=30 new=30 total=30 OK10+
+[18:22:01] LIST p2 https://www.evisos.com.pe/encuentros/clasificados/2: cards=12 new=12 total=42 OK10+
+[18:22:01] LIST p3 https://www.evisos.com.pe/encuentros/clasificados/3: cards=30 new=0 total=42 OK10+
+[18:22:02] LIST loop https://www.evisos.com.pe/encuentros/clasificados/4; stop base
+[18:22:05] LIST p1 https://lima.evisos.com.pe/encuentros.htm: cards=30 new=0 total=42 OK10+
+[18:22:06] LIST p2 https://lima.evisos.com.pe/encuentros/clasificados/2: cards=6 new=0 total=42
+[18:22:08] LIST p3 https://lima.evisos.com.pe/encuentros/clasificados/3: cards=30 new=0 total=42 OK10+
+[18:22:09] LIST loop https://lima.evisos.com.pe/encuentros/clasificados/4; stop base
+[18:22:10] LIST p1 https://www.evisos.com.pe/hombre-busca-mujer.htm: cards=28 new=28 total=70 OK10+
+[18:22:10] LIST p2 https://www.evisos.com.pe/hombre-busca-mujer/clasificados/2: cards=30 new=21 total=91 OK10+
+[18:22:11] LIST p3 https://www.evisos.com.pe/hombre-busca-mujer/clasificados/3: cards=23 new=10 total=101 OK10+
+[18:24:19] LIST p4 https://www.evisos.com.pe/hombre-busca-mujer/clasificados/4: cards=0 new=0 total=101
+[18:26:40] LIST p5 https://www.evisos.com.pe/hombre-busca-mujer/clasificados/5: cards=0 new=0 total=101

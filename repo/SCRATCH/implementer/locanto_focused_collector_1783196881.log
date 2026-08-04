@@ -1,0 +1,4 @@
+[2026-07-04T20:28:01.828183Z] === START FOCUSED LOCANTO DIRECT FETCH BATCH (10 seeds from search-first) ===
+[2026-07-04T20:28:01.830091Z] Strategy: search web_search -> direct ID_ only; robust fetch_playwright UA rot es-PE referer g.pe waits 30s selector scrolls anti-gate len>2500 !cargando !un momento 6+ retries 8-25s backoff fresh ctx; only qualify target+male+substantial; archive_raw, redact, _contains_pii on full, dedup sha, append ONLY to manifest with exact source_platform + metadata.
+[2026-07-04T20:28:01.833855Z] existing_ids=192
+[2026-07-04T20:28:01.834271Z] FETCH_START #1/10: https://www.locanto.com.pe/lima/ID_5574406931/Brindo-ayuda-Ayuda-Economica-Senoritas-hasta-21-anos-de-edad.html

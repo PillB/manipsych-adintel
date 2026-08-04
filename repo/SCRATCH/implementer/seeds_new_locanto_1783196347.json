@@ -1,0 +1,14 @@
+{
+  "discovered_at": "$(date -Iseconds)",
+  "source": "web_search 2026-07-04",
+  "locanto_directs": [
+    "https://www.locanto.com.pe/lima/ID_8658918794/Brindo-apoyo-economico-para-senoritas.html",
+    "https://www.locanto.com.pe/lima/ID_7995095766/BRINDO-APOYO-ECONOMICO-A-SENORITAS-DE-18-A-40-ANOS.html",
+    "https://www.locanto.com.pe/lima/ID_8536942354/Brindo-apoyo-economico-de-18-a-24-anos.html",
+    "https://www.locanto.com.pe/lima/ID_5652125249/DOY-AYUDA-ECONOMICA-A-SENORITAS.html",
+    "https://www.locanto.com.pe/lima/ID_5292850951/Brindo-apoyo-economico-a-Senoritas.html",
+    "https://www.locanto.com.pe/lima/ID_7597046874/Brindo-apoyo-economico-a-chica.html",
+    "https://www.locanto.com.pe/lima/ID_8418716449/Brindo-apoyo-economico-a-senorita.html"
+  ],
+  "notes": "search-first directs for hombre busca mujer. Use only with full gates per guide."
+}

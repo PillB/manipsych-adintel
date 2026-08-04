@@ -1,0 +1,11 @@
+=== LOG REVIEW (verif step 3) ===
+storm_doplim_agent_1783195529.log : RUN_TERMINAL_PYTHON: tools.scrape_ads.fetch_playwright https://huancayo.doplim.com.pe/doy-ayuda-economica-a-jovencitas-o-senoritas-962613729-id-346383
+storm_fb_agent_1783195544.log : [15:21:55] FETCH_PLAYWRIGHT: https://www.facebook.com/groups/925909501757305/posts/16526323324
+ [15:21:55] FETCH_PLAYWRIGHT: https://www.facebook.com/
+storm_locanto_agent_1783195487.log : [15:17:46]   SKIP: failed robust checks (content>2500 !inter has targets + male offering)
+ [15:17:46] FETCH ATTEMPT: https://www.locanto.com.pe/trujil
+
+Recent seeds:
+seeds_fresh_1783196526.json
+seeds_new_locanto_1783196347.json
+Raws count: 327

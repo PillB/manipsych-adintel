@@ -1,0 +1,7 @@
+=== VERIF SNAPSHOT 2026-07-04 15:21
+Main total clean: 186
+Plats: {'Doplim Peru (hombre busca mujer or Contactos)': 60, 'Other indexed public': 6, 'Locanto Peru (hombre busca mujer real)': 88, 'Facebook Public (indexed)': 29, 'Facebook Public (search first)': 2, 'Facebook public group': 1}
+Locanto hombre main: 88
+All have raw: 186
+Gate: PASSED (verified)
+Dedicated: legacy 84 (old schema, no raws) - excluded from counts per contract

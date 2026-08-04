@@ -1,0 +1,14 @@
+[18:28:01] START locanto_fast target=1500 start_tagged_detail=197 content_heuristic≈197 mode=mine
+[18:28:05] MINED 2768 IDs from raw listing archives
+[18:28:05] seeds 2768 -> /Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/seeds_locanto_fast_1783553280.jsonl
+[18:28:05] pending after dedup=1340 (from 2768)
+[18:28:05] FETCH start pending=1340 mode=serial_playwright
+[18:28:19] SAVED 1 total~198 title='Busco chica curvy o gordita para encuentro, Arequipa – ' locanto_fast_7ea5e2eb9ef8b1a2.html
+[18:28:19] PROGRESS done=1/1340 saved=1 skip=0 rate=4.5/min tagged=198
+[18:28:30] SAVED 2 total~199 title='Soy Sugar Daddy Brindo Apoyo Economico en Cajamarca – 3' locanto_fast_46d2e057aae625bb.html
+[18:28:30] PROGRESS done=2/1340 saved=2 skip=0 rate=4.8/min tagged=199
+[18:28:49] SAVED 3 total~200 title='ARMAND CORNEADOR MAÑOSO CACHO Y LLENO DE LECHE A TU ESP' locanto_fast_acd45635f0f75ed0.html
+[18:28:49] PROGRESS done=3/1340 saved=3 skip=0 rate=4.1/min tagged=200
+[18:29:06] SAVED 4 total~201 title='BUSCO DAMA MADURA SENCILLA EN AREQUIPA., Arequipa – 33' locanto_fast_91fcef4a254a9869.html
+[18:29:18] SAVED 5 total~202 title='Soy marco doy ayuda económica a señoritas o señoras, Cu' locanto_fast_890288dc790e07a7.html
+[18:29:18] PROGRESS done=5/1340 saved=5 skip=0 rate=4.1/min tagged=202

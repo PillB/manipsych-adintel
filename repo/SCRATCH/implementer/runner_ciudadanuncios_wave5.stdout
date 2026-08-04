@@ -1,0 +1,71 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[20:49:29] START seeds=601 target=200 max_visit=1200
+[20:49:32] SAVED 1 'Brindo ayuda económica a damas - Lima' ciudadanuncios_73acfbcf35d8337e.html q=586
+[20:49:36] expand-only visited=50 q=561 saved=1
+[20:49:41] expand-only visited=100 q=534 saved=1
+[20:49:46] expand-only visited=150 q=525 saved=1
+[20:49:52] expand-only visited=200 q=507 saved=1
+[20:49:57] expand-only visited=250 q=523 saved=1
+[20:50:03] expand-only visited=300 q=511 saved=1
+[20:50:08] expand-only visited=350 q=522 saved=1
+[20:50:13] expand-only visited=400 q=547 saved=1
+[20:50:18] expand-only visited=450 q=533 saved=1
+[20:50:24] expand-only visited=500 q=516 saved=1
+[20:50:29] expand-only visited=550 q=493 saved=1
+[20:50:34] expand-only visited=600 q=499 saved=1
+[20:50:36] SAVED 2 'Busco ayuda económica - Lima' ciudadanuncios_bf50146c5cf87d38.html q=498
+[20:50:37] SAVED 3 'Ayuda económica - Juliaca' ciudadanuncios_4b6104734cc37a7b.html q=497
+[20:50:37] SAVED 4 'Ayuda económica solo por hoy y mañana - Juliaca' ciudadanuncios_0e736568896442b6.html q=500
+[20:50:38] SAVED 5 'Ayuda económica a mujeres y señoritas de  toda edad - Juliac' ciudadanuncios_97a795cc2745100b.html q=499
+[20:50:38] SAVED 6 'Brindo ayuda economica a señoritas de toda edad - Lima' ciudadanuncios_a681a8c748092482.html q=499
+[20:50:39] SAVED 7 'Ayuda economica para chicas - Juliaca' ciudadanuncios_fd4d0a74a6014b60.html q=500
+[20:50:39] SAVED 8 'Ayuda económica +500 - Juliaca' ciudadanuncios_f1653fbe5e5c4859.html q=499
+[20:50:40] SAVED 10 'Ingeniero ofrece apoyo económico - Lima' ciudadanuncios_eecd867b8864f070.html q=497
+[20:50:44] SAVED 15 'Alguna amiga que busque apoyo económico - Cusco' ciudadanuncios_91a932cbac032e40.html q=493
+[20:50:47] SAVED 20 'Busco amigas 20 años tranquilas para encuentro sexual doy ap' ciudadanuncios_a222d128159be91b.html q=500
+[20:50:48] PROGRESS visited=625 saved=20 skip=605 err=0 queue=500
+[20:50:50] SAVED 25 'Brindo apoyo economico - Lima' ciudadanuncios_69aa4af4e80895b7.html q=496
+[20:50:52] SAVED 30 'Hola busco ayuda económica - Cusco' ciudadanuncios_8e333c6b7d53008c.html q=493
+[20:50:55] SAVED 35 'Se brinda ayuda económica señora o señorita - Puno' ciudadanuncios_1d40f221f84980b0.html q=492
+[20:50:58] SAVED 40 'Joven busca cajeras de supermercados apoyo económico - Lima' ciudadanuncios_326c626d4828b6c6.html q=492
+[20:51:01] PROGRESS visited=650 saved=44 skip=606 err=0 queue=496
+[20:51:01] SAVED 45 'Ayuda económica - Juliaca' ciudadanuncios_3312f70edb8fc2eb.html q=496
+[20:51:05] SAVED 50 'Ayuda economica para chica menor a 25 años - Chiclayo' ciudadanuncios_0977fad9e3bc2f27.html q=498
+[20:51:08] SAVED 55 'Brindó a apoyo económico - Juliaca' ciudadanuncios_6b514268d0946aea.html q=493
+[20:51:11] SAVED 60 'Brindó apoyo económico a mujeres - Puno' ciudadanuncios_3d3f8e0065ebe8a7.html q=494
+[20:51:15] SAVED 65 'Doy apoyo económico a señoritas estudiantes - Cusco' ciudadanuncios_4feb92f6d3b3616d.html q=493
+[20:51:16] PROGRESS visited=675 saved=68 skip=607 err=0 queue=490
+[20:51:17] SAVED 70 'Ayuda económica a señorita universitaria o madre soltera - C' ciudadanuncios_4556a3148c66d2c0.html q=489
+[20:51:20] SAVED 75 'Doy apoyo económico a chicas a cambio de sexo todo con mucha' ciudadanuncios_147ffaded836aa50.html q=493
+[20:51:24] SAVED 80 'Se da ayuda economica - Cusco' ciudadanuncios_b53dcf9a2b45a773.html q=498
+[20:51:27] SAVED 85 'Señorita asistente privada, ayuda economica - Lima' ciudadanuncios_fdc6f2be171e2d45.html q=499
+[20:51:30] SAVED 90 'Apoyo económico - Puno' ciudadanuncios_e55a971940317291.html q=498
+[20:51:33] PROGRESS visited=700 saved=93 skip=607 err=0 queue=495
+[20:51:34] SAVED 95 'Brindo ayuda economica a mujeres - Chiclayo' ciudadanuncios_0e4847af4c0415a5.html q=493
+[20:51:37] SAVED 100 'Se brinda apoyo economico - Tacna' ciudadanuncios_0371e9d00dc6a7ef.html q=489
+[20:51:40] SAVED 105 'Ayuda económica - Juliaca' ciudadanuncios_f8516b60a076c2bd.html q=486
+[20:51:44] SAVED 110 'Señorita o madres solteras de casa, se da ayuda económica - ' ciudadanuncios_3682506670454fcc.html q=483
+[20:51:46] SAVED 115 'Ofrezco ayuda economica 2021 - Lima' ciudadanuncios_78fa2ecdf0343f52.html q=481
+[20:51:48] PROGRESS visited=725 saved=117 skip=608 err=0 queue=481
+[20:51:50] SAVED 120 'Ayuda económica para mujeres de toda edad 917076690 - Huánuc' ciudadanuncios_9ad8ae0bc46a388c.html q=486
+[20:51:54] SAVED 125 'Se brinda apoyo económico - Camaná' ciudadanuncios_6b4ffd6f3ca298bb.html q=483
+[20:51:57] SAVED 130 'Busco pareja  de esposos de 45años doy ayuda economico - Lim' ciudadanuncios_fe41c15539caf1d4.html q=485
+[20:52:00] SAVED 135 'Doy apoyo económico - Juliaca' ciudadanuncios_c0baafb516853d38.html q=484
+[20:52:03] SAVED 140 'Brindo ayuda a damas en apuros - Tacna' ciudadanuncios_6cbbe14d32048d00.html q=479
+[20:52:04] PROGRESS visited=750 saved=141 skip=609 err=0 queue=478
+[20:52:06] SAVED 145 'Se da apoyo económico a señoras de edad polleronas no import' ciudadanuncios_c5090ca6d3a3b124.html q=481
+[20:52:09] SAVED 150 'Busco activ0 se da apoyo economico - Juliaca' ciudadanuncios_bcf1d73a27411f9f.html q=481
+[20:52:12] SAVED 155 'Ayuda economica - Juliaca' ciudadanuncios_da23e6306e840b6f.html q=478
+[20:52:14] SAVED 160 'Ayuda económica a señorita a cambio de compañía - NO SEXO - ' ciudadanuncios_020b0f83491576a2.html q=478
+[20:52:18] SAVED 165 'Ayuda economica puno - Puno' ciudadanuncios_e4681f2974330be8.html q=478
+[20:52:18] PROGRESS visited=775 saved=165 skip=610 err=0 queue=478
+[20:52:22] SAVED 170 'Ayuda económica - Juliaca' ciudadanuncios_6235bc1f57fb106e.html q=473
+[20:52:25] SAVED 175 'Brindo apoyo económico solo a srtas y señoras - Trujillo' ciudadanuncios_b1668fc30d41f391.html q=475
+[20:52:29] SAVED 180 'Brindo apoyo economico a danas - Lima' ciudadanuncios_fb28481aeeea959d.html q=476
+[20:52:32] SAVED 185 'Apoyo económico - Trujillo' ciudadanuncios_9851c55a95fd619a.html q=471
+[20:52:34] PROGRESS visited=800 saved=189 skip=611 err=0 queue=470
+[20:52:34] SAVED 190 'Se brinda ayuda económica - Huánuco' ciudadanuncios_d596353c650a1f0e.html q=469
+[20:52:39] SAVED 195 'Busco chica de 18 aos que venga a estudiar a lima para ayuda' ciudadanuncios_3f5d721971f7abf9.html q=467
+[20:52:42] SAVED 200 'Doy ayuda economica - Juliaca' ciudadanuncios_d91617a31fe0a381.html q=465
+[20:52:42] DONE saved=200 skip=611 err=0 visited=811 queue_left=465

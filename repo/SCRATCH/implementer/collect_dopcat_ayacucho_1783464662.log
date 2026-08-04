@@ -1,0 +1,68 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+START Doplim cat ayacucho (main li.cnt-list_ads ONLY, tuned)
+base=https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/
+LIST p1: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/
+  main li.cnt-list_ads IDs: 7
+  + https://nazca.doplim.com.pe/doy-ayuda-economica-constante-a-senoritas-
+  + https://lima.doplim.com.pe/brindo-ayuda-economica-chicas-de-18-a-24-id
+  + https://lima.doplim.com.pe/brindo-ayuda-economica-a-senoritas-universi
+LIST p2: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=2
+  main li.cnt-list_ads IDs: 7
+LIST p3: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=3
+  main li.cnt-list_ads IDs: 7
+LIST p4: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=4
+  main li.cnt-list_ads IDs: 7
+LIST p5: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=5
+  main li.cnt-list_ads IDs: 7
+LIST p6: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=6
+  main li.cnt-list_ads IDs: 7
+LIST p7: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=7
+  main li.cnt-list_ads IDs: 7
+LIST p8: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=8
+  main li.cnt-list_ads IDs: 7
+LIST p9: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=9
+  main li.cnt-list_ads IDs: 7
+LIST p10: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=10
+  main li.cnt-list_ads IDs: 7
+LIST p11: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=11
+  main li.cnt-list_ads IDs: 7
+  + https://lima.doplim.com.pe/tomas-valle-y-elmer-fosset-el-relax-de-id-1
+LIST p12: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=12
+  main li.cnt-list_ads IDs: 7
+LIST p13: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=13
+  main li.cnt-list_ads IDs: 7
+LIST p14: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=14
+  main li.cnt-list_ads IDs: 7
+LIST p15: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=15
+  main li.cnt-list_ads IDs: 7
+LIST p16: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=16
+  main li.cnt-list_ads IDs: 7
+LIST p17: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=17
+  main li.cnt-list_ads IDs: 7
+LIST p18: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=18
+  main li.cnt-list_ads IDs: 7
+LIST p19: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=19
+  main li.cnt-list_ads IDs: 7
+LIST p20: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=20
+  main li.cnt-list_ads IDs: 7
+LIST p21: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=21
+  main li.cnt-list_ads IDs: 7
+LIST p22: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=22
+  main li.cnt-list_ads IDs: 7
+LIST p23: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=23
+  main li.cnt-list_ads IDs: 7
+LIST p24: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=24
+  main li.cnt-list_ads IDs: 7
+LIST p25: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=25
+  main li.cnt-list_ads IDs: 7
+LIST p26: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=26
+  main li.cnt-list_ads IDs: 7
+LIST p27: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=27
+  main li.cnt-list_ads IDs: 7
+LIST p28: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=28
+  main li.cnt-list_ads IDs: 7
+LIST p29: https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/?page=29
+  main li.cnt-list_ads IDs: 7
+DONE Doplim cat ayacucho: added=4
+DONE ayacucho added=4

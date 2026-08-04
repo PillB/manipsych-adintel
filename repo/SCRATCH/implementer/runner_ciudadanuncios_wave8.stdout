@@ -1,0 +1,83 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[21:01:58] START seeds=1200 target=200 max_visit=2000
+[21:02:04] expand-only visited=50 q=1159 saved=0
+[21:02:10] expand-only visited=100 q=1113 saved=0
+[21:02:16] expand-only visited=150 q=1074 saved=0
+[21:02:21] expand-only visited=200 q=1041 saved=0
+[21:02:27] expand-only visited=250 q=999 saved=0
+[21:02:33] expand-only visited=300 q=960 saved=0
+[21:02:39] expand-only visited=350 q=910 saved=0
+[21:02:45] expand-only visited=400 q=873 saved=0
+[21:02:51] expand-only visited=450 q=833 saved=0
+[21:02:57] expand-only visited=500 q=788 saved=0
+[21:03:02] expand-only visited=550 q=745 saved=0
+[21:03:08] expand-only visited=600 q=705 saved=0
+[21:03:14] expand-only visited=650 q=658 saved=0
+[21:03:20] expand-only visited=700 q=611 saved=0
+[21:03:27] expand-only visited=750 q=565 saved=0
+[21:03:33] expand-only visited=800 q=545 saved=0
+[21:03:39] expand-only visited=850 q=528 saved=0
+[21:03:45] expand-only visited=900 q=488 saved=0
+[21:03:51] expand-only visited=950 q=468 saved=0
+[21:03:57] expand-only visited=1000 q=436 saved=0
+[21:04:03] expand-only visited=1050 q=396 saved=0
+[21:04:09] expand-only visited=1100 q=365 saved=0
+[21:04:15] expand-only visited=1150 q=342 saved=0
+[21:04:21] expand-only visited=1200 q=314 saved=0
+[21:04:24] SAVED 1 'Se da ayuda económica a venezolanos - Tacna' ciudadanuncios_60c0748b6bbd6ad3.html q=311
+[21:04:25] SAVED 2 'Se da ayuda económica a venezolanos - Arequipa' ciudadanuncios_2f35b0da401af2a1.html q=310
+[21:04:25] SAVED 3 'Apoyo económico para un joven - Lima' ciudadanuncios_abb0a3e9c6f31f01.html q=310
+[21:04:26] SAVED 4 'Solo estos días busco ayuda económica 959 110 443 - Juliaca' ciudadanuncios_2b1f7463a8e21ac3.html q=309
+[21:04:27] SAVED 5 'Vengan a puno a dar ayuda económica - Juliaca' ciudadanuncios_714a1b32ecb7e7fa.html q=309
+[21:04:27] SAVED 6 'Busco ayuda económica - Arequipa' ciudadanuncios_b08bd23a6a49c92a.html q=312
+[21:04:28] SAVED 7 'Apoyo economico - Mala' ciudadanuncios_1db5f0d649065f47.html q=311
+[21:04:29] SAVED 8 'Hola buenos dias como estas soy dania y busco ayuda economic' ciudadanuncios_faf8af0abb04d4f0.html q=314
+[21:04:31] SAVED 10 'Apoyo economico - Lambayeque' ciudadanuncios_6bb18a5ccc94f476.html q=312
+[21:04:35] SAVED 15 'Doy ayuda económica a damitas y caprichos - Huánuco' ciudadanuncios_7c3ac4f9fbdb9f8d.html q=313
+[21:04:37] PROGRESS visited=1225 saved=17 skip=1208 err=0 queue=309
+[21:04:39] SAVED 20 'Doy ayuda económica - Lima' ciudadanuncios_90fa1a338f5efbf3.html q=307
+[21:04:42] SAVED 25 'Brindo apoyo a damas - Lima' ciudadanuncios_a3c4ce110dccea1d.html q=307
+[21:04:46] SAVED 30 '969705269 doy ayuda económica a mujeres soy jerson - Huánuco' ciudadanuncios_85e0d75c378014f5.html q=301
+[21:04:48] SAVED 35 'Alguna amiga que quiera apoyo economico a cambio de intimida' ciudadanuncios_eb6c6cafc6094f2c.html q=299
+[21:04:51] SAVED 40 'Busco activos mayores de 50años doy ayuda economico - Lima' ciudadanuncios_c9da945b70ce1347.html q=294
+[21:04:51] PROGRESS visited=1250 saved=40 skip=1210 err=0 queue=294
+[21:04:54] SAVED 45 'Ayuda económica por una hora para chicas de cualquier edad 9' ciudadanuncios_6b63f7b01323a8db.html q=289
+[21:04:58] SAVED 50 'Hola soy nuevo necesito ayuda económica dispuesto a todo pun' ciudadanuncios_eac87480ea38accc.html q=289
+[21:05:00] SAVED 55 'Tengo 22 estoy dispuesto a lo que sea necesito ayuda económi' ciudadanuncios_5551ead17f17ff18.html q=284
+[21:05:03] SAVED 60 'Busco chica para ayuda economica - Huaraz' ciudadanuncios_f83a2da44d6d8778.html q=282
+[21:05:04] PROGRESS visited=1275 saved=62 skip=1213 err=0 queue=281
+[21:05:06] SAVED 65 'Soy activo busco ayuda económica con pasivos - Arequipa' ciudadanuncios_863eb6319e43919c.html q=283
+[21:05:09] SAVED 70 'Ayuda económica a venezolanas - Arequipa' ciudadanuncios_9cda013ab60dd885.html q=280
+[21:05:13] SAVED 75 'Busco amiga y doy ayuda economica que sean sencilla en todo ' ciudadanuncios_924e39a802eaa4d4.html q=279
+[21:05:16] SAVED 80 'Ayuda economica a chicas - Huancayo' ciudadanuncios_f9a9fdfa6409216d.html q=278
+[21:05:18] PROGRESS visited=1300 saved=83 skip=1217 err=0 queue=276
+[21:05:19] SAVED 85 'Busco patas activos se da ayuda - Arequipa' ciudadanuncios_242f53c280e866fd.html q=274
+[21:05:22] SAVED 90 'Ayuda economica a mujeres - San Vicente de Cañete' ciudadanuncios_e9f3668da866fc4d.html q=274
+[21:05:26] SAVED 95 'Ayuda economica - Huacho' ciudadanuncios_f4147a48a2935b7f.html q=271
+[21:05:30] SAVED 100 'Se da ayuda economica 200 con discresion - Ilo' ciudadanuncios_6791f64ad81e8a71.html q=269
+[21:05:33] SAVED 105 'Ayuda económica a mujeres 18-40 - Arequipa' ciudadanuncios_4161e3689a44a700.html q=265
+[21:05:37] PROGRESS visited=1325 saved=108 skip=1217 err=0 queue=265
+[21:05:37] SAVED 110 'Doy ayuda - Tacna' ciudadanuncios_fe419a9a8db6cb70.html q=263
+[21:05:41] SAVED 115 'Ayuda Economica a Universitaria - Andahuaylas' ciudadanuncios_6c20ff598186b5c1.html q=258
+[21:05:45] SAVED 120 'Busco ayuda economica - Arequipa' ciudadanuncios_4496924e23349f8d.html q=253
+[21:05:48] SAVED 125 'Busco activos de 50años doy ayuda economico - Lima' ciudadanuncios_c9d62c998ca45de5.html q=248
+[21:05:50] SAVED 130 'Ayuda economica a embarazada - Lima' ciudadanuncios_18eea6e8a73a1476.html q=245
+[21:05:52] PROGRESS visited=1350 saved=133 skip=1217 err=0 queue=242
+[21:05:54] SAVED 135 'Adulto pasivo con ganas de conocer personas por apoyo econom' ciudadanuncios_76d6b5870c9fce95.html q=247
+[21:05:57] SAVED 140 'Ayuda económica - Chincha Alta' ciudadanuncios_ed61b6ee09dfa7c7.html q=247
+[21:06:00] SAVED 145 'Busco ayuda económica - Lima' ciudadanuncios_064e0712abe0abdc.html q=244
+[21:06:04] SAVED 150 'Brindo ayuda economica... - Callao' ciudadanuncios_109e8ba20c3456a4.html q=240
+[21:06:08] SAVED 155 'Anfitriona o ayuda económica urgente - Juliaca' ciudadanuncios_48c01eaa34068d97.html q=237
+[21:06:10] PROGRESS visited=1375 saved=158 skip=1217 err=0 queue=234
+[21:06:11] SAVED 160 'Maduro brinda ayuda economica - Lima' ciudadanuncios_e83215341bb18461.html q=232
+[21:06:15] SAVED 165 'Ofresco ayuda económica a cambio de sexo i pasarla vacan - C' ciudadanuncios_db7ccd09b85abe39.html q=229
+[21:06:18] SAVED 170 'Dono mi riñon por ayuda economica - Huancayo' ciudadanuncios_a95bbb25053ace8d.html q=225
+[21:06:21] SAVED 175 'Ayuda económica - Lima' ciudadanuncios_559f5e5dec05e0e1.html q=220
+[21:06:24] SAVED 180 'Ofresco Ayuda Economica a Madre Soltera' ciudadanuncios_30bc88d0ff4be0c3.html q=220
+[21:06:26] PROGRESS visited=1400 saved=182 skip=1218 err=0 queue=222
+[21:06:28] SAVED 185 'Ayuda económica a señoritas provincianas 100 soles - Lima' ciudadanuncios_744aba6e513a5050.html q=226
+[21:06:31] SAVED 190 'Ayuda economica - Huacho' ciudadanuncios_4a8311b9463fbd73.html q=221
+[21:06:34] SAVED 195 'Ayuda economica solo para chica que necesite - Lima' ciudadanuncios_8572721090d193b6.html q=216
+[21:06:37] SAVED 200 'Se dad ayuda economica a cambio de encuentro intimo - Lima' ciudadanuncios_a015661190569a8d.html q=215
+[21:06:37] DONE saved=200 skip=1218 err=0 visited=1418 queue_left=215

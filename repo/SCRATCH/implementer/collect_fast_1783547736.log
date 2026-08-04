@@ -1,0 +1,41 @@
+[16:55:36] START fast_v2 targets={'doplim': 0, 'evisos': 1500} start_counts={'doplim': 1500, 'evisos': 0, 'other': 1930} workers=4
+[16:55:37] EV skip https://www.evisos.com.pe/por-ayuda-economica.htm status=403 len=2714
+[16:55:38] EV skip https://www.evisos.com.pe/por-ayuda-economica/clasificados/2 status=403 len=2714
+[16:55:38] EV skip https://www.evisos.com.pe/apoyo-economico.htm status=403 len=2714
+[16:55:38] EV skip https://www.evisos.com.pe/apoyo-economico/clasificados/2 status=403 len=2714
+[16:55:38] EV skip https://www.evisos.com.pe/por-apoyo-economico.htm status=403 len=2714
+[16:55:39] EV skip https://www.evisos.com.pe/por-apoyo-economico/clasificados/2 status=403 len=2714
+[16:55:39] EV skip https://lima.evisos.com.pe/por-ayuda-economica.htm status=403 len=2714
+[16:55:39] EV skip https://lima.evisos.com.pe/por-ayuda-economica/clasificados/2 status=403 len=2714
+[16:55:40] EV skip https://www.evisos.com.pe/brindo-ayuda.htm status=403 len=2714
+[16:55:40] EV skip https://www.evisos.com.pe/brindo-ayuda/clasificados/2 status=403 len=2714
+[16:55:40] EV skip https://www.evisos.com.pe/doy-ayuda.htm status=403 len=2714
+[16:55:40] EV skip https://www.evisos.com.pe/doy-ayuda/clasificados/2 status=403 len=2714
+[16:55:41] EV skip https://www.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:55:41] EV skip https://www.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:55:41] EV skip https://lima.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:55:41] EV skip https://lima.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:55:42] EV skip https://www.evisos.com.pe/por-encuentros.htm status=403 len=2714
+[16:55:42] EV skip https://www.evisos.com.pe/por-encuentros/clasificados/2 status=403 len=2714
+[16:55:42] EV skip https://www.evisos.com.pe/hombre-busca-mujer.htm status=403 len=2714
+[16:55:42] EV skip https://www.evisos.com.pe/hombre-busca-mujer/clasificados/2 status=403 len=2714
+[16:55:43] EV skip https://www.evisos.com.pe/por-hombre-busca-mujer.htm status=403 len=2714
+[16:55:43] EV skip https://www.evisos.com.pe/por-hombre-busca-mujer/clasificados/2 status=403 len=2714
+[16:55:43] EV skip https://www.evisos.com.pe/contactos-ocasionales-peru.htm status=403 len=2714
+[16:55:43] EV skip https://www.evisos.com.pe/contactos-ocasionales-peru/clasificados/2 status=403 len=2714
+[16:55:44] EV skip https://www.evisos.com.pe/relaciones-ocasionales.htm status=403 len=2714
+[16:55:44] EV skip https://www.evisos.com.pe/relaciones-ocasionales/clasificados/2 status=403 len=2714
+[16:55:45] EV skip https://arequipa.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:55:45] EV skip https://arequipa.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:55:46] EV skip https://trujillo.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:55:46] EV skip https://trujillo.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:55:47] EV skip https://cusco.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:55:47] EV skip https://cusco.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:55:48] EV skip https://piura.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:55:49] EV skip https://piura.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:55:51] EV skip https://chiclayo.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:55:51] EV skip https://chiclayo.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:55:51] GATHER evisos unique=0 in 15.0s
+[16:55:51] wrote /Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/seeds_evisos_fast_1783547736.jsonl
+[16:55:51] FETCH start candidates=0
+[16:55:52] FINAL {'log': '/Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/collect_fast_1783547736.log', 'candidates': 0, 'counters': {'doplim': 1500, 'evisos': 0, 'skip': 0, 'saved': 0, 'err': 0}, 'start_counts': {'doplim': 1500, 'evisos': 0, 'other': 1930}, 'end_counts': {'doplim': 1500, 'evisos': 0, 'other': 1930}, 'elapsed_s': 0.0, 'ads_per_min': 0.0, 'finished_at': '2026-07-08T21:55:52Z'}

@@ -1,0 +1,18 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[19:56:21] START locanto_fast target=1500 start_tagged_detail=572 content_heuristic≈572 mode=seeds
+[19:56:21] LOADED seeds_in=1919 from SCRATCH/implementer/seeds_locanto_ayuda_only.jsonl
+[19:56:21] shard 0/4 size=91
+[19:56:21] pending after dedup/shard=91 (from 1919)
+[19:56:21] FETCH start pending=91 mode=serial_playwright tag=locanto_fast
+[19:56:34] SAVED 1 total~573 title='OFRESCO UNA AYUDA ECONOMICAS A CHICA, ESTUDIANTE O MADR' locanto_fast_76a573ea6f292c3f.html
+[19:56:34] PROGRESS done=1/91 saved=1 skip=0 rate=4.3/min tagged=573
+[20:02:47] SAVED 2 total~574 title='Ayuda Económica S/. 200 de hombre maduro, Arequipa – 50' locanto_fast_4f6019d7ecbb58ee.html
+[20:02:47] PROGRESS done=2/91 saved=2 skip=0 rate=0.3/min tagged=574
+[20:03:03] SAVED 3 total~575 title='Universitaria. Me desnudare Toda para ti., Chimbote – 2' locanto_fast_e71e954128794b22.html
+[20:03:03] PROGRESS done=3/91 saved=3 skip=0 rate=0.4/min tagged=575
+[20:09:52] SAVED 4 total~576 title='Apoyo economico para señoritas, Cusco – 36' locanto_fast_6a762632207f2c39.html
+[20:10:09] SAVED 5 total~577 title='Solo mujeres apoyoco económico, Chimbote – 24' locanto_fast_bcfbee8dcbc439b7.html
+[20:10:09] PROGRESS done=5/91 saved=5 skip=0 rate=0.4/min tagged=577
+[20:11:26] SAVED 10 total~582 title='Ddoy ayuda económica a señoras y señoriras, Cusco – 39' locanto_fast_d2082ce3fb293b05.html
+[20:11:26] PROGRESS done=10/91 saved=10 skip=0 rate=0.7/min tagged=582

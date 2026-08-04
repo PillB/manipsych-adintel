@@ -1,0 +1,28 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[18:55:35] START locanto_fast target=1500 start_tagged_detail=449 content_heuristic≈449 mode=seeds
+[18:55:35] LOADED seeds_in=2768 from SCRATCH/implementer/seeds_locanto_fast_1783553280.jsonl
+[18:55:35] shard 1/4 size=272
+[18:55:35] pending after dedup/shard=272 (from 2768)
+[18:55:35] FETCH start pending=272 mode=serial_playwright tag=locanto_fast
+[18:55:49] SAVED 1 total~450 title='Busco Hombres discreto varoniles que deseen algo caleta' locanto_fast_873c167765a2e405.html
+[18:55:49] PROGRESS done=1/272 saved=1 skip=0 rate=4.4/min tagged=450
+[18:56:07] SAVED 2 total~451 title='TOP CACHERO ACTIVO SCORT FOLLADOR ATIENDO PASIVS MDUR S' locanto_fast_aed5b2ca1cf5d6a6.html
+[18:56:07] PROGRESS done=2/272 saved=2 skip=0 rate=3.7/min tagged=451
+[18:56:27] SAVED 3 total~452 title='Busco chica para sexo sin compromiso, Puno – 25' locanto_fast_ba77428dadf65428.html
+[18:56:27] PROGRESS done=3/272 saved=3 skip=0 rate=3.4/min tagged=452
+[18:56:48] SAVED 4 total~453 title='Gocho moreno venezolano.. complaciente y dispuesto a do' locanto_fast_a7afc427f98f7632.html
+[18:57:55] PROGRESS done=5/272 saved=4 skip=1 rate=1.7/min tagged=453
+[18:58:14] SAVED 5 total~454 title='ESTOY BUSCANDO CHICA QUE DESEA SER MADRE, Lima – 29' locanto_fast_f974b31736e88855.html
+[18:59:26] PROGRESS done=10/272 saved=9 skip=1 rate=2.3/min tagged=458
+[18:59:47] SAVED 10 total~459 title='Busco mujer de Ica, madura de preferencia – 42' locanto_fast_0191a34c374ef44d.html
+[19:00:59] PROGRESS done=15/272 saved=14 skip=1 rate=2.6/min tagged=463
+[19:02:30] PROGRESS done=20/272 saved=19 skip=1 rate=2.7/min tagged=468
+[19:02:50] SAVED 20 total~469 title='Solo para mujeres que tal si lo hacemos usando un antif' locanto_fast_e511e83db864f595.html
+[19:38:37] PROGRESS done=25/272 saved=24 skip=1 rate=0.6/min tagged=473
+[19:51:28] PROGRESS done=30/272 saved=29 skip=1 rate=0.5/min tagged=478
+[19:51:43] SAVED 30 total~479 title='Chimbote...rica jovencita con ricas nalgas apretaditas ' locanto_fast_30357b7086b2e387.html
+[19:52:50] PROGRESS done=35/272 saved=34 skip=1 rate=0.6/min tagged=483
+[19:54:18] PROGRESS done=40/272 saved=39 skip=1 rate=0.7/min tagged=488
+[19:54:37] SAVED 40 total~489 title='Apoyo económico inmediato y discreto a señoritas, Cajam' locanto_fast_587879307c5b0939.html
+[19:56:03] PROGRESS done=45/272 saved=43 skip=2 rate=0.7/min tagged=492

@@ -1,0 +1,6 @@
+[17:54:38] START Evisos collection (filter to male offer ayuda)
+[17:54:38] BASE https://www.evisos.com.pe/por-ayuda-economica.htm
+[17:54:55]   ids: 25
+[18:27:20] BASE https://lima.evisos.com.pe/busco-ayuda-economica.htm
+[18:27:41]   ids: 7
+[18:29:28] DONE added=0

@@ -1,0 +1,58 @@
+[2026-07-06 21:52:39] === SINGLE-MIND LOCANTO HOMBRE-BUSCA-MUJER COLLECTOR START ===
+[2026-07-06 21:52:39] Following locked prompt and scraping_strategy_guide.md EXACTLY. ONLY Locanto Peru Hombre-busca-mujer male-offering ayuda economica ads.
+[2026-07-06 21:52:39] Baseline: 353 total, ~190 Locanto. Will use web_search results + known directs + list-on-clean for fresh /ID_ .
+[2026-07-06 21:52:39] Never weaken gates: es-PE playwright/selenium, waits h1/.description, scrolls, 5-10 retries, len>2500 + !cargando/!un momento/!inter/!verificando.
+[2026-07-06 21:52:49] PHASE1 DISCOVERY: Using web_search results to identify listing URLs for clean-gate ID extraction (per guide: listings only after clean pass).
+[2026-07-06 21:52:49] Target listings from web_search: 5
+[2026-07-06 21:52:49] Loaded 353 existing rids for dedup.
+[2026-07-06 21:53:00] === FETCH LISTING ATTEMPT: Lima ayuda economica Hombre-busca-mujer ===
+[2026-07-06 21:53:00] FETCH_LISTING start: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/?query=ayuda+economica
+[2026-07-06 21:54:16] FETCH_LISTING result: len=389312, inter=False, cargando=False, un_momento=False, verificando=False, gate_pass=True
+[2026-07-06 21:54:16] LISTING CLEAN: will extract /ID_ directs (per guide)
+[2026-07-06 21:54:16] EXTRACTED 0 candidate /ID_ directs from clean listing
+[2026-07-06 21:54:16] Saved up to 30 seeds to SCRATCH/implementer/seeds_locanto_fresh_1783392748.json
+[2026-07-06 21:54:27] === FETCH LISTING 2: Arequipa Hombre-busca-mujer general (from web_search variants) ===
+[2026-07-06 21:54:27] FETCH_LISTING start: https://www.locanto.com.pe/arequipa/Hombre-busca-mujer/20701/
+[2026-07-06 21:55:02] FETCH_LISTING result: len=339239, gate_pass=True
+[2026-07-06 21:55:02] LISTING CLEAN: extract /ID_ (relaxed: any locanto /ID_ for Hombre section check later)
+[2026-07-06 21:55:02] EXTRACTED 48 /ID_ candidate links
+[2026-07-06 21:55:02] Likely Hombre section candidates: 48
+[2026-07-06 21:55:02] Updated seeds file with new candidates. Total now ~48
+[2026-07-06 21:55:08] === FETCH LISTING 3: Trujillo Hombre-busca-mujer (persevere city variants) ===
+[2026-07-06 21:55:08] FETCH_LISTING start: https://www.locanto.com.pe/trujillo/Hombre-busca-mujer/20701/
+[2026-07-06 21:56:51] FETCH_LISTING result: len=324384, gate_pass=True
+[2026-07-06 21:56:51] EXTRACTED 49 /ID_ from Trujillo clean listing
+[2026-07-06 21:56:51] Added 49 new; total seeds ~97
+[2026-07-06 21:56:57] === FETCH LISTING for Juliaca ===
+[2026-07-06 21:56:57] FETCH_LISTING start: https://www.locanto.com.pe/juliaca/Hombre-busca-mujer/20701/
+[2026-07-06 21:57:15] FETCH_LISTING Juliaca: len=306980 gate_pass=True inter=False
+[2026-07-06 21:57:15] EXTRACTED 48 /ID_ from Juliaca
+[2026-07-06 21:57:15] Added 40 new from Juliaca; running total seeds=137
+[2026-07-06 21:57:15] === FETCH LISTING for Chiclayo ===
+[2026-07-06 21:57:15] FETCH_LISTING start: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/?query=ayuda
+[2026-07-06 21:57:33] FETCH_LISTING Chiclayo: len=345249 gate_pass=True inter=False
+[2026-07-06 21:57:33] EXTRACTED 50 /ID_ from Chiclayo
+[2026-07-06 21:57:33] Added 40 new from Chiclayo; running total seeds=177
+[2026-07-06 21:57:33] === FETCH LISTING for Cusco ===
+[2026-07-06 21:57:33] FETCH_LISTING start: https://www.locanto.com.pe/cusco/Hombre-busca-mujer/20701/
+[2026-07-06 21:58:21] FETCH_LISTING Cusco: len=312845 gate_pass=True inter=False
+[2026-07-06 21:58:21] EXTRACTED 48 /ID_ from Cusco
+[2026-07-06 21:58:21] Added 40 new from Cusco; running total seeds=217
+[2026-07-06 21:58:21] Seeds file updated. Total candidates: 217
+[2026-07-06 21:58:28] === FETCH LISTING for Piura (persevere more cities) ===
+[2026-07-06 21:58:28] FETCH_LISTING start: https://www.locanto.com.pe/piura/Hombre-busca-mujer/20701/
+[2026-07-06 21:59:15] FETCH_LISTING Piura result: len=319593 gate=True
+[2026-07-06 21:59:15] EXTRACTED 48 /ID_ from Piura
+[2026-07-06 21:59:15] Added 40 new from Piura
+[2026-07-06 21:59:15] === FETCH LISTING for Huancayo (persevere more cities) ===
+[2026-07-06 21:59:15] FETCH_LISTING start: https://www.locanto.com.pe/huancayo/Hombre-busca-mujer/20701/
+[2026-07-06 22:00:00] FETCH_LISTING Huancayo result: len=337700 gate=True
+[2026-07-06 22:00:00] EXTRACTED 48 /ID_ from Huancayo
+[2026-07-06 22:00:00] Added 40 new from Huancayo
+[2026-07-06 22:00:00] === FETCH LISTING for Callao (persevere more cities) ===
+[2026-07-06 22:00:00] FETCH_LISTING start: https://www.locanto.com.pe/callao/Hombre-busca-mujer/20701/
+[2026-07-06 22:00:51] === PHASE2: ROBUST DIRECT FETCHES on fresh /ID_ from clean listings (web_search derived) ===
+[2026-07-06 22:00:51] Using playwright es-PE, UA rot, google.pe referer, 30s h1 waits, scrolls, 6-10 retries, STRICT gate len>2500 !carg/!unmo/!verif/!inter
+[2026-07-06 22:00:51] Selected 15 directs for this batch (prefer male-signal slugs)
+[2026-07-06 22:00:51] Existing rids loaded: 367
+[2026-07-06 22:00:51]   DIRECT 1/15: https://www.locanto.com.pe/arequipa/ID_9006718418/Doy-ae-150-soles-a-chica-estudiante.html sleep~14.1

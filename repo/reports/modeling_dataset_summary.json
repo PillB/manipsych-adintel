@@ -1,0 +1,26 @@
+{
+  "input": "data/processed/ad_manifest.jsonl",
+  "output": "data/processed/modeling_manifest.jsonl",
+  "input_records": 5738,
+  "modeling_records": 5717,
+  "prefer_offer": true,
+  "platform_counts_input": {
+    "doplim": 2845,
+    "locanto": 1562,
+    "ciudadanuncios": 1303,
+    "evisos": 2,
+    "facebook": 26
+  },
+  "platform_counts_modeling": {
+    "doplim": 2824,
+    "locanto": 1562,
+    "ciudadanuncios": 1303,
+    "evisos": 2,
+    "facebook": 26
+  },
+  "dropped": {
+    "no_target": 21
+  },
+  "recommended_train_command": "python3 tools/train_manipulation_model.py --manifest data/processed/modeling_manifest.jsonl",
+  "recommended_curve_command": "python3 tools/learning_curve_data_scale.py --manifest data/processed/modeling_manifest.jsonl --base-target 1500"
+}

@@ -1,0 +1,10 @@
+SNAPSHOT at 2026-07-04 15:15
+Manifest total: 188
+  Locanto Peru (hombre busca mujer real) 88
+  Doplim Peru (hombre busca mujer or Contactos) 63
+  Facebook Public (indexed) 28
+  Other indexed public 6
+  Facebook Public (search first) 2
+  Facebook public group 1
+Raws: 321
+Guide updated + proof snapshot done.

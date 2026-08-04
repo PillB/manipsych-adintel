@@ -1,0 +1,25 @@
+URL: https://www.facebook.com/groups/2382711485285084/posts/4105697169653165/
+record_id: 38b500d61f96c6705cfa00dddc457f8e9448b06f959b0ee9c8fa49fe8c290037
+eng: {
+  "post_url": "https://www.facebook.com/groups/2382711485285084/posts/4105697169653165/",
+  "post_author": {
+    "name": "Huancayo Chupaca Sicaya Pilcomoly Orcotuna El Tambo",
+    "profile_url": "https://www.facebook.com/profile.php?id=2382711485285084"
+  },
+  "commenters": [
+    {
+      "name": "Huancayo Chupaca Sicaya Pilcomoly Orcotuna El Tambo",
+      "profile_url": "https://www.facebook.com/profile.php?id=2382711485285084"
+    }
+  ],
+  "reactors": [],
+  "reactions_approx": null,
+  "comments_approx": null,
+  "group_name": null,
+  "extracted_at": "2026-07-08T00:27:22.795491Z",
+  "source_note": "fresh fetch (html len ~703k) but limited public render - mostly group context",
+  "record_id": "38b500d61f96c6705cfa00dddc457f8e9448b06f959b0ee9c8fa49fe8c290037",
+  "source_url": "https://www.facebook.com/groups/2382711485285084/posts/4105697169653165/",
+  "group_focus": true,
+  "fresh": true
+}

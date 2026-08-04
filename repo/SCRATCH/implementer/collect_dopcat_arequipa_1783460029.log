@@ -1,0 +1,16 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+START Doplim category arequipa (main li.cnt-list_ads ONLY, tuned)
+base=https://www.doplim.com.pe/s/hombre-busca-mujer/arequipa/
+LIST p1: https://www.doplim.com.pe/s/hombre-busca-mujer/arequipa/
+  main li.cnt-list_ads IDs: 4
+  + https://camana.doplim.com.pe/doy-sexo-gratis-a-senoras-maduras-id-1516
+  + https://arequipa-capital.doplim.com.pe/busco-srta-o-sra-gorditagorda-d
+  + https://arequipa-capital.doplim.com.pe/se-brinda-apoyo-economico-a-uni
+  + https://arequipa-capital.doplim.com.pe/ayuda-economica-sin-prejuicios-
+LIST p2: https://www.doplim.com.pe/s/hombre-busca-mujer/arequipa/?page=2
+  main li.cnt-list_ads IDs: 4
+LIST p3: https://www.doplim.com.pe/s/hombre-busca-mujer/arequipa/?page=3
+  main li.cnt-list_ads IDs: 4
+DONE Doplim cat arequipa: added=4
+DONE arequipa added=4

@@ -1,0 +1,40 @@
+{
+  "selected": 25,
+  "eligible_after_filters": 809,
+  "skips": {
+    "non_locanto_direct": 112,
+    "used_main_manifest": 33,
+    "rejected": 1,
+    "seeker_side_seed_text": 38,
+    "no_priority_terms": 22,
+    "duplicate_seed": 308
+  },
+  "output": "data/agent_runs/locanto_b/seeds.jsonl",
+  "selected_urls": [
+    "https://www.locanto.com.pe/lima/ID_8151029833/Brindo-ayuda-economica-a-mujeres-que-necesitan-apoyo.html",
+    "https://www.locanto.com.pe/lima/ID_8201341076/Ayuda-economica-brindo-apoyo-en-tus-momentos-de-necesidad.html",
+    "https://www.locanto.com.pe/lima/ID_8307639416/Brindo-ayuda-economica-a-chicas-que-necesiten-apoyo-solo-Lima.html",
+    "https://www.locanto.com.pe/trujillo/ID_8199719249/Brindo-ayuda-o-apoyo-economico-a-senorita-estudiante-de-18.html",
+    "https://www.locanto.com.pe/lima/ID_9003299963/Doy-ayuda-apoyo-economico-a-chicas-de-lima-metropolitana.html",
+    "https://www.locanto.com.pe/piura/ID_7536501465/Senoritas-que-necesiten-ayuda-economica-doy-apoyo.html",
+    "https://www.locanto.com.pe/arequipa/ID_7630992134/BRINDO-APOYO-ECONOMICO-EN-AREQUIPA.html",
+    "https://www.locanto.com.pe/arequipa/ID_7974703542/BRINDO-APOYO-ECONOMICO-EN-AREQUIPA.html",
+    "https://www.locanto.com.pe/arequipa/ID_8458018371/Busco-relacion-seria-o-tambien-brindo-apoyo-economico.html",
+    "https://www.locanto.com.pe/chiclayo/ID_7360790819/Brindo-apoyo-economico.html",
+    "https://www.locanto.com.pe/chiclayo/ID_7864043232/Brindo-apoyo-economico-a-senorita-de-18-a-21-anos.html",
+    "https://www.locanto.com.pe/chiclayo/ID_8439273851/BRINDO-APOYO-ECONOMICO-A-SENORA-QUE-LO-NECESITE-ESCRIBEME-PARA.html",
+    "https://www.locanto.com.pe/cusco/ID_8220913621/Soy-sugar-daddy-Brindo-apoyo-economico-a-senorita.html",
+    "https://www.locanto.com.pe/lima/ID_5106421779/BRINDO-APOYO-ECONOMICO-A-CHICAS-RESERVADAS-SIN-COMPROMISO.html",
+    "https://www.locanto.com.pe/lima/ID_6320932876/Brindo-Apoyo-Economica-a-senoritas-de-maximo-22-anos.html",
+    "https://www.locanto.com.pe/lima/ID_6568835935/Brindo-apoyo-economico-a-chicas-de-pecho-grande-k-sten-lactando.html",
+    "https://www.locanto.com.pe/lima/ID_6815136560/Brindo-apoyo-economico-a-Srta-guapa-s-250.html",
+    "https://www.locanto.com.pe/lima/ID_6895760421/Brindo-apoyo-economico-a-madre-soltera-de-18-tetona-lactante.html",
+    "https://www.locanto.com.pe/lima/ID_6939930990/BRINDO-APOYO-economico-a-chicas-tetonas-de-18-a-35-escribe.html",
+    "https://www.locanto.com.pe/lima/ID_7054500154/Te-brindo-apoyo-economico.html",
+    "https://www.locanto.com.pe/lima/ID_7071521566/Brindo-apoyo-economico-a-una-sola-chica-atractiva.html",
+    "https://www.locanto.com.pe/lima/ID_7088229382/Brindo-apoyo-economico-senoritas-estudiantes.html",
+    "https://www.locanto.com.pe/lima/ID_7180875381/Brindo-apoyo-economico-a-cambio-de-sexo-duro.html",
+    "https://www.locanto.com.pe/lima/ID_7432779273/Brindo-apoyo-economico-a-universitaria-o-senorita.html",
+    "https://www.locanto.com.pe/lima/ID_7654728335/Brindo-apoyo-economico-para-suggar-baby.html"
+  ]
+}

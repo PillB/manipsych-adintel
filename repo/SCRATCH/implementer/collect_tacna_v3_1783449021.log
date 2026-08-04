@@ -1,0 +1,130 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+START tacna v3 section list crawl (main cards ONLY, tuned)
+base=https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701
+LIST p1: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/1/?query=ayuda+economica
+  main IDs: 37
+  + https://www.locanto.com.pe/tacna/ID_8186279129/Apoyo-para-Madres-solte
+  + https://www.locanto.com.pe/tacna/ID_8289629338/BUEN-DIA-BRINDO-APOYO-E
+  + https://www.locanto.com.pe/tacna/ID_8357201794/Ayuda-economica.html
+  + https://www.locanto.com.pe/tacna/ID_7687341769/SE-DA-APOYO-A-SENORITA.
+  + https://www.locanto.com.pe/tacna/ID_8353904303/Solo-mujeres-tetonas-qu
+  + https://www.locanto.com.pe/tacna/ID_7581962974/Ayuda-economica-a-chica
+  + https://www.locanto.com.pe/tacna/ID_7720186218/SE-APOYA-A-SENORITA.htm
+  + https://www.locanto.com.pe/tacna/ID_8213019958/Senorita-de-19-anos-bus
+  + https://www.locanto.com.pe/tacna/ID_7535667569/Necesito-ayuda-economic
+  + https://www.locanto.com.pe/tacna/ID_8090673437/Brindo-ayuda-economica-
+  + https://www.locanto.com.pe/tacna/ID_3789652217/Apoyo-para-una-sola-per
+  + https://www.locanto.com.pe/tacna/ID_8085714647/Apoyo-economico.html
+  + https://www.locanto.com.pe/tacna/ID_8085241026/Se-ofrece-ayuda-economi
+  + https://www.locanto.com.pe/tacna/ID_6798332872/Brindo-ayuda-economica-
+  + https://www.locanto.com.pe/tacna/ID_8304060212/Universitaria-busca-apo
+  + https://www.locanto.com.pe/tacna/ID_7654852742/Se-brinda-apoyo-economi
+  + https://www.locanto.com.pe/tacna/ID_7920980907/Se-ofrece-ayuda-economi
+  + https://www.locanto.com.pe/tacna/ID_6642517209/Se-busca-chica-de-18-a-
+  + https://www.locanto.com.pe/tacna/ID_7711993683/Ayuda-Economica-a-Senor
+  + https://www.locanto.com.pe/tacna/ID_7112521386/Apoyo-Economico-Senorit
+  + https://www.locanto.com.pe/tacna/ID_7710206256/Doy-ayuda-economica-a-s
+  + https://www.locanto.com.pe/tacna/ID_8164003330/ESTUDIANTE-UNIVERSITARI
+  + https://www.locanto.com.pe/tacna/ID_8172178484/Ayuda-economica-a-senor
+LIST p2: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/2/?query=ayuda+economica
+  main IDs: 37
+  + https://www.locanto.com.pe/tacna/ID_8032641378/Chico-de-33-anos-brinda
+LIST p3: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/3/?query=ayuda+economica
+  main IDs: 37
+LIST p4: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/4/?query=ayuda+economica
+  main IDs: 37
+LIST p5: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/5/?query=ayuda+economica
+  main IDs: 37
+LIST p6: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/6/?query=ayuda+economica
+  main IDs: 37
+LIST p7: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/7/?query=ayuda+economica
+  main IDs: 37
+LIST p8: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/8/?query=ayuda+economica
+  main IDs: 37
+LIST p9: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/9/?query=ayuda+economica
+  main IDs: 37
+LIST p10: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/10/?query=ayuda+economica
+  main IDs: 37
+LIST p11: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/11/?query=ayuda+economica
+  main IDs: 37
+LIST p12: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/12/?query=ayuda+economica
+  main IDs: 37
+LIST p13: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/13/?query=ayuda+economica
+  main IDs: 37
+LIST p14: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/14/?query=ayuda+economica
+  main IDs: 37
+LIST p15: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/15/?query=ayuda+economica
+  main IDs: 37
+LIST p16: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/16/?query=ayuda+economica
+  main IDs: 37
+LIST p17: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/17/?query=ayuda+economica
+  main IDs: 37
+LIST p18: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/18/?query=ayuda+economica
+  main IDs: 37
+LIST p19: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/19/?query=ayuda+economica
+  main IDs: 37
+LIST p20: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/20/?query=ayuda+economica
+  main IDs: 37
+LIST p21: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/21/?query=ayuda+economica
+  main IDs: 37
+LIST p22: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/22/?query=ayuda+economica
+  main IDs: 37
+LIST p23: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/23/?query=ayuda+economica
+  main IDs: 37
+LIST p24: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/24/?query=ayuda+economica
+  main IDs: 37
+LIST p25: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/25/?query=ayuda+economica
+  main IDs: 37
+LIST p26: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/26/?query=ayuda+economica
+  main IDs: 37
+LIST p27: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/27/?query=ayuda+economica
+  main IDs: 37
+LIST p28: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/28/?query=ayuda+economica
+  main IDs: 37
+LIST p29: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/29/?query=ayuda+economica
+  main IDs: 37
+LIST p30: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/30/?query=ayuda+economica
+  main IDs: 37
+LIST p31: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/31/?query=ayuda+economica
+  main IDs: 37
+LIST p32: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/32/?query=ayuda+economica
+  main IDs: 37
+LIST p33: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/33/?query=ayuda+economica
+  main IDs: 37
+LIST p34: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/34/?query=ayuda+economica
+  main IDs: 37
+LIST p35: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/35/?query=ayuda+economica
+  main IDs: 37
+LIST p36: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/36/?query=ayuda+economica
+  main IDs: 37
+LIST p37: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/37/?query=ayuda+economica
+  main IDs: 37
+LIST p38: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/38/?query=ayuda+economica
+  main IDs: 37
+LIST p39: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/39/?query=ayuda+economica
+  main IDs: 37
+LIST p40: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/40/?query=ayuda+economica
+  main IDs: 37
+LIST p41: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/41/?query=ayuda+economica
+  main IDs: 37
+LIST p42: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/42/?query=ayuda+economica
+  main IDs: 37
+LIST p43: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/43/?query=ayuda+economica
+  main IDs: 37
+LIST p44: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/44/?query=ayuda+economica
+  main IDs: 37
+LIST p45: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/45/?query=ayuda+economica
+  main IDs: 37
+LIST p46: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/46/?query=ayuda+economica
+  main IDs: 37
+LIST p47: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/47/?query=ayuda+economica
+  main IDs: 37
+LIST p48: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/48/?query=ayuda+economica
+  main IDs: 37
+LIST p49: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/49/?query=ayuda+economica
+  main IDs: 37
+LIST p50: https://www.locanto.com.pe/tacna/Hombre-busca-mujer/20701/50/?query=ayuda+economica
+  main IDs: 37
+DONE tacna: added=24
+SUMMARY tacna added=24

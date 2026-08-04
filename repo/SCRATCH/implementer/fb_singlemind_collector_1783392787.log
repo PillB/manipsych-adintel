@@ -1,0 +1,18 @@
+[2026-07-06 21:53:07] === FETCH PHASE START for FB directs (playwright es-PE gates len>1500 !inter) ===
+[2026-07-06 21:53:07] FETCH START: https://www.facebook.com/groups/1189010878980642/posts/1597347328146993/
+[2026-07-06 21:55:02]   FETCHED len=46446 inter=False gate_fail=False
+[2026-07-06 21:55:02]   EXTRACT title[:80]='trabajo en lima norte los olivos | Facebook' body_len=152
+[2026-07-06 21:55:02]   SKIP FILTER: no TARGETS or no MALE signals (male-offering required)
+[2026-07-06 21:55:05] FETCH START: https://www.facebook.com/groups/1451780012073621/posts/2077617816156501/
+[2026-07-06 21:56:13]   FETCHED len=318807 inter=False gate_fail=False
+[2026-07-06 21:56:13]   EXTRACT title[:80]='Facebook' body_len=8
+[2026-07-06 21:56:13]   SKIP FILTER: no TARGETS or no MALE signals (male-offering required)
+[2026-07-06 21:56:16] FETCH START: https://www.facebook.com/groups/3637110889870141/posts/4277667862481104/
+[2026-07-06 21:57:00]   FETCHED len=713367 inter=False gate_fail=False
+[2026-07-06 21:57:00]   EXTRACT title[:80]='EMPLEOS TRUJILLO | Facebook' body_len=16
+[2026-07-06 21:57:00]   SKIP FILTER: no TARGETS or no MALE signals (male-offering required)
+[2026-07-06 21:57:03] FETCH START: https://www.facebook.com/groups/1232598207974026/posts/1610922773474899/
+[2026-07-06 21:57:49]   FETCHED len=801946 inter=False gate_fail=False
+[2026-07-06 21:57:49]   EXTRACT title[:80]='DOY APOYO A SEÑORITAS Y SEÑORAS INFO SOLO AL PV | Facebook' body_len=77
+[2026-07-06 21:57:49]   SKIP FILTER: no TARGETS or no MALE signals (male-offering required)
+[2026-07-06 21:57:52] FETCH START: https://www.facebook.com/groups/1232598207974026/posts/1611746920059151/

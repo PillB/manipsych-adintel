@@ -1,0 +1,10 @@
+[2026-07-04 13:57:11] FINAL batch start ex=39
+[2026-07-04 13:57:21] FETCH url=https://piura-capital.doplim.com.pe/me-llamo-daniel-brindo-ayuda-economica-id-1356815.html delay=5.7 att=1 UA=Mozilla/5.0 (Macintosh; Intel Mac OS X 1
+[2026-07-04 13:57:31]   ok len=113155
+[2026-07-04 13:57:44] FETCH url=https://juliaca.doplim.com.pe/brindo-ayuda-economica-solo-mujeres-id-402480.html delay=9.5 att=1 UA=Mozilla/5.0 (Macintosh; Intel Mac OS X 1
+[2026-07-04 13:57:52]   ok len=112339
+[2026-07-04 13:57:52] ADDED final #1 https://juliaca.doplim.com.pe/brindo-ayuda-economica-solo-mu
+[2026-07-04 13:58:07] FETCH url=https://tacna-capital.doplim.com.pe/doy-ayuda-economica-a-senoritas-ho-senoras-id-1327413. delay=10.8 att=1 UA=Mozilla/5.0 (Macintosh; Intel Mac OS X 1
+[2026-07-04 13:58:14]   ok len=115501
+[2026-07-04 13:58:14] ADDED final #2 https://tacna-capital.doplim.com.pe/doy-ayuda-economica-a-se
+[2026-07-04 13:58:14] FINAL DONE added this=2

@@ -1,0 +1,23 @@
+agent_more_directs run ts=1783195277 completed 2026-07-04 15:36
+Web searches: 15+ varied for Locanto Hombre-busca-mujer directs (cities: lima arequipa trujillo cusco piura chiclayo huancayo tacna callao ica moquegua puno; terms brindo ayuda, doy ayuda, apoyo economico, ayuda economica, ofresco ayuda, brindo apoyo, ID_, senoritas, universitarias, madre soltera) + Doplim + FB public.
+Extracted /ID_ directs e.g.:
+https://www.locanto.com.pe/arequipa/ID_7640099842/Ayuda-economica.html
+... (25+ total)
+https://moquegua-capital.doplim.com.pe/brindo-ayuda-economica-solo-damas-id-823756.html
+etc.
+
+Fetches: 59 using run_terminal python snippets w/ tools.scrape_ads.fetch_playwright (UA list, waits, is_access check).
+Attempts documented even low yield (many Locanto interstitials/blocks).
+Good full ads only (target terms + male brindo/doy + no interstitial + redact): 8 added this run.
+Examples added:
+  [15:23:25]   ADDED: https://trujillo.doplim.com.pe/doy-ayuda-economica-a-srtas-id-935879.html -> good full ad, source_platform=Doplim Peru (hombre busca mujer or Contactos)
+  [15:28:04]   ADDED good full: https://cusco-capital.doplim.com.pe/doy-ayuda-economica-a-chicas-cusco-id-210755.html
+  [15:28:04]   ADDED good full: https://cusco-capital.doplim.com.pe/doy-ayuda-economica-a-chicas-cusco-id-210755.html
+  [15:29:11]   ADDED good full: https://trujillo.doplim.com.pe/apoyo-economico-a-senoritas-en-trujillo-id-695153.html
+  [15:29:11]   ADDED good full: https://trujillo.doplim.com.pe/apoyo-economico-a-senoritas-en-trujillo-id-695153.html
+
+New raw: data/raw/ads/ (dop_more_*.html , more_dir_*.html)
+Manifest appends: data/processed/ad_manifest.jsonl (source_platform Locanto Peru (hombre busca mujer real) or Doplim Peru (hombre busca mujer or Contactos); dedup by record_id=sha256(url))
+Current manifest lines: 208
+Full log: /Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/agent_more_directs_1783195277.log
+Persevered, only real, no fakes.

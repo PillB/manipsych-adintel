@@ -1,0 +1,60 @@
+{
+  "locanto": [
+    "site:locanto.com.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") lima \"ID_\"",
+    "site:locanto.com.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") arequipa \"ID_\"",
+    "site:locanto.com.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") trujillo \"ID_\"",
+    "site:locanto.com.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") cusco \"ID_\"",
+    "site:locanto.com.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") piura \"ID_\"",
+    "site:locanto.com.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") chiclayo \"ID_\"",
+    "site:locanto.com.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") huancayo \"ID_\"",
+    "site:locanto.com.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") callao \"ID_\"",
+    "site:locanto.com.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") ica \"ID_\"",
+    "site:locanto.com.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") tacna \"ID_\""
+  ],
+  "doplim": [
+    "site:doplim.com.pe OR site:doplim.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") lima \"ID_\"",
+    "site:doplim.com.pe OR site:doplim.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") arequipa \"ID_\"",
+    "site:doplim.com.pe OR site:doplim.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") trujillo \"ID_\"",
+    "site:doplim.com.pe OR site:doplim.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") cusco \"ID_\"",
+    "site:doplim.com.pe OR site:doplim.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") piura \"ID_\"",
+    "site:doplim.com.pe OR site:doplim.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") chiclayo \"ID_\"",
+    "site:doplim.com.pe OR site:doplim.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") huancayo \"ID_\"",
+    "site:doplim.com.pe OR site:doplim.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") callao \"ID_\"",
+    "site:doplim.com.pe OR site:doplim.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") ica \"ID_\"",
+    "site:doplim.com.pe OR site:doplim.pe (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") tacna \"ID_\""
+  ],
+  "facebook": [
+    "site:facebook.com/groups OR site:facebook.com (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") lima \"ID_\"",
+    "site:facebook.com/groups OR site:facebook.com (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") arequipa \"ID_\"",
+    "site:facebook.com/groups OR site:facebook.com (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") trujillo \"ID_\"",
+    "site:facebook.com/groups OR site:facebook.com (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") cusco \"ID_\"",
+    "site:facebook.com/groups OR site:facebook.com (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") piura \"ID_\"",
+    "site:facebook.com/groups OR site:facebook.com (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") chiclayo \"ID_\"",
+    "site:facebook.com/groups OR site:facebook.com (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") huancayo \"ID_\"",
+    "site:facebook.com/groups OR site:facebook.com (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") callao \"ID_\"",
+    "site:facebook.com/groups OR site:facebook.com (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") ica \"ID_\"",
+    "site:facebook.com/groups OR site:facebook.com (\"ayuda economica\" OR \"apoyo economico\" OR \"brindo ayuda\" OR \"doy ayuda\") tacna \"ID_\"",
+    "site:facebook.com/groups (\"brindo ayuda economica\" OR \"doy ayuda economica\" OR \"brindo apoyo economico\" OR \"ofrezco ayuda\") (lima OR arequipa OR trujillo OR piura OR cusco OR chiclayo OR \"señoritas\" OR universitarias OR estudiantes)",
+    "site:facebook.com/groups (\"ayuda economica\" OR \"apoyo economico\") (\"brindo\" OR \"doy\" OR \"ofrezco\") (lima OR arequipa OR trujillo) (\"hombre\" OR caballero OR empresario)",
+    "\"brindo ayuda economica\" OR \"doy ayuda a señoritas\" site:facebook.com/groups -inurl:login",
+    "site:facebook.com (\"brindo ayuda\" OR \"doy apoyo economico\") (\"senoritas\" OR \"universitarias\") (lima OR arequipa) -marketplace",
+    "site:facebook.com/groups/permalink OR site:facebook.com/groups/posts (\"ayuda economica\" OR \"apoyo economico\") (brindo OR doy) lima",
+    "facebook.com/groups \"ayuda economica a señoritas\" OR \"brindo apoyo\" lima",
+    "site:facebook.com/groups \"doy ayuda economica\" (cusco OR piura OR callao OR huancayo OR ica OR tacna)",
+    "site:facebook.com/groups (\"brindo ayuda economica\" OR \"doy ayuda economica\") (señoritas OR senoritas OR universitarias) (lima OR arequipa OR trujillo OR huancayo)",
+    "site:facebook.com/groups/posts (\"brindo apoyo economico\" OR \"doy apoyo economico\") (lima OR callao OR piura OR cusco)",
+    "site:facebook.com/groups (\"BrindO Ayuda\" OR \"DOY AYUDA ECONOMICA\") (huancayo OR arequipa OR lima)",
+    "\"brindo ayuda economica\" site:facebook.com/groups -marketplace -login",
+    "\"doy ayuda economica a señoritas\" OR \"doy ayuda economica a senoritas\" site:facebook.com",
+    "site:facebook.com/groups (\"ayuda economica\") (\"brindo\" OR \"doy\") (discreci OR discreto) lima"
+  ],
+  "ciudadanuncios": [
+    "site:ciudadanuncios.pe (\"brindo ayuda economica\" OR \"doy ayuda economica\" OR \"brindo apoyo economico\")",
+    "site:ciudadanuncios.pe (\"apoyo economico\" OR \"ayuda economica\") (señoritas OR senoritas OR damas OR universitarias)",
+    "site:ciudadanuncios.pe/item (\"brindo ayuda\" OR \"doy ayuda\") (lima OR cusco OR arequipa OR piura)"
+  ],
+  "evisex": [
+    "site:evisex.pe/encuentros (\"brindo\" OR \"doy\" OR \"se brinda\") (apoyo economico OR ayuda economica)",
+    "site:evisex.pe (\"apoyo economico\") (\"damas\" OR \"señoritas\" OR \"mujeres\")"
+  ]
+}

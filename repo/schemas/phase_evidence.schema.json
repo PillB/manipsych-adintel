@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PhaseEvidence",
+  "type": "object",
+  "required": ["phase", "status", "conditions", "retrospective"],
+  "properties": {
+    "phase": {"type": "integer", "minimum": 0, "maximum": 6},
+    "status": {"type": "string", "enum": ["pending", "complete"]},
+    "conditions": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "evidence"],
+        "properties": {
+          "id": {"type": "string"},
+          "description": {"type": "string"},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "retrospective": {
+      "type": "object",
+      "required": ["worked", "failed_or_risks", "next_improvements"],
+      "properties": {
+        "worked": {"type": "array", "items": {"type": "string"}},
+        "failed_or_risks": {"type": "array", "items": {"type": "string"}},
+        "next_improvements": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

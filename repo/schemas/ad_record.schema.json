@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AdRecord",
+  "type": "object",
+  "required": [
+    "record_id",
+    "source_platform",
+    "source_url_hash",
+    "collected_at",
+    "title",
+    "body_redacted",
+    "raw_archive_ref",
+    "metadata"
+  ],
+  "properties": {
+    "record_id": {"type": "string"},
+    "source_platform": {"type": "string"},
+    "source_url_hash": {"type": "string"},
+    "collected_at": {"type": "string"},
+    "title": {"type": "string"},
+    "body_redacted": {"type": "string"},
+    "raw_archive_ref": {"type": "string"},
+    "metadata": {"type": "object"}
+  }
+}

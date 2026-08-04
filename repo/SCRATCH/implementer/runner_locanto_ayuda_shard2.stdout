@@ -1,0 +1,28 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[19:56:21] START locanto_fast target=1500 start_tagged_detail=572 content_heuristic≈572 mode=seeds
+[19:56:21] LOADED seeds_in=1919 from SCRATCH/implementer/seeds_locanto_ayuda_only.jsonl
+[19:56:21] shard 2/4 size=91
+[19:56:21] pending after dedup/shard=91 (from 1919)
+[19:56:21] FETCH start pending=91 mode=serial_playwright tag=locanto_fast
+[19:56:40] SAVED 1 total~573 title='Dotado busca gorditas y da apoyo, Socabaya – 40' locanto_fast_5d1feae58ca3d41a.html
+[19:56:40] PROGRESS done=1/91 saved=1 skip=0 rate=3.1/min tagged=573
+[19:57:00] SAVED 2 total~574 title='Ayuda económica AE Piura total discreción 25 años – 25' locanto_fast_892e6756e4178171.html
+[19:57:00] PROGRESS done=2/91 saved=2 skip=0 rate=3.0/min tagged=574
+[19:57:19] SAVED 3 total~575 title='BRINDO AYUDA ECONÓMICA DISCRETA SOLO MUJERES, Lima – 35' locanto_fast_37a04a115d47eef4.html
+[19:57:19] PROGRESS done=3/91 saved=3 skip=0 rate=3.1/min tagged=575
+[19:57:34] SAVED 4 total~576 title='APOYO ECONOMICO SRTA DE CASA, Lima – 31' locanto_fast_9f580c966a3c3ba5.html
+[19:57:52] SAVED 5 total~577 title='Busco relación seria con señoritaaa o señora, Cusco – 3' locanto_fast_07ae3c7da2cf0948.html
+[19:57:52] PROGRESS done=5/91 saved=5 skip=0 rate=3.3/min tagged=577
+[19:59:16] SAVED 10 total~582 title='Piura.. linda señorita muy golosa con ricas nalgas apre' locanto_fast_eb3b54aadef439cb.html
+[19:59:16] PROGRESS done=10/91 saved=10 skip=0 rate=3.4/min tagged=582
+[20:00:27] PROGRESS done=15/91 saved=15 skip=0 rate=3.7/min tagged=587
+[20:01:49] SAVED 20 total~592 title='SOLIDARIDAD A MUJERES ESTUDIANTES DE JULIACA, JULIACA J' locanto_fast_05f59cb934a8eb51.html
+[20:01:49] PROGRESS done=20/91 saved=20 skip=0 rate=3.7/min tagged=592
+[20:04:49] PROGRESS done=25/91 saved=25 skip=0 rate=3.0/min tagged=597
+[20:06:04] SAVED 30 total~602 title='Apoyó económico para mujer estudiando, José Leonardo Or' locanto_fast_ce1373943b447840.html
+[20:06:04] PROGRESS done=30/91 saved=30 skip=0 rate=3.1/min tagged=602
+[20:07:30] PROGRESS done=35/91 saved=35 skip=0 rate=3.1/min tagged=607
+[20:08:43] SAVED 40 total~612 title='Apoyo E Para todas las mujeres maduras que la quieran p' locanto_fast_468ccd0b3bf1434c.html
+[20:08:43] PROGRESS done=40/91 saved=40 skip=0 rate=3.2/min tagged=612
+[20:10:40] PROGRESS done=45/91 saved=44 skip=1 rate=3.1/min tagged=616

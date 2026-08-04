@@ -1,0 +1,52 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[18:29:51] START evisos_mass target=1500 start_count=0
+[18:29:52] LIST skip https://www.evisos.com.pe/encuentros.htm status=403 len=0
+[18:29:53] LIST skip https://www.evisos.com.pe/encuentros/clasificados/2 status=403 len=0
+[18:29:54] LIST skip https://lima.evisos.com.pe/encuentros.htm status=403 len=0
+[18:29:54] LIST skip https://lima.evisos.com.pe/encuentros/clasificados/2 status=403 len=0
+[18:29:54] LIST skip https://www.evisos.com.pe/hombre-busca-mujer.htm status=403 len=0
+[18:29:55] LIST skip https://www.evisos.com.pe/hombre-busca-mujer/clasificados/2 status=403 len=0
+[18:29:55] LIST skip https://www.evisos.com.pe/por-hombre-busca-mujer.htm status=403 len=0
+[18:29:55] LIST skip https://www.evisos.com.pe/por-hombre-busca-mujer/clasificados/2 status=403 len=0
+[18:29:56] LIST skip https://www.evisos.com.pe/contactos-ocasionales-peru.htm status=403 len=0
+[18:29:56] LIST skip https://www.evisos.com.pe/contactos-ocasionales-peru/clasificados/2 status=403 len=0
+[18:29:56] LIST skip https://www.evisos.com.pe/relaciones-ocasionales.htm status=403 len=0
+[18:29:57] LIST skip https://www.evisos.com.pe/relaciones-ocasionales/clasificados/2 status=403 len=0
+[18:29:57] LIST skip https://www.evisos.com.pe/por-relaciones-ocasionales.htm status=403 len=0
+[18:29:57] LIST skip https://www.evisos.com.pe/por-relaciones-ocasionales/clasificados/2 status=403 len=0
+[18:29:57] LIST skip https://www.evisos.com.pe/por-encuentros.htm status=403 len=0
+[18:29:58] LIST skip https://www.evisos.com.pe/por-encuentros/clasificados/2 status=403 len=0
+[18:29:58] LIST skip https://www.evisos.com.pe/por-ayuda-economica.htm status=403 len=0
+[18:29:58] LIST skip https://www.evisos.com.pe/por-ayuda-economica/clasificados/2 status=403 len=0
+[18:29:59] LIST skip https://www.evisos.com.pe/apoyo-economico.htm status=403 len=0
+[18:29:59] LIST skip https://www.evisos.com.pe/apoyo-economico/clasificados/2 status=403 len=0
+[18:29:59] LIST skip https://www.evisos.com.pe/por-apoyo-economico.htm status=403 len=0
+[18:30:00] LIST skip https://www.evisos.com.pe/por-apoyo-economico/clasificados/2 status=403 len=0
+[18:30:00] LIST skip https://lima.evisos.com.pe/por-ayuda-economica.htm status=403 len=0
+[18:30:00] LIST skip https://lima.evisos.com.pe/por-ayuda-economica/clasificados/2 status=403 len=0
+[18:30:00] LIST skip https://lima.evisos.com.pe/apoyo-economico.htm status=403 len=0
+[18:30:01] LIST skip https://lima.evisos.com.pe/apoyo-economico/clasificados/2 status=403 len=0
+[18:30:01] LIST skip https://www.evisos.com.pe/brindo-ayuda.htm status=403 len=0
+[18:30:01] LIST skip https://www.evisos.com.pe/brindo-ayuda/clasificados/2 status=403 len=0
+[18:30:02] LIST skip https://www.evisos.com.pe/doy-ayuda.htm status=403 len=0
+[18:30:02] LIST skip https://www.evisos.com.pe/doy-ayuda/clasificados/2 status=403 len=0
+[18:30:02] LIST skip https://www.evisos.com.pe/brindo-apoyo.htm status=403 len=0
+[18:30:03] LIST skip https://www.evisos.com.pe/brindo-apoyo/clasificados/2 status=403 len=0
+[18:30:04] LIST skip https://arequipa.evisos.com.pe/encuentros.htm status=403 len=0
+[18:30:04] LIST skip https://arequipa.evisos.com.pe/encuentros/clasificados/2 status=403 len=0
+[18:30:05] LIST skip https://trujillo.evisos.com.pe/encuentros.htm status=403 len=0
+[18:30:06] LIST skip https://trujillo.evisos.com.pe/encuentros/clasificados/2 status=403 len=0
+[18:30:07] LIST skip https://cusco.evisos.com.pe/encuentros.htm status=403 len=0
+[18:30:07] LIST skip https://cusco.evisos.com.pe/encuentros/clasificados/2 status=403 len=0
+[18:30:09] LIST skip https://piura.evisos.com.pe/encuentros.htm status=403 len=0
+[18:30:09] LIST skip https://piura.evisos.com.pe/encuentros/clasificados/2 status=403 len=0
+[18:30:10] LIST skip https://chiclayo.evisos.com.pe/encuentros.htm status=403 len=0
+[18:30:10] LIST skip https://chiclayo.evisos.com.pe/encuentros/clasificados/2 status=403 len=0
+[18:30:11] LIST skip https://lima.evisos.com.pe/contactos.htm status=403 len=0
+[18:30:11] LIST skip https://lima.evisos.com.pe/contactos/clasificados/2 status=403 len=0
+[18:30:11] LIST skip https://www.evisos.com.pe/servicios-eroticos.htm status=403 len=0
+[18:30:12] LIST skip https://www.evisos.com.pe/servicios-eroticos/clasificados/2 status=403 len=0
+[18:30:12] LIST skip https://lima.evisos.com.pe/servicios-eroticos.htm status=403 len=0
+[18:30:12] LIST skip https://lima.evisos.com.pe/servicios-eroticos/clasificados/2 status=403 len=0
+[18:30:12] GATHER unique=110 -> /Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/seeds_evisos_mass_1783553390.jsonl

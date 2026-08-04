@@ -1,0 +1,2221 @@
+{
+  "clusters": [
+    {
+      "cluster": "cluster_0",
+      "records": 627,
+      "top_terms": [
+        "económico",
+        "apoyo económico",
+        "apoyo",
+        "de",
+        "brindo apoyo",
+        "mujer",
+        "busca",
+        "brindo"
+      ]
+    },
+    {
+      "cluster": "cluster_1",
+      "records": 814,
+      "top_terms": [
+        "ayuda económica",
+        "económica",
+        "ayuda",
+        "doy ayuda",
+        "doy",
+        "de",
+        "redacted_contact",
+        "señoritas"
+      ]
+    },
+    {
+      "cluster": "cluster_2",
+      "records": 500,
+      "top_terms": [
+        "economico",
+        "apoyo economico",
+        "apoyo",
+        "brindo apoyo",
+        "de",
+        "brindo",
+        "busca",
+        "mujer"
+      ]
+    },
+    {
+      "cluster": "cluster_3",
+      "records": 340,
+      "top_terms": [
+        "mujeres",
+        "edad",
+        "cualquier",
+        "cualquier edad",
+        "de cualquier",
+        "ayuda",
+        "mujeres de",
+        "de"
+      ]
+    },
+    {
+      "cluster": "cluster_4",
+      "records": 431,
+      "top_terms": [
+        "madres",
+        "económica",
+        "ayuda económica",
+        "solteras",
+        "madres solteras",
+        "ayuda",
+        "se",
+        "señoritas"
+      ]
+    },
+    {
+      "cluster": "cluster_5",
+      "records": 198,
+      "top_terms": [
+        "economica",
+        "ayuda economica",
+        "economica señoritas",
+        "señoritas",
+        "ayuda",
+        "brinda ayuda",
+        "brinda",
+        "redacted_contact"
+      ]
+    },
+    {
+      "cluster": "cluster_6",
+      "records": 632,
+      "top_terms": [
+        "economica",
+        "ayuda economica",
+        "ayuda",
+        "doy ayuda",
+        "doy",
+        "de",
+        "chicas",
+        "brindo ayuda"
+      ]
+    },
+    {
+      "cluster": "cluster_7",
+      "records": 1703,
+      "top_terms": [
+        "de",
+        "una",
+        "que",
+        "ayuda",
+        "para",
+        "un",
+        "económica",
+        "ayuda económica"
+      ]
+    },
+    {
+      "cluster": "cluster_8",
+      "records": 217,
+      "top_terms": [
+        "doy apoyo",
+        "apoyo",
+        "doy",
+        "apoyo economico",
+        "economico",
+        "apoyo económico",
+        "económico",
+        "de"
+      ]
+    },
+    {
+      "cluster": "cluster_9",
+      "records": 255,
+      "top_terms": [
+        "soltera",
+        "madre soltera",
+        "madre",
+        "de",
+        "mujer",
+        "ayuda",
+        "busca",
+        "hombre"
+      ]
+    }
+  ],
+  "gold": false,
+  "method_notes": [
+    "Predefined slices use privacy-safe metadata and derived text features.",
+    "Collection time-of-day is intentionally excluded because it reflects crawler acquisition timing, not ad-poster behavior.",
+    "Posting date range is used only when explicit posting metadata exists; the current processed corpus does not expose it.",
+    "Engineered persuasion/manipulation features include vulnerability-cue density, conditionality density, contact-migration pressure, orthography/typo noise, repeated phrases, and city-length interactions.",
+    "Email provider is reported only as redacted/unavailable/provider-family; no raw email addresses are exported.",
+    "Latent clusters use CPU-safe TF-IDF plus MiniBatchKMeans, a fallback to transformer/UMAP/HDBSCAN topic clustering.",
+    "Threshold-tuned results use validation-selected per-label thresholds and are a post-hoc improvement layer, not human-gold validation."
+  ],
+  "outperforming_slices": [
+    {
+      "default": {
+        "label_accuracy": 0.9867,
+        "macro_f1": 0.4674,
+        "micro_f1": 0.9577,
+        "records": 60,
+        "roc_auc_micro": 0.9967,
+        "subset_accuracy": 0.8167
+      },
+      "delta_micro_f1": -0.0109,
+      "dimension": "vulnerability_cue_density",
+      "records": 60,
+      "threshold_tuned": {
+        "label_accuracy": 0.9833,
+        "macro_f1": 0.4138,
+        "micro_f1": 0.9468,
+        "records": 60,
+        "roc_auc_micro": 0.9967,
+        "subset_accuracy": 0.7667
+      },
+      "top_terms": [],
+      "value": "vulnerability_high"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.987,
+        "macro_f1": 0.6063,
+        "micro_f1": 0.9571,
+        "records": 27,
+        "roc_auc_micro": 0.9978,
+        "subset_accuracy": 0.7778
+      },
+      "delta_micro_f1": 0.0068,
+      "dimension": "tfidf_cluster",
+      "records": 27,
+      "threshold_tuned": {
+        "label_accuracy": 0.9889,
+        "macro_f1": 0.6596,
+        "micro_f1": 0.9639,
+        "records": 27,
+        "roc_auc_micro": 0.9978,
+        "subset_accuracy": 0.8519
+      },
+      "top_terms": [
+        "economica",
+        "ayuda economica",
+        "economica señoritas",
+        "señoritas",
+        "ayuda",
+        "brinda ayuda",
+        "brinda",
+        "redacted_contact"
+      ],
+      "value": "cluster_5"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9789,
+        "macro_f1": 0.6502,
+        "micro_f1": 0.949,
+        "records": 38,
+        "roc_auc_micro": 0.9951,
+        "subset_accuracy": 0.6579
+      },
+      "delta_micro_f1": 0.0,
+      "dimension": "conditionality_cue_density",
+      "records": 38,
+      "threshold_tuned": {
+        "label_accuracy": 0.9789,
+        "macro_f1": 0.6517,
+        "micro_f1": 0.949,
+        "records": 38,
+        "roc_auc_micro": 0.9951,
+        "subset_accuracy": 0.6316
+      },
+      "top_terms": [],
+      "value": "conditionality_medium"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9833,
+        "macro_f1": 0.748,
+        "micro_f1": 0.9457,
+        "records": 21,
+        "roc_auc_micro": 0.9934,
+        "subset_accuracy": 0.7143
+      },
+      "delta_micro_f1": 0.0,
+      "dimension": "city_length_interaction",
+      "records": 21,
+      "threshold_tuned": {
+        "label_accuracy": 0.9833,
+        "macro_f1": 0.748,
+        "micro_f1": 0.9457,
+        "records": 21,
+        "roc_auc_micro": 0.9934,
+        "subset_accuracy": 0.7143
+      },
+      "top_terms": [],
+      "value": "lima__short_<180"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.977,
+        "macro_f1": 0.5536,
+        "micro_f1": 0.9395,
+        "records": 63,
+        "roc_auc_micro": 0.9928,
+        "subset_accuracy": 0.6508
+      },
+      "delta_micro_f1": 0.0066,
+      "dimension": "tfidf_cluster",
+      "records": 63,
+      "threshold_tuned": {
+        "label_accuracy": 0.9794,
+        "macro_f1": 0.5254,
+        "micro_f1": 0.9461,
+        "records": 63,
+        "roc_auc_micro": 0.9928,
+        "subset_accuracy": 0.6825
+      },
+      "top_terms": [
+        "madres",
+        "económica",
+        "ayuda económica",
+        "solteras",
+        "madres solteras",
+        "ayuda",
+        "se",
+        "señoritas"
+      ],
+      "value": "cluster_4"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.975,
+        "macro_f1": 0.6187,
+        "micro_f1": 0.9384,
+        "records": 26,
+        "roc_auc_micro": 0.9962,
+        "subset_accuracy": 0.6154
+      },
+      "delta_micro_f1": 0.022,
+      "dimension": "city",
+      "records": 26,
+      "threshold_tuned": {
+        "label_accuracy": 0.9846,
+        "macro_f1": 0.5642,
+        "micro_f1": 0.9604,
+        "records": 26,
+        "roc_auc_micro": 0.9962,
+        "subset_accuracy": 0.7692
+      },
+      "top_terms": [],
+      "value": "cusco"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.983,
+        "macro_f1": 0.7633,
+        "micro_f1": 0.9367,
+        "records": 220,
+        "roc_auc_micro": 0.9951,
+        "subset_accuracy": 0.7045
+      },
+      "delta_micro_f1": -0.0019,
+      "dimension": "length_bin",
+      "records": 220,
+      "threshold_tuned": {
+        "label_accuracy": 0.9825,
+        "macro_f1": 0.7564,
+        "micro_f1": 0.9348,
+        "records": 220,
+        "roc_auc_micro": 0.9951,
+        "subset_accuracy": 0.7091
+      },
+      "top_terms": [],
+      "value": "short_<180"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9819,
+        "macro_f1": 0.6986,
+        "micro_f1": 0.9318,
+        "records": 144,
+        "roc_auc_micro": 0.9948,
+        "subset_accuracy": 0.6806
+      },
+      "delta_micro_f1": -0.0027,
+      "dimension": "city_length_interaction",
+      "records": 144,
+      "threshold_tuned": {
+        "label_accuracy": 0.9812,
+        "macro_f1": 0.6925,
+        "micro_f1": 0.9291,
+        "records": 144,
+        "roc_auc_micro": 0.9948,
+        "subset_accuracy": 0.6806
+      },
+      "top_terms": [],
+      "value": "unknown__short_<180"
+    }
+  ],
+  "overall_default": {
+    "label_accuracy": 0.961,
+    "macro_f1": 0.7044,
+    "micro_f1": 0.9008,
+    "records": 853,
+    "roc_auc_micro": 0.9872,
+    "subset_accuracy": 0.5076
+  },
+  "overall_threshold_tuned": {
+    "label_accuracy": 0.9628,
+    "macro_f1": 0.7261,
+    "micro_f1": 0.9041,
+    "records": 853,
+    "roc_auc_micro": 0.9872,
+    "subset_accuracy": 0.5158
+  },
+  "records": 5717,
+  "slices": [
+    {
+      "default": {
+        "label_accuracy": 0.8981,
+        "macro_f1": 0.657,
+        "micro_f1": 0.8455,
+        "records": 54,
+        "roc_auc_micro": 0.9598,
+        "subset_accuracy": 0.1296
+      },
+      "delta_micro_f1": 0.0187,
+      "dimension": "body_length_bin",
+      "records": 54,
+      "threshold_tuned": {
+        "label_accuracy": 0.9139,
+        "macro_f1": 0.6861,
+        "micro_f1": 0.8642,
+        "records": 54,
+        "roc_auc_micro": 0.9598,
+        "subset_accuracy": 0.1296
+      },
+      "top_terms": [],
+      "value": "long_360_699"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9549,
+        "macro_f1": 0.6997,
+        "micro_f1": 0.8977,
+        "records": 374,
+        "roc_auc_micro": 0.9863,
+        "subset_accuracy": 0.4251
+      },
+      "delta_micro_f1": 0.001,
+      "dimension": "body_length_bin",
+      "records": 374,
+      "threshold_tuned": {
+        "label_accuracy": 0.956,
+        "macro_f1": 0.7051,
+        "micro_f1": 0.8987,
+        "records": 374,
+        "roc_auc_micro": 0.9863,
+        "subset_accuracy": 0.4412
+      },
+      "top_terms": [],
+      "value": "medium_180_359"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9787,
+        "macro_f1": 0.7521,
+        "micro_f1": 0.9283,
+        "records": 409,
+        "roc_auc_micro": 0.9929,
+        "subset_accuracy": 0.6479
+      },
+      "delta_micro_f1": -0.002,
+      "dimension": "body_length_bin",
+      "records": 409,
+      "threshold_tuned": {
+        "label_accuracy": 0.9782,
+        "macro_f1": 0.7841,
+        "micro_f1": 0.9263,
+        "records": 409,
+        "roc_auc_micro": 0.9929,
+        "subset_accuracy": 0.6455
+      },
+      "top_terms": [],
+      "value": "short_<180"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9395,
+        "macro_f1": 0.7092,
+        "micro_f1": 0.878,
+        "records": 62,
+        "roc_auc_micro": 0.9758,
+        "subset_accuracy": 0.3548
+      },
+      "delta_micro_f1": 0.0068,
+      "dimension": "city",
+      "records": 62,
+      "threshold_tuned": {
+        "label_accuracy": 0.9444,
+        "macro_f1": 0.7057,
+        "micro_f1": 0.8848,
+        "records": 62,
+        "roc_auc_micro": 0.9758,
+        "subset_accuracy": 0.3871
+      },
+      "top_terms": [],
+      "value": "arequipa"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.975,
+        "macro_f1": 0.6187,
+        "micro_f1": 0.9384,
+        "records": 26,
+        "roc_auc_micro": 0.9962,
+        "subset_accuracy": 0.6154
+      },
+      "delta_micro_f1": 0.022,
+      "dimension": "city",
+      "records": 26,
+      "threshold_tuned": {
+        "label_accuracy": 0.9846,
+        "macro_f1": 0.5642,
+        "micro_f1": 0.9604,
+        "records": 26,
+        "roc_auc_micro": 0.9962,
+        "subset_accuracy": 0.7692
+      },
+      "top_terms": [],
+      "value": "cusco"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9428,
+        "macro_f1": 0.6777,
+        "micro_f1": 0.8697,
+        "records": 166,
+        "roc_auc_micro": 0.9796,
+        "subset_accuracy": 0.3735
+      },
+      "delta_micro_f1": 0.0062,
+      "dimension": "city",
+      "records": 166,
+      "threshold_tuned": {
+        "label_accuracy": 0.9464,
+        "macro_f1": 0.6996,
+        "micro_f1": 0.8759,
+        "records": 166,
+        "roc_auc_micro": 0.9796,
+        "subset_accuracy": 0.4096
+      },
+      "top_terms": [],
+      "value": "lima"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.936,
+        "macro_f1": 0.5923,
+        "micro_f1": 0.8559,
+        "records": 25,
+        "roc_auc_micro": 0.9677,
+        "subset_accuracy": 0.44
+      },
+      "delta_micro_f1": 0.0039,
+      "dimension": "city",
+      "records": 25,
+      "threshold_tuned": {
+        "label_accuracy": 0.94,
+        "macro_f1": 0.6156,
+        "micro_f1": 0.8598,
+        "records": 25,
+        "roc_auc_micro": 0.9677,
+        "subset_accuracy": 0.36
+      },
+      "top_terms": [],
+      "value": "piura"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9422,
+        "macro_f1": 0.5736,
+        "micro_f1": 0.8604,
+        "records": 32,
+        "roc_auc_micro": 0.9612,
+        "subset_accuracy": 0.3438
+      },
+      "delta_micro_f1": 0.0055,
+      "dimension": "city",
+      "records": 32,
+      "threshold_tuned": {
+        "label_accuracy": 0.9453,
+        "macro_f1": 0.5888,
+        "micro_f1": 0.8659,
+        "records": 32,
+        "roc_auc_micro": 0.9612,
+        "subset_accuracy": 0.3125
+      },
+      "top_terms": [],
+      "value": "trujillo"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9706,
+        "macro_f1": 0.6974,
+        "micro_f1": 0.9192,
+        "records": 463,
+        "roc_auc_micro": 0.9926,
+        "subset_accuracy": 0.5637
+      },
+      "delta_micro_f1": -0.0002,
+      "dimension": "city",
+      "records": 463,
+      "threshold_tuned": {
+        "label_accuracy": 0.9707,
+        "macro_f1": 0.7305,
+        "micro_f1": 0.919,
+        "records": 463,
+        "roc_auc_micro": 0.9926,
+        "subset_accuracy": 0.5637
+      },
+      "top_terms": [],
+      "value": "unknown"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9455,
+        "macro_f1": 0.6693,
+        "micro_f1": 0.88,
+        "records": 33,
+        "roc_auc_micro": 0.9788,
+        "subset_accuracy": 0.3636
+      },
+      "delta_micro_f1": 0.0005,
+      "dimension": "city_length_interaction",
+      "records": 33,
+      "threshold_tuned": {
+        "label_accuracy": 0.947,
+        "macro_f1": 0.6643,
+        "micro_f1": 0.8805,
+        "records": 33,
+        "roc_auc_micro": 0.9788,
+        "subset_accuracy": 0.3636
+      },
+      "top_terms": [],
+      "value": "arequipa__medium_180_359"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.8828,
+        "macro_f1": 0.6186,
+        "micro_f1": 0.8172,
+        "records": 29,
+        "roc_auc_micro": 0.9579,
+        "subset_accuracy": 0.069
+      },
+      "delta_micro_f1": 0.0171,
+      "dimension": "city_length_interaction",
+      "records": 29,
+      "threshold_tuned": {
+        "label_accuracy": 0.8966,
+        "macro_f1": 0.6423,
+        "micro_f1": 0.8343,
+        "records": 29,
+        "roc_auc_micro": 0.9579,
+        "subset_accuracy": 0.1379
+      },
+      "top_terms": [],
+      "value": "lima__long_360_699"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9569,
+        "macro_f1": 0.6903,
+        "micro_f1": 0.8836,
+        "records": 108,
+        "roc_auc_micro": 0.9827,
+        "subset_accuracy": 0.4167
+      },
+      "delta_micro_f1": -0.0026,
+      "dimension": "city_length_interaction",
+      "records": 108,
+      "threshold_tuned": {
+        "label_accuracy": 0.9565,
+        "macro_f1": 0.6936,
+        "micro_f1": 0.881,
+        "records": 108,
+        "roc_auc_micro": 0.9827,
+        "subset_accuracy": 0.4352
+      },
+      "top_terms": [],
+      "value": "lima__medium_180_359"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9833,
+        "macro_f1": 0.748,
+        "micro_f1": 0.9457,
+        "records": 21,
+        "roc_auc_micro": 0.9934,
+        "subset_accuracy": 0.7143
+      },
+      "delta_micro_f1": 0.0,
+      "dimension": "city_length_interaction",
+      "records": 21,
+      "threshold_tuned": {
+        "label_accuracy": 0.9833,
+        "macro_f1": 0.748,
+        "micro_f1": 0.9457,
+        "records": 21,
+        "roc_auc_micro": 0.9934,
+        "subset_accuracy": 0.7143
+      },
+      "top_terms": [],
+      "value": "lima__short_<180"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9661,
+        "macro_f1": 0.6975,
+        "micro_f1": 0.9172,
+        "records": 314,
+        "roc_auc_micro": 0.9916,
+        "subset_accuracy": 0.5159
+      },
+      "delta_micro_f1": 0.0004,
+      "dimension": "city_length_interaction",
+      "records": 314,
+      "threshold_tuned": {
+        "label_accuracy": 0.9666,
+        "macro_f1": 0.7294,
+        "micro_f1": 0.9176,
+        "records": 314,
+        "roc_auc_micro": 0.9916,
+        "subset_accuracy": 0.5159
+      },
+      "top_terms": [],
+      "value": "unknown__medium_180_359"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9819,
+        "macro_f1": 0.6986,
+        "micro_f1": 0.9318,
+        "records": 144,
+        "roc_auc_micro": 0.9948,
+        "subset_accuracy": 0.6806
+      },
+      "delta_micro_f1": -0.0027,
+      "dimension": "city_length_interaction",
+      "records": 144,
+      "threshold_tuned": {
+        "label_accuracy": 0.9812,
+        "macro_f1": 0.6925,
+        "micro_f1": 0.9291,
+        "records": 144,
+        "roc_auc_micro": 0.9948,
+        "subset_accuracy": 0.6806
+      },
+      "top_terms": [],
+      "value": "unknown__short_<180"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9491,
+        "macro_f1": 0.7091,
+        "micro_f1": 0.8984,
+        "records": 293,
+        "roc_auc_micro": 0.9832,
+        "subset_accuracy": 0.4061
+      },
+      "delta_micro_f1": 0.0044,
+      "dimension": "conditionality_cue_density",
+      "records": 293,
+      "threshold_tuned": {
+        "label_accuracy": 0.9522,
+        "macro_f1": 0.7128,
+        "micro_f1": 0.9028,
+        "records": 293,
+        "roc_auc_micro": 0.9832,
+        "subset_accuracy": 0.413
+      },
+      "top_terms": [],
+      "value": "conditionality_low"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9789,
+        "macro_f1": 0.6502,
+        "micro_f1": 0.949,
+        "records": 38,
+        "roc_auc_micro": 0.9951,
+        "subset_accuracy": 0.6579
+      },
+      "delta_micro_f1": 0.0,
+      "dimension": "conditionality_cue_density",
+      "records": 38,
+      "threshold_tuned": {
+        "label_accuracy": 0.9789,
+        "macro_f1": 0.6517,
+        "micro_f1": 0.949,
+        "records": 38,
+        "roc_auc_micro": 0.9951,
+        "subset_accuracy": 0.6316
+      },
+      "top_terms": [],
+      "value": "conditionality_medium"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9663,
+        "macro_f1": 0.6645,
+        "micro_f1": 0.8986,
+        "records": 522,
+        "roc_auc_micro": 0.989,
+        "subset_accuracy": 0.5536
+      },
+      "delta_micro_f1": 0.0025,
+      "dimension": "conditionality_cue_density",
+      "records": 522,
+      "threshold_tuned": {
+        "label_accuracy": 0.9675,
+        "macro_f1": 0.7271,
+        "micro_f1": 0.9011,
+        "records": 522,
+        "roc_auc_micro": 0.989,
+        "subset_accuracy": 0.5651
+      },
+      "top_terms": [],
+      "value": "conditionality_none"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9457,
+        "macro_f1": 0.6564,
+        "micro_f1": 0.897,
+        "records": 47,
+        "roc_auc_micro": 0.976,
+        "subset_accuracy": 0.4255
+      },
+      "delta_micro_f1": -0.0054,
+      "dimension": "contact_migration_density",
+      "records": 47,
+      "threshold_tuned": {
+        "label_accuracy": 0.9436,
+        "macro_f1": 0.6763,
+        "micro_f1": 0.8916,
+        "records": 47,
+        "roc_auc_micro": 0.976,
+        "subset_accuracy": 0.4043
+      },
+      "top_terms": [],
+      "value": "contact_migration_low"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9619,
+        "macro_f1": 0.7088,
+        "micro_f1": 0.9013,
+        "records": 805,
+        "roc_auc_micro": 0.9881,
+        "subset_accuracy": 0.513
+      },
+      "delta_micro_f1": 0.0039,
+      "dimension": "contact_migration_density",
+      "records": 805,
+      "threshold_tuned": {
+        "label_accuracy": 0.9639,
+        "macro_f1": 0.7337,
+        "micro_f1": 0.9052,
+        "records": 805,
+        "roc_auc_micro": 0.9881,
+        "subset_accuracy": 0.523
+      },
+      "top_terms": [],
+      "value": "contact_migration_none"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9606,
+        "macro_f1": 0.7032,
+        "micro_f1": 0.8999,
+        "records": 837,
+        "roc_auc_micro": 0.9871,
+        "subset_accuracy": 0.5054
+      },
+      "delta_micro_f1": 0.0032,
+      "dimension": "email_provider_family",
+      "records": 837,
+      "threshold_tuned": {
+        "label_accuracy": 0.9624,
+        "macro_f1": 0.7182,
+        "micro_f1": 0.9031,
+        "records": 837,
+        "roc_auc_micro": 0.9871,
+        "subset_accuracy": 0.5125
+      },
+      "top_terms": [],
+      "value": "not_available"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9635,
+        "macro_f1": 0.7005,
+        "micro_f1": 0.9019,
+        "records": 419,
+        "roc_auc_micro": 0.9892,
+        "subset_accuracy": 0.5513
+      },
+      "delta_micro_f1": 0.0057,
+      "dimension": "has_redacted_contact",
+      "records": 419,
+      "threshold_tuned": {
+        "label_accuracy": 0.9661,
+        "macro_f1": 0.7616,
+        "micro_f1": 0.9076,
+        "records": 419,
+        "roc_auc_micro": 0.9892,
+        "subset_accuracy": 0.5609
+      },
+      "top_terms": [],
+      "value": "has_redacted_contact"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9585,
+        "macro_f1": 0.704,
+        "micro_f1": 0.8999,
+        "records": 434,
+        "roc_auc_micro": 0.9853,
+        "subset_accuracy": 0.4654
+      },
+      "delta_micro_f1": 0.0013,
+      "dimension": "has_redacted_contact",
+      "records": 434,
+      "threshold_tuned": {
+        "label_accuracy": 0.9596,
+        "macro_f1": 0.6889,
+        "micro_f1": 0.9012,
+        "records": 434,
+        "roc_auc_micro": 0.9853,
+        "subset_accuracy": 0.4724
+      },
+      "top_terms": [],
+      "value": "no_redacted_contact"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.961,
+        "macro_f1": 0.7044,
+        "micro_f1": 0.9008,
+        "records": 853,
+        "roc_auc_micro": 0.9872,
+        "subset_accuracy": 0.5076
+      },
+      "delta_micro_f1": 0.0033,
+      "dimension": "image_available",
+      "records": 853,
+      "threshold_tuned": {
+        "label_accuracy": 0.9628,
+        "macro_f1": 0.7261,
+        "micro_f1": 0.9041,
+        "records": 853,
+        "roc_auc_micro": 0.9872,
+        "subset_accuracy": 0.5158
+      },
+      "top_terms": [],
+      "value": "no_image"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9751,
+        "macro_f1": 0.666,
+        "micro_f1": 0.8957,
+        "records": 385,
+        "roc_auc_micro": 0.9904,
+        "subset_accuracy": 0.6182
+      },
+      "delta_micro_f1": 0.0078,
+      "dimension": "label_count_bin",
+      "records": 385,
+      "threshold_tuned": {
+        "label_accuracy": 0.9773,
+        "macro_f1": 0.7096,
+        "micro_f1": 0.9035,
+        "records": 385,
+        "roc_auc_micro": 0.9904,
+        "subset_accuracy": 0.6338
+      },
+      "top_terms": [],
+      "value": "labels_1_3"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9542,
+        "macro_f1": 0.7093,
+        "micro_f1": 0.9061,
+        "records": 431,
+        "roc_auc_micro": 0.9872,
+        "subset_accuracy": 0.4432
+      },
+      "delta_micro_f1": 0.0015,
+      "dimension": "label_count_bin",
+      "records": 431,
+      "threshold_tuned": {
+        "label_accuracy": 0.9555,
+        "macro_f1": 0.7371,
+        "micro_f1": 0.9076,
+        "records": 431,
+        "roc_auc_micro": 0.9872,
+        "subset_accuracy": 0.4455
+      },
+      "top_terms": [],
+      "value": "labels_4_7"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.8932,
+        "macro_f1": 0.6996,
+        "micro_f1": 0.8823,
+        "records": 37,
+        "roc_auc_micro": 0.9512,
+        "subset_accuracy": 0.1081
+      },
+      "delta_micro_f1": 0.0015,
+      "dimension": "label_count_bin",
+      "records": 37,
+      "threshold_tuned": {
+        "label_accuracy": 0.8973,
+        "macro_f1": 0.7142,
+        "micro_f1": 0.8838,
+        "records": 37,
+        "roc_auc_micro": 0.9512,
+        "subset_accuracy": 0.1081
+      },
+      "top_terms": [],
+      "value": "labels_8_plus"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9037,
+        "macro_f1": 0.6581,
+        "micro_f1": 0.8461,
+        "records": 68,
+        "roc_auc_micro": 0.9634,
+        "subset_accuracy": 0.1471
+      },
+      "delta_micro_f1": 0.0163,
+      "dimension": "length_bin",
+      "records": 68,
+      "threshold_tuned": {
+        "label_accuracy": 0.9169,
+        "macro_f1": 0.6767,
+        "micro_f1": 0.8624,
+        "records": 68,
+        "roc_auc_micro": 0.9634,
+        "subset_accuracy": 0.1912
+      },
+      "top_terms": [],
+      "value": "long_360_699"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.963,
+        "macro_f1": 0.7181,
+        "micro_f1": 0.9065,
+        "records": 544,
+        "roc_auc_micro": 0.9883,
+        "subset_accuracy": 0.489
+      },
+      "delta_micro_f1": -0.0004,
+      "dimension": "length_bin",
+      "records": 544,
+      "threshold_tuned": {
+        "label_accuracy": 0.9632,
+        "macro_f1": 0.7329,
+        "micro_f1": 0.9061,
+        "records": 544,
+        "roc_auc_micro": 0.9883,
+        "subset_accuracy": 0.4908
+      },
+      "top_terms": [],
+      "value": "medium_180_359"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.983,
+        "macro_f1": 0.7633,
+        "micro_f1": 0.9367,
+        "records": 220,
+        "roc_auc_micro": 0.9951,
+        "subset_accuracy": 0.7045
+      },
+      "delta_micro_f1": -0.0019,
+      "dimension": "length_bin",
+      "records": 220,
+      "threshold_tuned": {
+        "label_accuracy": 0.9825,
+        "macro_f1": 0.7564,
+        "micro_f1": 0.9348,
+        "records": 220,
+        "roc_auc_micro": 0.9951,
+        "subset_accuracy": 0.7091
+      },
+      "top_terms": [],
+      "value": "short_<180"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.8643,
+        "macro_f1": 0.6489,
+        "micro_f1": 0.8464,
+        "records": 21,
+        "roc_auc_micro": 0.9456,
+        "subset_accuracy": 0.0952
+      },
+      "delta_micro_f1": 0.0283,
+      "dimension": "length_bin",
+      "records": 21,
+      "threshold_tuned": {
+        "label_accuracy": 0.8929,
+        "macro_f1": 0.6765,
+        "micro_f1": 0.8747,
+        "records": 21,
+        "roc_auc_micro": 0.9456,
+        "subset_accuracy": 0.1905
+      },
+      "top_terms": [],
+      "value": "very_long_700_plus"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9611,
+        "macro_f1": 0.6661,
+        "micro_f1": 0.905,
+        "records": 350,
+        "roc_auc_micro": 0.988,
+        "subset_accuracy": 0.5143
+      },
+      "delta_micro_f1": 0.0053,
+      "dimension": "orthography_noise",
+      "records": 350,
+      "threshold_tuned": {
+        "label_accuracy": 0.9639,
+        "macro_f1": 0.6986,
+        "micro_f1": 0.9103,
+        "records": 350,
+        "roc_auc_micro": 0.988,
+        "subset_accuracy": 0.5257
+      },
+      "top_terms": [],
+      "value": "orthography_noise_high"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9608,
+        "macro_f1": 0.7128,
+        "micro_f1": 0.8992,
+        "records": 462,
+        "roc_auc_micro": 0.9864,
+        "subset_accuracy": 0.5108
+      },
+      "delta_micro_f1": 0.0016,
+      "dimension": "orthography_noise",
+      "records": 462,
+      "threshold_tuned": {
+        "label_accuracy": 0.962,
+        "macro_f1": 0.7177,
+        "micro_f1": 0.9008,
+        "records": 462,
+        "roc_auc_micro": 0.9864,
+        "subset_accuracy": 0.5152
+      },
+      "top_terms": [],
+      "value": "orthography_noise_low"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.961,
+        "macro_f1": 0.607,
+        "micro_f1": 0.8779,
+        "records": 41,
+        "roc_auc_micro": 0.9899,
+        "subset_accuracy": 0.4146
+      },
+      "delta_micro_f1": 0.0042,
+      "dimension": "orthography_noise",
+      "records": 41,
+      "threshold_tuned": {
+        "label_accuracy": 0.9622,
+        "macro_f1": 0.6122,
+        "micro_f1": 0.8821,
+        "records": 41,
+        "roc_auc_micro": 0.9899,
+        "subset_accuracy": 0.439
+      },
+      "top_terms": [],
+      "value": "orthography_noise_none"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9545,
+        "macro_f1": 0.6944,
+        "micro_f1": 0.8878,
+        "records": 415,
+        "roc_auc_micro": 0.9827,
+        "subset_accuracy": 0.4843
+      },
+      "delta_micro_f1": 0.0071,
+      "dimension": "paid_or_featured",
+      "records": 415,
+      "threshold_tuned": {
+        "label_accuracy": 0.9581,
+        "macro_f1": 0.71,
+        "micro_f1": 0.8949,
+        "records": 415,
+        "roc_auc_micro": 0.9827,
+        "subset_accuracy": 0.4892
+      },
+      "top_terms": [],
+      "value": "not_paid_or_featured"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9671,
+        "macro_f1": 0.7148,
+        "micro_f1": 0.9139,
+        "records": 438,
+        "roc_auc_micro": 0.9917,
+        "subset_accuracy": 0.5297
+      },
+      "delta_micro_f1": -0.0005,
+      "dimension": "paid_or_featured",
+      "records": 438,
+      "threshold_tuned": {
+        "label_accuracy": 0.9672,
+        "macro_f1": 0.7501,
+        "micro_f1": 0.9134,
+        "records": 438,
+        "roc_auc_micro": 0.9917,
+        "subset_accuracy": 0.5411
+      },
+      "top_terms": [],
+      "value": "paid_or_featured"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9764,
+        "macro_f1": 0.7087,
+        "micro_f1": 0.9253,
+        "records": 199,
+        "roc_auc_micro": 0.9926,
+        "subset_accuracy": 0.6281
+      },
+      "delta_micro_f1": -0.0068,
+      "dimension": "platform",
+      "records": 199,
+      "threshold_tuned": {
+        "label_accuracy": 0.9744,
+        "macro_f1": 0.707,
+        "micro_f1": 0.9185,
+        "records": 199,
+        "roc_auc_micro": 0.9926,
+        "subset_accuracy": 0.6181
+      },
+      "top_terms": [],
+      "value": "ciudadanuncios"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9699,
+        "macro_f1": 0.7273,
+        "micro_f1": 0.9202,
+        "records": 420,
+        "roc_auc_micro": 0.9925,
+        "subset_accuracy": 0.5476
+      },
+      "delta_micro_f1": -0.0007,
+      "dimension": "platform",
+      "records": 420,
+      "threshold_tuned": {
+        "label_accuracy": 0.9699,
+        "macro_f1": 0.7513,
+        "micro_f1": 0.9195,
+        "records": 420,
+        "roc_auc_micro": 0.9925,
+        "subset_accuracy": 0.5548
+      },
+      "top_terms": [],
+      "value": "doplim"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9318,
+        "macro_f1": 0.6764,
+        "micro_f1": 0.8605,
+        "records": 234,
+        "roc_auc_micro": 0.9731,
+        "subset_accuracy": 0.3333
+      },
+      "delta_micro_f1": 0.0138,
+      "dimension": "platform",
+      "records": 234,
+      "threshold_tuned": {
+        "label_accuracy": 0.9402,
+        "macro_f1": 0.6973,
+        "micro_f1": 0.8743,
+        "records": 234,
+        "roc_auc_micro": 0.9731,
+        "subset_accuracy": 0.359
+      },
+      "top_terms": [],
+      "value": "locanto"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9671,
+        "macro_f1": 0.7148,
+        "micro_f1": 0.9139,
+        "records": 438,
+        "roc_auc_micro": 0.9917,
+        "subset_accuracy": 0.5297
+      },
+      "delta_micro_f1": -0.0005,
+      "dimension": "quality_bin",
+      "records": 438,
+      "threshold_tuned": {
+        "label_accuracy": 0.9672,
+        "macro_f1": 0.7501,
+        "micro_f1": 0.9134,
+        "records": 438,
+        "roc_auc_micro": 0.9917,
+        "subset_accuracy": 0.5411
+      },
+      "top_terms": [],
+      "value": "quality_high"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9545,
+        "macro_f1": 0.6944,
+        "micro_f1": 0.8878,
+        "records": 415,
+        "roc_auc_micro": 0.9827,
+        "subset_accuracy": 0.4843
+      },
+      "delta_micro_f1": 0.0071,
+      "dimension": "quality_bin",
+      "records": 415,
+      "threshold_tuned": {
+        "label_accuracy": 0.9581,
+        "macro_f1": 0.71,
+        "micro_f1": 0.8949,
+        "records": 415,
+        "roc_auc_micro": 0.9827,
+        "subset_accuracy": 0.4892
+      },
+      "top_terms": [],
+      "value": "quality_mid"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9586,
+        "macro_f1": 0.7025,
+        "micro_f1": 0.8999,
+        "records": 550,
+        "roc_auc_micro": 0.9874,
+        "subset_accuracy": 0.4855
+      },
+      "delta_micro_f1": 0.0034,
+      "dimension": "raw_size_bucket",
+      "records": 550,
+      "threshold_tuned": {
+        "label_accuracy": 0.9606,
+        "macro_f1": 0.7327,
+        "micro_f1": 0.9033,
+        "records": 550,
+        "roc_auc_micro": 0.9874,
+        "subset_accuracy": 0.4945
+      },
+      "top_terms": [],
+      "value": "100kb_500kb"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9764,
+        "macro_f1": 0.7087,
+        "micro_f1": 0.9253,
+        "records": 199,
+        "roc_auc_micro": 0.9926,
+        "subset_accuracy": 0.6281
+      },
+      "delta_micro_f1": -0.0068,
+      "dimension": "raw_size_bucket",
+      "records": 199,
+      "threshold_tuned": {
+        "label_accuracy": 0.9744,
+        "macro_f1": 0.707,
+        "micro_f1": 0.9185,
+        "records": 199,
+        "roc_auc_micro": 0.9926,
+        "subset_accuracy": 0.6181
+      },
+      "top_terms": [],
+      "value": "10kb_50kb"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9437,
+        "macro_f1": 0.693,
+        "micro_f1": 0.8719,
+        "records": 104,
+        "roc_auc_micro": 0.977,
+        "subset_accuracy": 0.3942
+      },
+      "delta_micro_f1": 0.0162,
+      "dimension": "raw_size_bucket",
+      "records": 104,
+      "threshold_tuned": {
+        "label_accuracy": 0.9519,
+        "macro_f1": 0.6946,
+        "micro_f1": 0.8881,
+        "records": 104,
+        "roc_auc_micro": 0.977,
+        "subset_accuracy": 0.4327
+      },
+      "top_terms": [],
+      "value": "50kb_100kb"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9592,
+        "macro_f1": 0.6612,
+        "micro_f1": 0.8969,
+        "records": 130,
+        "roc_auc_micro": 0.9853,
+        "subset_accuracy": 0.5538
+      },
+      "delta_micro_f1": -0.0004,
+      "dimension": "repeated_phrase_bin",
+      "records": 130,
+      "threshold_tuned": {
+        "label_accuracy": 0.9592,
+        "macro_f1": 0.6668,
+        "micro_f1": 0.8965,
+        "records": 130,
+        "roc_auc_micro": 0.9853,
+        "subset_accuracy": 0.5154
+      },
+      "top_terms": [],
+      "value": "repetition_high"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.966,
+        "macro_f1": 0.6909,
+        "micro_f1": 0.9114,
+        "records": 206,
+        "roc_auc_micro": 0.9898,
+        "subset_accuracy": 0.534
+      },
+      "delta_micro_f1": 0.0087,
+      "dimension": "repeated_phrase_bin",
+      "records": 206,
+      "threshold_tuned": {
+        "label_accuracy": 0.9697,
+        "macro_f1": 0.7543,
+        "micro_f1": 0.9201,
+        "records": 206,
+        "roc_auc_micro": 0.9898,
+        "subset_accuracy": 0.5728
+      },
+      "top_terms": [],
+      "value": "repetition_low"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9594,
+        "macro_f1": 0.7137,
+        "micro_f1": 0.8978,
+        "records": 517,
+        "roc_auc_micro": 0.9867,
+        "subset_accuracy": 0.4855
+      },
+      "delta_micro_f1": 0.0021,
+      "dimension": "repeated_phrase_bin",
+      "records": 517,
+      "threshold_tuned": {
+        "label_accuracy": 0.9609,
+        "macro_f1": 0.7261,
+        "micro_f1": 0.8999,
+        "records": 517,
+        "roc_auc_micro": 0.9867,
+        "subset_accuracy": 0.4932
+      },
+      "top_terms": [],
+      "value": "repetition_none"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9764,
+        "macro_f1": 0.7087,
+        "micro_f1": 0.9253,
+        "records": 199,
+        "roc_auc_micro": 0.9926,
+        "subset_accuracy": 0.6281
+      },
+      "delta_micro_f1": -0.0068,
+      "dimension": "source_platform",
+      "records": 199,
+      "threshold_tuned": {
+        "label_accuracy": 0.9744,
+        "macro_f1": 0.707,
+        "micro_f1": 0.9185,
+        "records": 199,
+        "roc_auc_micro": 0.9926,
+        "subset_accuracy": 0.6181
+      },
+      "top_terms": [],
+      "value": "Ciudad Anuncios Peru"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9699,
+        "macro_f1": 0.7273,
+        "micro_f1": 0.9202,
+        "records": 420,
+        "roc_auc_micro": 0.9925,
+        "subset_accuracy": 0.5476
+      },
+      "delta_micro_f1": -0.0007,
+      "dimension": "source_platform",
+      "records": 420,
+      "threshold_tuned": {
+        "label_accuracy": 0.9699,
+        "macro_f1": 0.7513,
+        "micro_f1": 0.9195,
+        "records": 420,
+        "roc_auc_micro": 0.9925,
+        "subset_accuracy": 0.5548
+      },
+      "top_terms": [],
+      "value": "Doplim Peru"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9318,
+        "macro_f1": 0.6764,
+        "micro_f1": 0.8605,
+        "records": 234,
+        "roc_auc_micro": 0.9731,
+        "subset_accuracy": 0.3333
+      },
+      "delta_micro_f1": 0.0138,
+      "dimension": "source_platform",
+      "records": 234,
+      "threshold_tuned": {
+        "label_accuracy": 0.9402,
+        "macro_f1": 0.6973,
+        "micro_f1": 0.8743,
+        "records": 234,
+        "roc_auc_micro": 0.9731,
+        "subset_accuracy": 0.359
+      },
+      "top_terms": [],
+      "value": "Locanto Peru"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9784,
+        "macro_f1": 0.5115,
+        "micro_f1": 0.8816,
+        "records": 176,
+        "roc_auc_micro": 0.9867,
+        "subset_accuracy": 0.642
+      },
+      "delta_micro_f1": 0.0059,
+      "dimension": "span_count_bin",
+      "records": 176,
+      "threshold_tuned": {
+        "label_accuracy": 0.9798,
+        "macro_f1": 0.5433,
+        "micro_f1": 0.8875,
+        "records": 176,
+        "roc_auc_micro": 0.9867,
+        "subset_accuracy": 0.642
+      },
+      "top_terms": [],
+      "value": "spans_1_3"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9624,
+        "macro_f1": 0.6978,
+        "micro_f1": 0.8986,
+        "records": 465,
+        "roc_auc_micro": 0.989,
+        "subset_accuracy": 0.4989
+      },
+      "delta_micro_f1": 0.0028,
+      "dimension": "span_count_bin",
+      "records": 465,
+      "threshold_tuned": {
+        "label_accuracy": 0.9638,
+        "macro_f1": 0.729,
+        "micro_f1": 0.9014,
+        "records": 465,
+        "roc_auc_micro": 0.989,
+        "subset_accuracy": 0.5183
+      },
+      "top_terms": [],
+      "value": "spans_4_7"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9434,
+        "macro_f1": 0.7125,
+        "micro_f1": 0.9085,
+        "records": 212,
+        "roc_auc_micro": 0.9816,
+        "subset_accuracy": 0.4151
+      },
+      "delta_micro_f1": 0.0033,
+      "dimension": "span_count_bin",
+      "records": 212,
+      "threshold_tuned": {
+        "label_accuracy": 0.9465,
+        "macro_f1": 0.7306,
+        "micro_f1": 0.9118,
+        "records": 212,
+        "roc_auc_micro": 0.9816,
+        "subset_accuracy": 0.4057
+      },
+      "top_terms": [],
+      "value": "spans_8_plus"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9609,
+        "macro_f1": 0.6691,
+        "micro_f1": 0.8953,
+        "records": 92,
+        "roc_auc_micro": 0.989,
+        "subset_accuracy": 0.5435
+      },
+      "delta_micro_f1": -0.0153,
+      "dimension": "tfidf_cluster",
+      "records": 92,
+      "threshold_tuned": {
+        "label_accuracy": 0.956,
+        "macro_f1": 0.6226,
+        "micro_f1": 0.88,
+        "records": 92,
+        "roc_auc_micro": 0.989,
+        "subset_accuracy": 0.5
+      },
+      "top_terms": [
+        "económico",
+        "apoyo económico",
+        "apoyo",
+        "de",
+        "brindo apoyo",
+        "mujer",
+        "busca",
+        "brindo"
+      ],
+      "value": "cluster_0"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.977,
+        "macro_f1": 0.6446,
+        "micro_f1": 0.921,
+        "records": 141,
+        "roc_auc_micro": 0.9906,
+        "subset_accuracy": 0.6241
+      },
+      "delta_micro_f1": -0.0088,
+      "dimension": "tfidf_cluster",
+      "records": 141,
+      "threshold_tuned": {
+        "label_accuracy": 0.9745,
+        "macro_f1": 0.6302,
+        "micro_f1": 0.9122,
+        "records": 141,
+        "roc_auc_micro": 0.9906,
+        "subset_accuracy": 0.5957
+      },
+      "top_terms": [
+        "ayuda económica",
+        "económica",
+        "ayuda",
+        "doy ayuda",
+        "doy",
+        "de",
+        "redacted_contact",
+        "señoritas"
+      ],
+      "value": "cluster_1"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9659,
+        "macro_f1": 0.6487,
+        "micro_f1": 0.9041,
+        "records": 66,
+        "roc_auc_micro": 0.9888,
+        "subset_accuracy": 0.5
+      },
+      "delta_micro_f1": 0.0054,
+      "dimension": "tfidf_cluster",
+      "records": 66,
+      "threshold_tuned": {
+        "label_accuracy": 0.9682,
+        "macro_f1": 0.6924,
+        "micro_f1": 0.9095,
+        "records": 66,
+        "roc_auc_micro": 0.9888,
+        "subset_accuracy": 0.5455
+      },
+      "top_terms": [
+        "economico",
+        "apoyo economico",
+        "apoyo",
+        "brindo apoyo",
+        "de",
+        "brindo",
+        "busca",
+        "mujer"
+      ],
+      "value": "cluster_2"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9803,
+        "macro_f1": 0.5594,
+        "micro_f1": 0.9257,
+        "records": 33,
+        "roc_auc_micro": 0.9923,
+        "subset_accuracy": 0.697
+      },
+      "delta_micro_f1": 0.0,
+      "dimension": "tfidf_cluster",
+      "records": 33,
+      "threshold_tuned": {
+        "label_accuracy": 0.9803,
+        "macro_f1": 0.5609,
+        "micro_f1": 0.9257,
+        "records": 33,
+        "roc_auc_micro": 0.9923,
+        "subset_accuracy": 0.6667
+      },
+      "top_terms": [
+        "mujeres",
+        "edad",
+        "cualquier",
+        "cualquier edad",
+        "de cualquier",
+        "ayuda",
+        "mujeres de",
+        "de"
+      ],
+      "value": "cluster_3"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.977,
+        "macro_f1": 0.5536,
+        "micro_f1": 0.9395,
+        "records": 63,
+        "roc_auc_micro": 0.9928,
+        "subset_accuracy": 0.6508
+      },
+      "delta_micro_f1": 0.0066,
+      "dimension": "tfidf_cluster",
+      "records": 63,
+      "threshold_tuned": {
+        "label_accuracy": 0.9794,
+        "macro_f1": 0.5254,
+        "micro_f1": 0.9461,
+        "records": 63,
+        "roc_auc_micro": 0.9928,
+        "subset_accuracy": 0.6825
+      },
+      "top_terms": [
+        "madres",
+        "económica",
+        "ayuda económica",
+        "solteras",
+        "madres solteras",
+        "ayuda",
+        "se",
+        "señoritas"
+      ],
+      "value": "cluster_4"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.987,
+        "macro_f1": 0.6063,
+        "micro_f1": 0.9571,
+        "records": 27,
+        "roc_auc_micro": 0.9978,
+        "subset_accuracy": 0.7778
+      },
+      "delta_micro_f1": 0.0068,
+      "dimension": "tfidf_cluster",
+      "records": 27,
+      "threshold_tuned": {
+        "label_accuracy": 0.9889,
+        "macro_f1": 0.6596,
+        "micro_f1": 0.9639,
+        "records": 27,
+        "roc_auc_micro": 0.9978,
+        "subset_accuracy": 0.8519
+      },
+      "top_terms": [
+        "economica",
+        "ayuda economica",
+        "economica señoritas",
+        "señoritas",
+        "ayuda",
+        "brinda ayuda",
+        "brinda",
+        "redacted_contact"
+      ],
+      "value": "cluster_5"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9734,
+        "macro_f1": 0.6549,
+        "micro_f1": 0.928,
+        "records": 94,
+        "roc_auc_micro": 0.9945,
+        "subset_accuracy": 0.5957
+      },
+      "delta_micro_f1": -0.0034,
+      "dimension": "tfidf_cluster",
+      "records": 94,
+      "threshold_tuned": {
+        "label_accuracy": 0.9723,
+        "macro_f1": 0.6426,
+        "micro_f1": 0.9246,
+        "records": 94,
+        "roc_auc_micro": 0.9945,
+        "subset_accuracy": 0.6064
+      },
+      "top_terms": [
+        "economica",
+        "ayuda economica",
+        "ayuda",
+        "doy ayuda",
+        "doy",
+        "de",
+        "chicas",
+        "brindo ayuda"
+      ],
+      "value": "cluster_6"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9368,
+        "macro_f1": 0.6851,
+        "micro_f1": 0.8756,
+        "records": 262,
+        "roc_auc_micro": 0.9786,
+        "subset_accuracy": 0.3244
+      },
+      "delta_micro_f1": 0.0127,
+      "dimension": "tfidf_cluster",
+      "records": 262,
+      "threshold_tuned": {
+        "label_accuracy": 0.9448,
+        "macro_f1": 0.7014,
+        "micro_f1": 0.8883,
+        "records": 262,
+        "roc_auc_micro": 0.9786,
+        "subset_accuracy": 0.3664
+      },
+      "top_terms": [
+        "de",
+        "una",
+        "que",
+        "ayuda",
+        "para",
+        "un",
+        "económica",
+        "ayuda económica"
+      ],
+      "value": "cluster_7"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9764,
+        "macro_f1": 0.5422,
+        "micro_f1": 0.911,
+        "records": 36,
+        "roc_auc_micro": 0.995,
+        "subset_accuracy": 0.6111
+      },
+      "delta_micro_f1": -0.0019,
+      "dimension": "tfidf_cluster",
+      "records": 36,
+      "threshold_tuned": {
+        "label_accuracy": 0.9764,
+        "macro_f1": 0.5478,
+        "micro_f1": 0.9091,
+        "records": 36,
+        "roc_auc_micro": 0.995,
+        "subset_accuracy": 0.5833
+      },
+      "top_terms": [
+        "doy apoyo",
+        "apoyo",
+        "doy",
+        "apoyo economico",
+        "economico",
+        "apoyo económico",
+        "económico",
+        "de"
+      ],
+      "value": "cluster_8"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9526,
+        "macro_f1": 0.5903,
+        "micro_f1": 0.9008,
+        "records": 39,
+        "roc_auc_micro": 0.9853,
+        "subset_accuracy": 0.359
+      },
+      "delta_micro_f1": 0.0011,
+      "dimension": "tfidf_cluster",
+      "records": 39,
+      "threshold_tuned": {
+        "label_accuracy": 0.9526,
+        "macro_f1": 0.5906,
+        "micro_f1": 0.9019,
+        "records": 39,
+        "roc_auc_micro": 0.9853,
+        "subset_accuracy": 0.3077
+      },
+      "top_terms": [
+        "soltera",
+        "madre soltera",
+        "madre",
+        "de",
+        "mujer",
+        "ayuda",
+        "busca",
+        "hombre"
+      ],
+      "value": "cluster_9"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9867,
+        "macro_f1": 0.4674,
+        "micro_f1": 0.9577,
+        "records": 60,
+        "roc_auc_micro": 0.9967,
+        "subset_accuracy": 0.8167
+      },
+      "delta_micro_f1": -0.0109,
+      "dimension": "vulnerability_cue_density",
+      "records": 60,
+      "threshold_tuned": {
+        "label_accuracy": 0.9833,
+        "macro_f1": 0.4138,
+        "micro_f1": 0.9468,
+        "records": 60,
+        "roc_auc_micro": 0.9967,
+        "subset_accuracy": 0.7667
+      },
+      "top_terms": [],
+      "value": "vulnerability_high"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9433,
+        "macro_f1": 0.6825,
+        "micro_f1": 0.8721,
+        "records": 359,
+        "roc_auc_micro": 0.9785,
+        "subset_accuracy": 0.3816
+      },
+      "delta_micro_f1": 0.006,
+      "dimension": "vulnerability_cue_density",
+      "records": 359,
+      "threshold_tuned": {
+        "label_accuracy": 0.9472,
+        "macro_f1": 0.7029,
+        "micro_f1": 0.8781,
+        "records": 359,
+        "roc_auc_micro": 0.9785,
+        "subset_accuracy": 0.3955
+      },
+      "top_terms": [],
+      "value": "vulnerability_low"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9728,
+        "macro_f1": 0.7489,
+        "micro_f1": 0.9262,
+        "records": 405,
+        "roc_auc_micro": 0.9924,
+        "subset_accuracy": 0.5827
+      },
+      "delta_micro_f1": 0.0022,
+      "dimension": "vulnerability_cue_density",
+      "records": 405,
+      "threshold_tuned": {
+        "label_accuracy": 0.9738,
+        "macro_f1": 0.7763,
+        "micro_f1": 0.9284,
+        "records": 405,
+        "roc_auc_micro": 0.9924,
+        "subset_accuracy": 0.5951
+      },
+      "top_terms": [],
+      "value": "vulnerability_medium"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9603,
+        "macro_f1": 0.5163,
+        "micro_f1": 0.8701,
+        "records": 29,
+        "roc_auc_micro": 0.9914,
+        "subset_accuracy": 0.3793
+      },
+      "delta_micro_f1": -0.0065,
+      "dimension": "vulnerability_cue_density",
+      "records": 29,
+      "threshold_tuned": {
+        "label_accuracy": 0.9586,
+        "macro_f1": 0.5099,
+        "micro_f1": 0.8636,
+        "records": 29,
+        "roc_auc_micro": 0.9914,
+        "subset_accuracy": 0.3793
+      },
+      "top_terms": [],
+      "value": "vulnerability_none"
+    }
+  ],
+  "status": "segment_and_cluster_error_analysis",
+  "test_records": 853,
+  "thresholds": {
+    "age_or_youth_targeting": 0.525,
+    "authority_or_status_appeal": 0.525,
+    "commitment_escalation": 0.55,
+    "conditional_financial_support": 0.45,
+    "deceptive_assurance": 0.625,
+    "economic_vulnerability_targeting": 0.525,
+    "education_or_student_targeting": 0.425,
+    "exclusivity_or_special_treatment": 0.5,
+    "family_obligation_targeting": 0.55,
+    "fear_or_threat": 0.5,
+    "foot_in_the_door": 0.55,
+    "guilt_or_shame_pressure": 0.15,
+    "platform_migration": 0.5,
+    "privacy_or_secrecy_pressure": 0.5,
+    "reciprocity_obligation": 0.15,
+    "repetition_or_campaign_escalation": 0.25,
+    "scarcity_or_urgency": 0.525,
+    "sexualized_appearance_condition": 0.55,
+    "social_proof": 0.15,
+    "transactional_ambiguity": 0.55
+  },
+  "unavailable_features": {
+    "posting_date_range": "No explicit posting-date field is present in processed document context; collected_at was deliberately not used."
+  },
+  "underperforming_slices": [
+    {
+      "default": {
+        "label_accuracy": 0.8828,
+        "macro_f1": 0.6186,
+        "micro_f1": 0.8172,
+        "records": 29,
+        "roc_auc_micro": 0.9579,
+        "subset_accuracy": 0.069
+      },
+      "delta_micro_f1": 0.0171,
+      "dimension": "city_length_interaction",
+      "records": 29,
+      "threshold_tuned": {
+        "label_accuracy": 0.8966,
+        "macro_f1": 0.6423,
+        "micro_f1": 0.8343,
+        "records": 29,
+        "roc_auc_micro": 0.9579,
+        "subset_accuracy": 0.1379
+      },
+      "top_terms": [],
+      "value": "lima__long_360_699"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.8981,
+        "macro_f1": 0.657,
+        "micro_f1": 0.8455,
+        "records": 54,
+        "roc_auc_micro": 0.9598,
+        "subset_accuracy": 0.1296
+      },
+      "delta_micro_f1": 0.0187,
+      "dimension": "body_length_bin",
+      "records": 54,
+      "threshold_tuned": {
+        "label_accuracy": 0.9139,
+        "macro_f1": 0.6861,
+        "micro_f1": 0.8642,
+        "records": 54,
+        "roc_auc_micro": 0.9598,
+        "subset_accuracy": 0.1296
+      },
+      "top_terms": [],
+      "value": "long_360_699"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9037,
+        "macro_f1": 0.6581,
+        "micro_f1": 0.8461,
+        "records": 68,
+        "roc_auc_micro": 0.9634,
+        "subset_accuracy": 0.1471
+      },
+      "delta_micro_f1": 0.0163,
+      "dimension": "length_bin",
+      "records": 68,
+      "threshold_tuned": {
+        "label_accuracy": 0.9169,
+        "macro_f1": 0.6767,
+        "micro_f1": 0.8624,
+        "records": 68,
+        "roc_auc_micro": 0.9634,
+        "subset_accuracy": 0.1912
+      },
+      "top_terms": [],
+      "value": "long_360_699"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.8643,
+        "macro_f1": 0.6489,
+        "micro_f1": 0.8464,
+        "records": 21,
+        "roc_auc_micro": 0.9456,
+        "subset_accuracy": 0.0952
+      },
+      "delta_micro_f1": 0.0283,
+      "dimension": "length_bin",
+      "records": 21,
+      "threshold_tuned": {
+        "label_accuracy": 0.8929,
+        "macro_f1": 0.6765,
+        "micro_f1": 0.8747,
+        "records": 21,
+        "roc_auc_micro": 0.9456,
+        "subset_accuracy": 0.1905
+      },
+      "top_terms": [],
+      "value": "very_long_700_plus"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.936,
+        "macro_f1": 0.5923,
+        "micro_f1": 0.8559,
+        "records": 25,
+        "roc_auc_micro": 0.9677,
+        "subset_accuracy": 0.44
+      },
+      "delta_micro_f1": 0.0039,
+      "dimension": "city",
+      "records": 25,
+      "threshold_tuned": {
+        "label_accuracy": 0.94,
+        "macro_f1": 0.6156,
+        "micro_f1": 0.8598,
+        "records": 25,
+        "roc_auc_micro": 0.9677,
+        "subset_accuracy": 0.36
+      },
+      "top_terms": [],
+      "value": "piura"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9422,
+        "macro_f1": 0.5736,
+        "micro_f1": 0.8604,
+        "records": 32,
+        "roc_auc_micro": 0.9612,
+        "subset_accuracy": 0.3438
+      },
+      "delta_micro_f1": 0.0055,
+      "dimension": "city",
+      "records": 32,
+      "threshold_tuned": {
+        "label_accuracy": 0.9453,
+        "macro_f1": 0.5888,
+        "micro_f1": 0.8659,
+        "records": 32,
+        "roc_auc_micro": 0.9612,
+        "subset_accuracy": 0.3125
+      },
+      "top_terms": [],
+      "value": "trujillo"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9318,
+        "macro_f1": 0.6764,
+        "micro_f1": 0.8605,
+        "records": 234,
+        "roc_auc_micro": 0.9731,
+        "subset_accuracy": 0.3333
+      },
+      "delta_micro_f1": 0.0138,
+      "dimension": "platform",
+      "records": 234,
+      "threshold_tuned": {
+        "label_accuracy": 0.9402,
+        "macro_f1": 0.6973,
+        "micro_f1": 0.8743,
+        "records": 234,
+        "roc_auc_micro": 0.9731,
+        "subset_accuracy": 0.359
+      },
+      "top_terms": [],
+      "value": "locanto"
+    },
+    {
+      "default": {
+        "label_accuracy": 0.9318,
+        "macro_f1": 0.6764,
+        "micro_f1": 0.8605,
+        "records": 234,
+        "roc_auc_micro": 0.9731,
+        "subset_accuracy": 0.3333
+      },
+      "delta_micro_f1": 0.0138,
+      "dimension": "source_platform",
+      "records": 234,
+      "threshold_tuned": {
+        "label_accuracy": 0.9402,
+        "macro_f1": 0.6973,
+        "micro_f1": 0.8743,
+        "records": 234,
+        "roc_auc_micro": 0.9731,
+        "subset_accuracy": 0.359
+      },
+      "top_terms": [],
+      "value": "Locanto Peru"
+    }
+  ]
+}

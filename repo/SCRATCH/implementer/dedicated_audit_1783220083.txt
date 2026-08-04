@@ -1,0 +1,5 @@
+Dedicated count: 84
+Has raw_archive_ref sample: False
+First 2 source_platform: [None, None]
+Sample record keys: ['title', 'body_redacted', 'url_hash', 'platform']
+Dedicated with existing raw file: 0 / 84

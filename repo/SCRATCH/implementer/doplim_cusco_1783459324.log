@@ -1,0 +1,9 @@
+[16:22:04] START Doplim cusco (main li.cnt-list_ads ONLY, tuned)
+[16:22:04] base=https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=cusco
+[16:22:04] LIST p1: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=cusco
+[16:23:10]   main li.cnt-list_ads IDs: 0
+[16:23:11] LIST p2: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=cusco&page=2
+[16:24:15]   main li.cnt-list_ads IDs: 0
+[16:24:16] LIST p3: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=cusco&page=3
+[16:25:31]   main li.cnt-list_ads IDs: 0
+[16:25:31] DONE Doplim cusco: added=0

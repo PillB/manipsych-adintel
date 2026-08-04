@@ -1,0 +1,370 @@
+{
+  "phase": 1,
+  "title": "Manipulation Technique Compendium",
+  "scope": "Defensive detection taxonomy for persuasion, dark patterns, gaming monetization, social media influence operations, and PsyOps-style communication analysis.",
+  "safety_boundary": "This compendium supports detection, audit, tagging, and risk scoring. It does not provide operational guidance for exploiting audiences or improving manipulative campaigns.",
+  "research_rounds": [
+    {
+      "round": 1,
+      "name": "Academic and foundational survey",
+      "focus": "Persuasion psychology, HCI dark-pattern taxonomies, privacy dark patterns, normative foundations, and misinformation psychology.",
+      "sources": [
+        "Cialdini, Influence: Science and Practice; principles: reciprocity, commitment/consistency, social proof, authority, liking, scarcity, unity.",
+        "Gray et al., The Dark (Patterns) Side of UX Design, CHI 2018, DOI: 10.1145/3173574.3174108.",
+        "Mathur et al., Dark Patterns at Scale, PACM HCI/CSCW 2019, DOI: 10.1145/3359183, https://arxiv.org/abs/1907.07032.",
+        "Mathur, Mayer, Kshirsagar, What Makes a Dark Pattern... Dark?, CHI 2021, https://arxiv.org/abs/2101.04843.",
+        "Bösch et al., Tales from the Dark Side: Privacy Dark Strategies and Privacy Dark Patterns, PoPETs 2016, DOI: 10.1515/popets-2016-0038.",
+        "Lewandowsky et al., Misinformation and Its Correction, Psychological Science in the Public Interest, DOI: 10.1177/1529100612451018."
+      ]
+    },
+    {
+      "round": 2,
+      "name": "Domain-specific deep dives",
+      "focus": "Marketing/e-commerce, social media advertising, political communication, gaming monetization, loot boxes, gacha, betting apps, and influence operations.",
+      "sources": [
+        "FTC, Bringing Dark Patterns to Light, 2022, https://www.ftc.gov/reports/bringing-dark-patterns-light.",
+        "OECD, Dark commercial patterns, OECD Digital Economy Papers No. 336, DOI: 10.1787/44f5e846-en.",
+        "European Commission, Behavioural study on unfair commercial practices in the digital environment, 2022, DOI: 10.2838/859030.",
+        "EDPB, Guidelines 03/2022 on deceptive design patterns in social media platform interfaces, 2023.",
+        "Drummond and Sauer, Video game loot boxes are psychologically akin to gambling, Nature Human Behaviour 2018, DOI: 10.1038/s41562-018-0360-1.",
+        "Zendle and Cairns, Loot box spending in video games is linked to problem gambling severity, Royal Society Open Science 2018, DOI: 10.1098/rsos.180495.",
+        "King and Delfabbro, Predatory monetization schemes in video games, Addiction 2018, DOI: 10.1111/add.14286.",
+        "RAND, The Russian Firehose of Falsehood Propaganda Model, https://www.rand.org/pubs/perspectives/PE198.html."
+      ]
+    },
+    {
+      "round": 3,
+      "name": "Fan-out and synthesis",
+      "focus": "Regulatory examples, social-network-specific taxonomies, influence-operation frameworks, automated detection datasets, and AI-assisted covert influence risks.",
+      "sources": [
+        "Yada et al., Dark patterns in e-commerce: a dataset and its baseline evaluations, https://arxiv.org/abs/2211.06543.",
+        "Mildner et al., About Engaging and Governing Strategies: A Thematic Analysis of Dark Patterns in Social Networking Services, https://arxiv.org/abs/2303.00476.",
+        "Niknejad et al., Level Up or Game Over: Exploring How Dark Patterns Shape Mobile Games, https://arxiv.org/abs/2412.05039.",
+        "DISARM Foundation, DISARM Red Framework, https://www.disarm.foundation/framework.",
+        "Graphika, Unheard Voice: Evaluating Five Years of Pro-Western Covert Influence Operations, https://www.graphika.com/reports/unheard-voice.",
+        "Graphika, Spamouflage Breakout, https://www.graphika.com/reports/spamouflage-breakout.",
+        "OpenAI, Disrupting deceptive uses of AI by covert influence operations, https://openai.com/index/disrupting-deceptive-uses-of-ai-by-covert-influence-operations/.",
+        "Vosoughi, Roy, Aral, The spread of true and false news online, Science, DOI: 10.1126/science.aap9559."
+      ]
+    },
+    {
+      "round": 4,
+      "name": "Agentic fan-out (sub-agent assisted, 2026)",
+      "focus": "Post-2018 ontology harmonization, LatAm/Spanish consumer protection (SERNAC Chile), AI extensions, and classified/financial ad-adjacent patterns. Focus on urgency, scarcity, social proof, obstruction, sneaking, confirmshaming with Spanish examples and marketplace/classified overlaps.",
+      "sources": [
+        "Gray et al. (2024) An Ontology of Dark Patterns Knowledge (CHI/arXiv).",
+        "SERNAC Chile (2021) informe on dark patterns in e-comm (64% sites, urgency/scarcity, activity notifications, drip pricing, preselection).",
+        "Australian IVE (2024) Deceptive Pattern Typology + bias exploitation.",
+        "Nimon-Peters (2022) 9 workplace persuasion principles from 200+ articles.",
+        "CDT (2026) AI chatbot dark patterns taxonomy.",
+        "Sub-agent research synthesis: Gray ontology stack, SERNAC LatAm examples, Cialdini digital extensions."
+      ]
+    }
+  ],
+  "techniques": [
+    {
+      "id": "scarcity_urgency_pressure",
+      "name": "Scarcity and urgency pressure",
+      "category": "Persuasion and dark commercial pattern",
+      "psychological_mechanism": "Loss aversion and time pressure reduce deliberation and make the user overweight the cost of missing out.",
+      "examples": [
+        {"domain": "marketing", "description": "Countdowns, low-stock claims, expiring discounts, and limited-time offers."},
+        {"domain": "gaming", "description": "Seasonal skins, rotating stores, event passes, and expiring gacha banners."},
+        {"domain": "classified ads", "description": "Messages implying the opportunity is rare, immediate, or available only to a small number of respondents."}
+      ],
+      "triggers": ["timer", "last chance", "only today", "limited", "exclusive", "few left"],
+      "language_patterns": ["deadline claims", "scarcity claims", "exclusive access wording", "avoid missing out framing"],
+      "citations": ["FTC 2022 Bringing Dark Patterns to Light", "European Commission 2022 DOI: 10.2838/859030", "Cialdini Influence"]
+    },
+    {
+      "id": "social_proof_manufactured_consensus",
+      "name": "Social proof and manufactured consensus",
+      "category": "Persuasion and influence operations",
+      "psychological_mechanism": "People infer safety, truth, or value from apparent popularity, especially under uncertainty.",
+      "examples": [
+        {"domain": "social media", "description": "Artificial likes, comments, shares, hashtag pushes, and comment brigading."},
+        {"domain": "marketing", "description": "Popularity counters, fake testimonials, and bestseller claims."},
+        {"domain": "PsyOps", "description": "Coordinated inauthentic behavior makes a narrative appear organically popular."}
+      ],
+      "triggers": ["everyone", "most people", "trending", "popular", "recommended", "testimonials"],
+      "language_patterns": ["bandwagon claims", "peer-normalization", "fake popularity signals", "community consensus wording"],
+      "citations": ["Cialdini Influence", "Graphika Unheard Voice", "Gorwa and Guilbeault DOI: 10.1002/poi3.184"]
+    },
+    {
+      "id": "authority_credibility_laundering",
+      "name": "Authority and credibility laundering",
+      "category": "Persuasion and influence operations",
+      "psychological_mechanism": "Authority cues transfer trust from institutions, experts, local identities, or news-like formats to the message.",
+      "examples": [
+        {"domain": "ads", "description": "Use of professional titles, implied guarantees, or institutional-looking presentation."},
+        {"domain": "PsyOps", "description": "Fake media brands, impersonated locals, and personas presenting claims as independent reporting."},
+        {"domain": "debate", "description": "Appeals to authority without verifiable source support."}
+      ],
+      "triggers": ["expert", "official", "verified", "doctor", "agency", "as seen in"],
+      "language_patterns": ["unverifiable credential claims", "news-like framing", "local-persona framing", "institutional mimicry"],
+      "citations": ["Graphika Unheard Voice", "DISARM Red Framework", "Cialdini Influence"]
+    },
+    {
+      "id": "reciprocity_obligation",
+      "name": "Reciprocity and obligation creation",
+      "category": "Persuasion",
+      "psychological_mechanism": "Receiving a gift, favor, or apparent concession creates felt obligation to reciprocate or comply.",
+      "examples": [
+        {"domain": "marketing", "description": "Free samples, bonuses, and gifts followed by an ask."},
+        {"domain": "social media", "description": "Personalized favors, attention, or support used to create relational debt."},
+        {"domain": "ayuda economica risk analysis", "description": "Financial help framed as generosity may create pressure for future compliance."}
+      ],
+      "triggers": ["gift", "help", "favor", "support", "I did this for you", "you owe"],
+      "language_patterns": ["gift-before-ask framing", "debt implication", "personal sacrifice claims", "gratitude pressure"],
+      "citations": ["Cialdini Influence", "FTC 2022 Bringing Dark Patterns to Light"]
+    },
+    {
+      "id": "commitment_consistency_foot_in_door",
+      "name": "Commitment, consistency, and foot-in-the-door",
+      "category": "Persuasion",
+      "psychological_mechanism": "Small initial commitments increase later compliance because people prefer to act consistently with prior choices.",
+      "examples": [
+        {"domain": "marketing", "description": "Small free trials or low-friction signups followed by larger commitments."},
+        {"domain": "social media", "description": "Polls, pledges, quizzes, and identity labels that make later action feel consistent."},
+        {"domain": "classified ads", "description": "Requests to first respond privately or answer a small personal question before larger asks."}
+      ],
+      "triggers": ["just answer", "small step", "quick question", "confirm", "prove", "commit"],
+      "language_patterns": ["incremental ask sequence", "identity-consistency wording", "prior agreement reminders", "small initial compliance"],
+      "citations": ["Cialdini Influence", "Lewandowsky et al. DOI: 10.1177/1529100612451018"]
+    },
+    {
+      "id": "obstruction_friction_asymmetry",
+      "name": "Obstruction and friction asymmetry",
+      "category": "Dark pattern",
+      "psychological_mechanism": "Provider-preferred actions are made easier than protective actions, exploiting inertia, fatigue, and cognitive load.",
+      "examples": [
+        {"domain": "e-commerce", "description": "Easy subscription with hard cancellation or refund process."},
+        {"domain": "privacy", "description": "Accept-all consent is prominent while reject or customize paths are buried."},
+        {"domain": "gaming", "description": "One-click purchases paired with hidden refund or spending-control flows."}
+      ],
+      "triggers": ["accept all", "continue", "recommended", "cancel hidden", "multiple screens"],
+      "language_patterns": ["asymmetric button prominence", "buried opt-out", "multi-step cancellation", "privacy maze wording"],
+      "citations": ["EDPB Guidelines 03/2022", "Mathur et al. DOI: 10.1145/3359183", "Nouwens et al. DOI: 10.1145/3313831.3376321"]
+    },
+    {
+      "id": "forced_action_data_or_registration",
+      "name": "Forced action and unrelated disclosure",
+      "category": "Dark pattern",
+      "psychological_mechanism": "Access is conditioned on accepting an unrelated action, creating coercive choice architecture.",
+      "examples": [
+        {"domain": "marketing", "description": "Registration required before viewing material price or availability."},
+        {"domain": "privacy", "description": "Consent walls that lack an equivalent reject path."},
+        {"domain": "social platforms", "description": "Account or contact-sharing prompts required for unrelated functionality."}
+      ],
+      "triggers": ["required", "must", "continue with", "unlock", "mandatory"],
+      "language_patterns": ["access-conditioned disclosure", "bundle acceptance", "forced registration", "consent-or-leave framing"],
+      "citations": ["FTC 2022 Bringing Dark Patterns to Light", "OECD DOI: 10.1787/44f5e846-en", "EDPB Guidelines 03/2022"]
+    },
+    {
+      "id": "interface_interference_visual_steering",
+      "name": "Interface interference and visual steering",
+      "category": "Dark pattern",
+      "psychological_mechanism": "Visual salience, defaults, labels, placement, and contrast steer choices without changing nominal options.",
+      "examples": [
+        {"domain": "e-commerce", "description": "Bright primary purchase buttons and muted decline links."},
+        {"domain": "privacy", "description": "Preselected tracking options or unequal consent choices."},
+        {"domain": "gaming", "description": "Store prompts with dominant purchase paths and weak confirmation controls."}
+      ],
+      "triggers": ["preselected", "default", "highlighted", "recommended", "primary button"],
+      "language_patterns": ["salience mismatch", "preselection", "misleading hierarchy", "ambiguous decline labels"],
+      "citations": ["Gray et al. DOI: 10.1145/3173574.3174108", "Mathur et al. DOI: 10.1145/3359183", "European Commission DOI: 10.2838/859030"]
+    },
+    {
+      "id": "sneaking_hidden_costs_drip_pricing",
+      "name": "Sneaking, hidden costs, and drip pricing",
+      "category": "Dark commercial pattern",
+      "psychological_mechanism": "Material terms are delayed or obscured after commitment momentum has formed, exploiting sunk-cost and anchoring effects.",
+      "examples": [
+        {"domain": "e-commerce", "description": "Fees added late in checkout after an attractive headline price."},
+        {"domain": "subscriptions", "description": "Trial or renewal terms made less salient than the immediate benefit."},
+        {"domain": "gaming", "description": "Real-money cost obscured through currency bundles and leftover balances."}
+      ],
+      "triggers": ["free", "trial", "handling fee", "service fee", "coins", "gems"],
+      "language_patterns": ["late fee disclosure", "headline-price mismatch", "renewal ambiguity", "multi-currency obfuscation"],
+      "citations": ["FTC 2022 Bringing Dark Patterns to Light", "OECD DOI: 10.1787/44f5e846-en", "King and Delfabbro DOI: 10.1111/add.14286"]
+    },
+    {
+      "id": "confirmshaming_guilt_pressure",
+      "name": "Confirmshaming and guilt pressure",
+      "category": "Emotional manipulation",
+      "psychological_mechanism": "Shame, guilt, or fear of negative self-image is attached to refusal, making rejection psychologically costly.",
+      "examples": [
+        {"domain": "marketing", "description": "Decline buttons framed as irresponsible, boring, or foolish."},
+        {"domain": "social media", "description": "Prompts that imply the user is neglecting friends, safety, or status if they decline."},
+        {"domain": "classified ads", "description": "Emotional claims that make refusal feel cruel or ungrateful."}
+      ],
+      "triggers": ["no thanks", "I do not care", "be kind", "help me", "prove you care"],
+      "language_patterns": ["shaming refusal text", "guilt-loaded decline", "moralized compliance", "emotional debt framing"],
+      "citations": ["FTC 2022 Bringing Dark Patterns to Light", "Gray et al. DOI: 10.1145/3173574.3174108", "OECD DOI: 10.1787/44f5e846-en"]
+    },
+    {
+      "id": "randomized_monetization_variable_reward",
+      "name": "Randomized monetization and variable rewards",
+      "category": "Gaming and betting manipulation",
+      "psychological_mechanism": "Variable-ratio rewards and rare outcomes encourage repeated spending and resemble gambling reinforcement schedules.",
+      "examples": [
+        {"domain": "gaming", "description": "Loot boxes, card packs, crates, gacha pulls, rarity tiers, and audiovisual win effects."},
+        {"domain": "betting apps", "description": "High-frequency markets and rapid bet settlement compress reflection time."},
+        {"domain": "mobile games", "description": "Chance-based rewards paired with limited events and purchasable currency."}
+      ],
+      "triggers": ["loot box", "pull", "crate", "rare", "jackpot", "odds", "spin"],
+      "language_patterns": ["chance reward framing", "rarity tier language", "near-win reveal", "variable reward cues"],
+      "citations": ["Drummond and Sauer DOI: 10.1038/s41562-018-0360-1", "Zendle and Cairns DOI: 10.1098/rsos.180495", "King and Delfabbro DOI: 10.1111/add.14286"]
+    },
+    {
+      "id": "gacha_escalation_pity_progress",
+      "name": "Gacha escalation and pity-progress framing",
+      "category": "Gaming manipulation",
+      "psychological_mechanism": "Progress counters, rotating prize pools, and limited characters make continued spending feel like rational progress toward an otherwise scarce reward.",
+      "examples": [
+        {"domain": "gaming", "description": "Pity counters, step-up summons, guaranteed-after-N banners, and limited character pools."},
+        {"domain": "mobile monetization", "description": "Non-even currency bundles create leftover balances and encourage repeat purchase."},
+        {"domain": "consumer enforcement", "description": "Regulators scrutinize misleading odds, costs, and child-directed purchase design."}
+      ],
+      "triggers": ["guaranteed after", "banner", "pity", "step-up", "limited character", "bonus gems"],
+      "language_patterns": ["progress-to-prize framing", "rotating prize pool", "bundle-only purchase", "leftover balance pressure"],
+      "citations": ["Norwegian Consumer Council Insert Coin 2022", "FTC Epic/Fortnite settlement 2022", "Niknejad et al. 2024 arXiv:2412.05039"]
+    },
+    {
+      "id": "coordinated_inauthentic_behavior",
+      "name": "Coordinated inauthentic behavior",
+      "category": "Influence operations",
+      "psychological_mechanism": "Hidden coordination manufactures consensus and manipulates both human trust and platform ranking systems.",
+      "examples": [
+        {"domain": "social media", "description": "Networks of accounts synchronize posts, links, hashtags, and mutual amplification."},
+        {"domain": "political communication", "description": "Astroturfed support or opposition presented as grassroots sentiment."},
+        {"domain": "PsyOps", "description": "Cross-platform persona networks obscure the actor behind a narrative."}
+      ],
+      "triggers": ["same message repeated", "synchronized posts", "hashtag surge", "mutual amplification"],
+      "language_patterns": ["duplicated phrasing", "recycled slogans", "coordinated link sharing", "inauthentic local voice"],
+      "citations": ["DISARM Red Framework", "Graphika Spamouflage Breakout", "Gorwa and Guilbeault DOI: 10.1002/poi3.184"]
+    },
+    {
+      "id": "firehose_flooding",
+      "name": "Flooding and firehose communication",
+      "category": "PsyOps and propaganda",
+      "psychological_mechanism": "High-volume, repetitive, multichannel claims exploit familiarity bias, attention exhaustion, and correction resistance.",
+      "examples": [
+        {"domain": "political communication", "description": "Rapid repetition of inconsistent claims across many outlets and accounts."},
+        {"domain": "social media", "description": "Floods of comments or posts that overwhelm opposing information."},
+        {"domain": "disinformation", "description": "Narratives that persist through volume even when factually corrected."}
+      ],
+      "triggers": ["repeated claim", "many sources", "viral", "everyone is saying", "constant posting"],
+      "language_patterns": ["high repetition", "multi-source echoing", "truth-insensitive claims", "attention flooding"],
+      "citations": ["RAND Firehose of Falsehood", "Vosoughi et al. DOI: 10.1126/science.aap9559", "Lewandowsky et al. DOI: 10.1177/1529100612451018"]
+    },
+    {
+      "id": "emotional_identity_targeting",
+      "name": "Emotional and identity targeting",
+      "category": "Persuasion and influence operations",
+      "psychological_mechanism": "Messages tied to fear, status, belonging, humiliation, pride, or grievance activate motivated reasoning and social identity defense.",
+      "examples": [
+        {"domain": "political communication", "description": "Wedge narratives amplify group threat, distrust, and polarization."},
+        {"domain": "marketing", "description": "Identity-based appeals make a purchase feel like self-expression or status protection."},
+        {"domain": "ayuda economica risk analysis", "description": "Financial support, independence, safety, or family obligation can function as vulnerability multipliers."}
+      ],
+      "triggers": ["you deserve", "protect your family", "real women", "independent", "safe", "respect"],
+      "language_patterns": ["identity labels", "fear appeals", "status threat", "belonging promises", "family duty framing"],
+      "citations": ["Cialdini Influence", "Graphika Unheard Voice", "Lewandowsky et al. DOI: 10.1177/1529100612451018"]
+    },
+    {
+      "id": "narrative_laundering_cross_platform",
+      "name": "Narrative laundering and cross-platform recycling",
+      "category": "Influence operations",
+      "psychological_mechanism": "Claims are moved across personas, platforms, pseudo-media, influencers, and communities until origin and coordination become hard to see.",
+      "examples": [
+        {"domain": "social media", "description": "A claim seeded by a fake account is reposted by pages, websites, and influencers."},
+        {"domain": "PsyOps", "description": "Fake outlets and personas create apparent independent corroboration."},
+        {"domain": "debate", "description": "Dubious claims are introduced as already-reported facts without provenance."}
+      ],
+      "triggers": ["reported by", "sources say", "as shared", "viral post", "independent outlet"],
+      "language_patterns": ["source dilution", "pseudo-media attribution", "cross-post recycling", "provenance gaps"],
+      "citations": ["Graphika Unheard Voice", "DISARM Red Framework", "OpenAI covert influence operations report"]
+    },
+    {
+      "id": "fake_urgency_baseless_countdown",
+      "name": "Fake Urgency / Baseless Countdown Timer",
+      "category": "Dark Pattern (Cialdini Scarcity extension)",
+      "psychological_mechanism": "Exploits scarcity heuristic and loss aversion; creates false time pressure to bypass deliberation. Often baseless (no real limit).",
+      "examples": [
+        {"domain": "marketing", "description": "Limited-time offers or countdowns on e-commerce checkout."},
+        {"domain": "gaming", "description": "Limited-time events or sales with timers."},
+        {"domain": "classified ads", "description": "False 'limited time' or 'act now' in investment/scam ads or marketplace listings."},
+        {"domain": "Spanish/LatAm", "description": "'Sólo por pocas horas' or timers in e-comm (SERNAC Chile notes in 64% sampled sites)."}
+      ],
+      "triggers": ["Time-sensitive decisions, uncertainty, mobile/fast-scroll contexts; loss aversion bias."],
+      "language_patterns": ["Only X hours/minutes left!", "Sale ends soon!", "Limited time offer – act now!", "Últimas unidades / sólo por pocas horas"],
+      "citations": ["Gray et al. (2024) ontology (Urgency category); SERNAC Chile (2021); FTC (2022)"]
+    },
+    {
+      "id": "fake_scarcity_low_stock",
+      "name": "Fake Scarcity / False Low Stock or High Demand Messages",
+      "category": "Dark Pattern (Cialdini Scarcity extension)",
+      "psychological_mechanism": "Leverages scarcity principle and FOMO; implies limited availability or popularity to increase perceived value, even when fabricated.",
+      "examples": [
+        {"domain": "marketing", "description": "'Only 2 left!' or 'X people viewing' on product pages."},
+        {"domain": "classified ads", "description": "'Few available' or demand claims in used-goods listings or limited-investment pitches."},
+        {"domain": "Spanish/LatAm", "description": "SERNAC Chile: 'últimas unidades' signals in Chilean e-comm."}
+      ],
+      "triggers": ["Product choice under uncertainty; social comparison; status quo or bandwagon bias."],
+      "language_patterns": ["Only X left in stock!", "High demand – selling fast!", "False Low Stock Message"],
+      "citations": ["Gray et al. (2024) ontology (Scarcity); Mathur et al. (2019); SERNAC (2021)"]
+    },
+    {
+      "id": "fake_social_proof_activity",
+      "name": "Fake Social Proof / Deceptive Testimonials or Activity Messages",
+      "category": "Dark Pattern (Cialdini Social Proof extension)",
+      "psychological_mechanism": "Exploits conformity and social proof heuristics; fabricated reviews, 'X bought this', or pop-up activity to normalize action.",
+      "examples": [
+        {"domain": "marketing", "description": "Fake reviews or 'Most popular' badges."},
+        {"domain": "classified/financial", "description": "Doubtful testimonials or 'X people viewing/bought' pop-ups in listings or financial products."},
+        {"domain": "Spanish/LatAm", "description": "SERNAC Chile notes activity notifications and 'testimonios dudosos' in e-comm and financial cases."}
+      ],
+      "triggers": ["Uncertainty or social validation needs; bandwagon effect."],
+      "language_patterns": ["X people have bought this today!", "As featured in...", "Deceptive Consumer Testimonials"],
+      "citations": ["Gray et al. (2024); SERNAC (2021); FTC/OECD"]
+    }
+  ],
+  "retrospective": {
+    "covered_categories": [
+      "Classical persuasion principles",
+      "E-commerce and privacy dark patterns",
+      "Gaming monetization and betting-app pressure mechanics",
+      "Social media and political influence operations",
+      "Misinformation correction resistance"
+    ],
+    "weak_domains": [
+      "Debate-specific manipulative rhetoric needs a deeper argumentative fallacy and conversational coercion pass.",
+      "Spanish-language and Peru-specific examples improved via agentic fan-out but still need more direct ad corpus from Phase 4.",
+      "Quantitative prevalence estimates outside e-commerce and gaming remain uneven."
+    ],
+    "emerged_families": [
+      "Autonomy erosion through friction asymmetry and interface steering",
+      "Monetized uncertainty through randomized rewards and obfuscated currency",
+      "Manufactured consensus through coordinated inauthentic behavior",
+      "Vulnerability multipliers that intensify otherwise general persuasion patterns",
+      "LatAm/Spanish urgency-scarcity and activity signals in consumer/classified contexts (SERNAC-aligned)"
+    ],
+    "what_worked": [
+      "Parallel sub-agents produced strong domain slices for regulator/HCI, gaming, and influence operations.",
+      "Agentic fan-out Round 4 added post-2018 ontology (Gray), SERNAC Chile LatAm examples (urgency, scarcity, social proof, preselection), AI extensions, and classified-adjacent patterns with Spanish language triggers.",
+      "The three-round STORM structure separated foundational sources, domain applications, and fan-out synthesis.",
+      "The compendium format is directly usable for later annotation and model-label schemas."
+    ],
+    "what_failed_or_needs_improvement": [
+      "Phase 1 is broad; later passes should add more Spanish-language sources and Latin American case studies.",
+      "Several gaming and influence-operation findings are correlational or campaign-specific, so model labels should avoid overclaiming causality.",
+      "The compendium needs Phase 2 context before weighting Peru-specific vulnerability multipliers."
+    ],
+    "next_phase_strategy": [
+      "Use official Peru statistics, UN/World Bank/ILO/INEI/MIMP sources, and academic studies before any lower-quality media sources.",
+      "Segment young and young-adult women by urban/semi-urban context where evidence allows.",
+      "Map each multiplier to Phase 1 techniques without creating exploitative message recipes."
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "n_sampled": 300,
+  "elapsed_ms": 3568.7,
+  "spaces": {
+    "persuasive": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.4333,
+      "resampling_consistency": 0.5734,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {},
+      "topic_leakage": {}
+    },
+    "semantic": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.1108,
+      "resampling_consistency": 0.4059,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {
+        "Facebook Public": 1.0
+      },
+      "topic_leakage": {
+        "facebook": 1.0
+      }
+    },
+    "rhetorical": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.3642,
+      "resampling_consistency": 0.7075,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {},
+      "topic_leakage": {}
+    },
+    "visual": {
+      "n_clusters": 3,
+      "n_noise": 0,
+      "stability_ari": 0.9914,
+      "resampling_consistency": 0.9904,
+      "parameter_sensitivity": 0.4714,
+      "brand_leakage": {
+        "Doplim Peru": 1.0,
+        "Locanto Peru": 0.9629629629629629
+      },
+      "topic_leakage": {
+        "doplim": 1.0,
+        "locanto": 0.9629629629629629
+      }
+    },
+    "multimodal": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.5994,
+      "resampling_consistency": 0.665,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {
+        "Doplim Peru": 1.0,
+        "Locanto Peru": 0.9629629629629629
+      },
+      "topic_leakage": {
+        "doplim": 1.0,
+        "locanto": 0.9629629629629629
+      }
+    },
+    "authorial": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.1438,
+      "resampling_consistency": 0.3268,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {
+        "Facebook Public": 1.0,
+        "Ciudad Anuncios Peru": 0.8048780487804879
+      },
+      "topic_leakage": {
+        "facebook": 1.0,
+        "ciudadanuncios": 0.8048780487804879
+      }
+    },
+    "performance": {
+      "n_clusters": 3,
+      "n_noise": 0,
+      "stability_ari": 0.9888,
+      "resampling_consistency": 0.9962,
+      "parameter_sensitivity": 0.5,
+      "brand_leakage": {
+        "Doplim Peru": 0.9836065573770492,
+        "Facebook Public": 1.0
+      },
+      "topic_leakage": {
+        "doplim": 0.9836065573770492,
+        "facebook": 1.0
+      }
+    }
+  }
+}

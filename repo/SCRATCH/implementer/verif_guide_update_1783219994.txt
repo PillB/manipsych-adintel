@@ -1,0 +1,9 @@
+=== GUIDE UPDATE VERIF SNAPSHOT 1783219994 ===
+Total: 287
+Platforms: {'Doplim Peru (hombre busca mujer or Contactos)': 108, 'Other indexed public': 4, 'Facebook Public (indexed)': 28, 'Facebook Public (search first)': 1, 'Locanto Peru (hombre busca mujer real)': 145, 'Facebook public group': 1}
+Sample rids: ['3e5dd891d1', '8045fb0084', '37a71269bf']
+Raws on disk: 521
+5 sample raw paths: ['data/raw/ads/batch_fresh_guide_39f578edd3fd8dda.html', 'data/raw/ads/hombre_busca_mujer_real_8b89651e4ddd0e99.html', 'data/raw/ads/locanto_hombre_direct_59245ef64898566a.html', 'data/raw/ads/locanto_detail_845096e52ded324f.html', 'data/raw/ads/doplim_hombre_full_824bcbb0d067f8d8.html']
+Gate: PASSED (full record PII check, raw presence, no dups, family match)
+Pytest targeted: 15 passed
+Guide updated with worked/discarded strategies.

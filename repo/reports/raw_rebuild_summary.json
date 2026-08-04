@@ -1,0 +1,26 @@
+{
+  "raw_files_scanned": 10293,
+  "records_written": 5738,
+  "platform_counts": {
+    "doplim": 2845,
+    "locanto": 1562,
+    "ciudadanuncios": 1303,
+    "evisos": 2,
+    "facebook": 26
+  },
+  "reject_counts": {
+    "seeker_only": 357,
+    "no_target_terms": 1782,
+    "low_body_text": 21,
+    "tiny_or_corrupt": 14,
+    "offtopic_context": 3,
+    "access_interstitial": 7
+  },
+  "dedup_counts": {
+    "duplicate_record_id": 2360,
+    "duplicate_normalized_text": 11
+  },
+  "elapsed_sec": 1144.1,
+  "manifest": "data/processed/ad_manifest.jsonl",
+  "gates": "TARGET+OFFTOPIC+seeker+dedup+PII"
+}

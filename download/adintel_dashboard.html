@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advertisement Intelligence and Persuasion Analytics — Audit Dashboard</title>
+<style>
+:root {
+  --ink:#0f172a; --muted:#475569; --paper:#f8fafc; --card:#ffffff;
+  --line:#e2e8f0; --green:#0f766e; --amber:#b45309; --red:#b91c1c; --blue:#1e40af;
+  --shadow:0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif; line-height:1.55; }
+a { color:var(--blue); }
+header.top { background:linear-gradient(135deg,#0f172a,#0f766e); color:white; padding:24px 32px; }
+header.top h1 { margin:0 0 4px; font-size:clamp(20px,3vw,28px); font-weight:700; }
+header.top .sub { opacity:.88; font-size:14px; }
+main { padding:24px 32px; max-width:1400px; margin:0 auto; }
+section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:20px; box-shadow:var(--shadow); }
+section h2 { margin:0 0 12px; font-size:18px; font-weight:700; border-bottom:2px solid var(--line); padding-bottom:8px; }
+section h3 { margin:16px 0 8px; font-size:14px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+.kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-bottom:8px; }
+.kpi { background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:12px 14px; }
+.kpi .label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+.kpi .value { font-size:22px; font-weight:700; margin-top:2px; }
+.kpi .note { font-size:11px; color:var(--muted); margin-top:2px; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th,td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); }
+th { background:var(--paper); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+td.num,th.num { text-align:right; font-variant-numeric:tabular-nums; }
+td.dim { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; }
+td.leak { font-size:11px; max-width:280px; overflow-wrap:anywhere; }
+td.abstain { font-size:11px; color:var(--muted); max-width:240px; overflow-wrap:anywhere; }
+.bar { width:140px; height:8px; background:var(--line); border-radius:4px; overflow:hidden; }
+.bar-fill { height:100%; background:linear-gradient(90deg,var(--green),var(--amber),var(--red)); }
+.ledger-links { display:flex; gap:12px; flex-wrap:wrap; }
+.ledgel-link { padding:6px 12px; border:1px solid var(--line); border-radius:999px; font-size:12px; background:var(--paper); }
+.disclaimer { background:#fef3c7; border:1px solid #fde68a; border-radius:8px; padding:10px 12px; font-size:12px; color:#78350f; margin-top:12px; }
+.disclaimer strong { color:#451a03; }
+footer { padding:16px 32px; color:var(--muted); font-size:12px; text-align:center; }
+@media (max-width:760px) {
+  main { padding:16px; }
+  .kpis { grid-template-columns:repeat(2,1fr); }
+}
+@media print {
+  body { background:white; }
+  section { box-shadow:none; break-inside:avoid; }
+}
+@media (prefers-reduced-motion:reduce) {
+  * { transition:none !important; animation:none !important; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Advertisement Intelligence &amp; Persuasion Analytics — Audit Dashboard</h1>
+  <div class="sub">adintel v0.1.0 · taxonomy adintel-taxonomy-v2 · ran 2026-08-04T00:19:32Z</div>
+</header>
+
+<main>
+  <section>
+    <h2>1. Executive KPIs</h2>
+    <div class="kpis">
+      <div class="kpi"><div class="label">Records in corpus</div><div class="value">5,189</div><div class="note">from data/processed/ad_manifest.jsonl</div></div>
+      <div class="kpi"><div class="label">Council annotations</div><div class="value">5,717</div><div class="note">v1; migrated to v2 (see §7)</div></div>
+      <div class="kpi"><div class="label">Authorship accuracy</div><div class="value">97.6%</div><div class="note">41 known same-source pairs, 1 abstained</div></div>
+      <div class="kpi"><div class="label">Outlier reports</div><div class="value">188</div><div class="note">on 1000-ad sample</div></div>
+      <div class="kpi"><div class="label">Checkpoints registered</div><div class="value">6</div><div class="note">all CPU-local; cost $0/1k</div></div>
+      <div class="kpi"><div class="label">Pipeline runtime</div><div class="value">5.0s</div><div class="note">end-to-end on real corpus</div></div>
+    </div>
+    <div class="disclaimer">
+      <strong>Evidence-discipline notice:</strong> technique presence is not proof of persuasion;
+      persuasive intensity is not proof of performance; performance association is not proof of
+      causation; authorship similarity is not proof of personal identity. Authorship verdicts
+      never name a person. See §8 for causal-language linting.
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Hierarchical Taxonomy v2</h2>
+    <div class="kpis">
+      <div class="kpi"><div class="label">Top-level families</div><div class="value">6</div></div>
+      <div class="kpi"><div class="label">Total nodes</div><div class="value">34</div></div>
+      <div class="kpi"><div class="label">Leaf labels</div><div class="value">27</div></div>
+    </div>
+    <h3>v1 → v2 mapping coverage</h3>
+    <p style="font-size:13px;">Every v1 leaf label maps to at least one v2 leaf (verified by test). v1's overloaded
+    <code>reciprocity_obligation</code> splits into <code>cc_reciprocity_frame</code> (copywriting) and
+    <code>bs_reciprocity_obligation</code> (behavioural). Targeting labels (age, education, economic,
+    family, gendered-appearance) are reframed as <code>bs_audience_targeting.*</code> because targeting
+    is audience context, not a persuasion technique per se.</p>
+  </section>
+
+  <section>
+    <h2>3. Persuasive Profile — 17 Dimensions (sample means, n=200)</h2>
+    <p style="font-size:13px;">The 17 dimensions are NEVER collapsed into a single universal score (verified by test).
+    Each dimension carries its own signal inventory and abstention rule.</p>
+    <table>
+      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Abstained</th></tr></thead>
+      <tbody>
+            <tr>
+              <td class="dim">offer_clarity</td>
+              <td><div class="bar"><div class="bar-fill" style="width:80.9%"></div></div></td>
+              <td class="num">40.5%</td>
+              <td class="num">24/200</td>
+            </tr>
+            <tr>
+              <td class="dim">readability</td>
+              <td><div class="bar"><div class="bar-fill" style="width:79.0%"></div></div></td>
+              <td class="num">39.5%</td>
+              <td class="num">0/200</td>
+            </tr>
+            <tr>
+              <td class="dim">benefit_density</td>
+              <td><div class="bar"><div class="bar-fill" style="width:67.8%"></div></div></td>
+              <td class="num">33.9%</td>
+              <td class="num">26/200</td>
+            </tr>
+            <tr>
+              <td class="dim">specificity</td>
+              <td><div class="bar"><div class="bar-fill" style="width:47.8%"></div></div></td>
+              <td class="num">23.9%</td>
+              <td class="num">36/200</td>
+            </tr>
+            <tr>
+              <td class="dim">manipulation_risk</td>
+              <td><div class="bar"><div class="bar-fill" style="width:26.2%"></div></div></td>
+              <td class="num">13.1%</td>
+              <td class="num">5/200</td>
+            </tr>
+            <tr>
+              <td class="dim">emotional_intensity</td>
+              <td><div class="bar"><div class="bar-fill" style="width:22.6%"></div></div></td>
+              <td class="num">11.3%</td>
+              <td class="num">128/200</td>
+            </tr>
+            <tr>
+              <td class="dim">scarcity</td>
+              <td><div class="bar"><div class="bar-fill" style="width:19.5%"></div></div></td>
+              <td class="num">9.7%</td>
+              <td class="num">128/200</td>
+            </tr>
+            <tr>
+              <td class="dim">objection_handling</td>
+              <td><div class="bar"><div class="bar-fill" style="width:18.2%"></div></div></td>
+              <td class="num">9.1%</td>
+              <td class="num">131/200</td>
+            </tr>
+            <tr>
+              <td class="dim">claim_extremity</td>
+              <td><div class="bar"><div class="bar-fill" style="width:16.7%"></div></div></td>
+              <td class="num">8.3%</td>
+              <td class="num">133/200</td>
+            </tr>
+            <tr>
+              <td class="dim">directiveness</td>
+              <td><div class="bar"><div class="bar-fill" style="width:11.6%"></div></div></td>
+              <td class="num">5.8%</td>
+              <td class="num">162/200</td>
+            </tr>
+            <tr>
+              <td class="dim">urgency</td>
+              <td><div class="bar"><div class="bar-fill" style="width:7.7%"></div></div></td>
+              <td class="num">3.9%</td>
+              <td class="num">177/200</td>
+            </tr>
+            <tr>
+              <td class="dim">action_clarity</td>
+              <td><div class="bar"><div class="bar-fill" style="width:7.6%"></div></div></td>
+              <td class="num">3.8%</td>
+              <td class="num">171/200</td>
+            </tr>
+            <tr>
+              <td class="dim">certainty</td>
+              <td><div class="bar"><div class="bar-fill" style="width:5.3%"></div></div></td>
+              <td class="num">2.7%</td>
+              <td class="num">161/200</td>
+            </tr>
+            <tr>
+              <td class="dim">trust_risk</td>
+              <td><div class="bar"><div class="bar-fill" style="width:4.7%"></div></div></td>
+              <td class="num">2.3%</td>
+              <td class="num">159/200</td>
+            </tr>
+            <tr>
+              <td class="dim">social_proof</td>
+              <td><div class="bar"><div class="bar-fill" style="width:2.0%"></div></div></td>
+              <td class="num">1.0%</td>
+              <td class="num">191/200</td>
+            </tr>
+            <tr>
+              <td class="dim">risk_reversal</td>
+              <td><div class="bar"><div class="bar-fill" style="width:2.0%"></div></div></td>
+              <td class="num">0.2%</td>
+              <td class="num">199/200</td>
+            </tr>
+            <tr>
+              <td class="dim">evidence_density</td>
+              <td><div class="bar"><div class="bar-fill" style="width:2.0%"></div></div></td>
+              <td class="num">0.1%</td>
+              <td class="num">199/200</td>
+            </tr></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Clustering — 7 Spaces (stratified sample, n=300)</h2>
+    <p style="font-size:13px;">Brand leakage was 98–100% before Round-1 fix (stratified sampling); now empty for
+    persuasive and rhetorical spaces. Residual leakage is sample-size artefact on small strata (Facebook n=26).</p>
+    <table>
+      <thead><tr><th>Space</th><th class="num">Clusters</th><th class="num">Stability (ARI)</th><th class="num">Pair consistency</th><th class="num">Param sensitivity</th><th>Brand leakage</th></tr></thead>
+      <tbody>
+            <tr>
+              <td class="dim">persuasive</td>
+              <td class="num">5</td>
+              <td class="num">0.433</td>
+              <td class="num">0.573</td>
+              <td class="num">1.708</td>
+              <td class="leak">none</td>
+            </tr>
+            <tr>
+              <td class="dim">semantic</td>
+              <td class="num">5</td>
+              <td class="num">0.111</td>
+              <td class="num">0.406</td>
+              <td class="num">1.708</td>
+              <td class="leak">Facebook Public: 100%</td>
+            </tr>
+            <tr>
+              <td class="dim">rhetorical</td>
+              <td class="num">5</td>
+              <td class="num">0.364</td>
+              <td class="num">0.708</td>
+              <td class="num">1.708</td>
+              <td class="leak">none</td>
+            </tr>
+            <tr>
+              <td class="dim">visual</td>
+              <td class="num">3</td>
+              <td class="num">0.991</td>
+              <td class="num">0.990</td>
+              <td class="num">0.471</td>
+              <td class="leak">Doplim Peru: 100%, Locanto Peru: 96%</td>
+            </tr>
+            <tr>
+              <td class="dim">multimodal</td>
+              <td class="num">5</td>
+              <td class="num">0.599</td>
+              <td class="num">0.665</td>
+              <td class="num">1.708</td>
+              <td class="leak">Doplim Peru: 100%, Locanto Peru: 96%</td>
+            </tr>
+            <tr>
+              <td class="dim">authorial</td>
+              <td class="num">5</td>
+              <td class="num">0.144</td>
+              <td class="num">0.327</td>
+              <td class="num">1.708</td>
+              <td class="leak">Facebook Public: 100%, Ciudad Anuncios Peru: 80%</td>
+            </tr>
+            <tr>
+              <td class="dim">performance</td>
+              <td class="num">3</td>
+              <td class="num">0.989</td>
+              <td class="num">0.996</td>
+              <td class="num">0.500</td>
+              <td class="leak">Doplim Peru: 98%, Facebook Public: 100%</td>
+            </tr></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>5. Authorship / Common-Source Analysis</h2>
+    <div class="kpis">
+      <div class="kpi"><div class="label">Pairs evaluated</div><div class="value">41</div><div class="note">accepted similarity_links</div></div>
+      <div class="kpi"><div class="label">Same-source predicted</div><div class="value">40</div></div>
+      <div class="kpi"><div class="label">Abstained (short text)</div><div class="value">1</div><div class="note">length-aware abstention</div></div>
+      <div class="kpi"><div class="label">Accuracy</div><div class="value">97.6%</div></div>
+    </div>
+    <div class="disclaimer">
+      <strong>Privacy guardrail:</strong> the authorship module never names a person. <code>person_named</code>
+      is always <code>False</code>. Multi-signal scoring (stylometry, lexical richness, template signature,
+      structural signature, council overlap) is the maximum the system will assert; person-level attribution
+      requires human review and external evidence.
+    </div>
+  </section>
+
+  <section>
+    <h2>6. Outlier Analysis (sample n=1000)</h2>
+    <table>
+      <thead><tr><th>Outlier kind</th><th class="num">Reports</th></tr></thead>
+      <tbody><tr><td>performance_underperformer</td><td class='num'>90</td></tr><tr><td>creative_novelty</td><td class='num'>50</td></tr><tr><td>style_outlier</td><td class='num'>26</td></tr><tr><td>unusual_technique_combination</td><td class='num'>22</td></tr></tbody>
+    </table>
+    <p style="font-size:13px;">Every outlier report carries: comparison population, feature space, score, method,
+    supporting features, alternative explanation, uncertainty, and review status. Performance outliers use a
+    <strong>proxy</strong> (quality_score) because the corpus has no real spend/impressions/CTR — disclosed in
+    each report's <code>alternative_explanation</code>.</p>
+  </section>
+
+  <section>
+    <h2>7. v1 → v2 Annotation Migration</h2>
+    <div class="kpis">
+      <div class="kpi"><div class="label">Records migrated</div><div class="value">5,717 → 5,717</div></div>
+      <div class="kpi"><div class="label">Unmapped v1 labels</div><div class="value">0</div></div>
+      <div class="kpi"><div class="label">Multi-label projections</div><div class="value">12,338</div><div class="note">expected; v1 overloaded labels split</div></div>
+    </div>
+    <p style="font-size:13px;">Output: <code>data/annotation/council_resolved_annotations_v2.jsonl</code>.
+    Each span retains its <code>v1_label</code> and gains <code>v2_labels</code> (list of leaves). Multi-label
+    projections require human review before being treated as gold.</p>
+  </section>
+
+  <section>
+    <h2>8. Checkpoint Registry</h2>
+    <table>
+      <thead><tr><th>Checkpoint</th><th>Version</th><th>Calibration</th><th class="num">Cost/1k</th><th class="num">Latency p50</th><th>Baseline</th><th>Abstention conditions</th></tr></thead>
+      <tbody>
+            <tr>
+              <td class="dim">rule-detector-v1</td>
+              <td>rule-detector-v1.0.0</td>
+              <td>uncalibrated</td>
+              <td class="num">$0.000</td>
+              <td class="num">1.0ms</td>
+              <td>—</td>
+              <td class="abstain">empty_text, no_rule_match</td>
+            </tr>
+            <tr>
+              <td class="dim">tfidf-ovr-v1</td>
+              <td>tfidf-ovr-v1.0.0</td>
+              <td>uncalibrated</td>
+              <td class="num">$0.000</td>
+              <td class="num">10.0ms</td>
+              <td>rule-detector-v1</td>
+              <td class="abstain">text_below_5_tokens, all_probabilities_below_0.3</td>
+            </tr>
+            <tr>
+              <td class="dim">persuasive-profile-v1</td>
+              <td>persuasive-profile-v1.0.0</td>
+              <td>uncalibrated</td>
+              <td class="num">$0.000</td>
+              <td class="num">5.0ms</td>
+              <td>rule-detector-v1</td>
+              <td class="abstain">empty_text, dimension_specific_signal_absence</td>
+            </tr>
+            <tr>
+              <td class="dim">authorship-v1</td>
+              <td>authorship-v1.0.0</td>
+              <td>uncalibrated</td>
+              <td class="num">$0.000</td>
+              <td class="num">20.0ms</td>
+              <td>rule-detector-v1</td>
+              <td class="abstain">below_min_tokens, empty_candidate_set_in_open_set, ambiguous_zone</td>
+            </tr>
+            <tr>
+              <td class="dim">outlier-v1</td>
+              <td>outlier-v1.0.0</td>
+              <td>uncalibrated</td>
+              <td class="num">$0.000</td>
+              <td class="num">50.0ms</td>
+              <td>rule-detector-v1</td>
+              <td class="abstain">corpus_below_5_records</td>
+            </tr>
+            <tr>
+              <td class="dim">clustering-v1</td>
+              <td>clustering-v1.0.0</td>
+              <td>uncalibrated</td>
+              <td class="num">$0.000</td>
+              <td class="num">200.0ms</td>
+              <td>—</td>
+              <td class="abstain">corpus_below_10_records, k_greater_than_n_records</td>
+            </tr></tbody>
+    </table>
+    <p style="font-size:13px;">Model disagreement routes to human review (verified by test). Uncalibrated scores
+    are never averaged (verified by test). Calibration helpers (Platt, temperature) are available but not yet
+    wired for every checkpoint — see Challenge Round 1 defect R1-D06.</p>
+  </section>
+
+  <section>
+    <h2>9. Challenge Round Defect Ledgers</h2>
+    <div class="ledger-links">
+      <a class="ledgel-link" href="challenge_round1_defects.md">Round 1 — scientific validity (9 defects)</a>
+      <a class="ledgel-link" href="challenge_round2_defects.md">Round 2 — analyst usefulness (9 defects)</a>
+    </div>
+    <p style="font-size:13px; margin-top:12px;">Round 1 found 1 critical and 3 high-severity defects; 4 fixed
+    in-session (stratified sampling, Unicode robustness, evidence-discipline lint, MAD outlier hook). Round 2
+    found 3 high-severity defects; 2 fixed in-session (output_version field, dashboard) and 1 deferred
+    (annotation GUI v2). See ledger files for full details.</p>
+  </section>
+</main>
+
+<footer>
+  Generated by <code>scripts/generate_adintel_dashboard.py</code> from <code>reports/adintel/*.json</code>.
+  All scores are signals, not proofs. Read the evidence-discipline notice in §1 before citing any number.
+</footer>
+</body>
+</html>

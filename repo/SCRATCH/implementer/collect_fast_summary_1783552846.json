@@ -1,0 +1,24 @@
+{
+  "log": "/Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/collect_fast_1783552846.log",
+  "candidates": 2005,
+  "counters": {
+    "doplim": 1600,
+    "evisos": 0,
+    "skip": 56,
+    "saved": 100,
+    "err": 0
+  },
+  "start_counts": {
+    "doplim": 1500,
+    "evisos": 0,
+    "other": 1930
+  },
+  "end_counts": {
+    "doplim": 1600,
+    "evisos": 0,
+    "other": 1930
+  },
+  "elapsed_s": 41.8,
+  "ads_per_min": 143.5,
+  "finished_at": "2026-07-08T23:22:14Z"
+}

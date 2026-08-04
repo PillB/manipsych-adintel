@@ -1,0 +1,10 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[16:15:21] START engine=playwright detail=playwright phase=fetch targets D=0 E=1500
+[16:15:22] existing raw counts={'doplim': 442, 'evisos': 0, 'other': 1930}
+[16:15:22] loaded seeds_in=451 from SCRATCH/implementer/seeds_evisos_web.jsonl
+[16:15:23] PHASE B start counts={'doplim': 442, 'evisos': 0, 'other': 1930} candidates=451 workers=4 mode=playwright
+[16:15:38] SAVED evisos evisos_section_mass_d7206e8f6287048c.html title='Reforz. en matematicas / la molina, surco. en Lima - Cursos ' totals={'doplim': 442, 'evisos': 1, 'other': 1930}
+[16:15:43] SKIP not_relevant https://lima-city.evisos.com.pe/anuncio-id-601017
+[16:15:43] SAVED evisos evisos_section_mass_1659cb433cc5c1f8.html title='Area de recursos humanos solicita personal con o sin experie' totals={'doplim': 442, 'evisos': 2, 'other': 1930}
+[16:15:43] SKIP not_relevant https://lima-city.evisos.com.pe/anuncio-id-604942

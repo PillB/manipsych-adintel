@@ -1,0 +1,114 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+START lima section list crawl (main cards ONLY, tuned extract, filtered)
+base=https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701
+LIST p1: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/1/?query=ayuda+economica
+  main IDs: 48
+  + https://www.locanto.com.pe/lima/ID_8219861786/Doy-ayuda-economica-a-ca
+  + https://www.locanto.com.pe/lima/ID_8220346900/Brindo-Ayuda-Economica-a
+  + https://www.locanto.com.pe/lima/ID_7666733212/Brindo-ayuda-Ayuda-Econo
+  + https://www.locanto.com.pe/lima/ID_8111368972/Busco-una-sola-Senorita-
+  + https://www.locanto.com.pe/lima/ID_8148062840/Ayuda-economica-a-chica-
+  + https://www.locanto.com.pe/lima/ID_7909429149/Ayuda-Economica-a-chicas
+  + https://www.locanto.com.pe/lima/ID_8110711255/AYUDA-ECONOMICA-S-100-LI
+  + https://www.locanto.com.pe/lima/ID_8555271855/Ayuda-economica-de-joven
+  + https://www.locanto.com.pe/lima/ID_7914603410/SOY-CABALLERO-QUE-OFRECE
+  + https://www.locanto.com.pe/lima/ID_8146295199/Entrego-ayuda-economica-
+LIST p2: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/2/?query=ayuda+economica
+  main IDs: 46
+  + https://www.locanto.com.pe/lima/ID_8146303931/Brindo-ayuda-economica-a
+  + https://www.locanto.com.pe/lima/ID_8218577056/Caballero-ofrece-ayuda-e
+  + https://www.locanto.com.pe/lima/ID_7713727379/Ayuda-Economica-para-Muj
+  + https://www.locanto.com.pe/lima/ID_7103177289/busco-una-amiga-para-bri
+  + https://www.locanto.com.pe/lima/ID_6695950053/doy-ayuda-economica-a-ch
+  + https://www.locanto.com.pe/lima/ID_6645386317/ayuda-economica-a-chicas
+  + https://www.locanto.com.pe/lima/ID_6643783026/caballero-brinda-ayuda-e
+  + https://www.locanto.com.pe/lima/ID_7747540499/Doy-ayuda-economica-a-ch
+  + https://www.locanto.com.pe/lima/ID_9019684632/Ayuda-economica-a-chicas
+  + https://www.locanto.com.pe/lima/ID_9019369721/Ayuda-economica-ojo-muje
+  + https://www.locanto.com.pe/lima/ID_7556600562/Ayuda-economica-srta-o-m
+  + https://www.locanto.com.pe/lima/ID_7558366413/Ofrezco-ayuda-economica-
+  + https://www.locanto.com.pe/lima/ID_8217083991/Tienes-problemas-economi
+  + https://www.locanto.com.pe/lima/ID_9019178735/Hombre-generoso-ofrece-a
+  + https://www.locanto.com.pe/lima/ID_7657830009/Ayuda-economica-de-200-s
+  + https://www.locanto.com.pe/lima/ID_7360911667/Ayuda-economica-solo-a-m
+  + https://www.locanto.com.pe/lima/ID_7975340382/Me-escribes-si-necesitas
+  + https://www.locanto.com.pe/lima/ID_7740097606/Ofrezco-Ayuda-Economica-
+LIST p3: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/3/?query=ayuda+economica
+  main IDs: 48
+  + https://www.locanto.com.pe/lima/ID_8104773337/Joven-Ingeniero-respetuo
+  + https://www.locanto.com.pe/lima/ID_8341839704/Joven-brinda-ayuda-econo
+  + https://www.locanto.com.pe/lima/ID_8343067186/Ayuda-Economica-Solo-Chi
+  + https://www.locanto.com.pe/lima/ID_8343067716/Ayuda-Economica-Maduras.
+  + https://www.locanto.com.pe/lima/ID_8535914826/JOVEN-PROFESIONAL-BRINDA
+  + https://www.locanto.com.pe/lima/ID_7294463448/AYUDA-ECONOMICA-A-SRTA-D
+  + https://www.locanto.com.pe/lima/ID_9015241942/Ayuda-economica-constant
+  + https://www.locanto.com.pe/lima/ID_7433047604/AYUDA-ECONOMICA-SRTA-DE-
+  + https://www.locanto.com.pe/lima/ID_8586844765/Ayuda-economica-a-mujere
+  + https://www.locanto.com.pe/lima/ID_4564108522/Solo-para-mujer-doy-ayud
+  + https://www.locanto.com.pe/lima/ID_9013965371/Ofresco-ayuda-economica-
+  + https://www.locanto.com.pe/lima/ID_7101850688/Ayuda-economica-para-per
+  + https://www.locanto.com.pe/lima/ID_9011825461/Ayuda-economica-a-mujer-
+  + https://www.locanto.com.pe/lima/ID_7654848204/AYUDO-economicamente-a-s
+  + https://www.locanto.com.pe/lima/ID_7742071619/Ayuda-economica-para-est
+  + https://www.locanto.com.pe/lima/ID_8103787847/Busco-una-sola-Senorita-
+  + https://www.locanto.com.pe/lima/ID_8142271797/BRINDO-AYUDA-ECONOMICA-C
+  + https://www.locanto.com.pe/lima/ID_7969659492/Ayuda-economica-a-mujere
+  + https://www.locanto.com.pe/lima/ID_9010678193/Ayuda-economica-a-chica-
+  + https://www.locanto.com.pe/lima/ID_8733693324/Ayuda-economica-Los-Oliv
+  + https://www.locanto.com.pe/lima/ID_9010157787/Se-busca-chica-liberal-p
+  + https://www.locanto.com.pe/lima/ID_6992356119/Se-brinda-ayuda-economic
+  + https://www.locanto.com.pe/lima/ID_9009443970/DOY-AYUDA-ECONOMICA-A-SE
+  + https://www.locanto.com.pe/lima/ID_8526951025/DOY-AYUDA-ECONOMICA-A-MA
+  + https://www.locanto.com.pe/lima/ID_7840569759/AYUDA-ECONOMICA-A-SENORI
+  + https://www.locanto.com.pe/lima/ID_8341701871/Doy-Ayuda-Economica-a-Se
+  + https://www.locanto.com.pe/lima/ID_8529880999/AYUDA-ECONOMICA-BENEFICI
+  + https://www.locanto.com.pe/lima/ID_8532156523/ayudo-economico-a-mujere
+  + https://www.locanto.com.pe/lima/ID_7325447223/Ayuda-economicas-a-chica
+  + https://www.locanto.com.pe/lima/ID_9007773579/Hombre-generoso-da-ayuda
+  + https://www.locanto.com.pe/lima/ID_6991206653/AYUDA-ECONOMICA-POR-SALI
+  + https://www.locanto.com.pe/lima/ID_4610555466/Estoy-buscando-mujer-par
+  + https://www.locanto.com.pe/lima/ID_8544047879/Empresario-Busca-Chica-J
+  + https://www.locanto.com.pe/lima/ID_7215965112/Ayuda-economica-todo-lim
+  + https://www.locanto.com.pe/lima/ID_6352321420/Doy-ayuda-economica-a-sr
+  + https://www.locanto.com.pe/lima/ID_7840191056/Ayuda-economica-segura-y
+  + https://www.locanto.com.pe/lima/ID_7840227107/Ayuda-Economica-a-Senori
+  + https://www.locanto.com.pe/lima/ID_8557981214/AYUDA-ECONOMICA-800-SOLE
+  + https://www.locanto.com.pe/lima/ID_7665009751/Ayuda-para-senorita-en-a
+  + https://www.locanto.com.pe/lima/ID_8558781097/AYUDA-ECONOMICA-PARA-CHI
+  + https://www.locanto.com.pe/lima/ID_7541497113/Brindo-ayuda-economica-a
+  + https://www.locanto.com.pe/lima/ID_8101681016/Busco-solo-a-1-Senorita-
+  + https://www.locanto.com.pe/lima/ID_8213923037/Busco-solo-a-1-Senorita-
+  + https://www.locanto.com.pe/lima/ID_8337754430/Embarazada-ayuda-economi
+  + https://www.locanto.com.pe/lima/ID_7651043034/Ayuda-economica-a-senori
+LIST p4: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/4/?query=ayuda+economica
+  main IDs: 46
+  + https://www.locanto.com.pe/lima/ID_8143430650/BRINDO-AYUDA-ECONOMICA-A
+  + https://www.locanto.com.pe/lima/ID_7891035423/Ayuda-economica-chicas-d
+  + https://www.locanto.com.pe/lima/ID_5139884102/AYUDA-ECONOMICA-A-SENORA
+  + https://www.locanto.com.pe/lima/ID_6439674443/AYUDA-ECONOMICA-A-SENORA
+  + https://www.locanto.com.pe/lima/ID_9004008844/Hombre-generoso-brinda-a
+  + https://www.locanto.com.pe/lima/ID_7287847550/AYUDA-ECONOMICA-A-SRTA-D
+  + https://www.locanto.com.pe/lima/ID_9003485879/BRINDO-AYUDA-ECONOMICA-A
+  + https://www.locanto.com.pe/lima/ID_7652581464/AYUDA-ECONOMICA-PARA-MUJ
+  + https://www.locanto.com.pe/lima/ID_7652272483/Brindo-ayuda-economica-a
+  + https://www.locanto.com.pe/lima/ID_9003299963/Doy-ayuda-apoyo-economic
+  + https://www.locanto.com.pe/lima/ID_7841054371/Brindo-Ayuda-Economica-a
+  + https://www.locanto.com.pe/lima/ID_8099794725/Buscas-Dinero-Ayuda-Cons
+  + https://www.locanto.com.pe/lima/ID_8100281741/JOVEN-PRESTA-AYUDA-ECONO
+  + https://www.locanto.com.pe/lima/ID_8535759041/EMPRESARIO-BUSCA-CHICA-A
+  + https://www.locanto.com.pe/lima/ID_8538622243/SUGAR-BRINDA-BUSCA-CHICA
+  + https://www.locanto.com.pe/lima/ID_8543433752/Se-Busca-Chicas-de-18-a-
+  + https://www.locanto.com.pe/lima/ID_8544038119/Ayuda-Economica-a-Chicas
+  + https://www.locanto.com.pe/lima/ID_7736310888/Ayuda-economica-en-Lima.
+  + https://www.locanto.com.pe/lima/ID_8209387979/Ayuda-economica-a-estudi
+  + https://www.locanto.com.pe/lima/ID_8337624487/Busco-una-embarazada-par
+  + https://www.locanto.com.pe/lima/ID_8759400562/Ayuda-economica-a-madres
+  + https://www.locanto.com.pe/lima/ID_7330250224/AYUDA-ECONOMICA-A-CHICAS
+  + https://www.locanto.com.pe/lima/ID_9001304593/Caballero-da-su-ayuda-ec
+  + https://www.locanto.com.pe/lima/ID_4983452457/soy-sugar-daddy-y-brindo
+  + https://www.locanto.com.pe/lima/ID_8118132917/Ofrezco-Ayuda-economica-
+  + https://www.locanto.com.pe/lima/ID_8530706002/EMPRESARIO-CON-DEPARTAME
+  + https://www.locanto.com.pe/lima/ID_6815831746/Brindo-Ayuda-Economica-a
+DONE lima: added=100 last_p=4
+SUMMARY lima added=100 last=4

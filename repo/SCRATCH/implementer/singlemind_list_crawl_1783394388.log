@@ -1,0 +1,25 @@
+[22:19:48] === SINGLE-MIND LIST CRAWLER (Playwright poll for verificando + h1/ID_ content; BS4 ID/id- only; central raw) ===
+[22:19:48] LIST: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/
+[22:19:48]   P1: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/
+[22:19:52]     PLAYWRIGHT_LOAD_POLL (es-PE, google referer, wait verificando gone + h1/ID_): https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/
+[22:20:01]       real content (h1/ID_ present, no verificando) len=360583 after polls
+[22:20:01]     BS4: +49 ad urls (only /ID_ id-)
+[22:20:09]   P2: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/2/
+[22:20:12]     PLAYWRIGHT_LOAD_POLL (es-PE, google referer, wait verificando gone + h1/ID_): https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/2/
+[22:20:20]       real content (h1/ID_ present, no verificando) len=322807 after polls
+[22:20:20]     BS4: +50 ad urls (only /ID_ id-)
+[22:20:27] LIST: https://www.locanto.com.pe/arequipa/Hombre-busca-mujer/20701/
+[22:20:27]   P1: https://www.locanto.com.pe/arequipa/Hombre-busca-mujer/20701/
+[22:20:31]     PLAYWRIGHT_LOAD_POLL (es-PE, google referer, wait verificando gone + h1/ID_): https://www.locanto.com.pe/arequipa/Hombre-busca-mujer/20701/
+[22:20:38]       real content (h1/ID_ present, no verificando) len=351117 after polls
+[22:20:38]     BS4: +48 ad urls (only /ID_ id-)
+[22:20:43] LIST: https://lima.doplim.com.pe/s/hombre-busca-mujer/
+[22:20:43]   P1: https://lima.doplim.com.pe/s/hombre-busca-mujer/
+[22:20:47]     PLAYWRIGHT_LOAD_POLL (es-PE, google referer, wait verificando gone + h1/ID_): https://lima.doplim.com.pe/s/hombre-busca-mujer/
+[22:20:56]       real content (h1/ID_ present, no verificando) len=416114 after polls
+[22:20:56]     BS4: +24 ad urls (only /ID_ id-)
+[22:21:02] TOTAL_URLS: 169
+[22:21:02] === FETCH FULL HTML (Playwright) + ARCHIVE RAW central ===
+[22:21:02]   FETCH_RAW 1: https://lima.doplim.com.pe/18570r14-equilibrio-entre-seguridad-y-ahorro-id-
+[22:23:09]     SAVED listcrawl_pw_6f52d6910760934f.html
+[22:23:09]   FETCH_RAW 2: https://lima.doplim.com.pe/accesorios-de-perforacion-diamantina-id-1515390.

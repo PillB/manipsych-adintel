@@ -1,0 +1,126 @@
+[18:29:51] START locanto_fast target=1500 start_tagged_detail=203 content_heuristic≈203 mode=seeds
+[18:29:51] START locanto_fast target=1500 start_tagged_detail=203 content_heuristic≈203 mode=seeds
+[18:29:51] LOADED seeds_in=2768 from SCRATCH/implementer/seeds_locanto_fast_1783553280.jsonl
+[18:29:51] START locanto_fast target=1500 start_tagged_detail=203 content_heuristic≈203 mode=seeds
+[18:29:51] LOADED seeds_in=2768 from SCRATCH/implementer/seeds_locanto_fast_1783553280.jsonl
+[18:29:51] START locanto_fast target=1500 start_tagged_detail=203 content_heuristic≈203 mode=seeds
+[18:29:51] shard 3/4 size=333
+[18:29:51] pending after dedup/shard=333 (from 2768)
+[18:29:51] FETCH start pending=333 mode=serial_playwright tag=locanto_fast
+[18:29:51] shard 0/4 size=334
+[18:29:51] pending after dedup/shard=334 (from 2768)
+[18:29:51] LOADED seeds_in=2768 from SCRATCH/implementer/seeds_locanto_fast_1783553280.jsonl
+[18:29:51] FETCH start pending=334 mode=serial_playwright tag=locanto_fast
+[18:29:51] LOADED seeds_in=2768 from SCRATCH/implementer/seeds_locanto_fast_1783553280.jsonl
+[18:29:51] shard 2/4 size=333
+[18:29:51] pending after dedup/shard=333 (from 2768)
+[18:29:51] FETCH start pending=333 mode=serial_playwright tag=locanto_fast
+[18:29:51] shard 1/4 size=334
+[18:29:51] pending after dedup/shard=334 (from 2768)
+[18:29:51] FETCH start pending=334 mode=serial_playwright tag=locanto_fast
+[18:30:04] SAVED 1 total~204 title='Ayuda economica AE a chicas, Tacna – 36' locanto_fast_94feee35cfd7e3c0.html
+[18:30:04] PROGRESS done=1/333 saved=1 skip=0 rate=4.6/min tagged=204
+[18:30:10] PROGRESS done=1/334 saved=0 skip=1 rate=0.0/min tagged=203
+[18:30:10] SAVED 1 total~204 title='LIMA CENTRO PASIVO GORDITO LIMA CENTRO PASIVO GORDITO.,' locanto_fast_93316b42f0107dda.html
+[18:30:10] PROGRESS done=1/334 saved=1 skip=0 rate=3.2/min tagged=204
+[18:30:11] SAVED 1 total~204 title='Se busca mujer joven o madura lactante en Cajamarca par' locanto_fast_b7df5341c3b440c4.html
+[18:30:11] PROGRESS done=1/333 saved=1 skip=0 rate=3.1/min tagged=204
+[18:30:17] SAVED 2 total~205 title='Hola soy un chico en busca de poder conocer a alguna ch' locanto_fast_ac89aa40da9174f5.html
+[18:30:17] PROGRESS done=2/333 saved=2 skip=0 rate=4.7/min tagged=205
+[18:30:25] SAVED 2 total~205 title='Ingresos adicionales para señoritas. Obtén más dinero, ' locanto_fast_8df3bbe3ed0f4d6c.html
+[18:30:25] PROGRESS done=2/333 saved=2 skip=0 rate=3.5/min tagged=205
+[18:30:26] SAVED 2 total~205 title='HOMBRE MADURO DE 49 AÑOS BUSCANDO MUJERES SOLTERA O MAD' locanto_fast_ec6102e75a5237cf.html
+[18:30:26] PROGRESS done=2/334 saved=2 skip=0 rate=3.5/min tagged=205
+[18:30:26] SAVED 1 total~204 title='encuentros casuales Huancayo, chilca, tambo discreto pa' locanto_fast_e2a978ff572b8b2c.html
+[18:30:26] PROGRESS done=2/334 saved=1 skip=1 rate=1.7/min tagged=204
+[18:30:42] SAVED 3 total~206 title='Piura 247 castilla' locanto_fast_30d03554c99d488e.html
+[18:30:42] PROGRESS done=3/333 saved=3 skip=0 rate=3.6/min tagged=206
+[18:30:42] SAVED 3 total~206 title='DEJAME SEDUCIRTE Y DARTE EL MAYOR DE LOS PALCERES, Caym' locanto_fast_49b2d361fdc0baf5.html
+[18:30:42] PROGRESS done=3/334 saved=3 skip=0 rate=3.6/min tagged=206
+[18:30:44] SAVED 2 total~205 title='Busco una dama para una experiencia agradable y respetu' locanto_fast_cd041170d921158e.html
+[18:30:44] PROGRESS done=3/334 saved=2 skip=1 rate=2.3/min tagged=205
+[18:31:00] SAVED 3 total~206 title='Busco mujeres para experimentar, Trujillo – 22' locanto_fast_f9af1be06ceddcce.html
+[18:31:00] PROGRESS done=4/334 saved=3 skip=1 rate=2.6/min tagged=206
+[18:31:01] SAVED 4 total~207 title='Busco pareja para ser vista (voyerismo), Lima – 61' locanto_fast_0cf9bc1181520748.html
+[18:31:04] SAVED 4 total~207 title='Kine a1 te hara gozar en el sexo único y rico modelo ri' locanto_fast_51913d59fcf50f12.html
+[18:31:17] SAVED 5 total~208 title='Busco SEXO sin Compromiso con Mujer entre 20 - 38 Años,' locanto_fast_b55217c62104781d.html
+[18:31:17] PROGRESS done=5/333 saved=5 skip=0 rate=3.5/min tagged=208
+[18:31:19] SAVED 4 total~207 title='Hola. Busco dama que me haga sexo oral, Piura – 35' locanto_fast_5574d76c78aa9959.html
+[18:31:19] PROGRESS done=5/334 saved=4 skip=1 rate=2.8/min tagged=207
+[18:31:21] SAVED 5 total~208 title='Apoyo para señorita estudiante, s p ofesional,soltero y' locanto_fast_f0eec29f1aeb9fc3.html
+[18:31:21] PROGRESS done=5/334 saved=5 skip=0 rate=3.4/min tagged=208
+[18:32:24] SAVED 3 total~206 title='BUSCO SEÑORITA PARA UNA RELACION SERIA Y LO DEMAS SE CO' locanto_fast_00a928cbe9b13e07.html
+[18:32:24] PROGRESS done=3/333 saved=3 skip=0 rate=1.2/min tagged=206
+[18:32:34] SAVED 10 total~213 title='Busco Chico serio que desee c0nt3n1do, besitos, Trujill' locanto_fast_602977b35e509096.html
+[18:32:34] PROGRESS done=10/333 saved=10 skip=0 rate=3.7/min tagged=213
+[18:32:39] SAVED 10 total~213 title='KIEN KIERE ESTA COLITA BUSCO MACHOS DISPONIBLES AL WASA' locanto_fast_e451c2ab526b8d57.html
+[18:32:39] PROGRESS done=10/334 saved=10 skip=0 rate=3.6/min tagged=213
+[18:32:42] SAVED 5 total~208 title='SI ERES UNA CHICA VIRGEN PODEMOS TRATAR SOLO CONTACTAME' locanto_fast_59ef2b07854064a2.html
+[18:32:43] SAVED 4 total~207 title='OPORTUNIDAD LABORAL PARA SEÑORITAS INGRESOS SEMANALES A' locanto_fast_5eb58a5733d47425.html
+[18:33:03] SAVED 5 total~208 title='Apoyo economico de 200 soles para chicas cusco (SOLO CH' locanto_fast_fda6f301d05e598a.html
+[18:33:03] PROGRESS done=5/333 saved=5 skip=0 rate=1.6/min tagged=208
+[18:33:31] PROGRESS done=10/334 saved=8 skip=2 rate=2.2/min tagged=211
+[18:33:57] SAVED 10 total~213 title='Busco una shugar o ayuda económica, Ventanilla – 30' locanto_fast_3c5d8226cf6ddc0f.html
+[18:33:57] PROGRESS done=15/333 saved=15 skip=0 rate=3.7/min tagged=218
+[18:34:25] SAVED 10 total~213 title='KINESIÓLOGA INDEPENDIENTE EN PIURA CUMPLIRÉ TUS FANTASI' locanto_fast_c09b33deb410d97d.html
+[18:34:25] PROGRESS done=10/333 saved=10 skip=0 rate=2.2/min tagged=213
+[18:34:46] PROGRESS done=15/334 saved=13 skip=2 rate=2.6/min tagged=216
+[18:35:09] SAVED 20 total~223 title='Busco chica para ganar dinero en Onlyfans, Chiclayo – 2' locanto_fast_637245b7e7770b97.html
+[18:35:09] PROGRESS done=20/333 saved=20 skip=0 rate=3.8/min tagged=223
+[18:35:38] PROGRESS done=15/333 saved=15 skip=0 rate=2.6/min tagged=218
+[18:36:16] PROGRESS done=20/334 saved=18 skip=2 rate=2.8/min tagged=221
+[18:36:29] PROGRESS done=25/333 saved=24 skip=1 rate=3.6/min tagged=227
+[18:36:48] SAVED 20 total~223 title='Trato muy bueno con mi servicio vip bebe, Puno – 21' locanto_fast_57b8e24da459d087.html
+[18:36:56] SAVED 20 total~223 title='Hago citas para hombres solventes, Lima – 45' locanto_fast_1b13354537b26eb1.html
+[18:36:56] PROGRESS done=20/333 saved=20 skip=0 rate=2.8/min tagged=223
+[18:37:44] PROGRESS done=30/333 saved=28 skip=2 rate=3.6/min tagged=231
+[18:38:09] PROGRESS done=25/333 saved=25 skip=0 rate=3.0/min tagged=228
+[18:38:18] SAVED 30 total~233 title='Quiero ser colágeno tengo 18 añitos solo chicas de 20 a' locanto_fast_eacf533e1c187ff8.html
+[18:38:30] PROGRESS done=25/334 saved=22 skip=3 rate=2.5/min tagged=225
+[18:39:06] PROGRESS done=35/333 saved=33 skip=2 rate=3.6/min tagged=236
+[18:39:30] SAVED 30 total~233 title='Buenos dias ayuda economica de manera urgente, Lima – 2' locanto_fast_c31ce290f9d47a90.html
+[18:39:30] PROGRESS done=30/333 saved=30 skip=0 rate=3.1/min tagged=233
+[18:39:52] PROGRESS done=30/334 saved=26 skip=4 rate=2.6/min tagged=229
+[18:40:22] PROGRESS done=15/334 saved=15 skip=0 rate=1.4/min tagged=218
+[18:40:23] PROGRESS done=40/333 saved=38 skip=2 rate=3.6/min tagged=241
+[18:40:54] SAVED 40 total~243 title='EN CHORRILLOS BUSCO CABALLEROS CASADOS CON GANAS DE TEN' locanto_fast_21e9b8d8a0d82e5b.html
+[18:40:55] PROGRESS done=35/333 saved=35 skip=0 rate=3.2/min tagged=238
+[18:41:35] PROGRESS done=45/333 saved=43 skip=2 rate=3.7/min tagged=246
+[18:41:42] SAVED 30 total~233 title='Vamos a desestresarnos, Piura – 29' locanto_fast_91b71aabc14db4f0.html
+[18:41:57] PROGRESS done=35/334 saved=31 skip=4 rate=2.6/min tagged=234
+[18:42:07] SAVED 40 total~243 title='Chico Argentino 26 años brinda serv a Mujeres, Huancayo' locanto_fast_19bb4c2f97b28d08.html
+[18:42:07] PROGRESS done=40/333 saved=40 skip=0 rate=3.3/min tagged=243
+[18:42:54] PROGRESS done=50/333 saved=48 skip=2 rate=3.7/min tagged=251
+[18:43:16] PROGRESS done=40/334 saved=36 skip=4 rate=2.7/min tagged=239
+[18:43:27] SAVED 50 total~253 title='BUSCO UNA MUJER QUE QUIERA RELACION FORMAL Y TENER UNA ' locanto_fast_25ff700f8224ff63.html
+[18:43:27] PROGRESS done=45/333 saved=45 skip=0 rate=3.3/min tagged=248
+[18:44:15] PROGRESS done=55/333 saved=53 skip=2 rate=3.7/min tagged=256
+[18:44:26] SAVED 40 total~243 title='soy chico atletico. busco una chica o madres. no import' locanto_fast_20dddf01ac4ca0e6.html
+[18:44:40] PROGRESS done=45/334 saved=41 skip=4 rate=2.8/min tagged=244
+[18:44:46] SAVED 50 total~253 title='BUSCO SEÑORITA CON NECESIDAD ECONOMICA - PARA AYUDA ECO' locanto_fast_b2481b22ff20b617.html
+[18:44:46] PROGRESS done=50/333 saved=50 skip=0 rate=3.4/min tagged=253
+[18:45:40] PROGRESS done=60/333 saved=58 skip=2 rate=3.7/min tagged=261
+[18:45:55] PROGRESS done=50/334 saved=45 skip=5 rate=2.8/min tagged=248
+[18:46:13] PROGRESS done=55/333 saved=55 skip=0 rate=3.4/min tagged=258
+[18:46:16] SAVED 60 total~263 title='Chico de 18 años que busca relación íntima, Lima – 18' locanto_fast_2bac5b0b4c2fbd81.html
+[18:47:10] PROGRESS done=65/333 saved=63 skip=2 rate=3.6/min tagged=266
+[18:47:24] SAVED 50 total~253 title='BUSCO MUJERES DE CUALQUIER EDAD, Cajamarca – 24' locanto_fast_2ecdf75dcb72d6d3.html
+[18:47:24] PROGRESS done=55/334 saved=50 skip=5 rate=2.8/min tagged=253
+[18:47:40] SAVED 20 total~223 title='TRABAJO COMO DAMA DE COMPAÑÍA PARA AGENCIA EXCLUSIVA EN' locanto_fast_64ce9dd9fb5f6ab4.html
+[18:47:40] PROGRESS done=20/334 saved=20 skip=0 rate=1.1/min tagged=223
+[18:47:42] PROGRESS done=60/333 saved=59 skip=1 rate=3.3/min tagged=262
+[18:48:00] SAVED 60 total~263 title='Busco unas señoras para tener relaciones sexuales en Hu' locanto_fast_eafa7a774f852a04.html
+[18:48:53] PROGRESS done=60/334 saved=54 skip=6 rate=2.8/min tagged=257
+[18:49:04] PROGRESS done=65/333 saved=64 skip=1 rate=3.3/min tagged=267
+[18:49:15] PROGRESS done=25/334 saved=25 skip=0 rate=1.3/min tagged=228
+[18:49:38] PROGRESS done=70/333 saved=68 skip=2 rate=3.4/min tagged=271
+[18:51:46] PROGRESS done=70/333 saved=69 skip=1 rate=3.1/min tagged=272
+[18:52:04] SAVED 70 total~273 title='Busco mujer para relación ocasional(sexo) total privaci' locanto_fast_63aea951b8b59e12.html
+[18:52:04] PROGRESS done=65/334 saved=58 skip=7 rate=2.6/min tagged=261
+[18:52:40] SAVED 60 total~263 title='SOY UNA KIM ENCANTADORA Y ATREVIDA EN TODO LO QUE ME PI' locanto_fast_aec0808cad463006.html
+[18:53:07] PROGRESS done=75/333 saved=74 skip=1 rate=3.2/min tagged=277
+[18:53:20] PROGRESS done=70/334 saved=63 skip=7 rate=2.7/min tagged=266
+[18:54:30] PROGRESS done=80/333 saved=79 skip=1 rate=3.2/min tagged=282
+[18:54:36] PROGRESS done=75/334 saved=68 skip=7 rate=2.7/min tagged=271
+[18:54:47] SAVED 80 total~283 title='Moreno joven busca milf o joven para relación, sumiso 1' locanto_fast_334844ad4418b1e3.html
+[18:55:19] SAVED 70 total~273 title='Doy apoyo a señoritas para cubrir sus gastos todo reser' locanto_fast_94cd001efb1cd0c7.html

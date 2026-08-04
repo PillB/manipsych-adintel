@@ -1,0 +1,180 @@
+{
+  "phase": 2,
+  "title": "Sociological Dossier: Women in Peru and Manipulation Multipliers",
+  "scope": "Defensive sociological profile for identifying vulnerability multipliers in manipulative communications. This dossier must not be used to target or exploit women.",
+  "population_focus": {
+    "country": "Peru",
+    "groups": ["women", "young women", "young-adult women"],
+    "contexts": ["urban", "semi-urban"],
+    "limitations": "Peru is socially, ethnically, linguistically, and economically diverse. Findings must be segmented where evidence allows and treated as risk context, not as universal traits."
+  },
+  "sources": [
+    {
+      "id": "inei_gender_gaps",
+      "name": "INEI Peru gender-gap and household survey publications",
+      "url": "https://www.inei.gob.pe/",
+      "type": "official statistics",
+      "use": "Labor, income, education, household, and demographic indicators."
+    },
+    {
+      "id": "endes",
+      "name": "INEI Encuesta Demografica y de Salud Familiar (ENDES)",
+      "url": "https://www.inei.gob.pe/",
+      "type": "official survey",
+      "use": "Health, relationships, and violence indicators for women."
+    },
+    {
+      "id": "mimp",
+      "name": "Ministerio de la Mujer y Poblaciones Vulnerables (MIMP)",
+      "url": "https://portalestadistico.warminan.gob.pe/",
+      "type": "government ministry",
+      "use": "Gender-based violence, support services, regional statistics, and public-program context."
+    },
+    {
+      "id": "world_bank_gender",
+      "name": "World Bank Gender Data Portal and Peru data",
+      "url": "https://genderdata.worldbank.org/en/economies/peru",
+      "type": "international development statistics",
+      "use": "Labor-force participation, education, poverty, and economic participation comparisons."
+    },
+    {
+      "id": "un_women_peru",
+      "name": "UN Women Peru and regional Latin America resources",
+      "url": "https://lac.unwomen.org/",
+      "type": "UN source",
+      "use": "Gender equality, violence prevention, care burden, and economic empowerment context."
+    },
+    {
+      "id": "ilo_peru",
+      "name": "International Labour Organization Peru and Latin America labor resources",
+      "url": "https://www.ilo.org/",
+      "type": "international labor source",
+      "use": "Informality, gender gaps, youth employment, and labor-market vulnerability."
+    }
+  ],
+  "dimensions": {
+    "economic": {
+      "summary": "Economic pressure is a high-salience context because many women face income instability, dependence on family or partners, informal work, and unequal access to assets or credit.",
+      "observed_needs": ["stable income", "emergency liquidity", "control over personal spending", "support for children or relatives", "lower debt stress"],
+      "vulnerabilities": ["cash-flow shocks", "informal borrowing", "financial dependence", "limited bargaining power", "privacy concerns around asking for help"],
+      "protective_framing": "Detection systems should flag money-for-attention, money-for-contact, and conditional-help framing as high-risk when combined with urgency or secrecy.",
+      "evidence": ["inei_gender_gaps", "world_bank_gender", "un_women_peru"]
+    },
+    "safety": {
+      "summary": "Gender-based violence and harassment are central risks. Safety concerns can affect mobility, work decisions, platform use, trust, and willingness to seek discreet help.",
+      "observed_needs": ["physical safety", "digital privacy", "trusted support channels", "nonjudgmental assistance", "control over contact information"],
+      "vulnerabilities": ["fear of retaliation", "isolation", "normalization of coercion", "dependency on unsafe partners", "stigma around reporting"],
+      "protective_framing": "Messages requesting secrecy, private meetings, direct contact migration, or isolation from support networks should receive elevated risk labels.",
+      "evidence": ["endes", "mimp", "un_women_peru"]
+    },
+    "education": {
+      "summary": "Education is an aspiration and mobility pathway, but study costs, transport, care responsibilities, digital access, and family expectations can constrain continuity.",
+      "observed_needs": ["tuition support", "transport money", "devices or connectivity", "time flexibility", "career-relevant credentials"],
+      "vulnerabilities": ["dropout pressure", "credential insecurity", "dependence on informal sponsorship", "fear of disappointing family"],
+      "protective_framing": "Offers framed as study sponsorship or career support should be checked for conditionality, privacy pressure, and asymmetrical obligations.",
+      "evidence": ["inei_gender_gaps", "world_bank_gender", "un_women_peru"]
+    },
+    "employment": {
+      "summary": "Employment vulnerability is shaped by informality, wage gaps, occupational segregation, care responsibilities, and youth entry barriers.",
+      "observed_needs": ["formal work", "safe workplace", "predictable pay", "flexible schedules", "childcare compatibility"],
+      "vulnerabilities": ["informal contracts", "underemployment", "harassment risk", "unpaid care burden", "low savings buffers"],
+      "protective_framing": "Communications promising easy money, flexible help, or no-experience income should be cross-tagged with scarcity, secrecy, and coercive reciprocity signals.",
+      "evidence": ["inei_gender_gaps", "ilo_peru", "world_bank_gender"]
+    },
+    "family_status": {
+      "summary": "Family expectations, caregiving, social reputation, motherhood, and relationship status can amplify pressure around financial help, respectability, and privacy.",
+      "observed_needs": ["family support", "respectful treatment", "child-related expenses", "social dignity", "autonomy without stigma"],
+      "vulnerabilities": ["reputation risk", "care obligations", "partner or family control", "shame around economic hardship", "pressure to provide"],
+      "protective_framing": "Risk increases when help is framed as rescuing family obligations while also requiring secrecy, gratitude, or personal access.",
+      "evidence": ["endes", "mimp", "un_women_peru", "inei_gender_gaps"]
+    }
+  },
+  "multipliers": [
+    {
+      "id": "financial_emergency",
+      "name": "Financial emergency or short-term liquidity",
+      "risk_mechanism": "Urgent money needs compress deliberation and increase susceptibility to scarcity, reciprocity, and secrecy pressure.",
+      "phase1_links": ["scarcity_urgency_pressure", "reciprocity_obligation", "commitment_consistency_foot_in_door"],
+      "high_risk_combinations": ["urgent payment plus private contact", "help offer plus gratitude debt", "cash offer plus secrecy"],
+      "evidence": ["inei_gender_gaps", "world_bank_gender"]
+    },
+    {
+      "id": "economic_independence",
+      "name": "Desire for independence and control",
+      "risk_mechanism": "Messages that promise autonomy can be persuasive when they conceal dependency-creating terms or personal obligations.",
+      "phase1_links": ["authority_credibility_laundering", "sneaking_hidden_costs_drip_pricing", "emotional_identity_targeting"],
+      "high_risk_combinations": ["independence language plus unclear conditions", "sponsor framing plus escalating asks", "status language plus private migration"],
+      "evidence": ["un_women_peru", "world_bank_gender", "ilo_peru"]
+    },
+    {
+      "id": "safety_and_privacy",
+      "name": "Safety, privacy, and discretion",
+      "risk_mechanism": "Discretion can be legitimate, but manipulative communications may convert privacy concerns into isolation from support or oversight.",
+      "phase1_links": ["obstruction_friction_asymmetry", "commitment_consistency_foot_in_door", "emotional_identity_targeting"],
+      "high_risk_combinations": ["discretion plus secrecy", "private meeting plus financial offer", "contact migration plus urgency"],
+      "evidence": ["mimp", "endes", "un_women_peru"]
+    },
+    {
+      "id": "family_care_obligation",
+      "name": "Family support and caregiving pressure",
+      "risk_mechanism": "Care responsibilities can intensify guilt, urgency, and moralized compliance pressure.",
+      "phase1_links": ["confirmshaming_guilt_pressure", "reciprocity_obligation", "scarcity_urgency_pressure"],
+      "high_risk_combinations": ["child or family need plus shame", "help offer plus moral debt", "family-rescue framing plus fast decision"],
+      "evidence": ["un_women_peru", "inei_gender_gaps", "mimp"]
+    },
+    {
+      "id": "education_and_career_aspiration",
+      "name": "Education and career aspiration",
+      "risk_mechanism": "Aspirational offers can leverage hope, authority, and social mobility needs while hiding conditions.",
+      "phase1_links": ["authority_credibility_laundering", "commitment_consistency_foot_in_door", "sneaking_hidden_costs_drip_pricing"],
+      "high_risk_combinations": ["study support plus private contact", "mentorship plus personal access", "job-like offer plus no clear employer"],
+      "evidence": ["inei_gender_gaps", "world_bank_gender"]
+    },
+    {
+      "id": "status_and_respectability",
+      "name": "Status, dignity, and respectability",
+      "risk_mechanism": "Reputation concerns can increase sensitivity to shame, secrecy, and status-protection appeals.",
+      "phase1_links": ["confirmshaming_guilt_pressure", "social_proof_manufactured_consensus", "emotional_identity_targeting"],
+      "high_risk_combinations": ["status promise plus social comparison", "shame avoidance plus secrecy", "respect language plus conditional help"],
+      "evidence": ["mimp", "un_women_peru", "inei_gender_gaps"]
+    }
+  ],
+  "detection_implications": [
+    "Score risk higher when money, secrecy, urgency, private contact migration, and gratitude debt co-occur.",
+    "Separate legitimate aid language from manipulative conditionality by checking clarity of terms, institutional provenance, and pressure cues.",
+    "Avoid demographic stereotyping: multiplier labels should describe message content and context, not infer vulnerability from gender alone.",
+    "Require evidence spans for any multiplier tag so a model can show the words or structure that triggered the label.",
+    "Treat offers involving private meetings, direct messaging, or personal contact information as needing stricter review and redaction."
+  ],
+  "evidence_ledger": "reports/source_bibliography.json",
+  "retrospective": {
+    "strongest_multipliers": [
+      "Financial emergency or short-term liquidity",
+      "Safety, privacy, and discretion",
+      "Family support and caregiving pressure",
+      "Education and career aspiration"
+    ],
+    "additional_sources": [
+      "Latest INEI Brechas de Genero PDF tables for numerical indicators",
+      "Latest ENDES tables on violence against women by age and region",
+      "MIMP CEM/feminicide administrative statistics by department",
+      "Academic studies on Peruvian youth, informal labor, and digital platform risk",
+      "Spanish-language media-literacy and online-harassment studies in Peru"
+    ],
+    "what_worked": [
+      "The dossier maps sociological contexts directly to Phase 1 technique IDs.",
+      "Official and institutional sources were prioritized over anecdotal material.",
+      "The output is defensive and model-ready without generating exploitative copy."
+    ],
+    "what_failed_or_needs_improvement": [
+      "Search retrieval for exact official PDF tables was uneven and should be improved with direct document discovery.",
+      "The current artifact is qualitative; numeric prevalence fields should be added after source tables are downloaded and archived.",
+      "Urban and semi-urban segmentation needs stronger regional detail before Phase 4 collection analysis."
+    ],
+    "next_phase_strategy": [
+      "Use Phase 1 technique IDs and Phase 2 multiplier IDs as the coding frame for forum research.",
+      "Summarize forum advice only as defensive patterns, redacting operational templates and contact tactics.",
+      "Prioritize public-source metadata and provenance over volume in the first Phase 3 pass."
+    ]
+  }
+}

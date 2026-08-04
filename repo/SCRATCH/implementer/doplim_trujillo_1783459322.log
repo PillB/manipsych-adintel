@@ -1,0 +1,9 @@
+[16:22:02] START Doplim trujillo (main li.cnt-list_ads ONLY, tuned)
+[16:22:02] base=https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=trujillo
+[16:22:02] LIST p1: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=trujillo
+[16:23:10]   main li.cnt-list_ads IDs: 0
+[16:23:10] LIST p2: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=trujillo&page=2
+[16:24:23]   main li.cnt-list_ads IDs: 0
+[16:24:23] LIST p3: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=trujillo&page=3
+[16:25:26]   main li.cnt-list_ads IDs: 0
+[16:25:26] DONE Doplim trujillo: added=0

@@ -1,0 +1,21 @@
+{
+  "total": 290,
+  "plats": {
+    "Doplim Peru (hombre busca mujer or Contactos)": 108,
+    "Other indexed public": 4,
+    "Facebook Public (indexed)": 28,
+    "Facebook Public (search first)": 1,
+    "Locanto Peru (hombre busca mujer real)": 148,
+    "Facebook public group": 1
+  },
+  "raws": 524,
+  "samples": [
+    "data/raw/ads/hombre_busca_mujer_real_53a8a82170f03643.html",
+    "data/raw/ads/locanto_detail_f70699027dd1ef2c.html",
+    "data/raw/ads/locanto_detail_b2b1d146a86cbfa8.html",
+    "data/raw/ads/facebook_public_647a8a6cb5c8ec9a.html",
+    "data/raw/ads/locanto_directs_18fb68585929d582.html"
+  ],
+  "ts": 1783220130,
+  "note": "gate passed, PII0, all raw refs present, dedicated legacy excluded (no raw_ref)"
+}

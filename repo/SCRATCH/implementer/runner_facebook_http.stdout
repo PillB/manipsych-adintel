@@ -1,0 +1,4 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[20:45:29] START seeds=7 target=15 http_first=1
+[20:45:29] DONE saved=0 skip=7 err=0 tried=7

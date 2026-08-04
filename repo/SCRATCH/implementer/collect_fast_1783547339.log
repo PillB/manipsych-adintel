@@ -1,0 +1,304 @@
+[16:48:59] START fast_v2 targets={'doplim': 1500, 'evisos': 1500} start_counts={'doplim': 442, 'evisos': 0, 'other': 1930} workers=16
+[16:49:01] LEARN doplim section=hombre-busca-mujer catid=5 subcatid=51
+[16:49:02] LEARN doplim section=relaciones-ocasionales catid=5 subcatid=54
+[16:49:03] LEARN doplim section=mujer-busca-hombre catid=5 subcatid=50
+[16:49:04] LEARN doplim section=contactos catid=5 subcatid=0
+[16:49:04] API hombre-busca-mujer/lima p1: cards=30 new=30 total=30
+[16:49:05] API hombre-busca-mujer/lima p2: cards=30 new=30 total=60
+[16:49:05] API hombre-busca-mujer/lima p3: cards=30 new=30 total=90
+[16:49:06] API hombre-busca-mujer/lima p4: cards=30 new=30 total=120
+[16:49:06] API hombre-busca-mujer/lima p5: cards=30 new=30 total=150
+[16:49:07] API hombre-busca-mujer/lima p6: cards=30 new=30 total=180
+[16:49:07] API hombre-busca-mujer/lima p7: cards=30 new=30 total=210
+[16:49:08] API hombre-busca-mujer/lima p8: cards=30 new=30 total=240
+[16:49:08] API hombre-busca-mujer/lima p9: cards=30 new=30 total=270
+[16:49:09] API hombre-busca-mujer/lima p10: cards=30 new=30 total=300
+[16:49:09] OK 10+ path hombre-busca-mujer/lima pages=10
+[16:49:09] API hombre-busca-mujer/arequipa p1: cards=30 new=30 total=330
+[16:49:10] API hombre-busca-mujer/arequipa p2: cards=30 new=30 total=360
+[16:49:10] API hombre-busca-mujer/arequipa p3: cards=30 new=30 total=390
+[16:49:11] API hombre-busca-mujer/arequipa p4: cards=30 new=30 total=420
+[16:49:11] API hombre-busca-mujer/arequipa p5: cards=30 new=30 total=450
+[16:49:12] API hombre-busca-mujer/arequipa p6: cards=30 new=30 total=480
+[16:49:12] API hombre-busca-mujer/arequipa p7: cards=30 new=30 total=510
+[16:49:13] API hombre-busca-mujer/arequipa p8: cards=30 new=30 total=540
+[16:49:13] API hombre-busca-mujer/arequipa p9: cards=30 new=30 total=570
+[16:49:14] API hombre-busca-mujer/arequipa p10: cards=30 new=30 total=600
+[16:49:14] OK 10+ path hombre-busca-mujer/arequipa pages=10
+[16:49:14] API hombre-busca-mujer/trujillo p1: cards=30 new=30 total=630
+[16:49:15] API hombre-busca-mujer/trujillo p2: cards=30 new=30 total=660
+[16:49:15] API hombre-busca-mujer/trujillo p3: cards=30 new=30 total=690
+[16:49:16] API hombre-busca-mujer/trujillo p4: cards=30 new=30 total=720
+[16:49:16] API hombre-busca-mujer/trujillo p5: cards=30 new=30 total=750
+[16:49:17] API hombre-busca-mujer/trujillo p6: cards=30 new=30 total=780
+[16:49:17] API hombre-busca-mujer/trujillo p7: cards=30 new=30 total=810
+[16:49:18] API hombre-busca-mujer/trujillo p8: cards=30 new=30 total=840
+[16:49:18] API hombre-busca-mujer/trujillo p9: cards=30 new=30 total=870
+[16:49:19] API hombre-busca-mujer/trujillo p10: cards=30 new=30 total=900
+[16:49:19] OK 10+ path hombre-busca-mujer/trujillo pages=10
+[16:49:19] API hombre-busca-mujer/cusco p1: cards=30 new=30 total=930
+[16:49:20] API hombre-busca-mujer/cusco p2: cards=30 new=29 total=959
+[16:49:20] API hombre-busca-mujer/cusco p3: cards=30 new=30 total=989
+[16:49:21] API hombre-busca-mujer/cusco p4: cards=30 new=30 total=1019
+[16:49:21] API hombre-busca-mujer/cusco p5: cards=30 new=30 total=1049
+[16:49:22] API hombre-busca-mujer/cusco p6: cards=30 new=30 total=1079
+[16:49:23] API hombre-busca-mujer/cusco p7: cards=30 new=30 total=1109
+[16:49:23] API hombre-busca-mujer/cusco p8: cards=30 new=30 total=1139
+[16:49:23] API hombre-busca-mujer/cusco p9: cards=30 new=30 total=1169
+[16:49:24] API hombre-busca-mujer/cusco p10: cards=30 new=30 total=1199
+[16:49:24] OK 10+ path hombre-busca-mujer/cusco pages=10
+[16:49:25] API hombre-busca-mujer/piura p1: cards=30 new=30 total=1229
+[16:49:25] API hombre-busca-mujer/piura p2: cards=30 new=30 total=1259
+[16:49:26] API hombre-busca-mujer/piura p3: cards=30 new=30 total=1289
+[16:49:26] API hombre-busca-mujer/piura p4: cards=30 new=30 total=1319
+[16:49:28] API hombre-busca-mujer/piura p5: cards=30 new=30 total=1349
+[16:49:28] API hombre-busca-mujer/piura p6: cards=30 new=30 total=1379
+[16:49:29] API hombre-busca-mujer/piura p7: cards=30 new=30 total=1409
+[16:49:29] API hombre-busca-mujer/piura p8: cards=30 new=30 total=1439
+[16:49:30] API hombre-busca-mujer/piura p9: cards=30 new=30 total=1469
+[16:49:30] API hombre-busca-mujer/piura p10: cards=30 new=30 total=1499
+[16:49:30] OK 10+ path hombre-busca-mujer/piura pages=10
+[16:49:31] API hombre-busca-mujer/chiclayo p1: cards=30 new=30 total=1529
+[16:49:31] API hombre-busca-mujer/chiclayo p2: cards=30 new=30 total=1559
+[16:49:32] API hombre-busca-mujer/chiclayo p3: cards=30 new=30 total=1589
+[16:49:32] API hombre-busca-mujer/chiclayo p4: cards=30 new=30 total=1619
+[16:49:33] API hombre-busca-mujer/chiclayo p5: cards=30 new=30 total=1649
+[16:49:33] API hombre-busca-mujer/chiclayo p6: cards=30 new=30 total=1679
+[16:49:34] API hombre-busca-mujer/chiclayo p7: cards=30 new=29 total=1708
+[16:49:34] API hombre-busca-mujer/chiclayo p8: cards=30 new=30 total=1738
+[16:49:35] API hombre-busca-mujer/chiclayo p9: cards=30 new=30 total=1768
+[16:49:35] API hombre-busca-mujer/chiclayo p10: cards=30 new=30 total=1798
+[16:49:35] OK 10+ path hombre-busca-mujer/chiclayo pages=10
+[16:49:36] API hombre-busca-mujer/callao p1: cards=30 new=27 total=1825
+[16:49:36] API hombre-busca-mujer/callao p2: cards=30 new=30 total=1855
+[16:49:37] API hombre-busca-mujer/callao p3: cards=30 new=30 total=1885
+[16:49:38] API hombre-busca-mujer/callao p4: cards=30 new=30 total=1915
+[16:49:38] API hombre-busca-mujer/callao p5: cards=30 new=30 total=1945
+[16:49:39] API hombre-busca-mujer/callao p6: cards=30 new=30 total=1975
+[16:49:39] API hombre-busca-mujer/callao p7: cards=30 new=30 total=2005
+[16:49:40] API hombre-busca-mujer/callao p8: cards=30 new=30 total=2035
+[16:49:40] API hombre-busca-mujer/callao p9: cards=30 new=30 total=2065
+[16:49:41] API hombre-busca-mujer/callao p10: cards=30 new=30 total=2095
+[16:49:41] OK 10+ path hombre-busca-mujer/callao pages=10
+[16:49:41] API hombre-busca-mujer/huancayo p1: cards=30 new=30 total=2125
+[16:49:42] API hombre-busca-mujer/huancayo p2: cards=30 new=30 total=2155
+[16:49:42] API hombre-busca-mujer/huancayo p3: cards=30 new=30 total=2185
+[16:49:42] API hombre-busca-mujer/huancayo p4: cards=30 new=30 total=2215
+[16:49:43] API hombre-busca-mujer/huancayo p5: cards=30 new=30 total=2245
+[16:49:43] API hombre-busca-mujer/huancayo p6: cards=30 new=30 total=2275
+[16:49:44] API hombre-busca-mujer/huancayo p7: cards=30 new=30 total=2305
+[16:49:44] API hombre-busca-mujer/huancayo p8: cards=30 new=30 total=2335
+[16:49:45] API hombre-busca-mujer/huancayo p9: cards=30 new=30 total=2365
+[16:49:45] API hombre-busca-mujer/huancayo p10: cards=30 new=30 total=2395
+[16:49:45] OK 10+ path hombre-busca-mujer/huancayo pages=10
+[16:49:46] API hombre-busca-mujer/ica p1: cards=30 new=30 total=2425
+[16:49:46] API hombre-busca-mujer/ica p2: cards=30 new=30 total=2455
+[16:49:47] API hombre-busca-mujer/ica p3: cards=30 new=30 total=2485
+[16:49:47] API hombre-busca-mujer/ica p4: cards=30 new=30 total=2515
+[16:49:48] API hombre-busca-mujer/ica p5: cards=30 new=30 total=2545
+[16:49:48] API hombre-busca-mujer/ica p6: cards=30 new=30 total=2575
+[16:49:49] API hombre-busca-mujer/ica p7: cards=30 new=30 total=2605
+[16:49:49] API hombre-busca-mujer/ica p8: cards=30 new=30 total=2635
+[16:49:50] API hombre-busca-mujer/ica p9: cards=30 new=30 total=2665
+[16:49:50] API hombre-busca-mujer/ica p10: cards=30 new=30 total=2695
+[16:49:50] OK 10+ path hombre-busca-mujer/ica pages=10
+[16:49:51] API hombre-busca-mujer/tacna p1: cards=30 new=30 total=2725
+[16:49:51] API hombre-busca-mujer/tacna p2: cards=30 new=30 total=2755
+[16:49:51] API hombre-busca-mujer/tacna p3: cards=30 new=30 total=2785
+[16:49:52] API hombre-busca-mujer/tacna p4: cards=30 new=30 total=2815
+[16:49:53] API hombre-busca-mujer/tacna p5: cards=30 new=30 total=2845
+[16:49:53] API hombre-busca-mujer/tacna p6: cards=30 new=30 total=2875
+[16:49:54] API hombre-busca-mujer/tacna p7: cards=30 new=30 total=2905
+[16:49:54] API hombre-busca-mujer/tacna p8: cards=30 new=30 total=2935
+[16:49:54] API hombre-busca-mujer/tacna p9: cards=30 new=30 total=2965
+[16:49:55] API hombre-busca-mujer/tacna p10: cards=30 new=30 total=2995
+[16:49:55] OK 10+ path hombre-busca-mujer/tacna pages=10
+[16:49:55] API hombre-busca-mujer/puno p1: cards=30 new=30 total=3025
+[16:49:56] API hombre-busca-mujer/puno p2: cards=30 new=30 total=3055
+[16:49:56] API hombre-busca-mujer/puno p3: cards=30 new=30 total=3085
+[16:49:57] API hombre-busca-mujer/puno p4: cards=30 new=30 total=3115
+[16:49:57] API hombre-busca-mujer/puno p5: cards=30 new=30 total=3145
+[16:49:58] API hombre-busca-mujer/puno p6: cards=30 new=30 total=3175
+[16:49:58] API hombre-busca-mujer/puno p7: cards=30 new=30 total=3205
+[16:49:59] API hombre-busca-mujer/puno p8: cards=30 new=30 total=3235
+[16:49:59] API hombre-busca-mujer/puno p9: cards=30 new=30 total=3265
+[16:50:00] API hombre-busca-mujer/puno p10: cards=30 new=30 total=3295
+[16:50:00] OK 10+ path hombre-busca-mujer/puno pages=10
+[16:50:00] API hombre-busca-mujer/cajamarca p1: cards=30 new=30 total=3325
+[16:50:01] API hombre-busca-mujer/cajamarca p2: cards=30 new=29 total=3354
+[16:50:01] API hombre-busca-mujer/cajamarca p3: cards=30 new=30 total=3384
+[16:50:02] API hombre-busca-mujer/cajamarca p4: cards=30 new=30 total=3414
+[16:50:02] API hombre-busca-mujer/cajamarca p5: cards=30 new=30 total=3444
+[16:50:03] API hombre-busca-mujer/cajamarca p6: cards=30 new=30 total=3474
+[16:50:03] API hombre-busca-mujer/cajamarca p7: cards=30 new=30 total=3504
+[16:50:03] EARLY STOP gather at 3504 unique
+[16:50:03] GATHER doplim unique=3504 in 59.6s
+[16:50:03] wrote /Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/seeds_doplim_fast_1783547339.jsonl
+[16:50:04] EV p1 https://www.evisos.com.pe/por-ayuda-economica.htm: cards=24 new=24 total=24
+[16:50:04]   OK 10+ main cards
+[16:50:05] EV p2 https://www.evisos.com.pe/por-ayuda-economica/clasificados/2: cards=5 new=5 total=29
+[16:50:07] EV p3 https://www.evisos.com.pe/por-ayuda-economica/clasificados/3: cards=24 new=0 total=29
+[16:50:07]   OK 10+ main cards
+[16:50:08] EV loop detect https://www.evisos.com.pe/por-ayuda-economica/clasificados/4; stop base
+[16:50:09] EV p1 https://www.evisos.com.pe/apoyo-economico.htm: cards=26 new=23 total=52
+[16:50:09]   OK 10+ main cards
+[16:50:10] EV p2 https://www.evisos.com.pe/apoyo-economico/clasificados/2: cards=29 new=29 total=81
+[16:50:10]   OK 10+ main cards
+[16:50:10] EV p3 https://www.evisos.com.pe/apoyo-economico/clasificados/3: cards=15 new=14 total=95
+[16:50:10]   OK 10+ main cards
+[16:50:12] EV p4 https://www.evisos.com.pe/apoyo-economico/clasificados/4: cards=26 new=0 total=95
+[16:50:12]   OK 10+ main cards
+[16:50:13] EV loop detect https://www.evisos.com.pe/apoyo-economico/clasificados/5; stop base
+[16:50:14] EV p1 https://www.evisos.com.pe/por-apoyo-economico.htm: cards=26 new=0 total=95
+[16:50:14]   OK 10+ main cards
+[16:50:14] EV p2 https://www.evisos.com.pe/por-apoyo-economico/clasificados/2: cards=29 new=0 total=95
+[16:50:14]   OK 10+ main cards
+[16:50:15] EV skip https://www.evisos.com.pe/por-apoyo-economico/clasificados/3 status=403 len=2714
+[16:50:16] EV skip https://lima.evisos.com.pe/por-ayuda-economica.htm status=403 len=2714
+[16:50:16] EV skip https://lima.evisos.com.pe/por-ayuda-economica/clasificados/2 status=403 len=2714
+[16:50:16] EV skip https://www.evisos.com.pe/brindo-ayuda.htm status=403 len=2714
+[16:50:17] EV skip https://www.evisos.com.pe/brindo-ayuda/clasificados/2 status=403 len=2714
+[16:50:17] EV skip https://www.evisos.com.pe/doy-ayuda.htm status=403 len=2714
+[16:50:17] EV skip https://www.evisos.com.pe/doy-ayuda/clasificados/2 status=403 len=2714
+[16:50:17] EV skip https://www.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:50:18] EV skip https://www.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:50:18] EV skip https://lima.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:50:18] EV skip https://lima.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:50:19] EV skip https://www.evisos.com.pe/por-encuentros.htm status=403 len=2714
+[16:50:19] EV skip https://www.evisos.com.pe/por-encuentros/clasificados/2 status=403 len=2714
+[16:50:19] EV skip https://www.evisos.com.pe/hombre-busca-mujer.htm status=403 len=2714
+[16:50:19] EV skip https://www.evisos.com.pe/hombre-busca-mujer/clasificados/2 status=403 len=2714
+[16:50:20] EV skip https://www.evisos.com.pe/por-hombre-busca-mujer.htm status=403 len=2714
+[16:50:20] EV skip https://www.evisos.com.pe/por-hombre-busca-mujer/clasificados/2 status=403 len=2714
+[16:50:20] EV skip https://www.evisos.com.pe/contactos-ocasionales-peru.htm status=403 len=2714
+[16:50:21] EV skip https://www.evisos.com.pe/contactos-ocasionales-peru/clasificados/2 status=403 len=2714
+[16:50:21] EV skip https://www.evisos.com.pe/relaciones-ocasionales.htm status=403 len=2714
+[16:50:21] EV skip https://www.evisos.com.pe/relaciones-ocasionales/clasificados/2 status=403 len=2714
+[16:50:22] EV skip https://arequipa.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:50:22] EV skip https://arequipa.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:50:23] EV skip https://trujillo.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:50:23] EV skip https://trujillo.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:50:24] EV skip https://cusco.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:50:25] EV skip https://cusco.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:50:26] EV skip https://piura.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:50:26] EV skip https://piura.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:50:27] EV skip https://chiclayo.evisos.com.pe/encuentros.htm status=403 len=2714
+[16:50:27] EV skip https://chiclayo.evisos.com.pe/encuentros/clasificados/2 status=403 len=2714
+[16:50:27] GATHER evisos unique=95 in 23.9s
+[16:50:27] wrote /Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/seeds_evisos_fast_1783547339.jsonl
+[16:50:27] FETCH start candidates=3599
+[16:50:33] SAVED doplim n=450 title='Busco mujer para hacerle oral.' file=doplim_fast_84980fb2094d16c8.html
+[16:50:37] SAVED doplim n=475 title='Busco mujer madura rubia. Acuerdo económico' file=doplim_fast_5cf46d3aae56aab7.html
+[16:50:40] PROGRESS done=50/3599 saved=49 doplim=491 evisos=0 skip=7 rate=229.4/min
+[16:50:42] SAVED doplim n=500 title='doy ayuda económica por pandemia a universitarias' file=doplim_fast_c48e093b0c018a56.html
+[16:50:51] SAVED doplim n=525 title='Busco mujer gordita de pechos grandes' file=doplim_fast_00af1c0aa3f87501.html
+[16:50:51] PROGRESS done=100/3599 saved=94 doplim=536 evisos=0 skip=11 rate=237.1/min
+[16:50:54] SAVED doplim n=550 title='Busco solitaria discreta 18/21 sexoprohibido' file=doplim_fast_c896b29d86159a51.html
+[16:51:01] SAVED doplim n=575 title='BUSCO  CHICAS  EN  EL  CUSCO PARA  HACER RICO  Y' file=doplim_fast_21aafad2b559cd8a.html
+[16:51:01] PROGRESS done=150/3599 saved=142 doplim=584 evisos=0 skip=17 rate=250.0/min
+[16:51:05] SAVED doplim n=600 title='Busco sexo rico' file=doplim_fast_de1ce2ad4562389f.html
+[16:51:11] SAVED doplim n=625 title='Algun activo con ganas de sexo' file=doplim_fast_32843073f3589312.html
+[16:51:11] PROGRESS done=200/3599 saved=192 doplim=634 evisos=0 skip=21 rate=260.5/min
+[16:51:15] SAVED doplim n=650 title='Sexo Gratis para Damas y Señoritas' file=doplim_fast_a3ee0f254afd4145.html
+[16:51:19] PROGRESS done=250/3599 saved=226 doplim=668 evisos=0 skip=24 rate=260.7/min
+[16:51:20] SAVED doplim n=675 title='Ofrezco sexo gratis' file=doplim_fast_222f89fc0e908c1a.html
+[16:51:27] SAVED doplim n=700 title='Busco ayuda económica de mujeres maduras' file=doplim_fast_c0e154c3c40f4945.html
+[16:51:31] PROGRESS done=300/3599 saved=282 doplim=724 evisos=0 skip=29 rate=264.5/min
+[16:51:34] SAVED doplim n=725 title='Ayuda economica' file=doplim_fast_1c492aff48b01c90.html
+[16:51:38] SAVED doplim n=750 title='OBRERO BUSCA JOVEN DAMA PARA FANTACIA' file=doplim_fast_06f1b2c73d80f120.html
+[16:51:41] PROGRESS done=350/3599 saved=317 doplim=759 evisos=0 skip=33 rate=258.6/min
+[16:51:42] SAVED doplim n=775 title='Mujer que quiera coger sin limites' file=doplim_fast_33f84dc88cc810d4.html
+[16:51:48] SAVED doplim n=800 title='BUSCO PAREJA SECRETA' file=doplim_fast_0a5925bb9dc7b83b.html
+[16:51:48] PROGRESS done=400/3599 saved=362 doplim=804 evisos=0 skip=39 rate=267.4/min
+[16:51:55] SAVED doplim n=825 title='Acompáñate de Damas' file=doplim_fast_2d765909c605f87e.html
+[16:52:00] SAVED doplim n=850 title='Doy ayuda económica a señoritas ablame 927163109' file=doplim_fast_4c2cbfd6c90f3987.html
+[16:52:00] PROGRESS done=450/3599 saved=411 doplim=853 evisos=0 skip=43 rate=266.0/min
+[16:52:08] SAVED doplim n=875 title='Hombre buscando mujer' file=doplim_fast_33848115d09e51b8.html
+[16:52:13] SAVED doplim n=900 title='servicios casuales para hoy' file=doplim_fast_5900973860592976.html
+[16:52:13] PROGRESS done=500/3599 saved=459 doplim=901 evisos=0 skip=44 rate=259.4/min
+[16:52:20] SAVED doplim n=925 title='Trans femenina por el aeropuerto SERVICIO' file=doplim_fast_392d7431fde9a9f3.html
+[16:52:24] PROGRESS done=550/3599 saved=504 doplim=946 evisos=0 skip=51 rate=258.0/min
+[16:52:27] SAVED doplim n=950 title='Rica abanquinita blanquita' file=doplim_fast_16c831f9e639c60a.html
+[16:52:32] SAVED doplim n=975 title='BUSCO CHICA PARA CASTING PORN' file=doplim_fast_6465748fc18432be.html
+[16:52:38] PROGRESS done=600/3599 saved=556 doplim=998 evisos=0 skip=55 rate=255.4/min
+[16:52:41] SAVED doplim n=1000 title='busco amigas alegres 22 -28 años' file=doplim_fast_af23ff1134b751a9.html
+[16:52:44] SAVED doplim n=1025 title='ERES SIMPATICA Y NECESITAS GANAR HASTA 5000 A MAS ' file=doplim_fast_042fd9b9aa6f89b1.html
+[16:52:49] PROGRESS done=650/3599 saved=602 doplim=1044 evisos=0 skip=59 rate=254.9/min
+[16:52:53] SAVED doplim n=1050 title='SOY NANDO Y ESTOY PARA CUMPLIR TUS FANTASIAS' file=doplim_fast_f5c70e0898fcf21d.html
+[16:52:58] SAVED doplim n=1075 title='CHICAS PARA CASTING XXX' file=doplim_fast_64e43efcbcf866d8.html
+[16:53:02] PROGRESS done=700/3599 saved=650 doplim=1092 evisos=0 skip=60 rate=251.2/min
+[16:53:06] SAVED doplim n=1100 title='Sexo solo por placer' file=doplim_fast_93c0c407d24cfaad.html
+[16:53:10] SAVED doplim n=1125 title='SE BRINDA AYUDA ECONOMICA A CHICAS DE ICA - NAZCA' file=doplim_fast_c2adde66618ccd70.html
+[16:53:14] PROGRESS done=750/3599 saved=694 doplim=1136 evisos=0 skip=64 rate=249.2/min
+[16:53:18] SAVED doplim n=1150 title='SCORT MASCULINOO EN LA CIUDAD DE TACNA' file=doplim_fast_5b4d2ccf45d5511b.html
+[16:53:25] SAVED doplim n=1175 title='Ofresco sexo gratis a mujeres' file=doplim_fast_fdf22a33066ca43e.html
+[16:53:25] PROGRESS done=800/3599 saved=734 doplim=1176 evisos=0 skip=68 rate=247.0/min
+[16:53:29] SAVED doplim n=1200 title='Se da apoyo economico a chicas discretas' file=doplim_fast_334dfc22126aa5b8.html
+[16:53:35] PROGRESS done=850/3599 saved=779 doplim=1221 evisos=0 skip=73 rate=249.1/min
+[16:53:37] SAVED doplim n=1225 title='BUSCO joven provinciana para encontrar trabajo a c' file=doplim_fast_b3d3a2c71f0a570a.html
+[16:53:41] SAVED doplim n=1250 title='CABBALERO AUDA INCONDICIONALMENTE A DAMA DE CASA' file=doplim_fast_9caac5a31be2198e.html
+[16:53:46] PROGRESS done=900/3599 saved=827 doplim=1269 evisos=0 skip=80 rate=249.0/min
+[16:53:50] SAVED doplim n=1275 title='BUSCO AMIGAS DE TODAS EDADES PARA PASAR RICOS MOME' file=doplim_fast_be2a95b047fa4b79.html
+[16:53:55] SAVED doplim n=1300 title='Busco Chica dispuesta a hacer un Video Adulto +18' file=doplim_fast_50ec4b3e46a73572.html
+[16:54:00] PROGRESS done=950/3599 saved=877 doplim=1319 evisos=0 skip=82 rate=247.1/min
+[16:54:04] SAVED doplim n=1325 title='soy atletico doy sexo solo llama' file=doplim_fast_44908878d0a50eb2.html
+[16:54:09] SAVED doplim n=1350 title='INCREMENTA EL TAMAÑO DE TU PENE+POTENCIA-BIO PROST' file=doplim_fast_7bb9d223de2b74fe.html
+[16:54:14] PROGRESS done=1000/3599 saved=926 doplim=1368 evisos=0 skip=83 rate=245.2/min
+[16:54:17] SAVED doplim n=1375 title='excitante chica dispuesta a darte mucho placer.' file=doplim_fast_5a98f3885b7d606a.html
+[16:54:21] SAVED doplim n=1400 title='Para mujeres de cualquier edad' file=doplim_fast_c3acda510fd5fb49.html
+[16:54:26] PROGRESS done=1050/3599 saved=975 doplim=1417 evisos=0 skip=88 rate=245.0/min
+[16:54:30] SAVED doplim n=1425 title='apoyo economico a mujeres' file=doplim_fast_ee8adf845ad30c03.html
+[16:54:35] SAVED doplim n=1450 title='Ayuda económica a mujeres' file=doplim_fast_3470bf8a9129158c.html
+[16:54:39] PROGRESS done=1100/3599 saved=1024 doplim=1466 evisos=0 skip=90 rate=244.3/min
+[16:54:44] SAVED doplim n=1475 title='Activos de sentimientos honestos' file=doplim_fast_a5c8a5371342ed7e.html
+[16:54:49] SAVED doplim n=1500 title='Apoyo económico a mujeres maduras solteronas' file=doplim_fast_21ac8e85d2249170.html
+[16:54:49] PROGRESS done=1150/3599 saved=1058 doplim=1500 evisos=0 skip=91 rate=242.4/min
+[16:54:49] PROGRESS done=1200/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.2/min
+[16:54:49] PROGRESS done=1250/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.1/min
+[16:54:49] PROGRESS done=1300/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.1/min
+[16:54:49] PROGRESS done=1350/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.1/min
+[16:54:49] PROGRESS done=1400/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.1/min
+[16:54:49] PROGRESS done=1450/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.1/min
+[16:54:49] PROGRESS done=1500/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.1/min
+[16:54:49] PROGRESS done=1550/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.1/min
+[16:54:49] PROGRESS done=1600/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.1/min
+[16:54:49] PROGRESS done=1650/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.1/min
+[16:54:49] PROGRESS done=1700/3599 saved=1058 doplim=1500 evisos=0 skip=92 rate=242.1/min
+[16:54:50] PROGRESS done=1750/3599 saved=1058 doplim=1500 evisos=0 skip=95 rate=241.6/min
+[16:54:50] PROGRESS done=1800/3599 saved=1058 doplim=1500 evisos=0 skip=102 rate=241.5/min
+[16:54:50] PROGRESS done=1850/3599 saved=1058 doplim=1500 evisos=0 skip=102 rate=241.5/min
+[16:54:50] PROGRESS done=1900/3599 saved=1058 doplim=1500 evisos=0 skip=102 rate=241.4/min
+[16:54:50] PROGRESS done=1950/3599 saved=1058 doplim=1500 evisos=0 skip=102 rate=241.4/min
+[16:54:50] PROGRESS done=2000/3599 saved=1058 doplim=1500 evisos=0 skip=102 rate=241.4/min
+[16:54:50] PROGRESS done=2050/3599 saved=1058 doplim=1500 evisos=0 skip=102 rate=241.4/min
+[16:54:50] PROGRESS done=2100/3599 saved=1058 doplim=1500 evisos=0 skip=102 rate=241.4/min
+[16:54:50] PROGRESS done=2150/3599 saved=1058 doplim=1500 evisos=0 skip=102 rate=241.4/min
+[16:54:50] PROGRESS done=2200/3599 saved=1058 doplim=1500 evisos=0 skip=107 rate=241.3/min
+[16:54:50] PROGRESS done=2250/3599 saved=1058 doplim=1500 evisos=0 skip=115 rate=241.2/min
+[16:54:50] PROGRESS done=2300/3599 saved=1058 doplim=1500 evisos=0 skip=118 rate=241.1/min
+[16:54:51] PROGRESS done=2350/3599 saved=1058 doplim=1500 evisos=0 skip=119 rate=241.0/min
+[16:54:51] PROGRESS done=2400/3599 saved=1058 doplim=1500 evisos=0 skip=119 rate=241.0/min
+[16:54:51] PROGRESS done=2450/3599 saved=1058 doplim=1500 evisos=0 skip=119 rate=241.0/min
+[16:54:51] PROGRESS done=2500/3599 saved=1058 doplim=1500 evisos=0 skip=121 rate=241.0/min
+[16:54:51] PROGRESS done=2550/3599 saved=1058 doplim=1500 evisos=0 skip=121 rate=241.0/min
+[16:54:51] PROGRESS done=2600/3599 saved=1058 doplim=1500 evisos=0 skip=122 rate=240.9/min
+[16:54:51] PROGRESS done=2650/3599 saved=1058 doplim=1500 evisos=0 skip=122 rate=240.9/min
+[16:54:51] PROGRESS done=2700/3599 saved=1058 doplim=1500 evisos=0 skip=122 rate=240.9/min
+[16:54:51] PROGRESS done=2750/3599 saved=1058 doplim=1500 evisos=0 skip=122 rate=240.9/min
+[16:54:51] PROGRESS done=2800/3599 saved=1058 doplim=1500 evisos=0 skip=126 rate=240.9/min
+[16:54:51] PROGRESS done=2850/3599 saved=1058 doplim=1500 evisos=0 skip=129 rate=240.8/min
+[16:54:51] PROGRESS done=2900/3599 saved=1058 doplim=1500 evisos=0 skip=136 rate=240.7/min
+[16:54:51] PROGRESS done=2950/3599 saved=1058 doplim=1500 evisos=0 skip=137 rate=240.6/min
+[16:54:51] PROGRESS done=3000/3599 saved=1058 doplim=1500 evisos=0 skip=138 rate=240.6/min
+[16:54:51] PROGRESS done=3050/3599 saved=1058 doplim=1500 evisos=0 skip=139 rate=240.5/min
+[16:54:51] PROGRESS done=3100/3599 saved=1058 doplim=1500 evisos=0 skip=139 rate=240.5/min
+[16:54:51] PROGRESS done=3150/3599 saved=1058 doplim=1500 evisos=0 skip=139 rate=240.5/min
+[16:54:51] PROGRESS done=3200/3599 saved=1058 doplim=1500 evisos=0 skip=140 rate=240.5/min
+[16:54:51] PROGRESS done=3250/3599 saved=1058 doplim=1500 evisos=0 skip=140 rate=240.5/min
+[16:54:51] PROGRESS done=3300/3599 saved=1058 doplim=1500 evisos=0 skip=140 rate=240.5/min
+[16:54:51] PROGRESS done=3350/3599 saved=1058 doplim=1500 evisos=0 skip=140 rate=240.5/min
+[16:54:51] PROGRESS done=3400/3599 saved=1058 doplim=1500 evisos=0 skip=141 rate=240.5/min
+[16:54:51] PROGRESS done=3450/3599 saved=1058 doplim=1500 evisos=0 skip=141 rate=240.5/min
+[16:54:51] PROGRESS done=3500/3599 saved=1058 doplim=1500 evisos=0 skip=141 rate=240.5/min
+[16:54:51] PROGRESS done=3550/3599 saved=1058 doplim=1500 evisos=0 skip=141 rate=240.5/min
+[16:54:53] FINAL {'log': '/Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/collect_fast_1783547339.log', 'candidates': 3599, 'counters': {'doplim': 1500, 'evisos': 0, 'skip': 154, 'saved': 1058, 'err': 0}, 'start_counts': {'doplim': 442, 'evisos': 0, 'other': 1930}, 'end_counts': {'doplim': 1500, 'evisos': 0, 'other': 1930}, 'elapsed_s': 264.7, 'ads_per_min': 239.81, 'finished_at': '2026-07-08T21:54:53Z'}

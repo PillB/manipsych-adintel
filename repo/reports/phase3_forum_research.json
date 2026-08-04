@@ -1,0 +1,171 @@
+{
+  "phase": 3,
+  "title": "Forum and Platform Research: Ayuda Economica Defensive Patterns",
+  "scope": "Public-source research on discussions and platform surfaces related to ayuda economica ads in Peru, summarized only as defensive detection patterns.",
+  "safety_boundary": "This report intentionally omits reusable posting templates, optimization tactics, and contact scripts. It records risk patterns for detection and moderation.",
+  "search_rounds": [
+    {
+      "round": 1,
+      "focus": "Named Peruvian forum discovery",
+      "queries": [
+        "site:forosperu.net ayuda economica Locanto Peru foro",
+        "ForoPeru ayuda economica",
+        "hermanodeleche ayuda economica",
+        "PeruTops ayuda economica Locanto"
+      ],
+      "outcome": "No reliable indexed public threads were returned by the available web search tool. Treat this as a collection gap, not evidence of absence."
+    },
+    {
+      "round": 2,
+      "focus": "Classified platform discovery",
+      "queries": [
+        "Locanto Lima ayuda economica mujer",
+        "Locanto Peru ayuda economica mujeres",
+        "site:locanto.com.pe ayuda economica",
+        "site:locanto.com.pe apoyo economico"
+      ],
+      "outcome": "Search results did not return specific indexed ad pages, but Locanto Peru was accessible as a public classifieds platform with city and department navigation."
+    },
+    {
+      "round": 3,
+      "focus": "Defensive pattern fan-out",
+      "queries": [
+        "ayuda economica Lima mujer Locanto",
+        "apoyo economico Lima mujer Locanto",
+        "ayuda economica foros peru"
+      ],
+      "outcome": "Evidence remains sparse through indexed search. Phase 4 needs platform-specific collection tooling and manual review boundaries."
+    }
+  ],
+  "sources": [
+    {
+      "id": "locanto_peru_home",
+      "type": "public platform",
+      "name": "Locanto Peru classifieds home page",
+      "url": "https://www.locanto.com.pe/",
+      "observed": "Public classifieds site with Peru-wide city and department navigation plus publishing entry point.",
+      "evidence_quality": "direct public page access"
+    },
+    {
+      "id": "web_search_zero_results_forums",
+      "type": "search log",
+      "name": "Named forum indexed-search attempts",
+      "url": "local search log",
+      "observed": "Queries for ForoPeru/forosperu.net, HermanoDeLeche, and PeruTops with ayuda economica terms produced no reliable indexed result set in the available search tool.",
+      "evidence_quality": "negative search evidence; not exhaustive"
+    },
+    {
+      "id": "phase1_compendium",
+      "type": "internal evidence",
+      "name": "Phase 1 manipulation compendium",
+      "url": "reports/phase1_compendium.json",
+      "observed": "Provides the technique taxonomy used to code forum/platform language patterns.",
+      "evidence_quality": "validated internal artifact"
+    },
+    {
+      "id": "phase2_dossier",
+      "type": "internal evidence",
+      "name": "Phase 2 Peru dossier",
+      "url": "reports/phase2_peru_dossier.json",
+      "observed": "Provides multiplier IDs used to identify high-risk themes.",
+      "evidence_quality": "validated internal artifact"
+    }
+  ],
+  "defensive_patterns": [
+    {
+      "id": "financial_help_as_conditional_offer",
+      "description": "Financial support language becomes risky when paired with unclear conditions, private contact migration, or implied obligation.",
+      "phase1_links": ["reciprocity_obligation", "sneaking_hidden_costs_drip_pricing", "commitment_consistency_foot_in_door"],
+      "phase2_multipliers": ["financial_emergency", "economic_independence"],
+      "detection_signals": ["money offer", "unclear terms", "private channel request", "gratitude or debt wording"]
+    },
+    {
+      "id": "discretion_and_isolation_pressure",
+      "description": "Discretion framing is high-risk when it shifts from privacy protection into secrecy, isolation, or avoidance of trusted support.",
+      "phase1_links": ["obstruction_friction_asymmetry", "emotional_identity_targeting", "commitment_consistency_foot_in_door"],
+      "phase2_multipliers": ["safety_and_privacy", "status_and_respectability"],
+      "detection_signals": ["secrecy wording", "avoid public discussion", "move to direct messages", "meet privately"]
+    },
+    {
+      "id": "urgency_around_cash_need",
+      "description": "Urgency cues around immediate cash needs can compress deliberation and increase susceptibility to unsafe conditions.",
+      "phase1_links": ["scarcity_urgency_pressure", "confirmshaming_guilt_pressure"],
+      "phase2_multipliers": ["financial_emergency", "family_care_obligation"],
+      "detection_signals": ["same-day pressure", "limited opportunity", "family emergency framing", "fast decision request"]
+    },
+    {
+      "id": "status_or_appearance_filtering",
+      "description": "Language implying eligibility by age, appearance, relationship status, or discretion can indicate objectifying or coercive selection dynamics.",
+      "phase1_links": ["emotional_identity_targeting", "authority_credibility_laundering"],
+      "phase2_multipliers": ["status_and_respectability", "economic_independence"],
+      "detection_signals": ["eligibility filters", "appearance-coded wording", "relationship-status conditions", "status promises"]
+    },
+    {
+      "id": "platform_migration",
+      "description": "Moving from a public platform to private messaging reduces moderation visibility and increases safety risk.",
+      "phase1_links": ["commitment_consistency_foot_in_door", "narrative_laundering_cross_platform"],
+      "phase2_multipliers": ["safety_and_privacy"],
+      "detection_signals": ["direct message request", "off-platform channel", "contact detail request", "private meeting coordination"]
+    }
+  ],
+  "platform_leads": [
+    {
+      "platform": "Locanto Peru",
+      "status": "confirmed public platform lead",
+      "evidence": "https://www.locanto.com.pe/",
+      "phase4_action": "Build a compliant collector only for public pages and archive raw data locally with processed redaction."
+    },
+    {
+      "platform": "Facebook groups or Marketplace",
+      "status": "unverified lead",
+      "evidence": "Named in initial project brief; login-gated/private content is out of scope without explicit permission and compliance review.",
+      "phase4_action": "Do not collect private groups or login-gated material. Only use public, accessible pages if available."
+    },
+    {
+      "platform": "ForoPeru / forosperu.net",
+      "status": "unconfirmed through indexed search",
+      "evidence": "Search attempts returned no reliable indexed threads.",
+      "phase4_action": "Re-check manually or via direct public URLs if provided; do not infer prevalence from missing search results."
+    },
+    {
+      "platform": "PeruTops and HermanoDeLeche",
+      "status": "unconfirmed through indexed search",
+      "evidence": "Search attempts returned no reliable indexed threads.",
+      "phase4_action": "Treat as pending leads requiring direct public URL discovery."
+    }
+  ],
+  "recurring_strategies_defensive_summary": [
+    "Financial offer framing should be reviewed for conditionality and debt-pressure cues.",
+    "Private-channel migration should be treated as a risk escalation point.",
+    "Discretion language needs context-sensitive review because it may protect privacy or enforce isolation.",
+    "Urgency claims should be checked against evidence and paired risk signals.",
+    "Eligibility or filtering language can indicate coercive selection or objectification."
+  ],
+  "retrospective": {
+    "frequent_patterns": [
+      "The strongest defensible patterns at this stage are financial-help conditionality, secrecy/discretion pressure, urgency, and off-platform migration.",
+      "Platform evidence is stronger for Locanto as a public classifieds surface than for named forums through indexed search.",
+      "Negative search evidence is useful for planning, but it is not source exhaustion."
+    ],
+    "vulnerability_links": [
+      "Financial-help conditionality maps to financial_emergency and economic_independence multipliers.",
+      "Discretion and private-channel migration map to safety_and_privacy and status_and_respectability multipliers.",
+      "Urgency around family or emergency need maps to family_care_obligation and financial_emergency multipliers."
+    ],
+    "what_worked": [
+      "The report preserves evidence quality distinctions instead of overstating sparse search results.",
+      "Phase 1 and Phase 2 IDs are now connected to concrete defensive detection patterns.",
+      "Unsafe operational posting advice was excluded."
+    ],
+    "what_failed_or_needs_improvement": [
+      "The named forum corpus was not recovered through indexed search.",
+      "No specific public ad records were collected in this phase because collection belongs to Phase 4.",
+      "Manual public URL discovery or platform-specific search tooling is needed before claiming exhaustive coverage."
+    ],
+    "next_phase_strategy": [
+      "Start Phase 4 with a collector manifest and redaction checks before collecting raw pages.",
+      "Document exhaustion criteria explicitly if 10,000 records are not reachable through compliant public collection.",
+      "Keep raw content in data/raw and store only redacted processed records in data/processed."
+    ]
+  }
+}

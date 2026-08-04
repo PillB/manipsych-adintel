@@ -1,0 +1,7 @@
+=== MANIFEST HEAD SAMPLE ===
+{"record_id": "3e5dd891d1b2d88c7fbec20cdc8fee4cd6b864248008c714911192ffdb478a7f", "source_platform": "Doplim Peru (hombre busca mujer or Contactos)", "title": "AYUDA ECONOMICA - ILO / MOQUEGUA, Ilo - Doplim", "raw_archive_ref": "data/raw/ads/agent_full_searchfirst_12aeec74210b97a0.html"}
+{"record_id": "8045fb00849f4f4a736b28c5eecddca3531874ef0b0dcd08419228aa3dde2359", "source_platform": "Doplim Peru (hombre busca mujer or Contactos)", "title": "Brindo Ayuda Económica Solo Mujeres, Juliaca - Doplim", "raw_archive_ref": "data/raw/ads/agent_full_searchfirst_1f1ae9303b990bf1.html"}
+{"record_id": "37a71269bf9f4a94db5699b32bdd663b58f49246846a98a1f2ace939899bf2c3", "source_platform": "Doplim Peru (hombre busca mujer or Contactos)", "title": "brindo ayuda económica a señoritas para lo que necesiten, Arequipa Capital - Dop", "raw_archive_ref": "data/raw/ads/agent_full_searchfirst_39f578edd3fd8dda.html"}
+{"record_id": "5ca8a239c6e31a1a6090d1be49760f6ff00c3628e2e015a503f978d6508ffac9", "source_platform": "Doplim Peru (hombre busca mujer or Contactos)", "title": "Doy ayuda económica a señoritas ho señoras, Tacna Capital - Doplim", "raw_archive_ref": "data/raw/ads/agent_full_searchfirst_51b03d877a5acbdd.html"}
+{"record_id": "a8f491c6a1c1bf3dcb3baa40123bcbe4fb8d6afa0da85b4bf508983b5b7c6f10", "source_platform": "Doplim Peru (hombre busca mujer or Contactos)", "title": "Ayuda económica a mujeres, Putina - Doplim", "raw_archive_ref": "data/raw/ads/agent_full_searchfirst_aaabfd73deb47956.html"}
+Saved head sample

@@ -1,0 +1,13 @@
+[2026-07-04T20:51:15.093169Z] === START 5+ CONSEC NO-NEW STREAK ATTEMPTS ===
+[2026-07-04T20:51:15.095006Z] ATTEMPT #1 no-new-test: https://www.locanto.com.pe/lima/ID_5574406931/Brindo-ayuda-Ayuda-Economica-Senoritas-hasta-21-anos-de-edad.html
+[2026-07-04T20:52:32.799570Z] UNEXPECTED_QUAL but skip for streak
+[2026-07-04T20:52:35.804925Z] ATTEMPT #2 no-new-test: https://www.locanto.com.pe/lima/ID_7995095766/BRINDO-APOYO-ECONOMICO-A-SENORITAS-DE-18-A-40-ANOS.html
+[2026-07-04T20:53:20.060582Z] DUP no-new #2
+[2026-07-04T20:53:20.061299Z] ATTEMPT #3 no-new-test: https://www.locanto.com.pe/piura/ID_8818331079/Brindo-ayuda-economica-Piura.html
+[2026-07-04T20:54:02.857681Z] DUP no-new #3
+[2026-07-04T20:54:02.858429Z] ATTEMPT #4 no-new-test: https://www.locanto.com.pe/cusco/ID_7881097866/BRINDO-AYUDA-ECONOMICA.html
+[2026-07-04T20:54:45.556982Z] DUP no-new #4
+[2026-07-04T20:54:45.557627Z] ATTEMPT #5 no-new-test: https://www.locanto.com.pe/lima/ID_6441702367/Doy-ayuda-economica-a-senoritas-mente-abierta.html
+[2026-07-04T20:55:00.641288Z] FILTER no-new #5
+[2026-07-04T20:55:00.642101Z] STREAK_COMPLETE consec_no_new=5
+[2026-07-04T20:55:00.642638Z] === 5+ CONSEC NO NEW ACHIEVED or attempted. Stop per guide. ===

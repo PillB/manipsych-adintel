@@ -1,0 +1,71 @@
+{
+  "title": "ManiPsych Source Bibliography and Evidence Ledger",
+  "updated": "2026-07-04",
+  "sources": [
+    {
+      "id": "mimp_warminan_portal",
+      "phase": 2,
+      "name": "Portal Estadístico - Programa Nacional Warmi Ñan",
+      "url": "https://portalestadistico.warminan.gob.pe/",
+      "authority": "Peru Ministry of Women and Vulnerable Populations program portal",
+      "supports": ["safety", "gender_based_violence", "regional_statistics", "service_access"],
+      "evidence_notes": "The portal exposes official sections for CEM/Familia cases, Linea 100, Chat 100, Servicio de Atención Urgente, Servicio de Atención Rural, forms of violence, population types, data bank, and statistical publications."
+    },
+    {
+      "id": "inei_gobpe_home",
+      "phase": 2,
+      "name": "Instituto Nacional de Estadística e Informática - INEI",
+      "url": "https://www.gob.pe/inei/",
+      "authority": "Official Peru national statistics institute",
+      "supports": ["employment", "education", "demographics", "ENDES", "gender_gap_publications"],
+      "evidence_notes": "Official entry point for INEI information, surveys, records, statistical information, publications, and data systems."
+    },
+    {
+      "id": "worldbank_gender_peru",
+      "phase": 2,
+      "name": "World Bank Gender Data Portal: Peru",
+      "url": "https://genderdata.worldbank.org/en/economies/peru",
+      "authority": "World Bank",
+      "supports": ["labor_force_participation", "education", "economic_indicators", "gender_comparison"],
+      "evidence_notes": "Institutional country profile for gender indicators in Peru."
+    },
+    {
+      "id": "locanto_peru_public",
+      "phase": 4,
+      "name": "Locanto Peru",
+      "url": "https://www.locanto.com.pe/",
+      "authority": "Public classifieds platform",
+      "supports": ["platform_identification"],
+      "evidence_notes": "Confirmed public platform surface, but specific target ad pages have not yet been collected."
+    },
+    {
+      "id": "ftc_dark_patterns",
+      "phase": 1,
+      "name": "FTC: Bringing Dark Patterns to Light",
+      "url": "https://www.ftc.gov/reports/bringing-dark-patterns-light",
+      "authority": "United States Federal Trade Commission",
+      "supports": ["dark_patterns", "consumer_protection", "deceptive_design"]
+    },
+    {
+      "id": "oecd_dark_patterns",
+      "phase": 1,
+      "name": "OECD Dark Commercial Patterns",
+      "url": "https://doi.org/10.1787/44f5e846-en",
+      "authority": "OECD",
+      "supports": ["dark_commercial_patterns", "taxonomy", "consumer_harm"]
+    },
+    {
+      "id": "rand_firehose",
+      "phase": 1,
+      "name": "RAND: The Russian Firehose of Falsehood Propaganda Model",
+      "url": "https://www.rand.org/pubs/perspectives/PE198.html",
+      "authority": "RAND Corporation",
+      "supports": ["psyops", "propaganda", "flooding"]
+    }
+  ],
+  "gaps": [
+    "Direct official INEI ENDES 2024 PDF/table URLs still need archival.",
+    "Direct official INEI Brechas de Genero PDF/table URLs still need archival.",
+    "Phase 4 still needs direct public ad result URLs or a collector that can navigate public platform search compliantly."
+  ]
+}

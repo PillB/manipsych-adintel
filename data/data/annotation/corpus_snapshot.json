@@ -1,0 +1,42 @@
+{
+  "campaign_groups": 4902,
+  "corpus_version": "manipsych-5717-e980009dea99",
+  "generated_at": "2026-07-09T18:03:51+00:00",
+  "gold_policy": "Only layer=adjudicated and state=adjudicated is gold.",
+  "manifest_sha256": "e980009dea998cee2173f24c607c8bf525f69558694bb3a28053cd56d727f2f5",
+  "model_sha256": "6bb0fbe2eb1c723d1f4473880afaabbc32ab9d7954601a3795bf02c03a05cecc",
+  "near_template_links_accepted": 642,
+  "offset_convention": "zero-based, end-exclusive",
+  "pilot_records": 100,
+  "records": 5717,
+  "similarity_method": {
+    "acceptance": "length_ratio>=0.72 and (token_jaccard>=0.86 or token_jaccard>=0.68 and char5_jaccard>=0.84)",
+    "candidate_generation": "eight 8-bit SimHash bands over token trigrams",
+    "normalization": "NFKD lowercase; digits and redaction tokens masked"
+  },
+  "source_counts": {
+    "ciudadanuncios": 1303,
+    "doplim": 2824,
+    "evisos": 2,
+    "facebook": 26,
+    "locanto": 1562
+  },
+  "split_counts": {
+    "challenge": 28,
+    "test": 853,
+    "train": 3983,
+    "validation": 853
+  },
+  "subagent_council": {
+    "agreement_threshold": 0.9,
+    "candidate_policy": "Council output is suggestion data unless separately adjudicated.",
+    "council_size": 3,
+    "pass_rule": "3 of 3 exact normalized subagent annotation signatures must agree; otherwise queue round+1.",
+    "round_1_reviewers": [
+      "subagent_a",
+      "subagent_b",
+      "subagent_c"
+    ]
+  },
+  "text_definition": "title + newline + body_redacted; UTF-8; offsets are Python/Unicode code points"
+}

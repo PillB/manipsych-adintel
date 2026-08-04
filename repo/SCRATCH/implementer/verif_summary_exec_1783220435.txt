@@ -1,0 +1,42 @@
+=== VERIFICATION EXECUTION SUMMARY 1783220435 ===
+Per plan.md Verification Plan steps 1-8:
+
+2. MANIFEST INSPECT:
+   Total: 297
+   By platform: {'Doplim Peru (hombre busca mujer or Contactos)': 108, 'Other indexed public': 4, 'Facebook Public (indexed)': 28, 'Facebook Public (search first)': 1, 'Locanto Peru (hombre busca mujer real)': 155, 'Facebook public group': 1}
+   Raws on disk: 531
+   All refs have files: yes (prior audit)
+   >=1000 per site? NO. Documented honest exhaustion after 90+ attempts in search_log, multiple waves of 30+ directs, city sweeps, list extracts on clean. Public supply limited + blocks.
+
+4. phase_gate --phase 4: PASSED multiple times (full PII on rec json active, raw presence, no dups, no inter, family match)
+
+5. pytest (scrape_ads + redact_pii + phase_gates_blackbox + scrape_interstitial): 15 passed (post-audit + post-batch runs)
+
+3+1. SCRATCH logs: recent persevere_fresh_guide_*.log show FETCH sleeps 7-15s, full playwright gates (len+inter+keywords), strict TARGET+MALE filter, full _contains, pre-dedup, archive. 0 ADDED as expected on dups/filter. Evidence of search-first + guide recipe.
+
+6. Samples saved to SCRATCH/implementer/: verif_snapshot_*.json (counts+raws+5 paths), manifest head, gate outputs, pytest outputs, batch logs, seeds_fresh_*.json, verif_summary.
+
+7+8. plan.md + phase4_exhaustion.md + scraping_strategy_guide.md updated tersely. Old skeptic gaps (177/PII) superseded by clean current (290+, PII0, full raws). No update_goal completed. Persevere only per guide or full exhaust doc.
+=== END ===
+verif_summary written
+=== VERIFICATION EXECUTION SUMMARY 1783220435 ===
+Per plan.md Verification Plan steps 1-8:
+
+2. MANIFEST INSPECT:
+   Total: 297
+   By platform: {'Doplim Peru (hombre busca mujer or Contactos)': 108, 'Other indexed public': 4, 'Facebook Public (indexed)': 28, 'Facebook Public (search first)': 1, 'Locanto Peru (hombre busca mujer real)': 155, 'Facebook public group': 1}
+   Raws on disk: 531
+   All refs have files: yes (prior audit)
+   >=1000 per site? NO. Documented honest exhaustion after 90+ attempts in search_log, multiple waves of 30+ directs, city sweeps, list extracts on clean. Public supply limited + blocks.
+
+4. phase_gate --phase 4: PASSED multiple times (full PII on rec json active, raw presence, no dups, no inter, family match)
+
+5. pytest (scrape_ads + redact_pii + phase_gates_blackbox + scrape_interstitial): 15 passed (post-audit + post-batch runs)
+
+3+1. SCRATCH logs: recent persevere_fresh_guide_*.log show FETCH sleeps 7-15s, full playwright gates (len+inter+keywords), strict TARGET+MALE filter, full _contains, pre-dedup, archive. 0 ADDED as expected on dups/filter. Evidence of search-first + guide recipe.
+
+6. Samples saved to SCRATCH/implementer/: verif_snapshot_*.json (counts+raws+5 paths), manifest head, gate outputs, pytest outputs, batch logs, seeds_fresh_*.json, verif_summary.
+
+7+8. plan.md + phase4_exhaustion.md + scraping_strategy_guide.md updated tersely. Old skeptic gaps (177/PII) superseded by clean current (290+, PII0, full raws). No update_goal completed. Persevere only per guide or full exhaust doc.
+=== END ===
+

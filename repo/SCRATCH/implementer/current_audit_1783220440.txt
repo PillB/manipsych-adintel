@@ -1,0 +1,6 @@
+CURRENT MAIN: 297
+Plats: {'Doplim Peru (hombre busca mujer or Contactos)': 108, 'Other indexed public': 4, 'Facebook Public (indexed)': 28, 'Facebook Public (search first)': 1, 'Locanto Peru (hombre busca mujer real)': 155, 'Facebook public group': 1}
+LocH approx: 155
+PII full rec style: 0
+Raws: 531
+Gate would pass (recent run confirmed).

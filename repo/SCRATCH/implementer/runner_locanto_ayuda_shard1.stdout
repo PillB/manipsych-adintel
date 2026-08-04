@@ -1,0 +1,18 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[19:56:21] START locanto_fast target=1500 start_tagged_detail=572 content_heuristic≈572 mode=seeds
+[19:56:21] LOADED seeds_in=1919 from SCRATCH/implementer/seeds_locanto_ayuda_only.jsonl
+[19:56:21] shard 1/4 size=91
+[19:56:21] pending after dedup/shard=91 (from 1919)
+[19:56:21] FETCH start pending=91 mode=serial_playwright tag=locanto_fast
+[19:56:40] SAVED 1 total~573 title='Doy ayuda económica a mujer Bajita, 1.50 aprox, efectiv' locanto_fast_2ed2cf8e33098739.html
+[19:56:40] PROGRESS done=1/91 saved=1 skip=0 rate=3.1/min tagged=573
+[20:02:46] SAVED 2 total~574 title='Apoyo económico para mujer de contextura delgada, Lima ' locanto_fast_8f82deaf5fda6918.html
+[20:02:46] PROGRESS done=2/91 saved=2 skip=0 rate=0.3/min tagged=574
+[20:03:01] SAVED 3 total~575 title='CABALLERO BRINDA AYUDA A MUJERES EN LIMA**, Lima – 40' locanto_fast_ad7b2877a0a59a90.html
+[20:03:01] PROGRESS done=3/91 saved=3 skip=0 rate=0.4/min tagged=575
+[20:03:19] SAVED 4 total~576 title='Solicito una Señorita Practicante de Marketing, Lima – ' locanto_fast_96750c0d2b2c1e1f.html
+[20:09:50] SAVED 5 total~577 title='Busco señorita para acuerdo de apoyo económico, Cajamar' locanto_fast_5f9e04373da5c0d9.html
+[20:09:50] PROGRESS done=5/91 saved=5 skip=0 rate=0.4/min tagged=577
+[20:11:21] SAVED 10 total~582 title='Ayuda económica señoritas de Huancayo – 30' locanto_fast_61b9dfa51c879588.html
+[20:11:21] PROGRESS done=10/91 saved=10 skip=0 rate=0.7/min tagged=582

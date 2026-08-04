@@ -1,0 +1,9 @@
+[16:21:59] START Doplim lima (main li.cnt-list_ads ONLY, tuned)
+[16:21:59] base=https://www.doplim.com.pe/search/s/?q=ayuda+economica
+[16:21:59] LIST p1: https://www.doplim.com.pe/search/s/?q=ayuda+economica
+[16:23:13]   main li.cnt-list_ads IDs: 0
+[16:23:13] LIST p2: https://www.doplim.com.pe/search/s/?q=ayuda+economica&page=2
+[16:24:24]   main li.cnt-list_ads IDs: 0
+[16:24:24] LIST p3: https://www.doplim.com.pe/search/s/?q=ayuda+economica&page=3
+[16:25:19]   main li.cnt-list_ads IDs: 0
+[16:25:19] DONE Doplim lima: added=0

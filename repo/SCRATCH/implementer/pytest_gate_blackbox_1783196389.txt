@@ -1,0 +1,27 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__ PhaseGateBlackBoxTests.test_all_cli_passes_when_all_phase_artifacts_exist ___
+
+self = <test_phase_gates_blackbox.PhaseGateBlackBoxTests testMethod=test_all_cli_passes_when_all_phase_artifacts_exist>
+
+    def test_all_cli_passes_when_all_phase_artifacts_exist(self):
+        result = subprocess.run(
+            [sys.executable, "tools/phase_gate.py", "--all"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+>       self.assertEqual(result.returncode, 0, result.stderr + result.stdout)
+E       AssertionError: 1 != 0 : ERROR: Phase 4: line 186: processed record appears to contain contact-like PII
+E       ERROR: Phase 6: dependency phase 4: line 186: processed record appears to contain contact-like PII
+E       Phase 0 gate passed
+E       Phase 1 gate passed
+E       Phase 2 gate passed
+E       Phase 3 gate passed
+E       Phase 5 gate passed
+
+tests/test_phase_gates_blackbox.py:30: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_phase_gates_blackbox.py::PhaseGateBlackBoxTests::test_all_cli_passes_when_all_phase_artifacts_exist
+1 failed in 0.97s

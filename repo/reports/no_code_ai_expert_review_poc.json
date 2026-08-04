@@ -1,0 +1,289 @@
+{
+  "automated_localized_council_records_available_for_triage": 5717,
+  "completed_overlay": [
+    {
+      "agreement": 1.0,
+      "corpus_version": "manipsych-5717-e980009dea99",
+      "document": {
+        "adjudication_state": "reviewed",
+        "annotation_method": "manual_ai_expert_council_no_code_round4",
+        "council_round": 4,
+        "explicitness": "explicit",
+        "harm_risk": 3,
+        "image_available": false,
+        "image_reviewed": false,
+        "manipulativeness": 3,
+        "negative_example": false,
+        "persuasive_intensity": 4,
+        "review_notes": [
+          "Corrects Spanish gender/orthographic variation: 'apoyo económica' is semantically the same support frame as 'apoyo económico'.",
+          "Treats the first-line construction 'apoyo económica ... por compañía' as linked conditional support, not isolated support/contact text.",
+          "Preserves context layer separately: featured/paid markers and redacted contact are not technique labels by themselves."
+        ],
+        "span_count": 12,
+        "vulnerability_target": "age_youth,student"
+      },
+      "gold": false,
+      "layer": "expert_manual_ai_review",
+      "platform": "doplim",
+      "record_id": "h_f4fc363a9b8f997059ec332d2ec0effd3960edf30c9f677131a8a9061e43fd81",
+      "spans": [
+        {
+          "exact_text": "Brindó apoyo económica",
+          "explicitness": "explicit",
+          "harm_risk": 2,
+          "intensity": 3,
+          "label": "reciprocity_obligation",
+          "manipulativeness": 2,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "Despite the gender/orthographic error, the phrase frames the advertiser as providing economic support, creating reciprocity pressure.",
+          "segments": [
+            [
+              0,
+              22
+            ]
+          ],
+          "vulnerability_target": ""
+        },
+        {
+          "exact_text": "por compañía",
+          "explicitness": "explicit",
+          "harm_risk": 3,
+          "intensity": 4,
+          "label": "conditional_financial_support",
+          "manipulativeness": 3,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "The title makes support conditional on companionship; the phrase is direct exchange language.",
+          "segments": [
+            [
+              34,
+              46
+            ]
+          ],
+          "vulnerability_target": ""
+        },
+        {
+          "exact_text": "señorita",
+          "explicitness": "explicit",
+          "harm_risk": 2,
+          "intensity": 3,
+          "label": "age_or_youth_targeting",
+          "manipulativeness": 2,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "Youth-coded gendered target term used in an economic-support exchange.",
+          "segments": [
+            [
+              25,
+              33
+            ]
+          ],
+          "vulnerability_target": "age_youth"
+        },
+        {
+          "exact_text": "Joven profesional",
+          "explicitness": "explicit",
+          "harm_risk": 1,
+          "intensity": 2,
+          "label": "authority_or_status_appeal",
+          "manipulativeness": 1,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "Professional/status framing increases credibility and asymmetry in the offer.",
+          "segments": [
+            [
+              51,
+              68
+            ]
+          ],
+          "vulnerability_target": ""
+        },
+        {
+          "exact_text": "apoyo económico",
+          "explicitness": "explicit",
+          "harm_risk": 2,
+          "intensity": 3,
+          "label": "reciprocity_obligation",
+          "manipulativeness": 2,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "Economic support is presented as help, inviting reciprocal obligation.",
+          "segments": [
+            [
+              76,
+              91
+            ]
+          ],
+          "vulnerability_target": ""
+        },
+        {
+          "exact_text": "semanal",
+          "explicitness": "explicit",
+          "harm_risk": 2,
+          "intensity": 3,
+          "label": "commitment_escalation",
+          "manipulativeness": 2,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "Weekly support suggests recurring dependency rather than a one-time exchange.",
+          "segments": [
+            [
+              92,
+              99
+            ]
+          ],
+          "vulnerability_target": ""
+        },
+        {
+          "exact_text": "señorita",
+          "explicitness": "explicit",
+          "harm_risk": 2,
+          "intensity": 3,
+          "label": "age_or_youth_targeting",
+          "manipulativeness": 2,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "Repeated youth-coded target term in the body reinforces target selection.",
+          "segments": [
+            [
+              102,
+              110
+            ]
+          ],
+          "vulnerability_target": "age_youth"
+        },
+        {
+          "exact_text": "estudiante",
+          "explicitness": "explicit",
+          "harm_risk": 2,
+          "intensity": 3,
+          "label": "education_or_student_targeting",
+          "manipulativeness": 2,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "Student status is used as a vulnerable target category for economic support.",
+          "segments": [
+            [
+              111,
+              121
+            ]
+          ],
+          "vulnerability_target": "student"
+        },
+        {
+          "exact_text": "buen trato",
+          "explicitness": "implicit",
+          "harm_risk": 2,
+          "intensity": 3,
+          "label": "transactional_ambiguity",
+          "manipulativeness": 2,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "Euphemistic wording softens or obscures the implied arrangement around companionship/support.",
+          "segments": [
+            [
+              125,
+              135
+            ]
+          ],
+          "vulnerability_target": ""
+        },
+        {
+          "exact_text": "Por compañía",
+          "explicitness": "explicit",
+          "harm_risk": 3,
+          "intensity": 4,
+          "label": "conditional_financial_support",
+          "manipulativeness": 3,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "Body repeats the exchange condition: support/benefit for companionship.",
+          "segments": [
+            [
+              137,
+              149
+            ]
+          ],
+          "vulnerability_target": ""
+        },
+        {
+          "exact_text": "discreción",
+          "explicitness": "explicit",
+          "harm_risk": 2,
+          "intensity": 3,
+          "label": "privacy_or_secrecy_pressure",
+          "manipulativeness": 2,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "Discretion is requested/promised in a conditional companionship arrangement, increasing concealment.",
+          "segments": [
+            [
+              184,
+              194
+            ]
+          ],
+          "vulnerability_target": ""
+        },
+        {
+          "exact_text": "[REDACTED_CONTACT]",
+          "explicitness": "explicit",
+          "harm_risk": 1,
+          "intensity": 2,
+          "label": "platform_migration",
+          "manipulativeness": 1,
+          "provenance": "manual_ai_expert_council_round4",
+          "rationale": "The ad ends with direct contact metadata, moving the interaction away from public platform review; context alone is not manipulative but supports migration.",
+          "segments": [
+            [
+              194,
+              212
+            ]
+          ],
+          "vulnerability_target": ""
+        }
+      ],
+      "split_name": "train",
+      "text_hash": "39624483699874635de03408c75374613a978c63b13aaad392a8bcaf659fd68d"
+    }
+  ],
+  "direct_no_code_expert_records_completed": 1,
+  "funded_human_review_scale_plan": {
+    "full_corpus": "5,717 ads × two independent reviews = 11,434 review tasks plus adjudication.",
+    "pilot": "100 source-stratified ads, two Spanish-speaking reviewers, adjudication, then guideline revision.",
+    "quality_controls": [
+      "Repeated adjudicated controls for reviewer drift.",
+      "Exact and overlap span F1 by label/source.",
+      "Weighted kappa for intensity/manipulativeness/harm.",
+      "Disagreement queues for localization/typo/slang omissions.",
+      "Separate candidate council/model suggestions until after independent submission."
+    ]
+  },
+  "methodology": [
+    "Read the full ad text as a persuasion/manipulation expert before looking at model/council outputs.",
+    "Identify omissions caused by Spanish localization, gender agreement, accent omission, typos, slang, euphemism, or semantic paraphrase.",
+    "Select exact zero-based/end-exclusive spans from immutable text.",
+    "Assign label, intensity, manipulativeness, harm, explicitness, vulnerability target, and rationale.",
+    "Compare against existing council/model annotations only after independent judgment.",
+    "Record disagreements as proof-of-concept review notes, not as human gold."
+  ],
+  "platform_counts": {
+    "ciudadanuncios": 1303,
+    "doplim": 2824,
+    "evisos": 2,
+    "facebook": 26,
+    "locanto": 1562
+  },
+  "proof_points": [
+    "The seed record demonstrates the exact failure mode: `apoyo económica` was semantically support despite gender/orthographic mismatch.",
+    "The no-code expert overlay corrects that phrase and documents linked conditional support/secrecy/youth-student targeting.",
+    "The localized automated council export can triage likely omission classes but remains separate from no-code/human expert judgment."
+  ],
+  "records_in_corpus": 5717,
+  "review_type": "no_code_ai_expert_review",
+  "status": "proof_of_concept_not_human_gold",
+  "top_council_labels_for_triage": {
+    "age_or_youth_targeting": 3680,
+    "authority_or_status_appeal": 1688,
+    "conditional_financial_support": 1480,
+    "deceptive_assurance": 467,
+    "economic_vulnerability_targeting": 1496,
+    "education_or_student_targeting": 1468,
+    "family_obligation_targeting": 790,
+    "platform_migration": 1293,
+    "privacy_or_secrecy_pressure": 2257,
+    "reciprocity_obligation": 5711,
+    "sexualized_appearance_condition": 890,
+    "transactional_ambiguity": 479
+  }
+}

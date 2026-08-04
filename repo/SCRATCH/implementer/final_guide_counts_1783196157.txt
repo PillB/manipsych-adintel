@@ -1,0 +1,11 @@
+=== FINAL GUIDE SNAPSHOT 15:15
+Manifest: 183
+  Locanto Peru (hombre busca mujer real) 88
+  Doplim Peru (hombre busca mujer or Contactos) 58
+  Facebook Public (indexed) 28
+  Other indexed public 6
+  Facebook Public (search first) 2
+  Facebook public group 1
+Gate status: PASSED (verified)
+Guide + proof saved to SCRATCH/implementer/
+Key lesson captured: search-first + enhanced playwright gates + strict male+term+raw+PII. Listings dead-end. Dups/PII from incomplete batch code fixed by rebuild.

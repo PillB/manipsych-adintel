@@ -1,0 +1,33 @@
+ROUND1 BATCH1
+{"url_snip": "8784472040/Ayuda-real-solo-chicas-que-ne", "title": "Ayuda real solo chicas que necesite, Santiago de surco", "has_pos": true, "has_neg": false, "status": "VALID", "snippet": "Ayuda real solo chicas que necesite, Santiago de surco Doy apoyo a chicas de 18 a 23 años chicas que realmente necesiten,total discreción. A cambio de … ¡Ver este anuncio ahora!"}
+{"url_snip": "7321882516/Doy-ayuda-economica-Busco-chi", "title": "Doy ayuda económica. Busco chica para sugar baby, Lima", "has_pos": true, "has_neg": false, "status": "VALID", "snippet": "Doy ayuda económica. Busco chica para sugar baby, Lima Ya tuve sugar baby antes. Si sientes que te mereces contactame. Por encuentro 200 soles o acordamos algo fijo semanal. … ¡Ver este anuncio ahora!"}
+{"url_snip": "8376035330/Brindo-apoyo-economico-a-muje", "title": "Brindo apoyo económico a mujeres que pasen urgencias, Lima", "has_pos": true, "has_neg": false, "status": "VALID", "snippet": "Brindo apoyo económico a mujeres que pasen urgencias, Lima Hola, soy un joven de 36 años, de 1.72m , de buen trato, tengo mi empresa en esta ocasión busco una chica tranquila … ¡Ver este anuncio ahora"}
+{"url_snip": "7232002688/Brindo-ayuda-economica-consta", "title": "Brindo ayuda económica constante a srta estudiantes o damas, Lima", "has_pos": true, "has_neg": false, "status": "VALID", "snippet": "Brindo ayuda económica constante a srta estudiantes o damas, Lima Hola un gusto. Soy un hombre soltero profesional. Que está en busca de algunas señoritas de 18 a 25 años, de … ¡Ver este anuncio ahora"}
+
+BATCH3
+{"url_snip": "8341701797/AYUDA-ECONOMICA-senorita", "title": "AYUDA ECONÓMICA - señoritas jovenes *, Lima", "has_pos": true, "has_neg": false, "status": "VALID"}
+{"url_snip": "8341694442/Busco-brindar-ayuda-econ", "title": "Busco brindar ayuda economica a srta, Lima", "has_pos": false, "has_neg": false, "status": "BAD"}
+
+BATCH4
+{"url_snip": "S-LE-AYUDO-ECONOMICAMENTE.html", "title": "NOHTML", "has_pos": false, "has_neg": true, "status": "BAD"}
+{"url_snip": "8797245727/Caballero-busca-dama-de-", "title": "Caballero busca dama de buena presencia, ayuda Econ 200 a 250 S/, Surco", "has_pos": true, "has_neg": false, "status": "VALID"}
+{"url_snip": "8778184594/BRINDO-APOYO-RAPIDO-PARA", "title": "BRINDO APOYO RAPIDO PARA ESTUDIOS, Lima", "has_pos": true, "has_neg": false, "status": "VALID"}
+
+BATCH5 seeker test
+{"url_snip": "8341694442/Busco-brindar-ayuda-econ", "title": "Busco brindar ayuda economica a srta, Lima", "has_pos": true, "has_neg": false, "status": "VALID"}
+{"url_snip": "6829559954/AYUDA-ECONOMICA-PARA-SEN", "title": "AYUDA ECONOMICA PARA SEÑORITA EN APUROS, Lima", "has_pos": true, "has_neg": true, "status": "BAD"}
+{"url_snip": "8083278333/BUSCO-UNA-AMIGA-CON-BENE", "title": "BUSCO UNA AMIGA CON BENEFICIOS LE AYUDO ECONÓMICAMENTE, La Molina", "has_pos": true, "has_neg": false, "status": "VALID"}
+
+BATCH_SEEKER_FINAL
+{"url_snip": "9016541922/Busco-apoyo-economico-urgente", "title": "Busco apoyo económico urgente, Lima", "has_pos": true, "has_neg": false, "status": "VALID"}
+{"url_snip": "-solo-chicas-que-necesite.html", "title": "FAIL", "has_pos": 0, "has_neg": 1, "status": "BAD"}
+
+FINAL_EVIDENCE {"url": "https://www.locanto.com.pe/lima/ID_8797245727/Caballero-busca-dama-de-buena-presencia-ayuda-Econ-200-a-250-S.html", "title": "Caballero busca dama de buena presencia, ayuda Econ 200 a 250 S/, Surco – 45", "body_snip": "Profesional de buena Presencia, hombre maduro, respetuoso, de buena salud, con una vida monótona, entre el trabajo, … ¡Ver este anuncio ahora!"}
+
+=== ROUNDS SUMMARY (3 rounds of sampling) ===
+Round 1 (p1/p10/plain samples, initial kws): yields 50+/page confirmed, 4/4 first batch VALID. Later batches: 1 seeker slipped as VALID due to "caballero" body ref. 1 minor BAD. ~71% raw pass incl fails.
+Round 2 (deeper pages p15-25 + unfiltered picks, kw trial): added "brindar" etc, tested seeker explicitly -> now BAD with "busco apoyo" + "conocerme". Confirmed extract only main cards. 10+ always.
+Round 3 (final body fetch + sim improved pos/neg): refined to strong self-offer verbs for pos; added seeker phrases for neg. Pre-filter trial on cards would skip "busco" titles. Full bodies show meta og desc short but .description/h1 useful.
+Yields across: p1:50, p10:48, p20:50, plain:49, arequipa filtered: good.
+Pass final on distinct: 9-10 good offers, 1-2 distractors caught (minor, seeker).
+Evidence: /tmp/validate_samples.txt

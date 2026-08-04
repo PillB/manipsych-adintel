@@ -1,0 +1,25 @@
+=== BATCH LOG REVIEW (verif step 3) ===
+File: SCRATCH/implementer/persevere_fresh_guide_1783220160.log
+Loaded 291 existing rids. Starting short guide batch
+FETCH https://www.locanto.com.pe/chiclayo/ID_7815108442/Ayuda-economica-a-senoritas-estudiantes.html
+SKIP no target+male
+FETCH https://www.locanto.com.pe/lima/ID_8789747160/Brindo-ayuda-economica-a-senoritas-universitarias-Lima.html
+SKIP dup
+FETCH https://www.locanto.com.pe/cusco/ID_8154724097/Doy-ayuda-economica-a-senorita-Cusco-senoritas.html
+SKIP dup
+FETCH https://www.locanto.com.pe/trujillo/ID_7306628773/Ayuda-economica-para-universitarias.html
+SKIP dup
+DONE added=0
+
+... (middle skips) ...
+Loaded 291 existing rids. Starting short guide batch
+FETCH https://www.locanto.com.pe/chiclayo/ID_7815108442/Ayuda-economica-a-senoritas-estudiantes.html
+SKIP no target+male
+FETCH https://www.locanto.com.pe/lima/ID_8789747160/Brindo-ayuda-economica-a-senoritas-universitarias-Lima.html
+SKIP dup
+FETCH https://www.locanto.com.pe/cusco/ID_8154724097/Doy-ayuda-economica-a-senorita-Cusco-senoritas.html
+SKIP dup
+FETCH https://www.locanto.com.pe/trujillo/ID_7306628773/Ayuda-economica-para-universitarias.html
+SKIP dup
+DONE added=0
+

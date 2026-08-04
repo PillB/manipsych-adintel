@@ -1,0 +1,197 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+START chiclayo section list crawl (main cards ONLY, tuned extract, filtered)
+base=https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701
+LIST p1: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/1/?query=ayuda+economica
+  main IDs: 38
+  + https://www.locanto.com.pe/chiclayo/ID_7611982401/Ayuda-economica-a-un
+  + https://www.locanto.com.pe/chiclayo/ID_5517581437/Ayuda-economica-para
+  + https://www.locanto.com.pe/chiclayo/ID_5373096730/Ayuda-economica-solo
+  + https://www.locanto.com.pe/chiclayo/ID_5319737621/ofrezco-ayuda-econom
+  + https://www.locanto.com.pe/chiclayo/ID_8423977317/Ayuda-economica-sola
+  + https://www.locanto.com.pe/chiclayo/ID_8147923625/Ayuda-economica.html
+  + https://www.locanto.com.pe/chiclayo/ID_7698702679/AYUDA-ECONOMICA-PARA
+  + https://www.locanto.com.pe/chiclayo/ID_8643051244/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/chiclayo/ID_8863014934/Ayuda-economica-a-se
+  + https://www.locanto.com.pe/chiclayo/ID_5086476354/Ayuda-economica-solo
+  + https://www.locanto.com.pe/chiclayo/ID_8410093999/Ayuda-economica-ayud
+  + https://www.locanto.com.pe/chiclayo/ID_7432188570/Ayuda-Economica-dama
+  + https://www.locanto.com.pe/chiclayo/ID_8018436086/Ayuda-economica-a-ch
+  + https://www.locanto.com.pe/chiclayo/ID_8018270745/Ayuda-economica-a-mu
+  + https://www.locanto.com.pe/chiclayo/ID_8018293069/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/chiclayo/ID_8018337256/Te-ofrezco-ayuda-eco
+  + https://www.locanto.com.pe/chiclayo/ID_8126524329/Soltero-brinda-ayuda
+  + https://www.locanto.com.pe/chiclayo/ID_8124349894/Ayuda-economica-a-ch
+  + https://www.locanto.com.pe/chiclayo/ID_8126362949/Ayuda-economica-solo
+  + https://www.locanto.com.pe/chiclayo/ID_8126365795/Ayuda-economica-en-c
+  + https://www.locanto.com.pe/chiclayo/ID_8126368947/Ofrezco-ayuda-econom
+  + https://www.locanto.com.pe/chiclayo/ID_8226093064/Ayuda-economica-muje
+  + https://www.locanto.com.pe/chiclayo/ID_7418222831/Busco-mujer-que-brin
+  + https://www.locanto.com.pe/chiclayo/ID_6916283097/Brindo-pequena-ayuda
+  + https://www.locanto.com.pe/chiclayo/ID_7002890620/Ayuda-economica-solo
+  + https://www.locanto.com.pe/chiclayo/ID_6674255828/ayuda-economica-solo
+  + https://www.locanto.com.pe/chiclayo/ID_6674253510/Ayuda-economica-en-c
+  + https://www.locanto.com.pe/chiclayo/ID_6674253337/ayuda-economica-a-ch
+  + https://www.locanto.com.pe/chiclayo/ID_6674252892/Ayuda-economica-solo
+  + https://www.locanto.com.pe/chiclayo/ID_6674252434/Ayuda-economica-solo
+  + https://www.locanto.com.pe/chiclayo/ID_7323897021/Doy-ayuda-economica-
+LIST p2: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/2/?query=ayuda+economica
+  main IDs: 46
+  + https://www.locanto.com.pe/chiclayo/ID_9039922197/BRINDO-AYUDA-ECONOMI
+  + https://www.locanto.com.pe/chiclayo/ID_7747528011/Soy-universitario-bu
+  + https://www.locanto.com.pe/chiclayo/ID_7550457977/apoyo-economica-a-ch
+  + https://www.locanto.com.pe/chiclayo/ID_7854192711/Brindo-Ayuda-Economi
+  + https://www.locanto.com.pe/chiclayo/ID_9026293893/Apoyo-economico-para
+  + https://www.locanto.com.pe/chiclayo/ID_8480060181/Busco-senora-madura-
+  + https://www.locanto.com.pe/chiclayo/ID_8209556274/Universitaria-busca-
+  + https://www.locanto.com.pe/chiclayo/ID_7957875379/Dama-si-necesitas-ay
+  + https://www.locanto.com.pe/chiclayo/ID_7815108442/Ayuda-economica-a-se
+  + https://www.locanto.com.pe/chiclayo/ID_8476864099/APOYO-ECONOMICO-A-SE
+  + https://www.locanto.com.pe/chiclayo/ID_5036692333/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/chiclayo/ID_8939224876/Ayuda-economica-para
+  + https://www.locanto.com.pe/chiclayo/ID_7630124396/Ayuda-Economica-Chic
+  + https://www.locanto.com.pe/chiclayo/ID_8055626294/Ayuda-economica-a-co
+  + https://www.locanto.com.pe/chiclayo/ID_8465368535/Ayuda-economica-a-se
+  + https://www.locanto.com.pe/chiclayo/ID_8465360827/Ayuda-economica-a-se
+  + https://www.locanto.com.pe/chiclayo/ID_8289371765/Alguna-chica-univers
+  + https://www.locanto.com.pe/chiclayo/ID_8912504162/Ayuda-economica-a-da
+  + https://www.locanto.com.pe/chiclayo/ID_7712805936/Doy-Apoyo-Economico-
+  + https://www.locanto.com.pe/chiclayo/ID_5828938422/te-ofrezco-ayuda-eco
+  + https://www.locanto.com.pe/chiclayo/ID_8439273851/BRINDO-APOYO-ECONOMI
+  + https://www.locanto.com.pe/chiclayo/ID_7328827087/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/chiclayo/ID_8162820596/Busco-senora-madura-
+  + https://www.locanto.com.pe/chiclayo/ID_8167986049/Busco-mujer-madura-p
+  + https://www.locanto.com.pe/chiclayo/ID_8289410821/Busco-senora-madura-
+  + https://www.locanto.com.pe/chiclayo/ID_7631554130/Ayuda-economica-solo
+  + https://www.locanto.com.pe/chiclayo/ID_8272957295/Busco-apoyar-a-chica
+  + https://www.locanto.com.pe/chiclayo/ID_8264760577/Busco-mujer-madura-p
+  + https://www.locanto.com.pe/chiclayo/ID_7582024534/Ayuda-economica.html
+  + https://www.locanto.com.pe/chiclayo/ID_8018499943/Ayuda-economica-a-es
+  + https://www.locanto.com.pe/chiclayo/ID_8018506728/Brindo-ayuda-economi
+  + https://www.locanto.com.pe/chiclayo/ID_8018540058/Doy-ayuda-economica-
+  + https://www.locanto.com.pe/chiclayo/ID_8602490058/Acuerdo-Privado-Ayud
+  + https://www.locanto.com.pe/chiclayo/ID_7780589217/Senorita-para-apoyo-
+  + https://www.locanto.com.pe/chiclayo/ID_8136647280/busco-senora-madura-
+  + https://www.locanto.com.pe/chiclayo/ID_8005304932/Brindo-Ayuda-Economi
+  + https://www.locanto.com.pe/chiclayo/ID_8125288698/Ayuda-economica-lind
+  + https://www.locanto.com.pe/chiclayo/ID_7864043232/Brindo-apoyo-economi
+  + https://www.locanto.com.pe/chiclayo/ID_8370504042/Doy-ayuda-economica-
+LIST p3: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/3/?query=ayuda+economica
+  main IDs: 46
+  + https://www.locanto.com.pe/chiclayo/ID_8742263075/Ayuda-economica-para
+LIST p4: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/4/?query=ayuda+economica
+  main IDs: 46
+LIST p5: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/5/?query=ayuda+economica
+  main IDs: 46
+LIST p6: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/6/?query=ayuda+economica
+  main IDs: 46
+LIST p7: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/7/?query=ayuda+economica
+  main IDs: 46
+LIST p8: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/8/?query=ayuda+economica
+  main IDs: 46
+LIST p9: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/9/?query=ayuda+economica
+  main IDs: 46
+LIST p10: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/10/?query=ayuda+economica
+  main IDs: 46
+LIST p11: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/11/?query=ayuda+economica
+  main IDs: 46
+LIST p12: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/12/?query=ayuda+economica
+  main IDs: 46
+LIST p13: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/13/?query=ayuda+economica
+  main IDs: 46
+LIST p14: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/14/?query=ayuda+economica
+  main IDs: 46
+LIST p15: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/15/?query=ayuda+economica
+  main IDs: 46
+LIST p16: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/16/?query=ayuda+economica
+  main IDs: 46
+LIST p17: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/17/?query=ayuda+economica
+  main IDs: 46
+LIST p18: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/18/?query=ayuda+economica
+  main IDs: 46
+LIST p19: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/19/?query=ayuda+economica
+  main IDs: 46
+LIST p20: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/20/?query=ayuda+economica
+  main IDs: 46
+LIST p21: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/21/?query=ayuda+economica
+  main IDs: 46
+LIST p22: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/22/?query=ayuda+economica
+  main IDs: 46
+LIST p23: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/23/?query=ayuda+economica
+  main IDs: 46
+LIST p24: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/24/?query=ayuda+economica
+  main IDs: 46
+LIST p25: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/25/?query=ayuda+economica
+  main IDs: 46
+LIST p26: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/26/?query=ayuda+economica
+  main IDs: 46
+LIST p27: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/27/?query=ayuda+economica
+  main IDs: 46
+LIST p28: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/28/?query=ayuda+economica
+  main IDs: 46
+LIST p29: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/29/?query=ayuda+economica
+  main IDs: 46
+LIST p30: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/30/?query=ayuda+economica
+  main IDs: 46
+LIST p31: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/31/?query=ayuda+economica
+  main IDs: 46
+LIST p32: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/32/?query=ayuda+economica
+  main IDs: 46
+LIST p33: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/33/?query=ayuda+economica
+  main IDs: 46
+LIST p34: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/34/?query=ayuda+economica
+  main IDs: 46
+LIST p35: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/35/?query=ayuda+economica
+  main IDs: 46
+LIST p36: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/36/?query=ayuda+economica
+  main IDs: 46
+LIST p37: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/37/?query=ayuda+economica
+  main IDs: 46
+LIST p38: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/38/?query=ayuda+economica
+  main IDs: 46
+LIST p39: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/39/?query=ayuda+economica
+  main IDs: 46
+LIST p40: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/40/?query=ayuda+economica
+  main IDs: 46
+LIST p41: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/41/?query=ayuda+economica
+  main IDs: 46
+LIST p42: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/42/?query=ayuda+economica
+  main IDs: 46
+LIST p43: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/43/?query=ayuda+economica
+  main IDs: 46
+LIST p44: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/44/?query=ayuda+economica
+  main IDs: 46
+LIST p45: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/45/?query=ayuda+economica
+  main IDs: 46
+LIST p46: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/46/?query=ayuda+economica
+  main IDs: 46
+LIST p47: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/47/?query=ayuda+economica
+  main IDs: 46
+LIST p48: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/48/?query=ayuda+economica
+  main IDs: 46
+LIST p49: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/49/?query=ayuda+economica
+  main IDs: 46
+LIST p50: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/50/?query=ayuda+economica
+  main IDs: 46
+LIST p51: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/51/?query=ayuda+economica
+  main IDs: 46
+LIST p52: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/52/?query=ayuda+economica
+  main IDs: 46
+LIST p53: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/53/?query=ayuda+economica
+  main IDs: 46
+LIST p54: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/54/?query=ayuda+economica
+  main IDs: 46
+LIST p55: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/55/?query=ayuda+economica
+  main IDs: 46
+LIST p56: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/56/?query=ayuda+economica
+  main IDs: 46
+LIST p57: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/57/?query=ayuda+economica
+  main IDs: 46
+LIST p58: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/58/?query=ayuda+economica
+  main IDs: 46
+LIST p59: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/59/?query=ayuda+economica
+  main IDs: 46
+LIST p60: https://www.locanto.com.pe/chiclayo/Hombre-busca-mujer/20701/60/?query=ayuda+economica
+  main IDs: 46
+DONE chiclayo: added=71 last_p=60
+SUMMARY chiclayo added=71 last=60

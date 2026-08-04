@@ -1,0 +1,94 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+START cusco v3 section list crawl (main cards ONLY, tuned)
+base=https://www.locanto.com.pe/cusco/Hombre-busca-mujer/20701
+LIST p1: https://www.locanto.com.pe/cusco/Hombre-busca-mujer/20701/1/?query=ayuda+economica
+  main IDs: 48
+  + https://www.locanto.com.pe/cusco/ID_7616954587/Ayuda-economica-en-efec
+  + https://www.locanto.com.pe/cusco/ID_7616954852/Doy-ayuda-economica-en-
+  + https://www.locanto.com.pe/cusco/ID_7618232566/ayuda-economica-con-dis
+  + https://www.locanto.com.pe/cusco/ID_7618232809/Doy-ayuda-economica-en-
+  + https://www.locanto.com.pe/cusco/ID_8681956361/Ayuda-economica-a-senor
+  + https://www.locanto.com.pe/cusco/ID_8912764656/DOY-AYUDA-ECONOMICA-A-Q
+  + https://www.locanto.com.pe/cusco/ID_8047502369/Doy-ayuda-economica-a-c
+  + https://www.locanto.com.pe/cusco/ID_8047182372/AYUDA-ECONOMICA-A-SENOR
+  + https://www.locanto.com.pe/cusco/ID_7609602973/AYUDA-ECONOMICA-A-SENOR
+  + https://www.locanto.com.pe/cusco/ID_8906946135/Ayuda-economica-a-joven
+  + https://www.locanto.com.pe/cusco/ID_8785754527/Ayuda-economica-a-senor
+  + https://www.locanto.com.pe/cusco/ID_7604624116/AYUDA-ECONOMICA-A-SENOR
+  + https://www.locanto.com.pe/cusco/ID_8447656747/Ayuda-economica-cusco-a
+  + https://www.locanto.com.pe/cusco/ID_8901896311/Doy-ayuda-economica-con
+  + https://www.locanto.com.pe/cusco/ID_8901717879/ayuda-economica-para-sr
+  + https://www.locanto.com.pe/cusco/ID_8161304978/Se-da-ayuda-economica-a
+  + https://www.locanto.com.pe/cusco/ID_7603079270/se-brinda-ayuda-economi
+  + https://www.locanto.com.pe/cusco/ID_7603082201/se-brinda-ayuda-economi
+LIST p2: https://www.locanto.com.pe/cusco/Hombre-busca-mujer/20701/2/?query=ayuda+economica
+  main IDs: 48
+  + https://www.locanto.com.pe/cusco/ID_7800654075/Doy-ayuda-economica-con
+  + https://www.locanto.com.pe/cusco/ID_8815854419/Brindo-ayuda-economica-
+  + https://www.locanto.com.pe/cusco/ID_8808477591/Se-brinda-ayuda-economi
+  + https://www.locanto.com.pe/cusco/ID_8786148220/Doy-ayuda-economica-a-s
+  + https://www.locanto.com.pe/cusco/ID_6963285938/Ayuda-economica-apoyo-a
+  + https://www.locanto.com.pe/cusco/ID_7132583409/Soy-sugar-daddy-brindo-
+  + https://www.locanto.com.pe/cusco/ID_7129317240/Brindo-ayuda-economica-
+  + https://www.locanto.com.pe/cusco/ID_7133341731/Soy-sugar-daddy-brindo-
+  + https://www.locanto.com.pe/cusco/ID_7334407832/Ayuda-economica-cusco-D
+  + https://www.locanto.com.pe/cusco/ID_9043237112/Doy-ayuda-economica-a-s
+  + https://www.locanto.com.pe/cusco/ID_8765088148/Ayuda-economica-Cusco-S
+  + https://www.locanto.com.pe/cusco/ID_8784085598/Ayuda-economica-para-se
+  + https://www.locanto.com.pe/cusco/ID_8788937023/Doy-ayuda-economica-a-s
+  + https://www.locanto.com.pe/cusco/ID_8576098248/Chicas-doy-ayuda-econom
+  + https://www.locanto.com.pe/cusco/ID_7979345205/Doy-ayuda-economica.htm
+  + https://www.locanto.com.pe/cusco/ID_8784067945/Ayuda-economica-a-unive
+  + https://www.locanto.com.pe/cusco/ID_8514267251/Doy-ayuda-al-instante-a
+  + https://www.locanto.com.pe/cusco/ID_8774431531/Ayuda-economica-Cusco-a
+  + https://www.locanto.com.pe/cusco/ID_8776953222/Ayuda-economica-univers
+  + https://www.locanto.com.pe/cusco/ID_8777162979/Ayuda-economica-cusco-a
+  + https://www.locanto.com.pe/cusco/ID_8545381449/Ayuda-economica-a-chica
+  + https://www.locanto.com.pe/cusco/ID_8344297137/senorita-doy-ayuda-econ
+  + https://www.locanto.com.pe/cusco/ID_8344321070/brindo-ayuda-economica-
+  + https://www.locanto.com.pe/cusco/ID_8344355911/Brindo-ayuda-economica-
+  + https://www.locanto.com.pe/cusco/ID_8344389362/Ayuda-economica-y-apoyo
+LIST p3: https://www.locanto.com.pe/cusco/Hombre-busca-mujer/20701/3/?query=ayuda+economica
+  main IDs: 48
+  + https://www.locanto.com.pe/cusco/ID_7640144916/AYUDA-ECONOMICA-SENORIT
+  + https://www.locanto.com.pe/cusco/ID_8197674672/Doy-ayuda-economica-con
+  + https://www.locanto.com.pe/cusco/ID_8494062484/Ayuda-economica-para-se
+  + https://www.locanto.com.pe/cusco/ID_8966087347/Brindo-ayuda-economica-
+  + https://www.locanto.com.pe/cusco/ID_8514247228/Doy-ayuda-economica-a-c
+  + https://www.locanto.com.pe/cusco/ID_6317916993/Ayuda-economica-total-d
+  + https://www.locanto.com.pe/cusco/ID_6317967292/Ayuda-economica-total-d
+  + https://www.locanto.com.pe/cusco/ID_6439748570/Doy-ayuda-economica.htm
+  + https://www.locanto.com.pe/cusco/ID_8948058346/AYUDA-ECONOMICA-TODO-DI
+  + https://www.locanto.com.pe/cusco/ID_8489861425/Doy-ayuda-economica-a-c
+  + https://www.locanto.com.pe/cusco/ID_7931916584/Ayuda-economica-con-dis
+  + https://www.locanto.com.pe/cusco/ID_8934650694/Doy-ayuda-economica-a-s
+  + https://www.locanto.com.pe/cusco/ID_8296918353/Ayuda-economica.html
+  + https://www.locanto.com.pe/cusco/ID_6937983980/Ayuda-Economica-para-Tu
+  + https://www.locanto.com.pe/cusco/ID_7616186531/Se-da-ayuda-economica-r
+  + https://www.locanto.com.pe/cusco/ID_7616955152/ayuda-economica-con-dis
+  + https://www.locanto.com.pe/cusco/ID_8443544753/Dindoy-ayuda-economica-
+  + https://www.locanto.com.pe/cusco/ID_7791393237/AYUDA-ECONOMICA-A-SENOR
+  + https://www.locanto.com.pe/cusco/ID_7791394901/BRINDO-AYUDA-ECONOMICA-
+  + https://www.locanto.com.pe/cusco/ID_8168567655/Doy-ayuda-economica-chi
+  + https://www.locanto.com.pe/cusco/ID_7790789306/DOY-AYUDA-ECONOMICA-A-S
+  + https://www.locanto.com.pe/cusco/ID_8906439953/Ayuda-economica-cusco-a
+  + https://www.locanto.com.pe/cusco/ID_8906377696/ayuda-economica-a-senor
+  + https://www.locanto.com.pe/cusco/ID_7824724308/Ayuda-economica-constan
+LIST p4: https://www.locanto.com.pe/cusco/Hombre-busca-mujer/20701/4/?query=ayuda+economica
+  main IDs: 26
+  + https://www.locanto.com.pe/cusco/ID_4304644591/ayuda-economica-aaa-muj
+  + https://www.locanto.com.pe/cusco/ID_8851544353/Doy-ayuda-economica-de-
+  + https://www.locanto.com.pe/cusco/ID_8141434277/Doyyy-ayuda-economica-a
+  + https://www.locanto.com.pe/cusco/ID_7623659580/Ddoy-ayuda-economica-so
+  + https://www.locanto.com.pe/cusco/ID_7623677487/Doyy-ayuda-economica-a-
+  + https://www.locanto.com.pe/cusco/ID_7609791187/Doyy-ayuda-economica-a-
+  + https://www.locanto.com.pe/cusco/ID_7609802683/Soy-solvente-y-doy-ayud
+  + https://www.locanto.com.pe/cusco/ID_6502162297/Brindo-ayuda-economica-
+  + https://www.locanto.com.pe/cusco/ID_8415677998/Doy-ayuda-economica-al-
+  + https://www.locanto.com.pe/cusco/ID_8391148224/Ayuda-economica-a-srta.
+  + https://www.locanto.com.pe/cusco/ID_8130376205/Ayuda-economica.html
+  + https://www.locanto.com.pe/cusco/ID_7800659679/Doy-ayuda-economica-con
+  + https://www.locanto.com.pe/cusco/ID_7800655928/Doy-ayuda-economica-con
+DONE cusco: added=80
+SUMMARY cusco added=80

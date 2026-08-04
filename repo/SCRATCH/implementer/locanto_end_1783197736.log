@@ -1,0 +1,9 @@
+[2026-07-04T20:42:16.381981Z] FETCH: https://www.locanto.com.pe/lima/ID_7811686992/Brindo-Ayuda-Economica-a-Senoritas-de-como-maximo-21-anos.html
+[2026-07-04T20:43:01.159074Z] len=113468
+[2026-07-04T20:43:01.254654Z] ARCH locanto_f_e10726b71999a5d2.html
+[2026-07-04T20:43:01.264360Z] ADD e10726b7
+[2026-07-04T20:43:01.265042Z] FETCH: https://www.locanto.com.pe/arequipa/ID_5306671185/Brindo-ayuda-a-senoritas-buscando-un-apoyo.html
+[2026-07-04T20:43:46.830295Z] len=102037
+[2026-07-04T20:43:46.918879Z] ARCH locanto_f_74e85443e3cd2d92.html
+[2026-07-04T20:43:46.926046Z] DUP
+[2026-07-04T20:43:46.927081Z] END added this=1

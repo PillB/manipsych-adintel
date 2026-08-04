@@ -1,0 +1,5 @@
+[18:27:25] START locanto_fast target=1500 start_tagged_detail=197 content_heuristic≈197 mode=mine
+[18:27:29] MINED 2768 IDs from raw listing archives
+[18:27:29] seeds 2768 -> /Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/seeds_locanto_fast_1783553244.jsonl
+[18:27:53] pending after dedup=1341 (from 2768)
+[18:27:53] FETCH start pending=1341 mode=serial_playwright

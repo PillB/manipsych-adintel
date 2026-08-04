@@ -1,0 +1,756 @@
+[16:15:10] START engine=playwright detail=playwright phase=both targets D=0 E=1500
+[16:15:10] START engine=playwright detail=playwright phase=both targets D=1500 E=0
+[16:15:11] existing raw counts={'doplim': 442, 'evisos': 0, 'other': 1930}
+[16:15:11] existing raw counts={'doplim': 442, 'evisos': 0, 'other': 1930}
+[16:15:22] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/lima/ cards=17
+[16:15:24] EVISOS p1 https://www.evisos.com.pe/por-ayuda-economica.htm: main_loose=25 main_strict=13
+[16:15:24]   OK 10+ main cards
+[16:15:27]   show_more #1: 17->38
+[16:15:31]   show_more #2: 38->62
+[16:15:35] EVISOS p2 https://www.evisos.com.pe/por-ayuda-economica/clasificados/2: main_loose=5 main_strict=2
+[16:15:35]   show_more #3: 62->86
+[16:15:40]   show_more #4: 86->110
+[16:15:46]   show_more #5: 110->134
+[16:15:47] EVISOS p3 https://www.evisos.com.pe/por-ayuda-economica/clasificados/3: main_loose=25 main_strict=13
+[16:15:47]   OK 10+ main cards
+[16:15:51]   show_more #6: 134->158
+[16:15:55]   show_more #7: 158->182
+[16:15:57] EVISOS p4 https://www.evisos.com.pe/por-ayuda-economica/clasificados/4: main_loose=25 main_strict=13
+[16:15:57]   OK 10+ main cards
+[16:16:00]   show_more #8: 182->206
+[16:16:06]   show_more #9: 206->230
+[16:16:07]   no show_more control
+[16:16:07] DOPLIM hombre-busca-mujer/lima: 230 main cards
+[16:16:08] EVISOS p5 https://www.evisos.com.pe/por-ayuda-economica/clasificados/5: main_loose=25 main_strict=13
+[16:16:08]   OK 10+ main cards
+[16:16:16] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/arequipa/ cards=30
+[16:16:19] EVISOS p6 https://www.evisos.com.pe/por-ayuda-economica/clasificados/6: main_loose=25 main_strict=13
+[16:16:19]   OK 10+ main cards
+[16:16:20]   show_more #1: 30->60
+[16:16:24]   show_more #2: 60->90
+[16:16:29]   show_more #3: 90->120
+[16:16:29] EVISOS p7 https://www.evisos.com.pe/por-ayuda-economica/clasificados/7: main_loose=25 main_strict=13
+[16:16:29]   OK 10+ main cards
+[16:16:30] DOPLIM ERR https://www.doplim.com.pe/s/hombre-busca-mujer/arequipa/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:16:37] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/trujillo/ cards=30
+[16:16:40] EVISOS p8 https://www.evisos.com.pe/por-ayuda-economica/clasificados/8: main_loose=25 main_strict=13
+[16:16:40]   OK 10+ main cards
+[16:16:40]   show_more #1: 30->60
+[16:16:45]   show_more #2: 60->90
+[16:16:49]   show_more #3: 90->120
+[16:16:51] EVISOS p9 https://www.evisos.com.pe/por-ayuda-economica/clasificados/9: main_loose=25 main_strict=13
+[16:16:51]   OK 10+ main cards
+[16:16:54]   show_more #4: 120->150
+[16:16:58]   show_more #5: 150->180
+[16:17:02] EVISOS p10 https://www.evisos.com.pe/por-ayuda-economica/clasificados/10: main_loose=25 main_strict=13
+[16:17:02]   OK 10+ main cards
+[16:17:02]   show_more #6: 180->210
+[16:17:07]   show_more #7: 210->240
+[16:17:12]   show_more #8: 240->270
+[16:17:13] EVISOS p11 https://www.evisos.com.pe/por-ayuda-economica/clasificados/11: main_loose=25 main_strict=13
+[16:17:13]   OK 10+ main cards
+[16:17:17]   show_more #9: 270->300
+[16:17:17]   no show_more control
+[16:17:18] DOPLIM hombre-busca-mujer/trujillo: 300 main cards
+[16:17:24] EVISOS p12 https://www.evisos.com.pe/por-ayuda-economica/clasificados/12: main_loose=25 main_strict=13
+[16:17:24]   OK 10+ main cards
+[16:17:28] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/cusco/ cards=30
+[16:17:31]   show_more #1: 30->60
+[16:17:35] EVISOS p13 https://www.evisos.com.pe/por-ayuda-economica/clasificados/13: main_loose=25 main_strict=13
+[16:17:35]   OK 10+ main cards
+[16:17:36]   show_more #2: 60->90
+[16:17:40]   show_more #3: 90->120
+[16:17:45]   show_more #4: 120->150
+[16:17:47] EVISOS p14 https://www.evisos.com.pe/por-ayuda-economica/clasificados/14: main_loose=25 main_strict=13
+[16:17:47]   OK 10+ main cards
+[16:17:50]   show_more #5: 150->180
+[16:17:54]   show_more #6: 180->210
+[16:17:57] EVISOS p15 https://www.evisos.com.pe/por-ayuda-economica/clasificados/15: main_loose=25 main_strict=13
+[16:17:57]   OK 10+ main cards
+[16:17:58]   show_more #7: 210->240
+[16:18:02]   show_more #8: 240->270
+[16:18:06]   show_more #9: 270->300
+[16:18:07] DOPLIM ERR https://www.doplim.com.pe/s/hombre-busca-mujer/cusco/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:18:08] EVISOS p16 https://www.evisos.com.pe/por-ayuda-economica/clasificados/16: main_loose=25 main_strict=13
+[16:18:08]   OK 10+ main cards
+[16:18:15] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/piura/ cards=30
+[16:18:19]   show_more #1: 30->60
+[16:18:19] EVISOS p17 https://www.evisos.com.pe/por-ayuda-economica/clasificados/17: main_loose=25 main_strict=13
+[16:18:19]   OK 10+ main cards
+[16:18:23]   show_more #2: 60->90
+[16:18:24] DOPLIM ERR https://www.doplim.com.pe/s/hombre-busca-mujer/piura/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:18:31] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/ cards=5
+[16:18:31] EVISOS p18 https://www.evisos.com.pe/por-ayuda-economica/clasificados/18: main_loose=25 main_strict=13
+[16:18:31]   OK 10+ main cards
+[16:18:32]   no show_more control
+[16:18:32] DOPLIM hombre-busca-mujer/chiclayo: 5 main cards
+[16:18:32]   WARN <10 cards on page for https://www.doplim.com.pe/s/hombre-busca-mujer/chiclayo/
+[16:18:42] EVISOS p19 https://www.evisos.com.pe/por-ayuda-economica/clasificados/19: main_loose=25 main_strict=13
+[16:18:42]   OK 10+ main cards
+[16:18:42] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/callao/ cards=30
+[16:18:46]   show_more #1: 30->60
+[16:18:50]   show_more #2: 60->90
+[16:18:54] EVISOS p20 https://www.evisos.com.pe/por-ayuda-economica/clasificados/20: main_loose=25 main_strict=13
+[16:18:54]   OK 10+ main cards
+[16:18:54]   show_more #3: 90->120
+[16:18:59]   show_more #4: 120->150
+[16:19:03]   show_more #5: 150->180
+[16:19:06] EVISOS p21 https://www.evisos.com.pe/por-ayuda-economica/clasificados/21: main_loose=25 main_strict=13
+[16:19:06]   OK 10+ main cards
+[16:19:07]   show_more #6: 180->210
+[16:19:08]   no show_more control
+[16:19:08] DOPLIM hombre-busca-mujer/callao: 210 main cards
+[16:19:18] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/huancayo/ cards=30
+[16:19:18] EVISOS p22 https://www.evisos.com.pe/por-ayuda-economica/clasificados/22: main_loose=25 main_strict=13
+[16:19:18]   OK 10+ main cards
+[16:19:23]   show_more #1: 30->60
+[16:19:27]   show_more #2: 60->90
+[16:19:29] EVISOS p23 https://www.evisos.com.pe/por-ayuda-economica/clasificados/23: main_loose=25 main_strict=13
+[16:19:29]   OK 10+ main cards
+[16:19:31]   show_more #3: 90->120
+[16:19:36]   show_more #4: 120->150
+[16:19:39]   show_more #5: 150->180
+[16:19:41] DOPLIM ERR https://www.doplim.com.pe/s/hombre-busca-mujer/huancayo/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:19:41] EVISOS p24 https://www.evisos.com.pe/por-ayuda-economica/clasificados/24: main_loose=25 main_strict=13
+[16:19:41]   OK 10+ main cards
+[16:19:48] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/ica/ cards=30
+[16:19:52]   show_more #1: 30->60
+[16:19:52] EVISOS p25 https://www.evisos.com.pe/por-ayuda-economica/clasificados/25: main_loose=25 main_strict=13
+[16:19:52]   OK 10+ main cards
+[16:19:56]   show_more #2: 60->90
+[16:20:00]   show_more #3: 90->120
+[16:20:04]   show_more #4: 120->150
+[16:20:04] EVISOS p26 https://www.evisos.com.pe/por-ayuda-economica/clasificados/26: main_loose=25 main_strict=13
+[16:20:04]   OK 10+ main cards
+[16:20:08]   show_more #5: 150->180
+[16:20:12]   show_more #6: 180->210
+[16:20:16] EVISOS p27 https://www.evisos.com.pe/por-ayuda-economica/clasificados/27: main_loose=25 main_strict=13
+[16:20:16]   OK 10+ main cards
+[16:20:17]   show_more #7: 210->240
+[16:20:22]   show_more #8: 240->270
+[16:20:23] DOPLIM ERR https://www.doplim.com.pe/s/hombre-busca-mujer/ica/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:20:26] EVISOS p28 https://www.evisos.com.pe/por-ayuda-economica/clasificados/28: main_loose=25 main_strict=13
+[16:20:26]   OK 10+ main cards
+[16:20:30] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/tacna/ cards=5
+[16:20:31]   no show_more control
+[16:20:31] DOPLIM hombre-busca-mujer/tacna: 5 main cards
+[16:20:31]   WARN <10 cards on page for https://www.doplim.com.pe/s/hombre-busca-mujer/tacna/
+[16:20:37] EVISOS p29 https://www.evisos.com.pe/por-ayuda-economica/clasificados/29: main_loose=25 main_strict=13
+[16:20:37]   OK 10+ main cards
+[16:20:44] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/puno/ cards=30
+[16:20:48]   show_more #1: 30->60
+[16:20:49] EVISOS p30 https://www.evisos.com.pe/por-ayuda-economica/clasificados/30: main_loose=25 main_strict=13
+[16:20:49]   OK 10+ main cards
+[16:20:53]   show_more #2: 60->90
+[16:20:54] DOPLIM ERR https://www.doplim.com.pe/s/hombre-busca-mujer/puno/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:21:00] EVISOS p31 https://www.evisos.com.pe/por-ayuda-economica/clasificados/31: main_loose=25 main_strict=13
+[16:21:00]   OK 10+ main cards
+[16:21:01] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/cajamarca/ cards=30
+[16:21:05]   show_more #1: 30->60
+[16:21:10]   show_more #2: 60->90
+[16:21:12] EVISOS p32 https://www.evisos.com.pe/por-ayuda-economica/clasificados/32: main_loose=25 main_strict=13
+[16:21:12]   OK 10+ main cards
+[16:21:15]   show_more #3: 90->120
+[16:21:19]   show_more #4: 120->150
+[16:21:23]   show_more #5: 150->180
+[16:21:24] EVISOS p33 https://www.evisos.com.pe/por-ayuda-economica/clasificados/33: main_loose=25 main_strict=13
+[16:21:24]   OK 10+ main cards
+[16:21:28]   show_more #6: 180->210
+[16:21:29] DOPLIM ERR https://www.doplim.com.pe/s/hombre-busca-mujer/cajamarca/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:21:36] EVISOS p34 https://www.evisos.com.pe/por-ayuda-economica/clasificados/34: main_loose=25 main_strict=13
+[16:21:36]   OK 10+ main cards
+[16:21:36] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/chimbote/ cards=30
+[16:21:40]   show_more #1: 30->60
+[16:21:43]   show_more #2: 60->90
+[16:21:47] EVISOS p35 https://www.evisos.com.pe/por-ayuda-economica/clasificados/35: main_loose=25 main_strict=13
+[16:21:47]   OK 10+ main cards
+[16:21:48]   show_more #3: 90->120
+[16:21:52]   show_more #4: 120->150
+[16:21:56]   show_more #5: 150->180
+[16:21:58] DOPLIM ERR https://www.doplim.com.pe/s/hombre-busca-mujer/chimbote/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:21:58] EVISOS p36 https://www.evisos.com.pe/por-ayuda-economica/clasificados/36: main_loose=25 main_strict=13
+[16:21:58]   OK 10+ main cards
+[16:22:05] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/ cards=5
+[16:22:06]   no show_more control
+[16:22:06] DOPLIM hombre-busca-mujer/ayacucho: 5 main cards
+[16:22:06]   WARN <10 cards on page for https://www.doplim.com.pe/s/hombre-busca-mujer/ayacucho/
+[16:22:10] EVISOS p37 https://www.evisos.com.pe/por-ayuda-economica/clasificados/37: main_loose=25 main_strict=13
+[16:22:10]   OK 10+ main cards
+[16:22:16] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/huancavelica/ cards=30
+[16:22:20]   show_more #1: 30->60
+[16:22:22] EVISOS p38 https://www.evisos.com.pe/por-ayuda-economica/clasificados/38: main_loose=25 main_strict=13
+[16:22:22]   OK 10+ main cards
+[16:22:24]   show_more #2: 60->86
+[16:22:25]   no show_more control
+[16:22:25] DOPLIM hombre-busca-mujer/huancavelica: 86 main cards
+[16:22:34] EVISOS p39 https://www.evisos.com.pe/por-ayuda-economica/clasificados/39: main_loose=25 main_strict=13
+[16:22:34]   OK 10+ main cards
+[16:22:34] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/iquitos/ cards=30
+[16:22:38]   show_more #1: 30->60
+[16:22:42]   show_more #2: 60->90
+[16:22:46] EVISOS p40 https://www.evisos.com.pe/por-ayuda-economica/clasificados/40: main_loose=25 main_strict=13
+[16:22:46]   OK 10+ main cards
+[16:22:46]   show_more #3: 90->120
+[16:22:48] DOPLIM ERR https://www.doplim.com.pe/s/hombre-busca-mujer/iquitos/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:22:55] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/tarapoto/ cards=5
+[16:22:56]   no show_more control
+[16:22:56] DOPLIM hombre-busca-mujer/tarapoto: 5 main cards
+[16:22:56]   WARN <10 cards on page for https://www.doplim.com.pe/s/hombre-busca-mujer/tarapoto/
+[16:22:57] EVISOS p41 https://www.evisos.com.pe/por-ayuda-economica/clasificados/41: main_loose=25 main_strict=13
+[16:22:57]   OK 10+ main cards
+[16:23:05] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/pucallpa/ cards=30
+[16:23:07] EVISOS p42 https://www.evisos.com.pe/por-ayuda-economica/clasificados/42: main_loose=25 main_strict=13
+[16:23:07]   OK 10+ main cards
+[16:23:09]   show_more #1: 30->60
+[16:23:14]   show_more #2: 60->90
+[16:23:15] DOPLIM ERR https://www.doplim.com.pe/s/hombre-busca-mujer/pucallpa/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:23:19] EVISOS p43 https://www.evisos.com.pe/por-ayuda-economica/clasificados/43: main_loose=25 main_strict=13
+[16:23:19]   OK 10+ main cards
+[16:23:22] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/juliaca/ cards=5
+[16:23:23]   no show_more control
+[16:23:23] DOPLIM hombre-busca-mujer/juliaca: 5 main cards
+[16:23:23]   WARN <10 cards on page for https://www.doplim.com.pe/s/hombre-busca-mujer/juliaca/
+[16:23:31] EVISOS p44 https://www.evisos.com.pe/por-ayuda-economica/clasificados/44: main_loose=25 main_strict=13
+[16:23:31]   OK 10+ main cards
+[16:23:31] DOPLIM start https://www.doplim.com.pe/s/hombre-busca-mujer/sullana/ cards=30
+[16:23:36]   show_more #1: 30->60
+[16:23:41]   show_more #2: 60->79
+[16:23:42]   no show_more control
+[16:23:42] DOPLIM hombre-busca-mujer/sullana: 79 main cards
+[16:23:42] EVISOS p45 https://www.evisos.com.pe/por-ayuda-economica/clasificados/45: main_loose=25 main_strict=13
+[16:23:42]   OK 10+ main cards
+[16:23:52] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/lima/ cards=30
+[16:23:53] EVISOS p46 https://www.evisos.com.pe/por-ayuda-economica/clasificados/46: main_loose=25 main_strict=13
+[16:23:53]   OK 10+ main cards
+[16:23:56]   show_more #1: 30->60
+[16:24:00]   show_more #2: 60->90
+[16:24:04]   show_more #3: 90->120
+[16:24:05] DOPLIM ERR https://www.doplim.com.pe/s/relaciones-ocasionales/lima/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:24:05] EVISOS p47 https://www.evisos.com.pe/por-ayuda-economica/clasificados/47: main_loose=25 main_strict=13
+[16:24:05]   OK 10+ main cards
+[16:24:12] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/arequipa/ cards=14
+[16:24:13]   no show_more control
+[16:24:13] DOPLIM relaciones-ocasionales/arequipa: 14 main cards
+[16:24:17] EVISOS p48 https://www.evisos.com.pe/por-ayuda-economica/clasificados/48: main_loose=25 main_strict=13
+[16:24:17]   OK 10+ main cards
+[16:24:22] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/trujillo/ cards=26
+[16:24:23]   no show_more control
+[16:24:23] DOPLIM relaciones-ocasionales/trujillo: 26 main cards
+[16:24:28] EVISOS p49 https://www.evisos.com.pe/por-ayuda-economica/clasificados/49: main_loose=25 main_strict=13
+[16:24:28]   OK 10+ main cards
+[16:24:32] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/cusco/ cards=5
+[16:24:33]   no show_more control
+[16:24:33] DOPLIM relaciones-ocasionales/cusco: 5 main cards
+[16:24:33]   WARN <10 cards on page for https://www.doplim.com.pe/s/relaciones-ocasionales/cusco/
+[16:24:40] EVISOS p50 https://www.evisos.com.pe/por-ayuda-economica/clasificados/50: main_loose=25 main_strict=13
+[16:24:40]   OK 10+ main cards
+[16:24:42] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/piura/ cards=5
+[16:24:43]   no show_more control
+[16:24:43] DOPLIM relaciones-ocasionales/piura: 5 main cards
+[16:24:43]   WARN <10 cards on page for https://www.doplim.com.pe/s/relaciones-ocasionales/piura/
+[16:24:52] EVISOS p1 https://www.evisos.com.pe/apoyo-economico.htm: main_loose=29 main_strict=8
+[16:24:52]   OK 10+ main cards
+[16:24:52] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/chiclayo/ cards=7
+[16:24:53]   no show_more control
+[16:24:53] DOPLIM relaciones-ocasionales/chiclayo: 7 main cards
+[16:24:53]   WARN <10 cards on page for https://www.doplim.com.pe/s/relaciones-ocasionales/chiclayo/
+[16:25:02] EVISOS p2 https://www.evisos.com.pe/apoyo-economico/clasificados/2: main_loose=30 main_strict=5
+[16:25:02]   OK 10+ main cards
+[16:25:03] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/callao/ cards=10
+[16:25:04]   no show_more control
+[16:25:04] DOPLIM relaciones-ocasionales/callao: 10 main cards
+[16:25:13] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/huancayo/ cards=5
+[16:25:14] EVISOS p3 https://www.evisos.com.pe/apoyo-economico/clasificados/3: main_loose=15 main_strict=3
+[16:25:14]   OK 10+ main cards
+[16:25:14]   no show_more control
+[16:25:14] DOPLIM relaciones-ocasionales/huancayo: 5 main cards
+[16:25:14]   WARN <10 cards on page for https://www.doplim.com.pe/s/relaciones-ocasionales/huancayo/
+[16:25:23] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/ica/ cards=5
+[16:25:24]   no show_more control
+[16:25:24] DOPLIM relaciones-ocasionales/ica: 5 main cards
+[16:25:24]   WARN <10 cards on page for https://www.doplim.com.pe/s/relaciones-ocasionales/ica/
+[16:25:25] EVISOS p4 https://www.evisos.com.pe/apoyo-economico/clasificados/4: main_loose=29 main_strict=8
+[16:25:25]   OK 10+ main cards
+[16:25:33] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/tacna/ cards=3
+[16:25:33]   no show_more control
+[16:25:34] DOPLIM relaciones-ocasionales/tacna: 3 main cards
+[16:25:34]   WARN <10 cards on page for https://www.doplim.com.pe/s/relaciones-ocasionales/tacna/
+[16:25:36] EVISOS p5 https://www.evisos.com.pe/apoyo-economico/clasificados/5: main_loose=29 main_strict=8
+[16:25:36]   OK 10+ main cards
+[16:25:43] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/puno/ cards=5
+[16:25:43]   no show_more control
+[16:25:44] DOPLIM relaciones-ocasionales/puno: 5 main cards
+[16:25:44]   WARN <10 cards on page for https://www.doplim.com.pe/s/relaciones-ocasionales/puno/
+[16:25:48] EVISOS p6 https://www.evisos.com.pe/apoyo-economico/clasificados/6: main_loose=29 main_strict=8
+[16:25:48]   OK 10+ main cards
+[16:25:53] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/cajamarca/ cards=12
+[16:25:54]   no show_more control
+[16:25:54] DOPLIM relaciones-ocasionales/cajamarca: 12 main cards
+[16:25:59] EVISOS p7 https://www.evisos.com.pe/apoyo-economico/clasificados/7: main_loose=29 main_strict=8
+[16:25:59]   OK 10+ main cards
+[16:26:03] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/chimbote/ cards=31
+[16:26:04]   no show_more control
+[16:26:04] DOPLIM relaciones-ocasionales/chimbote: 31 main cards
+[16:26:11] EVISOS p8 https://www.evisos.com.pe/apoyo-economico/clasificados/8: main_loose=29 main_strict=8
+[16:26:11]   OK 10+ main cards
+[16:26:13] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/ayacucho/ cards=30
+[16:26:16]   show_more #1: 30->30
+[16:26:18] DOPLIM relaciones-ocasionales/ayacucho: 30 main cards
+[16:26:22] EVISOS p9 https://www.evisos.com.pe/apoyo-economico/clasificados/9: main_loose=29 main_strict=8
+[16:26:22]   OK 10+ main cards
+[16:26:28] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/huancavelica/ cards=31
+[16:26:28]   no show_more control
+[16:26:28] DOPLIM relaciones-ocasionales/huancavelica: 31 main cards
+[16:26:33] EVISOS p10 https://www.evisos.com.pe/apoyo-economico/clasificados/10: main_loose=29 main_strict=8
+[16:26:33]   OK 10+ main cards
+[16:26:38] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/iquitos/ cards=30
+[16:26:42]   show_more #1: 30->30
+[16:26:44] EVISOS p11 https://www.evisos.com.pe/apoyo-economico/clasificados/11: main_loose=29 main_strict=8
+[16:26:44]   OK 10+ main cards
+[16:26:44] DOPLIM relaciones-ocasionales/iquitos: 30 main cards
+[16:26:55] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/tarapoto/ cards=30
+[16:26:55] EVISOS p12 https://www.evisos.com.pe/apoyo-economico/clasificados/12: main_loose=29 main_strict=8
+[16:26:55]   OK 10+ main cards
+[16:26:59]   show_more #1: 30->30
+[16:27:01] DOPLIM relaciones-ocasionales/tarapoto: 30 main cards
+[16:27:08] EVISOS p13 https://www.evisos.com.pe/apoyo-economico/clasificados/13: main_loose=29 main_strict=8
+[16:27:08]   OK 10+ main cards
+[16:27:11] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/pucallpa/ cards=30
+[16:27:15]   show_more #1: 30->30
+[16:27:17] DOPLIM relaciones-ocasionales/pucallpa: 30 main cards
+[16:27:18] EVISOS p14 https://www.evisos.com.pe/apoyo-economico/clasificados/14: main_loose=29 main_strict=8
+[16:27:18]   OK 10+ main cards
+[16:27:26] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/juliaca/ cards=5
+[16:27:27]   no show_more control
+[16:27:27] DOPLIM relaciones-ocasionales/juliaca: 5 main cards
+[16:27:27]   WARN <10 cards on page for https://www.doplim.com.pe/s/relaciones-ocasionales/juliaca/
+[16:27:29] EVISOS p15 https://www.evisos.com.pe/apoyo-economico/clasificados/15: main_loose=29 main_strict=8
+[16:27:29]   OK 10+ main cards
+[16:27:36] DOPLIM start https://www.doplim.com.pe/s/relaciones-ocasionales/sullana/ cards=30
+[16:27:39] EVISOS p16 https://www.evisos.com.pe/apoyo-economico/clasificados/16: main_loose=29 main_strict=8
+[16:27:39]   OK 10+ main cards
+[16:27:40]   show_more #1: 30->30
+[16:27:42] DOPLIM relaciones-ocasionales/sullana: 30 main cards
+[16:27:50] EVISOS p17 https://www.evisos.com.pe/apoyo-economico/clasificados/17: main_loose=29 main_strict=8
+[16:27:50]   OK 10+ main cards
+[16:27:52] DOPLIM start https://www.doplim.com.pe/s/contactos/lima/ cards=30
+[16:27:56]   show_more #1: 30->60
+[16:28:00]   show_more #2: 60->90
+[16:28:02] EVISOS p18 https://www.evisos.com.pe/apoyo-economico/clasificados/18: main_loose=29 main_strict=8
+[16:28:02]   OK 10+ main cards
+[16:28:04]   show_more #3: 90->120
+[16:28:08]   show_more #4: 120->150
+[16:28:08]   no show_more control
+[16:28:08] DOPLIM contactos/lima: 150 main cards
+[16:28:14] EVISOS p19 https://www.evisos.com.pe/apoyo-economico/clasificados/19: main_loose=29 main_strict=8
+[16:28:14]   OK 10+ main cards
+[16:28:19] DOPLIM start https://www.doplim.com.pe/s/contactos/arequipa/ cards=30
+[16:28:24]   show_more #1: 30->60
+[16:28:25] DOPLIM ERR https://www.doplim.com.pe/s/contactos/arequipa/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:28:26] EVISOS p20 https://www.evisos.com.pe/apoyo-economico/clasificados/20: main_loose=29 main_strict=8
+[16:28:26]   OK 10+ main cards
+[16:28:32] DOPLIM start https://www.doplim.com.pe/s/contactos/trujillo/ cards=30
+[16:28:36] EVISOS p21 https://www.evisos.com.pe/apoyo-economico/clasificados/21: main_loose=29 main_strict=8
+[16:28:36]   OK 10+ main cards
+[16:28:36]   show_more #1: 30->60
+[16:28:41]   show_more #2: 60->90
+[16:28:46]   show_more #3: 90->120
+[16:28:47] EVISOS p22 https://www.evisos.com.pe/apoyo-economico/clasificados/22: main_loose=29 main_strict=8
+[16:28:47]   OK 10+ main cards
+[16:28:49]   show_more #4: 120->150
+[16:28:54]   show_more #5: 150->180
+[16:28:58] EVISOS p23 https://www.evisos.com.pe/apoyo-economico/clasificados/23: main_loose=29 main_strict=8
+[16:28:58]   OK 10+ main cards
+[16:28:58]   show_more #6: 180->210
+[16:29:04]   show_more #7: 210->240
+[16:29:08]   show_more #8: 240->270
+[16:29:09] EVISOS p24 https://www.evisos.com.pe/apoyo-economico/clasificados/24: main_loose=29 main_strict=8
+[16:29:09]   OK 10+ main cards
+[16:29:14]   show_more #9: 270->300
+[16:29:14]   no show_more control
+[16:29:14] DOPLIM contactos/trujillo: 300 main cards
+[16:29:20] EVISOS p25 https://www.evisos.com.pe/apoyo-economico/clasificados/25: main_loose=29 main_strict=8
+[16:29:20]   OK 10+ main cards
+[16:29:23] DOPLIM start https://www.doplim.com.pe/s/contactos/cusco/ cards=30
+[16:29:27]   show_more #1: 30->60
+[16:29:32] EVISOS p26 https://www.evisos.com.pe/apoyo-economico/clasificados/26: main_loose=29 main_strict=8
+[16:29:32]   OK 10+ main cards
+[16:29:32]   show_more #2: 60->90
+[16:29:37]   show_more #3: 90->120
+[16:29:41]   show_more #4: 120->150
+[16:29:43] EVISOS p27 https://www.evisos.com.pe/apoyo-economico/clasificados/27: main_loose=29 main_strict=8
+[16:29:43]   OK 10+ main cards
+[16:29:45]   show_more #5: 150->180
+[16:29:49]   show_more #6: 180->210
+[16:29:53]   show_more #7: 210->240
+[16:29:54] EVISOS p28 https://www.evisos.com.pe/apoyo-economico/clasificados/28: main_loose=29 main_strict=8
+[16:29:54]   OK 10+ main cards
+[16:29:58]   show_more #8: 240->270
+[16:30:03]   show_more #9: 270->300
+[16:30:04]   no show_more control
+[16:30:04] DOPLIM contactos/cusco: 300 main cards
+[16:30:06] EVISOS p29 https://www.evisos.com.pe/apoyo-economico/clasificados/29: main_loose=29 main_strict=8
+[16:30:06]   OK 10+ main cards
+[16:30:13] DOPLIM start https://www.doplim.com.pe/s/contactos/piura/ cards=5
+[16:30:14]   no show_more control
+[16:30:14] DOPLIM contactos/piura: 5 main cards
+[16:30:14]   WARN <10 cards on page for https://www.doplim.com.pe/s/contactos/piura/
+[16:30:17] EVISOS p30 https://www.evisos.com.pe/apoyo-economico/clasificados/30: main_loose=29 main_strict=8
+[16:30:17]   OK 10+ main cards
+[16:30:24] DOPLIM start https://www.doplim.com.pe/s/contactos/chiclayo/ cards=30
+[16:30:28]   show_more #1: 30->60
+[16:30:28] EVISOS p31 https://www.evisos.com.pe/apoyo-economico/clasificados/31: main_loose=29 main_strict=8
+[16:30:28]   OK 10+ main cards
+[16:30:29] DOPLIM ERR https://www.doplim.com.pe/s/contactos/chiclayo/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:30:36] DOPLIM start https://www.doplim.com.pe/s/contactos/callao/ cards=30
+[16:30:40]   show_more #1: 30->60
+[16:30:41] EVISOS p32 https://www.evisos.com.pe/apoyo-economico/clasificados/32: main_loose=29 main_strict=8
+[16:30:41]   OK 10+ main cards
+[16:30:45]   show_more #2: 60->90
+[16:30:50]   show_more #3: 90->120
+[16:30:52] EVISOS p33 https://www.evisos.com.pe/apoyo-economico/clasificados/33: main_loose=29 main_strict=8
+[16:30:52]   OK 10+ main cards
+[16:30:55]   show_more #4: 120->150
+[16:30:59]   show_more #5: 150->180
+[16:31:02] EVISOS p34 https://www.evisos.com.pe/apoyo-economico/clasificados/34: main_loose=29 main_strict=8
+[16:31:02]   OK 10+ main cards
+[16:31:04]   show_more #6: 180->210
+[16:31:09]   show_more #7: 210->240
+[16:31:14]   show_more #8: 240->270
+[16:31:14] EVISOS p35 https://www.evisos.com.pe/apoyo-economico/clasificados/35: main_loose=29 main_strict=8
+[16:31:14]   OK 10+ main cards
+[16:31:19]   show_more #9: 270->300
+[16:31:20]   no show_more control
+[16:31:20] DOPLIM contactos/callao: 300 main cards
+[16:31:24] EVISOS p36 https://www.evisos.com.pe/apoyo-economico/clasificados/36: main_loose=29 main_strict=8
+[16:31:24]   OK 10+ main cards
+[16:31:30] DOPLIM start https://www.doplim.com.pe/s/contactos/huancayo/ cards=30
+[16:31:34]   show_more #1: 30->60
+[16:31:35] EVISOS p37 https://www.evisos.com.pe/apoyo-economico/clasificados/37: main_loose=29 main_strict=8
+[16:31:35]   OK 10+ main cards
+[16:31:38]   show_more #2: 60->90
+[16:31:43]   show_more #3: 90->120
+[16:31:45] EVISOS p38 https://www.evisos.com.pe/apoyo-economico/clasificados/38: main_loose=29 main_strict=8
+[16:31:45]   OK 10+ main cards
+[16:31:46]   show_more #4: 120->150
+[16:31:51]   show_more #5: 150->180
+[16:31:55]   show_more #6: 180->210
+[16:31:56] EVISOS p39 https://www.evisos.com.pe/apoyo-economico/clasificados/39: main_loose=29 main_strict=8
+[16:31:56]   OK 10+ main cards
+[16:32:00]   show_more #7: 210->240
+[16:32:05]   show_more #8: 240->270
+[16:32:06] EVISOS p40 https://www.evisos.com.pe/apoyo-economico/clasificados/40: main_loose=29 main_strict=8
+[16:32:06]   OK 10+ main cards
+[16:32:09]   show_more #9: 270->270
+[16:32:13]   no show_more control
+[16:32:13] DOPLIM contactos/huancayo: 300 main cards
+[16:32:18] EVISOS p41 https://www.evisos.com.pe/apoyo-economico/clasificados/41: main_loose=29 main_strict=8
+[16:32:18]   OK 10+ main cards
+[16:32:29] EVISOS p42 https://www.evisos.com.pe/apoyo-economico/clasificados/42: main_loose=29 main_strict=8
+[16:32:29]   OK 10+ main cards
+[16:32:30] DOPLIM start https://www.doplim.com.pe/s/contactos/ica/ cards=30
+[16:32:35]   show_more #1: 30->30
+[16:32:37] DOPLIM contactos/ica: 30 main cards
+[16:32:42] EVISOS p43 https://www.evisos.com.pe/apoyo-economico/clasificados/43: main_loose=29 main_strict=8
+[16:32:42]   OK 10+ main cards
+[16:32:52] EVISOS p44 https://www.evisos.com.pe/apoyo-economico/clasificados/44: main_loose=29 main_strict=8
+[16:32:52]   OK 10+ main cards
+[16:32:53] DOPLIM start https://www.doplim.com.pe/s/contactos/tacna/ cards=30
+[16:32:57]   show_more #1: 30->30
+[16:33:02] EVISOS p45 https://www.evisos.com.pe/apoyo-economico/clasificados/45: main_loose=29 main_strict=8
+[16:33:02]   OK 10+ main cards
+[16:33:04]   show_more #2: 60->60
+[16:33:10]   show_more #3: 90->120
+[16:33:13] DOPLIM ERR https://www.doplim.com.pe/s/contactos/tacna/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:33:14] EVISOS p46 https://www.evisos.com.pe/apoyo-economico/clasificados/46: main_loose=29 main_strict=8
+[16:33:14]   OK 10+ main cards
+[16:33:23] DOPLIM start https://www.doplim.com.pe/s/contactos/puno/ cards=30
+[16:33:24] EVISOS p47 https://www.evisos.com.pe/apoyo-economico/clasificados/47: main_loose=29 main_strict=8
+[16:33:24]   OK 10+ main cards
+[16:33:27]   show_more #1: 30->60
+[16:33:31]   show_more #2: 60->90
+[16:33:35]   show_more #3: 90->90
+[16:33:36] EVISOS p48 https://www.evisos.com.pe/apoyo-economico/clasificados/48: main_loose=29 main_strict=8
+[16:33:36]   OK 10+ main cards
+[16:33:37] DOPLIM contactos/puno: 90 main cards
+[16:33:47] EVISOS p49 https://www.evisos.com.pe/apoyo-economico/clasificados/49: main_loose=29 main_strict=8
+[16:33:47]   OK 10+ main cards
+[16:33:56] DOPLIM start https://www.doplim.com.pe/s/contactos/cajamarca/ cards=30
+[16:33:58] EVISOS p50 https://www.evisos.com.pe/apoyo-economico/clasificados/50: main_loose=29 main_strict=8
+[16:33:58]   OK 10+ main cards
+[16:34:00]   show_more #1: 30->30
+[16:34:05] DOPLIM ERR https://www.doplim.com.pe/s/contactos/cajamarca/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:34:09] EVISOS p1 https://www.evisos.com.pe/por-apoyo-economico.htm: main_loose=29 main_strict=8
+[16:34:09]   OK 10+ main cards
+[16:34:14] DOPLIM start https://www.doplim.com.pe/s/contactos/chimbote/ cards=30
+[16:34:18] EVISOS p2 https://www.evisos.com.pe/por-apoyo-economico/clasificados/2: main_loose=30 main_strict=5
+[16:34:18]   OK 10+ main cards
+[16:34:19]   show_more #1: 30->60
+[16:34:23]   show_more #2: 60->90
+[16:34:27]   show_more #3: 90->120
+[16:34:28] EVISOS p3 https://www.evisos.com.pe/por-apoyo-economico/clasificados/3: main_loose=15 main_strict=3
+[16:34:28]   OK 10+ main cards
+[16:34:32]   show_more #4: 120->150
+[16:34:37]   show_more #5: 150->180
+[16:34:38] DOPLIM ERR https://www.doplim.com.pe/s/contactos/chimbote/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:34:41] EVISOS p4 https://www.evisos.com.pe/por-apoyo-economico/clasificados/4: main_loose=29 main_strict=8
+[16:34:41]   OK 10+ main cards
+[16:34:45] DOPLIM start https://www.doplim.com.pe/s/contactos/ayacucho/ cards=30
+[16:34:49]   show_more #1: 30->60
+[16:34:52] EVISOS p5 https://www.evisos.com.pe/por-apoyo-economico/clasificados/5: main_loose=29 main_strict=8
+[16:34:52]   OK 10+ main cards
+[16:34:54]   show_more #2: 60->90
+[16:34:58]   show_more #3: 90->120
+[16:35:01]   show_more #4: 120->150
+[16:35:04] EVISOS p6 https://www.evisos.com.pe/por-apoyo-economico/clasificados/6: main_loose=29 main_strict=8
+[16:35:04]   OK 10+ main cards
+[16:35:06]   show_more #5: 150->180
+[16:35:11]   show_more #6: 180->210
+[16:35:15]   show_more #7: 210->240
+[16:35:15] EVISOS p7 https://www.evisos.com.pe/por-apoyo-economico/clasificados/7: main_loose=29 main_strict=8
+[16:35:15]   OK 10+ main cards
+[16:35:20]   show_more #8: 240->270
+[16:35:25]   show_more #9: 270->300
+[16:35:25] EVISOS p8 https://www.evisos.com.pe/por-apoyo-economico/clasificados/8: main_loose=29 main_strict=8
+[16:35:25]   OK 10+ main cards
+[16:35:25]   no show_more control
+[16:35:25] DOPLIM contactos/ayacucho: 300 main cards
+[16:35:36] DOPLIM start https://www.doplim.com.pe/s/contactos/huancavelica/ cards=30
+[16:35:37] EVISOS p9 https://www.evisos.com.pe/por-apoyo-economico/clasificados/9: main_loose=29 main_strict=8
+[16:35:37]   OK 10+ main cards
+[16:35:40]   show_more #1: 30->60
+[16:35:44]   show_more #2: 60->90
+[16:35:47] EVISOS p10 https://www.evisos.com.pe/por-apoyo-economico/clasificados/10: main_loose=29 main_strict=8
+[16:35:47]   OK 10+ main cards
+[16:35:49]   show_more #3: 90->120
+[16:35:54]   show_more #4: 120->150
+[16:35:58]   show_more #5: 150->180
+[16:35:59] EVISOS p11 https://www.evisos.com.pe/por-apoyo-economico/clasificados/11: main_loose=29 main_strict=8
+[16:35:59]   OK 10+ main cards
+[16:36:03]   show_more #6: 180->210
+[16:36:07]   show_more #7: 210->240
+[16:36:08]   no show_more control
+[16:36:08] DOPLIM contactos/huancavelica: 240 main cards
+[16:36:10] EVISOS p12 https://www.evisos.com.pe/por-apoyo-economico/clasificados/12: main_loose=29 main_strict=8
+[16:36:10]   OK 10+ main cards
+[16:36:21] DOPLIM start https://www.doplim.com.pe/s/contactos/iquitos/ cards=30
+[16:36:22] EVISOS p13 https://www.evisos.com.pe/por-apoyo-economico/clasificados/13: main_loose=29 main_strict=8
+[16:36:22]   OK 10+ main cards
+[16:36:24]   show_more #1: 30->60
+[16:36:28]   show_more #2: 60->90
+[16:36:32]   show_more #3: 90->120
+[16:36:32] EVISOS p14 https://www.evisos.com.pe/por-apoyo-economico/clasificados/14: main_loose=29 main_strict=8
+[16:36:32]   OK 10+ main cards
+[16:36:37]   show_more #4: 120->150
+[16:36:42]   show_more #5: 150->180
+[16:36:43] EVISOS p15 https://www.evisos.com.pe/por-apoyo-economico/clasificados/15: main_loose=29 main_strict=8
+[16:36:43]   OK 10+ main cards
+[16:36:46]   show_more #6: 180->210
+[16:36:50]   show_more #7: 210->240
+[16:36:55] EVISOS p16 https://www.evisos.com.pe/por-apoyo-economico/clasificados/16: main_loose=29 main_strict=8
+[16:36:55]   OK 10+ main cards
+[16:36:55]   show_more #8: 240->270
+[16:36:56] DOPLIM ERR https://www.doplim.com.pe/s/contactos/iquitos/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:37:03] DOPLIM start https://www.doplim.com.pe/s/contactos/tarapoto/ cards=30
+[16:37:06] EVISOS p17 https://www.evisos.com.pe/por-apoyo-economico/clasificados/17: main_loose=29 main_strict=8
+[16:37:06]   OK 10+ main cards
+[16:37:08]   show_more #1: 30->60
+[16:37:12]   show_more #2: 60->90
+[16:37:16] EVISOS p18 https://www.evisos.com.pe/por-apoyo-economico/clasificados/18: main_loose=29 main_strict=8
+[16:37:16]   OK 10+ main cards
+[16:37:17]   show_more #3: 90->120
+[16:37:21]   show_more #4: 120->150
+[16:37:25]   show_more #5: 150->180
+[16:37:27] EVISOS p19 https://www.evisos.com.pe/por-apoyo-economico/clasificados/19: main_loose=29 main_strict=8
+[16:37:27]   OK 10+ main cards
+[16:37:30]   show_more #6: 180->210
+[16:37:34]   show_more #7: 210->240
+[16:37:39]   show_more #8: 240->270
+[16:37:40] EVISOS p20 https://www.evisos.com.pe/por-apoyo-economico/clasificados/20: main_loose=29 main_strict=8
+[16:37:40]   OK 10+ main cards
+[16:37:43]   show_more #9: 270->300
+[16:37:44]   no show_more control
+[16:37:44] DOPLIM contactos/tarapoto: 300 main cards
+[16:37:51] EVISOS p21 https://www.evisos.com.pe/por-apoyo-economico/clasificados/21: main_loose=29 main_strict=8
+[16:37:51]   OK 10+ main cards
+[16:37:54] DOPLIM start https://www.doplim.com.pe/s/contactos/pucallpa/ cards=30
+[16:37:58]   show_more #1: 30->60
+[16:38:03]   show_more #2: 60->90
+[16:38:03] EVISOS p22 https://www.evisos.com.pe/por-apoyo-economico/clasificados/22: main_loose=29 main_strict=8
+[16:38:03]   OK 10+ main cards
+[16:38:07]   show_more #3: 90->120
+[16:38:11]   show_more #4: 120->150
+[16:38:15] EVISOS p23 https://www.evisos.com.pe/por-apoyo-economico/clasificados/23: main_loose=29 main_strict=8
+[16:38:15]   OK 10+ main cards
+[16:38:15]   show_more #5: 150->180
+[16:38:20]   show_more #6: 180->210
+[16:38:24]   show_more #7: 210->240
+[16:38:28] EVISOS p24 https://www.evisos.com.pe/por-apoyo-economico/clasificados/24: main_loose=29 main_strict=8
+[16:38:28]   OK 10+ main cards
+[16:38:28]   show_more #8: 240->270
+[16:38:29] DOPLIM ERR https://www.doplim.com.pe/s/contactos/pucallpa/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:38:36] DOPLIM start https://www.doplim.com.pe/s/contactos/juliaca/ cards=30
+[16:38:39] EVISOS p25 https://www.evisos.com.pe/por-apoyo-economico/clasificados/25: main_loose=29 main_strict=8
+[16:38:39]   OK 10+ main cards
+[16:38:40]   show_more #1: 30->60
+[16:38:44]   show_more #2: 60->90
+[16:38:49]   show_more #3: 90->120
+[16:38:51] EVISOS p26 https://www.evisos.com.pe/por-apoyo-economico/clasificados/26: main_loose=29 main_strict=8
+[16:38:51]   OK 10+ main cards
+[16:38:54]   show_more #4: 120->150
+[16:38:58]   show_more #5: 150->180
+[16:38:59] DOPLIM ERR https://www.doplim.com.pe/s/contactos/juliaca/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:39:03] EVISOS p27 https://www.evisos.com.pe/por-apoyo-economico/clasificados/27: main_loose=29 main_strict=8
+[16:39:03]   OK 10+ main cards
+[16:39:07] DOPLIM start https://www.doplim.com.pe/s/contactos/sullana/ cards=30
+[16:39:12]   show_more #1: 30->60
+[16:39:14] EVISOS p28 https://www.evisos.com.pe/por-apoyo-economico/clasificados/28: main_loose=29 main_strict=8
+[16:39:14]   OK 10+ main cards
+[16:39:16]   show_more #2: 60->90
+[16:39:20]   show_more #3: 90->120
+[16:39:24] EVISOS p29 https://www.evisos.com.pe/por-apoyo-economico/clasificados/29: main_loose=29 main_strict=8
+[16:39:24]   OK 10+ main cards
+[16:39:25]   show_more #4: 120->150
+[16:39:29]   show_more #5: 150->180
+[16:39:34]   show_more #6: 180->210
+[16:39:34] EVISOS p30 https://www.evisos.com.pe/por-apoyo-economico/clasificados/30: main_loose=29 main_strict=8
+[16:39:34]   OK 10+ main cards
+[16:39:38]   show_more #7: 210->240
+[16:39:39]   no show_more control
+[16:39:39] DOPLIM contactos/sullana: 240 main cards
+[16:39:47] EVISOS p31 https://www.evisos.com.pe/por-apoyo-economico/clasificados/31: main_loose=29 main_strict=8
+[16:39:47]   OK 10+ main cards
+[16:39:48] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/lima/ cards=30
+[16:39:52]   show_more #1: 30->60
+[16:39:56]   show_more #2: 60->90
+[16:39:57] EVISOS p32 https://www.evisos.com.pe/por-apoyo-economico/clasificados/32: main_loose=29 main_strict=8
+[16:39:57]   OK 10+ main cards
+[16:39:59]   show_more #3: 90->120
+[16:40:04]   show_more #4: 120->150
+[16:40:08] EVISOS p33 https://www.evisos.com.pe/por-apoyo-economico/clasificados/33: main_loose=29 main_strict=8
+[16:40:08]   OK 10+ main cards
+[16:40:09]   show_more #5: 150->180
+[16:40:14]   show_more #6: 180->210
+[16:40:18]   show_more #7: 210->240
+[16:40:20] EVISOS p34 https://www.evisos.com.pe/por-apoyo-economico/clasificados/34: main_loose=29 main_strict=8
+[16:40:20]   OK 10+ main cards
+[16:40:24]   show_more #8: 240->270
+[16:40:28]   show_more #9: 270->300
+[16:40:29]   no show_more control
+[16:40:29] DOPLIM mujer-busca-hombre/lima: 300 main cards
+[16:40:30] EVISOS p35 https://www.evisos.com.pe/por-apoyo-economico/clasificados/35: main_loose=29 main_strict=8
+[16:40:30]   OK 10+ main cards
+[16:40:39] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/arequipa/ cards=5
+[16:40:40]   no show_more control
+[16:40:40] DOPLIM mujer-busca-hombre/arequipa: 5 main cards
+[16:40:40]   WARN <10 cards on page for https://www.doplim.com.pe/s/mujer-busca-hombre/arequipa/
+[16:40:42] EVISOS p36 https://www.evisos.com.pe/por-apoyo-economico/clasificados/36: main_loose=29 main_strict=8
+[16:40:42]   OK 10+ main cards
+[16:40:49] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/trujillo/ cards=30
+[16:40:53] EVISOS p37 https://www.evisos.com.pe/por-apoyo-economico/clasificados/37: main_loose=29 main_strict=8
+[16:40:53]   OK 10+ main cards
+[16:40:54]   show_more #1: 30->60
+[16:40:58]   show_more #2: 60->90
+[16:41:03]   show_more #3: 90->120
+[16:41:04] EVISOS p38 https://www.evisos.com.pe/por-apoyo-economico/clasificados/38: main_loose=29 main_strict=8
+[16:41:04]   OK 10+ main cards
+[16:41:07]   show_more #4: 120->120
+[16:41:09] DOPLIM mujer-busca-hombre/trujillo: 120 main cards
+[16:41:15] EVISOS p39 https://www.evisos.com.pe/por-apoyo-economico/clasificados/39: main_loose=29 main_strict=8
+[16:41:15]   OK 10+ main cards
+[16:41:26] EVISOS p40 https://www.evisos.com.pe/por-apoyo-economico/clasificados/40: main_loose=29 main_strict=8
+[16:41:26]   OK 10+ main cards
+[16:41:29] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/cusco/ cards=30
+[16:41:32]   show_more #1: 30->30
+[16:41:37] EVISOS p41 https://www.evisos.com.pe/por-apoyo-economico/clasificados/41: main_loose=29 main_strict=8
+[16:41:37]   OK 10+ main cards
+[16:41:39]   show_more #2: 60->90
+[16:41:44]   show_more #3: 90->120
+[16:41:49]   show_more #4: 120->150
+[16:41:49] EVISOS p42 https://www.evisos.com.pe/por-apoyo-economico/clasificados/42: main_loose=29 main_strict=8
+[16:41:49]   OK 10+ main cards
+[16:41:53]   show_more #5: 150->180
+[16:41:57]   show_more #6: 180->210
+[16:42:00] EVISOS p43 https://www.evisos.com.pe/por-apoyo-economico/clasificados/43: main_loose=29 main_strict=8
+[16:42:00]   OK 10+ main cards
+[16:42:01]   show_more #7: 210->237
+[16:42:02]   no show_more control
+[16:42:02] DOPLIM mujer-busca-hombre/cusco: 237 main cards
+[16:42:11] EVISOS p44 https://www.evisos.com.pe/por-apoyo-economico/clasificados/44: main_loose=29 main_strict=8
+[16:42:11]   OK 10+ main cards
+[16:42:13] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/piura/ cards=30
+[16:42:17]   show_more #1: 30->60
+[16:42:21]   show_more #2: 60->90
+[16:42:23] EVISOS p45 https://www.evisos.com.pe/por-apoyo-economico/clasificados/45: main_loose=29 main_strict=8
+[16:42:23]   OK 10+ main cards
+[16:42:25]   show_more #3: 90->120
+[16:42:29]   show_more #4: 120->150
+[16:42:33] EVISOS p46 https://www.evisos.com.pe/por-apoyo-economico/clasificados/46: main_loose=29 main_strict=8
+[16:42:33]   OK 10+ main cards
+[16:42:33]   show_more #5: 150->180
+[16:42:38]   show_more #6: 180->210
+[16:42:43]   show_more #7: 210->223
+[16:42:43]   no show_more control
+[16:42:43] DOPLIM mujer-busca-hombre/piura: 223 main cards
+[16:42:44] EVISOS p47 https://www.evisos.com.pe/por-apoyo-economico/clasificados/47: main_loose=29 main_strict=8
+[16:42:44]   OK 10+ main cards
+[16:42:53] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/chiclayo/ cards=5
+[16:42:54]   no show_more control
+[16:42:54] DOPLIM mujer-busca-hombre/chiclayo: 5 main cards
+[16:42:54]   WARN <10 cards on page for https://www.doplim.com.pe/s/mujer-busca-hombre/chiclayo/
+[16:42:55] EVISOS p48 https://www.evisos.com.pe/por-apoyo-economico/clasificados/48: main_loose=29 main_strict=8
+[16:42:55]   OK 10+ main cards
+[16:43:03] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/callao/ cards=30
+[16:43:06] EVISOS p49 https://www.evisos.com.pe/por-apoyo-economico/clasificados/49: main_loose=29 main_strict=8
+[16:43:06]   OK 10+ main cards
+[16:43:06]   show_more #1: 30->60
+[16:43:10]   show_more #2: 60->90
+[16:43:14]   show_more #3: 90->120
+[16:43:17] EVISOS p50 https://www.evisos.com.pe/por-apoyo-economico/clasificados/50: main_loose=29 main_strict=8
+[16:43:17]   OK 10+ main cards
+[16:43:19]   show_more #4: 120->150
+[16:43:24]   show_more #5: 150->180
+[16:43:28] EVISOS p1 https://lima.evisos.com.pe/por-ayuda-economica.htm: main_loose=23 main_strict=11
+[16:43:28]   OK 10+ main cards
+[16:43:29]   show_more #6: 180->210
+[16:43:33]   show_more #7: 210->240
+[16:43:37]   show_more #8: 240->270
+[16:43:38]   no show_more control
+[16:43:38] DOPLIM mujer-busca-hombre/callao: 270 main cards
+[16:43:40] EVISOS p2 https://lima.evisos.com.pe/por-ayuda-economica/clasificados/2: main_loose=23 main_strict=11
+[16:43:40]   OK 10+ main cards
+[16:43:46] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/huancayo/ cards=30
+[16:43:50]   show_more #1: 30->60
+[16:43:51] EVISOS p3 https://lima.evisos.com.pe/por-ayuda-economica/clasificados/3: main_loose=23 main_strict=11
+[16:43:51]   OK 10+ main cards
+[16:43:55]   show_more #2: 60->90
+[16:43:59]   show_more #3: 90->120
+[16:44:02] EVISOS p4 https://lima.evisos.com.pe/por-ayuda-economica/clasificados/4: main_loose=23 main_strict=11
+[16:44:02]   OK 10+ main cards
+[16:44:04]   show_more #4: 120->150
+[16:44:08]   show_more #5: 150->180
+[16:44:12]   show_more #6: 180->210
+[16:44:14] EVISOS p5 https://lima.evisos.com.pe/por-ayuda-economica/clasificados/5: main_loose=23 main_strict=11
+[16:44:14]   OK 10+ main cards
+[16:44:17]   show_more #7: 210->240
+[16:44:21]   show_more #8: 240->270
+[16:44:25] EVISOS p6 https://lima.evisos.com.pe/por-ayuda-economica/clasificados/6: main_loose=23 main_strict=11
+[16:44:25]   OK 10+ main cards
+[16:44:26]   show_more #9: 270->300
+[16:44:26]   no show_more control
+[16:44:26] DOPLIM mujer-busca-hombre/huancayo: 300 main cards
+[16:44:36] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/ica/ cards=30
+[16:44:37] EVISOS p7 https://lima.evisos.com.pe/por-ayuda-economica/clasificados/7: main_loose=23 main_strict=11
+[16:44:37]   OK 10+ main cards
+[16:44:41]   show_more #1: 30->60
+[16:44:45]   show_more #2: 60->87
+[16:44:46]   no show_more control
+[16:44:46] DOPLIM mujer-busca-hombre/ica: 87 main cards
+[16:44:49] EVISOS p8 https://lima.evisos.com.pe/por-ayuda-economica/clasificados/8: main_loose=23 main_strict=11
+[16:44:49]   OK 10+ main cards
+[16:44:57] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/tacna/ cards=30
+[16:45:01] EVISOS p9 https://lima.evisos.com.pe/por-ayuda-economica/clasificados/9: main_loose=23 main_strict=11
+[16:45:01]   OK 10+ main cards
+[16:45:01]   show_more #1: 30->60
+[16:45:02] DOPLIM ERR https://www.doplim.com.pe/s/mujer-busca-hombre/tacna/: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation
+[16:45:09] DOPLIM start https://www.doplim.com.pe/s/mujer-busca-hombre/puno/ cards=30

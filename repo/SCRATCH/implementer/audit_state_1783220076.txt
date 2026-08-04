@@ -1,0 +1,13 @@
+=== AUDIT START TS 1783220076 ===
+MAIN MANIFEST COUNT: 289
+BY PLATFORM: {'Doplim Peru (hombre busca mujer or Contactos)': 108, 'Other indexed public': 4, 'Facebook Public (indexed)': 28, 'Facebook Public (search first)': 1, 'Locanto Peru (hombre busca mujer real)': 147, 'Facebook public group': 1}
+LOCANTO HOMBRE approx (tagged heuristic): 143
+DEDICATED locanto_male_ayuda_ads COUNT: 84
+MAIN with raw_ref but FILE MISSING: 0
+TOTAL RAW HTML FILES ON DISK: 523
+DUP RIDS in main: 0
+PII in main (full rec style): 0
+PII in dedicated: 0
+SAMPLE main rids: ['3e5dd891', '8045fb00', '37a71269']
+SAMPLE ded rid: 
+=== END AUDIT ===

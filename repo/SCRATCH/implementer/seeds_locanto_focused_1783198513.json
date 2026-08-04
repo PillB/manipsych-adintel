@@ -1,0 +1,13 @@
+{
+  "seeds": [
+    "https://www.locanto.com.pe/lima/ID_5574406931/Brindo-ayuda-Ayuda-Economica-Senoritas-hasta-21-anos-de-edad.html",
+    "https://www.locanto.com.pe/lima/ID_7995095766/BRINDO-APOYO-ECONOMICO-A-SENORITAS-DE-18-A-40-ANOS.html",
+    "https://www.locanto.com.pe/lima/ID_7592613128/Brindo-apoyo-economico-a-universitarias.html",
+    "https://www.locanto.com.pe/arequipa/ID_8758855989/Brindo-ayuda-a-universitarias-150-soles.html",
+    "https://www.locanto.com.pe/lima/ID_7555430534/Brindo-ayuda-economica-a-mujer-de-cualquier-edad.html",
+    "https://www.locanto.com.pe/piura/ID_8818331079/Brindo-ayuda-economica-Piura.html",
+    "https://www.locanto.com.pe/cusco/ID_7881097866/BRINDO-AYUDA-ECONOMICA.html"
+  ],
+  "source": "web_search site:locanto.com.pe Hombre-busca-mujer",
+  "collected_at": "2026-07-04T20:55:13Z"
+}

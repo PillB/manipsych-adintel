@@ -1,0 +1,6 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/case.py:824: AssertionError: 1 != 0 : ERROR: Phase 4: line 186: processed record appears to contain contact-like PII
+=========================== short test summary info ============================
+FAILED tests/test_phase_gates_blackbox.py::PhaseGateBlackBoxTests::test_all_cli_passes_when_all_phase_artifacts_exist
+1 failed in 1.02s

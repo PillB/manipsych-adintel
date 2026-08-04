@@ -1,0 +1,41 @@
+Locanto "hombre busca mujer" pagination probe log (main card extract only via extract_ad_detail_urls + fetch_playwright)
+Base construction: base="https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701" + f"/{p}/"   and preserved query: + f"/{p}/?query=ayuda+economica"
+All probes used relative import: PYTHONPATH=.
+Focus ONLY article.posting_listing /ID_ via extract.
+
+=== Step 1 confirm p1 p2 (initial run, fast fetches) ===
+p1 /1/ : 49 IDs
+p2 /2/ : 49 IDs
+(achieved the ~45-52 expected)
+
+Later runs (slower, possible rate effects): p1 ~20-30, p2 ~20-30
+
+=== Stepped probes (unfiltered) ===
+p1:49 (init), p10:49, p20:49, p30:49, p40:49, p50:49, p55:49, p60:49, p70:49, p80:49, p90:49, p100:49 (early), later p15:20, p16:19, p17:23, p22:32, p100:31, p150:49(early), p200:49(early), p300:49(early)
+p60 (late):31
+
+=== Query preserved stepped ===
+p1(q):48 (init), ~30 (later)
+p2(q):48 (init), ~28 (later)
+p10(q):48, p20(q):50, p30(q):50, p40(q):50, p50(q):50, p55(q):25(late), p60(q):50/25, p80(q):25, p100(q):25/50, p200(q):25, p500(q):25, p1000(q):25
+
+High direct tests 48-55:
+p48(q):25, p52(q):25 , p55:25 (prior)
+
+=== Drop off search ===
+No page found with IDs <10 or <5. All tested pages (p=1 to p=1000) returned >=19 main IDs from extract_ad_detail_urls (article.posting_listing).
+Yields typically 20-32 in recent runs, 49-50 in initial fast runs.
+UI pagination on p1 shows "1 2 3 4 5 ... 20" (last ~20), but high p construction still yields full main cards (site likely falls back).
+No empty pages or blocks encountered. All fetches returned substantial HTML (~300k-390k len) with valid main cards.
+Retries: fetch_playwright internal max_retries=3-6 used, with sleeps on low/interstitial indicators ("cargando", "verificando" etc). Some high p fetches slow (retries), query version often faster.
+
+=== Summary per task ===
+No drop-off below 10 observed. 
+First page where IDs <10: none (N/A)
+First <5: none (N/A)
+Last page with >=10: at least 1000 (tested)
+Last with >=5: at least 1000 (tested)
+Approx total pages for the section (with 10+ yield via main cards): very large / effectively unbounded (UI advertises ~20 but yield persists far beyond; 49+ in good conditions).
+Evidence from stepped + direct high probes above + initial 49 on p1/2.
+
+No files other than this summary created for logs. All via direct execution.

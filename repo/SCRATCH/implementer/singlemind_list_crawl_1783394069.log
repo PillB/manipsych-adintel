@@ -1,0 +1,36 @@
+[22:14:29] === SINGLEMIND LIST CRAWL (capped for exec) LOCANTO+DOPLIM ===
+[22:14:29] BASE[locanto]: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/
+[22:14:29]   PAGE1: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/
+[22:14:33]     SELENIUM_HEADED (poll verificando no-headless): https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/
+[22:15:50]       err att0: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=149.0.7827.198)
+Stacktrace:
+0   chromedriver                        0x000000010518efd8 chromedriver + 7012312
+1   chromedriver                        0x000000010518683a chromedriver + 6977594
+2   chromedriver                        0x0000000104b57445 chromedriver + 492613
+3   chromedriver                        0x0000000104b2a948 chromedriver + 309576
+4   chromedriver                        0x0000000104bd9b48 chromedriver + 1026888
+5   chromedriver                        0x0000000104bf4068 chromedriver + 1134696
+6   chromedriver                        0x0000000104b9eac4 chromedriver + 785092
+7   chromedriver                        0x0000000104b9f891 chromedriver + 788625
+8   chromedriver                        0x0000000105146ba7 chromedriver + 6716327
+9   chromedriver                        0x000000010514b02d chromedriver + 6733869
+10  chromedriver                        0x0000000105127694 chromedriver + 6588052
+11  chromedriver                        0x000000010514baf2 chromedriver + 6736626
+12  chromedriver                        0x0000000105117670 chromedriver + 6522480
+13  chromedriver                        0x0000000105173888 chromedriver + 6899848
+14  chromedriver                        0x0000000105173a1c chromedriver + 6900252
+15  chromedriver                        0x0000000105186451 chromedriver + 6976593
+16  libsystem_pthread.dylib             0x00007ff81383ed49 _pthread_start + 115
+17  libsystem_pthread.dylib             0x00007ff81383a82f thread_start + 15
+
+[22:17:08]       OK real (len=357596) after polls
+[22:17:08]   EXTRACT_BS4: +50 (total now 50)
+[22:17:15]   PAGE2: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/2/
+[22:17:18]     SELENIUM_HEADED (poll verificando no-headless): https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/2/
+[22:18:34]       OK real (len=322729) after polls
+[22:18:34]   EXTRACT_BS4: +50 (total now 100)
+[22:18:41] BASE[locanto]: https://www.locanto.com.pe/arequipa/Hombre-busca-mujer/20701/
+[22:18:41]   PAGE1: https://www.locanto.com.pe/arequipa/Hombre-busca-mujer/20701/
+[22:18:45]     SELENIUM_HEADED (poll verificando no-headless): https://www.locanto.com.pe/arequipa/Hombre-busca-mujer/20701/

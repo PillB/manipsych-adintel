@@ -1,0 +1,7 @@
+search_log appended, attempts now ~ 90
+{
+  "ts": 1783220354,
+  "query": "web_search fresh Locanto ID_ directs (Chiclayo ID_7815, Lima ID_87897, Cusco, Trujillo) + short guide batch per scraping_strategy_guide",
+  "result_count": 0,
+  "notes": "Fresh seeds from search. Batch: 1 no target+male, 2+ dups, 1 processing. Full gates used (UA, waits, len+inter). Added low due supply. Per guide. Honest <<1000."
+}

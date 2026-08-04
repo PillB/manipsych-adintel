@@ -1,0 +1,16 @@
+{
+  "record_id": "3e5dd891d1b2d88c7fbec20cdc8fee4cd6b864248008c714911192ffdb478a7f",
+  "source_platform": "Doplim Peru (hombre busca mujer or Contactos)",
+  "source_url_hash": "3e5dd891d1b2d88c7fbec20cdc8fee4cd6b864248008c714911192ffdb478a7f",
+  "collected_at": "2026-07-04T19:27:41Z",
+  "title": "AYUDA ECONOMICA - ILO / MOQUEGUA, Ilo - Doplim",
+  "body_redacted": "AYUDA ECONOMICA - ILO / MOQUEGUA Publicado: 10 Octubre Descripción Empresario de 39 años, bien parecido, elegante y confidencial, busco encuentro ocasional y discreto de una Señorita o Señora de 20 a 40 años. Brindo ayuda económica por encima de lo esperado para ayudar con cualquier aspecto que necesites solventar (estudios, gastos, o deudas y claro pasarla bien) Absoluta discrección y salvaguardo tu [REDACTED_CONTACT] y por supuesto con respeto mutuo y seguridad. Debido a los viajes por trabajo, te pido por favor se acomode al tiempo que dispongo. Muchas gracias, Detalles Anunciante: Particular Mi Edad: 39 marco_leon Miembro desde 2021 4 Seguidores Seguir Ver anuncios del usuario Editar / Eliminar Denunciar ANUNCIOS QUE TE PUEDEN INTERESAR 1 Ayuda económica Brindó ayuda económica por moquegua a jovencitas p madres solteras tengo 25 años todo bien discreto cualquier información sobre el servicio imbox Mi Edad: 25 25 años - Hombre busca Mujer - Ilo 25 años - Agosto 21 Favorito Brindo ayuda económica Brindo ayuda económica a chicas totalmente discreto. Cualquier cosa escribirme a [REDACTED_EMAIL] o hablar por aquí. Solo para Il Hombre busca Mujer - Ilo Septiembre 10 Favorito Brindo ayuda economica a madres solteras jOVEN educado y cortez brinda ayuda economica a madres y mujeres nedesitadas de 30 a 50 años a cambio de compañia femenina para pasar momentos agradables y si se puede algo serio. Mi Edad: 45 45 años - Hombre busca Mujer - Ilo 45 años - Noviembre 13 Favorito Brindo ayuda economica a madres solteras Hombre maduro cortez y educado brindo ayuda economica a madres solteras de 20 a 45 años a cambio de compañia y momentos placenteros, no importa el fisico dejar[REDACTED_CONTACT]: 45 45 años - Hombre busca Mujer - Ilo 45 años - Enero 19 Favorito Brindo ayuda economica Doy ayuda economica a señoritas mayores de 19 y menores de 35 dejo[REDACTED_CONTACT]: 27 - Estoy interesado en: Cita, Amistad, Pareja para Actividades 27 años - Hombre busca Mujer - Ilo 27 años - Febrero 09 Favorito NUEVOS ANUNCIOS Lámpara inalámbrica wisdom 4a - limaOtros servicios Split set - estabilizador / tubo de fricciÓn ConsultarOtras ventas Perno estabilizador helicoidal || promine peruOtros servicios MÁquina de bloques – adoquines y bordillos (set)U$S 30.000Otras ventas CÁncamo 5/8 – 2 pies - sostenimiento minero ConsultarOtras ventas marco_leon Miembro desde 2021 4 Seguidores Seguir Ver anuncios del usuario Contactar",
+  "raw_archive_ref": "data/raw/ads/agent_full_searchfirst_12aeec74210b97a0.html",
+  "metadata": {
+    "original_url": "data/raw/ads/agent_full_searchfirst_12aeec74210b97a0.html",
+    "collector": "strict_raw_rebuild",
+    "male_offering_perspective": true,
+    "full_public_ad": true,
+    "pii_clean_rebuild": true
+  }
+}

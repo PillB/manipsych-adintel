@@ -1,0 +1,12 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+START Doplim trujillo (main li.cnt-list_ads ONLY, tuned)
+base=https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=trujillo
+LIST p1: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=trujillo
+  main li.cnt-list_ads IDs: 0
+LIST p2: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=trujillo&page=2
+  main li.cnt-list_ads IDs: 0
+LIST p3: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=trujillo&page=3
+  main li.cnt-list_ads IDs: 0
+DONE Doplim trujillo: added=0
+DONE trujillo added=0

@@ -1,0 +1,1138 @@
+{
+  "sources": [
+    {
+      "id": "locanto_lima_ayuda-economica_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_ayuda-economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_ayuda-economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_ayuda-economica_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayuda-economica/19/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_apoyo-economico_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_apoyo-economico_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/apoyo-economico/1/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_apoyo-economico_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/apoyo-economico/2/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_apoyo-economico_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/apoyo-economico/19/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_ayudo-economicamente_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayudo-economicamente/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_ayudo-economicamente_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayudo-economicamente/1/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_ayudo-economicamente_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayudo-economicamente/2/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_lima_ayudo-economicamente_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayudo-economicamente/19/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_ayuda-economica_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_ayuda-economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_ayuda-economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_ayuda-economica_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/ayuda-economica/19/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_apoyo-economico_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_apoyo-economico_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/apoyo-economico/1/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_apoyo-economico_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/apoyo-economico/2/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_apoyo-economico_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/apoyo-economico/19/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_ayudo-economicamente_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/ayudo-economicamente/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_ayudo-economicamente_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/ayudo-economicamente/1/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_ayudo-economicamente_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/ayudo-economicamente/2/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_arequipa_ayudo-economicamente_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/arequipa/tag/ayudo-economicamente/19/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_ayuda-economica_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_ayuda-economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_ayuda-economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_ayuda-economica_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/ayuda-economica/19/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_apoyo-economico_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_apoyo-economico_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/apoyo-economico/1/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_apoyo-economico_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/apoyo-economico/2/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_apoyo-economico_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/apoyo-economico/19/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_ayudo-economicamente_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/ayudo-economicamente/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_ayudo-economicamente_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/ayudo-economicamente/1/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_ayudo-economicamente_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/ayudo-economicamente/2/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_trujillo_ayudo-economicamente_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/trujillo/tag/ayudo-economicamente/19/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_ayuda-economica_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_ayuda-economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_ayuda-economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_ayuda-economica_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/ayuda-economica/19/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_apoyo-economico_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_apoyo-economico_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/apoyo-economico/1/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_apoyo-economico_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/apoyo-economico/2/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_apoyo-economico_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/apoyo-economico/19/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_ayudo-economicamente_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/ayudo-economicamente/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_ayudo-economicamente_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/ayudo-economicamente/1/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_ayudo-economicamente_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/ayudo-economicamente/2/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_chiclayo_ayudo-economicamente_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/chiclayo/tag/ayudo-economicamente/19/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_ayuda-economica_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_ayuda-economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_ayuda-economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_ayuda-economica_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/ayuda-economica/19/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_apoyo-economico_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_apoyo-economico_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/apoyo-economico/1/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_apoyo-economico_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/apoyo-economico/2/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_apoyo-economico_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/apoyo-economico/19/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_ayudo-economicamente_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/ayudo-economicamente/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_ayudo-economicamente_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/ayudo-economicamente/1/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_ayudo-economicamente_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/ayudo-economicamente/2/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_piura_ayudo-economicamente_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/piura/tag/ayudo-economicamente/19/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_ayuda-economica_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_ayuda-economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_ayuda-economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_ayuda-economica_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/ayuda-economica/19/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_apoyo-economico_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_apoyo-economico_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/apoyo-economico/1/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_apoyo-economico_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/apoyo-economico/2/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_apoyo-economico_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/apoyo-economico/19/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_ayudo-economicamente_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/ayudo-economicamente/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_ayudo-economicamente_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/ayudo-economicamente/1/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_ayudo-economicamente_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/ayudo-economicamente/2/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_cusco_ayudo-economicamente_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/cusco/tag/ayudo-economicamente/19/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_ayuda-economica_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_ayuda-economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_ayuda-economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_ayuda-economica_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/ayuda-economica/19/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_apoyo-economico_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_apoyo-economico_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/apoyo-economico/1/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_apoyo-economico_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/apoyo-economico/2/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_apoyo-economico_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/apoyo-economico/19/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_ayudo-economicamente_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/ayudo-economicamente/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_ayudo-economicamente_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/ayudo-economicamente/1/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_ayudo-economicamente_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/ayudo-economicamente/2/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_callao_ayudo-economicamente_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/callao/tag/ayudo-economicamente/19/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_ayuda-economica_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_ayuda-economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_ayuda-economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_ayuda-economica_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/ayuda-economica/19/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_apoyo-economico_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_apoyo-economico_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/apoyo-economico/1/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_apoyo-economico_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/apoyo-economico/2/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_apoyo-economico_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/apoyo-economico/19/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_ayudo-economicamente_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/ayudo-economicamente/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_ayudo-economicamente_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/ayudo-economicamente/1/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_ayudo-economicamente_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/ayudo-economicamente/2/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_huancayo_ayudo-economicamente_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/huancayo/tag/ayudo-economicamente/19/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_ayuda-economica_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_ayuda-economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_ayuda-economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_ayuda-economica_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/ayuda-economica/19/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_apoyo-economico_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_apoyo-economico_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/apoyo-economico/1/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_apoyo-economico_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/apoyo-economico/2/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_apoyo-economico_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/apoyo-economico/19/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_ayudo-economicamente_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/ayudo-economicamente/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_ayudo-economicamente_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/ayudo-economicamente/1/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_ayudo-economicamente_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/ayudo-economicamente/2/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_ica_ayudo-economicamente_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/ica/tag/ayudo-economicamente/19/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_ayuda-economica_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_ayuda-economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_ayuda-economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_ayuda-economica_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/ayuda-economica/19/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_apoyo-economico_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_apoyo-economico_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/apoyo-economico/1/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_apoyo-economico_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/apoyo-economico/2/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_apoyo-economico_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/apoyo-economico/19/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_ayudo-economicamente_first",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/ayudo-economicamente/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_ayudo-economicamente_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/ayudo-economicamente/1/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_ayudo-economicamente_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/ayudo-economicamente/2/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "locanto_tacna_ayudo-economicamente_page_19",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/tacna/tag/ayudo-economicamente/19/",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Generated Locanto city/tag/pagination candidate."
+    },
+    {
+      "id": "doplim_peru_ayuda-economica",
+      "platform": "Doplim Peru",
+      "mode": "http",
+      "url": "https://www.doplim.com.pe/search/s/?q=ayuda%20economica",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated external classified search candidate."
+    },
+    {
+      "id": "doplim_peru_apoyo-economico",
+      "platform": "Doplim Peru",
+      "mode": "http",
+      "url": "https://www.doplim.com.pe/search/s/?q=apoyo%20economico",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated external classified search candidate."
+    },
+    {
+      "id": "evisos_peru_ayuda-economica",
+      "platform": "Evisos Peru",
+      "mode": "http",
+      "url": "https://www.evisos.com.pe/search.php?keyword=ayuda%20economica",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated external classified search candidate."
+    },
+    {
+      "id": "evisos_peru_apoyo-economico",
+      "platform": "Evisos Peru",
+      "mode": "http",
+      "url": "https://www.evisos.com.pe/search.php?keyword=apoyo%20economico",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated external classified search candidate."
+    },
+    {
+      "id": "clasf_peru_ayuda-economica",
+      "platform": "Clasf Peru",
+      "mode": "http",
+      "url": "https://www.clasf.pe/q/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Generated external classified search candidate."
+    },
+    {
+      "id": "clasf_peru_apoyo-economico",
+      "platform": "Clasf Peru",
+      "mode": "http",
+      "url": "https://www.clasf.pe/q/apoyo-economico/",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Generated external classified search candidate."
+    }
+  ]
+}

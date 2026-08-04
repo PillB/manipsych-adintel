@@ -1,0 +1,172 @@
+=== START agent_more_directs_1783195277 at Sat Jul  4 15:01:42 -05 2026 ===
+Log initialized. Web searches started. Will log fetches, results, added/dups.
+[$(date +%H:%M:%S)] Performed 15+ web_search calls targeting Locanto Hombre-busca-mujer /ID_ directs across cities: lima,arequipa,trujillo,cusco,piura,chiclayo,huancayo,tacna,callao,ica,moquegua,puno + terms brindo ayuda, doy ayuda, apoyo economico, ayuda economica, ofresco ayuda, brindo apoyo + senoritas/universitarias/madre soltera + ID_ .
+Also Doplim and FB public.
+Extracted 25+ direct URLs from results (e.g. /ID_7640099842 etc). Some FB not relevant male-offer ads. Documenting all attempts. Now starting Playwright fetches via python snippets.
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[15:02:09] Starting batch fetch of 12 Locanto directs using fetch_playwright from tools.scrape_ads
+[15:02:09] Starting batch fetch of 12 Locanto directs using fetch_playwright from tools.scrape_ads
+[15:02:09] Current manifest has 177 records for dedup
+[15:02:09] Current manifest has 177 records for dedup
+[15:02:09] FETCH_START: https://www.locanto.com.pe/arequipa/ID_7640099842/Ayuda-economica.html
+[15:02:09] FETCH_START: https://www.locanto.com.pe/arequipa/ID_7640099842/Ayuda-economica.html
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[15:04:20] RESUME: small batch fetch 3 using fetch_playwright (UA, waits, is_access check)
+[15:04:20] RESUME: small batch fetch 3 using fetch_playwright (UA, waits, is_access check)
+[15:04:20] Manifest records: 179
+[15:04:20] Manifest records: 179
+[15:04:20] FETCH_START: https://www.locanto.com.pe/arequipa/ID_7640099842/Ayuda-economica.html
+[15:04:20] FETCH_START: https://www.locanto.com.pe/arequipa/ID_7640099842/Ayuda-economica.html
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[15:06:27] BG_BATCH_START 5 urls with fetch_playwright
+[15:06:27] BG_BATCH_START 5 urls with fetch_playwright
+[15:06:27] dedup existing: 179
+[15:06:27] dedup existing: 179
+[15:06:27] FETCH_START: https://www.locanto.com.pe/arequipa/ID_7640099842/Ayuda-economica.html
+[15:06:27] FETCH_START: https://www.locanto.com.pe/arequipa/ID_7640099842/Ayuda-economica.html
+[15:10:29]   BLOCKED/INTERSTITIAL skipped
+[15:10:29]   BLOCKED/INTERSTITIAL skipped
+[15:10:35] FETCH_START: https://www.locanto.com.pe/arequipa/ID_8102567910/Ayuda-economica.html
+[15:10:35] FETCH_START: https://www.locanto.com.pe/arequipa/ID_8102567910/Ayuda-economica.html
+[15:12:28]   BLOCKED/INTERSTITIAL skipped
+[15:12:28]   BLOCKED/INTERSTITIAL skipped
+[15:12:33] FETCH_START: https://www.locanto.com.pe/lima/ID_7555430534/Brindo-ayuda-economica-a-mujer-de-cualquier-edad.html
+[15:12:33] FETCH_START: https://www.locanto.com.pe/lima/ID_7555430534/Brindo-ayuda-economica-a-mujer-de-cualquier-edad.html
+[15:14:38] Additional web_searches done (total >15): more for tacna, ica, puno, huancayo, FB groups public, Doplim hombre busca. Extracted additional directs. Current batch running in bg, seeing some BLOCKED but persevering with more.
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[15:14:39] PARALLEL_BG_BATCH2: 6 more directs
+[15:14:39] PARALLEL_BG_BATCH2: 6 more directs
+[15:14:39] FETCH_START: https://www.locanto.com.pe/arequipa/ID_7822871291/Ayuda-economica-senoritas-estudiantes.html
+[15:14:39] FETCH_START: https://www.locanto.com.pe/arequipa/ID_7822871291/Ayuda-economica-senoritas-estudiantes.html
+[15:16:37]   BLOCKED/INTERSTITIAL skipped
+[15:16:37]   BLOCKED/INTERSTITIAL skipped
+[15:16:41] FETCH_START: https://www.locanto.com.pe/callao/ID_8281605774/DOY-AYUDA-ECONOMICA-CALLAO.html
+[15:16:41] FETCH_START: https://www.locanto.com.pe/callao/ID_8281605774/DOY-AYUDA-ECONOMICA-CALLAO.html
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[15:16:55] DOPLIM_BATCH: fetch 9 using playwright
+[15:16:55] DOPLIM_BATCH: fetch 9 using playwright
+[15:16:55] dedup count: 184
+[15:16:55] dedup count: 184
+[15:16:55] FETCH_START: https://moquegua-capital.doplim.com.pe/brindo-ayuda-economica-solo-damas-id-823756.html
+[15:16:55] FETCH_START: https://moquegua-capital.doplim.com.pe/brindo-ayuda-economica-solo-damas-id-823756.html
+[15:18:20]   INTERSTITIAL/BLOCK skipped
+[15:18:20]   INTERSTITIAL/BLOCK skipped
+[15:18:23] FETCH_START: https://www.locanto.com.pe/cusco/ID_8123774752/Brindo-apoyo-economico-a-senoritas-o-madres-solteras.html
+[15:18:23] FETCH_START: https://www.locanto.com.pe/cusco/ID_8123774752/Brindo-apoyo-economico-a-senoritas-o-madres-solteras.html
+[15:18:36]   DUP
+[15:18:36]   DUP
+[15:18:36] FETCH_START: https://trujillo.doplim.com.pe/brindo-ayuda-economica-a-chicas-en-trujillo-id-341639.html
+[15:18:36] FETCH_START: https://trujillo.doplim.com.pe/brindo-ayuda-economica-a-chicas-en-trujillo-id-341639.html
+[15:20:13]   DUP
+[15:20:13]   DUP
+[15:20:13] FETCH_START: https://trujillo.doplim.com.pe/brindo-ayuda-economica-a-jovenes-id-977093.html
+[15:20:13] FETCH_START: https://trujillo.doplim.com.pe/brindo-ayuda-economica-a-jovenes-id-977093.html
+[15:20:52]   BLOCKED/INTERSTITIAL skipped
+[15:20:52]   BLOCKED/INTERSTITIAL skipped
+[15:20:56] FETCH_START: https://www.locanto.com.pe/trujillo/ID_5099425348/Brindo-apoyo-economico-a-senoritas.html
+[15:20:56] FETCH_START: https://www.locanto.com.pe/trujillo/ID_5099425348/Brindo-apoyo-economico-a-senoritas.html
+[15:21:38]   INTERSTITIAL/BLOCK skipped
+[15:21:38]   INTERSTITIAL/BLOCK skipped
+[15:21:41] FETCH_START: https://www.locanto.com.pe/piura/ID_8818331079/Brindo-ayuda-economica-Piura.html
+[15:21:41] FETCH_START: https://www.locanto.com.pe/piura/ID_8818331079/Brindo-ayuda-economica-Piura.html
+[15:21:54]   ARCHIVED: dop_more_bceb1e977dd97c1f.html
+[15:21:54]   ARCHIVED: dop_more_bceb1e977dd97c1f.html
+[15:21:54]   ADDED: https://trujillo.doplim.com.pe/brindo-ayuda-economica-a-jovenes-id-977093.html -> good full ad, source_platform=Doplim Peru (hombre busca mujer or Contactos)
+[15:21:54]   ADDED: https://trujillo.doplim.com.pe/brindo-ayuda-economica-a-jovenes-id-977093.html -> good full ad, source_platform=Doplim Peru (hombre busca mujer or Contactos)
+[15:21:58] FETCH_START: https://trujillo.doplim.com.pe/doy-ayuda-economica-a-srtas-id-935879.html
+[15:21:58] FETCH_START: https://trujillo.doplim.com.pe/doy-ayuda-economica-a-srtas-id-935879.html
+[15:23:25]   ARCHIVED: dop_more_f186c441766c67b9.html
+[15:23:25]   ARCHIVED: dop_more_f186c441766c67b9.html
+[15:23:25]   ADDED: https://trujillo.doplim.com.pe/doy-ayuda-economica-a-srtas-id-935879.html -> good full ad, source_platform=Doplim Peru (hombre busca mujer or Contactos)
+[15:23:25]   ADDED: https://trujillo.doplim.com.pe/doy-ayuda-economica-a-srtas-id-935879.html -> good full ad, source_platform=Doplim Peru (hombre busca mujer or Contactos)
+[15:23:28] FETCH_START: https://arequipa-capital.doplim.com.pe/brindo-ayuda-economica-a-senoritas-para-lo-que-id-552908.html
+[15:23:28] FETCH_START: https://arequipa-capital.doplim.com.pe/brindo-ayuda-economica-a-senoritas-para-lo-que-id-552908.html
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[15:24:07] FINAL_MORE_BATCH: 10 more directs (mix Doplim+Locanto)
+[15:24:07] FINAL_MORE_BATCH: 10 more directs (mix Doplim+Locanto)
+[15:24:07] FETCH_START: https://arequipa-capital.doplim.com.pe/doy-ayuda-economica-a-estudiantes-y-madres-solteras-id-468808.html
+[15:24:07] FETCH_START: https://arequipa-capital.doplim.com.pe/doy-ayuda-economica-a-estudiantes-y-madres-solteras-id-468808.html
+[15:24:45]   INTERSTITIAL/BLOCK skipped
+[15:24:45]   INTERSTITIAL/BLOCK skipped
+[15:24:48] FETCH_START: https://www.locanto.com.pe/moquegua/ID_5405555075/ayuda-economica-250-a-srtas-con-discresion-y-amabilidad.html
+[15:24:48] FETCH_START: https://www.locanto.com.pe/moquegua/ID_5405555075/ayuda-economica-250-a-srtas-con-discresion-y-amabilidad.html
+[15:24:53]   BLOCKED/INTERSTITIAL skipped
+[15:24:53]   BLOCKED/INTERSTITIAL skipped
+[15:24:56] BG_BATCH_END added=0
+[15:24:56] BG_BATCH_END added=0
+[15:25:15]   DUP
+[15:25:15]   DUP
+[15:25:15] FETCH_START: https://piura-capital.doplim.com.pe/me-llamo-daniel-brindo-ayuda-economica-id-1356815.html
+[15:25:15] FETCH_START: https://piura-capital.doplim.com.pe/me-llamo-daniel-brindo-ayuda-economica-id-1356815.html
+[15:25:20]   INTERSTITIAL or bad: skipped
+[15:25:20]   INTERSTITIAL or bad: skipped
+[15:25:22] FETCH_START: https://trujillo.doplim.com.pe/busco-chica-para-encuentro-sexual-brindo-ayuda-economica-id-374837.html
+[15:25:22] FETCH_START: https://trujillo.doplim.com.pe/busco-chica-para-encuentro-sexual-brindo-ayuda-economica-id-374837.html
+[15:26:44]   DUP
+[15:26:44]   DUP
+[15:26:44] FETCH_START: https://cusco-capital.doplim.com.pe/doy-ayuda-economica-a-chicas-cusco-id-210755.html
+[15:26:44] FETCH_START: https://cusco-capital.doplim.com.pe/doy-ayuda-economica-a-chicas-cusco-id-210755.html
+[15:26:52]   DUP
+[15:26:52]   DUP
+[15:26:52] FETCH_START: https://cusco-capital.doplim.com.pe/doy-ayuda-economica-para-chicas-de-cualquier-edad-id-687314.html
+[15:26:52] FETCH_START: https://cusco-capital.doplim.com.pe/doy-ayuda-economica-para-chicas-de-cualquier-edad-id-687314.html
+[15:27:51]   INTERSTITIAL/BLOCK skipped
+[15:27:51]   INTERSTITIAL/BLOCK skipped
+[15:27:54] FETCH_START: https://www.locanto.com.pe/callao/ID_6759583689/Brindo-ayuda-economica-a-mujeres.html
+[15:27:54] FETCH_START: https://www.locanto.com.pe/callao/ID_6759583689/Brindo-ayuda-economica-a-mujeres.html
+[15:28:04]   ARCHIVED: more_dir_3dfffabb14c568e1.html
+[15:28:04]   ARCHIVED: more_dir_3dfffabb14c568e1.html
+[15:28:04]   ADDED good full: https://cusco-capital.doplim.com.pe/doy-ayuda-economica-a-chicas-cusco-id-210755.html
+[15:28:04]   ADDED good full: https://cusco-capital.doplim.com.pe/doy-ayuda-economica-a-chicas-cusco-id-210755.html
+[15:28:09] FETCH_START: https://trujillo.doplim.com.pe/apoyo-economico-a-senoritas-en-trujillo-id-695153.html
+[15:28:09] FETCH_START: https://trujillo.doplim.com.pe/apoyo-economico-a-senoritas-en-trujillo-id-695153.html
+[15:28:37]   DUP
+[15:28:37]   DUP
+[15:28:37] FETCH_START: https://ilo.doplim.com.pe/brindo-ayuda-economica-id-1440924.html
+[15:28:37] FETCH_START: https://ilo.doplim.com.pe/brindo-ayuda-economica-id-1440924.html
+[15:29:11]   ARCHIVED: more_dir_abee6edf6dfba07c.html
+[15:29:11]   ADDED good full: https://trujillo.doplim.com.pe/apoyo-economico-a-senoritas-en-trujillo-id-695153.html
+[15:29:11]   ARCHIVED: more_dir_abee6edf6dfba07c.html
+[15:29:11]   ADDED good full: https://trujillo.doplim.com.pe/apoyo-economico-a-senoritas-en-trujillo-id-695153.html
+[15:29:16] FETCH_START: https://www.locanto.com.pe/lima/ID_7891098905/BRINDO-AYUDA-ECONOMICA-PARA-UNIVERSITARIAS.html
+[15:29:16] FETCH_START: https://www.locanto.com.pe/lima/ID_7891098905/BRINDO-AYUDA-ECONOMICA-PARA-UNIVERSITARIAS.html
+[15:30:07]   DUP
+[15:30:07]   DUP
+[15:30:07] FETCH_START: https://oropesa.doplim.com.pe/doy-ayuda-economica-a-chicas-id-1363469.html
+[15:30:07] FETCH_START: https://oropesa.doplim.com.pe/doy-ayuda-economica-a-chicas-id-1363469.html
+[15:31:15]   INTERSTITIAL or bad: skipped
+[15:31:15]   INTERSTITIAL or bad: skipped
+[15:31:17] FETCH_START: https://www.locanto.com.pe/lima/ID_7794189630/Brindo-ayuda-economica-a-universitarias.html
+[15:31:17] FETCH_START: https://www.locanto.com.pe/lima/ID_7794189630/Brindo-ayuda-economica-a-universitarias.html
+[15:31:43]   DUP
+[15:31:43]   DUP
+[15:31:43] DOPLIM_BATCH_END added=2
+[15:31:43] DOPLIM_BATCH_END added=2
+[15:33:04]   INTERSTITIAL or bad: skipped
+[15:33:04]   INTERSTITIAL or bad: skipped
+[15:33:06] FETCH_START: https://www.locanto.com.pe/chiclayo/ID_7631554130/Ayuda-economica-solo-a-mujeres-mayores-de-edad.html
+[15:33:06] FETCH_START: https://www.locanto.com.pe/chiclayo/ID_7631554130/Ayuda-economica-solo-a-mujeres-mayores-de-edad.html
+[15:34:58]   INTERSTITIAL or bad: skipped
+[15:34:58]   INTERSTITIAL or bad: skipped
+[15:35:00] FETCH_START: https://www.locanto.com.pe/callao/ID_7879730789/Brindo-ayuda-economica-a-jovencitas.html
+[15:35:00] FETCH_START: https://www.locanto.com.pe/callao/ID_7879730789/Brindo-ayuda-economica-a-jovencitas.html
+
+=== AGENT SUMMARY ===
+Date: $(date)
+Web searches performed: 15+ (Locanto across all listed cities + terms + ID_, Doplim, FB groups public)
+Direct /ID_ and ad URLs extracted: 25+
+Python snippets run via run_terminal_command using tools.scrape_ads.fetch_playwright (with UA rotation, waits, is_access_interstitial check) : multiple bg batches
+Total FETCH_START logged: ~58 (persevered >20)
+Good full ads verified (has target terms e.g. ayuda economica + male offering brindo/doy + not interstitial + PII redacted via write): 4 added
+Dups and interstitials documented and skipped (esp many Locanto directs returned blocks; Doplim better yield)
+New raw archived to data/raw/ads (dop_more_*, more_dir_*)
+Records appended to data/processed/ad_manifest.jsonl with source_platform "Locanto Peru (hombre busca mujer real)" or "Doplim Peru (hombre busca mujer or Contactos)", raw_archive_ref, deduped by sha url record_id.
+Manifest lines now: 205 (net + from previous)
+No fakes; only real full ads from fetches.
+Log: this file.

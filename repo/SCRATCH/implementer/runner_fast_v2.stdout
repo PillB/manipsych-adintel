@@ -1,0 +1,184 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[16:47:14] START fast_v2 targets={'doplim': 1500, 'evisos': 1500} start_counts={'doplim': 442, 'evisos': 0, 'other': 1930} workers=14
+[16:47:16] LEARN doplim section=hombre-busca-mujer catid=5 subcatid=51
+[16:47:17] LEARN doplim section=relaciones-ocasionales catid=5 subcatid=54
+[16:47:17] LEARN doplim section=mujer-busca-hombre catid=5 subcatid=50
+[16:47:18] LEARN doplim section=contactos catid=5 subcatid=0
+[16:47:19] API hombre-busca-mujer/lima p1: cards=30 new=30 total=30
+[16:47:19] API hombre-busca-mujer/lima p2: cards=30 new=30 total=60
+[16:47:19] API hombre-busca-mujer/lima p3: cards=30 new=30 total=90
+[16:47:20] API hombre-busca-mujer/lima p4: cards=30 new=30 total=120
+[16:47:20] API hombre-busca-mujer/lima p5: cards=30 new=30 total=150
+[16:47:21] API hombre-busca-mujer/lima p6: cards=30 new=30 total=180
+[16:47:21] API hombre-busca-mujer/lima p7: cards=30 new=30 total=210
+[16:47:22] API hombre-busca-mujer/lima p8: cards=30 new=30 total=240
+[16:47:22] API hombre-busca-mujer/lima p9: cards=30 new=30 total=270
+[16:47:22] API hombre-busca-mujer/lima p10: cards=30 new=30 total=300
+[16:47:23] OK 10+ path hombre-busca-mujer/lima pages=10
+[16:47:23] API hombre-busca-mujer/arequipa p1: cards=30 new=30 total=330
+[16:47:23] API hombre-busca-mujer/arequipa p2: cards=30 new=30 total=360
+[16:47:24] API hombre-busca-mujer/arequipa p3: cards=30 new=30 total=390
+[16:47:24] API hombre-busca-mujer/arequipa p4: cards=30 new=30 total=420
+[16:47:25] API hombre-busca-mujer/arequipa p5: cards=30 new=30 total=450
+[16:47:26] API hombre-busca-mujer/arequipa p6: cards=30 new=30 total=480
+[16:47:26] API hombre-busca-mujer/arequipa p7: cards=30 new=30 total=510
+[16:47:27] API hombre-busca-mujer/arequipa p8: cards=30 new=30 total=540
+[16:47:28] API hombre-busca-mujer/arequipa p9: cards=30 new=30 total=570
+[16:47:28] API hombre-busca-mujer/arequipa p10: cards=30 new=30 total=600
+[16:47:28] OK 10+ path hombre-busca-mujer/arequipa pages=10
+[16:47:29] API hombre-busca-mujer/trujillo p1: cards=30 new=30 total=630
+[16:47:29] API hombre-busca-mujer/trujillo p2: cards=30 new=30 total=660
+[16:47:30] API hombre-busca-mujer/trujillo p3: cards=30 new=30 total=690
+[16:47:30] API hombre-busca-mujer/trujillo p4: cards=30 new=30 total=720
+[16:47:31] API hombre-busca-mujer/trujillo p5: cards=30 new=30 total=750
+[16:47:31] API hombre-busca-mujer/trujillo p6: cards=30 new=30 total=780
+[16:47:32] API hombre-busca-mujer/trujillo p7: cards=30 new=30 total=810
+[16:47:32] API hombre-busca-mujer/trujillo p8: cards=30 new=30 total=840
+[16:47:33] API hombre-busca-mujer/trujillo p9: cards=30 new=30 total=870
+[16:47:34] API hombre-busca-mujer/trujillo p10: cards=30 new=30 total=900
+[16:47:35] OK 10+ path hombre-busca-mujer/trujillo pages=10
+[16:47:35] API hombre-busca-mujer/cusco p1: cards=30 new=30 total=930
+[16:47:36] API hombre-busca-mujer/cusco p2: cards=30 new=29 total=959
+[16:47:36] API hombre-busca-mujer/cusco p3: cards=30 new=30 total=989
+[16:47:37] API hombre-busca-mujer/cusco p4: cards=30 new=30 total=1019
+[16:47:37] API hombre-busca-mujer/cusco p5: cards=30 new=30 total=1049
+[16:47:38] API hombre-busca-mujer/cusco p6: cards=30 new=30 total=1079
+[16:47:38] API hombre-busca-mujer/cusco p7: cards=30 new=30 total=1109
+[16:47:38] API hombre-busca-mujer/cusco p8: cards=30 new=30 total=1139
+[16:47:39] API hombre-busca-mujer/cusco p9: cards=30 new=30 total=1169
+[16:47:39] API hombre-busca-mujer/cusco p10: cards=30 new=30 total=1199
+[16:47:40] OK 10+ path hombre-busca-mujer/cusco pages=10
+[16:47:40] API hombre-busca-mujer/piura p1: cards=30 new=30 total=1229
+[16:47:40] API hombre-busca-mujer/piura p2: cards=30 new=30 total=1259
+[16:47:41] API hombre-busca-mujer/piura p3: cards=30 new=30 total=1289
+[16:47:42] API hombre-busca-mujer/piura p4: cards=30 new=30 total=1319
+[16:47:42] API hombre-busca-mujer/piura p5: cards=30 new=30 total=1349
+[16:47:43] API hombre-busca-mujer/piura p6: cards=30 new=30 total=1379
+[16:47:44] API hombre-busca-mujer/piura p7: cards=30 new=30 total=1409
+[16:47:44] API hombre-busca-mujer/piura p8: cards=30 new=30 total=1439
+[16:47:45] API hombre-busca-mujer/piura p9: cards=30 new=30 total=1469
+[16:47:46] API hombre-busca-mujer/piura p10: cards=30 new=30 total=1499
+[16:47:46] OK 10+ path hombre-busca-mujer/piura pages=10
+[16:47:46] API hombre-busca-mujer/chiclayo p1: cards=30 new=30 total=1529
+[16:47:47] API hombre-busca-mujer/chiclayo p2: cards=30 new=30 total=1559
+[16:47:48] API hombre-busca-mujer/chiclayo p3: cards=30 new=30 total=1589
+[16:47:48] API hombre-busca-mujer/chiclayo p4: cards=30 new=30 total=1619
+[16:47:49] API hombre-busca-mujer/chiclayo p5: cards=30 new=30 total=1649
+[16:47:50] API hombre-busca-mujer/chiclayo p6: cards=30 new=30 total=1679
+[16:47:50] API hombre-busca-mujer/chiclayo p7: cards=30 new=29 total=1708
+[16:47:51] API hombre-busca-mujer/chiclayo p8: cards=30 new=30 total=1738
+[16:47:51] API hombre-busca-mujer/chiclayo p9: cards=30 new=30 total=1768
+[16:47:52] API hombre-busca-mujer/chiclayo p10: cards=30 new=30 total=1798
+[16:47:52] OK 10+ path hombre-busca-mujer/chiclayo pages=10
+[16:47:52] API hombre-busca-mujer/callao p1: cards=30 new=27 total=1825
+[16:47:53] API hombre-busca-mujer/callao p2: cards=30 new=30 total=1855
+[16:47:53] API hombre-busca-mujer/callao p3: cards=30 new=30 total=1885
+[16:47:54] API hombre-busca-mujer/callao p4: cards=30 new=30 total=1915
+[16:47:54] API hombre-busca-mujer/callao p5: cards=30 new=30 total=1945
+[16:47:55] API hombre-busca-mujer/callao p6: cards=30 new=30 total=1975
+[16:47:55] API hombre-busca-mujer/callao p7: cards=30 new=30 total=2005
+[16:47:56] API hombre-busca-mujer/callao p8: cards=30 new=30 total=2035
+[16:47:57] API hombre-busca-mujer/callao p9: cards=30 new=30 total=2065
+[16:47:58] API hombre-busca-mujer/callao p10: cards=30 new=30 total=2095
+[16:47:58] OK 10+ path hombre-busca-mujer/callao pages=10
+[16:47:58] API hombre-busca-mujer/huancayo p1: cards=30 new=30 total=2125
+[16:47:59] API hombre-busca-mujer/huancayo p2: cards=30 new=30 total=2155
+[16:48:00] API hombre-busca-mujer/huancayo p3: cards=30 new=30 total=2185
+[16:48:00] API hombre-busca-mujer/huancayo p4: cards=30 new=30 total=2215
+[16:48:01] API hombre-busca-mujer/huancayo p5: cards=30 new=30 total=2245
+[16:48:01] API hombre-busca-mujer/huancayo p6: cards=30 new=30 total=2275
+[16:48:02] API hombre-busca-mujer/huancayo p7: cards=30 new=30 total=2305
+[16:48:02] API hombre-busca-mujer/huancayo p8: cards=30 new=30 total=2335
+[16:48:03] API hombre-busca-mujer/huancayo p9: cards=30 new=30 total=2365
+[16:48:03] API hombre-busca-mujer/huancayo p10: cards=30 new=30 total=2395
+[16:48:03] OK 10+ path hombre-busca-mujer/huancayo pages=10
+[16:48:04] API hombre-busca-mujer/ica p1: cards=30 new=30 total=2425
+[16:48:04] API hombre-busca-mujer/ica p2: cards=30 new=30 total=2455
+[16:48:05] API hombre-busca-mujer/ica p3: cards=30 new=30 total=2485
+[16:48:05] API hombre-busca-mujer/ica p4: cards=30 new=30 total=2515
+[16:48:05] API hombre-busca-mujer/ica p5: cards=30 new=30 total=2545
+[16:48:06] API hombre-busca-mujer/ica p6: cards=30 new=30 total=2575
+[16:48:06] API hombre-busca-mujer/ica p7: cards=30 new=30 total=2605
+[16:48:07] API hombre-busca-mujer/ica p8: cards=30 new=30 total=2635
+[16:48:07] API hombre-busca-mujer/ica p9: cards=30 new=30 total=2665
+[16:48:08] API hombre-busca-mujer/ica p10: cards=30 new=30 total=2695
+[16:48:08] OK 10+ path hombre-busca-mujer/ica pages=10
+[16:48:09] API hombre-busca-mujer/tacna p1: cards=30 new=30 total=2725
+[16:48:09] API hombre-busca-mujer/tacna p2: cards=30 new=30 total=2755
+[16:48:14] API hombre-busca-mujer/tacna p3: cards=30 new=30 total=2785
+[16:48:14] API hombre-busca-mujer/tacna p4: cards=30 new=30 total=2815
+[16:48:15] API hombre-busca-mujer/tacna p5: cards=30 new=30 total=2845
+[16:48:16] API hombre-busca-mujer/tacna p6: cards=30 new=30 total=2875
+[16:48:16] API hombre-busca-mujer/tacna p7: cards=30 new=30 total=2905
+[16:48:17] API hombre-busca-mujer/tacna p8: cards=30 new=30 total=2935
+[16:48:18] API hombre-busca-mujer/tacna p9: cards=30 new=30 total=2965
+[16:48:18] API hombre-busca-mujer/tacna p10: cards=30 new=30 total=2995
+[16:48:19] OK 10+ path hombre-busca-mujer/tacna pages=10
+[16:48:19] API hombre-busca-mujer/puno p1: cards=30 new=30 total=3025
+[16:48:20] API hombre-busca-mujer/puno p2: cards=30 new=30 total=3055
+[16:48:20] API hombre-busca-mujer/puno p3: cards=30 new=30 total=3085
+[16:48:21] API hombre-busca-mujer/puno p4: cards=30 new=30 total=3115
+[16:48:21] API hombre-busca-mujer/puno p5: cards=30 new=30 total=3145
+[16:48:22] API hombre-busca-mujer/puno p6: cards=30 new=30 total=3175
+[16:48:22] API hombre-busca-mujer/puno p7: cards=30 new=30 total=3205
+[16:48:23] API hombre-busca-mujer/puno p8: cards=30 new=30 total=3235
+[16:48:24] API hombre-busca-mujer/puno p9: cards=30 new=30 total=3265
+[16:48:24] API hombre-busca-mujer/puno p10: cards=30 new=30 total=3295
+[16:48:24] OK 10+ path hombre-busca-mujer/puno pages=10
+[16:48:25] API hombre-busca-mujer/cajamarca p1: cards=30 new=30 total=3325
+[16:48:25] API hombre-busca-mujer/cajamarca p2: cards=30 new=29 total=3354
+[16:48:26] API hombre-busca-mujer/cajamarca p3: cards=30 new=30 total=3384
+[16:48:26] API hombre-busca-mujer/cajamarca p4: cards=30 new=30 total=3414
+[16:48:27] API hombre-busca-mujer/cajamarca p5: cards=30 new=30 total=3444
+[16:48:27] API hombre-busca-mujer/cajamarca p6: cards=30 new=30 total=3474
+[16:48:27] API hombre-busca-mujer/cajamarca p7: cards=30 new=30 total=3504
+[16:48:28] API hombre-busca-mujer/cajamarca p8: cards=30 new=30 total=3534
+[16:48:29] API hombre-busca-mujer/cajamarca p9: cards=30 new=30 total=3564
+[16:48:29] API hombre-busca-mujer/cajamarca p10: cards=30 new=30 total=3594
+[16:48:30] OK 10+ path hombre-busca-mujer/cajamarca pages=10
+[16:48:30] API hombre-busca-mujer/chimbote p1: cards=30 new=29 total=3623
+[16:48:30] API hombre-busca-mujer/chimbote p2: cards=30 new=30 total=3653
+[16:48:31] API hombre-busca-mujer/chimbote p3: cards=30 new=30 total=3683
+[16:48:31] API hombre-busca-mujer/chimbote p4: cards=30 new=30 total=3713
+[16:48:32] API hombre-busca-mujer/chimbote p5: cards=30 new=30 total=3743
+[16:48:32] API hombre-busca-mujer/chimbote p6: cards=30 new=29 total=3772
+[16:48:33] API hombre-busca-mujer/chimbote p7: cards=30 new=30 total=3802
+[16:48:34] API hombre-busca-mujer/chimbote p8: cards=30 new=30 total=3832
+[16:48:35] API hombre-busca-mujer/chimbote p9: cards=30 new=30 total=3862
+[16:48:36] API hombre-busca-mujer/chimbote p10: cards=30 new=30 total=3892
+[16:48:36] OK 10+ path hombre-busca-mujer/chimbote pages=10
+[16:48:37] API hombre-busca-mujer/ayacucho p1: cards=30 new=30 total=3922
+[16:48:37] API hombre-busca-mujer/ayacucho p2: cards=30 new=30 total=3952
+[16:48:38] API hombre-busca-mujer/ayacucho p3: cards=30 new=30 total=3982
+[16:48:38] API hombre-busca-mujer/ayacucho p4: cards=30 new=30 total=4012
+[16:48:39] API hombre-busca-mujer/ayacucho p5: cards=30 new=30 total=4042
+[16:48:39] API hombre-busca-mujer/ayacucho p6: cards=30 new=30 total=4072
+[16:48:40] API hombre-busca-mujer/ayacucho p7: cards=30 new=30 total=4102
+[16:48:41] API hombre-busca-mujer/ayacucho p8: cards=12 new=12 total=4114
+[16:48:41] API empty hombre-busca-mujer/ayacucho p9 status=200 len=0
+[16:48:41] API empty hombre-busca-mujer/ayacucho p10 status=200 len=0
+[16:48:41] OK 10+ path hombre-busca-mujer/ayacucho pages=8
+[16:48:42] API hombre-busca-mujer/huancavelica p1: cards=30 new=30 total=4144
+[16:48:42] API hombre-busca-mujer/huancavelica p2: cards=30 new=30 total=4174
+[16:48:43] API hombre-busca-mujer/huancavelica p3: cards=26 new=26 total=4200
+[16:48:43] API empty hombre-busca-mujer/huancavelica p4 status=200 len=0
+[16:48:43] API empty hombre-busca-mujer/huancavelica p5 status=200 len=0
+[16:48:43] OK 10+ path hombre-busca-mujer/huancavelica pages=3
+[16:48:44] API hombre-busca-mujer/iquitos p1: cards=30 new=30 total=4230
+[16:48:44] API hombre-busca-mujer/iquitos p2: cards=30 new=30 total=4260
+[16:48:45] API hombre-busca-mujer/iquitos p3: cards=30 new=29 total=4289
+[16:48:45] API hombre-busca-mujer/iquitos p4: cards=30 new=30 total=4319
+[16:48:46] API hombre-busca-mujer/iquitos p5: cards=30 new=30 total=4349
+[16:48:47] API hombre-busca-mujer/iquitos p6: cards=23 new=23 total=4372
+[16:48:47] API empty hombre-busca-mujer/iquitos p7 status=200 len=0
+[16:48:49] API empty hombre-busca-mujer/iquitos p8 status=200 len=0
+[16:48:49] OK 10+ path hombre-busca-mujer/iquitos pages=6
+[16:48:49] API hombre-busca-mujer/tarapoto p1: cards=30 new=28 total=4400
+[16:48:50] API hombre-busca-mujer/tarapoto p2: cards=30 new=29 total=4429
+[16:48:52] API hombre-busca-mujer/tarapoto p3: cards=30 new=29 total=4458
+[16:48:53] API hombre-busca-mujer/tarapoto p4: cards=30 new=30 total=4488
+[16:48:54] API hombre-busca-mujer/tarapoto p5: cards=30 new=29 total=4517
+[16:48:55] API hombre-busca-mujer/tarapoto p6: cards=30 new=29 total=4546
+[16:48:56] API hombre-busca-mujer/tarapoto p7: cards=30 new=30 total=4576
+[16:48:57] API hombre-busca-mujer/tarapoto p8: cards=30 new=30 total=4606

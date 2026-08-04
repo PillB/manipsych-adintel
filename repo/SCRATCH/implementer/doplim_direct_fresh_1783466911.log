@@ -1,0 +1,6 @@
+[18:28:31] START fresh Doplim direct batch (require ayuda economica + offer)
+[18:28:32] dup https://moquegua-capital.doplim.com.pe/brindo-ayuda-economic
+[18:28:32] dup https://talavera.doplim.com.pe/brindo-apoyo-economico-a-solo
+[18:28:32] dup https://cerro-de-pasco.doplim.com.pe/ayuda-economica-dinero-
+[18:28:32] skip list-ish https://ilo.doplim.com.pe/s/hombre-busca-mujer/brindo+ayuda+
+[18:28:32] DONE fresh direct added=0

@@ -1,0 +1,9 @@
+[16:22:06] START Doplim piura (main li.cnt-list_ads ONLY, tuned)
+[16:22:06] base=https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=piura
+[16:22:06] LIST p1: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=piura
+[16:23:17]   main li.cnt-list_ads IDs: 0
+[16:23:17] LIST p2: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=piura&page=2
+[16:24:25]   main li.cnt-list_ads IDs: 0
+[16:24:25] LIST p3: https://www.doplim.com.pe/search/s/?q=ayuda+economica&ciudad=piura&page=3
+[16:25:44]   main li.cnt-list_ads IDs: 0
+[16:25:44] DONE Doplim piura: added=0

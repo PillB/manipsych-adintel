@@ -1,0 +1,7 @@
+=== GUIDE UPDATE VERIF SNAPSHOT 1783219990 ===
+Total: 287
+Platforms: {'Doplim Peru (hombre busca mujer or Contactos)': 108, 'Other indexed public': 4, 'Facebook Public (indexed)': 28, 'Facebook Public (search first)': 1, 'Locanto Peru (hombre busca mujer real)': 145, 'Facebook public group': 1}
+Sample rids: ['3e5dd891d1', '8045fb0084', '37a71269bf']
+Raws on disk: 521
+5 sample raw paths: ['data/raw/ads/locanto_chiclayo_ID_5375188463_33c793172379738d.html', 'data/raw/ads/hombre_busca_mujer_real_6550a1b9af4dc89d.html', 'data/raw/ads/fb_dop_batch_8828f8df335ddec8.html', 'data/raw/ads/locanto_websearch_fresh_55f8d7d37166c6c8.html', 'data/raw/ads/fb_add_8828f8df335ddec8.html']
+All raws have refs and gate passed prior.

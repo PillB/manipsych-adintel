@@ -1,0 +1,159 @@
+{
+  "n_pairs": 41,
+  "n_same_source_predicted": 40,
+  "n_abstained": 1,
+  "accuracy_against_accepted_links": 0.9756,
+  "elapsed_ms": 891.7,
+  "results_sample": [
+    {
+      "left_id": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+      "right_id": "h_880fb361c484a33e959dede7291d58afeca6b357d2a792af50e6942315a58909",
+      "verdict": "same_source",
+      "confidence": 0.624,
+      "stylometry": 0.935,
+      "survived": {
+        "brand_name_removal": true,
+        "slogan_removal": true,
+        "disclaimer_removal": true,
+        "template_removal": true
+      },
+      "n_left_tokens": 40,
+      "n_right_tokens": 39
+    },
+    {
+      "left_id": "h_032e21b71e2d96cceecbb4b45436211379fa23266df3d2d36e1f82109c4d02b5",
+      "right_id": "h_c03743eb36db850e14dfd85ea44cc618a31616e32a409a567ed8f46b2945ff06",
+      "verdict": "same_source",
+      "confidence": 0.673,
+      "stylometry": 0.892,
+      "survived": {
+        "brand_name_removal": true,
+        "slogan_removal": true,
+        "disclaimer_removal": true,
+        "template_removal": true
+      },
+      "n_left_tokens": 45,
+      "n_right_tokens": 44
+    },
+    {
+      "left_id": "h_032e21b71e2d96cceecbb4b45436211379fa23266df3d2d36e1f82109c4d02b5",
+      "right_id": "h_fefa8fdc8fff478e7f1b39bfa0c57a6657677efb900cb2935455535213fcaa0e",
+      "verdict": "same_source",
+      "confidence": 0.691,
+      "stylometry": 0.9,
+      "survived": {
+        "brand_name_removal": true,
+        "slogan_removal": true,
+        "disclaimer_removal": true,
+        "template_removal": true
+      },
+      "n_left_tokens": 45,
+      "n_right_tokens": 44
+    },
+    {
+      "left_id": "h_0343fd37b2588deaf3d6625eaca71a20dc2754e7cd7cacd3b9edb8859fe4be88",
+      "right_id": "h_30549f4e3fe52ffab85969b81f21af6a95dc0e0fcd07bf65c53af152064ea61f",
+      "verdict": "same_source",
+      "confidence": 0.646,
+      "stylometry": 0.928,
+      "survived": {
+        "brand_name_removal": true,
+        "slogan_removal": true,
+        "disclaimer_removal": false,
+        "template_removal": true
+      },
+      "n_left_tokens": 41,
+      "n_right_tokens": 41
+    },
+    {
+      "left_id": "h_0343fd37b2588deaf3d6625eaca71a20dc2754e7cd7cacd3b9edb8859fe4be88",
+      "right_id": "h_4a47868486e70e64e573aea97af79c5115f8b4f1b545dd97b5ee6251194ca846",
+      "verdict": "same_source",
+      "confidence": 0.633,
+      "stylometry": 0.874,
+      "survived": {
+        "brand_name_removal": true,
+        "slogan_removal": true,
+        "disclaimer_removal": false,
+        "template_removal": true
+      },
+      "n_left_tokens": 41,
+      "n_right_tokens": 41
+    },
+    {
+      "left_id": "h_0343fd37b2588deaf3d6625eaca71a20dc2754e7cd7cacd3b9edb8859fe4be88",
+      "right_id": "h_acef118ac05237cdb843b5b5af694b94e9f7dc5225ee4f475be7b1e07c6ce7de",
+      "verdict": "same_source",
+      "confidence": 0.608,
+      "stylometry": 0.902,
+      "survived": {
+        "brand_name_removal": true,
+        "slogan_removal": true,
+        "disclaimer_removal": false,
+        "template_removal": true
+      },
+      "n_left_tokens": 41,
+      "n_right_tokens": 39
+    },
+    {
+      "left_id": "h_04936c7bebd43e9124ba14a880642028d549601e22655d5afdae1ee42520e1af",
+      "right_id": "h_b52e0d8500c065d1af0b467fcd0035bf52de4837110b408c74f43ea93d02d8f2",
+      "verdict": "same_source",
+      "confidence": 0.965,
+      "stylometry": 0.966,
+      "survived": {
+        "brand_name_removal": true,
+        "slogan_removal": true,
+        "disclaimer_removal": true,
+        "template_removal": true
+      },
+      "n_left_tokens": 127,
+      "n_right_tokens": 127
+    },
+    {
+      "left_id": "h_04936c7bebd43e9124ba14a880642028d549601e22655d5afdae1ee42520e1af",
+      "right_id": "h_fc873658ae35de262189b3aa04b450137cf93ecd7d88179a19a4ec1d773d8c7f",
+      "verdict": "same_source",
+      "confidence": 0.966,
+      "stylometry": 0.965,
+      "survived": {
+        "brand_name_removal": true,
+        "slogan_removal": true,
+        "disclaimer_removal": true,
+        "template_removal": true
+      },
+      "n_left_tokens": 127,
+      "n_right_tokens": 126
+    },
+    {
+      "left_id": "h_0516f93f88dddb21e76869ad6b3a71c9b40eac33780c5c312cd90f217f421298",
+      "right_id": "h_080470d9d9f5f6a77f17afe0e13b11e56fc00c7470f3619c76acf14d8d27b777",
+      "verdict": "same_source",
+      "confidence": 0.901,
+      "stylometry": 0.907,
+      "survived": {
+        "brand_name_removal": true,
+        "slogan_removal": true,
+        "disclaimer_removal": true,
+        "template_removal": true
+      },
+      "n_left_tokens": 58,
+      "n_right_tokens": 58
+    },
+    {
+      "left_id": "h_0516f93f88dddb21e76869ad6b3a71c9b40eac33780c5c312cd90f217f421298",
+      "right_id": "h_0fe3dcd7afb26dcabe74cb0b4e846431d30baccd39dc73bf3ff3b06de89bc59a",
+      "verdict": "same_source",
+      "confidence": 0.945,
+      "stylometry": 0.967,
+      "survived": {
+        "brand_name_removal": true,
+        "slogan_removal": true,
+        "disclaimer_removal": true,
+        "template_removal": true
+      },
+      "n_left_tokens": 58,
+      "n_right_tokens": 58
+    }
+  ]
+}

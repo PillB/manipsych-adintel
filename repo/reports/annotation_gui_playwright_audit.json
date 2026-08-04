@@ -1,0 +1,94 @@
+{
+  "app": "annotation_app/index.html",
+  "topIssues": [],
+  "viewports": {
+    "desktop": {
+      "actions": {
+        "draftSaved": true,
+        "nextShortcutChangesDoc": true,
+        "slashFocusesSearch": true,
+        "spanCountAfterAdd": 1,
+        "submitted": true,
+        "suggestionsHiddenBeforeSubmit": true,
+        "suggestionsUnlockedAfterSubmit": true,
+        "trainingClosed": true,
+        "tutorialShortcutReopens": true
+      },
+      "after": {
+        "labelButtons": 20,
+        "labels": 20,
+        "overflow": 0,
+        "rows": 300,
+        "selectedDoc": "h_00255b3c098e9c2113fd5b9e8c92378f93ec8bb9451a1f6eb20fc7461b455f11 \u00b7 ciudadanuncios \u00b7 train \u00b7 hash e607e2f41980",
+        "spanRows": 0,
+        "storedKeys": 1,
+        "suggestionsText": "Hidden until this reviewer submits an independent review for this ad.",
+        "textLength": 250,
+        "tutorialOpen": false,
+        "unlabelledControls": [],
+        "unnamedButtons": 0
+      },
+      "before": {
+        "labelButtons": 20,
+        "labels": 20,
+        "overflow": 0,
+        "rows": 300,
+        "selectedDoc": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9 \u00b7 doplim \u00b7 train \u00b7 hash 87b82ba94def",
+        "spanRows": 0,
+        "storedKeys": 0,
+        "suggestionsText": "Hidden until this reviewer submits an independent review for this ad.",
+        "textLength": 279,
+        "tutorialOpen": true,
+        "unlabelledControls": [],
+        "unnamedButtons": 0
+      },
+      "consoleErrors": [],
+      "issues": [],
+      "pageErrors": []
+    },
+    "mobile": {
+      "actions": {
+        "draftSaved": true,
+        "nextShortcutChangesDoc": true,
+        "slashFocusesSearch": true,
+        "spanCountAfterAdd": 1,
+        "submitted": true,
+        "suggestionsHiddenBeforeSubmit": true,
+        "suggestionsUnlockedAfterSubmit": true,
+        "trainingClosed": true,
+        "tutorialShortcutReopens": true
+      },
+      "after": {
+        "labelButtons": 20,
+        "labels": 20,
+        "overflow": 0,
+        "rows": 300,
+        "selectedDoc": "h_00255b3c098e9c2113fd5b9e8c92378f93ec8bb9451a1f6eb20fc7461b455f11 \u00b7 ciudadanuncios \u00b7 train \u00b7 hash e607e2f41980",
+        "spanRows": 0,
+        "storedKeys": 1,
+        "suggestionsText": "Hidden until this reviewer submits an independent review for this ad.",
+        "textLength": 250,
+        "tutorialOpen": false,
+        "unlabelledControls": [],
+        "unnamedButtons": 0
+      },
+      "before": {
+        "labelButtons": 20,
+        "labels": 20,
+        "overflow": 0,
+        "rows": 300,
+        "selectedDoc": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9 \u00b7 doplim \u00b7 train \u00b7 hash 87b82ba94def",
+        "spanRows": 0,
+        "storedKeys": 0,
+        "suggestionsText": "Hidden until this reviewer submits an independent review for this ad.",
+        "textLength": 279,
+        "tutorialOpen": true,
+        "unlabelledControls": [],
+        "unnamedButtons": 0
+      },
+      "consoleErrors": [],
+      "issues": [],
+      "pageErrors": []
+    }
+  }
+}

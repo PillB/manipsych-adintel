@@ -1,0 +1,178 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+START cajamarca v3 section list crawl (main cards ONLY, tuned)
+base=https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701
+LIST p1: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/1/?query=ayuda+economica
+  main IDs: 48
+  + https://www.locanto.com.pe/cajamarca/ID_8627783272/DOY-AYUDA-ECONOMICA
+  + https://www.locanto.com.pe/cajamarca/ID_8041247666/Ayuda-economica-inm
+  + https://www.locanto.com.pe/cajamarca/ID_8041246870/Ayuda-Economica-Par
+  + https://www.locanto.com.pe/cajamarca/ID_8014311508/Doy-ayuda-economica
+  + https://www.locanto.com.pe/cajamarca/ID_8144580472/Busco-joven-mujer-e
+  + https://www.locanto.com.pe/cajamarca/ID_8144589713/El-anuncio-va-dirig
+  + https://www.locanto.com.pe/cajamarca/ID_8449108929/Doy-ayuda-economica
+  + https://www.locanto.com.pe/cajamarca/ID_7768014816/DOY-AYUDA-ECONOMICA
+  + https://www.locanto.com.pe/cajamarca/ID_7767985906/Busco-chica-de-casa
+  + https://www.locanto.com.pe/cajamarca/ID_8118174529/Doy-Ayuda-Economica
+  + https://www.locanto.com.pe/cajamarca/ID_6841202954/Brindo-ayuda-econom
+  + https://www.locanto.com.pe/cajamarca/ID_6841200882/Hola-Doy-ayuda-econ
+  + https://www.locanto.com.pe/cajamarca/ID_7067033920/Busco-encuentro-cas
+  + https://www.locanto.com.pe/cajamarca/ID_7067033881/Doy-ayuda-a-mujer-c
+  + https://www.locanto.com.pe/cajamarca/ID_7671805518/Hola-amiga-si-busca
+  + https://www.locanto.com.pe/cajamarca/ID_7850683990/Doy-ayuda-economica
+  + https://www.locanto.com.pe/cajamarca/ID_8572476297/AYUDA-economica-ama
+  + https://www.locanto.com.pe/cajamarca/ID_7975996190/Ayuda-Economica-Caj
+  + https://www.locanto.com.pe/cajamarca/ID_7670737882/HOLA-a-mujeres-en-g
+  + https://www.locanto.com.pe/cajamarca/ID_8771030745/Se-brinda-AE-Ayuda-
+  + https://www.locanto.com.pe/cajamarca/ID_7670784661/Busco-chica-para-en
+  + https://www.locanto.com.pe/cajamarca/ID_7541264559/Doy-ayuda-economica
+LIST p2: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/2/?query=ayuda+economica
+  main IDs: 39
+  + https://www.locanto.com.pe/cajamarca/ID_7899727781/Ayuda-economica-par
+  + https://www.locanto.com.pe/cajamarca/ID_8278857744/Ayuda-economica-par
+  + https://www.locanto.com.pe/cajamarca/ID_7910820701/Doy-ayuda-economica
+  + https://www.locanto.com.pe/cajamarca/ID_7810644567/DOY-AYUDA-ECONOMICA
+  + https://www.locanto.com.pe/cajamarca/ID_8032520789/Doy-ayuda-economica
+  + https://www.locanto.com.pe/cajamarca/ID_8419214553/AYUDA-ECONOMICA-PAR
+  + https://www.locanto.com.pe/cajamarca/ID_8419231730/AYUDA-ECONOMICA-PAR
+  + https://www.locanto.com.pe/cajamarca/ID_8419261379/AYUDA-ECONOMICA-PAR
+  + https://www.locanto.com.pe/cajamarca/ID_8419298919/AYUDA-ECONOMICA-PAR
+  + https://www.locanto.com.pe/cajamarca/ID_8420838371/TRABAJO-Y-AYUDA-ECO
+  + https://www.locanto.com.pe/cajamarca/ID_6767287576/DOY-AYUDA-ECONOMICA
+  + https://www.locanto.com.pe/cajamarca/ID_6963447162/BRINDO-AYUDA-ECONOM
+  + https://www.locanto.com.pe/cajamarca/ID_6858014096/BRINDO-AYUDA-ECONOM
+  + https://www.locanto.com.pe/cajamarca/ID_6918618482/DOY-AYUDA-ECONOMICA
+  + https://www.locanto.com.pe/cajamarca/ID_7489849975/BUSCO-A-SENORITAS-Q
+  + https://www.locanto.com.pe/cajamarca/ID_6726321721/A-senoritas-de-casa
+  + https://www.locanto.com.pe/cajamarca/ID_7489654721/SENORITAS-SI-NECESI
+  + https://www.locanto.com.pe/cajamarca/ID_7584448146/AYUDA-economica.htm
+  + https://www.locanto.com.pe/cajamarca/ID_8144599755/HOLA-CHICAS-ESTE-AN
+  + https://www.locanto.com.pe/cajamarca/ID_8041238507/Ayuda-Economica-a-S
+  + https://www.locanto.com.pe/cajamarca/ID_6726321419/Mujeres-que-necesit
+  + https://www.locanto.com.pe/cajamarca/ID_7301459986/Doy-ayuda-economica
+  + https://www.locanto.com.pe/cajamarca/ID_6877907149/Entrego-ayuda-econo
+  + https://www.locanto.com.pe/cajamarca/ID_7041772314/bRINDO-APOYO-O-AYUD
+  + https://www.locanto.com.pe/cajamarca/ID_6886666711/Entrego-ayuda-econo
+LIST p3: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/3/?query=ayuda+economica
+  main IDs: 45
+  + https://www.locanto.com.pe/cajamarca/ID_7562185388/Doy-ayuda-economica
+  + https://www.locanto.com.pe/cajamarca/ID_7562190790/Doy-ayuda-a-senoras
+  + https://www.locanto.com.pe/cajamarca/ID_7670720266/Doy-ayuda-economica
+  + https://www.locanto.com.pe/cajamarca/ID_7670726236/El-aviso-es-para-se
+  + https://www.locanto.com.pe/cajamarca/ID_7671809162/Buenas-tardes-senor
+  + https://www.locanto.com.pe/cajamarca/ID_8118195890/Busco-Sugar-Baby-Pa
+  + https://www.locanto.com.pe/cajamarca/ID_8373314047/Ofrezco-apoyo-econo
+  + https://www.locanto.com.pe/cajamarca/ID_7067033633/Brindo-ayuda-econom
+  + https://www.locanto.com.pe/cajamarca/ID_7067033980/Busco-encuentro-cas
+  + https://www.locanto.com.pe/cajamarca/ID_7562078632/Doy-ayuda-economica
+  + https://www.locanto.com.pe/cajamarca/ID_7575113571/Brindo-ayuda-econom
+  + https://www.locanto.com.pe/cajamarca/ID_8128400716/Busco-Senorita-Que-
+  + https://www.locanto.com.pe/cajamarca/ID_7743510706/Doy-apoyo-economico
+  + https://www.locanto.com.pe/cajamarca/ID_8361261635/Apoyo-economico-par
+  + https://www.locanto.com.pe/cajamarca/ID_6841183282/BUENAS-TARDES-DOY-A
+  + https://www.locanto.com.pe/cajamarca/ID_7225726424/Entrego-ayuda-para-
+  + https://www.locanto.com.pe/cajamarca/ID_6843058536/Doy-ayuda-economico
+  + https://www.locanto.com.pe/cajamarca/ID_7301439624/Estoy-buscando-chic
+  + https://www.locanto.com.pe/cajamarca/ID_7277376581/Doy-ayuda-a-chicas-
+  + https://www.locanto.com.pe/cajamarca/ID_7562168452/ENTREGO-AYUDA-ECONO
+  + https://www.locanto.com.pe/cajamarca/ID_7860265416/Hola-Chicas-de-Caja
+  + https://www.locanto.com.pe/cajamarca/ID_8349462810/Apoyo-economico-dis
+  + https://www.locanto.com.pe/cajamarca/ID_7660089275/Ayuda-economica-par
+  + https://www.locanto.com.pe/cajamarca/ID_7660087000/Brindo-apoyo-a-seno
+  + https://www.locanto.com.pe/cajamarca/ID_8345363249/Necesitas-dinero-ex
+LIST p4: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/4/?query=ayuda+economica
+  main IDs: 45
+LIST p5: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/5/?query=ayuda+economica
+  main IDs: 45
+LIST p6: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/6/?query=ayuda+economica
+  main IDs: 45
+LIST p7: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/7/?query=ayuda+economica
+  main IDs: 45
+LIST p8: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/8/?query=ayuda+economica
+  main IDs: 45
+LIST p9: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/9/?query=ayuda+economica
+  main IDs: 45
+LIST p10: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/10/?query=ayuda+economica
+  main IDs: 45
+LIST p11: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/11/?query=ayuda+economica
+  main IDs: 45
+LIST p12: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/12/?query=ayuda+economica
+  main IDs: 45
+LIST p13: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/13/?query=ayuda+economica
+  main IDs: 45
+LIST p14: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/14/?query=ayuda+economica
+  main IDs: 45
+LIST p15: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/15/?query=ayuda+economica
+  main IDs: 45
+LIST p16: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/16/?query=ayuda+economica
+  main IDs: 45
+LIST p17: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/17/?query=ayuda+economica
+  main IDs: 45
+LIST p18: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/18/?query=ayuda+economica
+  main IDs: 45
+LIST p19: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/19/?query=ayuda+economica
+  main IDs: 45
+LIST p20: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/20/?query=ayuda+economica
+  main IDs: 45
+LIST p21: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/21/?query=ayuda+economica
+  main IDs: 45
+LIST p22: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/22/?query=ayuda+economica
+  main IDs: 45
+LIST p23: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/23/?query=ayuda+economica
+  main IDs: 45
+LIST p24: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/24/?query=ayuda+economica
+  main IDs: 45
+LIST p25: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/25/?query=ayuda+economica
+  main IDs: 45
+LIST p26: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/26/?query=ayuda+economica
+  main IDs: 45
+LIST p27: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/27/?query=ayuda+economica
+  main IDs: 45
+LIST p28: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/28/?query=ayuda+economica
+  main IDs: 45
+LIST p29: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/29/?query=ayuda+economica
+  main IDs: 45
+LIST p30: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/30/?query=ayuda+economica
+  main IDs: 45
+LIST p31: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/31/?query=ayuda+economica
+  main IDs: 45
+LIST p32: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/32/?query=ayuda+economica
+  main IDs: 45
+LIST p33: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/33/?query=ayuda+economica
+  main IDs: 45
+LIST p34: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/34/?query=ayuda+economica
+  main IDs: 45
+LIST p35: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/35/?query=ayuda+economica
+  main IDs: 45
+LIST p36: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/36/?query=ayuda+economica
+  main IDs: 45
+LIST p37: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/37/?query=ayuda+economica
+  main IDs: 45
+LIST p38: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/38/?query=ayuda+economica
+  main IDs: 45
+LIST p39: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/39/?query=ayuda+economica
+  main IDs: 45
+LIST p40: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/40/?query=ayuda+economica
+  main IDs: 45
+LIST p41: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/41/?query=ayuda+economica
+  main IDs: 45
+LIST p42: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/42/?query=ayuda+economica
+  main IDs: 45
+LIST p43: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/43/?query=ayuda+economica
+  main IDs: 45
+LIST p44: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/44/?query=ayuda+economica
+  main IDs: 45
+LIST p45: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/45/?query=ayuda+economica
+  main IDs: 45
+LIST p46: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/46/?query=ayuda+economica
+  main IDs: 45
+LIST p47: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/47/?query=ayuda+economica
+  main IDs: 45
+LIST p48: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/48/?query=ayuda+economica
+  main IDs: 45
+LIST p49: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/49/?query=ayuda+economica
+  main IDs: 45
+LIST p50: https://www.locanto.com.pe/cajamarca/Hombre-busca-mujer/20701/50/?query=ayuda+economica
+  main IDs: 45
+DONE cajamarca: added=72
+SUMMARY cajamarca added=72

@@ -1,0 +1,19 @@
+[22:09:09] === SINGLE-MIND FOCUSED LIST CRAWL START (Locanto + Doplim Hombre Busca Mujer) ===
+[22:09:09] Strategy: headed Selenium for lists (poll verificando + h1/ID_ appear), BS4 parse only ID/id- links, pagination, random delays 3-15s, retries.
+[22:09:09] Then Playwright for each ad detail full HTML + central archive_raw. NO manifest appends. Follows guide list-extract on clean pass.
+[22:09:09] === LOCANTO LIST PAGES ===
+[22:09:09] LIST_BASE: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/
+[22:09:09]   PAGE1: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/
+[22:09:15]     SELENIUM_HEADED_LOAD start (no-headless, poll verificando): https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/
+[22:10:38]       real content appeared (len=357711, no verificando in first3k) after 1 polls
+[22:10:39]     BS4_EXTRACT: 50 /ID_ urls (only those)
+[22:10:47]   PAGE2: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/2/
+[22:10:52]     SELENIUM_HEADED_LOAD start (no-headless, poll verificando): https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/2/
+[22:12:14]       real content appeared (len=323603, no verificando in first3k) after 1 polls
+[22:12:15]     BS4_EXTRACT: 50 /ID_ urls (only those)
+[22:12:25]   PAGE3: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/3/
+[22:12:29]     SELENIUM_HEADED_LOAD start (no-headless, poll verificando): https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/3/
+[22:13:52]       real content appeared (len=325470, no verificando in first3k) after 1 polls
+[22:13:52]     BS4_EXTRACT: 50 /ID_ urls (only those)
+[22:14:05] LIST_BASE: https://www.locanto.com.pe/arequipa/Hombre-busca-mujer/20701/
+[22:14:05]   PAGE1: https://www.locanto.com.pe/arequipa/Hombre-busca-mujer/20701/

@@ -1,0 +1,115 @@
+{
+  "rule-detector-v1": {
+    "checkpoint_id": "rule-detector-v1",
+    "version": "rule-detector-v1.0.0",
+    "config": {
+      "source": "tools/detect_manipulation.py",
+      "rules": "scarcity_urgency_pressure, reciprocity_obligation, platform_migration, safety_and_privacy_multiplier, financial_emergency_multiplier, confirmshaming_guilt_pressure",
+      "weights": "0.15-0.25 per rule, capped at 1.0"
+    },
+    "abstention_conditions": [
+      "empty_text",
+      "no_rule_match"
+    ],
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 1.0,
+    "baseline_checkpoint_id": null,
+    "calibration_status": "uncalibrated",
+    "description": "Lexical rule-based baseline. Transparent but brittle. Used as the interpretable baseline for every other checkpoint."
+  },
+  "tfidf-ovr-v1": {
+    "checkpoint_id": "tfidf-ovr-v1",
+    "version": "tfidf-ovr-v1.0.0",
+    "config": {
+      "vectorizer": "TfidfVectorizer(ngram_range=(1,2), min_df=1, max_features=3000)",
+      "classifier": "OneVsRestClassifier(LogisticRegression(max_iter=1000, class_weight=balanced))",
+      "training_data": "data/processed/ad_manifest.jsonl (5,189 records)",
+      "labels": "weak-supervised from rule-based detector + metadata cues"
+    },
+    "abstention_conditions": [
+      "text_below_5_tokens",
+      "all_probabilities_below_0.3"
+    ],
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 10.0,
+    "baseline_checkpoint_id": "rule-detector-v1",
+    "calibration_status": "uncalibrated",
+    "description": "TF-IDF + OVR logistic regression. Existing v1 council model. Metrics are agreement-with-council, NOT independent validity."
+  },
+  "persuasive-profile-v1": {
+    "checkpoint_id": "persuasive-profile-v1",
+    "version": "persuasive-profile-v1.0.0",
+    "config": {
+      "dimensions": 17,
+      "scoring": "rule-based signal inventories with saturating transform",
+      "calibration": "uncalibrated (no held-out labels)",
+      "composites": "transparent summary only; no universal score"
+    },
+    "abstention_conditions": [
+      "empty_text",
+      "dimension_specific_signal_absence"
+    ],
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 5.0,
+    "baseline_checkpoint_id": "rule-detector-v1",
+    "calibration_status": "uncalibrated",
+    "description": "17-dimension persuasive profile. Per-dimension signal inventories are auditable. Composites are transparent summaries, not universal scores."
+  },
+  "authorship-v1": {
+    "checkpoint_id": "authorship-v1",
+    "version": "authorship-v1.0.0",
+    "config": {
+      "stylometry": "TfidfVectorizer(char_wb, 4-5-grams, 2000 features, sublinear_tf)",
+      "weighting": "0.50 stylometry + 0.15 lexical_richness + 0.20 template + 0.10 structural + 0.05 council_overlap",
+      "min_tokens_for_verification": 15,
+      "min_tokens_for_attribution": 15,
+      "reduced_confidence_threshold": 60,
+      "short_text_confidence_floor": 0.3
+    },
+    "abstention_conditions": [
+      "below_min_tokens",
+      "empty_candidate_set_in_open_set",
+      "ambiguous_zone"
+    ],
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 20.0,
+    "baseline_checkpoint_id": "rule-detector-v1",
+    "calibration_status": "uncalibrated",
+    "description": "Multi-signal authorship / common-source analysis. Length-aware abstention. NEVER names a person from similarity alone."
+  },
+  "outlier-v1": {
+    "checkpoint_id": "outlier-v1",
+    "version": "outlier-v1.0.0",
+    "config": {
+      "detectors": "creative_novelty, unusual_technique_combination, style_outlier, visual_outlier, performance_over/under, temporal, duplicate, extraction_error, metadata_error, model_error",
+      "performance_proxy": "quality_score (corpus has no real performance metrics)"
+    },
+    "abstention_conditions": [
+      "corpus_below_5_records"
+    ],
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 50.0,
+    "baseline_checkpoint_id": "rule-detector-v1",
+    "calibration_status": "uncalibrated",
+    "description": "10+ outlier detectors. Every report carries comparison population, feature space, alternative explanation, and uncertainty."
+  },
+  "clustering-v1": {
+    "checkpoint_id": "clustering-v1",
+    "version": "clustering-v1.0.0",
+    "config": {
+      "spaces": "persuasive, semantic, rhetorical, visual, multimodal, authorial, performance",
+      "algorithm": "MiniBatchKMeans (deterministic seed)",
+      "stability_eval": "ARI over 5 bootstrap resamples",
+      "leakage_eval": "per-cluster platform / platform_family dominance"
+    },
+    "abstention_conditions": [
+      "corpus_below_10_records",
+      "k_greater_than_n_records"
+    ],
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 200.0,
+    "baseline_checkpoint_id": null,
+    "calibration_status": "uncalibrated",
+    "description": "7-space clustering with stability, leakage, and explanation reports."
+  }
+}

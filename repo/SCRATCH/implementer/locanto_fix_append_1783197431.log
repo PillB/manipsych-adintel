@@ -1,0 +1,5 @@
+[2026-07-04T20:37:11.812451Z] FIX_APPEND for archived raw: data/raw/ads/locanto_focus_single_2afd8ba628b6e826.html url=https://www.locanto.com.pe/lima/ID_7995095766/BRINDO-APOYO-ECONOMICO-A-SENORITAS-DE-18-A-40-ANOS.html
+[2026-07-04T20:37:11.863708Z] extracted title_len=56 body_len=3577
+[2026-07-04T20:37:11.869553Z] NO_PII after redact
+[2026-07-04T20:37:11.876199Z] ADD_SUCCESS rid=2afd8ba628b6 to ad_manifest.jsonl
+[2026-07-04T20:37:11.876449Z] FIX_DONE

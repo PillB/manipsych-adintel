@@ -1,0 +1,30 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[19:56:21] START locanto_fast target=1500 start_tagged_detail=572 content_heuristic≈572 mode=seeds
+[19:56:21] LOADED seeds_in=1919 from SCRATCH/implementer/seeds_locanto_ayuda_only.jsonl
+[19:56:21] shard 3/4 size=90
+[19:56:21] pending after dedup/shard=90 (from 1919)
+[19:56:21] FETCH start pending=90 mode=serial_playwright tag=locanto_fast
+[19:56:40] SAVED 1 total~573 title='Busco sumisa, que quiera Ayuda económica,, Lima – 41' locanto_fast_751d949fc58da231.html
+[19:56:40] PROGRESS done=1/90 saved=1 skip=0 rate=3.1/min tagged=573
+[19:57:01] SAVED 2 total~574 title='Ae ayuda económica a señoritas de 18 - 22 años, Cusco –' locanto_fast_6277630aad486f56.html
+[19:57:01] PROGRESS done=2/90 saved=2 skip=0 rate=3.0/min tagged=574
+[19:57:15] SAVED 3 total~575 title='Ayuda económica para señorita de 26 años, Lima' locanto_fast_97fca39e5a727c72.html
+[19:57:15] PROGRESS done=3/90 saved=3 skip=0 rate=3.3/min tagged=575
+[19:57:31] SAVED 4 total~576 title='Doy ayuda económica A señora o señoritaa, Cusco – 38' locanto_fast_4504f16343a102bd.html
+[19:57:44] SAVED 5 total~577 title='Apoyo económico para señoritas discretas, Cajamarca – 3' locanto_fast_a8d7a608b84839ca.html
+[19:57:44] PROGRESS done=5/90 saved=5 skip=0 rate=3.6/min tagged=577
+[19:59:02] SAVED 10 total~582 title='Ayuda economica AE a mujeres, Tacna – 36' locanto_fast_e1c7de8a1c9833e5.html
+[19:59:02] PROGRESS done=10/90 saved=10 skip=0 rate=3.7/min tagged=582
+[20:00:15] PROGRESS done=15/90 saved=15 skip=0 rate=3.8/min tagged=587
+[20:02:21] PROGRESS done=20/90 saved=19 skip=1 rate=3.2/min tagged=591
+[20:02:35] SAVED 20 total~592 title='Doy ayuda económica a madres solteras, Ica – 24' locanto_fast_b0094b0887e0801b.html
+[20:03:41] PROGRESS done=25/90 saved=24 skip=1 rate=3.3/min tagged=596
+[20:05:00] PROGRESS done=30/90 saved=29 skip=1 rate=3.4/min tagged=601
+[20:05:14] SAVED 30 total~602 title='BRINDO APOYO ECONOMICO CHICAS, MADRES SOLTERAS, UNIVERS' locanto_fast_aaea420711939b47.html
+[20:06:19] PROGRESS done=35/90 saved=34 skip=1 rate=3.4/min tagged=606
+[20:07:35] PROGRESS done=40/90 saved=39 skip=1 rate=3.5/min tagged=611
+[20:07:50] SAVED 40 total~612 title='BRINDO AYUDA ECONÓMICA A SEÑORITAS NECESITADAS, Trujill' locanto_fast_9531b7f39227bf45.html
+[20:08:49] PROGRESS done=45/90 saved=44 skip=1 rate=3.5/min tagged=616
+[20:10:52] PROGRESS done=50/90 saved=48 skip=2 rate=3.3/min tagged=620
+[20:11:25] SAVED 50 total~622 title='Busco señorita o señora para encuentro casual todo con ' locanto_fast_0c05510f54902736.html

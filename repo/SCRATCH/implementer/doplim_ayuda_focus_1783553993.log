@@ -1,0 +1,64 @@
+[18:40:00] after cat=5/51 q='ayuda economica' unique=300
+[18:40:06] after cat=5/51 q='apoyo economico' unique=548
+[18:40:13] after cat=5/51 q='brindo ayuda' unique=757
+[18:40:20] after cat=5/51 q='doy ayuda' unique=972
+[18:40:31] after cat=5/51 q='brindo apoyo' unique=1200
+[18:40:37] after cat=5/51 q='ayuda a señoritas' unique=1308
+[18:40:41] after cat=5/54 q='ayuda economica' unique=1311
+[18:40:46] after cat=5/54 q='apoyo economico' unique=1317
+[18:40:51] after cat=5/54 q='brindo ayuda' unique=1317
+[18:40:55] after cat=5/54 q='doy ayuda' unique=1320
+[18:40:59] after cat=5/54 q='brindo apoyo' unique=1320
+[18:41:04] after cat=5/54 q='ayuda a señoritas' unique=1320
+[18:41:04] GATHER unique=1320
+[18:41:29] pending=1107
+[18:41:30] PROGRESS i=1/1107 saved=1 skip=0 rate=34.5/min doplim_ayuda_adcdc30f38f81cf1.html
+[18:41:30] PROGRESS i=2/1107 saved=2 skip=0 rate=68.3/min doplim_ayuda_bdc5fbc07c7e2ca6.html
+[18:41:30] PROGRESS i=3/1107 saved=3 skip=0 rate=101.0/min doplim_ayuda_f6b2a04c76186db2.html
+[18:41:31] PROGRESS i=4/1107 saved=4 skip=0 rate=134.2/min doplim_ayuda_07ba259cbfe48c14.html
+[18:41:32] PROGRESS i=5/1107 saved=5 skip=0 rate=105.6/min doplim_ayuda_6b0132a6358829b5.html
+[18:41:34] PROGRESS i=25/1107 saved=25 skip=0 rate=262.6/min doplim_ayuda_c76757d29ed6ee57.html
+[18:41:39] PROGRESS i=50/1107 saved=50 skip=0 rate=304.3/min doplim_ayuda_c2364b81fb3540f8.html
+[18:41:42] PROGRESS i=75/1107 saved=73 skip=2 rate=320.0/min doplim_ayuda_1c6aff74d8407c95.html
+[18:41:48] PROGRESS i=100/1107 saved=98 skip=2 rate=301.3/min doplim_ayuda_c1e81731598143a9.html
+[18:41:52] PROGRESS i=125/1107 saved=122 skip=3 rate=307.9/min doplim_ayuda_f07b1855fb1b7c01.html
+[18:41:57] PROGRESS i=150/1107 saved=147 skip=3 rate=316.8/min doplim_ayuda_a95128b34deb2f39.html
+[18:42:01] PROGRESS i=175/1107 saved=171 skip=4 rate=313.8/min doplim_ayuda_fa87084348008a5d.html
+[18:42:06] PROGRESS i=200/1107 saved=196 skip=4 rate=314.4/min doplim_ayuda_c9417bffb59013e0.html
+[18:42:11] PROGRESS i=225/1107 saved=221 skip=4 rate=315.3/min doplim_ayuda_973f4da8477ff7ba.html
+[18:42:15] PROGRESS i=250/1107 saved=245 skip=5 rate=315.2/min doplim_ayuda_f43a650a67db2700.html
+[18:42:22] PROGRESS i=275/1107 saved=270 skip=5 rate=305.6/min doplim_ayuda_b5dfd0356722c6de.html
+[18:42:27] PROGRESS i=300/1107 saved=294 skip=6 rate=304.7/min doplim_ayuda_068c1b0ce52478c9.html
+[18:42:30] PROGRESS i=325/1107 saved=318 skip=7 rate=309.4/min doplim_ayuda_9465cc064a24a84e.html
+[18:42:34] PROGRESS i=350/1107 saved=342 skip=8 rate=314.9/min doplim_ayuda_b4420807d45a7dd8.html
+[18:42:38] PROGRESS i=375/1107 saved=366 skip=9 rate=316.7/min doplim_ayuda_cc4874f038aec63a.html
+[18:42:43] PROGRESS i=400/1107 saved=391 skip=9 rate=314.1/min doplim_ayuda_5abac0d12d736f48.html
+[18:42:48] PROGRESS i=425/1107 saved=414 skip=11 rate=312.2/min doplim_ayuda_398b48de31e25a4f.html
+[18:42:53] PROGRESS i=450/1107 saved=438 skip=12 rate=312.9/min doplim_ayuda_0c658c46d2901812.html
+[18:42:58] PROGRESS i=475/1107 saved=463 skip=12 rate=310.5/min doplim_ayuda_7ab7a6d4a8e1c9b9.html
+[18:43:03] PROGRESS i=500/1107 saved=486 skip=14 rate=308.8/min doplim_ayuda_c337d7de9a677aa1.html
+[18:43:08] PROGRESS i=525/1107 saved=511 skip=14 rate=309.6/min doplim_ayuda_315a2dd234be36e4.html
+[18:43:12] PROGRESS i=550/1107 saved=535 skip=15 rate=311.5/min doplim_ayuda_e42a25eb72421ee8.html
+[18:43:16] PROGRESS i=575/1107 saved=558 skip=17 rate=312.1/min doplim_ayuda_73e62a60167bb63a.html
+[18:43:21] PROGRESS i=600/1107 saved=583 skip=17 rate=312.5/min doplim_ayuda_b92be9399753453e.html
+[18:43:26] PROGRESS i=625/1107 saved=608 skip=17 rate=311.3/min doplim_ayuda_e9f36abcdfd2e324.html
+[18:43:31] PROGRESS i=650/1107 saved=633 skip=17 rate=309.5/min doplim_ayuda_52bddff64cf7303b.html
+[18:43:36] PROGRESS i=675/1107 saved=654 skip=21 rate=308.4/min doplim_ayuda_e33306c710b2ea44.html
+[18:43:41] PROGRESS i=700/1107 saved=678 skip=22 rate=307.2/min doplim_ayuda_e12d22d52e5f7ba2.html
+[18:43:53] PROGRESS i=725/1107 saved=703 skip=22 rate=291.6/min doplim_ayuda_417474077baa587e.html
+[18:44:01] PROGRESS i=750/1107 saved=728 skip=22 rate=287.6/min doplim_ayuda_f821d21e8c850ba3.html
+[18:44:08] PROGRESS i=775/1107 saved=752 skip=23 rate=283.6/min doplim_ayuda_26dd3d23714c5cf3.html
+[18:44:17] PROGRESS i=800/1107 saved=777 skip=23 rate=276.3/min doplim_ayuda_b330e90155e118c9.html
+[18:44:24] PROGRESS i=825/1107 saved=802 skip=23 rate=274.8/min doplim_ayuda_751c59dcd148545b.html
+[18:44:38] PROGRESS i=850/1107 saved=826 skip=24 rate=262.1/min doplim_ayuda_3a723dc5fe21b9e8.html
+[18:44:43] PROGRESS i=875/1107 saved=851 skip=24 rate=262.1/min doplim_ayuda_cb83fde027321f64.html
+[18:44:49] PROGRESS i=900/1107 saved=874 skip=26 rate=261.3/min doplim_ayuda_2025c1adebe646a6.html
+[18:44:55] PROGRESS i=925/1107 saved=898 skip=27 rate=261.7/min doplim_ayuda_8d3deb847ce524fe.html
+[18:44:59] PROGRESS i=950/1107 saved=923 skip=27 rate=263.4/min doplim_ayuda_337a87ce535b9002.html
+[18:45:02] PROGRESS i=975/1107 saved=945 skip=30 rate=265.8/min doplim_ayuda_a1220327cad1ca16.html
+[18:45:06] PROGRESS i=1000/1107 saved=967 skip=33 rate=267.2/min doplim_ayuda_c19d7e55633529ed.html
+[18:45:11] PROGRESS i=1025/1107 saved=990 skip=35 rate=267.4/min doplim_ayuda_2d27434aeb07a7d3.html
+[18:45:16] PROGRESS i=1050/1107 saved=1015 skip=35 rate=268.3/min doplim_ayuda_48d5f07d1deda6f3.html
+[18:45:21] PROGRESS i=1075/1107 saved=1040 skip=35 rate=269.2/min doplim_ayuda_7ae0ff68afc9a2b6.html
+[18:45:26] PROGRESS i=1100/1107 saved=1062 skip=38 rate=268.5/min doplim_ayuda_5d32054d809c587a.html
+[18:45:26] DONE saved=1069 skip=38 err=0

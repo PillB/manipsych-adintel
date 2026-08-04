@@ -1,0 +1,6 @@
+[2026-07-04T20:33:18.047299Z] SINGLE_FETCH_START retries=3 (to fit tool): https://www.locanto.com.pe/lima/ID_5574406931/Brindo-ayuda-Ayuda-Economica-Senoritas-hasta-21-anos-de-edad.html
+[2026-07-04T20:33:18.058672Z] existing before: 199
+[2026-07-04T20:36:06.698757Z] FETCHED len=112511
+[2026-07-04T20:36:06.773936Z] GATE_FAIL inter or short
+[2026-07-04T20:36:06.774637Z] SKIPPED due to gate
+[2026-07-04T20:36:06.775041Z] SINGLE_DONE

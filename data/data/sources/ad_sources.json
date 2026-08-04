@@ -1,0 +1,85 @@
+{
+  "sources": [
+    {
+      "id": "locanto_lima_tag_ayuda_economica",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Public Locanto tag endpoint reported to show 999+ Lima results."
+    },
+    {
+      "id": "locanto_lima_tag_ayuda_economica_page_1",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayuda-economica/1/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Public Locanto tag pagination candidate."
+    },
+    {
+      "id": "locanto_lima_tag_ayuda_economica_page_2",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/tag/ayuda-economica/2/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Public Locanto tag pagination candidate."
+    },
+    {
+      "id": "locanto_lima_detail_8216548048",
+      "platform": "Locanto Peru",
+      "mode": "playwright",
+      "url": "https://www.locanto.com.pe/lima/ID_8216548048/INVIERTE-Y-RECUPERA-EN-20-DIAS.html",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Concrete detail URL reported by Locanto source-discovery sub-agent; requires local validation."
+    },
+    {
+      "id": "locanto_peru_query_apoyo_economico",
+      "platform": "Locanto Peru",
+      "mode": "http",
+      "url": "https://www.locanto.com.pe/q/?query=apoyo%20economico",
+      "query": "apoyo economico",
+      "public_only": true,
+      "notes": "Public query URL candidate. Requires live network validation."
+    },
+    {
+      "id": "locanto_peru_query_ayudo_economicamente",
+      "platform": "Locanto Peru",
+      "mode": "http",
+      "url": "https://www.locanto.com.pe/q/?query=ayudo%20economicamente",
+      "query": "ayudo economicamente",
+      "public_only": true,
+      "notes": "Public query URL candidate. Requires live network validation."
+    },
+    {
+      "id": "doplim_peru_search_ayuda_economica",
+      "platform": "Doplim Peru",
+      "mode": "http",
+      "url": "https://www.doplim.com.pe/search/s/?q=ayuda%20economica",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Public search URL candidate; requires live validation."
+    },
+    {
+      "id": "clasf_peru_search_ayuda_economica",
+      "platform": "Clasf Peru",
+      "mode": "http",
+      "url": "https://www.clasf.pe/q/ayuda-economica/",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Public tag/search URL candidate; requires live validation."
+    },
+    {
+      "id": "evisos_peru_search_ayuda_economica",
+      "platform": "Evisos Peru",
+      "mode": "http",
+      "url": "https://www.evisos.com.pe/search.php?keyword=ayuda%20economica",
+      "query": "ayuda economica",
+      "public_only": true,
+      "notes": "Public search URL candidate; requires live validation."
+    }
+  ]
+}

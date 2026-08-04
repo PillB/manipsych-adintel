@@ -1,0 +1,81 @@
+{
+  "phase": 4,
+  "title": "Platform Inventory for Ayuda Economica Collection",
+  "last_verified": "2026-07-05",
+  "target_per_site": 1000,
+  "platforms": [
+    {
+      "name": "Locanto Peru (Hombre busca mujer section)",
+      "status": "in_progress_below_target",
+      "url": "https://www.locanto.com.pe/lima/Hombre-busca-mujer/",
+      "verified_records": 176,
+      "collection_status": "strict-valid public records collected, below 1000 target",
+      "reason": "Search-first and clean-listing extraction produced valid direct ad records. Many list/detail pages still return hard interstitials or duplicate/low-signal pages."
+    },
+    {
+      "name": "Doplim Peru (Hombre busca mujer / Contactos)",
+      "status": "in_progress_below_target",
+      "url": "https://www.doplim.com.pe/",
+      "verified_records": 126,
+      "collection_status": "strict-valid public records collected, below 1000 target",
+      "reason": "Search-first and public detail fetching produced valid records. Volume remains limited by duplicate and blocked pages."
+    },
+    {
+      "name": "Facebook (public indexed)",
+      "status": "in_progress_below_target",
+      "url": "https://www.facebook.com/",
+      "verified_records": 30,
+      "collection_status": "public indexed records collected, below 1000 target",
+      "reason": "Only public indexed pages are included. Login-gated, private, and Marketplace content is excluded."
+    },
+    {
+      "name": "Other indexed public sources",
+      "status": "supplemental",
+      "url": "various",
+      "verified_records": 4,
+      "collection_status": "supplemental public records",
+      "reason": "Included only when records pass the same strict manifest and raw-coherence checks."
+    },
+    {
+      "name": "Facebook groups or Marketplace",
+      "status": "restricted_or_login_gated_lead",
+      "url": "https://www.facebook.com/marketplace/",
+      "verified_records": 0,
+      "collection_status": "excluded unless public indexed content is available",
+      "reason": "Login-gated or private group content is outside the current collection boundary."
+    },
+    {
+      "name": "ForoPeru / forosperu.net",
+      "status": "unconfirmed_lead",
+      "url": "unknown",
+      "verified_records": 0,
+      "collection_status": "not_collected",
+      "reason": "Named forum queries did not return reliable public indexed threads."
+    },
+    {
+      "name": "PeruTops",
+      "status": "unconfirmed_lead",
+      "url": "unknown",
+      "verified_records": 0,
+      "collection_status": "not_collected",
+      "reason": "Named forum queries did not return reliable public indexed threads."
+    },
+    {
+      "name": "HermanoDeLeche",
+      "status": "unconfirmed_lead",
+      "url": "unknown",
+      "verified_records": 0,
+      "collection_status": "not_collected",
+      "reason": "Named forum queries did not return reliable public indexed threads."
+    }
+  ],
+  "collection_rules": [
+    "Search engine first to discover public indexed direct ad pages, then visit those links directly.",
+    "Archive raw public pages only under data/raw, which is gitignored.",
+    "Hash source URLs in processed records.",
+    "Redact phone numbers, email addresses, and contact handles in processed records.",
+    "Reject hard browser-verification, CAPTCHA, access-denied, and UI-boilerplate pages.",
+    "Document source exhaustion when volume targets cannot be reached through public collection.",
+    "No CAPTCHA solving, login-gated scraping, or technical access-control circumvention."
+  ]
+}

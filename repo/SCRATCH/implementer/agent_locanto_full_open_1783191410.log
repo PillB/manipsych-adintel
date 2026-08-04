@@ -1,0 +1,4 @@
+[2026-07-04 13:56:50] FETCH (open_page+py) url=https://www.locanto.com.pe/lima/ID_8370396219/Brindo-Ayuda-economica.html UA=agent-openpage
+[2026-07-04 13:56:57]   FETCHED len=105831 for Locanto
+[2026-07-04 13:56:57]   still inter, but extract what we can
+[2026-07-04 13:56:57] SKIP small body for Locanto

@@ -1,0 +1,140 @@
+[19:39:39] after hombre-busca-mujer q='ayuda economica' unique=300
+[19:39:48] after hombre-busca-mujer q='apoyo economico' unique=548
+[19:39:55] after hombre-busca-mujer q='brindo ayuda' unique=757
+[19:40:03] after hombre-busca-mujer q='doy ayuda' unique=972
+[19:40:11] after hombre-busca-mujer q='brindo apoyo' unique=1200
+[19:50:43] after hombre-busca-mujer q='ayuda a señoritas' unique=1308
+[19:50:44] API ERR hombre-busca-mujer q='doy apoyo' p1: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+[19:50:55] after hombre-busca-mujer q='doy apoyo' unique=1549
+[19:51:03] after hombre-busca-mujer q='ofrezco ayuda' unique=1762
+[19:51:10] after hombre-busca-mujer q='ayuda universitaria' unique=1949
+[19:51:23] after hombre-busca-mujer q='apoyo a estudiantes' unique=2144
+[19:51:24] after hombre-busca-mujer q='brindo apoyo economico' unique=2144
+[19:51:25] after hombre-busca-mujer q='doy apoyo economico' unique=2144
+[19:51:32] after hombre-busca-mujer q='ayuda a chicas' unique=2204
+[19:51:39] after hombre-busca-mujer q='apoyo a mujeres' unique=2312
+[19:51:46] after hombre-busca-mujer q='ayuda discreta' unique=2502
+[19:51:55] after hombre-busca-mujer q='caballero ayuda' unique=2623
+[19:52:01] after hombre-busca-mujer q='profesional ayuda' unique=2759
+[19:52:03] after hombre-busca-mujer q='sugar daddy' unique=2766
+[19:52:09] after hombre-busca-mujer q='apoyo discreto' unique=2879
+[19:52:14] after hombre-busca-mujer q='ayudo economicamente' unique=2970
+[19:52:16] after relaciones-ocasionales q='ayuda economica' unique=2973
+[19:52:18] after relaciones-ocasionales q='apoyo economico' unique=2979
+[19:52:18] after relaciones-ocasionales q='brindo ayuda' unique=2979
+[19:52:20] after relaciones-ocasionales q='doy ayuda' unique=2982
+[19:52:20] after relaciones-ocasionales q='brindo apoyo' unique=2982
+[19:52:21] after relaciones-ocasionales q='ayuda a señoritas' unique=2982
+[19:52:22] after relaciones-ocasionales q='doy apoyo' unique=2982
+[19:52:23] after relaciones-ocasionales q='ofrezco ayuda' unique=2982
+[19:52:24] after relaciones-ocasionales q='ayuda universitaria' unique=2982
+[19:52:25] after relaciones-ocasionales q='apoyo a estudiantes' unique=2984
+[19:52:26] after relaciones-ocasionales q='brindo apoyo economico' unique=2984
+[19:52:27] after relaciones-ocasionales q='doy apoyo economico' unique=2984
+[19:52:28] after relaciones-ocasionales q='ayuda a chicas' unique=2985
+[19:52:30] after relaciones-ocasionales q='apoyo a mujeres' unique=2986
+[19:52:31] after relaciones-ocasionales q='ayuda discreta' unique=2987
+[19:52:35] after relaciones-ocasionales q='caballero ayuda' unique=2988
+[19:52:37] after relaciones-ocasionales q='profesional ayuda' unique=2988
+[19:52:38] after relaciones-ocasionales q='sugar daddy' unique=2988
+[19:52:39] after relaciones-ocasionales q='apoyo discreto' unique=2988
+[19:52:39] after relaciones-ocasionales q='ayudo economicamente' unique=2988
+[19:52:49] after mujer-busca-hombre q='ayuda economica' unique=3288
+[19:52:57] after mujer-busca-hombre q='apoyo economico' unique=3552
+[19:53:01] after mujer-busca-hombre q='brindo ayuda' unique=3619
+[19:53:04] after mujer-busca-hombre q='doy ayuda' unique=3705
+[19:53:06] after mujer-busca-hombre q='brindo apoyo' unique=3715
+[19:53:09] after mujer-busca-hombre q='ayuda a señoritas' unique=3781
+[19:53:11] after mujer-busca-hombre q='doy apoyo' unique=3800
+[19:53:14] after mujer-busca-hombre q='ofrezco ayuda' unique=3824
+[19:53:18] after mujer-busca-hombre q='ayuda universitaria' unique=3900
+[19:53:20] after mujer-busca-hombre q='apoyo a estudiantes' unique=3942
+[19:53:21] after mujer-busca-hombre q='brindo apoyo economico' unique=3942
+[19:53:22] after mujer-busca-hombre q='doy apoyo economico' unique=3942
+[19:53:33] after mujer-busca-hombre q='ayuda a chicas' unique=4092
+[19:53:41] after mujer-busca-hombre q='apoyo a mujeres' unique=4204
+[19:53:44] after mujer-busca-hombre q='ayuda discreta' unique=4226
+[19:53:50] after mujer-busca-hombre q='caballero ayuda' unique=4323
+[19:53:54] after mujer-busca-hombre q='profesional ayuda' unique=4332
+[19:53:55] after mujer-busca-hombre q='sugar daddy' unique=4334
+[19:53:57] after mujer-busca-hombre q='apoyo discreto' unique=4335
+[19:53:58] after mujer-busca-hombre q='ayudo economicamente' unique=4338
+[19:54:06] after contactos q='ayuda economica' unique=4404
+[19:54:13] after contactos q='apoyo economico' unique=4466
+[19:54:16] after contactos q='brindo ayuda' unique=4468
+[19:54:23] after contactos q='doy ayuda' unique=4500
+[19:54:29] after contactos q='brindo apoyo' unique=4534
+[19:54:31] after contactos q='ayuda a señoritas' unique=4535
+[19:54:40] after contactos q='doy apoyo' unique=4568
+[19:54:46] after contactos q='ofrezco ayuda' unique=4612
+[19:54:52] after contactos q='ayuda universitaria' unique=4672
+[19:54:58] after contactos q='apoyo a estudiantes' unique=4738
+[19:54:59] after contactos q='brindo apoyo economico' unique=4738
+[19:55:00] after contactos q='doy apoyo economico' unique=4738
+[19:55:02] after contactos q='ayuda a chicas' unique=4742
+[19:55:08] after contactos q='apoyo a mujeres' unique=4769
+[19:55:16] after contactos q='ayuda discreta' unique=4808
+[19:55:24] after contactos q='caballero ayuda' unique=4857
+[19:55:31] after contactos q='profesional ayuda' unique=4872
+[19:55:34] after contactos q='sugar daddy' unique=4904
+[19:55:40] after contactos q='apoyo discreto' unique=4946
+[19:55:44] after contactos q='ayudo economicamente' unique=4967
+[19:55:47] after city=lima unique=5109
+[19:55:54] after city=arequipa unique=5246
+[19:55:57] after city=trujillo unique=5386
+[19:56:01] after city=cusco unique=5520
+[19:56:04] after city=piura unique=5648
+[19:56:08] after city=chiclayo unique=5803
+[19:56:12] after city=callao unique=5945
+[19:56:15] after city=huancayo unique=6092
+[19:56:20] after city=ica unique=6251
+[19:56:24] after city=tacna unique=6405
+[19:56:28] after city=puno unique=6571
+[19:56:31] after city=cajamarca unique=6729
+[19:56:35] after city=chimbote unique=6889
+[19:56:38] after city=ayacucho unique=7055
+[19:56:41] after city=iquitos unique=7224
+[19:56:45] after city=tarapoto unique=7390
+[19:56:49] after city=pucallpa unique=7555
+[19:56:53] after city=juliaca unique=7708
+[19:56:55] after city=sullana unique=7777
+[19:57:00] after city=huaraz unique=7936
+[19:57:00] GATHER unique=7936
+[19:57:00] pending=5936
+[19:57:19] PROGRESS i=1/5936 saved=0 skip=1 err=0 rate=0.0/min loading
+[19:57:19] PROGRESS i=2/5936 saved=0 skip=2 err=0 rate=0.0/min loading
+[19:57:20] PROGRESS i=3/5936 saved=0 skip=3 err=0 rate=0.0/min loading
+[19:57:20] PROGRESS i=4/5936 saved=0 skip=4 err=0 rate=0.0/min loading
+[19:57:20] PROGRESS i=5/5936 saved=0 skip=5 err=0 rate=0.0/min loading
+[19:57:22] PROGRESS i=25/5936 saved=1 skip=24 err=0 rate=15.3/min loading
+[19:57:24] PROGRESS i=50/5936 saved=21 skip=29 err=0 rate=187.4/min doplim_ayuda_113c9ba400a0b06e.html
+[19:57:27] PROGRESS i=75/5936 saved=45 skip=30 err=0 rate=276.9/min doplim_ayuda_4724cb3ccf891e43.html
+[19:57:33] PROGRESS i=100/5936 saved=70 skip=30 err=0 rate=281.5/min doplim_ayuda_f5b9d35ed854b534.html
+[19:57:36] PROGRESS i=125/5936 saved=95 skip=30 err=0 rate=313.5/min doplim_ayuda_8a893f568290624c.html
+[19:57:40] PROGRESS i=150/5936 saved=115 skip=35 err=0 rate=309.4/min doplim_ayuda_f6d90680bcfd424b.html
+[19:57:43] PROGRESS i=175/5936 saved=138 skip=37 err=0 rate=325.2/min loading
+[19:57:46] PROGRESS i=200/5936 saved=163 skip=37 err=0 rate=345.5/min doplim_ayuda_789d8d0be7c5fadd.html
+[19:57:50] PROGRESS i=225/5936 saved=186 skip=39 err=0 rate=349.1/min loading
+[19:57:53] PROGRESS i=250/5936 saved=211 skip=39 err=0 rate=362.7/min doplim_ayuda_3070b1220bf4bd61.html
+[19:57:56] PROGRESS i=275/5936 saved=235 skip=40 err=0 rate=369.2/min doplim_ayuda_55a8904acc6bc9f5.html
+[19:57:59] PROGRESS i=300/5936 saved=260 skip=40 err=0 rate=377.2/min doplim_ayuda_ffac346fdddffffc.html
+[19:58:05] PROGRESS i=325/5936 saved=285 skip=40 err=0 rate=362.0/min doplim_ayuda_68f7384ed7bc0601.html
+[19:58:10] PROGRESS i=350/5936 saved=308 skip=42 err=0 rate=355.0/min doplim_ayuda_eaa6b81b60237175.html
+[19:58:15] PROGRESS i=375/5936 saved=332 skip=43 err=0 rate=348.8/min doplim_ayuda_b0657923526b4922.html
+[19:58:19] PROGRESS i=400/5936 saved=357 skip=43 err=0 rate=346.9/min doplim_ayuda_32a86bc022da05ee.html
+[19:58:26] PROGRESS i=425/5936 saved=382 skip=43 err=0 rate=335.2/min doplim_ayuda_04dd699e9ee67593.html
+[19:58:32] PROGRESS i=450/5936 saved=406 skip=44 err=0 rate=327.5/min doplim_ayuda_a536ade5b1e77750.html
+[19:58:39] PROGRESS i=475/5936 saved=430 skip=45 err=0 rate=317.6/min doplim_ayuda_9a68322009e68102.html
+[19:58:44] PROGRESS i=500/5936 saved=455 skip=45 err=0 rate=315.9/min doplim_ayuda_bfa5602268ceb308.html
+[19:58:49] PROGRESS i=525/5936 saved=478 skip=47 err=0 rate=314.8/min doplim_ayuda_21fdb124fa87d87e.html
+[19:58:53] PROGRESS i=550/5936 saved=502 skip=48 err=0 rate=314.8/min doplim_ayuda_3966a9c9f174e0f1.html
+[19:58:59] PROGRESS i=575/5936 saved=525 skip=50 err=0 rate=311.3/min doplim_ayuda_df058942e3bdbbd1.html
+[19:59:08] PROGRESS i=600/5936 saved=550 skip=50 err=0 rate=299.9/min doplim_ayuda_9f180b51883063fd.html
+[19:59:17] PROGRESS i=625/5936 saved=571 skip=54 err=0 rate=287.6/min doplim_ayuda_2db53ce83953025d.html
+[19:59:37] PROGRESS i=650/5936 saved=595 skip=55 err=0 rate=255.8/min doplim_ayuda_2b77aae1a0d4b224.html
+[20:00:23] PROGRESS i=675/5936 saved=607 skip=57 err=11 rate=196.2/min HTTPSConnectionPool(host='lima.doplim.com.pe', port=443): Read timed out. (read timeout=25)
+[20:01:11] PROGRESS i=700/5936 saved=610 skip=61 err=29 rate=156.9/min HTTPSConnectionPool(host='lima.doplim.com.pe', port=443): Read timed out. (read timeout=25)
+[20:02:01] PROGRESS i=725/5936 saved=610 skip=63 err=52 rate=129.1/min HTTPSConnectionPool(host='lima.doplim.com.pe', port=443): Read timed out. (read timeout=25)
+[20:02:41] PROGRESS i=750/5936 saved=610 skip=68 err=72 rate=113.3/min HTTPSConnectionPool(host='cusco-capital.doplim.com.pe', port=443): Read timed out. (read timeout=25)
+[20:03:26] PROGRESS i=775/5936 saved=610 skip=72 err=93 rate=99.3/min HTTPSConnectionPool(host='arequipa-capital.doplim.com.pe', port=443): Read timed out. (read timeout=25)
+[20:04:09] PROGRESS i=800/5936 saved=610 skip=78 err=112 rate=88.9/min HTTPSConnectionPool(host='trujillo.doplim.com.pe', port=443): Read timed out. (read timeout=25)

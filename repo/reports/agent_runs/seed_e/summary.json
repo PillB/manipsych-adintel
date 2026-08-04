@@ -1,0 +1,23 @@
+{
+  "candidate_count": 413,
+  "counts_by_platform_hint": {
+    "doplim_peru_direct_html": 336,
+    "facebook_public_group_or_post": 77
+  },
+  "excluded_known_or_rejected_url_count": 141,
+  "search_queries_used": [
+    "site:doplim.com.pe inurl:.html \"ayuda economica\" \"brindo\" Peru",
+    "site:doplim.com.pe inurl:.html \"apoyo economico\" \"ofrezco\" Peru",
+    "site:facebook.com/groups \"ayuda economica\" \"brindo\" \"Peru\"",
+    "site:facebook.com/groups \"apoyo economico\" \"caballero\" \"Peru\"",
+    "\"Brindo Ayuda Económica\" \"Doplim\" \"Peru\"",
+    "\"doy ayuda economica\" \"Doplim\" \"Peru\"",
+    "\"ayuda económica\" \"doplim.com.pe\" \"hombre\"",
+    "\"se brinda ayuda economica\" \"Doplim\"",
+    "\"brindo ayuda economica\" \"facebook.com/groups\"",
+    "\"doy ayuda economica\" \"facebook.com/groups\"",
+    "\"apoyo economico\" \"facebook.com/groups\" \"sugar daddy\"",
+    "\"ayuda económica\" \"facebook.com/groups\" \"caballero\""
+  ],
+  "method": "No ad detail pages fetched. Candidates mined from existing local artifacts plus public search-result queries attempted through the web search tool."
+}

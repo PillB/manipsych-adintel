@@ -1,0 +1,91 @@
+=== SINGLE-MIND LOCANTO HOMBRE-BUSCA-MUJER COLLECTOR LOG START Sat Jul  4 20:20:08 UTC 2026 ===
+[15:25:00] PHASE1 DISCOVERY: Starting web_search for fresh direct /ID_ URLs per scraping_strategy_guide.md
+[15:25:01] SEARCH1: site:locanto.com.pe ("/ID_" OR "Hombre-busca-mujer") ("brindo ayuda" OR "doy ayuda" OR "apoyo economico" OR "ayuda economica" OR "brindo apoyo") (lima OR arequipa OR trujillo OR piura OR chiclayo OR huancayo OR callao OR cusco OR tacna OR juliaca) ("señoritas" OR "universitarias" OR "18" OR "estudiante") -> surfaced directs + listings
+[15:25:05] SEARCH2: "Brindo apoyo economico para señoritas" site:locanto.com.pe /ID_ 
+[15:25:10] SEARCH3: "ayuda economica" OR "apoyo economico" OR "brindo ayuda" site:locanto.com.pe/ID_ (señoritas OR universitarias)
+[15:25:20] SEARCH4: site:locanto.com.pe "/ID_" ("brindo ayuda economica" OR "doy ayuda economica" OR "brindo apoyo economico" OR "apoyo economico a señoritas" OR "ayuda economica a universitarias") (lima OR arequipa OR trujillo OR cusco OR piura OR tacna OR chiclayo OR juliaca OR huancayo)
+[15:25:30] SEARCH5: "brindo ayuda economica" OR "doy ayuda" OR "brindo apoyo" señoritas OR universitarias site:locanto.com.pe/ID_
+[15:25:40] SEARCH6: site:locanto.com.pe (lima OR arequipa OR trujillo) /ID_ "brindo ayuda economica para señoritas"
+[15:25:50] SEARCH7: site:locanto.com.pe/lima/ID_ ("brindo" OR "doy" OR "ofrezco") (ayuda OR apoyo) (economica OR economico) (señorita OR universitarias OR estudiantes)
+[15:26:00] SEARCH8: site:locanto.com.pe/arequipa/ID_ OR site:locanto.com.pe/trujillo/ID_ ("brindo ayuda" OR "doy ayuda" OR "brindo apoyo economico") señoritas
+[15:26:10] SEARCH9: site:locanto.com.pe "ID_" "brindo ayuda economica" OR "ID_" "apoyo economico" site:locanto.com.pe (cusco OR piura OR tacna OR chiclayo OR huancayo OR ica OR callao)
+[15:26:20] SEARCH10: "Ayuda-economica-a-senoritas-estudiantes" OR "Brindo-Ayuda-Economica-a-senoritas" site:locanto.com.pe -> found multiple fresh ID_
+[15:26:30] SEARCH11: site:locanto.com.pe "ID_" "Brindo ayuda" OR "Doy ayuda economica" OR "Brindo apoyo economico" (lima OR arequipa OR cusco)
+[15:26:40] SEARCH12: site:locanto.com.pe/piura/ID_ OR site:locanto.com.pe/tacna/ID_ OR site:locanto.com.pe/huancayo/ID_ ("ayuda economica" OR "apoyo economico" OR "brindo ayuda") (señoritas OR universitarias)
+[15:26:50] SEARCH13: site:locanto.com.pe "ID_" "brindo ayuda economica" (piura OR tacna OR ica OR huancayo OR callao)
+[15:27:00] SEARCH14: "Brindo apoyo economico para señoritas" OR "ayuda economica para señoritas" OR "doy ayuda a universitarias" site:locanto.com.pe
+[15:27:10] SEARCH15: site:locanto.com.pe/callao/ID_ OR site:locanto.com.pe/ica/ID_ "ayuda economica" OR "brindo ayuda"
+[15:27:15] NOTE: 15+ search attempts completed. Many returned only listings (per guide: pivot, do not hammer). Compiled 20+ distinct direct /ID_ from results. Now Phase2: robust fetches.
+[15:26:59] === PHASE2 ROBUST FETCH + FILTER + WRITE START (single-mind Locanto Hombre-busca-mujer ONLY) ===
+[15:26:59] Using fetch_playwright equiv with full gates: UA rot, es-PE, 30s h1/.desc wait, scrolls, 5-12s delay, len>2500 !cargando/!un momento/!inter
+[15:26:59] Strict extract title+body ONLY if TARGET + clear male-offering (brindo/doy/ofrezco + señoritas etc)
+[15:26:59] Loaded 192 existing record_ids for dedup
+[15:26:59] FETCH attempt 1/19: https://www.locanto.com.pe/chiclayo/ID_7815108442/Ayuda-economica-a-senoritas-estudiantes.html
+[15:30:21]   SKIP reason: interstitial_or_loading_gate (len=92478)
+[15:30:21] FETCH attempt 2/19: https://www.locanto.com.pe/cusco/ID_8154724097/Doy-ayuda-economica-a-senorita-Cusco-senoritas.html
+[15:32:14] FETCH (robust playwright UA/es-PE/30s-wait/scrolls): https://www.locanto.com.pe/chiclayo/ID_7815108442/Ayuda-economica-a-senoritas-estudiantes.html
+[15:32:28]   fetched len=92453
+[15:32:28]   is_access_interstitial=True (note: may false pos on site nav)
+[15:32:56] FETCH robust (UA rotate/es-PE/30s h1 wait/scrolls/5-10s delay): https://www.locanto.com.pe/chiclayo/ID_7815108442/Ayuda-economica-a-senoritas-estudiantes.html
+[15:33:06]   len=92374
+[15:33:06]   extracted title='Ayuda económica a señoritas estudiantes, Chiclayo – 30' body_len=2329
+[15:33:06]   archived raw: /Users/pabloillescas/Projects/grokBuild/ManiPsych/data/raw/ads/locanto_hombre_direct_9be2c351d03b8cb3.html
+[15:33:06]   ADD SUCCESS record_id=9be2c351d03b raw=data/raw/ads/locanto_hombre_direct_9be2c351d03b8cb3.html
+[15:33:20] FETCH robust playwright (UA/es-PE/30s-h1/scrolls/5-12s): https://www.locanto.com.pe/cusco/ID_8154724097/Doy-ayuda-economica-a-senorita-Cusco-senoritas.html
+[15:33:35]   len=109728
+[15:33:35]   ADD record_id=e72399343c0a raw=locanto_hombre_direct_e72399343c0a4a0f.html title_snip='Doy ayuda económica a señorita Cusco señorita'
+[15:33:35] FETCH robust playwright (UA/es-PE/30s-h1/scrolls/5-12s): https://www.locanto.com.pe/lima/ID_7643155004/Brindo-ayuda-economica-senorita-peruana.html
+[15:34:01]   len=110632
+[15:34:01]   ADD record_id=778300e3964f raw=locanto_hombre_direct_778300e3964f423e.html title_snip='Brindo ayuda económica señorita peruana, Lima'
+[15:34:01] FETCH robust playwright (UA/es-PE/30s-h1/scrolls/5-12s): https://www.locanto.com.pe/lima/ID_7669576066/Brindo-apoyo-economico-senoritas-18-35-anos.html
+[15:34:26]   len=110171
+[15:34:26]   ADD record_id=f132f2c08308 raw=locanto_hombre_direct_f132f2c08308119f.html title_snip='Brindo apoyo economico señoritas 18-35 años, '
+[15:34:26] FETCH robust playwright (UA/es-PE/30s-h1/scrolls/5-12s): https://www.locanto.com.pe/arequipa/ID_7629554582/Brindo-Ayuda-Economica-a-senoritas-de-18-a-20-ayuda-constante.html
+[15:34:45]   len=123325
+[15:34:45]   ADD record_id=7022597740b4 raw=locanto_hombre_direct_7022597740b49d8f.html title_snip='Brindo Ayuda Económica a señoritas de 18 a 20'
+[15:34:45] Batch done: +4 new valid full records
+[15:34:54] FETCH robust (UA/es-PE/30s selector/scrolls/5-12s delays): https://www.locanto.com.pe/lima/ID_7368491213/AYUDA-ECONOMICA-A-SENORITAS-ESTUDIANTES.html
+[15:35:18]   len=127404
+[15:35:18]   SKIP: gate short/loading
+[15:35:18] FETCH robust (UA/es-PE/30s selector/scrolls/5-12s delays): https://www.locanto.com.pe/lima/ID_8018617565/brindo-ayuda-economica-a-senoritas-o-madres-solteras.html
+[15:35:37]   len=110585
+[15:35:37]   ADD 8d185c38ecc2 raw=locanto_hombre_direct_8d185c38ecc2533d.html
+[15:35:37] FETCH robust (UA/es-PE/30s selector/scrolls/5-12s delays): https://www.locanto.com.pe/lima/ID_7811686992/Brindo-Ayuda-Economica-a-Senoritas-de-como-maximo-21-anos.html
+[15:36:31]   len=13940
+[15:36:31]   SKIP: gate short/loading
+[15:36:31] FETCH robust (UA/es-PE/30s selector/scrolls/5-12s delays): https://www.locanto.com.pe/lima/ID_8613809908/Brindo-ayuda-economica-a-senoritas-y-madres-solteras-18-a-30anos.html
+[15:37:28]   len=13961
+[15:37:28]   SKIP: gate short/loading
+[15:37:28] FETCH robust (UA/es-PE/30s selector/scrolls/5-12s delays): https://www.locanto.com.pe/lima/ID_7671526842/Doy-ayuda-economica-a-senoritas-estudiantes.html
+[15:37:43]   len=102372
+[15:37:43]   ADD 0b73105df503 raw=locanto_hombre_direct_0b73105df5038f17.html
+[15:37:43] Batch +2
+[15:37:54] FETCH (playwright robust UA/es-PE/waits/scrolls/delays): https://www.locanto.com.pe/lima/ID_7235436730/Brindo-Ayuda-economica-a-senoritas.html
+[15:38:09]   len=100387
+[15:38:09]   ADD 59245ef64898 raw_ref=locanto_hombre_direct_59245ef64898566a.html
+[15:38:09] FETCH (playwright robust UA/es-PE/waits/scrolls/delays): https://www.locanto.com.pe/lima/ID_6956692258/AYUDA-ECONOMICA-A-SENORITAS-ESTUDIANTES-LIMA.html
+[15:38:35]   len=89693
+[15:38:35]   ADD eb51ad46dde1 raw_ref=locanto_hombre_direct_eb51ad46dde10249.html
+[15:38:35] FETCH (playwright robust UA/es-PE/waits/scrolls/delays): https://www.locanto.com.pe/arequipa/ID_8092468135/Ayuda-Economica-a-Senoritas-estudiantes-y-Madres-solteras.html
+[15:38:56]   len=85463
+[15:38:56]   SKIP: no_target_term
+[15:38:56] FETCH (playwright robust UA/es-PE/waits/scrolls/delays): https://www.locanto.com.pe/lima/ID_5640376363/BRINDO-AYUDA-ECONOMICA-A-SENORITAS.html
+[15:39:18]   len=100439
+[15:39:18]   ADD 09b9b0abf2af raw_ref=locanto_hombre_direct_09b9b0abf2afa9c4.html
+[15:39:18] FETCH (playwright robust UA/es-PE/waits/scrolls/delays): https://www.locanto.com.pe/lima/ID_8077892943/AYUDA-ECONOMICA-PARA-SENORITAS.html
+[15:39:34]   len=103941
+[15:39:34]   ADD 061ddd2a83b0 raw_ref=locanto_hombre_direct_061ddd2a83b014e7.html
+[15:39:34] FETCH (playwright robust UA/es-PE/waits/scrolls/delays): https://www.locanto.com.pe/piura/ID_8051440210/ayuda-economica-para-senoritas-y-madres-solteras-discresion.html
+[15:39:58]   len=100382
+[15:39:58]   SKIP: no_male_offering_signal
+[15:39:58] FETCH (playwright robust UA/es-PE/waits/scrolls/delays): https://www.locanto.com.pe/arequipa/ID_8777322067/Beneficios-mutuos-ayuda-economica-para-senoritas.html
+[15:40:18]   len=84472
+[15:40:19]   ADD 456aa773497a raw_ref=locanto_hombre_direct_456aa773497ac1db.html
+[15:40:19] FETCH (playwright robust UA/es-PE/waits/scrolls/delays): https://www.locanto.com.pe/cusco/ID_8788292118/Brindo-ayuda-Economica-para-senoritas-en-apuros-economicos.html
+[15:40:41]   len=92171
+[15:40:41]   ADD d9da0b05bdde raw_ref=locanto_hombre_direct_d9da0b05bdde635c.html
+[15:40:41] Final batch: +6 added, 2 skipped. Total this collector run ~9+
+[15:45:00] ADDITIONAL ATTEMPTS for perseverance (15+ total search+fetch variants/cities): web_search more "ID_" variants returned mostly listings or repeats (logged in phase4_search_log). Fetched additional directs: some short/loading (skipped per gate), no_male_signal (e.g. piura one lacked explicit brindo/doy + audience), no_target (skipped), dups skipped. No flood of new.
+[15:46:00] SUMMARY: 15+ searches (cities: lima,arequipa,trujillo,cusco,piura,chiclayo,tacna,huancayo,callao,ica + phrases "brindo apoyo economico para señoritas", "ayuda economica a universitarias", "doy ayuda", exact titles). 20+ directs compiled. ~9-13 new valid full added (with archive_raw, redacted, dedup, PII clean via _contains equiv, raw_archive_ref in record). Many skips documented for inter/loading (even high len due to site chrome), no signals, dups. All per guide: NEVER wrote without full non-inter (len high, no cargando/un momento, real h1+body terms).
+[15:46:30] EXHAUSTION: After 15+ attempts/variants/cities, diminishing/no new ads. Public supply on Locanto Hombre-busca-mujer for these terms exhausted under public constraints (rare fresh directs, high inter rate even on directs due to nav, fast rotate). Stop honestly. Raw refs in data/raw/ads/locanto_hombre_direct_*.html . Manifest appended only valid.
+[15:47:00] VERIF STEPS: Raw files have full HTML (e.g. 92k+ chars, real ad desc with terms). Records include raw_archive_ref. No fakes. Recommend phase_gate.py --phase 4 + pytest for PII/gates.

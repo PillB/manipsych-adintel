@@ -1,0 +1,23 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[18:55:35] START locanto_fast target=1500 start_tagged_detail=449 content_heuristic≈449 mode=seeds
+[18:55:35] LOADED seeds_in=2768 from SCRATCH/implementer/seeds_locanto_fast_1783553280.jsonl
+[18:55:35] shard 0/4 size=272
+[18:55:35] pending after dedup/shard=272 (from 2768)
+[18:55:35] FETCH start pending=272 mode=serial_playwright tag=locanto_fast
+[18:55:52] SAVED 1 total~450 title='Colageno joven para mujeres en la ciudad de Arequipa – ' locanto_fast_8575bf26827fb395.html
+[18:55:52] PROGRESS done=1/272 saved=1 skip=0 rate=3.4/min tagged=450
+[18:56:14] SAVED 2 total~451 title='Alguna madre soltera o cuarentona para pasar el rato so' locanto_fast_575614ec867decaa.html
+[18:56:14] PROGRESS done=2/272 saved=2 skip=0 rate=3.1/min tagged=451
+[18:56:33] SAVED 3 total~452 title='Caballero maduro busca compañía femenina con beneficio ' locanto_fast_280753abaa31653f.html
+[18:56:33] PROGRESS done=3/272 saved=3 skip=0 rate=3.1/min tagged=452
+[19:03:07] SAVED 4 total~453 title='KMASUTRA EROTANTRICOS/ANTISTRS PR HMBRS MSJSTA JOVENCIT' locanto_fast_60d72464cdfa2b62.html
+[19:07:04] SAVED 5 total~454 title='CABALLERO PROFESIONAL CIX, Chiclayo – 57' locanto_fast_82d6020a37ab5c54.html
+[19:07:04] PROGRESS done=5/272 saved=5 skip=0 rate=0.4/min tagged=454
+[19:39:18] SAVED 10 total~459 title='Apoyo económico a señorita o señora que tenga disponibi' locanto_fast_1a1d23ad0fdb9a66.html
+[19:39:18] PROGRESS done=10/272 saved=10 skip=0 rate=0.2/min tagged=459
+[19:51:41] PROGRESS done=15/272 saved=14 skip=1 rate=0.2/min tagged=463
+[19:53:11] PROGRESS done=20/272 saved=19 skip=1 rate=0.3/min tagged=468
+[19:53:23] SAVED 20 total~469 title='Soy una chica de 20 años chimbotana muy linda blanquita' locanto_fast_53c21d34f9e647bf.html
+[19:54:38] PROGRESS done=25/272 saved=24 skip=1 rate=0.4/min tagged=473
+[19:56:04] PROGRESS done=30/272 saved=29 skip=1 rate=0.5/min tagged=478

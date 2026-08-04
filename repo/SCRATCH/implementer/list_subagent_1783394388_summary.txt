@@ -1,0 +1,11 @@
+List crawling subagent 019f3a8a-3bd0-7af1-b1e1-d1d1e6b1e671 completed successfully (2026-07-07).
+- 168 unique ad URLs (Locanto /ID_ + Doplim id-) from list pagination on Hombre-busca-mujer sections.
+- URLs: SCRATCH/implementer/singlemind_list_ad_urls_1783394388.txt
+- 5 full HTML raws archived centrally (data/raw/ads/listcrawl_*.html, 105k-117k each, real content, has_substantial=True).
+- Total raws: 708.
+- Method: Playwright poll for real content (no verificando, h1/ID_ present), BS4 extract, gated detail fetch, archive_raw.
+- Pagination: Locanto /20701/N/, Doplim pages + "Ver más".
+- Logs: singlemind_list_crawl_1783394388.log + follow.
+- Validated two-step + HTML analysis patterns (bst_pagination, posting_listing, show_more).
+- No manifest changes (collection only). Gate/tests pass.
+- FB note (separate test): some posts remain unloaded skeletons (text_len=8, no og); guards work.

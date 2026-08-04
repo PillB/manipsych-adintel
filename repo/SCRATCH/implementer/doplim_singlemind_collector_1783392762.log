@@ -1,0 +1,73 @@
+=== DOPLIM SINGLE-MIND COLLECTOR RUN START Tue Jul  7 02:52:42 UTC 2026 TS=1783392762 ===
+Baseline: manifest 353 lines, 129 Doplim records, unique rids 353
+=== PHASE 1: DISCOVERY via web_search (site:doplim* id- terms variants cities) ===
+Searches performed (multiple parallel calls):
+1. site:doplim.com.pe OR site:doplim.pe ("brindo ayuda economica" OR "doy ayuda" OR "apoyo economico" OR "brindo ayuda" OR "doy ayuda economica" OR "brindo apoyo") (id- OR /id-) (lima OR arequipa ... many cities)
+2. site:doplim.com.pe ("brindo ayuda economica" OR "doy ayuda economica" OR "brindo apoyo economico") id- lima
+3. site:doplim.com.pe OR site:doplim.pe (id- OR /id-) ("brindo ayuda" OR "doy ayuda" OR "brindo apoyo" OR "apoyo economico") (lima OR arequipa ... + hombre busca)
+4. "brindo ayuda economica" OR "doy ayuda economica" site:doplim.com.pe id-
+5. site:doplim.com.pe id- ("brindo ayuda" OR "doy ayuda" ...) (chiclayo OR piura ... more cities)
+6. "doplim" ("brindo ayuda economica" OR "doy ayuda economica") (lima OR arequipa OR trujillo) id-
+
+Compiled candidate direct id- URLs (unique, Doplim Peru ad pattern only; male-offering potential):
+https://moquegua-capital.doplim.com.pe/brindo-ayuda-economica-solo-damas-id-823756.html
+https://talavera.doplim.com.pe/brindo-apoyo-economico-a-solo-chicas-de-la-id-444939.html
+https://lima.doplim.com.pe/brindo-ayuda-economica-en-lima-id-886044.html
+https://lima.doplim.com.pe/brindo-ayuda-economica-a-senoritas-de-instituto-o-id-427756.html
+https://cerro-de-pasco.doplim.com.pe/ayuda-economica-dinero-id-453970.html
+https://santa-cruz.doplim.com.pe/doy-ayuda-economica-id-1346551.html
+https://lima.doplim.com.pe/doy-ayuda-economica-a-chibolas-a-cambio-de-id-419716.html
+https://lima.doplim.com.pe/brindo-apoyo-economico-a-mujeres-id-1405301.html
+https://callao.doplim.com.pe/brindo-ayuda-economica-a-mujeres-tetonas-voluptuosas-wssp-id-558843.html
+https://talavera.doplim.com.pe/doy-ayuda-economica-a-senoritas-id-1473282.html
+https://trujillo.doplim.com.pe/busco-chica-sin-experiencia-brindo-ayuda-economica-id-1468840.html
+https://arequipa-capital.doplim.com.pe/doy-ayuda-economica-a-estudiantes-y-madres-solteras-id-468808.html
+https://villa-rica.doplim.com.pe/brindo-ayuda-economica-id-1335046.html
+https://putina.doplim.com.pe/ayuda-economica-a-mujeres-id-1333345.html
+https://oropesa.doplim.com.pe/doy-ayuda-economica-a-chicas-id-1363469.html
+https://lima.doplim.com.pe/huacho-brindo-ayuda-economica-a-chicas-de-huacho-id-695128.html
+https://moquegua-capital.doplim.com.pe/ae-s100-x-30-solo-mujeres-no-importa-id-1516709.html
+https://juliaca.doplim.com.pe/brindo-ayuda-economica-solo-mujeres-id-402480.html
+https://chiclayo.doplim.com.pe/doy-ayuda-economica-id-1331366.html
+https://cusco-capital.doplim.com.pe/doy-ayuda-economica-para-chicas-de-cualquier-edad-id-687314.html
+https://piura-capital.doplim.com.pe/me-llamo-daniel-brindo-ayuda-economica-id-1356815.html
+https://yanahuanca.doplim.com.pe/ayuda-economica-a-mujeres-en-yanahuanca-id-1279408.html
+https://jauja.doplim.com.pe/para-amigas-que-busquen-ayuda-economica-id-982389.html
+https://santa-cruz.doplim.com.pe/doy-ayuda-economica-a-mujer-de-santa-cruz-id-1390253.html
+https://tambo-grande.doplim.com.pe/brindo-masajes-para-mujeres-id-1473668.html  # borderline, will filter strict
+Seeds count: 25 directs from web_search. Persevere note: many overlaps with prior; public indexed limited. Will fetch with full gates.
+[21:53:19] START FETCH BATCH1: 11 directs. Existing rids loaded: 353. Doplim baseline 129
+[21:53:19] FETCH 1/11 url=https://moquegua-capital.doplim.com.pe/brindo-ayuda-economica-solo-damas-id-823756.html rid=02d685dc6eab...
+[21:53:19] SKIP dup rid for https://moquegua-capital.doplim.com.pe/brindo-ayuda-economica-solo-damas-id-823756.html
+[21:53:21] FETCH 2/11 url=https://talavera.doplim.com.pe/brindo-apoyo-economico-a-solo-chicas-de-la-id-444939.html rid=68a899b6fd6d...
+[21:53:21] SKIP dup rid for https://talavera.doplim.com.pe/brindo-apoyo-economico-a-solo-chicas-de-la-id-444939.html
+[21:53:23] FETCH 3/11 url=https://lima.doplim.com.pe/brindo-ayuda-economica-en-lima-id-886044.html rid=acef118ac052...
+[21:53:23] SKIP dup rid for https://lima.doplim.com.pe/brindo-ayuda-economica-en-lima-id-886044.html
+[21:53:25] FETCH 4/11 url=https://lima.doplim.com.pe/brindo-ayuda-economica-a-senoritas-de-instituto-o-id-427756.html rid=bb2514358d64...
+[21:53:25] SKIP dup rid for https://lima.doplim.com.pe/brindo-ayuda-economica-a-senoritas-de-instituto-o-id-427756.html
+[21:53:27] FETCH 5/11 url=https://cerro-de-pasco.doplim.com.pe/ayuda-economica-dinero-id-453970.html rid=960c3560577b...
+[21:57:15] ADDED 1 rid=960c3560577b raw=data/raw/ads/doplim_singlemind_960c3560577b505f.html url=https://cerro-de-pasco.doplim.com.pe/ayuda-economica-dinero-id-453970.html
+[21:57:23] FETCH 6/11 url=https://santa-cruz.doplim.com.pe/doy-ayuda-economica-id-1346551.html rid=8464f0bdbf6b...
+[21:57:23] SKIP dup rid for https://santa-cruz.doplim.com.pe/doy-ayuda-economica-id-1346551.html
+[21:57:25] FETCH 7/11 url=https://lima.doplim.com.pe/doy-ayuda-economica-a-chibolas-a-cambio-de-id-419716.html rid=c3074884d5b4...
+=== BATCH ATTEMPT LOG END ===
+=== POST BATCH1 UPDATE Tue Jul  7 02:58:33 UTC 2026 ===
+Recent Doplim adds sample:
+0e6181b8ac6c AYUDA ECONÓMICA SOLO AREQUIPA, Arequipa Capital - Doplim raw: data/raw/ads/seed_inventory_0e6181b8ac6cc992.html
+39a647a76fff Brindó ayuda económica a mujeres maduras y jóvenes, Callao - raw: data/raw/ads/seed_inventory_39a647a76fff5f97.html
+8195fea18b62 CABALLERO BRINDA AYUDA ECONÓMICA A SEÑORITAS CALET raw: data/raw/ads/doplim_singlemind_8195fea18b628692.html
+960c3560577b Ayuda Economica - Dinero raw: data/raw/ads/doplim_singlemind_960c3560577b505f.html
+Doplim total now: 133
+=== PHASE1 PERSEVERE: Additional web_search variants/cities (2026-07-06) ===
+New queries: site:doplim* id- (brindo/doy/apoyo terms) (ica,chimbote,huacho,...); exact "brindo ayuda economica constante" etc id-
+New candidate directs (fresh variants):
+https://lima.doplim.com.pe/doy-ayuda-a-senoritas-de-19-a-25-id-418299.html
+https://piura-capital.doplim.com.pe/doy-ayuda-economica-a-chicas-solteras-80-a-id-361057.html
+https://arequipa-capital.doplim.com.pe/brindo-ayuda-economica-constante-auna-solasenorita-id-1112320.html
+https://arequipa-capital.doplim.com.pe/brindo-ayuda-economica-a-senoritas-para-lo-que-id-552908.html
+https://piura-capital.doplim.com.pe/amista-y-ayuda-economica-a-chibolas-y-jovencitas-id-420184.html
+https://lima.doplim.com.pe/brindo-ayuda-economica-a-senoritas-de-instituto-o-id-427756.html  # variant recheck
+Additional city sweeps: pucallpa, huaraz, chincha, abancay etc yielded limited new id- directs. Public supply scarce; many dups or inter prone. Persevere with these.
+New seeds logged. Now batch2 small.
+[21:58:53] START FETCH BATCH2: 5 new-variant directs. Existing rids: 359. Current Doplim ~133
+[21:58:53] FETCH2 1/5 https://lima.doplim.com.pe/doy-ayuda-a-senoritas-de-19-a-25-id-418299.html rid=04256f28a8df

@@ -1,0 +1,68 @@
+/Users/pabloillescas/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[12:50:39] CONTINUE pure section list crawl (main cards ONLY, tuned extract, from p2)
+CONTINUE pure section list crawl (main cards ONLY, tuned extract, from p2)
+[12:50:39] base=https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701
+base=https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701
+[12:50:39] LIST p2: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/2/?query=ayuda+economica
+LIST p2: https://www.locanto.com.pe/lima/Hombre-busca-mujer/20701/2/?query=ayuda+economica
+[12:51:10]   main article.posting_listing IDs: 46
+  main article.posting_listing IDs: 46
+[12:51:22]   + https://www.locanto.com.pe/lima/ID_7523933049/BRINDO-AYUDA-ECONOMICA-A-DAMA-PARA-SUS-GASTOS-PERSONALES.html
+  + https://www.locanto.com.pe/lima/ID_7523933049/BRINDO-AYUDA-ECONOMICA-A-DAMA-PARA-SUS-GASTOS-PERSONALES.html
+[12:51:40]   + https://www.locanto.com.pe/lima/ID_8779976209/Busco-encuentro-con-chicas-para-ayuda-economica.html
+  + https://www.locanto.com.pe/lima/ID_8779976209/Busco-encuentro-con-chicas-para-ayuda-economica.html
+[12:51:57]   + https://www.locanto.com.pe/lima/ID_6993298623/Ayuda-economica-por-encuentros-intimos-discretos.html
+  + https://www.locanto.com.pe/lima/ID_6993298623/Ayuda-economica-por-encuentros-intimos-discretos.html
+[12:52:11]   + https://www.locanto.com.pe/lima/ID_6988297150/DESEO-ENCONTRAR-DAMA-PARA-ENCUENTROS-POR-AYUDA-ECONOMICA.html
+  + https://www.locanto.com.pe/lima/ID_6988297150/DESEO-ENCONTRAR-DAMA-PARA-ENCUENTROS-POR-AYUDA-ECONOMICA.html
+[12:52:26]   + https://www.locanto.com.pe/lima/ID_9026285527/AYUDA-ECONOMICA-A-CHICAS-SJL.html
+  + https://www.locanto.com.pe/lima/ID_9026285527/AYUDA-ECONOMICA-A-CHICAS-SJL.html
+[12:52:43]   + https://www.locanto.com.pe/lima/ID_8846261118/Ayuda-economica-para-estudios.html
+  + https://www.locanto.com.pe/lima/ID_8846261118/Ayuda-economica-para-estudios.html
+[13:08:21]   + https://www.locanto.com.pe/lima/ID_8570416889/Se-Busca-Chicas-de-18-a-23-anos-pagos-por-salida-Ayuda-Economica.html
+  + https://www.locanto.com.pe/lima/ID_8570416889/Se-Busca-Chicas-de-18-a-23-anos-pagos-por-salida-Ayuda-Economica.html
+[13:08:45]   + https://www.locanto.com.pe/lima/ID_8773377708/Ayuda-economica-discreta-para-mujer-amable.html
+  + https://www.locanto.com.pe/lima/ID_8773377708/Ayuda-economica-discreta-para-mujer-amable.html
+[13:24:45]   skip inter/short
+  skip inter/short
+[13:25:11]   + https://www.locanto.com.pe/lima/ID_8346173320/AYUDA-ECONOMICA-A-SENORITAS-CON-DISCRECION.html
+  + https://www.locanto.com.pe/lima/ID_8346173320/AYUDA-ECONOMICA-A-SENORITAS-CON-DISCRECION.html
+[13:25:27]   + https://www.locanto.com.pe/lima/ID_8688498930/Busco-mujer-madura-doy-ayuda-economica-Sexo-limpio-y-discreto.html
+  + https://www.locanto.com.pe/lima/ID_8688498930/Busco-mujer-madura-doy-ayuda-economica-Sexo-limpio-y-discreto.html
+[13:25:40]   + https://www.locanto.com.pe/lima/ID_7121673975/Ofrezco-ayuda-economica-para-senorita-estudiante-universitaria.html
+  + https://www.locanto.com.pe/lima/ID_7121673975/Ofrezco-ayuda-economica-para-senorita-estudiante-universitaria.html
+[13:25:54]   + https://www.locanto.com.pe/lima/ID_9023976835/Hombre-generoso-da-ayuda-economica-a-chica-entre-18-y-22-anos.html
+  + https://www.locanto.com.pe/lima/ID_9023976835/Hombre-generoso-da-ayuda-economica-a-chica-entre-18-y-22-anos.html
+[13:26:09]   + https://www.locanto.com.pe/lima/ID_8239906321/Entrada-para-concierto-bts-2026-doy-ayuda-economica.html
+  + https://www.locanto.com.pe/lima/ID_8239906321/Entrada-para-concierto-bts-2026-doy-ayuda-economica.html
+[13:26:23]   + https://www.locanto.com.pe/lima/ID_8234812741/Brindo-ayuda-economica-a-senorita-en-lima.html
+  + https://www.locanto.com.pe/lima/ID_8234812741/Brindo-ayuda-economica-a-senorita-en-lima.html
+[13:26:37]   + https://www.locanto.com.pe/lima/ID_6807944529/SI-EN-VERDAD-NECESITAS-AYUDA-ECONOMICA-ESCRIBEME.html
+  + https://www.locanto.com.pe/lima/ID_6807944529/SI-EN-VERDAD-NECESITAS-AYUDA-ECONOMICA-ESCRIBEME.html
+[13:26:53]   + https://www.locanto.com.pe/lima/ID_7971788940/AYUDA-ECONOMICA-ESCRIBEME-TOTAL-CONFIDENCIALIDAD-Y-SEGURO.html
+  + https://www.locanto.com.pe/lima/ID_7971788940/AYUDA-ECONOMICA-ESCRIBEME-TOTAL-CONFIDENCIALIDAD-Y-SEGURO.html
+[13:27:09]   + https://www.locanto.com.pe/lima/ID_7642328106/Empresario-busca-chica-ayuda-economica.html
+  + https://www.locanto.com.pe/lima/ID_7642328106/Empresario-busca-chica-ayuda-economica.html
+[13:27:25]   + https://www.locanto.com.pe/lima/ID_7656437570/Brindo-ayuda-Ayuda-Economica-Senoritas-hasta-21-anos-de-edad.html
+  + https://www.locanto.com.pe/lima/ID_7656437570/Brindo-ayuda-Ayuda-Economica-Senoritas-hasta-21-anos-de-edad.html
+[13:27:44]   + https://www.locanto.com.pe/lima/ID_8106879964/Busco-una-sola-Senorita-Ayuda-Economica-hasta-21-anos-Lima.html
+  + https://www.locanto.com.pe/lima/ID_8106879964/Busco-una-sola-Senorita-Ayuda-Economica-hasta-21-anos-Lima.html
+[13:28:00]   + https://www.locanto.com.pe/lima/ID_6610241410/Ayuda-economica-para-senorita-hasta-400-soles.html
+  + https://www.locanto.com.pe/lima/ID_6610241410/Ayuda-economica-para-senorita-hasta-400-soles.html
+[13:28:14]   + https://www.locanto.com.pe/lima/ID_7433049715/AYUDA-ECONOMICA-SRTA-DE-CASA.html
+  + https://www.locanto.com.pe/lima/ID_7433049715/AYUDA-ECONOMICA-SRTA-DE-CASA.html
+[13:28:28]   + https://www.locanto.com.pe/lima/ID_9021423427/Hombre-generoso-brinda-ayuda-economica-chica-entre-18-y-22-anos.html
+  + https://www.locanto.com.pe/lima/ID_9021423427/Hombre-generoso-brinda-ayuda-economica-chica-entre-18-y-22-anos.html
+[13:28:47]   + https://www.locanto.com.pe/lima/ID_8776423351/AYUDA-ECONOMICA-PARA-SENORITA-O-SENORA-JOVEN.html
+  + https://www.locanto.com.pe/lima/ID_8776423351/AYUDA-ECONOMICA-PARA-SENORITA-O-SENORA-JOVEN.html
+[13:29:02]   + https://www.locanto.com.pe/lima/ID_7746893882/Ayuda-economica-a-maduras-senoras-de-50-anos-en-adelante.html
+  + https://www.locanto.com.pe/lima/ID_7746893882/Ayuda-economica-a-maduras-senoras-de-50-anos-en-adelante.html
+[13:29:18]   + https://www.locanto.com.pe/lima/ID_7746904200/Ayuda-economica-a-senoras-maduras-gorditas-gordas.html
+  + https://www.locanto.com.pe/lima/ID_7746904200/Ayuda-economica-a-senoras-maduras-gorditas-gordas.html
+[13:29:41]   + https://www.locanto.com.pe/lima/ID_6527960913/Ayuda-economica-para-mujeres-sin-trabajo.html
+  + https://www.locanto.com.pe/lima/ID_6527960913/Ayuda-economica-para-mujeres-sin-trabajo.html
+[13:29:59]   + https://www.locanto.com.pe/lima/ID_6645385989/OFRESCO-AYUDA-ECONOMICA-A-CHICAS-EN-APUROS.html
+  + https://www.locanto.com.pe/lima/ID_6645385989/OFRESCO-AYUDA-ECONOMICA-A-CHICAS-EN-APUROS.html
+[13:30:50]   + https://www.locanto.com.pe/lima/ID_7713727379/Ayuda-Economica-para-Mujer-srtas-universitarias.html
+  + https://www.locanto.com.pe/lima/ID_7713727379/Ayuda-Economica-para-Mujer-srtas-universitarias.html

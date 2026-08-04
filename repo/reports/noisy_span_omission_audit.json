@@ -1,0 +1,42 @@
+{
+  "candidate_cue_counts": {
+    "age_or_youth_targeting": 7016,
+    "conditional_financial_support": 1596,
+    "economic_vulnerability_targeting": 857,
+    "education_or_student_targeting": 2442,
+    "privacy_or_secrecy_pressure": 2683,
+    "reciprocity_obligation": 9471
+  },
+  "checks": 6,
+  "examples": [
+    {
+      "context": "SE BRINDA AYUDA ECONÓMICA A SEÑORITAS (UNIV O DE INSTITUTO) AQP, Arequipa – 18\nDescripción Descripción ESTAS EN APUROS ECON",
+      "exact_text": "UNIV",
+      "label": "education_or_student_targeting",
+      "platform": "locanto",
+      "reason": "student or education dependency cue",
+      "record_id": "h_9eae8b59a669f0830645fa030433d4868128b07b6af43ed8bd5c564eeb90d528",
+      "span": [
+        39,
+        43
+      ]
+    },
+    {
+      "context": "Chica univ. Busca ayuda economica - Lima\nSoy una chica que recien voy a empesar a esto,, c",
+      "exact_text": "univ",
+      "label": "education_or_student_targeting",
+      "platform": "ciudadanuncios",
+      "reason": "student or education dependency cue",
+      "record_id": "h_e419dca381e50b75bf61a0000233e515a951d206fd6f1c857135b717f7ff0b4d",
+      "span": [
+        6,
+        10
+      ]
+    }
+  ],
+  "omission_counts": {
+    "education_or_student_targeting": 2
+  },
+  "omission_total": 2,
+  "status": "omissions_found"
+}

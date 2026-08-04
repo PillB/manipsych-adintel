@@ -1,0 +1,12 @@
+[17:53:10] START Doplim filtered collection national + cities (main cards + kw filter)
+[17:53:10] LIST p1: https://www.doplim.com.pe/s/hombre-busca-mujer/?q=ayuda+economica
+[17:54:13]   main li.cnt-list_ads IDs (filtered): 0
+[17:54:14] LIST p2: https://www.doplim.com.pe/s/hombre-busca-mujer/?q=ayuda+economica&page=2
+[17:55:11]   main li.cnt-list_ads IDs (filtered): 0
+[17:55:11] LIST p3: https://www.doplim.com.pe/s/hombre-busca-mujer/?q=ayuda+economica&page=3
+[17:56:33]   main li.cnt-list_ads IDs (filtered): 0
+[17:56:34] LIST p4: https://www.doplim.com.pe/s/hombre-busca-mujer/?q=ayuda+economica&page=4
+[17:57:49]   main li.cnt-list_ads IDs (filtered): 0
+[17:57:49]   stop: 4x low yield
+[17:57:49] DONE national: added=0
+[17:57:49] LIST p1: https://www.doplim.com.pe/s/hombre-busca-mujer/lima/?q=ayuda+economica

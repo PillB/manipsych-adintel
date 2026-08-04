@@ -1,0 +1,4 @@
+[18:24:31] START locanto_fast target=1500 start_detail≈1836 mode=mine
+[18:24:36] MINED 2762 IDs from raw listing archives
+[18:24:36] seeds 2762 -> /Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/seeds_locanto_fast_1783553070.jsonl
+[18:24:37] FINAL {'start_detail': 1836, 'end_detail': 1836, 'saved': 0, 'skip': 0, 'err': 0, 'candidates': 2762, 'elapsed_s': 0.9, 'log': '/Users/pabloillescas/Projects/grokBuild/ManiPsych/SCRATCH/implementer/locanto_fast_1783553070.log'}
