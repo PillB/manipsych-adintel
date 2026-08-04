@@ -1,0 +1,26 @@
+{
+  "analysis_type": "vlm_visual_persuasion_real_images",
+  "n_images_analyzed": 20,
+  "n_successful": 2,
+  "n_failed": 18,
+  "vlm_model": "z-ai-web-dev-sdk vision (GLM-4V)",
+  "findings": {
+    "images_with_person": 2,
+    "images_with_text_overlay": 2,
+    "images_with_logo": 2,
+    "images_with_luxury_elements": 0,
+    "images_with_sexualised_content": 2
+  },
+  "vp_leaf_estimates": {
+    "vp_gaze_direction": 0.5,
+    "vp_luxury_aesthetic": 0.0,
+    "vp_sexualised_imagery": 1.0
+  },
+  "limitations": [
+    "Only 20 images analyzed (rate-limited)",
+    "Image URLs may be expired or rate-limited by platform",
+    "VLM analysis is not pixel-perfect — confidence varies",
+    "Corpus is text-first; image analysis is supplementary"
+  ],
+  "output": "/home/z/my-project/repo/data/processed/vlm_visual_features.jsonl"
+}

@@ -1,0 +1,62 @@
+{
+  "analysis_type": "annotation_agreement_simulated_gold_vs_silver",
+  "n_records": 5162,
+  "gold_source": "simulated from council annotations (agreement-based noise model)",
+  "silver_source": "independent rule-based annotator with different signal patterns",
+  "label_set_agreement": {
+    "mean_f1": 0.5517,
+    "median_f1": 0.5,
+    "std_f1": 0.2063
+  },
+  "exact_span_agreement": {
+    "mean_f1": 0.0835,
+    "median_f1": 0.0,
+    "std_f1": 0.1279
+  },
+  "per_label_cohen_kappa": {
+    "age_or_youth_targeting": 0.3533,
+    "authority_or_status_appeal": 0.4447,
+    "commitment_escalation": 0.2467,
+    "conditional_financial_support": 0.0511,
+    "deceptive_assurance": 0.2553,
+    "economic_vulnerability_targeting": 0.0,
+    "education_or_student_targeting": 0.013,
+    "exclusivity_or_special_treatment": 0.0,
+    "family_obligation_targeting": 0.0,
+    "fear_or_threat": 0.0,
+    "foot_in_the_door": 0.0,
+    "guilt_or_shame_pressure": 0.0,
+    "other": 0.0,
+    "platform_migration": 0.0345,
+    "privacy_or_secrecy_pressure": 0.0029,
+    "reciprocity_obligation": 0.0028,
+    "repetition_or_campaign_escalation": 0.0,
+    "scarcity_or_urgency": 0.3317,
+    "sexualized_appearance_condition": 0.2524,
+    "social_proof": -0.0057,
+    "transactional_ambiguity": 0.0
+  },
+  "interpretation": {
+    "kappa_0.81_1.00": "almost perfect agreement",
+    "kappa_0.61_0.80": "substantial agreement",
+    "kappa_0.41_0.60": "moderate agreement",
+    "kappa_0.21_0.40": "fair agreement",
+    "kappa_0.00_0.20": "slight agreement",
+    "kappa_below_0": "poor agreement"
+  },
+  "limitations": [
+    "Gold is SIMULATED, not real human adjudication",
+    "Silver annotator is rule-based, not human",
+    "Agreement estimates are optimistic because gold was derived from the same council data",
+    "Real human annotation would likely show LOWER agreement due to genuine independence"
+  ],
+  "what_real_gold_would_require": [
+    "2+ trained human annotators",
+    "Adjudication of disagreements by a senior annotator",
+    "Blinded annotation (annotators don't see each other's labels)",
+    "Inter-annotator agreement measured BEFORE adjudication",
+    "Power analysis for sample size"
+  ],
+  "gold_output": "/home/z/my-project/repo/data/annotation/simulated_gold_annotations.jsonl",
+  "silver_output": "/home/z/my-project/repo/data/annotation/silver_annotations.jsonl"
+}

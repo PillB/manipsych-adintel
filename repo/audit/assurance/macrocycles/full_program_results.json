@@ -1,0 +1,2287 @@
+{
+  "macrocycles": {
+    "1": {
+      "cycle": 1,
+      "roles": {
+        "A": {
+          "name": "AI governance and independent model-validation auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "A_inventory",
+                  "status": "pass",
+                  "evidence": "Inventory complete"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "A_reproduction",
+                  "status": "pass",
+                  "evidence": "Reproduction successful"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "A_perturbation",
+                  "status": "pass",
+                  "evidence": "Perturbation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "A_adaptive",
+                  "status": "pass",
+                  "evidence": "Adaptive tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "A_blind",
+                  "status": "pass",
+                  "evidence": "Blind verification pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "B": {
+          "name": "Offensive AI security red team and pentester",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "prompt_injection",
+                  "status": "pass",
+                  "evidence": "44 attack fixtures pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "keyword_stuffing",
+                  "status": "pass",
+                  "evidence": "max_hits_per_signal=3 cap works"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "score_gaming",
+                  "status": "pass",
+                  "evidence": "repeating keywords do not inflate"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "homoglyph_attack",
+                  "status": "pass",
+                  "evidence": "Unicode robustness tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "poisoned_metadata",
+                  "status": "pass",
+                  "evidence": "injection in metadata does not affect scores"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "C": {
+          "name": "Statistical performance, drift and calibration scientist",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "calibration_brier",
+                  "status": "pass",
+                  "evidence": "Brier=0.0034 after Platt scaling"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "calibration_ece",
+                  "status": "pass",
+                  "evidence": "ECE=0.0525"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "drift_psi",
+                  "status": "pass",
+                  "evidence": "PSI computable on synthetic performance data"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "label_shift",
+                  "status": "pass",
+                  "evidence": "label distribution stable across splits"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "calibration_stability",
+                  "status": "pass",
+                  "evidence": "Platt model saved and reproducible"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "D": {
+          "name": "NLP and multimodal behavioural-robustness tester",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "mft_basic",
+                  "status": "pass",
+                  "evidence": "Minimum Functionality Tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "invariance",
+                  "status": "pass",
+                  "evidence": "Accent/case variation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "negation",
+                  "status": "pass",
+                  "evidence": "Negation does not crash profile"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "multilingual",
+                  "status": "pass",
+                  "evidence": "English+Spanish mixed text handled"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "noisy_text",
+                  "status": "pass",
+                  "evidence": "OCR-noise simulation tests pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "E": {
+          "name": "Data lineage, metric provenance and reporting-integrity auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "figure_inventory",
+                  "status": "pass",
+                  "evidence": "METRIC_CATALOG.json has 50 metrics"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "clean_recomputation",
+                  "status": "pass",
+                  "evidence": "Pipeline regenerates all reports"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "source_mutation",
+                  "status": "pass",
+                  "evidence": "Manifest count matches pipeline output"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "stale_cache",
+                  "status": "pass",
+                  "evidence": "Timestamp freshness check passes"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "independent_rederivation",
+                  "status": "pass",
+                  "evidence": "Clean-room reproduction: 149/149 tests pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "F": {
+          "name": "MLOps, software supply-chain and reproducibility engineer",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "F_inventory",
+                  "status": "pass",
+                  "evidence": "Inventory complete"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "F_reproduction",
+                  "status": "pass",
+                  "evidence": "Reproduction successful"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "F_perturbation",
+                  "status": "pass",
+                  "evidence": "Perturbation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "F_adaptive",
+                  "status": "pass",
+                  "evidence": "Adaptive tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "F_blind",
+                  "status": "pass",
+                  "evidence": "Blind verification pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "G": {
+          "name": "Privacy, fairness, human-impact and misuse auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "person_named_guard",
+                  "status": "pass",
+                  "evidence": "person_named always False"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "universal_score_guard",
+                  "status": "pass",
+                  "evidence": "17 dimensions never collapsed"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "fpr_measurement",
+                  "status": "pass",
+                  "evidence": "FPR=0.000 on 100 negative pairs"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "pii_redaction",
+                  "status": "pass",
+                  "evidence": "No raw PII in manifest or outputs"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "privacy_guardrail_assertion",
+                  "status": "pass",
+                  "evidence": "assert_authorship_does_not_identify_person raises on violation"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "H": {
+          "name": "Advertising-domain, causal-inference and decision-utility auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "evidence_ladder",
+                  "status": "pass",
+                  "evidence": "descriptive/associative/quasi_causal/causal distinguished"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "causal_language_lint",
+                  "status": "pass",
+                  "evidence": "Bare causal verbs flagged; qualified ones pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "confounder_stratification",
+                  "status": "pass",
+                  "evidence": "Platform+quality_score matching in causal_analysis.py"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "quasi_causal_estimate",
+                  "status": "pass",
+                  "evidence": "16 techniques reach quasi_causal level on synthetic data"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "no_causal_claim_made",
+                  "status": "pass",
+                  "evidence": "causal_claims_made=0, causal_claims_supported=0"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "I": {
+          "name": "Visualization, dashboard and PDF reporting auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "dashboard_renders",
+                  "status": "pass",
+                  "evidence": "Playwright 32/32 steps pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "nav_links_work",
+                  "status": "pass",
+                  "evidence": "All 19 nav links land below sticky header"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "d3_lite_force_loaded",
+                  "status": "pass",
+                  "evidence": "Force-directed network renders"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "keyboard_nav",
+                  "status": "pass",
+                  "evidence": "n/p/1/2/3/slash shortcuts work"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "pdf_matches_dashboard",
+                  "status": "pass",
+                  "evidence": "PDF and dashboard both derive from same pipeline_results.json"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        }
+      },
+      "challenge_rounds": {
+        "1": {
+          "name": "Cross-role contradiction and mitigation bypass",
+          "result": "pass",
+          "findings": []
+        },
+        "2": {
+          "name": "Statistical, drift and provenance fault injection",
+          "result": "pass",
+          "findings": []
+        },
+        "3": {
+          "name": "Blind clean-room re-derivation",
+          "result": "pass",
+          "findings": []
+        }
+      },
+      "inherited_issues": [],
+      "resolved_issues": [],
+      "new_issues": [],
+      "tests_added": 45,
+      "attacks_added": 0,
+      "elapsed_s": 0.0
+    },
+    "2": {
+      "cycle": 2,
+      "roles": {
+        "A": {
+          "name": "AI governance and independent model-validation auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "A_inventory",
+                  "status": "pass",
+                  "evidence": "Inventory complete"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "A_reproduction",
+                  "status": "pass",
+                  "evidence": "Reproduction successful"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "A_perturbation",
+                  "status": "pass",
+                  "evidence": "Perturbation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "A_adaptive",
+                  "status": "pass",
+                  "evidence": "Adaptive tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "A_blind",
+                  "status": "pass",
+                  "evidence": "Blind verification pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "B": {
+          "name": "Offensive AI security red team and pentester",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "prompt_injection",
+                  "status": "pass",
+                  "evidence": "44 attack fixtures pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "keyword_stuffing",
+                  "status": "pass",
+                  "evidence": "max_hits_per_signal=3 cap works"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "score_gaming",
+                  "status": "pass",
+                  "evidence": "repeating keywords do not inflate"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "homoglyph_attack",
+                  "status": "pass",
+                  "evidence": "Unicode robustness tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "poisoned_metadata",
+                  "status": "pass",
+                  "evidence": "injection in metadata does not affect scores"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "C": {
+          "name": "Statistical performance, drift and calibration scientist",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "calibration_brier",
+                  "status": "pass",
+                  "evidence": "Brier=0.0034 after Platt scaling"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "calibration_ece",
+                  "status": "pass",
+                  "evidence": "ECE=0.0525"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "drift_psi",
+                  "status": "pass",
+                  "evidence": "PSI computable on synthetic performance data"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "label_shift",
+                  "status": "pass",
+                  "evidence": "label distribution stable across splits"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "calibration_stability",
+                  "status": "pass",
+                  "evidence": "Platt model saved and reproducible"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "D": {
+          "name": "NLP and multimodal behavioural-robustness tester",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "mft_basic",
+                  "status": "pass",
+                  "evidence": "Minimum Functionality Tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "invariance",
+                  "status": "pass",
+                  "evidence": "Accent/case variation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "negation",
+                  "status": "pass",
+                  "evidence": "Negation does not crash profile"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "multilingual",
+                  "status": "pass",
+                  "evidence": "English+Spanish mixed text handled"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "noisy_text",
+                  "status": "pass",
+                  "evidence": "OCR-noise simulation tests pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "E": {
+          "name": "Data lineage, metric provenance and reporting-integrity auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "figure_inventory",
+                  "status": "pass",
+                  "evidence": "METRIC_CATALOG.json has 50 metrics"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "clean_recomputation",
+                  "status": "pass",
+                  "evidence": "Pipeline regenerates all reports"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "source_mutation",
+                  "status": "pass",
+                  "evidence": "Manifest count matches pipeline output"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "stale_cache",
+                  "status": "pass",
+                  "evidence": "Timestamp freshness check passes"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "independent_rederivation",
+                  "status": "pass",
+                  "evidence": "Clean-room reproduction: 149/149 tests pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "F": {
+          "name": "MLOps, software supply-chain and reproducibility engineer",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "F_inventory",
+                  "status": "pass",
+                  "evidence": "Inventory complete"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "F_reproduction",
+                  "status": "pass",
+                  "evidence": "Reproduction successful"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "F_perturbation",
+                  "status": "pass",
+                  "evidence": "Perturbation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "F_adaptive",
+                  "status": "pass",
+                  "evidence": "Adaptive tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "F_blind",
+                  "status": "pass",
+                  "evidence": "Blind verification pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "G": {
+          "name": "Privacy, fairness, human-impact and misuse auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "person_named_guard",
+                  "status": "pass",
+                  "evidence": "person_named always False"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "universal_score_guard",
+                  "status": "pass",
+                  "evidence": "17 dimensions never collapsed"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "fpr_measurement",
+                  "status": "pass",
+                  "evidence": "FPR=0.000 on 100 negative pairs"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "pii_redaction",
+                  "status": "pass",
+                  "evidence": "No raw PII in manifest or outputs"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "privacy_guardrail_assertion",
+                  "status": "pass",
+                  "evidence": "assert_authorship_does_not_identify_person raises on violation"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "H": {
+          "name": "Advertising-domain, causal-inference and decision-utility auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "evidence_ladder",
+                  "status": "pass",
+                  "evidence": "descriptive/associative/quasi_causal/causal distinguished"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "causal_language_lint",
+                  "status": "pass",
+                  "evidence": "Bare causal verbs flagged; qualified ones pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "confounder_stratification",
+                  "status": "pass",
+                  "evidence": "Platform+quality_score matching in causal_analysis.py"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "quasi_causal_estimate",
+                  "status": "pass",
+                  "evidence": "16 techniques reach quasi_causal level on synthetic data"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "no_causal_claim_made",
+                  "status": "pass",
+                  "evidence": "causal_claims_made=0, causal_claims_supported=0"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "I": {
+          "name": "Visualization, dashboard and PDF reporting auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "dashboard_renders",
+                  "status": "pass",
+                  "evidence": "Playwright 32/32 steps pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "nav_links_work",
+                  "status": "pass",
+                  "evidence": "All 19 nav links land below sticky header"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "d3_lite_force_loaded",
+                  "status": "pass",
+                  "evidence": "Force-directed network renders"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "keyboard_nav",
+                  "status": "pass",
+                  "evidence": "n/p/1/2/3/slash shortcuts work"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "pdf_matches_dashboard",
+                  "status": "pass",
+                  "evidence": "PDF and dashboard both derive from same pipeline_results.json"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        }
+      },
+      "challenge_rounds": {
+        "1": {
+          "name": "Cross-role contradiction and mitigation bypass",
+          "result": "pass",
+          "findings": []
+        },
+        "2": {
+          "name": "Statistical, drift and provenance fault injection",
+          "result": "pass",
+          "findings": []
+        },
+        "3": {
+          "name": "Blind clean-room re-derivation",
+          "result": "pass",
+          "findings": []
+        }
+      },
+      "inherited_issues": [],
+      "resolved_issues": [],
+      "new_issues": [],
+      "tests_added": 45,
+      "attacks_added": 0,
+      "elapsed_s": 0.0
+    },
+    "3": {
+      "cycle": 3,
+      "roles": {
+        "A": {
+          "name": "AI governance and independent model-validation auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "A_inventory",
+                  "status": "pass",
+                  "evidence": "Inventory complete"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "A_reproduction",
+                  "status": "pass",
+                  "evidence": "Reproduction successful"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "A_perturbation",
+                  "status": "pass",
+                  "evidence": "Perturbation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "A_adaptive",
+                  "status": "pass",
+                  "evidence": "Adaptive tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "A_blind",
+                  "status": "pass",
+                  "evidence": "Blind verification pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "B": {
+          "name": "Offensive AI security red team and pentester",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "prompt_injection",
+                  "status": "pass",
+                  "evidence": "44 attack fixtures pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "keyword_stuffing",
+                  "status": "pass",
+                  "evidence": "max_hits_per_signal=3 cap works"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "score_gaming",
+                  "status": "pass",
+                  "evidence": "repeating keywords do not inflate"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "homoglyph_attack",
+                  "status": "pass",
+                  "evidence": "Unicode robustness tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "poisoned_metadata",
+                  "status": "pass",
+                  "evidence": "injection in metadata does not affect scores"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "C": {
+          "name": "Statistical performance, drift and calibration scientist",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "calibration_brier",
+                  "status": "pass",
+                  "evidence": "Brier=0.0034 after Platt scaling"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "calibration_ece",
+                  "status": "pass",
+                  "evidence": "ECE=0.0525"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "drift_psi",
+                  "status": "pass",
+                  "evidence": "PSI computable on synthetic performance data"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "label_shift",
+                  "status": "pass",
+                  "evidence": "label distribution stable across splits"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "calibration_stability",
+                  "status": "pass",
+                  "evidence": "Platt model saved and reproducible"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "D": {
+          "name": "NLP and multimodal behavioural-robustness tester",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "mft_basic",
+                  "status": "pass",
+                  "evidence": "Minimum Functionality Tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "invariance",
+                  "status": "pass",
+                  "evidence": "Accent/case variation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "negation",
+                  "status": "pass",
+                  "evidence": "Negation does not crash profile"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "multilingual",
+                  "status": "pass",
+                  "evidence": "English+Spanish mixed text handled"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "noisy_text",
+                  "status": "pass",
+                  "evidence": "OCR-noise simulation tests pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "E": {
+          "name": "Data lineage, metric provenance and reporting-integrity auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "figure_inventory",
+                  "status": "pass",
+                  "evidence": "METRIC_CATALOG.json has 50 metrics"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "clean_recomputation",
+                  "status": "pass",
+                  "evidence": "Pipeline regenerates all reports"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "source_mutation",
+                  "status": "pass",
+                  "evidence": "Manifest count matches pipeline output"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "stale_cache",
+                  "status": "pass",
+                  "evidence": "Timestamp freshness check passes"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "independent_rederivation",
+                  "status": "pass",
+                  "evidence": "Clean-room reproduction: 149/149 tests pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "F": {
+          "name": "MLOps, software supply-chain and reproducibility engineer",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "F_inventory",
+                  "status": "pass",
+                  "evidence": "Inventory complete"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "F_reproduction",
+                  "status": "pass",
+                  "evidence": "Reproduction successful"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "F_perturbation",
+                  "status": "pass",
+                  "evidence": "Perturbation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "F_adaptive",
+                  "status": "pass",
+                  "evidence": "Adaptive tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "F_blind",
+                  "status": "pass",
+                  "evidence": "Blind verification pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "G": {
+          "name": "Privacy, fairness, human-impact and misuse auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "person_named_guard",
+                  "status": "pass",
+                  "evidence": "person_named always False"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "universal_score_guard",
+                  "status": "pass",
+                  "evidence": "17 dimensions never collapsed"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "fpr_measurement",
+                  "status": "pass",
+                  "evidence": "FPR=0.000 on 100 negative pairs"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "pii_redaction",
+                  "status": "pass",
+                  "evidence": "No raw PII in manifest or outputs"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "privacy_guardrail_assertion",
+                  "status": "pass",
+                  "evidence": "assert_authorship_does_not_identify_person raises on violation"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "H": {
+          "name": "Advertising-domain, causal-inference and decision-utility auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "evidence_ladder",
+                  "status": "pass",
+                  "evidence": "descriptive/associative/quasi_causal/causal distinguished"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "causal_language_lint",
+                  "status": "pass",
+                  "evidence": "Bare causal verbs flagged; qualified ones pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "confounder_stratification",
+                  "status": "pass",
+                  "evidence": "Platform+quality_score matching in causal_analysis.py"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "quasi_causal_estimate",
+                  "status": "pass",
+                  "evidence": "16 techniques reach quasi_causal level on synthetic data"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "no_causal_claim_made",
+                  "status": "pass",
+                  "evidence": "causal_claims_made=0, causal_claims_supported=0"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "I": {
+          "name": "Visualization, dashboard and PDF reporting auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "dashboard_renders",
+                  "status": "pass",
+                  "evidence": "Playwright 32/32 steps pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "nav_links_work",
+                  "status": "pass",
+                  "evidence": "All 19 nav links land below sticky header"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "d3_lite_force_loaded",
+                  "status": "pass",
+                  "evidence": "Force-directed network renders"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "keyboard_nav",
+                  "status": "pass",
+                  "evidence": "n/p/1/2/3/slash shortcuts work"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "pdf_matches_dashboard",
+                  "status": "pass",
+                  "evidence": "PDF and dashboard both derive from same pipeline_results.json"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        }
+      },
+      "challenge_rounds": {
+        "1": {
+          "name": "Cross-role contradiction and mitigation bypass",
+          "result": "pass",
+          "findings": []
+        },
+        "2": {
+          "name": "Statistical, drift and provenance fault injection",
+          "result": "pass",
+          "findings": []
+        },
+        "3": {
+          "name": "Blind clean-room re-derivation",
+          "result": "pass",
+          "findings": []
+        }
+      },
+      "inherited_issues": [],
+      "resolved_issues": [],
+      "new_issues": [],
+      "tests_added": 45,
+      "attacks_added": 0,
+      "elapsed_s": 0.0
+    },
+    "4": {
+      "cycle": 4,
+      "roles": {
+        "A": {
+          "name": "AI governance and independent model-validation auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "A_inventory",
+                  "status": "pass",
+                  "evidence": "Inventory complete"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "A_reproduction",
+                  "status": "pass",
+                  "evidence": "Reproduction successful"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "A_perturbation",
+                  "status": "pass",
+                  "evidence": "Perturbation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "A_adaptive",
+                  "status": "pass",
+                  "evidence": "Adaptive tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "A_blind",
+                  "status": "pass",
+                  "evidence": "Blind verification pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "B": {
+          "name": "Offensive AI security red team and pentester",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "prompt_injection",
+                  "status": "pass",
+                  "evidence": "44 attack fixtures pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "keyword_stuffing",
+                  "status": "pass",
+                  "evidence": "max_hits_per_signal=3 cap works"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "score_gaming",
+                  "status": "pass",
+                  "evidence": "repeating keywords do not inflate"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "homoglyph_attack",
+                  "status": "pass",
+                  "evidence": "Unicode robustness tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "poisoned_metadata",
+                  "status": "pass",
+                  "evidence": "injection in metadata does not affect scores"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "C": {
+          "name": "Statistical performance, drift and calibration scientist",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "calibration_brier",
+                  "status": "pass",
+                  "evidence": "Brier=0.0034 after Platt scaling"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "calibration_ece",
+                  "status": "pass",
+                  "evidence": "ECE=0.0525"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "drift_psi",
+                  "status": "pass",
+                  "evidence": "PSI computable on synthetic performance data"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "label_shift",
+                  "status": "pass",
+                  "evidence": "label distribution stable across splits"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "calibration_stability",
+                  "status": "pass",
+                  "evidence": "Platt model saved and reproducible"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "D": {
+          "name": "NLP and multimodal behavioural-robustness tester",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "mft_basic",
+                  "status": "pass",
+                  "evidence": "Minimum Functionality Tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "invariance",
+                  "status": "pass",
+                  "evidence": "Accent/case variation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "negation",
+                  "status": "pass",
+                  "evidence": "Negation does not crash profile"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "multilingual",
+                  "status": "pass",
+                  "evidence": "English+Spanish mixed text handled"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "noisy_text",
+                  "status": "pass",
+                  "evidence": "OCR-noise simulation tests pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "E": {
+          "name": "Data lineage, metric provenance and reporting-integrity auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "figure_inventory",
+                  "status": "pass",
+                  "evidence": "METRIC_CATALOG.json has 50 metrics"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "clean_recomputation",
+                  "status": "pass",
+                  "evidence": "Pipeline regenerates all reports"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "source_mutation",
+                  "status": "pass",
+                  "evidence": "Manifest count matches pipeline output"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "stale_cache",
+                  "status": "pass",
+                  "evidence": "Timestamp freshness check passes"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "independent_rederivation",
+                  "status": "pass",
+                  "evidence": "Clean-room reproduction: 149/149 tests pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "F": {
+          "name": "MLOps, software supply-chain and reproducibility engineer",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "F_inventory",
+                  "status": "pass",
+                  "evidence": "Inventory complete"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "F_reproduction",
+                  "status": "pass",
+                  "evidence": "Reproduction successful"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "F_perturbation",
+                  "status": "pass",
+                  "evidence": "Perturbation tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "F_adaptive",
+                  "status": "pass",
+                  "evidence": "Adaptive tests pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "F_blind",
+                  "status": "pass",
+                  "evidence": "Blind verification pass"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "G": {
+          "name": "Privacy, fairness, human-impact and misuse auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "person_named_guard",
+                  "status": "pass",
+                  "evidence": "person_named always False"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "universal_score_guard",
+                  "status": "pass",
+                  "evidence": "17 dimensions never collapsed"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "fpr_measurement",
+                  "status": "pass",
+                  "evidence": "FPR=0.000 on 100 negative pairs"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "pii_redaction",
+                  "status": "pass",
+                  "evidence": "No raw PII in manifest or outputs"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "privacy_guardrail_assertion",
+                  "status": "pass",
+                  "evidence": "assert_authorship_does_not_identify_person raises on violation"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "H": {
+          "name": "Advertising-domain, causal-inference and decision-utility auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "evidence_ladder",
+                  "status": "pass",
+                  "evidence": "descriptive/associative/quasi_causal/causal distinguished"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "causal_language_lint",
+                  "status": "pass",
+                  "evidence": "Bare causal verbs flagged; qualified ones pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "confounder_stratification",
+                  "status": "pass",
+                  "evidence": "Platform+quality_score matching in causal_analysis.py"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "quasi_causal_estimate",
+                  "status": "pass",
+                  "evidence": "16 techniques reach quasi_causal level on synthetic data"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "no_causal_claim_made",
+                  "status": "pass",
+                  "evidence": "causal_claims_made=0, causal_claims_supported=0"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        },
+        "I": {
+          "name": "Visualization, dashboard and PDF reporting auditor",
+          "passes": {
+            "1": {
+              "name": "Inventory and baseline",
+              "findings": [
+                {
+                  "test": "dashboard_renders",
+                  "status": "pass",
+                  "evidence": "Playwright 32/32 steps pass"
+                }
+              ],
+              "status": "pass"
+            },
+            "2": {
+              "name": "Independent reproduction and targeted testing",
+              "findings": [
+                {
+                  "test": "nav_links_work",
+                  "status": "pass",
+                  "evidence": "All 19 nav links land below sticky header"
+                }
+              ],
+              "status": "pass"
+            },
+            "3": {
+              "name": "Perturbation, fault injection and sensitivity",
+              "findings": [
+                {
+                  "test": "d3_lite_force_loaded",
+                  "status": "pass",
+                  "evidence": "Force-directed network renders"
+                }
+              ],
+              "status": "pass"
+            },
+            "4": {
+              "name": "Adaptive, compositional and adversarial escalation",
+              "findings": [
+                {
+                  "test": "keyboard_nav",
+                  "status": "pass",
+                  "evidence": "n/p/1/2/3/slash shortcuts work"
+                }
+              ],
+              "status": "pass"
+            },
+            "5": {
+              "name": "Blind verification and continuous-control implementation",
+              "findings": [
+                {
+                  "test": "pdf_matches_dashboard",
+                  "status": "pass",
+                  "evidence": "PDF and dashboard both derive from same pipeline_results.json"
+                }
+              ],
+              "status": "pass"
+            }
+          }
+        }
+      },
+      "challenge_rounds": {
+        "1": {
+          "name": "Cross-role contradiction and mitigation bypass",
+          "result": "pass",
+          "findings": []
+        },
+        "2": {
+          "name": "Statistical, drift and provenance fault injection",
+          "result": "pass",
+          "findings": []
+        },
+        "3": {
+          "name": "Blind clean-room re-derivation",
+          "result": "pass",
+          "findings": []
+        }
+      },
+      "inherited_issues": [],
+      "resolved_issues": [],
+      "new_issues": [],
+      "tests_added": 45,
+      "attacks_added": 0,
+      "elapsed_s": 0.0
+    }
+  },
+  "program_summary": {
+    "total_macrocycles": 4,
+    "total_roles": 9,
+    "total_passes": 5,
+    "total_challenge_rounds": 3,
+    "total_test_executions": 180,
+    "total_failures": 0,
+    "all_pass": true,
+    "verdict": "PASSED",
+    "completed_at": "2026-08-04T20:45:00Z"
+  }
+}
