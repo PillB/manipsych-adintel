@@ -1,0 +1,57 @@
+# Data folder — 2 GB+, not versioned. See data/README.md for structure.
+data/
+!data/README.md
+
+# SCRATCH logs (large, ephemeral)
+SCRATCH/
+
+# Large backup files in reports/
+reports/adintel/*.json.bak
+reports/adintel/*.bak
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Models (large joblib files; rebuildable from tools/train_*.py)
+models/*.joblib
+
+# OS
+.DS_Store
+__MACOSX/
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+!reports/adintel/*.log
+
+# Local env
+.env
+.venv/
+venv/
+env/
+
+# Build artifacts
+build/
+dist/
+*.egg
+
+# Secrets / tokens
+*.token
+*.key
+gh-token*
