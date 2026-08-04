@@ -1,0 +1,566 @@
+[
+  {
+    "model_id": "rule-detector-v1",
+    "purpose": "Lexical rule-based baseline detector for manipulation technique tags in Spanish-language classified ads. Used as the interpretable baseline for every other checkpoint. Produces a score in [0,1] and a list of tags with evidence spans.",
+    "version": "rule-detector-v1.0.0",
+    "checkpoint_hash": {
+      "source_file": "tools/detect_manipulation.py",
+      "sha256": "bc878698d0dc5fbc580cc5a0dbcfdfa1b1ec008e6bc2c632dcc874aff4d61830",
+      "hash_method": "sha256sum on 2026-08-04"
+    },
+    "training_data_refs": [
+      {
+        "ref": "n/a (rule-based; no training)",
+        "verified": true,
+        "notes": "Rules are hand-authored in tools/detect_manipulation.py:21-28 (RULES list). 6 rules with regex patterns and weights 0.15-0.25."
+      }
+    ],
+    "input_schema": {
+      "type": "string",
+      "description": "Free-form ad text (typically title + '\\n' + body_redacted)",
+      "encoding": "UTF-8",
+      "language": "Spanish (Peruvian) with English fallbacks",
+      "max_length": "unbounded"
+    },
+    "output_schema": {
+      "type": "object",
+      "fields": {
+        "score": "float in [0,1], capped sum of matched rule weights",
+        "tags": "array of string label ids from the 6-rule set",
+        "findings": "array of {tag, rationale, evidence (array of matched surface strings), weight}"
+      },
+      "example": {
+        "score": 0.45,
+        "tags": ["scarcity_urgency_pressure", "platform_migration"],
+        "findings": [
+          {"tag": "scarcity_urgency_pressure", "rationale": "Urgency or scarcity wording", "evidence": ["hoy", "urgente"], "weight": 0.25},
+          {"tag": "platform_migration", "rationale": "Private-channel migration cue", "evidence": ["whatsapp"], "weight": 0.25}
+        ]
+      }
+    },
+    "known_limitations": [
+      "Lexical-only: misses semantic and structural manipulation that does not match a keyword regex.",
+      "Spanish-only patterns with English fallbacks; other languages unsupported.",
+      "Word-boundary regexes (\\b) are ASCII-centric; may under-match on accented characters (challenge R1-D04).",
+      "Weights are hand-tuned, not learned; no calibration against ground truth.",
+      "Always returns a score even on empty/no-rule-match text (score 0.0); abstention is by convention, not enforced.",
+      "No notion of confidence intervals; the score is a single point estimate."
+    ],
+    "risk_tier": "LOW",
+    "risk_tier_rationale": "Fully transparent (rules visible in source). Reproducible. No personal data emitted. Used only as a baseline; never as the sole decision-maker.",
+    "abstention_conditions": ["empty_text", "no_rule_match"],
+    "calibration_status": "uncalibrated",
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 1.0,
+    "baseline_checkpoint_id": null,
+    "registered_in": "adintel/checkpoints.py:91",
+    "verified": true
+  },
+  {
+    "model_id": "tfidf-ovr-v1",
+    "purpose": "TF-IDF + OneVsRestClassifier(LogisticRegression) multi-label model that predicts manipulation technique tags from ad text. Trained on weak labels derived from rule-detector-v1 + metadata cues. This is the v1 ManiPsych council model.",
+    "version": "tfidf-ovr-v1.0.0",
+    "checkpoint_hash": {
+      "source_file_trainer": "tools/train_manipulation_model.py",
+      "sha256_trainer": "2fd7eae5afa11f4a8ad04f4d03107b8b3c6e0062f8be086065df8de4d71977f0",
+      "model_artifact": "models/manipulation_tfidf_ovr.joblib",
+      "sha256_model": "6bb0fbe2eb1c723d1f4473880afaabbc32ab9d7954601a3795bf02c03a05cecc",
+      "model_size_bytes": 390941,
+      "hash_method": "sha256sum on 2026-08-04"
+    },
+    "training_data_refs": [
+      {
+        "ref": "data/processed/ad_manifest.jsonl",
+        "verified": true,
+        "records": 5189,
+        "label_source": "weak_supervision from tools/detect_manipulation.analyze_text + metadata_context_labels (paid/featured/follower/engagement/repeat-poster)",
+        "label_count_per_record": "variable; typically 2-7 labels per record"
+      },
+      {
+        "ref": "data/processed/modeling_manifest.jsonl (referenced in reports/modeling_dataset_summary.json)",
+        "verified": false,
+        "notes": "NOT VERIFIED — modeling_manifest.jsonl does not exist in the sandbox. The training may have used ad_manifest.jsonl directly or a now-missing modeling subset."
+      }
+    ],
+    "input_schema": {
+      "type": "string",
+      "description": "Free-form ad text (title + '\\n' + body_redacted)",
+      "encoding": "UTF-8",
+      "language": "Spanish (Peruvian)",
+      "vectorizer": "TfidfVectorizer(ngram_range=(1,2), min_df=1, max_features=3000, sublinear_tf=True, lowercase=True)",
+      "max_length": "unbounded but vectorizer caps at 3000 features"
+    },
+    "output_schema": {
+      "type": "object",
+      "fields": {
+        "predicted_labels": "array of string label ids (20-label v1 schema manipsych-span-v1)",
+        "probabilities": "array of {label, probability} per class",
+        "score": "float in [0,1] (max probability across labels)"
+      },
+      "label_set": [
+        "scarcity_urgency_pressure", "reciprocity_obligation", "platform_migration",
+        "safety_and_privacy_multiplier", "financial_emergency_multiplier",
+        "confirmshaming_guilt_pressure", "education_and_career_aspiration_multiplier",
+        "commitment_consistency_foot_in_door", "status_and_respectability_multiplier",
+        "family_care_obligation_multiplier", "paid_or_promoted_visibility_signal",
+        "social_engagement_signal", "repeat_or_high_volume_poster_signal"
+      ],
+      "note": "Label set is a superset of the 6 rule-detector labels plus 7 metadata-context labels. NOT identical to the v1 council annotation schema (which has 20 labels)."
+    },
+    "known_limitations": [
+      "Training labels are weak-supervised from rule-detector-v1, NOT independently validated. Metrics measure agreement with the labelling function, not real-world performance.",
+      "TF-IDF unigrams+bigrams ignore semantic content; out-of-vocabulary ads degrade.",
+      "LogisticRegression with class_weight=balanced over-predicts rare labels.",
+      "No calibration applied; probabilities are raw sigmoid outputs (challenge R1-D06).",
+      "Spanish-only; no multilingual handle.",
+      "Trained on a single corpus collected from 5 Peruvian platforms; generalisation to other regions/languages unverified.",
+      "No held-out gold set; the 28-record 'challenge' split is the only quasi-independent evaluation, and it has only 28 records (statistically weak)."
+    ],
+    "risk_tier": "MEDIUM",
+    "risk_tier_rationale": "Weak-supervised labels mean the model is effectively learning the rule-based detector's output plus metadata correlations. Probabilities should not be interpreted as calibrated confidence. Reproducible and the artifacts are hashed, but downstream consumers must understand the labels are not gold.",
+    "abstention_conditions": ["text_below_5_tokens", "all_probabilities_below_0.3"],
+    "calibration_status": "uncalibrated",
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 10.0,
+    "baseline_checkpoint_id": "rule-detector-v1",
+    "registered_in": "adintel/checkpoints.py:107",
+    "verified": true,
+    "metrics": {
+      "held_out_split": "test",
+      "records": 853,
+      "subset_accuracy": 0.5076,
+      "micro_f1": 0.9008,
+      "macro_f1": 0.7044,
+      "micro_roc_auc": 0.9872,
+      "macro_roc_auc": 0.9721,
+      "hamming_loss": 0.039,
+      "note": "Micro F1 is inflated by label sparsity (most labels absent per record). Subset accuracy (~0.51) is a more honest summary. Macro F1 ~0.70 indicates moderate per-label performance."
+    }
+  },
+  {
+    "model_id": "manipulation_council_tfidf_ovr_v1",
+    "purpose": "TF-IDF + OneVsRestClassifier(LogisticRegression) multi-label model trained on resolved council annotations. This is the v1 council candidate model used in the dashboards.",
+    "version": "tfidf-ovr-v1.0.0 (council variant)",
+    "checkpoint_hash": {
+      "source_file_trainer": "tools/train_council_candidate_model.py",
+      "sha256_trainer": "ab942a2c5e48f42cc09d4949709675eb810224634356b5634eef9cebbcff64e6",
+      "model_artifact": "models/manipulation_council_tfidf_ovr.joblib",
+      "sha256_model": "25b1bcabc15e13180dd969f6f3a0a779a48bf56a0c9e226b3d3264989fe77b28",
+      "model_size_bytes": 3425035,
+      "hash_method": "sha256sum on 2026-08-04"
+    },
+    "training_data_refs": [
+      {
+        "ref": "data/annotation/council_resolved_annotations.jsonl",
+        "verified": true,
+        "records": 5717,
+        "label_source": "multi-round council annotation with consensus + scientist validation + expert review round 4",
+        "gold": false,
+        "split_counts": {"train": 3983, "validation": 853, "test": 853, "challenge": 28},
+        "annotation_source_path_in_report": "/Users/pabloillescas/Projects/grokBuild/ManiPsych/data/annotation/council_resolved_annotations.jsonl (developer-machine path; indicates off-sandbox training)"
+      },
+      {
+        "ref": "data/annotation/documents.jsonl",
+        "verified": true,
+        "notes": "Source documents paired with annotations"
+      }
+    ],
+    "input_schema": {
+      "type": "string",
+      "description": "Free-form ad text (document text from documents.jsonl)",
+      "encoding": "UTF-8",
+      "language": "Spanish (Peruvian)",
+      "vectorizer": "TfidfVectorizer(ngram_range=(1,2), min_df=1, max_features=3000, sublinear_tf=True, lowercase=True)",
+      "max_length": "unbounded but vectorizer caps at 3000 features"
+    },
+    "output_schema": {
+      "type": "object",
+      "fields": {
+        "predicted_labels": "array of string label ids (20-label v1 schema manipsych-span-v1)",
+        "probabilities": "array of {label, probability} per class",
+        "per_label_auc": "dict[str, float | null] from reports/council_candidate_model_report.json",
+        "roc_curve_micro": "array of [fpr, tpr] points (downsampled to ~80 points for embedding)",
+        "precision_recall_curve_micro": "array of [recall, precision] points (downsampled to ~80 points)"
+      },
+      "label_set": [
+        "age_or_youth_targeting", "authority_or_status_appeal", "commitment_escalation",
+        "conditional_financial_support", "deceptive_assurance",
+        "economic_vulnerability_targeting", "education_or_student_targeting",
+        "exclusivity_or_special_treatment", "family_obligation_targeting",
+        "fear_or_threat", "foot_in_the_door", "guilt_or_shame_pressure",
+        "platform_migration", "privacy_or_secrecy_pressure", "reciprocity_obligation",
+        "repetition_or_campaign_escalation", "scarcity_or_urgency",
+        "sexualized_appearance_condition", "social_proof", "transactional_ambiguity"
+      ]
+    },
+    "known_limitations": [
+      "Training labels are resolved council suggestions, not two-human adjudicated gold.",
+      "Metrics evaluate agreement with the council labeling function and should not be presented as independently validated human performance.",
+      "Image pixels were unavailable; image-only persuasion remains unmodeled.",
+      "Calibration status is 'uncalibrated' despite the calibration helpers in adintel.checkpoints (challenge R1-D06).",
+      "Council annotation rationale may quote ad surface text (potential indirect PII leakage).",
+      "The 28-record 'challenge' set is too small for statistically robust generalisation claims.",
+      "The council annotation pipeline may have used an external LLM (subagent IDs like 'subagent_r5_a' suggest this), which would mean ad text was sent off-host — NOT VERIFIED."
+    ],
+    "risk_tier": "MEDIUM-HIGH",
+    "risk_tier_rationale": "Trained on non-gold labels from a possibly-LLM-driven council pipeline. Strong micro-F1 (~0.90) is misleading because of label sparsity; subset accuracy is only 0.51. Used to drive the public dashboard, so its outputs are visible to analysts. Calibration is missing.",
+    "abstention_conditions": ["text_below_5_tokens", "all_probabilities_below_0.3"],
+    "calibration_status": "uncalibrated",
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 10.0,
+    "baseline_checkpoint_id": "rule-detector-v1",
+    "registered_in": "adintel/checkpoints.py:107 (same registry slot as tfidf-ovr-v1; the council variant is a separate artifact but reuses the checkpoint_id)",
+    "verified": true,
+    "metrics": {
+      "held_out_split": "test",
+      "records": 853,
+      "subset_accuracy": 0.5076,
+      "micro_f1": 0.9008,
+      "macro_f1": 0.7044,
+      "micro_roc_auc": 0.9872,
+      "macro_roc_auc": 0.9721,
+      "hamming_loss": 0.039,
+      "average_precision_micro": 0.9653,
+      "challenge_split_metrics": {
+        "records": 28,
+        "subset_accuracy": 0.7143,
+        "micro_f1": 0.928,
+        "macro_f1": 0.4706,
+        "note": "Macro F1 drops to 0.47 on challenge set — meaningful generalisation gap on adversarial examples."
+      }
+    }
+  },
+  {
+    "model_id": "persuasive-profile-v1",
+    "purpose": "17-dimension persuasive-language profile. Scores each dimension independently with a transparent signal inventory (regex + weight), returns both raw and normalised scores, abstains when signal is insufficient, and exposes a calibration hook. trust_risk and manipulation_risk are meta-dimensions that consume other scores (never a simple sum).",
+    "version": "persuasive-profile-v1.0.0",
+    "checkpoint_hash": {
+      "source_file": "adintel/profile.py",
+      "sha256": "5b2e94124124451db1d5ab52d1f7147e47c6cca30dfac836cdfdfd5979cf5242",
+      "hash_method": "sha256sum on 2026-08-04"
+    },
+    "training_data_refs": [
+      {
+        "ref": "n/a (rule-based signal inventories with hand-tuned weights)",
+        "verified": true,
+        "notes": "17 dimensions defined in adintel/types.py:PROFILE_DIMENSIONS. Per-dimension signal lists are in adintel/profile.py:50-172. Weights are hand-tuned (e.g. urgency word=0.30, last-chance word=0.20, etc.)."
+      }
+    ],
+    "input_schema": {
+      "type": "string",
+      "description": "Free-form ad text",
+      "encoding": "UTF-8",
+      "language": "Spanish (Peruvian) with English fallbacks",
+      "min_length_for_scoring": 3,
+      "max_length": "unbounded"
+    },
+    "output_schema": {
+      "type": "object",
+      "fields": {
+        "record_id": "string",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "checkpoint_id": "persuasive-profile-v1",
+        "dimensions": "dict[str, ProfileScore] with 17 entries in spec order",
+        "composite_summary": "dict with max_dimension, mean_dimension, n_abstained, high_risk_dimensions (FORBIDDEN: 'overall', 'universal', 'total_score', 'composite_score', 'single_score' — enforced by adintel/evidence.py:assert_no_universal_score)",
+        "review_status": "unreviewed | reviewed | adjudicated | disputed",
+        "dimensions_present": "int (always 17)",
+        "dimensions_abstained": "int (count of abstained dimensions)"
+      },
+      "dimensions_in_spec_order": [
+        "urgency", "scarity", "emotional_intensity", "directiveness", "certainty",
+        "specificity", "benefit_density", "evidence_density", "social_proof",
+        "objection_handling", "risk_reversal", "claim_extremity", "readability",
+        "offer_clarity", "action_clarity", "trust_risk", "manipulation_risk"
+      ],
+      "per_dimension_fields": {
+        "dimension": "string",
+        "score": "float in [0,1]",
+        "raw_score": "float (pre-normalisation)",
+        "signals": "list of human-readable signal names that fired",
+        "supporting_evidence": "list of EvidenceRef (text_span with start/end/surface)",
+        "abstained": "bool",
+        "abstention_reason": "string | null",
+        "confidence": "float in [0,1] (hand-set per dimension, 0.5-0.65)"
+      }
+    },
+    "known_limitations": [
+      "Rule-based signal inventories; weights are hand-tuned, not learned.",
+      "Spanish regex patterns use \\b word boundaries that are ASCII-centric; may under-match on accented characters (challenge R1-D04).",
+      "Spanish Flesch readability uses [aeiouáéíóúü]+ syllable counter that over-counts diphthongs as single syllables.",
+      "trust_risk and manipulation_risk combine other dimensions with hand-set coefficients (0.45 redflag + 0.20 urgency + 0.20 emotional + 0.15 direct for manipulation_risk); not calibrated.",
+      "Confidence values (0.5-0.65 per dimension) are hand-set, not derived from data.",
+      "No held-out evaluation set; the 200-sample profile in reports/adintel/profile_sample.json is descriptive only.",
+      "Some dimensions (evidence_density, risk_reversal, social_proof) have very low corpus means (~0.001-0.01), suggesting the signal inventories may be too narrow for the actual corpus."
+    ],
+    "risk_tier": "LOW-MEDIUM",
+    "risk_tier_rationale": "Fully transparent (signals and weights are visible in source). Abstains honestly when no signal fires. The 'no universal score' guardrail prevents the most dangerous misuse (collapsing 17 dimensions into a single manipulation score). However, the hand-tuned weights are not validated, and the Spanish regex limitations could systematically bias scores on accented text.",
+    "abstention_conditions": ["empty_text", "dimension_specific_signal_absence"],
+    "calibration_status": "uncalibrated",
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 5.0,
+    "baseline_checkpoint_id": "rule-detector-v1",
+    "registered_in": "adintel/checkpoints.py:124",
+    "verified": true,
+    "tests": "tests/adintel/test_profile.py (17 test functions)"
+  },
+  {
+    "model_id": "authorship-v1",
+    "purpose": "Multi-signal authorship / common-source analysis. Four tasks: pairwise same-source verification, closed-set attribution, open-set attribution with unknown, creative-source clustering. Includes robustness invariance tests (brand-name, slogan, disclaimer, template removal) and length-aware abstention. NEVER names a person based on model similarity.",
+    "version": "authorship-v1.0.0",
+    "checkpoint_hash": {
+      "source_file": "adintel/authorship.py",
+      "sha256": "d849d1e3d6b9fb0e21caabec58803803e6a0ce40ff28eb445296c4c630e722e1",
+      "hash_method": "sha256sum on 2026-08-04"
+    },
+    "training_data_refs": [
+      {
+        "ref": "n/a (similarity-based; no training in the supervised sense)",
+        "verified": true,
+        "notes": "Uses TfidfVectorizer(char_wb, ngram_range=(4,5), max_features=2000, sublinear_tf=True) fit per-pair or per-corpus. Thresholds (SAME_SOURCE=0.55, DIFFERENT_SOURCE=0.30, OPEN_SET_UNKNOWN=0.30) are hand-set, calibrated on a small number of samples."
+      },
+      {
+        "ref": "data/annotation/similarity_links.jsonl (642 known same-source pairs)",
+        "verified": true,
+        "used_for": "evaluation only, not threshold calibration (challenge R1-D02)",
+        "evaluation_result": "40/41 same-source verdicts correct, 1 abstention, accuracy 0.9756",
+        "selection_bias": "all 642 links are positive pairs; no negative pairs evaluated, so false-positive rate is unknown"
+      }
+    ],
+    "input_schema": {
+      "pairwise_verify": {
+        "left": "string (ad text)",
+        "right": "string (ad text)",
+        "left_labels": "list[str] (optional technique labels)",
+        "right_labels": "list[str] (optional technique labels)"
+      },
+      "closed_set_attrib": {
+        "query": "string",
+        "candidates": "dict[label, text]"
+      },
+      "open_set_attrib": {
+        "query": "string",
+        "candidates": "dict[label, text] (may be empty)"
+      },
+      "creative_source_clusters": {
+        "texts": "list[string]",
+        "threshold": "float (default 0.55)"
+      },
+      "min_tokens_for_verification": 15,
+      "min_tokens_for_attribution": 15,
+      "reduced_confidence_threshold": 60,
+      "encoding": "UTF-8",
+      "language": "Spanish (Peruvian)"
+    },
+    "output_schema": {
+      "type": "object (AuthorshipResult)",
+      "fields": {
+        "task": "pairwise_verification | closed_set_attribution | open_set_attribution | creative_source_clustering",
+        "verdict": "same_source | different_source | unknown_in_open_set | insufficient_evidence",
+        "confidence": "float in [0,1] (capped by length-aware _confidence_cap)",
+        "stylometry_score": "float | null (cosine similarity of char-4/5-gram TF-IDF)",
+        "lexical_richness_score": "float | null (1 - |TTR_left - TTR_right|)",
+        "template_signature_score": "float | null (Jaccard over template tokens)",
+        "structural_signature_score": "float | null (1 - mean abs diff of punctuation/sentence/caps features)",
+        "council_label_overlap": "float | null (Jaccard over technique labels)",
+        "survived": "dict[transform_name, bool] (4 robustness invariance tests)",
+        "left_token_count": "int | null",
+        "right_token_count": "int | null",
+        "abstention_reason": "string | null (below_min_tokens | empty_candidate_set_in_open_set | ambiguous_zone)",
+        "person_named": "bool (ALWAYS False — privacy guardrail)",
+        "review_status": "unreviewed | reviewed | adjudicated | disputed",
+        "checkpoint_id": "authorship-v1"
+      },
+      "weighting": "0.50 * stylometry + 0.15 * lexical_richness + 0.20 * template_signature + 0.10 * structural + 0.05 * council_label_overlap",
+      "thresholds": {
+        "same_source": "score_capped >= 0.55",
+        "different_source": "score_capped <= 0.30",
+        "open_set_unknown": "score_capped < 0.30",
+        "ambiguous_zone": "0.30 < score_capped < 0.55"
+      }
+    },
+    "known_limitations": [
+      "Char-4/5-gram TF-IDF on short text (median 35 tokens in corpus) is sparse; even near-identical pairs only reach ~0.55-0.65 cosine similarity (challenge R1-D02).",
+      "Thresholds (0.55 / 0.30) were calibrated on a small number of hand-written samples, not on the 642 known links. Calibrated accuracy of 0.9756 on the 642 links is selection-biased (all positive pairs).",
+      "Open-set attribution uses the same threshold as pairwise verification (OPEN_SET_UNKNOWN_THRESHOLD = 0.30 = DIFFERENT_SOURCE_THRESHOLD), conflating two distinct decisions (challenge R1-D03).",
+      "No negative-pair evaluation set; false-positive rate unknown.",
+      "Council-label overlap is a SOFT signal (5% weight); the spec warns it must never be the deciding factor — verified by code.",
+      "Robustness invariance tests are approximations (one-level; do not recurse).",
+      "person_named is hardcoded False; the assert_no_person_named guard is a runtime assertion AND a test (verified)."
+    ],
+    "risk_tier": "MEDIUM-HIGH",
+    "risk_tier_rationale": "Authorship / common-source analysis has the highest direct privacy risk in the package: false-positive same-source verdicts could imply coordinated inauthentic behaviour by real people. Mitigations: (a) hard person_named=False guardrail; (b) length-aware abstention; (c) thresholds set conservatively (0.55 is high for char-5-gram cosine); (d) council-overlap capped at 5% weight. However, the selection-biased evaluation (no negative pairs) means false-positive rate is unknown — this is the most important residual risk.",
+    "abstention_conditions": ["below_min_tokens", "empty_candidate_set_in_open_set", "ambiguous_zone"],
+    "calibration_status": "uncalibrated",
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 20.0,
+    "baseline_checkpoint_id": "rule-detector-v1",
+    "registered_in": "adintel/checkpoints.py:141",
+    "verified": true,
+    "tests": "tests/adintel/test_authorship.py (19 test functions)",
+    "privacy_guardrail": "adintel/authorship.py:511 assert_no_person_named; adintel/evidence.py:124 assert_authorship_does_not_identify_person"
+  },
+  {
+    "model_id": "outlier-v1",
+    "purpose": "Outlier and novelty analysis. 11 detectors covering creative novelty, unusual technique combinations, style outliers, visual outliers, performance over/under-performers, temporal outliers, duplicates, extraction errors, metadata errors, and model errors. Every report carries comparison population, feature space, alternative explanation, and uncertainty.",
+    "version": "outlier-v1.0.0",
+    "checkpoint_hash": {
+      "source_file": "adintel/outlier.py",
+      "sha256": "4d01f0ac1847977c000ded26da44c1ddf1309dae3f813f3bad080a3b53c80c97",
+      "hash_method": "sha256sum on 2026-08-04"
+    },
+    "training_data_refs": [
+      {
+        "ref": "n/a (z-score, Jaccard, hash, and pattern matching; no supervised training)",
+        "verified": true,
+        "notes": "All detectors are unsupervised. Comparison population is the full corpus (or the input batch). No held-out evaluation set."
+      }
+    ],
+    "input_schema": {
+      "type": "object (detect_all_outliers takes multiple inputs)",
+      "fields": {
+        "texts": "list[string]",
+        "records": "list[dict] (must have 'record_id', 'metadata', 'collected_at')",
+        "label_sets": "list[set[str]] (optional, for unusual_technique_combination)",
+        "predictions": "list[dict] (optional, for model_error)"
+      },
+      "encoding": "UTF-8",
+      "min_corpus_size": 5
+    },
+    "output_schema": {
+      "type": "list[OutlierReport]",
+      "per_report_fields": {
+        "record_id": "string",
+        "kind": "creative_novelty | unusual_technique_combination | style_outlier | visual_outlier | performance_overperformer | performance_underperformer | temporal_outlier | duplicate | extraction_error | metadata_error | model_error",
+        "score": "float in [0,1]",
+        "method": "string (e.g. tfidf_cosine_distance_to_centroid, exact_text_sha256, rhetorical_feature_z_score)",
+        "comparison_population": "string (e.g. 'full corpus')",
+        "feature_space": "string (e.g. 'semantic_tfidf', 'rhetorical_style')",
+        "supporting_features": "dict[str, float | list]",
+        "alternative_explanation": "string (always populated)",
+        "uncertainty": "float in [0,1] (hand-set per detector: 0.0 for duplicate, 0.2-0.3 for extraction/metadata errors, 0.4-0.5 for content/style, 0.6-0.8 for visual/performance proxies)",
+        "review_status": "unreviewed",
+        "checkpoint_id": "outlier-v1",
+        "output_version": "outlier-v1.0.0"
+      }
+    },
+    "known_limitations": [
+      "11 detectors (docstring says 'ten' — minor drift).",
+      "z-score assumes Gaussian distribution; real ad-quality scores are skewed (challenge R1-D05).",
+      "Visual outlier detector uses image_count and raw_size_bucket as proxies because the corpus has no image pixels. uncertainty=0.6 acknowledges this.",
+      "Performance over/under-performer detector uses quality_score as a PROXY because the corpus has no spend/impressions/CTR. uncertainty=0.8 acknowledges this.",
+      "Uncertainty values are hand-set per detector, not derived from data (challenge R1-D09).",
+      "No temporal outlier reports generated in the latest pipeline run (reports/adintel/outlier_summary.json shows 0 temporal_outlier entries), suggesting the detector may not be triggering as expected on this corpus.",
+      "Model-error detector depends on predictions input which is optional; if not supplied, no model-error reports are generated.",
+      "Duplicate detector uses exact-text SHA-256; near-duplicates are not caught."
+    ],
+    "risk_tier": "LOW-MEDIUM",
+    "risk_tier_rationale": "Outlier detection is descriptive (flags for human review), not prescriptive. Every report includes an alternative_explanation, which guards against over-interpretation. The main risk is that proxies (visual, performance) are mistaken for real signals — mitigated by the high uncertainty values (0.6-0.8) and explicit 'proxy' wording in alternative_explanation.",
+    "abstention_conditions": ["corpus_below_5_records"],
+    "calibration_status": "uncalibrated",
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 50.0,
+    "baseline_checkpoint_id": "rule-detector-v1",
+    "registered_in": "adintel/checkpoints.py:160",
+    "verified": true,
+    "tests": "tests/adintel/test_outlier.py (13 test functions)",
+    "detectors": [
+      "detect_creative_novelty",
+      "detect_unusual_technique_combination",
+      "detect_style_outliers",
+      "detect_visual_outliers",
+      "detect_performance_outliers (returns over + under)",
+      "detect_temporal_outliers",
+      "detect_duplicates",
+      "detect_extraction_errors",
+      "detect_metadata_errors",
+      "detect_model_errors"
+    ]
+  },
+  {
+    "model_id": "clustering-v1",
+    "purpose": "Multi-space clustering with stability and leakage evaluation. Clusters ads in 7 spaces: persuasive (17-dim profile), semantic (TF-IDF words), rhetorical (function-word + punctuation features), visual (image-count + size bucket), multimodal (semantic + visual + rhetorical), authorial (char-5-gram TF-IDF), performance (quality_score + paid/featured/engagement).",
+    "version": "clustering-v1.0.0",
+    "checkpoint_hash": {
+      "source_file": "adintel/clustering.py",
+      "sha256": "6cbca5eb8f15094d477f390f38b707df541bf54823e3f06cbaf89a602944ad20",
+      "hash_method": "sha256sum on 2026-08-04"
+    },
+    "training_data_refs": [
+      {
+        "ref": "n/a (MiniBatchKMeans is fit per-call; no persisted model)",
+        "verified": true,
+        "notes": "MiniBatchKMeans(n_clusters=k, random_state=42, n_init=3, batch_size=64). Fit on the input batch each time. Stratified sampling helper (stratified_sample) is available but the pipeline run that produced reports/adintel/clustering_summary.json used a 300-record sample."
+      }
+    ],
+    "input_schema": {
+      "type": "object (cluster_all_spaces takes)",
+      "fields": {
+        "records": "list[dict]",
+        "texts": "list[string]",
+        "profiles": "list[dict] (optional; if None, persuasive space is skipped)",
+        "k": "int (default 6)",
+        "compute_stability": "bool (default True)"
+      },
+      "random_state": 42,
+      "min_records_for_stability": "max(10, k*2)"
+    },
+    "output_schema": {
+      "type": "dict[space_name, tuple[list[ClusterAssignment], ClusterReport]]",
+      "spaces": ["persuasive", "semantic", "rhetorical", "visual", "multimodal", "authorial", "performance"],
+      "per_assignment_fields": {
+        "record_id": "string",
+        "cluster_id": "int",
+        "space": "string",
+        "is_noise": "bool (always False for MiniBatchKMeans; kept for HDBSCAN parity)",
+        "silhouette": "float | null",
+        "distance_to_centroid": "float | null"
+      },
+      "per_report_fields": {
+        "space": "string",
+        "n_clusters": "int",
+        "n_noise": "int",
+        "stability_ari": "float (mean ARI over 5 bootstrap resamples)",
+        "resampling_consistency": "float (fraction of co-clustered pairs that stay together)",
+        "parameter_sensitivity": "float (std of n_clusters across k_grid (3,4,5,6,7,8))",
+        "brand_leakage": "dict[platform, dominance_fraction] (>= 0.70 threshold)",
+        "topic_leakage": "dict[platform_family, dominance_fraction]",
+        "representative_ids": "list[str] (closest to centroid per cluster)",
+        "boundary_ids": "list[str] (farthest from centroid per cluster)",
+        "cluster_explanations": "list[{cluster_id, n_members, representative_id, boundary_id, top_words}]"
+      }
+    },
+    "known_limitations": [
+      "Brand/topic leakage is near-total in 4 of 7 spaces when the sample is not stratified by platform (challenge R1-D01). The stratified_sample helper exists but the pipeline run that produced reports/adintel/clustering_summary.json still shows 100% brand leakage in semantic, rhetorical, multimodal, visual spaces.",
+      "MiniBatchKMeans is non-deterministic across major sklearn versions despite random_state=42 (n_init changed default in sklearn 1.4).",
+      "Stability ARI computation does not handle k=1 case (challenge R1-D08).",
+      "Visual and performance feature spaces use proxies (image_count, raw_size_bucket, quality_score) — clusters in these spaces are dominated by platform-specific extraction metadata, not real visual/performance differences.",
+      "Silhouette score is computed on a 2000-point subsample for performance; may be unstable for small corpora.",
+      "Cluster explanations use word-frequency which is confounded with platform (the same leakage problem).",
+      "No human-coherence validation of clusters (human_coherence_note field is always None)."
+    ],
+    "risk_tier": "MEDIUM",
+    "risk_tier_rationale": "Clustering outputs are descriptive (for analyst exploration), not prescriptive. The main risk is misinterpretation: an analyst seeing 'Cluster 0 = Locanto ads about students' may believe they found a technique cluster when in fact they found a platform cluster (the exact failure mode the spec warns against — 'treat technique presence as proof of persuasion'). The brand_leakage field surfaces this, but it requires the analyst to read it.",
+    "abstention_conditions": ["corpus_below_10_records", "k_greater_than_n_records"],
+    "calibration_status": "uncalibrated",
+    "cost_usd_per_1k": 0.0,
+    "latency_ms_p50": 200.0,
+    "baseline_checkpoint_id": null,
+    "registered_in": "adintel/checkpoints.py:175",
+    "verified": true,
+    "tests": "tests/adintel/test_clustering.py (12 test functions)",
+    "latest_run_metrics": {
+      "n_sampled": 300,
+      "elapsed_ms": 3568.7,
+      "stability_ari_by_space": {
+        "persuasive": 0.4333,
+        "semantic": 0.1108,
+        "rhetorical": 0.3642,
+        "visual": 0.9914,
+        "multimodal": 0.5994,
+        "authorial": "not shown in summary",
+        "performance": "not shown in summary"
+      },
+      "brand_leakage_present_in": ["semantic (Facebook Public 100%)", "visual (Doplim 100%, Locanto 96.3%)", "multimodal (Doplim 100%, Locanto 96.3%)"]
+    }
+  }
+]

@@ -131,6 +131,8 @@ _CLAIM_EXTREMITY_SIGNALS: list[tuple[re.Pattern[str], float, str]] = [
     (re.compile(r"\b(único|única|unico|unica|exclusivo|exclusiva|sin igual|increíble|increible)\b", re.I), 0.20, "exclusivity claim"),
     (re.compile(r"\b(100%|cien por ciento|total|absoluto|absoluta|perfecto|perfecta)\b", re.I), 0.25, "absolute claim"),
     (re.compile(r"\b(siempre|nunca|jamás|jamas|todos|todas|nadie)\b", re.I), 0.20, "universal quantifier"),
+    (re.compile(r"\b(resultado asegurado|resultado garantizado|éxito garantizado|exito garantizado)\b", re.I), 0.30, "guaranteed-result claim"),
+    (re.compile(r"\b(garantizado|garantizada|asegurado|asegurada|comprobado|verificado)\b", re.I), 0.20, "guarantee adjective"),
 ]
 
 # Readability is computed differently (Flesch-style Spanish approximation),
@@ -242,9 +244,28 @@ def _score_with_signals(
     text: str,
     signals: list[tuple[re.Pattern[str], float, str]],
     abstain_threshold: float = 0.0,
+    max_hits_per_signal: int = 3,
 ) -> tuple[float, list[str], list[EvidenceRef], bool, str | None]:
+    """Score text using signal inventory.
+
+    Anti-gaming fix: each unique signal name counts at most `max_hits_per_signal`
+    times. This prevents keyword-stuffing attacks where repeating the same word
+    100 times would inflate the score to 1.0. The cap is set to 3 so that
+    legitimate repetition (e.g. 'urgente' appearing 3 times in a real ad)
+    still contributes, but stuffing (100 repetitions) does not.
+
+    Evidence spans are still collected for ALL hits (for audit), but only the
+    first `max_hits_per_signal` contribute to the raw score.
+    """
     hits = _find_signals(text, signals)
-    raw = sum(h.weight for h in hits)
+    # Cap hits per signal name for scoring (anti-gaming)
+    hits_by_signal: dict[str, list[_SignalHit]] = {}
+    for h in hits:
+        hits_by_signal.setdefault(h.signal_name, []).append(h)
+    scoring_hits: list[_SignalHit] = []
+    for name, name_hits in hits_by_signal.items():
+        scoring_hits.extend(name_hits[:max_hits_per_signal])
+    raw = sum(h.weight for h in scoring_hits)
     score = _saturate(raw)
     signal_names = sorted({h.signal_name for h in hits})
     evidence = [
@@ -255,7 +276,7 @@ def _score_with_signals(
             end=h.span[1],
             surface=h.surface,
         )
-        for h in hits
+        for h in hits  # keep all hits for evidence/audit
     ]
     abstained = raw <= abstain_threshold and not hits
     reason = "no_signal" if abstained else None

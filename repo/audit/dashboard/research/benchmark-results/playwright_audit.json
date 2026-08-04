@@ -182,7 +182,7 @@
     },
     "adintel-authorship": {
       "present": true,
-      "text_length": 494,
+      "text_length": 495,
       "n_tables": 0,
       "n_kpis": 4
     },
@@ -317,6 +317,6 @@
     "errors": 0,
     "error_details": [],
     "dashboard_url": "http://localhost:8765/reports/adintel/adintel_dashboard.html",
-    "audited_at": "2026-08-04T05:02:28Z"
+    "audited_at": "2026-08-04T17:41:56Z"
   }
 }

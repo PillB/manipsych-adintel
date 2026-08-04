@@ -1,12 +1,12 @@
 {
   "n_sampled": 300,
-  "elapsed_ms": 3568.7,
+  "elapsed_ms": 3507.9,
   "spaces": {
     "persuasive": {
       "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 0.4333,
-      "resampling_consistency": 0.5734,
+      "stability_ari": 0.3963,
+      "resampling_consistency": 0.5345,
       "parameter_sensitivity": 1.7078,
       "brand_leakage": {},
       "topic_leakage": {}

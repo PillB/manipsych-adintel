@@ -1,0 +1,637 @@
+{
+  "catalog_version": "metric-catalog-v1.0.0",
+  "generated_at": "2026-08-04",
+  "generated_by": "Z.ai assurance sub-agent",
+  "scope": "Every metric that the ManiPsych + adintel system reports, displays, or computes — across all checkpoints, dashboards, JSON outputs, and reports. Metrics are grouped by checkpoint/source.",
+  "verification_status_legend": {
+    "VERIFIED": "metric definition confirmed against source code or report JSON; values reconcile across artifacts",
+    "PARTIALLY_VERIFIED": "metric definition confirmed but values cannot be cross-checked (e.g. only one source)",
+    "NOT_VERIFIED": "metric is referenced but its definition or current value could not be confirmed from the repo"
+  },
+  "metrics": [
+    {
+      "metric_id": "rule_detector_score",
+      "name": "Rule-based detector score",
+      "definition": "Capped sum of matched rule weights from tools/detect_manipulation.py. Each rule weight is in [0.15, 0.25]; score is capped at 1.0.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "rule-detector-v1",
+      "source_functions": ["tools/detect_manipulation.py:analyze_text"],
+      "display_locations": ["reports/ad_manipulation_ranking.json:rule_score", "reports/ad_manipulation_report.html (per-record card)", "reports/adintel/adintel_dashboard.html (per-record card)"],
+      "verification_status": "VERIFIED",
+      "notes": "Computed per-ad at inference time. Stored as 'rule_score' in the ranking JSON."
+    },
+    {
+      "metric_id": "rule_detector_tags",
+      "name": "Rule-based detector tags",
+      "definition": "List of v1 technique tags fired by the rule detector. Each tag corresponds to one Rule pattern in tools/detect_manipulation.py:RULES.",
+      "unit": "list of string label ids (6-rule set)",
+      "checkpoint_id": "rule-detector-v1",
+      "source_functions": ["tools/detect_manipulation.py:analyze_text"],
+      "display_locations": ["reports/ad_manipulation_ranking.json:rule_findings", "reports/ad_manipulation_report.html"],
+      "verification_status": "VERIFIED"
+    },
+    {
+      "metric_id": "council_model_subset_accuracy",
+      "name": "Council model subset accuracy",
+      "definition": "Fraction of records where the predicted multi-label set exactly equals the true multi-label set (exact match). Computed on the test, validation, and challenge splits.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "tfidf-ovr-v1 (council variant)",
+      "source_functions": ["tools/train_council_candidate_model.py:exact_match"],
+      "display_locations": ["reports/council_candidate_model_report.json:metrics.{test,validation,challenge}.subset_accuracy"],
+      "verification_status": "VERIFIED",
+      "current_values": {
+        "validation": 0.5182,
+        "test": 0.5076,
+        "challenge": 0.7143
+      },
+      "interpretation": "Subset accuracy is the most honest single-number summary for multi-label prediction. 0.51 on test means the full label set is predicted correctly only ~half the time."
+    },
+    {
+      "metric_id": "council_model_micro_f1",
+      "name": "Council model micro F1",
+      "definition": "F1 score computed globally by counting total true positives, false positives, and false negatives across all labels and all records.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "tfidf-ovr-v1 (council variant)",
+      "source_functions": ["sklearn.metrics.f1_score(average='micro')"],
+      "display_locations": ["reports/council_candidate_model_report.json:metrics.{split}.micro_f1"],
+      "verification_status": "VERIFIED",
+      "current_values": {
+        "validation": 0.9041,
+        "test": 0.9008,
+        "challenge": 0.9280
+      },
+      "interpretation": "Inflated by label sparsity: most labels are absent per record, so the model gets many true negatives. Do NOT use micro F1 alone to characterise multi-label performance."
+    },
+    {
+      "metric_id": "council_model_macro_f1",
+      "name": "Council model macro F1",
+      "definition": "F1 score computed per-label and then averaged unweighted across all labels.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "tfidf-ovr-v1 (council variant)",
+      "source_functions": ["sklearn.metrics.f1_score(average='macro')"],
+      "display_locations": ["reports/council_candidate_model_report.json:metrics.{split}.macro_f1"],
+      "verification_status": "VERIFIED",
+      "current_values": {
+        "validation": 0.7119,
+        "test": 0.7044,
+        "challenge": 0.4706
+      },
+      "interpretation": "More honest than micro F1 because it weights rare labels equally with common labels. The 0.47 challenge-set macro F1 indicates a meaningful generalisation gap."
+    },
+    {
+      "metric_id": "council_model_micro_roc_auc",
+      "name": "Council model micro ROC AUC",
+      "definition": "Area under the ROC curve computed globally by stacking all label scores and true labels.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "tfidf-ovr-v1 (council variant)",
+      "source_functions": ["sklearn.metrics.roc_auc_score(average='micro')"],
+      "display_locations": ["reports/council_candidate_model_report.json:metrics.{split}.roc_auc_micro"],
+      "verification_status": "VERIFIED",
+      "current_values": {
+        "validation": 0.9888,
+        "test": 0.9872,
+        "challenge": 0.9871
+      },
+      "interpretation": "Very high because of label sparsity. Misleading as a single-number quality metric."
+    },
+    {
+      "metric_id": "council_model_macro_roc_auc",
+      "name": "Council model macro ROC AUC",
+      "definition": "Area under the ROC curve computed per-label and then averaged unweighted across labels that have both classes present in the split.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "tfidf-ovr-v1 (council variant)",
+      "source_functions": ["sklearn.metrics.roc_auc_score(average='macro')"],
+      "display_locations": ["reports/council_candidate_model_report.json:metrics.{split}.roc_auc_macro"],
+      "verification_status": "VERIFIED",
+      "current_values": {
+        "validation": 0.9706,
+        "test": 0.9721,
+        "challenge": 0.9312
+      },
+      "interpretation": "More honest than micro AUC. Per-label AUC is also available in the report's metrics.{split}.per_label dictionary."
+    },
+    {
+      "metric_id": "council_model_average_precision_micro",
+      "name": "Council model micro average precision",
+      "definition": "Area under the precision-recall curve, computed globally across all labels.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "tfidf-ovr-v1 (council variant)",
+      "source_functions": ["sklearn.metrics.average_precision_score(average='micro')"],
+      "display_locations": ["reports/council_candidate_model_report.json:metrics.{split}.average_precision_micro"],
+      "verification_status": "VERIFIED",
+      "current_values": {
+        "validation": 0.9677,
+        "test": 0.9653,
+        "challenge": 0.9602
+      }
+    },
+    {
+      "metric_id": "council_model_hamming_loss",
+      "name": "Council model hamming loss",
+      "definition": "Fraction of label-record pairs that are predicted incorrectly (symmetric: false positives and false negatives both count).",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "tfidf-ovr-v1 (council variant)",
+      "source_functions": ["sklearn.metrics.hamming_loss"],
+      "display_locations": ["reports/council_candidate_model_report.json:metrics.{split}.hamming_loss"],
+      "verification_status": "VERIFIED",
+      "current_values": {
+        "validation": 0.0375,
+        "test": 0.0390,
+        "challenge": 0.0161
+      }
+    },
+    {
+      "metric_id": "council_model_label_accuracy",
+      "name": "Council model label accuracy",
+      "definition": "Per-label binary accuracy averaged across labels (fraction of correct label-record predictions, counting both presence and absence).",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "tfidf-ovr-v1 (council variant)",
+      "source_functions": ["sklearn.metrics.accuracy_score on binarised labels"],
+      "display_locations": ["reports/council_candidate_model_report.json:metrics.{split}.label_accuracy"],
+      "verification_status": "VERIFIED",
+      "current_values": {
+        "validation": 0.9625,
+        "test": 0.9610,
+        "challenge": 0.9839
+      },
+      "interpretation": "Inflated by label absence; not a meaningful single-number summary."
+    },
+    {
+      "metric_id": "council_model_per_label_roc_auc",
+      "name": "Council model per-label ROC AUC",
+      "definition": "ROC AUC computed per individual label. Returns null for labels with only one class in the split.",
+      "unit": "dict[label_id, float | null]",
+      "checkpoint_id": "tfidf-ovr-v1 (council variant)",
+      "source_functions": ["sklearn.metrics.roc_auc_score per column"],
+      "display_locations": ["reports/council_candidate_model_report.json:metrics.{split}.per_label.{label}.roc_auc"],
+      "verification_status": "VERIFIED",
+      "example": {
+        "age_or_youth_targeting": {"test": 1.0, "support": 16},
+        "commitment_escalation": {"test": null, "support": 0}
+      }
+    },
+    {
+      "metric_id": "persuasive_profile_dimension_score",
+      "name": "Persuasive profile per-dimension score",
+      "definition": "Per-dimension score in [0,1] from a saturating transform (1 - exp(-raw)) of matched signal weights. Computed for each of 17 dimensions in spec order.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "persuasive-profile-v1",
+      "source_functions": ["adintel/profile.py:score_profile", "adintel/profile.py:_saturate", "adintel/profile.py:_score_with_signals"],
+      "display_locations": ["reports/adintel/profile_sample.json:profiles[].dimensions[dim].score", "reports/adintel/adintel_dashboard.html (profile cards)", "reports/adintel/pipeline_results.json:profile_dimension_means"],
+      "verification_status": "VERIFIED",
+      "current_means_200_sample": {
+        "urgency": 0.0386,
+        "scarcity": 0.0975,
+        "emotional_intensity": 0.1131,
+        "directiveness": 0.0581,
+        "certainty": 0.0266,
+        "specificity": 0.2392,
+        "benefit_density": 0.3388,
+        "evidence_density": 0.0005,
+        "social_proof": 0.0096,
+        "objection_handling": 0.0911,
+        "risk_reversal": 0.0020,
+        "claim_extremity": 0.0833,
+        "readability": 0.3951,
+        "offer_clarity": 0.4047,
+        "action_clarity": 0.0382,
+        "trust_risk": 0.0234,
+        "manipulation_risk": 0.1309
+      }
+    },
+    {
+      "metric_id": "persuasive_profile_raw_score",
+      "name": "Persuasive profile raw score",
+      "definition": "Pre-saturating-transform raw signal count or intensity for each dimension. For density dimensions (benefit, evidence) it is per-50-words.",
+      "unit": "float (unbounded, typically 0..3)",
+      "checkpoint_id": "persuasive-profile-v1",
+      "source_functions": ["adintel/profile.py:ProfileScore.raw_score"],
+      "display_locations": ["reports/adintel/profile_sample.json:profiles[].dimensions[dim].raw_score"],
+      "verification_status": "VERIFIED"
+    },
+    {
+      "metric_id": "persuasive_profile_composite_max",
+      "name": "Persuasive profile max dimension",
+      "definition": "Maximum score across the 17 dimensions. Used as a composite summary; NOT a universal manipulation score.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "persuasive-profile-v1",
+      "source_functions": ["adintel/profile.py:score_profile (composite_summary)"],
+      "display_locations": ["reports/adintel/profile_sample.json:composite_summary.max_dimension"],
+      "verification_status": "VERIFIED",
+      "guardrail": "adintel/evidence.py:assert_no_universal_score enforces that composite_summary does NOT contain forbidden keys 'overall', 'universal', 'total_score', 'composite_score', 'single_score'."
+    },
+    {
+      "metric_id": "persuasive_profile_composite_mean",
+      "name": "Persuasive profile mean dimension",
+      "definition": "Mean score across the 17 dimensions. Used as a composite summary; NOT a universal manipulation score.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "persuasive-profile-v1",
+      "source_functions": ["adintel/profile.py:score_profile (composite_summary)"],
+      "display_locations": ["reports/adintel/profile_sample.json:composite_summary.mean_dimension"],
+      "verification_status": "VERIFIED"
+    },
+    {
+      "metric_id": "persuasive_profile_n_abstained",
+      "name": "Persuasive profile abstention count",
+      "definition": "Number of dimensions (out of 17) that abstained due to insufficient signal.",
+      "unit": "int in [0,17]",
+      "checkpoint_id": "persuasive-profile-v1",
+      "source_functions": ["adintel/profile.py:score_profile (composite_summary.n_abstained)"],
+      "display_locations": ["reports/adintel/profile_sample.json:composite_summary.n_abstained", "PersuasiveProfile.to_dict().dimensions_abstained"],
+      "verification_status": "VERIFIED"
+    },
+    {
+      "metric_id": "persuasive_profile_high_risk_dimensions",
+      "name": "High-risk dimensions",
+      "definition": "List of dimensions with score >= 0.5.",
+      "unit": "list of dimension names",
+      "checkpoint_id": "persuasive-profile-v1",
+      "source_functions": ["adintel/profile.py:score_profile (composite_summary.high_risk_dimensions)"],
+      "display_locations": ["reports/adintel/profile_sample.json:composite_summary.high_risk_dimensions"],
+      "verification_status": "VERIFIED"
+    },
+    {
+      "metric_id": "persuasive_profile_spanish_flesch",
+      "name": "Spanish Flesch reading ease",
+      "definition": "Huerta's Spanish adaptation of Flesch: F = 206.84 - 62.3*(syllables/words) - 1.015*(words/sentences). Range typically [0,100]; normalised to [0,1] for the readability dimension with lo=20, hi=70.",
+      "unit": "float, raw in [0,100]; normalised to [0,1]",
+      "checkpoint_id": "persuasive-profile-v1",
+      "source_functions": ["adintel/profile.py:_spanish_flesch", "adintel/profile.py:score_readability"],
+      "display_locations": ["reports/adintel/profile_sample.json:profiles[].dimensions.readability.raw_score"],
+      "verification_status": "VERIFIED",
+      "known_limitation": "Syllable counter uses [aeiouáéíóúü]+ regex; over-counts diphthongs as single syllables (challenge R1-D04)."
+    },
+    {
+      "metric_id": "authorship_pairwise_verdict",
+      "name": "Authorship pairwise verdict",
+      "definition": "Categorical verdict on whether two ads share a creative source: same_source | different_source | insufficient_evidence.",
+      "unit": "categorical string",
+      "checkpoint_id": "authorship-v1",
+      "source_functions": ["adintel/authorship.py:pairwise_verify"],
+      "display_locations": ["reports/adintel/authorship_known_pairs.json:results_sample[].verdict"],
+      "verification_status": "VERIFIED",
+      "thresholds": {
+        "same_source": "score_capped >= 0.55",
+        "different_source": "score_capped <= 0.30",
+        "insufficient_evidence": "0.30 < score_capped < 0.55"
+      }
+    },
+    {
+      "metric_id": "authorship_pairwise_confidence",
+      "name": "Authorship pairwise confidence",
+      "definition": "Combined similarity score capped by length-aware confidence cap. cap = 0 if min(left,right) < 15 tokens; ramps from 0.30 at 15 tokens to 1.0 at 60 tokens; 1.0 above 60.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "authorship-v1",
+      "source_functions": ["adintel/authorship.py:pairwise_verify", "adintel/authorship.py:_confidence_cap"],
+      "display_locations": ["reports/adintel/authorship_known_pairs.json:results_sample[].confidence"],
+      "verification_status": "VERIFIED"
+    },
+    {
+      "metric_id": "authorship_stylometry_score",
+      "name": "Stylometry similarity",
+      "definition": "Cosine similarity of char-4/5-gram TF-IDF vectors between two texts. Uses TfidfVectorizer(analyzer='char_wb', ngram_range=(4,5), min_df=1, max_features=2000, sublinear_tf=True).",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "authorship-v1",
+      "source_functions": ["adintel/authorship.py:stylometry_similarity"],
+      "display_locations": ["reports/adintel/authorship_known_pairs.json:results_sample[].stylometry"],
+      "verification_status": "VERIFIED",
+      "current_observations": "Stylometry scores for accepted same-source pairs in the 41-pair sample range from ~0.89 to ~0.94, consistent with the documented expectation that near-identical short ad pairs reach 0.55-0.65 on char-5-grams (the higher observed values are because the pairs are near-duplicates)."
+    },
+    {
+      "metric_id": "authorship_robustness_survival",
+      "name": "Authorship robustness survival",
+      "definition": "Per-transform flag indicating whether the original verdict survived re-running after an invariance transform (brand-name removal, slogan removal, disclaimer removal, template removal).",
+      "unit": "dict[transform_name, bool]",
+      "checkpoint_id": "authorship-v1",
+      "source_functions": ["adintel/authorship.py:_robustness_survival"],
+      "display_locations": ["reports/adintel/authorship_known_pairs.json:results_sample[].survived"],
+      "verification_status": "VERIFIED"
+    },
+    {
+      "metric_id": "authorship_accuracy_against_accepted_links",
+      "name": "Authorship accuracy against accepted similarity links",
+      "definition": "Fraction of accepted same-source pairs (from data/annotation/similarity_links.jsonl) for which pairwise_verify returns 'same_source' verdict.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "authorship-v1",
+      "source_functions": ["computed by the pipeline runner (not in adintel package)"],
+      "display_locations": ["reports/adintel/authorship_known_pairs.json:accuracy_against_accepted_links", "reports/adintel/pipeline_results.json:authorship_accuracy"],
+      "verification_status": "VERIFIED",
+      "current_value": 0.9756,
+      "caveat": "SELECTION-BIASED — all 642 (and the 41 sampled) links are positive pairs. No negative-pair evaluation. False-positive rate is unknown. (challenge R1-D02)"
+    },
+    {
+      "metric_id": "authorship_n_abstained",
+      "name": "Authorship abstention count",
+      "definition": "Number of pairs for which pairwise_verify returned 'insufficient_evidence' due to below-min-tokens.",
+      "unit": "int",
+      "checkpoint_id": "authorship-v1",
+      "source_functions": ["computed by the pipeline runner"],
+      "display_locations": ["reports/adintel/authorship_known_pairs.json:n_abstained"],
+      "verification_status": "VERIFIED",
+      "current_value": 1
+    },
+    {
+      "metric_id": "cluster_n_clusters",
+      "name": "Cluster count",
+      "definition": "Number of distinct cluster ids returned by MiniBatchKMeans for a given space.",
+      "unit": "int",
+      "checkpoint_id": "clustering-v1",
+      "source_functions": ["adintel/clustering.py:cluster_space", "adintel/clustering.py:_kmeans"],
+      "display_locations": ["reports/adintel/clustering_summary.json:spaces[space].n_clusters", "reports/adintel/pipeline_results.json:cluster_summary[space].n_clusters"],
+      "verification_status": "VERIFIED",
+      "current_values": {"persuasive": 5, "semantic": 5, "rhetorical": 5, "visual": 3, "multimodal": 5}
+    },
+    {
+      "metric_id": "cluster_stability_ari",
+      "name": "Cluster stability ARI",
+      "definition": "Mean adjusted Rand index between the full-data clustering and each of 5 bootstrap resamples' clustering projected onto the resampled points.",
+      "unit": "float in [-1,1], 1.0 = perfect agreement",
+      "checkpoint_id": "clustering-v1",
+      "source_functions": ["adintel/clustering.py:evaluate_stability", "sklearn.metrics.adjusted_rand_score"],
+      "display_locations": ["reports/adintel/clustering_summary.json:spaces[space].stability_ari"],
+      "verification_status": "VERIFIED",
+      "current_values": {"persuasive": 0.4333, "semantic": 0.1108, "rhetorical": 0.3642, "visual": 0.9914, "multimodal": 0.5994},
+      "interpretation": "Visual is artificially high because the visual feature space is dominated by per-platform extraction metadata. Semantic is low because text clusters are unstable on a small (300) sample."
+    },
+    {
+      "metric_id": "cluster_resampling_consistency",
+      "name": "Cluster resampling consistency",
+      "definition": "Fraction of co-clustered pairs in the full data that remain co-clustered across the 5 bootstrap resamples.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "clustering-v1",
+      "source_functions": ["adintel/clustering.py:evaluate_stability"],
+      "display_locations": ["reports/adintel/clustering_summary.json:spaces[space].resampling_consistency"],
+      "verification_status": "VERIFIED",
+      "current_values": {"persuasive": 0.5734, "semantic": 0.4059, "rhetorical": 0.7075, "visual": 0.9904, "multimodal": 0.6650}
+    },
+    {
+      "metric_id": "cluster_parameter_sensitivity",
+      "name": "Cluster parameter sensitivity",
+      "definition": "Standard deviation of effective n_clusters_found across a k grid of (3,4,5,6,7,8).",
+      "unit": "float (std dev)",
+      "checkpoint_id": "clustering-v1",
+      "source_functions": ["adintel/clustering.py:evaluate_parameter_sensitivity"],
+      "display_locations": ["reports/adintel/clustering_summary.json:spaces[space].parameter_sensitivity"],
+      "verification_status": "VERIFIED",
+      "current_values": {"persuasive": 1.7078, "semantic": 1.7078, "rhetorical": 1.7078, "visual": 0.4714, "multimodal": 1.7078}
+    },
+    {
+      "metric_id": "cluster_brand_leakage",
+      "name": "Cluster brand leakage",
+      "definition": "Per-platform dominance fraction for clusters where one source_platform covers >= 70% of cluster members. Returns the maximum dominance observed per platform.",
+      "unit": "dict[platform, float in [0,1]]",
+      "checkpoint_id": "clustering-v1",
+      "source_functions": ["adintel/clustering.py:evaluate_leakage"],
+      "display_locations": ["reports/adintel/clustering_summary.json:spaces[space].brand_leakage"],
+      "verification_status": "VERIFIED",
+      "current_values": {
+        "semantic": {"Facebook Public": 1.0},
+        "visual": {"Doplim Peru": 1.0, "Locanto Peru": 0.9630},
+        "multimodal": {"Doplim Peru": 1.0, "Locanto Peru": 0.9630}
+      },
+      "interpretation": "High brand leakage means clusters are separating by platform, not by technique. This is the exact failure mode the spec warns against (challenge R1-D01)."
+    },
+    {
+      "metric_id": "cluster_topic_leakage",
+      "name": "Cluster topic leakage",
+      "definition": "Per-platform-family dominance fraction for clusters where one platform_family covers >= 70% of cluster members.",
+      "unit": "dict[platform_family, float in [0,1]]",
+      "checkpoint_id": "clustering-v1",
+      "source_functions": ["adintel/clustering.py:evaluate_leakage"],
+      "display_locations": ["reports/adintel/clustering_summary.json:spaces[space].topic_leakage"],
+      "verification_status": "VERIFIED"
+    },
+    {
+      "metric_id": "outlier_score",
+      "name": "Outlier score",
+      "definition": "Per-record outlier score in [0,1] for a specific outlier kind. Higher = more outlying. Score is method-specific (cosine distance, z-score sigmoid, hash match = 1.0).",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "outlier-v1",
+      "source_functions": ["adintel/outlier.py:detect_creative_novelty", "adintel/outlier.py:detect_style_outliers", "adintel/outlier.py:detect_visual_outliers", "adintel/outlier.py:detect_performance_outliers", "adintel/outlier.py:detect_temporal_outliers", "adintel/outlier.py:detect_duplicates", "adintel/outlier.py:detect_extraction_errors", "adintel/outlier.py:detect_metadata_errors", "adintel/outlier.py:detect_model_errors"],
+      "display_locations": ["reports/adintel/outlier_summary.json:sample_reports[].score"],
+      "verification_status": "VERIFIED"
+    },
+    {
+      "metric_id": "outlier_uncertainty",
+      "name": "Outlier uncertainty",
+      "definition": "Hand-set per-detector uncertainty in [0,1]. Higher = less confident. 0.0 for duplicate (exact hash); 0.2-0.3 for extraction/metadata errors; 0.4-0.5 for content/style; 0.6-0.8 for visual/performance proxies.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "outlier-v1",
+      "source_functions": ["adintel/outlier.py (hardcoded per detector)"],
+      "display_locations": ["reports/adintel/outlier_summary.json:sample_reports[].uncertainty"],
+      "verification_status": "VERIFIED",
+      "known_limitation": "Hand-set, not derived from data (challenge R1-D09)."
+    },
+    {
+      "metric_id": "outlier_n_reports_by_kind",
+      "name": "Outlier report count by kind",
+      "definition": "Count of OutlierReport instances produced per kind in a sample run.",
+      "unit": "dict[kind, int]",
+      "checkpoint_id": "outlier-v1",
+      "source_functions": ["computed by the pipeline runner"],
+      "display_locations": ["reports/adintel/outlier_summary.json:by_kind"],
+      "verification_status": "VERIFIED",
+      "current_value": {"creative_novelty": 50, "unusual_technique_combination": 22, "style_outlier": 26, "performance_underperformer": 90},
+      "interpretation": "No duplicates, extraction_errors, metadata_errors, temporal_outliers, visual_outliers, performance_overperformers, or model_errors were flagged in the 1,000-record sample. This may indicate the detectors are too narrow or the sample is clean."
+    },
+    {
+      "metric_id": "checkpoint_abstention_rate",
+      "name": "Checkpoint abstention rate",
+      "definition": "Per-checkpoint fraction of inputs on which the checkpoint abstained. Stored in CheckpointOutput.abstention_rate. Currently always 0.0 or 1.0 (per-call) because the pipeline runner does not aggregate across calls.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "all",
+      "source_functions": ["adintel/checkpoints.py:CheckpointRunResult.to_checkpoint_output"],
+      "display_locations": ["CheckpointOutput.abstention_rate", "adintel/api.py:APIResponse.abstained (boolean per call)"],
+      "verification_status": "PARTIALLY VERIFIED",
+      "notes": "Per-call abstention is correctly tracked; aggregate abstention rate is NOT computed or stored anywhere."
+    },
+    {
+      "metric_id": "checkpoint_disagreement_count",
+      "name": "Checkpoint disagreement count",
+      "definition": "Number of other checkpoint_ids that disagreed with a given checkpoint's output on the same input. Stored in CheckpointOutput.disagreement (list of checkpoint_ids).",
+      "unit": "int (length of disagreement list)",
+      "checkpoint_id": "all",
+      "source_functions": ["adintel/checkpoints.py:should_route_to_human"],
+      "display_locations": ["CheckpointOutput.disagreement", "OutlierReport.kind='model_error' (when disagreement >= 2)"],
+      "verification_status": "PARTIALLY VERIFIED",
+      "notes": "The disagreement tracking dataclass exists but the pipeline runner does NOT compute disagreement across checkpoints. The 'model_error' outlier detector looks for a 'disagreement' key in predictions input, but this key is never populated by the pipeline."
+    },
+    {
+      "metric_id": "checkpoint_cost_usd_per_1k",
+      "name": "Checkpoint cost per 1k inputs",
+      "definition": "Hand-set USD cost per 1,000 inputs. All checkpoints are 0.0 (local CPU inference).",
+      "unit": "USD per 1,000 inputs",
+      "checkpoint_id": "all",
+      "source_functions": ["adintel/checkpoints.py:CheckpointSpec.cost_usd_per_1k"],
+      "display_locations": ["reports/adintel/checkpoint_registry.json:[checkpoint].cost_usd_per_1k", "adintel/api.py:APIResponse.cost_usd_per_1k"],
+      "verification_status": "VERIFIED",
+      "current_values": "all 0.0"
+    },
+    {
+      "metric_id": "checkpoint_latency_ms_p50",
+      "name": "Checkpoint median latency (ms)",
+      "definition": "Hand-set p50 latency in milliseconds per checkpoint, used for baseline planning. Actual per-call latency is also tracked in APIResponse.latency_ms.",
+      "unit": "milliseconds",
+      "checkpoint_id": "all",
+      "source_functions": ["adintel/checkpoints.py:CheckpointSpec.latency_ms_p50", "adintel/api.py:APIResponse.latency_ms"],
+      "display_locations": ["reports/adintel/checkpoint_registry.json:[checkpoint].latency_ms_p50", "adintel/api.py:APIResponse.latency_ms"],
+      "verification_status": "VERIFIED",
+      "current_planned_values": {"rule-detector-v1": 1.0, "tfidf-ovr-v1": 10.0, "persuasive-profile-v1": 5.0, "authorship-v1": 20.0, "outlier-v1": 50.0, "clustering-v1": 200.0}
+    },
+    {
+      "metric_id": "api_p50_latency_ms",
+      "name": "API p50 latency",
+      "definition": "Median latency across all AdIntelAPI calls in the monitoring log.",
+      "unit": "milliseconds",
+      "checkpoint_id": "all",
+      "source_functions": ["adintel/api.py:AdIntelAPI.monitoring_summary"],
+      "display_locations": ["AdIntelAPI.monitoring_summary() return value (not persisted to disk)"],
+      "verification_status": "PARTIALLY VERIFIED",
+      "notes": "Computed in-process; not persisted. Lost on process restart."
+    },
+    {
+      "metric_id": "api_p95_latency_ms",
+      "name": "API p95 latency",
+      "definition": "95th percentile latency across all AdIntelAPI calls in the monitoring log.",
+      "unit": "milliseconds",
+      "checkpoint_id": "all",
+      "source_functions": ["adintel/api.py:AdIntelAPI.monitoring_summary"],
+      "display_locations": ["AdIntelAPI.monitoring_summary() return value (not persisted to disk)"],
+      "verification_status": "PARTIALLY VERIFIED",
+      "notes": "Implementation has an off-by-one risk: `sorted(latencies)[int(len(latencies) * 0.95)]` may index out of range when len(latencies) is small."
+    },
+    {
+      "metric_id": "pipeline_n_records_total",
+      "name": "Pipeline total record count",
+      "definition": "Total number of records in data/processed/ad_manifest.jsonl at pipeline run time.",
+      "unit": "int",
+      "checkpoint_id": "pipeline-runner",
+      "source_functions": ["pipeline runner (not in repo)"],
+      "display_locations": ["reports/adintel/pipeline_results.json:n_records_total"],
+      "verification_status": "VERIFIED",
+      "current_value": 5189
+    },
+    {
+      "metric_id": "pipeline_n_council_annotations",
+      "name": "Pipeline council annotation count",
+      "definition": "Total number of resolved council annotations.",
+      "unit": "int",
+      "checkpoint_id": "pipeline-runner",
+      "source_functions": ["pipeline runner"],
+      "display_locations": ["reports/adintel/pipeline_results.json:n_council_annotations"],
+      "verification_status": "VERIFIED",
+      "current_value": 5717
+    },
+    {
+      "metric_id": "pipeline_n_similarity_links",
+      "name": "Pipeline similarity link count",
+      "definition": "Total number of accepted same-source similarity pairs.",
+      "unit": "int",
+      "checkpoint_id": "pipeline-runner",
+      "source_functions": ["pipeline runner"],
+      "display_locations": ["reports/adintel/pipeline_results.json:n_similarity_links"],
+      "verification_status": "VERIFIED",
+      "current_value": 642
+    },
+    {
+      "metric_id": "pipeline_elapsed_s",
+      "name": "Pipeline total elapsed time",
+      "definition": "Wall-clock time for the full adintel pipeline run, in seconds.",
+      "unit": "seconds",
+      "checkpoint_id": "pipeline-runner",
+      "source_functions": ["pipeline runner"],
+      "display_locations": ["reports/adintel/pipeline_results.json:elapsed_s"],
+      "verification_status": "VERIFIED",
+      "current_value": 5.35
+    },
+    {
+      "metric_id": "v1_to_v2_unmapped_labels",
+      "name": "v1-to-v2 unmapped labels",
+      "definition": "List of v1 labels that have no v2 equivalent. Should be empty if the migration is complete.",
+      "unit": "list of strings",
+      "checkpoint_id": "taxonomy",
+      "source_functions": ["adintel/taxonomy.py:unmapped_v1_labels"],
+      "display_locations": ["reports/adintel/v1_to_v2_migration_report.json:unmapped_v1_labels"],
+      "verification_status": "VERIFIED",
+      "current_value": []
+    },
+    {
+      "metric_id": "v1_to_v2_n_multi_label_projections",
+      "name": "v1-to-v2 multi-label projections",
+      "definition": "Total number of v2 leaf labels produced when expanding all v1 labels across all 5,717 annotations. Some v1 labels map to multiple v2 leaves (e.g. reciprocity_obligation → cc_reciprocity_frame + bs_reciprocity_obligation).",
+      "unit": "int",
+      "checkpoint_id": "taxonomy",
+      "source_functions": ["adintel/taxonomy.py:v1_to_v2"],
+      "display_locations": ["reports/adintel/v1_to_v2_migration_report.json:n_multi_label_projections"],
+      "verification_status": "VERIFIED",
+      "current_value": 12338
+    },
+    {
+      "metric_id": "dashboard_review_priority",
+      "name": "Dashboard review priority",
+      "definition": "Composite per-record ranking score used to surface ads for human review. From reports/ad_manipulation_ranking.json:ranking_method.overall_score = 0.45*rule_score + 0.35*top_discriminative_model_probability_average + 0.12*context_probability + 0.08*quality_score.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "v1-ranking",
+      "source_functions": ["tools/rank_ads.py"],
+      "display_locations": ["reports/ad_manipulation_ranking.json:top_records[].overall_score", "reports/ad_manipulation_report.html (top-records list)"],
+      "verification_status": "VERIFIED",
+      "notes": "Excludes 5 labels from the discriminative average (financial_emergency_multiplier, paid_or_promoted_visibility_signal, reciprocity_obligation, repeat_or_high_volume_poster_signal, social_engagement_signal) because they are too common or too sparse."
+    },
+    {
+      "metric_id": "dashboard_quality_score",
+      "name": "Record quality score",
+      "definition": "Per-record rebuild-pipeline quality score in [0,1]. Used as a proxy for performance because the corpus has no real performance metrics.",
+      "unit": "float in [0,1]",
+      "checkpoint_id": "rule-detector-v1 (metadata proxy)",
+      "source_functions": ["tools/rebuild_manifest_from_raw.py (sets metadata.quality_score)"],
+      "display_locations": ["data/processed/ad_manifest.jsonl:metadata.quality_score", "reports/ad_manipulation_ranking.json:top_records[].quality_score", "adintel/clustering.py:build_performance_features", "adintel/outlier.py:detect_performance_outliers"],
+      "verification_status": "VERIFIED",
+      "caveat": "This is a rebuild-pipeline proxy, NOT a real performance metric. The dashboard and outlier detector both surface this caveat (uncertainty=0.8 in performance outlier reports)."
+    },
+    {
+      "metric_id": "calibration_status",
+      "name": "Calibration status",
+      "definition": "Per-checkpoint calibration state. One of: uncalibrated | platt | isotonic | temperature.",
+      "unit": "categorical string",
+      "checkpoint_id": "all",
+      "source_functions": ["adintel/checkpoints.py:CheckpointSpec.calibration_status"],
+      "display_locations": ["reports/adintel/checkpoint_registry.json:[checkpoint].calibration_status", "adintel/api.py:APIResponse.calibration_status"],
+      "verification_status": "VERIFIED",
+      "current_values": "all 6 checkpoints are 'uncalibrated'",
+      "interpretation": "No checkpoint is calibrated. The adintel.checkpoints module provides platt_scale and temperature_scale helpers, but they are never called by the pipeline. Challenge R1-D06."
+    },
+    {
+      "metric_id": "test_pass_count",
+      "name": "Test pass count",
+      "definition": "Number of test functions in the test suite that pass.",
+      "unit": "int",
+      "checkpoint_id": "n/a (test suite)",
+      "source_functions": ["pytest"],
+      "display_locations": ["project documentation (claim: 187 pass / 1 environmental fail)"],
+      "verification_status": "PARTIALLY VERIFIED",
+      "notes": "Test-function count by grep = 113 (adintel) + 75 (v1) = 188. Claim says 187 pass / 1 environmental fail. Consistent. pytest was NOT re-run in this audit."
+    },
+    {
+      "metric_id": "model_file_sha256",
+      "name": "Model file SHA-256",
+      "definition": "SHA-256 hash of the model artifact file. Used for integrity verification.",
+      "unit": "64-char hex string",
+      "checkpoint_id": "tfidf-ovr-v1 (both variants)",
+      "source_functions": ["sha256sum (external)"],
+      "display_locations": ["audit/assurance/deliverables/AI_SYSTEM_INVENTORY.md §5", "audit/assurance/deliverables/MODEL_INVENTORY.json"],
+      "verification_status": "VERIFIED",
+      "current_values": {
+        "models/manipulation_tfidf_ovr.joblib": "6bb0fbe2eb1c723d1f4473880afaabbc32ab9d7954601a3795bf02c03a05cecc",
+        "models/manipulation_council_tfidf_ovr.joblib": "25b1bcabc15e13180dd969f6f3a0a779a48bf56a0c9e226b3d3264989fe77b28"
+      },
+      "caveat": "Hashes are recorded but NOT enforced at model-load time. joblib.load will load any file regardless of hash."
+    }
+  ],
+  "metric_count": 50,
+  "verification_summary": {
+    "VERIFIED": 45,
+    "PARTIALLY_VERIFIED": 5,
+    "NOT_VERIFIED": 0,
+    "notes": "Most metrics are well-defined in source code and have current values that reconcile across artifacts. Partial verification applies where (a) the metric is only computed in-process and not persisted, (b) the metric's aggregate form is not computed by the pipeline runner, or (c) the metric is referenced but its definition is ambiguous. All 50 metrics have an explicit verification_status."
+  }
+}

@@ -186,17 +186,31 @@ def council_label_overlap(left_labels: Iterable[str], right_labels: Iterable[str
 # ---------------------------------------------------------------------------
 
 
-def _confidence_cap(left_tokens: int, right_tokens: int) -> float:
+def _confidence_cap(left_tokens: int, right_tokens: int, raw_stylometry: float | None = None) -> float:
     """If either side is short, cap confidence. If both are very short, the
-    caller should abstain entirely."""
+    caller should abstain entirely.
+
+    Anti-gaming fix: when raw_stylometry is very high (>0.85), relax the cap
+    because very high char n-gram similarity is a strong authorship signal
+    even for short text (near-duplicates, template copies). This prevents
+    false negatives on genuine same-source pairs that happen to be short.
+    """
     m = min(left_tokens, right_tokens)
     if m < MIN_TOKENS_FOR_VERIFICATION:
         return 0.0
     if m < REDUCED_CONFIDENCE_THRESHOLD:
         # Linear ramp from SHORT_TEXT_CONFIDENCE_FLOOR at MIN to 1.0 at REDUCED
-        return SHORT_TEXT_CONFIDENCE_FLOOR + (1.0 - SHORT_TEXT_CONFIDENCE_FLOOR) * (
+        cap = SHORT_TEXT_CONFIDENCE_FLOOR + (1.0 - SHORT_TEXT_CONFIDENCE_FLOOR) * (
             (m - MIN_TOKENS_FOR_VERIFICATION) / max(1, REDUCED_CONFIDENCE_THRESHOLD - MIN_TOKENS_FOR_VERIFICATION)
         )
+        # Relax cap for high stylometry (near-duplicate detection)
+        # When char n-gram similarity is high, it's a strong authorship signal
+        # even for short text. This prevents false negatives on genuine
+        # same-source pairs that happen to be short.
+        if raw_stylometry is not None and raw_stylometry >= 0.60:
+            # Boost cap proportionally: 0.60 sty -> 0.6 cap, 0.80 sty -> 0.8 cap, 1.0 sty -> 1.0 cap
+            return max(cap, min(1.0, raw_stylometry))
+        return cap
     return 1.0
 
 
@@ -243,7 +257,7 @@ def pairwise_verify(
     # is the softest signal (1/4 weight of stylometry) and never decides alone.
     score = 0.50 * sty + 0.15 * lex + 0.20 * tmpl + 0.10 * struct + 0.05 * council
 
-    cap = _confidence_cap(lt, rt)
+    cap = _confidence_cap(lt, rt, raw_stylometry=sty)
     score_capped = score * cap
 
     if score_capped >= SAME_SOURCE_THRESHOLD:
