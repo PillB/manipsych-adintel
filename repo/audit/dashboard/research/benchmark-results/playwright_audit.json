@@ -1,0 +1,322 @@
+{
+  "page_loads": {
+    "title": "ManiPsych + adintel — Unified Observatory",
+    "h1": "ManiPsych ad manipulation & persuasion analytics explorer",
+    "js_errors": [],
+    "n_js_errors": 0
+  },
+  "kpi_cards": {
+    "n_cards": 10,
+    "cards": [
+      {
+        "label": "RECORDS",
+        "value": "5,717"
+      },
+      {
+        "label": "CANDIDATE SPANS",
+        "value": "36,585"
+      },
+      {
+        "label": "ZERO-SPAN ADS",
+        "value": "0"
+      },
+      {
+        "label": "TEST MICRO-F1*",
+        "value": "0.9008"
+      },
+      {
+        "label": "TEST MACRO-F1*",
+        "value": "0.7044"
+      },
+      {
+        "label": "TEST ROC AUC MICRO*",
+        "value": "0.9872"
+      },
+      {
+        "label": "TEST LABEL ACCURACY*",
+        "value": "0.961"
+      },
+      {
+        "label": "HUMAN GOLD?",
+        "value": "false"
+      },
+      {
+        "label": "ADINTEL TESTS",
+        "value": "187"
+      },
+      {
+        "label": "ADINTEL CHECKPOINTS",
+        "value": "6"
+      }
+    ]
+  },
+  "pipeline_diagram": {
+    "svg_present": true,
+    "n_rects": 9,
+    "n_texts": 26,
+    "n_paths": 8
+  },
+  "diagnostics_curves": {
+    "n_curve_svgs": 2,
+    "n_paths": 6
+  },
+  "iteration_timeline": {
+    "n_rows": 3,
+    "first_row_snippet": "2026-07-08\nweak baseline\nHistorical weak-label baseline on smaller rebuilt corpus. · records 1589\nμF"
+  },
+  "metric_heatmap": {
+    "n_rows": 21,
+    "n_cells": 60
+  },
+  "error_timeline": {
+    "n_rows": 6
+  },
+  "underperforming_slices": {
+    "n_slice_cards": 8
+  },
+  "latent_clusters": {
+    "n_cluster_cards": 10
+  },
+  "threshold_overlay": {
+    "n_rows": 5
+  },
+  "explainability_atlas": {
+    "n_labels": 20,
+    "cards_before": 3,
+    "cards_after": 3
+  },
+  "term_network": {
+    "d3_lite_force_loaded": true,
+    "d3_loaded": true,
+    "initial_nodes": 100,
+    "initial_edges": 260,
+    "nodes_after_term_filter": 100,
+    "nodes_after_label_filter": 25,
+    "nodes_after_reset": 100,
+    "inspector_changed_on_click": true,
+    "CRITICAL_REGRESSION": null
+  },
+  "corpus_map": {
+    "initial_points": 500,
+    "legend_items_initial": 5,
+    "legend_after_split": 5,
+    "legend_after_score": 5,
+    "points_after_bottleneck": 500,
+    "points_after_svd": 500,
+    "selected_changed_on_click": false,
+    "points_after_search_apoyo": 500
+  },
+  "facet_overview": {
+    "n_facet_cards": 6,
+    "n_taxonomy_rows": 21
+  },
+  "top_explorer_keyboard": {
+    "initial_detail_snippet": "h_f4fc363a9b8f997059ec332d2ec0effd3960edf30c9f677131a8a9061e43fd81 · doplim · tr",
+    "changed_after_n": true,
+    "changed_after_n2": true,
+    "changed_after_p": true,
+    "rank_mode_after_2": "top_by_manipulation",
+    "rank_mode_after_3": "top_by_persuasion",
+    "rank_mode_after_1": "top_by_review_priority",
+    "slash_focuses_search": true,
+    "rank_count_after_search_ayuda": 25
+  },
+  "top_explorer_mouse": {
+    "n_rank_buttons": 25,
+    "hash_after_second_click": "#h_91a3599da0d9f4cca6a14f231ef22066c1692c9786d03ae4d3feefd439822442",
+    "hash_after_first_click": "#h_f4fc363a9b8f997059ec332d2ec0effd3960edf30c9f677131a8a9061e43fd81",
+    "detail_changed_on_click": true,
+    "n_platform_options": 6,
+    "ranks_after_platform_filter": 15,
+    "n_label_options": 21
+  },
+  "annotated_text_and_spans": {
+    "annotated_text_length": 169,
+    "n_highlighted_spans": 8,
+    "n_manip_spans": 8
+  },
+  "score_waterfall": {
+    "n_waterfall_bars": 9
+  },
+  "explanation_ledger": {
+    "n_ledger_rows": 11
+  },
+  "annotation_dossier": {
+    "n_dossier_cards": 9
+  },
+  "model_predictions": {
+    "n_prediction_bars": 12
+  },
+  "council_vs_model": {
+    "agreement_text_length": 264,
+    "snippet": "Overlap: age_or_youth_targeting, authority_or_status_appeal, commitment_escalation, conditional_fina"
+  },
+  "observability_table": {
+    "n_obs_rows": 8
+  },
+  "label_distribution": {
+    "n_label_bars": 20
+  },
+  "expert_poc": {
+    "n_poc_rows": 6,
+    "n_chips": 3
+  },
+  "adintel_sections": {
+    "adintel-taxonomy": {
+      "present": true,
+      "text_length": 351,
+      "n_tables": 0,
+      "n_kpis": 4
+    },
+    "adintel-profile": {
+      "present": true,
+      "text_length": 738,
+      "n_tables": 1,
+      "n_kpis": 0
+    },
+    "adintel-clustering": {
+      "present": true,
+      "text_length": 630,
+      "n_tables": 1,
+      "n_kpis": 0
+    },
+    "adintel-authorship": {
+      "present": true,
+      "text_length": 275,
+      "n_tables": 0,
+      "n_kpis": 4
+    },
+    "adintel-outliers": {
+      "present": true,
+      "text_length": 316,
+      "n_tables": 1,
+      "n_kpis": 0
+    },
+    "adintel-migration": {
+      "present": true,
+      "text_length": 161,
+      "n_tables": 0,
+      "n_kpis": 3
+    },
+    "adintel-checkpoints": {
+      "present": true,
+      "text_length": 955,
+      "n_tables": 1,
+      "n_kpis": 0
+    },
+    "adintel-challenges": {
+      "present": true,
+      "text_length": 234,
+      "n_tables": 0,
+      "n_kpis": 0
+    }
+  },
+  "nav_links": {
+    "n_nav_links": 19,
+    "results": [
+      {
+        "href": "#pipeline",
+        "scrolled_to_view": false
+      },
+      {
+        "href": "#metrics",
+        "scrolled_to_view": false
+      },
+      {
+        "href": "#diagnostics",
+        "scrolled_to_view": false
+      },
+      {
+        "href": "#explainability-atlas",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#term-network",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#corpus-map",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#facet-overview",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#explorer",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#observability",
+        "scrolled_to_view": false
+      },
+      {
+        "href": "#expert-poc",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#adintel-taxonomy",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#adintel-profile",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#adintel-clustering",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#adintel-authorship",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#adintel-outliers",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#adintel-migration",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#adintel-checkpoints",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#adintel-challenges",
+        "scrolled_to_view": true
+      },
+      {
+        "href": "#research",
+        "scrolled_to_view": true
+      }
+    ]
+  },
+  "duplicate_ids": {
+    "duplicate_ids": [],
+    "n_duplicates": 0
+  },
+  "accessibility_basics": {
+    "unnamedButtons": [],
+    "unlabelledControls": [],
+    "svgsWithoutRole": 0
+  },
+  "mobile_viewport": {
+    "scrollWidth": 660,
+    "clientWidth": 375,
+    "horizontalOverflow": 285
+  },
+  "reduced_motion": {
+    "has_reduced_motion_media_query": true
+  },
+  "print_styles": {
+    "has_print_media_query": true
+  },
+  "_summary": {
+    "total_steps": 32,
+    "errors": 0,
+    "error_details": [],
+    "dashboard_url": "http://localhost:8765/reports/adintel/adintel_dashboard.html",
+    "audited_at": "2026-08-04T04:48:24Z"
+  }
+}

@@ -294,6 +294,10 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
   html {{ scroll-behavior:auto; }}
 }}
 </style>
+<!-- R0 finding #1 fix: load the vendored d3-lite-force.js helper for term-network force layout.
+     The original v1 dashboard loads this from assets/d3-lite-force.js; the unified dashboard
+     must load it from the correct relative path (reports/adintel/ -> ../assets/). -->
+<script src="../assets/d3-lite-force.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -923,16 +927,27 @@ function renderTermNetwork(){{
   let nodes=(network.nodes||[]).filter(n=>!kind||n.kind===kind||n.kind!=='term').slice(0,topN);
   const nodeIds=new Set(nodes.map(n=>n.id));
   let edges=(network.edges||[]).filter(e=>nodeIds.has(e.source)&&nodeIds.has(e.target)).slice(0,260);
-  status.textContent = `${{nodes.length}} nodes · ${{edges.length}} edges`;
+  // R0-fix: use d3LiteForce if loaded, otherwise circular fallback WITH visible warning
+  const hasForce = typeof window.d3LiteForce !== 'undefined' && typeof window.d3LiteForce.layout === 'function';
+  const runtime = hasForce ? (window.d3?.version || 'd3-lite-force-local') : 'vanilla fallback';
+  status.textContent = `${{nodes.length}} nodes · ${{edges.length}} edges · runtime ${{runtime}}`;
+  if(!hasForce){{
+    status.innerHTML += ' <span role="alert" style="color:var(--red);font-weight:700">⚠ Force layout helper failed to load — showing circular fallback.</span>';
+  }}
   $('networkInspector').innerHTML = '<b>How to interpret:</b> clicked terms show example record ids and linked labels. Treat links as co-occurrence, not causation.';
   if(!nodes.length){{container.innerHTML='<p class="small" style="padding:16px">No network data.</p>';return}}
   const width=980,height=620;
-  // Simple circular layout fallback
-  const laid=nodes.map((n,i)=>({{...n,x:width/2+Math.cos(i/nodes.length*Math.PI*2)*310,y:height/2+Math.sin(i/nodes.length*Math.PI*2)*230}}));
-  const links=edges.map(e=>({{source:laid.find(n=>n.id===e.source),target:laid.find(n=>n.id===e.target),weight:e.weight}})).filter(e=>e.source&&e.target);
+  let laid, links;
+  if(hasForce){{
+    const result = window.d3LiteForce.layout(nodes, edges, {{width, height, charge:-390, iterations:230}});
+    laid = result.nodes; links = result.links;
+  }} else {{
+    laid = nodes.map((n,i)=>({{...n,x:width/2+Math.cos(i/nodes.length*Math.PI*2)*310,y:height/2+Math.sin(i/nodes.length*Math.PI*2)*230}}));
+    links = edges.map(e=>({{source:laid.find(n=>n.id===e.source),target:laid.find(n=>n.id===e.target),weight:e.weight}})).filter(e=>e.source&&e.target);
+  }}
   const maxWeight=Math.max(...laid.map(n=>n.weight||1),1);
-  container.innerHTML = `<svg viewBox="0 0 ${{width}} ${{height}}" width="100%" height="100%" aria-label="term network">${{links.map(e=>`<line x1="${{e.source.x}}" y1="${{e.source.y}}" x2="${{e.target.x}}" y2="${{e.target.y}}" stroke="var(--line)" stroke-width="${{Math.min(5,0.8+Math.sqrt(e.weight||1)/2)}}"></line>`).join('')}}${{laid.map(n=>`<circle cx="${{n.x}}" cy="${{n.y}}" r="${{n.kind==='term'?5+14*Math.sqrt((n.weight||1)/maxWeight):n.kind==='label'?11:9}}" fill="${{n.kind==='label'?'var(--red)':n.kind==='platform'?'var(--blue)':'var(--green)'}}" opacity=".88"><title>${{esc(n.name)}} (${{n.kind}})</title></circle>`).join('')}}</svg>`;
-  container.querySelectorAll('circle').forEach((el,i)=>{{
+  container.innerHTML = `<svg viewBox="0 0 ${{width}} ${{height}}" width="100%" height="100%" aria-label="term network">${{links.map(e=>`<line class="network-edge" x1="${{e.source.x}}" y1="${{e.source.y}}" x2="${{e.target.x}}" y2="${{e.target.y}}" stroke="var(--line)" stroke-width="${{Math.min(5,0.8+Math.sqrt(e.weight||1)/2)}}"></line>`).join('')}}${{laid.map(n=>`<g class="network-node" tabindex="0" data-node="${{esc(n.id)}}" aria-label="${{esc(n.name)}}"><circle cx="${{n.x}}" cy="${{n.y}}" r="${{n.kind==='term'?5+14*Math.sqrt((n.weight||1)/maxWeight):n.kind==='label'?11:9}}" fill="${{n.kind==='label'?'var(--red)':n.kind==='platform'?'var(--blue)':'var(--green)'}}" opacity=".88"><title>${{esc(n.name)}} (${{n.kind}})</title></circle></g>`).join('')}}</svg>`;
+  container.querySelectorAll('.network-node').forEach((el,i)=>{{
     const node=laid[i];
     el.style.cursor='pointer';
     el.addEventListener('click',()=>$('networkInspector').innerHTML=`<b>${{esc(node.name)}}</b> · ${{esc(node.kind)}}<br>Examples: ${{(node.examples||[]).map(id=>`<a href="#${{esc(id)}}">${{esc(id.slice(0,10))}}</a>`).join(' ')||'n/a'}}`);

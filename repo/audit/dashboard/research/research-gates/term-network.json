@@ -1,0 +1,97 @@
+{
+  "feature_id": "term-network",
+  "research_question": "Which force-directed layout technique restores the v1 dashboard's interactive term/label/platform co-occurrence network after the unified dashboard's regression of not loading d3-lite-force.js, while keeping the existing label-collision-avoidance algorithm, accessibility hooks, and self-contained constraint?",
+  "memory_hits": [
+    "library-version-manifest.json finding #1 (critical): unified dashboard does not load d3-lite-force.js",
+    "tools/audit_html_report_playwright.py already has network label overlap detection",
+    "Original v1 dashboard loads the script via <script src='assets/d3-lite-force.js'></script>"
+  ],
+  "verified_facts": [
+    "reports/assets/d3-lite-force.js is an 89-line vendored mini-D3 force layout helper (not real D3)",
+    "The helper exposes window.d3LiteForce.layout(nodes, links, opts) and runs synchronously",
+    "The helper sets window.d3 = window.d3 || { version: 'd3-lite-force-local' } (does not overwrite real D3)",
+    "The original dashboard calls window.d3LiteForce?.layout(nodes, edges, {width, height, charge:-390, iterations:230})",
+    "Without the helper, the code falls back to a circular layout (nodes placed by index on a circle)",
+    "The unified dashboard's generator at scripts/generate_adintel_dashboard.py did not include the <script> tag",
+    "Playwright audit confirmed: d3_lite_force_loaded was False before fix, True after fix",
+    "Playwright audit confirmed: node coordinates changed from circular (cos/sin pattern) to force-directed (non-circular positions)"
+  ],
+  "reasonable_inferences": [
+    "The 89-line helper is sufficient for the current ~100-node / 260-edge network (O(N^2) charge at N=100 = 10K ops per iteration x 230 iterations = 2.3M ops, runs in <50ms)",
+    "The helper would need upgrading to real d3-force (with Barnes-Hut) if the network exceeds ~500 nodes"
+  ],
+  "unresolved_uncertainties": [
+    "The exact charge and iteration parameters that produce the best layout for this specific corpus were inherited from v1 without re-tuning; they may not be optimal for the unified dashboard's slightly different viewport size"
+  ],
+  "official_documentation": [
+    "W3C SVG Accessibility / ARIA roles for charts",
+    "MDN: <script> element (for loading order)",
+    "D3 force-layout documentation (for theoretical reference, even though we use a lite version)"
+  ],
+  "primary_research": [
+    "Heer, J. The Barnes-Hut Approximation (for force-directed layout theory)",
+    "D3 d3-force documentation (reference implementation)"
+  ],
+  "comparable_projects": [
+    "D3 d3-force (full) — ISC license — ~12KB vendored, but depends on d3-quadtree, d3-dispatch, d3-timer",
+    "Cytoscape.js — MIT license — ~400KB, canvas-rendered, too heavy for self-contained",
+    "vis-network — Apache-2.0/MIT — ~300KB, canvas-rendered",
+    "Project's own d3-lite-force.js — 89 lines, vendored, sufficient for current scale"
+  ],
+  "candidate_techniques": [
+    "Original: load d3-lite-force.js with no guard (rejected — silent failure was the original regression)",
+    "Minimal restore: load d3-lite-force.js + add visible load-failure guard (SELECTED)",
+    "Alternative: vendor real d3-force ~12KB and rewrite renderTermNetwork (rejected — unnecessary at current scale)"
+  ],
+  "selected_technique": "Load the existing d3-lite-force.js in the unified dashboard via <script src='../assets/d3-lite-force.js'></script>, plus a visible load-failure guard in renderTermNetwork() that displays a role='alert' warning if window.d3LiteForce is undefined.",
+  "selection_rationale": "The 89-line helper is already paid off (exists, audited, works). The guard converts the silent failure into a visible warning, preventing the regression from recurring. No new dependencies. Self-contained requirement preserved.",
+  "risks": [
+    "Relative path '../assets/d3-lite-force.js' breaks if the dashboard is moved — mitigated by the guard",
+    "O(N^2) charge force may slow at >500 nodes — documented follow-up to upgrade to d3-force",
+    "Label collision avoidance is complex and fragile — existing Playwright overlap detection must continue to pass"
+  ],
+  "accessibility_requirements": [
+    "Network nodes must have tabindex='0' for keyboard focus",
+    "Each node <g> must have aria-label with the node name",
+    "SVG must have role='img' and aria-label",
+    "Load-failure warning must have role='alert' for screen readers"
+  ],
+  "performance_requirements": [
+    "Force layout must complete in <100ms for 100 nodes / 260 edges",
+    "No requestAnimationFrame loop — layout is synchronous (deterministic)"
+  ],
+  "data_integrity_requirements": [
+    "Node and edge data comes from embedded council_candidate_inferences.json",
+    "No data is modified during layout — the helper only adds x/y coordinates"
+  ],
+  "red_tests": [
+    "window.d3LiteForce is defined and typeof window.d3LiteForce.layout === 'function' after page load",
+    "#networkStatus contains 'd3-lite-force-local' (not 'vanilla fallback')",
+    "Node circle coordinates are NOT all on a circle (variance of distance from centroid > 5% of layout radius)",
+    "Clicking a network node updates #networkInspector with the node's name and examples",
+    "If d3-lite-force.js is removed, #networkStatus shows a visible role='alert' warning within 1 second"
+  ],
+  "rollback_conditions": [
+    "Remove the <script src='../assets/d3-lite-force.js'></script> tag from the generator",
+    "The circular fallback code remains in place and activates automatically",
+    "The guard becomes a no-op when window.d3LiteForce is undefined"
+  ],
+  "freshness": {
+    "researched_at": "2026-08-04T04:30:00Z",
+    "library_versions": ["d3-lite-force-local (vendored, 89 lines)"],
+    "refresh_trigger": [
+      "Network exceeds 500 nodes (upgrade to real d3-force with Barnes-Hut)",
+      "d3-lite-force.js file is modified",
+      "Label overlap detection fails in Playwright audit"
+    ]
+  },
+  "implementation_status": "COMPLETE",
+  "verification": {
+    "playwright_audit_passed": true,
+    "d3_lite_force_loaded": true,
+    "node_click_works": true,
+    "keyboard_shortcuts_work": true,
+    "zero_js_errors": true,
+    "audited_at": "2026-08-04T04:35:00Z"
+  }
+}
