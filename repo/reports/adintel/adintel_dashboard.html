@@ -12,7 +12,7 @@
   --shadow:0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
 }
 * { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif; line-height:1.55; overflow-x:hidden; }
 a { color:var(--blue); }
 .skip { position:absolute;left:-999px; } .skip:focus { left:16px;top:16px;background:#fff;padding:10px;border-radius:10px;z-index:9; }
@@ -29,7 +29,7 @@ nav.nav a:hover { background:#ffffff28; }
 
 /* Layout */
 main { padding:20px 32px; max-width:1500px; margin:0 auto; }
-section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow); }
+section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:90px; }
 section h2 { margin:0 0 10px; font-size:16px; font-weight:700; border-bottom:2px solid var(--line); padding-bottom:6px; }
 section h3 { margin:12px 0 6px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
 
@@ -139,6 +139,14 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
 .section-tag.new { background:var(--violet); }
 .section-tag.v1 { background:var(--blue); }
 
+/* Storytelling transitions */
+.story-step { display:flex; align-items:center; gap:10px; margin:0 0 12px; padding:8px 12px; background:linear-gradient(90deg,var(--soft),transparent); border-left:4px solid var(--green); border-radius:0 8px 8px 0; }
+.story-step .step-num { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background:var(--green); color:#fff; font-weight:800; font-size:13px; flex-shrink:0; }
+.story-step .step-text { font-size:12px; color:var(--muted); line-height:1.4; }
+.story-step .step-text b { color:var(--ink); }
+.story-transition { font-size:12px; color:var(--muted); font-style:italic; margin:12px 0; padding:6px 12px; border-left:3px solid var(--line); background:var(--soft); border-radius:0 6px 6px 0; }
+.story-transition.v1-to-new { border-left-color:var(--violet); background:linear-gradient(90deg,rgba(109,79,163,0.08),transparent); }
+
 /* Responsive */
 @media (max-width:1100px) {
   .layout { grid-template-columns:260px 1fr; }
@@ -235,6 +243,7 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
 
   <!-- ========== V1 SECTION: Pipeline diagram ========== -->
   <section id="pipeline" style="margin-top:16px">
+    <div class="story-step"><span class="step-num">1</span><span class="step-text"><b>Start here.</b> The pipeline diagram below traces every ad from public web source to this dashboard. Read it left-to-right to understand where each piece of data comes from before trusting any metric.</span></div>
     <h2>Collection → cleaning → annotation → model stack → report <span class="section-tag v1">v1</span> <span class="section-tag new">+ adintel</span></h2>
     <p class="small">End-to-end provenance diagram. Dashed links mark candidate-only layers; solid links mark deterministic data movement. The model stack combines resolved council spans, TF-IDF one-vs-rest probabilities, score arithmetic, bounded exposure context, and privacy-safe enrichment variables. adintel slots in alongside the model stack without modifying v1.</p>
     <div class="tutorial">
@@ -295,7 +304,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== V1 SECTION: Diagnostics ========== -->
+  <div class="story-transition">↓ Now that you know where the data comes from, the next sections show <b>how well the model performs</b> and <b>where it struggles</b>. Start with the KPI cards above, then drill into the curves, heatmap, and slices below.</div>
   <section id="diagnostics" style="margin-top:16px">
+    <div class="story-step"><span class="step-num">2</span><span class="step-text"><b>Assess model quality.</b> ROC curves, precision-recall, per-label heatmaps, and underperforming slices tell you which labels to trust and which need human review.</span></div>
     <h2>Diagnostics tutorial <span class="section-tag v1">v1</span></h2>
     <div class="tutorial-grid small">
       <div class="tutorial-card"><b>Curves:</b> ROC and precision-recall summarize label-decision ranking quality. High AUC does not prove labels are human-valid.</div>
@@ -344,7 +355,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== V1 SECTION: Explainability atlas ========== -->
+  <div class="story-transition">↓ Metrics tell you <b>how well</b> the model works; explainability tells you <b>why</b> it makes each decision. Use both — a high-F1 label can still be wrong on individual ads.</div>
   <section id="explainability-atlas" style="margin-top:16px">
+    <div class="story-step"><span class="step-num">3</span><span class="step-text"><b>Understand the "why".</b> The explainability atlas shows which words push each label up or down. Compare global coefficients with local ad evidence to spot disagreements.</span></div>
     <h2>Explainability atlas <span class="section-tag v1">v1</span></h2>
     <p class="small">Global and local explanation views inspired by SHAP/LIME-style text explanations and interactive model cards. Coefficients show model internals, not proof of manipulation.</p>
     <div class="tutorial">
@@ -362,7 +375,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== V1 SECTION: Term network ========== -->
+  <div class="story-transition">↓ Explainability shows individual words; the term network shows <b>how words co-occur</b> across the corpus. Clusters of connected terms reveal recurring persuasion patterns.</div>
   <section id="term-network" style="margin-top:16px">
+    <div class="story-step"><span class="step-num">4</span><span class="step-text"><b>See the patterns.</b> The force-directed network below clusters terms that appear together. Green = terms, red = labels, blue = platforms. Thicker links = stronger co-occurrence.</span></div>
     <h2>Term and technique network <span class="section-tag v1">v1</span></h2>
     <p class="small">Co-occurrence network connecting normalized Spanish terms, annotation labels, and platforms. Click a node to inspect linked labels/examples.</p>
     <div class="tutorial">
@@ -384,7 +399,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== V1 SECTION: Corpus map ========== -->
+  <div class="story-transition">↓ The term network shows word-level patterns; the corpus map shows <b>ad-level neighborhoods</b>. Each point is one ad — points close together share similar content. Use this to find clusters and outliers visually.</div>
   <section id="corpus-map" style="margin-top:16px">
+    <div class="story-step"><span class="step-num">5</span><span class="step-text"><b>Explore the landscape.</b> The corpus map plots ads in 2D. Click any point to inspect it. Switch projections and color modes to see different structure.</span></div>
     <h2>Corpus map <span class="section-tag v1">v1</span></h2>
     <p class="small">Embedding-projector-style deep-learning map of representative ads. The default view uses a trained neural bottleneck and a cluster-separation projection.</p>
     <div class="tutorial">
@@ -434,7 +451,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== V1 SECTION: Top 25 explorer ========== -->
+  <div class="story-transition">↓ You've seen the corpus-level views. Now <b>zoom into individual ads</b>. The explorer lets you read the actual ad text with highlighted persuasion spans, see the score breakdown, and compare council vs model labels.</div>
   <section id="explorer" class="layout" style="margin-top:16px">
+    <div class="story-step" style="grid-column:1/-1;"><span class="step-num">6</span><span class="step-text"><b>Read individual ads.</b> Pick any ad from the ranked list. The center panel shows the full text with highlighted spans. The right panel explains each span's label, intensity, and ELI5 meaning.</span></div>
     <aside class="controls" style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;">
       <h2 style="border:0;margin:0 0 8px;">Top 25 explorer <span class="section-tag v1">v1</span></h2>
       <div class="tutorial" style="margin:0 0 8px;">
@@ -500,7 +519,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: Taxonomy v2 ========== -->
+  <div class="story-transition v1-to-new">↓ The sections above are the <b>v1 council model</b> (TF-IDF + flat 20-label taxonomy). The sections below are <b>adintel v0.1.0</b> — the new hierarchical taxonomy, 17-dimension persuasive profile, 7-space clustering, authorship analysis, and outlier detection. Together they form a richer, more defensible analysis layer that reads the same corpus without modifying v1.</div>
   <section id="adintel-taxonomy" style="margin-top:16px;border:2px solid var(--violet);">
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">7</span><span class="step-text"><b>New: hierarchical taxonomy.</b> v1 had 20 flat labels; v2 organizes them into 6 families (copywriting, rhetoric, behavioural, sales, visual, multimodal) with 26 leaves. v1's overloaded "reciprocity" label splits into copywriting + behavioural variants.</span></div>
     <h2>adintel: Hierarchical Taxonomy v2 <span class="section-tag new">new</span></h2>
     <div class="kpis">
       <div class="kpi"><div class="label">Top-level families</div><div class="value">6</div></div>
@@ -512,7 +533,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: 17-dim profile ========== -->
+  <div class="story-transition v1-to-new">↓ The taxonomy tells you <b>what</b> techniques exist; the persuasive profile tells you <b>how intensely</b> each ad uses them — across 17 independent dimensions that are never collapsed into a single "manipulation score".</div>
   <section id="adintel-profile" style="margin-top:16px;border:2px solid var(--violet);">
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">8</span><span class="step-text"><b>New: 17-dimension profile.</b> Each ad is scored on urgency, scarcity, emotional intensity, directiveness, certainty, specificity, benefit density, evidence density, social proof, objection handling, risk reversal, claim extremity, readability, offer clarity, action clarity, trust risk, and manipulation risk — independently, with abstention.</span></div>
     <h2>adintel: Persuasive Profile — 17 Dimensions <span class="section-tag new">new</span></h2>
     <p class="small">Sample means on n=200 ads. The 17 dimensions are NEVER collapsed into a single universal score (enforced by <code>adintel.evidence.assert_no_universal_score</code>).</p>
     <table>
@@ -624,7 +647,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: 7-space clustering ========== -->
+  <div class="story-transition v1-to-new">↓ The profile scores individual ads; clustering groups ads that share similar persuasion patterns — across <b>seven different feature spaces</b> so you can compare which grouping is most meaningful.</div>
   <section id="adintel-clustering" style="margin-top:16px;border:2px solid var(--violet);">
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">9</span><span class="step-text"><b>New: 7 cluster spaces.</b> Persuasive vectors, semantic content, rhetorical style, visual structure, multimodal, authorial style, and performance behaviour. Each space is evaluated for stability and brand leakage.</span></div>
     <h2>adintel: 7-Space Clustering <span class="section-tag new">new</span></h2>
     <p class="small">Stratified sample n=300. Brand leakage was 98–100% before Round-1 fix; now empty for persuasive and rhetorical spaces.</p>
     <table>
@@ -690,7 +715,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: Authorship ========== -->
+  <div class="story-transition v1-to-new">↓ Clustering groups similar ads; authorship analysis asks a different question: <b>did two ads come from the same creative source?</b> This uses stylometry, template signatures, and structural similarity — with strict privacy guardrails.</div>
   <section id="adintel-authorship" style="margin-top:16px;border:2px solid var(--violet);">
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">10</span><span class="step-text"><b>New: authorship verification.</b> Pairwise, closed-set, open-set, and creative-source clustering. Length-aware abstention for short ads. Never names a person — model similarity is never sufficient evidence for identity.</span></div>
     <h2>adintel: Authorship / Common-Source Analysis <span class="section-tag new">new</span></h2>
     <div class="kpis">
       <div class="kpi"><div class="label">Pairs evaluated</div><div class="value">41</div><div class="note">accepted similarity_links</div></div>
@@ -704,7 +731,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: Outliers ========== -->
+  <div class="story-transition v1-to-new">↓ Authorship finds pairs; outlier analysis finds the <b>unusual individual ads</b> — creatively novel, technically rare, stylistically weird, or extraction/metadata errors that need human attention.</div>
   <section id="adintel-outliers" style="margin-top:16px;border:2px solid var(--violet);">
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">11</span><span class="step-text"><b>New: 11 outlier types.</b> Creative novelty, unusual technique combinations, style/visual outliers, performance over/under-performers, temporal anomalies, duplicates, extraction/metadata/model errors. Every report carries an alternative explanation.</span></div>
     <h2>adintel: Outlier Analysis <span class="section-tag new">new</span></h2>
     <p class="small">Sample n=1000. Every report carries: comparison population, feature space, score, method, supporting features, alternative explanation, uncertainty, review status.</p>
     <table>
@@ -714,7 +743,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: Migration ========== -->
+  <div class="story-transition v1-to-new">↓ Outliers surface problems; the migration shows how the <b>existing 5,717 annotations</b> project forward to the new v2 taxonomy without losing any v1 labels.</div>
   <section id="adintel-migration" style="margin-top:16px;border:2px solid var(--violet);">
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">12</span><span class="step-text"><b>New: v1→v2 migration.</b> All 5,717 annotations projected to v2 with 0 unmapped labels. v1 labels preserved as <code>v1_label</code>; v2 leaves projected to <code>v2_labels</code>.</span></div>
     <h2>adintel: v1 → v2 Annotation Migration <span class="section-tag new">new</span></h2>
     <div class="kpis">
       <div class="kpi"><div class="label">Records migrated</div><div class="value">5,717 → 5,717</div></div>
@@ -724,7 +755,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: Checkpoint registry ========== -->
+  <div class="story-transition v1-to-new">↓ Migration bridges old and new labels; the checkpoint registry documents <b>every model checkpoint</b> with version, calibration status, cost, latency, and abstention conditions — so you know exactly what you're trusting.</div>
   <section id="adintel-checkpoints" style="margin-top:16px;border:2px solid var(--violet);">
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">13</span><span class="step-text"><b>New: checkpoint registry.</b> 6 registered checkpoints. Uncalibrated scores are never averaged. Model disagreement routes to human review.</span></div>
     <h2>adintel: Checkpoint Registry <span class="section-tag new">new</span></h2>
     <table>
       <thead><tr><th>Checkpoint</th><th>Version</th><th>Calibration</th><th class="num">Cost/1k</th><th class="num">Latency p50</th><th>Baseline</th><th>Abstention conditions</th></tr></thead>
@@ -788,7 +821,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: Challenge rounds ========== -->
+  <div class="story-transition v1-to-new">↓ Checkpoints document what the models do; the challenge-round ledgers document <b>what went wrong during adversarial testing</b> — and what was fixed vs. what remains open.</div>
   <section id="adintel-challenges" style="margin-top:16px;border:2px solid var(--violet);">
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">14</span><span class="step-text"><b>New: challenge rounds.</b> Two adversarial critique rounds found 18 defects. 11 fixed in-session, 7 documented as limitations. Full ledgers linked below.</span></div>
     <h2>adintel: Challenge Round Defect Ledgers <span class="section-tag new">new</span></h2>
     <p class="small">Two adversarial challenge rounds identified 18 defects. 11 fixed in-session; 7 documented as limitations.</p>
     <div class="viz-toolbar">
@@ -798,7 +833,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   </section>
 
   <!-- ========== V1 SECTION: Research ========== -->
+  <div class="story-transition">↓ You've reached the end of the analytical journey. The research section below documents <b>why each design choice was made</b> — the sources, theories, and tradeoffs behind every visualization above.</div>
   <section id="research" style="margin-top:16px">
+    <div class="story-step"><span class="step-num">15</span><span class="step-text"><b>Why these choices?</b> Every visualization above is grounded in research: Cialdini for persuasion, Gray for dark patterns, Koppel for authorship, Guo for calibration, Hernán for causal discipline. Read this section to understand the evidence base.</span></div>
     <h2>Research-backed design choices <span class="section-tag v1">v1</span></h2>
     <div class="tutorial">
       <h3 style="color:var(--blue);margin:0 0 4px;">How to use the research notes</h3>
@@ -1088,6 +1125,18 @@ $('copyLink').addEventListener('click',copyDeepLink);
 
 function applyHash(){
   const id=decodeURIComponent((location.hash||'').slice(1)); if(!id) return false;
+  // First check if this is a section anchor (not a record ID).
+  // Section anchors: pipeline, metrics, diagnostics, explorer, etc.
+  // If the hash matches a <section id="...">, let the browser handle the scroll
+  // (scroll-padding-top + scroll-margin-top handle the sticky header offset).
+  const sectionEl = document.getElementById(id);
+  if(sectionEl && sectionEl.tagName === 'SECTION'){
+    // Native browser scroll handles this; scroll-margin-top ensures the
+    // sticky header doesn't cover the target. Just scroll into view as backup.
+    sectionEl.scrollIntoView({behavior:'smooth', block:'start'});
+    return true;
+  }
+  // Otherwise, check if it's a record ID for the explorer
   for(const candidateMode of ['top_by_review_priority','top_by_manipulation','top_by_persuasion']){
     if((data[candidateMode]||[]).some(r=>r.record_id===id)){
       mode=candidateMode; $('rankMode').value=mode; $('platformFilter').value=''; $('labelFilter').value=''; $('query').value='';
