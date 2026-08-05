@@ -1,0 +1,124 @@
+{
+  "audit_started_at": "2026-08-05T23:37:23Z",
+  "live_url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html?cb=1785973043",
+  "expected_sha": "246d80de66f04f059df7a6429636ed49c91ef406",
+  "desktop": {
+    "name": "desktop",
+    "viewport": "1366x900",
+    "steps": [
+      {
+        "name": "page_loads",
+        "title": "ManiPsych + adintel — Unified Observatory",
+        "url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html?cb=1785973043",
+        "passed": true
+      },
+      {
+        "name": "build_fingerprint",
+        "fingerprint": "solarize-0aa26795-ca9bd02cd858230e-1785970989",
+        "commit_sha": "811f1e91e89baa8138e875d2c7a4616f3b078760",
+        "expected_sha": "246d80de66f04f059df7a6429636ed49c91ef406",
+        "passed": true
+      },
+      {
+        "name": "screenshot_hero",
+        "passed": true
+      },
+      {
+        "name": "screenshot_clustering",
+        "passed": true
+      },
+      {
+        "name": "screenshot_outliers",
+        "passed": true
+      },
+      {
+        "name": "screenshot_profile",
+        "passed": true
+      },
+      {
+        "name": "screenshot_authorship",
+        "passed": true
+      },
+      {
+        "name": "screenshot_taxonomy",
+        "passed": true
+      },
+      {
+        "name": "screenshot_checkpoints",
+        "passed": true
+      },
+      {
+        "name": "outlier_term_comparison",
+        "n_rows": 60,
+        "n_comparison_blocks": 3,
+        "has_outlier_count": true,
+        "has_effect_size": true,
+        "has_q_value": true,
+        "has_min_support": true,
+        "has_4way_kinds": true,
+        "has_non_difference_statement": true,
+        "passed": true
+      },
+      {
+        "name": "cluster_section",
+        "n_cluster_examples": 15,
+        "n_benchmark_rows": 3,
+        "has_distinguishing_terms": true,
+        "has_deep_clustering_verdict": true,
+        "has_not_justified": true,
+        "passed": true
+      },
+      {
+        "name": "ad_selector",
+        "n_results": 50,
+        "detail_has_cluster": true,
+        "detail_has_outlier": true,
+        "detail_has_alternative": true,
+        "detail_has_neighbors": true,
+        "passed": true
+      },
+      {
+        "name": "deep_link",
+        "record_id": "h_48c01eaa34068d9742...",
+        "detail_populated": true,
+        "passed": true
+      }
+    ]
+  },
+  "mobile": {
+    "name": "mobile",
+    "viewport": "375x750",
+    "steps": [
+      {
+        "name": "mobile_no_overflow",
+        "scrollW": 375,
+        "clientW": 375,
+        "passed": true
+      },
+      {
+        "name": "mobile_section_visible#adintel-clustering",
+        "passed": true
+      },
+      {
+        "name": "mobile_section_visible#adintel-outliers",
+        "passed": true
+      },
+      {
+        "name": "mobile_section_visible#adintel-profile",
+        "passed": true
+      }
+    ]
+  },
+  "console_errors": [],
+  "page_errors": [],
+  "failed_requests": [],
+  "audit_completed_at": "2026-08-05T23:37:55Z",
+  "summary": {
+    "desktop_pass": "13/13",
+    "mobile_pass": "4/4",
+    "n_console_errors": 0,
+    "n_page_errors": 0,
+    "n_failed_requests": 0,
+    "overall_verdict": "PASSED"
+  }
+}
