@@ -557,114 +557,278 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   <div class="story-transition v1-to-new">↓ The taxonomy tells you <b>what</b> techniques exist; the persuasive profile tells you <b>how intensely</b> each ad uses them — across 17 independent dimensions that are never collapsed into a single "manipulation score".</div>
   <section id="adintel-profile" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">8</span><span class="step-text"><b>New: 17-dimension profile.</b> Each ad is scored on urgency, scarcity, emotional intensity, directiveness, certainty, specificity, benefit density, evidence density, social proof, objection handling, risk reversal, claim extremity, readability, offer clarity, action clarity, trust risk, and manipulation risk — independently, with abstention.</span></div>
-    <h2>adintel: Persuasive Profile — 17 Dimensions <span class="section-tag new">new</span></h2>
-    <p class="small">Sample means on n=200 ads. The 17 dimensions are NEVER collapsed into a single universal score (enforced by <code>adintel.evidence.assert_no_universal_score</code>).</p>
+    <h2>adintel: Persuasive Profile — 17 Dimensions (Full Data, n=5738) <span class="section-tag new">new</span></h2>
+    <p class="small">Computed on ALL 5738 records. Run ID: <code>full-data-1785938320</code>. Manifest hash: <code>ca9bd02cd858230e</code>.</p>
 
     <h3>Profile Distribution (sorted by mean score)</h3>
     <table>
-      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Abstained</th><th>Interpretation</th></tr></thead>
+      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Prevalence</th><th class="num">Abstention</th></tr></thead>
       <tbody>
             <tr>
               <td class="dim">readability</td>
-              <td><div class="bar"><div class="bar-fill" style="width:79.0%"></div></div></td>
-              <td class="num">39.5%</td>
-              <td class="num">0/200</td>
-            </tr>
-            <tr>
-              <td class="dim">offer_clarity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:77.6%"></div></div></td>
-              <td class="num">38.8%</td>
-              <td class="num">24/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:79.6%"></div></div></td>
+              <td class="num">39.8%</td>
+              <td class="num">77.7%</td>
+              <td class="num">0.0%</td>
             </tr>
             <tr>
               <td class="dim">benefit_density</td>
-              <td><div class="bar"><div class="bar-fill" style="width:67.8%"></div></div></td>
-              <td class="num">33.9%</td>
-              <td class="num">26/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:65.0%"></div></div></td>
+              <td class="num">32.5%</td>
+              <td class="num">73.4%</td>
+              <td class="num">26.2%</td>
+            </tr>
+            <tr>
+              <td class="dim">offer_clarity</td>
+              <td><div class="bar"><div class="bar-fill" style="width:62.0%"></div></div></td>
+              <td class="num">31.0%</td>
+              <td class="num">82.6%</td>
+              <td class="num">17.4%</td>
             </tr>
             <tr>
               <td class="dim">specificity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:47.5%"></div></div></td>
-              <td class="num">23.7%</td>
-              <td class="num">36/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:40.2%"></div></div></td>
+              <td class="num">20.1%</td>
+              <td class="num">64.2%</td>
+              <td class="num">35.8%</td>
             </tr>
             <tr>
               <td class="dim">manipulation_risk</td>
-              <td><div class="bar"><div class="bar-fill" style="width:26.1%"></div></div></td>
-              <td class="num">13.0%</td>
-              <td class="num">5/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:20.3%"></div></div></td>
+              <td class="num">10.1%</td>
+              <td class="num">38.0%</td>
+              <td class="num">16.0%</td>
             </tr>
             <tr>
               <td class="dim">emotional_intensity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:22.3%"></div></div></td>
-              <td class="num">11.1%</td>
-              <td class="num">128/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:17.1%"></div></div></td>
+              <td class="num">8.5%</td>
+              <td class="num">28.6%</td>
+              <td class="num">71.4%</td>
             </tr>
             <tr>
               <td class="dim">scarcity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:19.4%"></div></div></td>
-              <td class="num">9.7%</td>
-              <td class="num">128/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:12.2%"></div></div></td>
+              <td class="num">6.1%</td>
+              <td class="num">22.9%</td>
+              <td class="num">77.0%</td>
             </tr>
             <tr>
               <td class="dim">objection_handling</td>
-              <td><div class="bar"><div class="bar-fill" style="width:18.2%"></div></div></td>
-              <td class="num">9.1%</td>
-              <td class="num">131/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:11.6%"></div></div></td>
+              <td class="num">5.8%</td>
+              <td class="num">23.0%</td>
+              <td class="num">77.0%</td>
             </tr>
             <tr>
               <td class="dim">claim_extremity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:16.6%"></div></div></td>
-              <td class="num">8.3%</td>
-              <td class="num">133/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:9.7%"></div></div></td>
+              <td class="num">4.8%</td>
+              <td class="num">19.9%</td>
+              <td class="num">80.1%</td>
             </tr>
             <tr>
               <td class="dim">directiveness</td>
-              <td><div class="bar"><div class="bar-fill" style="width:11.5%"></div></div></td>
-              <td class="num">5.8%</td>
-              <td class="num">162/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:7.4%"></div></div></td>
+              <td class="num">3.7%</td>
+              <td class="num">13.3%</td>
+              <td class="num">86.7%</td>
             </tr>
             <tr>
               <td class="dim">action_clarity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:7.5%"></div></div></td>
-              <td class="num">3.8%</td>
-              <td class="num">171/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:5.5%"></div></div></td>
+              <td class="num">2.8%</td>
+              <td class="num">11.4%</td>
+              <td class="num">88.6%</td>
             </tr>
             <tr>
               <td class="dim">urgency</td>
-              <td><div class="bar"><div class="bar-fill" style="width:7.5%"></div></div></td>
-              <td class="num">3.8%</td>
-              <td class="num">177/200</td>
-            </tr>
-            <tr>
-              <td class="dim">certainty</td>
-              <td><div class="bar"><div class="bar-fill" style="width:5.1%"></div></div></td>
-              <td class="num">2.6%</td>
-              <td class="num">161/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:3.7%"></div></div></td>
+              <td class="num">1.9%</td>
+              <td class="num">6.3%</td>
+              <td class="num">93.7%</td>
             </tr>
             <tr>
               <td class="dim">trust_risk</td>
-              <td><div class="bar"><div class="bar-fill" style="width:4.6%"></div></div></td>
-              <td class="num">2.3%</td>
-              <td class="num">159/200</td>
+              <td><div class="bar"><div class="bar-fill" style="width:3.7%"></div></div></td>
+              <td class="num">1.8%</td>
+              <td class="num">7.0%</td>
+              <td class="num">82.6%</td>
+            </tr>
+            <tr>
+              <td class="dim">certainty</td>
+              <td><div class="bar"><div class="bar-fill" style="width:2.4%"></div></div></td>
+              <td class="num">1.2%</td>
+              <td class="num">4.8%</td>
+              <td class="num">91.6%</td>
             </tr>
             <tr>
               <td class="dim">social_proof</td>
               <td><div class="bar"><div class="bar-fill" style="width:2.0%"></div></div></td>
-              <td class="num">1.0%</td>
-              <td class="num">191/200</td>
+              <td class="num">0.7%</td>
+              <td class="num">3.6%</td>
+              <td class="num">96.4%</td>
             </tr>
             <tr>
               <td class="dim">risk_reversal</td>
               <td><div class="bar"><div class="bar-fill" style="width:2.0%"></div></div></td>
-              <td class="num">0.2%</td>
-              <td class="num">199/200</td>
+              <td class="num">0.1%</td>
+              <td class="num">0.3%</td>
+              <td class="num">99.7%</td>
             </tr>
             <tr>
               <td class="dim">evidence_density</td>
               <td><div class="bar"><div class="bar-fill" style="width:2.0%"></div></div></td>
+              <td class="num">0.0%</td>
               <td class="num">0.1%</td>
-              <td class="num">199/200</td>
+              <td class="num">99.9%</td>
+            </tr></tbody>
+    </table>
+
+    <h3>Technique-Level Results (Full Data, 5717 annotations)</h3>
+    <p class="small">Every technique label with count, prevalence, v2 mapping, and a real example ad.</p>
+    <table>
+      <thead><tr><th>Technique</th><th class="num">Count</th><th class="num">Prevalence</th><th>v2 Leaves</th><th>Example Ad</th></tr></thead>
+      <tbody>
+            <tr>
+              <td class="dim">reciprocity_obligation</td>
+              <td class="num">5711</td>
+              <td class="num">99.9%</td>
+              <td class="dim">cc_reciprocity_frame, bs_reciprocity_obligation</td>
+              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">age_or_youth_targeting</td>
+              <td class="num">3680</td>
+              <td class="num">64.4%</td>
+              <td class="dim">bs_audience_targeting.age_youth</td>
+              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">privacy_or_secrecy_pressure</td>
+              <td class="num">2257</td>
+              <td class="num">39.5%</td>
+              <td class="dim">bs_privacy_secrecy_pressure</td>
+              <td>Entrego ayuda económica a señorita mayor de edad,  <span class="small">(h_0086841cdb27f4d073...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">authority_or_status_appeal</td>
+              <td class="num">1688</td>
+              <td class="num">29.5%</td>
+              <td class="dim">pr_authority_appeal</td>
+              <td>Ayuda económica a chicas solteras, Cusco – 30 <span class="small">(h_00619a881fde241e18...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">economic_vulnerability_targeting</td>
+              <td class="num">1496</td>
+              <td class="num">26.2%</td>
+              <td class="dim">bs_audience_targeting.economic_vulnerability</td>
+              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">conditional_financial_support</td>
+              <td class="num">1480</td>
+              <td class="num">25.9%</td>
+              <td class="dim">cc_offer_stack, so_conditional_support</td>
+              <td>Amiga venezolana que quiera apoyo económico - Lima <span class="small">(h_00255b3c098e9c2113...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">education_or_student_targeting</td>
+              <td class="num">1468</td>
+              <td class="num">25.7%</td>
+              <td class="dim">bs_audience_targeting.education_student</td>
+              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">platform_migration</td>
+              <td class="num">1293</td>
+              <td class="num">22.6%</td>
+              <td class="dim">cc_call_to_action</td>
+              <td>Entrego ayuda económica a señorita mayor de edad,  <span class="small">(h_0086841cdb27f4d073...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">sexualized_appearance_condition</td>
+              <td class="num">890</td>
+              <td class="num">15.6%</td>
+              <td class="dim">bs_audience_targeting.gendered_appearance</td>
+              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">family_obligation_targeting</td>
+              <td class="num">790</td>
+              <td class="num">13.8%</td>
+              <td class="dim">bs_audience_targeting.family_obligation</td>
+              <td>AVISO PARA MADRE SOLTERA <span class="small">(h_00d0294459bf841f2b...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">transactional_ambiguity</td>
+              <td class="num">479</td>
+              <td class="num">8.4%</td>
+              <td class="dim">so_transactional_ambiguity</td>
+              <td>Doy apoyo 400 por f de trabajo lima <span class="small">(h_00d841fab5bdb8ff6a...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">deceptive_assurance</td>
+              <td class="num">467</td>
+              <td class="num">8.2%</td>
+              <td class="dim">cc_disclaimer_overlay, so_risk_reversal</td>
+              <td>Doy ayuda de 80 soles <span class="small">(h_0065ccdd5b34e08e1a...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">commitment_escalation</td>
+              <td class="num">459</td>
+              <td class="num">8.0%</td>
+              <td class="dim">bs_commitment_consistency</td>
+              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">foot_in_the_door</td>
+              <td class="num">396</td>
+              <td class="num">6.9%</td>
+              <td class="dim">bs_commitment_consistency</td>
+              <td>Brindo Ayuda económica a chica joven que guste de  <span class="small">(h_02015bb3aa9d13d652...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">scarcity_or_urgency</td>
+              <td class="num">288</td>
+              <td class="num">5.0%</td>
+              <td class="dim">pr_scarcity_urgency</td>
+              <td>HOLA SOY MELISSA Y TENGO 18 AÑITOS <span class="small">(h_021239b389bd122534...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">exclusivity_or_special_treatment</td>
+              <td class="num">240</td>
+              <td class="num">4.2%</td>
+              <td class="dim">pr_exclusivity</td>
+              <td>Brindo apoyo económico 55a mujer joven mayor de 18 <span class="small">(h_0088918c3f5c408420...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">repetition_or_campaign_escalation</td>
+              <td class="num">75</td>
+              <td class="num">1.3%</td>
+              <td class="dim">bs_repetition_campaign_escalation</td>
+              <td>Ayuda económica a Señorita, Lima – 37 <span class="small">(h_036f9389c656678950...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">guilt_or_shame_pressure</td>
+              <td class="num">23</td>
+              <td class="num">0.4%</td>
+              <td class="dim">pr_emotional_appeal</td>
+              <td>Ayuda economica estudiantes/universitarias/madres <span class="small">(h_0eaaf8cc3a569800b5...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">social_proof</td>
+              <td class="num">7</td>
+              <td class="num">0.1%</td>
+              <td class="dim">pr_social_proof</td>
+              <td>Doy ayuda economica - Lima <span class="small">(h_30dd2c7e3a6d3e12a6...)</span></td>
+            </tr>
+            <tr>
+              <td class="dim">fear_or_threat</td>
+              <td class="num">1</td>
+              <td class="num">0.0%</td>
+              <td class="dim">pr_emotional_appeal</td>
+              <td>Apoyo económico para gordita <span class="small">(h_2277bd2b2e240b12ba...)</span></td>
             </tr></tbody>
     </table>
 
@@ -758,25 +922,16 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
             </tr></tbody>
     </table>
 
-    <h3>Alignment with v1 Diagnostics Clusters</h3>
+    <h3>Quantitative Cluster Alignment (Full Data, n=5189)</h3>
     <div class="tutorial">
-      <p class="small"><b>Why v1 and adintel clusters differ:</b> The v1 diagnostics section (above) shows 10 clusters from <code>segment_model_analysis.json</code> using top-FREQUENCY terms. The adintel clustering uses 5 clusters with <b>centroid-difference distinguishing terms</b>. They do NOT converge because:</p>
+      <p class="small"><b>Verdict: PARTIALLY_ALIGNED</b></p>
+      <p class="small">Both systems run on SAME 5189 records:</p>
       <ul class="small">
-        <li><b>Different k</b>: v1 uses k=10, adintel uses k=5 (silhouette analysis showed k=5 avoids splitting on synonym variations like 'apoyo' vs 'ayuda')</li>
-        <li><b>Different term extraction</b>: v1 shows most-FREQUENT words (every cluster shows 'ayuda', 'economica', 'de'); adintel shows most-DISTINGUISHING words (high in this cluster, low in others)</li>
-        <li><b>Different feature space</b>: v1 uses a single TF-IDF space; adintel runs 7 different spaces (semantic, persuasive, rhetorical, etc.)</li>
-        <li><b>Different sampling</b>: v1 uses first-N records; adintel uses stratified sampling by platform</li>
+        <li><b>ARI</b>: 0.418 | <b>AMI</b>: 0.5175</li>
+        <li><b>Homogeneity</b>: 0.4321 | <b>Completeness</b>: 0.645 | <b>V-measure</b>: 0.5175</li>
+        <li>V1: k=10, top-frequency terms | Adintel: k=5, centroid-difference terms</li>
       </ul>
-      <p class="small"><b>Which to trust?</b> The adintel clusters are more defensible because distinguishing terms show what makes each cluster UNIQUE, while frequency terms show what all clusters share. Use adintel clusters for analysis; v1 clusters remain for backward compatibility.</p>
-    </div>
-
-    <h3>Best-Performing Space: Persuasive (stability ARI=0.607, no leakage)</h3>
-    <p class="small">The persuasive-profile space clusters ads by their 17-dimension score vectors. This space has the best stability (0.607 ARI) and zero brand leakage — clusters represent genuine persuasion-pattern differences, not platform artifacts.</p>
-
-    <h3>Spaces with Remaining Leakage</h3>
-    <div class="tutorial" style="border-left-color:var(--amber);">
-      <p class="small"><b>Visual, performance, and multimodal spaces</b> still show platform leakage because their features (image_count, quality_score, is_featured) are inherently platform-specific. Platform-residualisation (subtracting per-platform mean) was applied but cannot fully eliminate leakage when platforms have fundamentally different metadata schemas.</p>
-      <p class="small"><b>Recommendation:</b> Use persuasive, rhetorical, or semantic spaces for cross-platform analysis. Use visual/performance spaces only for within-platform analysis.</p>
+      <p class="small">ARI=0.4180 indicates strong alignment. V1 uses k=10 with frequency terms (all clusters show 'ayuda','economica'); adintel uses k=5 with centroid-difference terms (each cluster shows unique distinguishing words). The methods are partially_aligned: v1 splits on synonym variations while adintel groups </p>
     </div>
   </section>
 

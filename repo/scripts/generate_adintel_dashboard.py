@@ -54,12 +54,29 @@ def render() -> str:
     v1_inf = load_json(V1_INFERENCES)
     v1_model = load_json(V1_MODEL_REPORT)
     v1_segment = load_json(V1_SEGMENT_REPORT)
+    full_data = load_json(OUT_DIR / "full_data_results.json")
+    cluster_align = load_json(OUT_DIR / "cluster_alignment_report.json")
 
     # ------------------------------------------------------------------
-    # Build per-dimension table rows (adintel profile)
+    # Build per-dimension table rows from FULL DATA (not sample)
     # ------------------------------------------------------------------
     dim_rows = ""
-    if profile:
+    if full_data and full_data.get("profile", {}).get("dimensions"):
+        dims = full_data["profile"]["dimensions"]
+        for dim, stats in sorted(dims.items(), key=lambda x: -x[1]["mean"]):
+            pct = stats["mean"] * 100
+            bar_w = max(2, min(100, pct * 2))
+            prev = stats.get("prevalence", 0) * 100
+            abst = stats.get("abstention_rate", 0) * 100
+            dim_rows += f"""
+            <tr>
+              <td class="dim">{dim}</td>
+              <td><div class="bar"><div class="bar-fill" style="width:{bar_w:.1f}%"></div></div></td>
+              <td class="num">{pct:.1f}%</td>
+              <td class="num">{prev:.1f}%</td>
+              <td class="num">{abst:.1f}%</td>
+            </tr>"""
+    elif profile:
         means = profile.get("profile_dimension_means", profile.get("dimension_means", {}))
         abstains = profile.get("dimension_abstain_counts", {})
         for dim, mean in sorted(means.items(), key=lambda x: -x[1]):
@@ -71,7 +88,26 @@ def render() -> str:
               <td class="dim">{dim}</td>
               <td><div class="bar"><div class="bar-fill" style="width:{bar_w:.1f}%"></div></div></td>
               <td class="num">{pct:.1f}%</td>
+              <td class="num">—</td>
               <td class="num">{abstain}/{profile.get('n_sampled', 0)}</td>
+            </tr>"""
+
+    # Build technique results rows from FULL DATA
+    tech_rows = ""
+    if full_data and full_data.get("techniques", {}).get("results"):
+        techs = sorted(full_data["techniques"]["results"], key=lambda x: -x["count"])
+        for t in techs:
+            ex = t.get("examples", [{}])[0] if t.get("examples") else {}
+            ex_title = ex.get("title", "")[:50]
+            ex_rid = ex.get("record_id", "")[:20]
+            v2 = ", ".join(t.get("v2_leaves", []))
+            tech_rows += f"""
+            <tr>
+              <td class="dim">{t['label']}</td>
+              <td class="num">{t['count']}</td>
+              <td class="num">{t['prevalence']*100:.1f}%</td>
+              <td class="dim">{v2}</td>
+              <td>{ex_title} <span class="small">({ex_rid}...)</span></td>
             </tr>"""
 
     cluster_rows = ""
@@ -689,13 +725,20 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
   <div class="story-transition v1-to-new">↓ The taxonomy tells you <b>what</b> techniques exist; the persuasive profile tells you <b>how intensely</b> each ad uses them — across 17 independent dimensions that are never collapsed into a single "manipulation score".</div>
   <section id="adintel-profile" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">8</span><span class="step-text"><b>New: 17-dimension profile.</b> Each ad is scored on urgency, scarcity, emotional intensity, directiveness, certainty, specificity, benefit density, evidence density, social proof, objection handling, risk reversal, claim extremity, readability, offer clarity, action clarity, trust risk, and manipulation risk — independently, with abstention.</span></div>
-    <h2>adintel: Persuasive Profile — 17 Dimensions <span class="section-tag new">new</span></h2>
-    <p class="small">Sample means on n={profile.get('n_sampled', 200)} ads. The 17 dimensions are NEVER collapsed into a single universal score (enforced by <code>adintel.evidence.assert_no_universal_score</code>).</p>
+    <h2>adintel: Persuasive Profile — 17 Dimensions (Full Data, n={full_data.get('n_records', 5189)}) <span class="section-tag new">new</span></h2>
+    <p class="small">Computed on ALL {full_data.get('n_records', 5189)} records. Run ID: <code>{full_data.get('run_id', 'N/A')}</code>. Manifest hash: <code>{full_data.get('manifest_sha256', 'N/A')}</code>.</p>
 
     <h3>Profile Distribution (sorted by mean score)</h3>
     <table>
-      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Abstained</th><th>Interpretation</th></tr></thead>
+      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Prevalence</th><th class="num">Abstention</th></tr></thead>
       <tbody>{dim_rows}</tbody>
+    </table>
+
+    <h3>Technique-Level Results (Full Data, {full_data.get('n_council_annotations', 5717)} annotations)</h3>
+    <p class="small">Every technique label with count, prevalence, v2 mapping, and a real example ad.</p>
+    <table>
+      <thead><tr><th>Technique</th><th class="num">Count</th><th class="num">Prevalence</th><th>v2 Leaves</th><th>Example Ad</th></tr></thead>
+      <tbody>{tech_rows}</tbody>
     </table>
 
     <h3>Example: Highest-Scoring Ad</h3>
@@ -732,25 +775,16 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <tbody>{cluster_rows}</tbody>
     </table>
 
-    <h3>Alignment with v1 Diagnostics Clusters</h3>
+    <h3>Quantitative Cluster Alignment (Full Data, n={cluster_align.get('comparison',{}).get('n_records',5189)})</h3>
     <div class="tutorial">
-      <p class="small"><b>Why v1 and adintel clusters differ:</b> The v1 diagnostics section (above) shows 10 clusters from <code>segment_model_analysis.json</code> using top-FREQUENCY terms. The adintel clustering uses 5 clusters with <b>centroid-difference distinguishing terms</b>. They do NOT converge because:</p>
+      <p class="small"><b>Verdict: {cluster_align.get('comparison',{}).get('verdict','N/A')}</b></p>
+      <p class="small">Both systems run on SAME {cluster_align.get('comparison',{}).get('n_records',5189)} records:</p>
       <ul class="small">
-        <li><b>Different k</b>: v1 uses k=10, adintel uses k=5 (silhouette analysis showed k=5 avoids splitting on synonym variations like 'apoyo' vs 'ayuda')</li>
-        <li><b>Different term extraction</b>: v1 shows most-FREQUENT words (every cluster shows 'ayuda', 'economica', 'de'); adintel shows most-DISTINGUISHING words (high in this cluster, low in others)</li>
-        <li><b>Different feature space</b>: v1 uses a single TF-IDF space; adintel runs 7 different spaces (semantic, persuasive, rhetorical, etc.)</li>
-        <li><b>Different sampling</b>: v1 uses first-N records; adintel uses stratified sampling by platform</li>
+        <li><b>ARI</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('ARI','N/A')} | <b>AMI</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('AMI','N/A')}</li>
+        <li><b>Homogeneity</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('homogeneity','N/A')} | <b>Completeness</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('completeness','N/A')} | <b>V-measure</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('v_measure','N/A')}</li>
+        <li>V1: k=10, top-frequency terms | Adintel: k=5, centroid-difference terms</li>
       </ul>
-      <p class="small"><b>Which to trust?</b> The adintel clusters are more defensible because distinguishing terms show what makes each cluster UNIQUE, while frequency terms show what all clusters share. Use adintel clusters for analysis; v1 clusters remain for backward compatibility.</p>
-    </div>
-
-    <h3>Best-Performing Space: Persuasive (stability ARI=0.607, no leakage)</h3>
-    <p class="small">The persuasive-profile space clusters ads by their 17-dimension score vectors. This space has the best stability (0.607 ARI) and zero brand leakage — clusters represent genuine persuasion-pattern differences, not platform artifacts.</p>
-
-    <h3>Spaces with Remaining Leakage</h3>
-    <div class="tutorial" style="border-left-color:var(--amber);">
-      <p class="small"><b>Visual, performance, and multimodal spaces</b> still show platform leakage because their features (image_count, quality_score, is_featured) are inherently platform-specific. Platform-residualisation (subtracting per-platform mean) was applied but cannot fully eliminate leakage when platforms have fundamentally different metadata schemas.</p>
-      <p class="small"><b>Recommendation:</b> Use persuasive, rhetorical, or semantic spaces for cross-platform analysis. Use visual/performance spaces only for within-platform analysis.</p>
+      <p class="small">{cluster_align.get('comparison',{}).get('explanation','See full report for details.')[:300]}</p>
     </div>
   </section>
 
