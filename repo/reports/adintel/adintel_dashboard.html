@@ -12,7 +12,7 @@
   --shadow:0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
 }
 * { box-sizing:border-box; }
-html { scroll-behavior:smooth; scroll-padding-top:90px; }
+html { scroll-behavior:smooth; scroll-padding-top:120px; }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif; line-height:1.55; overflow-x:hidden; }
 a { color:var(--blue); }
 .skip { position:absolute;left:-999px; } .skip:focus { left:16px;top:16px;background:#fff;padding:10px;border-radius:10px;z-index:9; }
@@ -29,7 +29,7 @@ nav.nav a:hover { background:#ffffff28; }
 
 /* Layout */
 main { padding:20px 32px; max-width:1500px; margin:0 auto; }
-section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:90px; }
+section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:120px; }
 section h2 { margin:0 0 10px; font-size:16px; font-weight:700; border-bottom:2px solid var(--line); padding-bottom:6px; }
 section h3 { margin:12px 0 6px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
 
@@ -41,7 +41,7 @@ section h3 { margin:12px 0 6px; font-size:12px; color:var(--muted); text-transfo
 .kpi .note { font-size:10px; color:var(--muted); margin-top:2px; }
 
 /* Tables */
-table { width:100%; border-collapse:collapse; font-size:12px; }
+table { width:100%; border-collapse:collapse; font-size:12px; display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
 th,td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); }
 th { background:var(--soft); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
 td.num,th.num { text-align:right; font-variant-numeric:tabular-nums; }
@@ -159,6 +159,21 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   .layout { grid-template-columns:1fr; }
   .hero-inner { grid-template-columns:1fr; }
   nav.nav { justify-content:flex-start; }
+  table { font-size:10px; }
+  table th, table td { padding:4px 3px; }
+  td.dim { font-size:9px; }
+  td.leak { max-width:120px; }
+  td.abstain { max-width:100px; }
+  .pipe-svg { min-width:320px; }
+  .big-viz { height:350px; }
+  .bar { width:80px; }
+  .rowline { grid-template-columns:100px 1fr 40px; }
+  .bar-label { width:100px; font-size:10px; }
+  section { padding:12px; }
+  section h2 { font-size:14px; }
+  .story-step { padding:6px 8px; }
+  .story-step .step-text { font-size:11px; }
+  .story-transition { font-size:11px; padding:4px 8px; }
 }
 @media print {
   body { background:white; }
@@ -254,7 +269,7 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
         <li>adintel adds: hierarchical taxonomy v2, 17-dim profile, 7-space clustering, 4-task authorship, 11 outlier detectors — all reading the same manifest and council annotations.</li>
       </ul>
     </div>
-    <svg class="pipe-svg" viewBox="0 0 1100 400" role="img" aria-label="Pipeline diagram from websites to raw archives to processed manifest to council annotations to model stack to report">
+    <svg class="pipe-svg" viewBox="0 0 1140 420" role="img" aria-label="Pipeline diagram from websites to raw archives to processed manifest to council annotations to model stack to report">
       <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#527762"/></marker></defs>
       <path class="flow pulse" d="M120 90 C190 90 190 90 260 90" marker-end="url(#arrow)"/>
       <path class="flow pulse" d="M420 90 C490 90 490 90 560 90" marker-end="url(#arrow)"/>
@@ -262,12 +277,12 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
       <path class="flow dash" d="M640 150 C640 220 420 220 420 285" marker-end="url(#arrow)"/>
       <path class="flow" d="M720 285 C780 285 800 245 860 245" marker-end="url(#arrow)"/>
       <path class="flow dash" d="M720 285 C790 330 845 335 900 335" marker-end="url(#arrow)"/>
-      <!-- adintel side branch -->
-      <path class="flow" d="M640 150 C700 180 760 180 800 150" marker-end="url(#arrow)" style="stroke:var(--violet);stroke-width:2;"/>
-      <rect class="node" x="800" y="110" width="160" height="60" rx="14" style="stroke:var(--violet);"/>
-      <text class="node-title" x="824" y="135" style="fill:var(--violet);">adintel package</text>
-      <text class="node-sub" x="824" y="153">taxonomy v2 · 17-dim profile</text>
-      <text class="node-sub" x="824" y="166">clustering · authorship · outliers</text>
+      <!-- adintel side branch — positioned in the gap between top row and Explorer box -->
+      <path class="flow" d="M640 135 C660 145 680 150 720 155" marker-end="url(#arrow)" style="stroke:var(--violet);stroke-width:2;"/>
+      <rect class="node" x="725" y="145" width="125" height="48" rx="12" style="stroke:var(--violet);"/>
+      <text class="node-title" x="735" y="163" style="fill:var(--violet);font-size:11px;">adintel package</text>
+      <text class="node-sub" x="735" y="176" style="font-size:9px;">taxonomy v2 · 17-dim</text>
+      <text class="node-sub" x="735" y="187" style="font-size:9px;">clustering · authorship</text>
       <!-- Original nodes -->
       <rect class="node" x="20" y="45" width="140" height="90" rx="18"/>
       <text class="node-title" x="42" y="78">Web sources</text>
@@ -297,9 +312,9 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
       <text class="node-title" x="894" y="233">Explorer</text>
       <text class="node-sub" x="894" y="256">rankings, overlays,</text>
       <text class="node-sub" x="894" y="273">metrics, errors</text>
-      <rect class="node" x="880" y="312" width="180" height="62" rx="18"/>
+      <rect class="node" x="880" y="312" width="200" height="62" rx="18"/>
       <text class="node-title" x="906" y="337">Slice analysis</text>
-      <text class="node-sub" x="906" y="358">engineered variables, clusters, weak cohorts</text>
+      <text class="node-sub" x="906" y="356">engineered variables, clusters</text>
     </svg>
   </section>
 
