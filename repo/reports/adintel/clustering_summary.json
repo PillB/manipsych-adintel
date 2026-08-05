@@ -1,6 +1,6 @@
 {
   "n_sampled": 300,
-  "elapsed_ms": 2999.4,
+  "elapsed_ms": 2928.4,
   "spaces": {
     "persuasive": {
       "n_clusters": 5,
@@ -34,30 +34,34 @@
       "topic_leakage": {}
     },
     "visual": {
-      "n_clusters": 3,
+      "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 0.9862,
-      "resampling_consistency": 0.9839,
-      "parameter_sensitivity": 0.5,
+      "stability_ari": 0.7669,
+      "resampling_consistency": 0.997,
+      "parameter_sensitivity": 1.291,
       "brand_leakage": {
-        "Locanto Peru": 0.9696969696969697
+        "Ciudad Anuncios Peru": 0.967741935483871,
+        "Locanto Peru": 0.9696969696969697,
+        "Doplim Peru": 1.0,
+        "Facebook Public": 1.0
       },
       "topic_leakage": {
-        "locanto": 0.9696969696969697
+        "ciudadanuncios": 0.967741935483871,
+        "locanto": 0.9696969696969697,
+        "doplim": 1.0,
+        "facebook": 1.0
       }
     },
     "multimodal": {
       "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 0.5651,
-      "resampling_consistency": 0.6453,
+      "stability_ari": 0.4405,
+      "resampling_consistency": 0.5848,
       "parameter_sensitivity": 1.7078,
       "brand_leakage": {
-        "Doplim Peru": 1.0,
         "Locanto Peru": 0.9696969696969697
       },
       "topic_leakage": {
-        "doplim": 1.0,
         "locanto": 0.9696969696969697
       }
     },
@@ -75,18 +79,18 @@
       }
     },
     "performance": {
-      "n_clusters": 3,
+      "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 1.0,
+      "stability_ari": 0.9942,
       "resampling_consistency": 1.0,
-      "parameter_sensitivity": 0.4714,
+      "parameter_sensitivity": 1.0672,
       "brand_leakage": {
-        "Doplim Peru": 1.0,
-        "Facebook Public": 1.0
+        "Facebook Public": 1.0,
+        "Locanto Peru": 1.0
       },
       "topic_leakage": {
-        "doplim": 1.0,
-        "facebook": 1.0
+        "facebook": 1.0,
+        "locanto": 1.0
       }
     }
   }

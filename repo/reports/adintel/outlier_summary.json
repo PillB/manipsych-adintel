@@ -1,16 +1,15 @@
 {
   "n_sampled": 1000,
-  "n_reports": 795,
+  "n_reports": 767,
   "by_kind": {
     "creative_novelty": 50,
     "unusual_technique_combination": 27,
     "style_outlier": 29,
-    "visual_outlier": 28,
     "performance_overperformer": 28,
     "duplicate": 3,
     "metadata_error": 630
   },
-  "elapsed_ms": 212.4,
+  "elapsed_ms": 220.2,
   "sample_reports": [
     {
       "record_id": "h_86bd5d72dd627584f2b8e13b1119cb766c82a0b63677002773b36caf257c4165",

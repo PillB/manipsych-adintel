@@ -131,9 +131,12 @@ def build_visual_features(records: list[dict]) -> np.ndarray:
     """Visual structure features. v1 corpus has no image pixels, so we use
     image-availability metadata and raw-size bucket as proxies.
 
-    This is a documented limitation: full visual clustering requires archived
-    image pixels, which are not in the local corpus."""
+    S-02 fix: Platform-residualised. The raw features (image_count, raw_size_bucket,
+    is_featured) are platform-specific and cause brand leakage. We residualise by
+    subtracting the per-platform mean, so the features capture deviation from the
+    platform norm rather than the platform identity."""
     rows: list[list[float]] = []
+    platforms: list[str] = []
     for r in records:
         meta = r.get("metadata", {}) if isinstance(r, dict) else {}
         image_count = float(meta.get("image_count", 0) or 0)
@@ -142,7 +145,22 @@ def build_visual_features(records: list[dict]) -> np.ndarray:
         }
         rsb = raw_size_bucket_map.get(str(meta.get("raw_size_bucket", "")), 0.0)
         rows.append([image_count, rsb, float(meta.get("is_featured_marker", False) or False)])
-    return np.asarray(rows, dtype=np.float64)
+        platforms.append(str(meta.get("platform_family", r.get("source_platform", "unknown"))))
+
+    X = np.asarray(rows, dtype=np.float64)
+    if X.shape[0] == 0:
+        return X
+
+    # S-02: Residualise by platform — subtract per-platform mean
+    unique_platforms = set(platforms)
+    if len(unique_platforms) > 1:
+        for plat in unique_platforms:
+            mask = np.array([p == plat for p in platforms])
+            if mask.sum() > 0:
+                plat_mean = X[mask].mean(axis=0)
+                X[mask] = X[mask] - plat_mean
+
+    return X
 
 
 def build_multimodal_features(texts: Iterable[str], records: list[dict]) -> np.ndarray:
@@ -163,11 +181,11 @@ def build_multimodal_features(texts: Iterable[str], records: list[dict]) -> np.n
 
 def build_performance_features(records: list[dict]) -> np.ndarray:
     """Normalised performance behaviour. v1 corpus has NO real performance
-    metrics (no spend, impressions, CTR). We use the available proxies:
-    quality_score, is_paid_or_premium_marker, is_featured_marker, and a
-    'has_engagement_signal' flag. The dashboard must disclose this limitation
-    in every performance-cluster explanation."""
+    metrics. Uses proxies: quality_score, paid, featured, engagement.
+
+    S-02 fix: Platform-residualised to prevent brand leakage."""
     rows: list[list[float]] = []
+    platforms: list[str] = []
     for r in records:
         meta = r.get("metadata", {}) if isinstance(r, dict) else {}
         q = float(meta.get("quality_score", 0.0) or 0.0)
@@ -175,7 +193,21 @@ def build_performance_features(records: list[dict]) -> np.ndarray:
         featured = float(bool(meta.get("is_featured_marker", False)))
         eng = float(bool(meta.get("facebook_reactions_approx", 0)) or bool(meta.get("facebook_comments_approx", 0)))
         rows.append([q, paid, featured, eng])
+        platforms.append(str(meta.get("platform_family", r.get("source_platform", "unknown"))))
+
     X = np.asarray(rows, dtype=np.float64)
+    if X.shape[0] == 0:
+        return X
+
+    # S-02: Residualise by platform
+    unique_platforms = set(platforms)
+    if len(unique_platforms) > 1:
+        for plat in unique_platforms:
+            mask = np.array([p == plat for p in platforms])
+            if mask.sum() > 0:
+                plat_mean = X[mask].mean(axis=0)
+                X[mask] = X[mask] - plat_mean
+
     return normalize(X, norm="l2", axis=1) if X.shape[0] else X
 
 

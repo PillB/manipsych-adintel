@@ -316,12 +316,17 @@ function runGanCycle() {
   log.innerHTML = '';
   const baseText = document.getElementById('adInput').value || 'Ayuda economica para chicas estudiantes.';
 
+  // F-01: GAN feedback loop — track gaps and auto-add missed techniques
+  let gapCount = 0;
+  let fixedCount = 0;
+  const addedSignals = [];
+
   for (let round = 1; round <= 5; round++) {
     const step = document.createElement('div');
     step.className = 'gan-step';
     step.innerHTML = `<b>Round ${round}</b>`;
 
-    const techniques = ['urgente hoy', 'solo por esta semana', '100% garantizado', 'discreto y confidencial', 'whatsapp privado', 'muchas chicas confian', 'serio y formal', 'estudiantes universitarias', 'dinero semanal fijo', 'buena presencia', 'ultimo cupo'];
+    const techniques = ['urgente hoy', 'solo por esta semana', '100% garantizado', 'discreto y confidencial', 'whatsapp privado', 'muchas chicas confian', 'serio y formal', 'estudiantes universitarias', 'dinero semanal fijo', 'buena presencia', 'ultimo cupo', 'referencias verificadas', 'sin compromiso'];
     const tech = techniques[Math.floor(Math.random() * techniques.length)];
     const variant = baseText + ' ' + tech;
 
@@ -340,11 +345,48 @@ function runGanCycle() {
     step.innerHTML += `<br>Detector caught injection: <b>${caught ? 'YES' : 'NO (gap found)'}</b>`;
 
     if (!caught) {
-      step.innerHTML += `<br><em>Gap: the detector did not flag the injected technique "${tech}". This identifies a potential improvement area.</em>`;
+      gapCount++;
+      step.innerHTML += `<br><em>Gap: the detector did not flag "${tech}".</em>`;
+
+      // F-01: Auto-add the missed technique to the signal inventory
+      const techKey = tech.split(' ')[0].replace(/[^a-z]/gi, '');
+      // Check if we can map it to an existing dimension
+      const dimMap = {
+        'urgente': 'urgency', 'solo': 'scarcity', '100': 'certainty',
+        'discreto': 'privacy_or_secrecy_pressure', 'whatsapp': 'platform_migration',
+        'muchas': 'social_proof', 'serio': 'authority_or_status_appeal',
+        'estudiantes': 'education_or_student_targeting', 'dinero': 'financial_lure',
+        'buena': 'sexualized_appearance_condition', 'ultimo': 'scarcity_or_urgency',
+        'referencias': 'evidence_density', 'compromiso': 'objection_handling',
+      };
+      const targetDim = dimMap[techKey];
+      if (targetDim && SIGNALS[targetDim] && !addedSignals.includes(tech)) {
+        // Add the missed pattern to the signal inventory
+        SIGNALS[targetDim].push([tech.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi', 0.25, 'GAN-added: ' + tech]);
+        addedSignals.push(tech);
+        fixedCount++;
+        step.innerHTML += `<br><b style="color:var(--green);">FIXED: Added "${tech}" to ${targetDim} signal inventory.</b>`;
+      } else {
+        step.innerHTML += `<br><span style="color:var(--amber);">Cannot auto-fix: no matching dimension for "${tech}".</span>`;
+      }
+    } else {
+      step.innerHTML += `<br><span style="color:var(--green);">Detector correctly identified the injected technique.</span>`;
     }
 
     log.appendChild(step);
   }
+
+  // Summary
+  const summary = document.createElement('div');
+  summary.className = 'gan-step';
+  summary.style.borderLeftColor = 'var(--green)';
+  summary.innerHTML = `<b>GAN Cycle Summary</b><br>
+    Total rounds: 5<br>
+    Gaps found: ${gapCount}<br>
+    Auto-fixed: ${fixedCount}<br>
+    Signals added: ${addedSignals.length}<br>
+    <em>The detector has been improved by adding ${addedSignals.length} new signal pattern(s). Subsequent analyses will catch these techniques.</em>`;
+  log.appendChild(summary);
 }
 
 function clearGanLog() {
