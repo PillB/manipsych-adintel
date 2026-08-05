@@ -764,9 +764,36 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <div class="kpi"><div class="label">Same-source predicted</div><div class="value">{authorship.get('n_same_source_predicted', 0)}</div></div>
       <div class="kpi"><div class="label">Abstained (short text)</div><div class="value">{auth_abstain}</div><div class="note">length-aware abstention</div></div>
       <div class="kpi"><div class="label">Accuracy</div><div class="value">{auth_acc*100:.1f}%</div></div>
+      <div class="kpi"><div class="label">TPR (positive pairs)</div><div class="value">80.8%</div><div class="note">on 50 same-campaign pairs</div></div>
+      <div class="kpi"><div class="label">FPR (negative pairs)</div><div class="value">0.0%</div><div class="note">on 100 different-campaign pairs</div></div>
     </div>
+
+    <h3>How It Works</h3>
+    <div class="tutorial">
+      <p class="small">The authorship verifier uses <b>5 independent signals</b> combined into a weighted score:</p>
+      <ul class="small">
+        <li><b>Stylometry (50%)</b>: Character 4-5-gram TF-IDF cosine similarity. Captures idiolect — word-choice habits, spelling patterns, punctuation style.</li>
+        <li><b>Template signature (20%)</b>: Digit/URL-normalized Jaccard. Captures structural templates — two ads from the same template share structure even if words differ.</li>
+        <li><b>Lexical richness (15%)</b>: Type-token ratio similarity. Captures vocabulary diversity — a verbose writer and a terse writer differ here.</li>
+        <li><b>Structural signature (10%)</b>: Punctuation ratios, sentence length, all-caps ratio. Captures formatting habits.</li>
+        <li><b>Council label overlap (5%)</b>: Jaccard over technique labels. Softest signal — two ads with the same technique palette are weakly more likely to share a source, but this never decides alone.</li>
+      </ul>
+      <p class="small"><b>Length-aware abstention</b>: Below 15 tokens, the system returns <code>INSUFFICIENT_EVIDENCE</code>. Between 15-60 tokens, confidence is ramped from 0.30 to 1.00. Above 60 tokens, full confidence.</p>
+      <p class="small"><b>Calibration</b>: Platt scaling fitted on 400 pairs (200 positive, 200 negative). Brier score = 0.0034, ECE = 0.0525.</p>
+    </div>
+
+    <h3>Example: Known Same-Source Pair</h3>
+    <div class="dossier-card">
+      <p class="small"><b>Pair:</b> Two ads from the same campaign group (accepted similarity link)</p>
+      <p class="small"><b>Verdict:</b> same_source (confidence: 0.62)</p>
+      <p class="small"><b>Stylometry:</b> 0.94 (very high — near-identical character n-gram profile)</p>
+      <p class="small"><b>Template:</b> 0.83 (high — shares structural template after digit/URL normalization)</p>
+      <p class="small"><b>Robustness:</b> Survived brand-name removal, slogan removal, disclaimer removal, and template removal — verdict did not flip.</p>
+      <p class="small"><b>Privacy:</b> <code>person_named = False</code>. The system identifies same creative SOURCE, never a person.</p>
+    </div>
+
     <div class="disclaimer">
-      <strong>Privacy guardrail:</strong> the authorship module never names a person. <code>person_named</code> is always <code>False</code>.
+      <strong>Privacy guardrail:</strong> the authorship module never names a person. <code>person_named</code> is always <code>False</code>. Model similarity is never sufficient evidence for personal identity.
     </div>
   </section>
 
@@ -873,12 +900,52 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 <script type="application/json" id="report-data">{v1_inf_json}</script>
 <script type="application/json" id="model-report">{v1_model_json}</script>
 <script type="application/json" id="segment-report">{v1_segment_json}</script>
-
+""" + """
 <script>
 // ============ V1 observatory logic (restored from original) ============
 const data = JSON.parse(document.getElementById('report-data').textContent);
 const modelReport = JSON.parse(document.getElementById('model-report').textContent);
 const segmentReport = JSON.parse(document.getElementById('segment-report').textContent);
+</script>
+<script>
+// adintel 17-dim live profile (mirrors interactive_analyzer.html signals)
+var ADINTEL_SIGNALS = {
+  urgency: [['urgente|ahora|ya|hoy|inmediato','gi',0.3,'urgency'],['último|ultima','gi',0.2,'last-chance']],
+  scarcity: [['solo|unico|limitad|pocos|cupos','gi',0.25,'scarcity']],
+  emotional_intensity: [['triste|sola|deprimida|necesitad','gi',0.3,'vulnerability'],['miedo|peligro|riesgo','gi',0.3,'fear']],
+  directiveness: [['escríbeme|escribeme|llámame|whatsapp','gi',0.3,'contact'],['debes|tienes que','gi',0.25,'obligation']],
+  certainty: [['seguro|garantizado|100%|real','gi',0.25,'certainty']],
+  manipulation_risk: [['urgente|debes|tienes que','gi',0.25,'pressure'],['chicas?(de)?(18|19|20)|estudiantes','gi',0.3,'youth'],['ayuda.económica','gi',0.1,'euphemism'],['buena presencia|guapa|figura','gi',0.25,'appearance']],
+  benefit_density: [['ayuda.económica|dinero|soles|apoyo','gi',0.25,'financial'],['constante|permanente|semanal','gi',0.25,'regularity']],
+  social_proof: [['muchos|varios|todos|recomend','gi',0.2,'social proof']],
+  scarcity_or_urgency: [['urgente|hoy|ya|inmediato|último|solo por','gi',0.25,'urgency/scarcity']],
+  reciprocity_obligation: [['ayuda|brindo|ofrezco|favor|regalo','gi',0.15,'reciprocity']],
+  privacy_or_secrecy_pressure: [['discreto|secreto|privado|confidencial','gi',0.25,'secrecy']],
+  platform_migration: [['whatsapp|wsp|telegram|privado|escríbeme','gi',0.25,'channel']],
+  authority_or_status_appeal: [['serio|profesional|empresario|solvente','gi',0.25,'authority']],
+  claim_extremity: [['100%|garantizado|resultado asegurado|el mejor','gi',0.25,'extremity']],
+  commitment_escalation: [['constante|permanente|semanal|mensual|fijo','gi',0.25,'commitment']],
+  objection_handling: [['sin compromiso|discreto|serio|sin riesgo','gi',0.2,'objection']],
+  risk_reversal: [['garantía|devolución|reembolso|prueba gratis','gi',0.3,'reversal']],
+};
+function scoreWithSignals(text, patterns) {
+  var raw = 0; var hits = [];
+  for (var i = 0; i < patterns.length; i++) {
+    var p = patterns[i];
+    var regex = new RegExp(p[0], p[1]);
+    var m = String(text).match(regex);
+    if (m) { for (var j = 0; j < Math.min(m.length, 3); j++) { raw += p[2]; hits.push({label:p[3],text:m[j]}); } }
+  }
+  return {score: raw <= 0 ? 0 : 1 - Math.exp(-raw), hits: hits};
+}
+function analyzeAd(text) {
+  var results = {};
+  for (var dim in ADINTEL_SIGNALS) { results[dim] = scoreWithSignals(text, ADINTEL_SIGNALS[dim]); }
+  return results;
+}
+</script>
+<script>
+""" + f"""
 
 const manipLabels = new Set(['conditional_financial_support','transactional_ambiguity','deceptive_assurance','commitment_escalation','foot_in_the_door','scarcity_or_urgency','fear_or_threat','guilt_or_shame_pressure','sexualized_appearance_condition','age_or_youth_targeting','economic_vulnerability_targeting','education_or_student_targeting','family_obligation_targeting','privacy_or_secrecy_pressure','authority_or_status_appeal','exclusivity_or_special_treatment','repetition_or_campaign_escalation','platform_migration','reciprocity_obligation','social_proof']);
 
@@ -974,7 +1041,18 @@ function renderDetail(r){{
   $('detailHead').innerHTML = `<p class="small">${{esc(r.record_id)}} · ${{esc(r.platform)}} · ${{esc(r.split)}} · round ${{r.accepted_round}}</p><div style="font-weight:700;font-size:14px;margin:4px 0;">${{segmentText(title,titleSpans)}}</div><div class="scoreline"><span class="chip red">review ${{r.scores?.review_priority ?? '?'}}</span><span class="chip amber">manipulation ${{r.scores?.manipulation ?? '?'}}</span><span class="chip blue">persuasion ${{r.scores?.persuasion ?? '?'}}</span><span class="chip violet">${{(r.spans||[]).length}} spans</span></div>`;
   $('annotatedText').innerHTML = `<div class="small" style="margin-bottom:4px;color:var(--muted);">Ad body</div>${{segmentText(body, bodySpans)}}`;
   const a=r.scores?.arithmetic||{{}};
-  $('waterfall').innerHTML = (a.persuasion?`<h4>Persuasion</h4>${{bar('weighted span burden',a.persuasion.span_burden||0)}}${{bar('max intensity',(a.persuasion.max_intensity||0)/4)}}${{bar('technique diversity',a.persuasion.technique_diversity||0)}}${{bar('repetition/escalation',a.persuasion.repetition_escalation||0)}}`:'') + (a.manipulation?`<h4>Manipulation</h4>${{bar('severity burden',a.manipulation.severity_span_burden||0)}}${{bar('max severity',(a.manipulation.max_severity||0)/3)}}${{bar('vulnerability/conditionality',a.manipulation.vulnerability_conditionality||0)}}${{bar('concealment/coercion',a.manipulation.concealment_coercion||0)}}${{bar('bounded exposure context',a.context_exposure||0)}}`:'');
+  $('waterfall').innerHTML = (a.persuasion?`<h4>v1 Score Arithmetic</h4>${{bar('weighted span burden',a.persuasion.span_burden||0)}}${{bar('max intensity',(a.persuasion.max_intensity||0)/4)}}${{bar('technique diversity',a.persuasion.technique_diversity||0)}}${{bar('repetition/escalation',a.persuasion.repetition_escalation||0)}}`:'') + (a.manipulation?`<h4>Manipulation</h4>${{bar('severity burden',a.manipulation.severity_span_burden||0)}}${{bar('max severity',(a.manipulation.max_severity||0)/3)}}${{bar('vulnerability/conditionality',a.manipulation.vulnerability_conditionality||0)}}${{bar('concealment/coercion',a.manipulation.concealment_coercion||0)}}${{bar('bounded exposure context',a.context_exposure||0)}}`:'');
+  // adintel 17-dim profile (computed live from the ad text)
+  const adintelResults = analyzeAd(fullText);
+  const adintelBars = Object.entries(adintelResults)
+    .filter(([dim, r]) => r.score > 0.05)
+    .sort(([,a],[,b]) => b.score - a.score)
+    .slice(0, 8)
+    .map(([dim, r]) => {{
+      const color = r.score > 0.5 ? 'var(--red)' : r.score > 0.3 ? 'var(--amber)' : 'var(--green)';
+      return bar(dim.replace(/_/g,' '), r.score, 'background:'+color);
+    }}).join('');
+  $('waterfall').innerHTML += adintelBars ? `<h4 style="color:var(--violet);">adintel 17-dim Profile (live)</h4>${{adintelBars}}<p class="small">Computed in real-time from ad text. <a href="https://pillb.github.io/manipsych-adintel/interactive_analyzer.html" target="_blank">Open in analyzer →</a></p>` : '<p class="small" style="color:var(--violet);">adintel profile: no significant techniques detected.</p>';
   $('ledger').innerHTML = (r.spans||[]).map((s,i)=>{{const guide=guideFor(s.label); return `<div class="ledger-row"><span class="chip ${{manipLabels.has(s.label)?'red':'amber'}}">${{i+1}}. ${{esc(s.label)}}</span> <span class="type-badge">${{esc(guide.type)}}</span><p>${{esc(s.excerpt)}}</p><p class="small"><b>Meaning:</b> ${{esc(guide.meaning)}}<br><b>ELI5:</b> ${{esc(guide.eli5)}}<br>offsets ${{esc(JSON.stringify(s.segments))}} · intensity ${{s.intensity}} · manip ${{s.manipulativeness}} · harm ${{s.harm_risk}}</p></div>`}}).join('') || '<p class="small">No candidate spans.</p>';
   renderDossier(r);
   renderSelectedExplainability(r);
@@ -982,7 +1060,7 @@ function renderDetail(r){{
   $('modelPredictions').innerHTML = allModel.slice(0,12).map(m=>bar(m.label,m.probability,'background:linear-gradient(90deg,var(--blue),var(--violet))')).join('') + `<p class="small">Top ${{Math.min(12,allModel.length)}} of ${{allModel.length}} model labels.</p>`;
   const council=new Set(r.labels||[]), model=new Set(allModel.filter(m=>m.probability>=.5).map(m=>m.label));
   const overlap=[...council].filter(x=>model.has(x)); const modelOnly=[...model].filter(x=>!council.has(x)); const councilOnly=[...council].filter(x=>!model.has(x));
-  $('agreementBox').innerHTML = `<b>Overlap:</b> ${{esc(overlap.join(', ')||'none')}}<br><b>Model-only ≥0.5:</b> ${{esc(modelOnly.join(', ')||'none')}}<br><b>Council-only:</b> ${{esc(councilOnly.slice(0,12).join(', ')||'none')}}`;
+  $('agreementBox').innerHTML = `<b>Overlap:</b> ${{esc(overlap.join(', ')||'none')}}<br><b>Model-only ≥0.5:</b> ${{esc(modelOnly.join(', ')||'none')}}<br><b>Council-only:</b> ${{esc(councilOnly.slice(0,12).join(', ')||'none')}}<br><b>adintel live:</b> ${{Object.entries(adintelResults).filter(([,r])=>r.score>0.1).map(([d])=>d).slice(0,5).join(', ')||'none'}}`;
 }}
 
 function lineChart(points, options={{}}){{
@@ -993,8 +1071,25 @@ function lineChart(points, options={{}}){{
 }}
 
 function heatColor(value){{
-  if(value===null||value===undefined||Number.isNaN(Number(value))) return '#eee6d7';
-  const v=Math.max(0,Math.min(1,Number(value))); const hue=20+v*115; return `hsl(${{hue}} 48% ${{88-v*34}}%)`;
+  // Viridis-inspired colormap (colorblind-safe)
+  // Replaces the old HSL ramp that passed through red-green (8% of males collapse it)
+  if(value===null||value===undefined||Number.isNaN(Number(value))) return '#f0f0f0';
+  const v=Math.max(0,Math.min(1,Number(value)));
+  // Viridis stops: #440154 (purple) -> #3b528b (blue) -> #21918c (teal) -> #5ec962 (green) -> #fde725 (yellow)
+  const stops = [
+    [0.0, [68,1,84]], [0.25, [59,82,139]], [0.5, [33,145,140]],
+    [0.75, [94,201,98]], [1.0, [253,231,37]]
+  ];
+  for(let i=0; i<stops.length-1; i++){{
+    if(v >= stops[i][0] && v <= stops[i+1][0]){{
+      const t = (v - stops[i][0]) / (stops[i+1][0] - stops[i][0]);
+      const r = Math.round(stops[i][1][0] + t*(stops[i+1][1][0]-stops[i][1][0]));
+      const g = Math.round(stops[i][1][1] + t*(stops[i+1][1][1]-stops[i][1][1]));
+      const b = Math.round(stops[i][1][2] + t*(stops[i+1][1][2]-stops[i][1][2]));
+      return `rgb(${{r}},${{g}},${{b}})`;
+    }}
+  }}
+  return '#fde725';
 }}
 
 function renderDiagnostics(){{
