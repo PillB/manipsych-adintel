@@ -57,6 +57,218 @@ def render() -> str:
     full_data = load_json(OUT_DIR / "full_data_results.json")
     cluster_align = load_json(OUT_DIR / "cluster_alignment_report.json")
     deep_clustering = load_json(OUT_DIR / "deep_clustering_analysis.json")
+    solarize = load_json(OUT_DIR / "solarize_summary.json")
+
+    # ------------------------------------------------------------------
+    # Solarize: pre-compute HTML fragments for cluster cards, outlier kinds,
+    # term-comparison rows, and the per-ad selector JSON payload.
+    # ------------------------------------------------------------------
+    import subprocess as _sp
+    try:
+        _commit_sha = _sp.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, stderr=_sp.DEVNULL).decode().strip()
+    except Exception:
+        _commit_sha = solarize.get("build", {}).get("commit_sha", "unknown")
+    _build_fp = solarize.get("build", {}).get("build_fingerprint", f"solarize-{_commit_sha[:8]}")
+    _solarize_json = json.dumps(solarize, ensure_ascii=False)
+
+    # Cluster cards (one per cluster, with distinguishing terms + sample ads)
+    _cluster_cards_html = ""
+    for ce in solarize.get("clusters", []):
+        cid = ce.get("cluster_id", 0)
+        n_members = ce.get("n_members", 0)
+        sil = ce.get("silhouette_mean", 0.0)
+        outlier_rate = ce.get("outlier_rate", 0.0)
+        dist_terms = ce.get("distinguishing_terms", [])[:6]
+        term_chips = " ".join(
+            f"<span class='term-chip'>{t.get('term','')}</span>" for t in dist_terms
+        )
+        platform_dist = ce.get("platform_distribution", [])
+        plat_chips = " ".join(
+            f"<span class='plat-chip'>{p.get('platform','?')}:{p.get('count',0)}</span>" for p in platform_dist
+        )
+        sample_ads = ce.get("sample_ads", [])[:3]
+        sample_html = ""
+        for ad in sample_ads:
+            ad_rid = ad.get("record_id", "")
+            ad_title = (ad.get("title", "") or "Untitled")[:60]
+            ad_plat = ad.get("platform", "?")
+            ad_body = (ad.get("body_preview", "") or "")[:160]
+            ad_ms = ad.get("cluster_membership_strength", "?")
+            ad_sil = ad.get("silhouette", "?")
+            sample_html += (
+                f"<div class='cluster-example' data-cluster-example='{cid}' data-record-id='{ad_rid}'>"
+                f"<p class='small'><b>{ad_title}</b> "
+                f"<code class='rid'>{ad_rid[:24]}...</code> "
+                f"<span class='plat-tag'>{ad_plat}</span></p>"
+                f"<p class='small' style='background:var(--soft);padding:6px;border-radius:4px;font-style:italic;'>\"{ad_body}...\"</p>"
+                f"<p class='small' style='color:var(--muted);'>membership={ad_ms}, silhouette={ad_sil}</p>"
+                f"</div>"
+            )
+        _cluster_cards_html += (
+            f"<div class='cluster-card' data-cluster-id='{cid}'>"
+            f"<h4>Cluster {cid} <span class='badge'>{n_members} ads</span> <span class='sil-badge' title='mean silhouette'>sil={sil:.3f}</span> <span class='out-badge' title='outlier rate in this cluster'>outlier_rate={outlier_rate:.1%}</span></h4>"
+            f"<p class='small'><b>Distinguishing terms:</b> {term_chips}</p>"
+            f"<p class='small'><b>Platform mix:</b> {plat_chips}</p>"
+            f"<div class='cluster-examples'>{sample_html}</div>"
+            f"</div>"
+        )
+
+    # 4-way outlier kind rows
+    _outlier_kind_rows = ""
+    _kind_defs = solarize.get("outliers", {}).get("kind_definitions", {})
+    _by_kind = solarize.get("outliers", {}).get("by_kind", {})
+    _kind_colors = {"detector": "var(--blue)", "density_noise": "var(--amber)", "cluster_enriched": "var(--red)", "boundary": "var(--violet)"}
+    for kind in ("detector", "density_noise", "cluster_enriched", "boundary"):
+        n = _by_kind.get(kind, 0)
+        defn = _kind_defs.get(kind, "")
+        color = _kind_colors.get(kind, "var(--muted)")
+        pct = (n / solarize.get("build", {}).get("n_records", 1)) * 100
+        _outlier_kind_rows += (
+            f"<tr data-field='outlier_kind' data-kind='{kind}'>"
+            f"<td class='dim' style='color:{color};font-weight:600;'>{kind}</td>"
+            f"<td class='num'>{n}</td>"
+            f"<td class='num'>{pct:.1f}%</td>"
+            f"<td>{defn}</td></tr>"
+        )
+
+    # Term-comparison rows (one table per comparison population)
+    _term_comparison_tables = ""
+    for pop_key, pop_label in [
+        ("outlier_vs_all_non_outlier", "(a) Outliers vs ALL non-outlier ads"),
+        ("outlier_vs_same_cluster_non_outlier", "(b) Outliers vs non-outlier ads in the SAME cluster"),
+        ("outlier_vs_matched_control", "(c) Outliers vs MATCHED controls (platform_family)"),
+    ]:
+        pop = solarize.get("term_comparison", {}).get(pop_key, {})
+        rows = pop.get("rows", [])[:20]
+        verdict = pop.get("aggregate_verdict", {})
+        n_out = pop.get("n_outlier", 0)
+        n_ctrl = pop.get("n_control", 0)
+        verdict_label = verdict.get("overall_verdict", "N/A")
+        verdict_color = {"DIFFERENTIATED": "var(--green)", "PARTIALLY_DIFFERENTIATED": "var(--amber)", "NOT_MEANINGFULLY_DIFFERENT": "var(--red)"}.get(verdict_label, "var(--muted)")
+        verdict_expl = verdict.get("explanation", "")
+        rows_html = ""
+        for r in rows:
+            meaningfully = r.get("meaningfully_different", False)
+            min_supp = r.get("min_support", False)
+            row_class = "" if meaningfully else " class='dim-row'"
+            star = "\u2605" if meaningfully else ""
+            rows_html += (
+                f"<tr data-field='term_comparison_row' data-meaningful='{str(meaningfully).lower()}'{row_class}>"
+                f"<td class='dim'>{star} {r.get('term','')}</td>"
+                f"<td class='num'>{r.get('outlier_count',0)}/{r.get('outlier_denominator',0)}</td>"
+                f"<td class='num'>{r.get('outlier_prevalence',0)*100:.1f}%</td>"
+                f"<td class='num'>{r.get('control_count',0)}/{r.get('control_denominator',0)}</td>"
+                f"<td class='num'>{r.get('control_prevalence',0)*100:.1f}%</td>"
+                f"<td class='num'>{r.get('effect_size',0):.3f}</td>"
+                f"<td class='num'>{r.get('effect_size_label','')}</td>"
+                f"<td class='num'>[{r.get('ci_low',0):.3f}, {r.get('ci_high',0):.3f}]</td>"
+                f"<td class='num'>{r.get('p_value',0):.4f}</td>"
+                f"<td class='num'>{r.get('q_value',0):.4f}</td>"
+                f"<td class='num'>{'yes' if min_supp else 'NO'}</td>"
+                f"</tr>"
+            )
+        _term_comparison_tables += (
+            f"<div class='term-comparison-block' data-field='term_comparison' data-population='{pop_key}'>"
+            f"<h4>{pop_label}</h4>"
+            f"<p class='small'>Comparison population: <code>{pop.get('comparison_population','')}</code>. n_outlier={n_out}, n_control={n_ctrl}.</p>"
+            f"<div class='verdict-banner' style='border-left:4px solid {verdict_color};background:var(--soft);padding:8px 12px;margin:6px 0 8px 0;border-radius:6px;'>"
+            f"<b style='color:{verdict_color};'>Verdict: {verdict_label}</b>"
+            f"<p class='small' style='margin:4px 0 0 0;'>{verdict_expl}</p>"
+            f"</div>"
+            f"<table class='term-comparison-table'>"
+            f"<thead><tr>"
+            f"<th>Term</th>"
+            f"<th class='num' title='outlier_count / outlier_denominator'>outlier_count</th>"
+            f"<th class='num'>outlier_%</th>"
+            f"<th class='num' title='control_count / control_denominator'>control_count</th>"
+            f"<th class='num'>control_%</th>"
+            f"<th class='num' title=\"Cohen's h effect size\">effect_size</th>"
+            f"<th>label</th>"
+            f"<th class='num' title='95% CI on the difference (Wilson-style)'>CI</th>"
+            f"<th class='num' title='two-sided z-test p-value'>p_value</th>"
+            f"<th class='num' title='Benjamini-Hochberg FDR-adjusted q-value'>q_value</th>"
+            f"<th class='num' title='at least 5 hits in BOTH arms'>min_support</th>"
+            f"</tr></thead>"
+            f"<tbody>{rows_html}</tbody>"
+            f"</table>"
+            f"</div>"
+        )
+
+    # Outlier example cards per kind (4 kinds x top 3 examples)
+    _outlier_examples_html = ""
+    _examples_per_kind = solarize.get("outliers", {}).get("examples_per_kind", {})
+    for kind in ("detector", "density_noise", "cluster_enriched", "boundary"):
+        examples = _examples_per_kind.get(kind, [])[:3]
+        if not examples:
+            continue
+        color = _kind_colors.get(kind, "var(--muted)")
+        for ex in examples:
+            rid = ex.get("record_id", "")
+            title = (ex.get("title", "") or "Untitled")[:80]
+            plat = ex.get("platform", "?")
+            score = ex.get("score", 0.0)
+            sil = ex.get("silhouette", 0.0)
+            dist = ex.get("distance_to_centroid", 0.0)
+            cid = ex.get("cluster_id", -1)
+            reason = ex.get("reason", "")
+            _outlier_examples_html += (
+                f"<div class='dossier-card' style='border-left:4px solid {color};' data-field='outlier_example' data-kind='{kind}'>"
+                f"<p class='small'><b style='color:{color};'>{kind}</b> \u2014 <code class='rid'>{rid[:24]}...</code> <span class='plat-tag'>{plat}</span></p>"
+                f"<p class='small'><b>Title:</b> {title}</p>"
+                f"<p class='small' style='color:var(--muted);'>cluster={cid}, silhouette={sil}, distance_to_centroid={dist}, score={score}</p>"
+                f"<p class='small' style='background:var(--soft);padding:6px;border-radius:4px;'><b>Why flagged:</b> {reason}</p>"
+                f"</div>"
+            )
+
+    # Feature-engineering benchmark table (R5, R6)
+    _benchmark_rows = ""
+    for r in solarize.get("clustering", {}).get("feature_engineering_benchmark", []):
+        _benchmark_rows += (
+            f"<tr data-field='benchmark_row'>"
+            f"<td class='dim'>{r.get('name','')}</td>"
+            f"<td>{r.get('feature','')}</td>"
+            f"<td class='num'>{r.get('silhouette',''):.4f}</td>"
+            f"<td class='num'>{r.get('stability_ari',''):.4f}</td>"
+            f"<td class='num'>{r.get('explained_variance','\u2014')}</td>"
+            f"<td class='num'>{r.get('elapsed_s','\u2014')}</td>"
+            f"<td>{'deep' if r.get('deep') else 'simple'}</td>"
+            f"</tr>"
+        )
+    _deep_justified = solarize.get("clustering", {}).get("deep_clustering_justified", False)
+    _deep_reason = solarize.get("clustering", {}).get("deep_clustering_reason", "")
+    _deep_color = "var(--green)" if _deep_justified else "var(--amber)"
+    _deep_label = "JUSTIFIED" if _deep_justified else "NOT JUSTIFIED \u2014 simpler baselines suffice"
+
+    # Precompute scalars used in the HTML template (avoid nested-f-string dict-literal issues).
+    _sol_build = solarize.get("build", {})
+    _sol_clustering = solarize.get("clustering", {})
+    _sol_n_records = _sol_build.get("n_records", 0)
+    _sol_generated_at = _sol_build.get("generated_at", "")
+    _sol_k = _sol_clustering.get("k", 5)
+    _sol_sil = _sol_clustering.get("silhouette_mean", 0.0)
+    _sol_n_selector = len(solarize.get("per_ad_selector", []))
+    _sol_n_outlier_flagged = len(solarize.get("outlier_kind_by_record_id", {}))
+    _sol_version = _sol_build.get("solarize_version", "1.0")
+    # Precompute cluster-alignment values (avoid nested-f-string dict-literal parsing issues)
+    _ca_comparison = cluster_align.get("comparison", {})
+    _ca_n_records = _ca_comparison.get("n_records", 5189)
+    _ca_verdict = _ca_comparison.get("verdict", "N/A")
+    _ca_metrics = _ca_comparison.get("metrics", {})
+    _ca_ari = _ca_metrics.get("ARI", "N/A")
+    _ca_ami = _ca_metrics.get("AMI", "N/A")
+    _ca_homogeneity = _ca_metrics.get("homogeneity", "N/A")
+    _ca_completeness = _ca_metrics.get("completeness", "N/A")
+    _ca_v_measure = _ca_metrics.get("v_measure", "N/A")
+    _ca_explanation = (_ca_comparison.get("explanation", "See full report for details.") or "")[:300]
+    # Precompute deep-clustering archive values
+    _dc_deep_clustering = deep_clustering.get("deep_clustering", {})
+    _dc_best_k = _dc_deep_clustering.get("best_k", 3)
+    _dc_explained_variance = _dc_deep_clustering.get("explained_variance", 0)
+    _dc_silhouette = _dc_deep_clustering.get("silhouette", 0)
+    _cluster_options_html = "".join(
+        f'<option value="{c}">Cluster {c}</option>'
+        for c in sorted({ce.get("cluster_id", 0) for ce in solarize.get("clusters", [])})
+    )
 
     # ------------------------------------------------------------------
     # Build per-dimension table rows from FULL DATA (not sample)
@@ -233,7 +445,7 @@ def render() -> str:
     v1_segment_json = json.dumps(v1_segment, ensure_ascii=False) if v1_segment else "{}"
 
     html = f"""<!doctype html>
-<html lang="en">
+<html lang="en" data-build-fingerprint="{_build_fp}" data-commit-sha="{_commit_sha}" data-solarize-version="{_sol_version}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -372,6 +584,69 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 .tooltip {{ position:fixed; background:#17201d; color:#fff; padding:6px 8px; border-radius:6px; font-size:11px; display:none; z-index:50; pointer-events:none; max-width:280px; }}
 .toast {{ position:fixed; right:16px; bottom:16px; background:#17201d; color:#fff; border-radius:10px; padding:10px 12px; font-size:12px; opacity:0; transform:translateY(8px); transition:.2s; z-index:60; }}
 .toast.show {{ opacity:1; transform:translateY(0); }}
+
+/* Solarize additions: cluster cards, ad selector, term-comparison table */
+.cluster-card {{ background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:10px; }}
+.cluster-card h4 {{ margin:0 0 6px; font-size:13px; }}
+.cluster-card .badge {{ background:var(--blue); color:#fff; border-radius:4px; padding:1px 6px; font-size:10px; font-weight:600; margin-left:4px; }}
+.cluster-card .sil-badge {{ background:#e2edf9; color:#213d65; border-radius:4px; padding:1px 6px; font-size:10px; font-weight:600; margin-left:4px; }}
+.cluster-card .out-badge {{ background:#f7ead7; color:#744512; border-radius:4px; padding:1px 6px; font-size:10px; font-weight:600; margin-left:4px; }}
+.cluster-card .term-chip {{ display:inline-block; background:#fff; border:1px solid var(--line); border-radius:4px; padding:1px 6px; font-size:10px; margin:2px 2px 0 0; }}
+.cluster-card .plat-chip {{ display:inline-block; background:var(--soft); border:1px solid var(--line); border-radius:4px; padding:1px 6px; font-size:10px; margin:2px 2px 0 0; color:var(--muted); }}
+.cluster-examples {{ margin-top:6px; display:grid; gap:6px; }}
+.cluster-example {{ background:#fff; border:1px solid var(--line); border-radius:6px; padding:6px 8px; cursor:pointer; }}
+.cluster-example:hover {{ background:var(--soft); }}
+.cluster-example .rid {{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; color:var(--muted); }}
+.cluster-example .plat-tag {{ background:var(--soft); border-radius:3px; padding:0 4px; font-size:9px; color:var(--muted); }}
+
+.benchmark-table th, .benchmark-table td {{ font-size:11px; }}
+.term-comparison-block {{ margin:10px 0; padding:8px; border:1px solid var(--line); border-radius:8px; background:#fff; }}
+.term-comparison-table {{ width:100%; font-size:10px; }}
+.term-comparison-table th, .term-comparison-table td {{ padding:4px 6px; font-size:10px; white-space:nowrap; }}
+.term-comparison-table tr.dim-row td {{ color:var(--muted); }}
+.verdict-banner {{ background:var(--soft); padding:8px 12px; margin:6px 0; border-radius:6px; }}
+
+#adintel-ad-results {{ background:#fff; }}
+.ad-result-row {{ padding:6px 8px; border-bottom:1px solid var(--line); cursor:pointer; font-size:11px; }}
+.ad-result-row:hover {{ background:var(--soft); }}
+.ad-result-row.active {{ background:#e2edf9; outline:2px solid var(--blue); }}
+.ad-detail-card {{ background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:10px; }}
+.ad-detail-card h4 {{ margin:0 0 8px; font-size:13px; }}
+.ad-detail-card .meta-row {{ display:grid; grid-template-columns:140px 1fr; gap:6px; padding:3px 0; font-size:11px; border-bottom:1px solid var(--line); }}
+.ad-detail-card .meta-row:last-child {{ border-bottom:none; }}
+.ad-detail-card .meta-row b {{ color:var(--muted); }}
+
+/* Mobile: prevent overflow of wide tables and code blocks */
+@media (max-width:640px) {{
+  html, body {{ overflow-x:hidden; max-width:100vw; }}
+  section {{ padding:12px; max-width:100%; overflow-x:hidden; }}
+  table {{ display:block; overflow-x:auto; max-width:100%; -webkit-overflow-scrolling:touch; }}
+  th, td {{ padding:4px 5px; }}
+  .term-comparison-table {{ font-size:9px; }}
+  .term-comparison-table th, .term-comparison-table td {{ padding:2px 3px; }}
+  .cluster-card {{ padding:8px; }}
+  pre, code {{ word-break:break-all; white-space:pre-wrap; max-width:100%; }}
+  .viz-grid {{ grid-template-columns:1fr; }}
+  .layout {{ grid-template-columns:1fr; }}
+  #clusterCards {{ grid-template-columns:1fr; }}
+  nav.nav {{ gap:2px; }}
+  nav.nav a {{ font-size:10px; padding:3px 6px; }}
+  header.hero {{ padding:12px 16px; }}
+  header.hero .hero-inner {{ grid-template-columns:1fr; }}
+  main {{ padding:12px 16px; max-width:100%; }}
+  .big-viz {{ height:300px; }}
+  .kpis {{ grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); }}
+  .kpi .value {{ font-size:16px; }}
+  .dossier-card {{ padding:6px; }}
+  .tutorial {{ padding:6px 8px; }}
+  .tutorial-grid {{ grid-template-columns:1fr; }}
+  .coef-grid, .facet-grid, .map-info-grid {{ grid-template-columns:1fr; }}
+  .heat-row {{ grid-template-columns:1fr .5fr .5fr .5fr .5fr; }}
+  .rowline {{ grid-template-columns:100px 1fr 40px; }}
+  .viz-toolbar {{ flex-wrap:wrap; }}
+  .viz-toolbar > * {{ min-width:0; max-width:100%; }}
+  #adintel-ad-selector {{ min-width:0; }}
+}}
 
 /* Section divider */
 .section-tag {{ display:inline-block; background:var(--green); color:#fff; border-radius:4px; padding:1px 6px; font-size:9px; font-weight:700; margin-left:8px; vertical-align:middle; }}
@@ -833,59 +1108,73 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
     </ul>
   </section>
 
-  <!-- ========== ADINTEL NEW SECTION: 7-space clustering ========== -->
-  <div class="story-transition v1-to-new">↓ The profile scores individual ads; clustering groups ads that share similar persuasion patterns — across <b>seven different feature spaces</b> so you can compare which grouping is most meaningful.</div>
+  <!-- ========== ADINTEL NEW SECTION: Consolidated clustering (Solarize) ========== -->
+  <div class="story-transition v1-to-new">\u2193 The profile scores individual ads; clustering groups ads that share similar persuasion patterns. The Solarize refactor consolidates the previous 7-space summary, the deep-clustering benchmark, and the per-ad explorer into ONE section so you can compare baselines, see real examples, and select an ad without jumping around.</div>
   <section id="adintel-clustering" style="margin-top:16px;border:2px solid var(--violet);">
-    <div class="story-step"><span class="step-num" style="background:var(--violet);">9</span><span class="step-text"><b>New: 7 cluster spaces.</b> Persuasive vectors, semantic content, rhetorical style, visual structure, multimodal, authorial style, and performance behaviour. Each space is evaluated for stability and brand leakage.</span></div>
-    <h2>adintel: 7-Space Clustering <span class="section-tag new">new</span></h2>
-    <p class="small">Stratified sample n={clustering.get('n_sampled', 300)}. Uses k=5 with <b>distinguishing-term analysis</b> (centroid difference) instead of top-frequency words. Brand leakage was 98–100% before Round-1 fix; now eliminated in persuasive and rhetorical spaces via platform-residualisation.</p>
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">9</span><span class="step-text"><b>Solarize consolidated clustering.</b> 7-space summary (stability + leakage) + feature-engineering benchmark (raw TF-IDF vs LSA vs SVD-scaled) + per-cluster distinguishing terms + real sample ads + interactive ad selector.</span></div>
+    <h2>adintel: Clustering &amp; Cluster-Member Explorer <span class="section-tag new">solarize</span></h2>
+    <p class="small">Build fingerprint: <code>{_build_fp}</code>. Commit: <code>{_commit_sha[:8]}</code>. Generated: <code>{_sol_generated_at}</code>. N records: <b>{_sol_n_records:,}</b>.</p>
 
-    <h3>Cluster Spaces Overview</h3>
+    <h3>7-Space Clustering Summary (stratified sample, n={clustering.get('n_sampled', 300)})</h3>
     <table>
       <thead><tr><th>Space</th><th class="num">Clusters</th><th class="num">Stability ARI</th><th class="num">Pair consistency</th><th class="num">Param sens.</th><th>Brand leakage</th></tr></thead>
       <tbody>{cluster_rows}</tbody>
     </table>
 
-    <h3>Quantitative Cluster Alignment (Full Data, n={cluster_align.get('comparison',{}).get('n_records',5189)})</h3>
+    <h3>Feature-Engineering Benchmark (R5, R6) \u2014 full data, n={_sol_n_records:,}</h3>
+    <p class="small">Three baselines were benchmarked before any deep-clustering step. The dashboard reports which (if any) justifies extra complexity.</p>
+    <table class="benchmark-table">
+      <thead><tr><th>Baseline</th><th>Feature representation</th><th class="num">Silhouette</th><th class="num">Stability ARI</th><th class="num">Explained var</th><th class="num">Elapsed (s)</th><th>Type</th></tr></thead>
+      <tbody>{_benchmark_rows}</tbody>
+    </table>
+    <div class="verdict-banner" style="border-left:4px solid {_deep_color};background:var(--soft);padding:8px 12px;margin:8px 0;border-radius:6px;">
+      <b style="color:{_deep_color};">Deep-clustering verdict: {_deep_label}</b>
+      <p class="small" style="margin:4px 0 0 0;">{_deep_reason}</p>
+    </div>
+    <p class="small" style="color:var(--muted);">Method: per-baseline silhouette on a 3,000-record subsample (full corpus would be expensive and is unnecessary for silhouette comparison). Stability ARI = mean ARI across 3 bootstrap resamples at 80% sample fraction. Deep clustering is justified ONLY if the best simple baseline has silhouette &lt; 0.10 AND deep improves silhouette by \u2265 0.05. Neither holds here.</p>
+
+    <h3>Quantitative Cluster Alignment (Full Data, n={_ca_n_records})</h3>
     <div class="tutorial">
-      <p class="small"><b>Verdict: {cluster_align.get('comparison',{}).get('verdict','N/A')}</b></p>
-      <p class="small">Both systems run on SAME {cluster_align.get('comparison',{}).get('n_records',5189)} records:</p>
+      <p class="small"><b>Verdict: {_ca_verdict}</b></p>
+      <p class="small">Both systems run on SAME {_ca_n_records} records:</p>
       <ul class="small">
-        <li><b>ARI</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('ARI','N/A')} | <b>AMI</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('AMI','N/A')}</li>
-        <li><b>Homogeneity</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('homogeneity','N/A')} | <b>Completeness</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('completeness','N/A')} | <b>V-measure</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('v_measure','N/A')}</li>
+        <li><b>ARI</b>: {_ca_ari} | <b>AMI</b>: {_ca_ami}</li>
+        <li><b>Homogeneity</b>: {_ca_homogeneity} | <b>Completeness</b>: {_ca_completeness} | <b>V-measure</b>: {_ca_v_measure}</li>
         <li>V1: k=10, top-frequency terms | Adintel: k=5, centroid-difference terms</li>
       </ul>
-      <p class="small">{cluster_align.get('comparison',{}).get('explanation','See full report for details.')[:300]}</p>
+      <p class="small">{_ca_explanation}</p>
     </div>
+
+    <h3>Per-Cluster Cards (Solarize, k={_sol_k}, silhouette_mean={_sol_sil:.4f})</h3>
+    <p class="small">Each card shows distinguishing terms (centroid difference vs other clusters), platform mix, outlier rate, and real member ads with full text preview. Click any ad to inspect it in the explorer below.</p>
+    <div id="clusterCards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:12px;">{_cluster_cards_html}</div>
+
+    <h3 id="ad-explorer-heading">Ad Selector &amp; Membership Explorer (R8)</h3>
+    <p class="small">Search by record ID, title, or platform. Selecting an ad shows its cluster assignment, membership strength, distance to centroid, silhouette, alternative cluster, outlier status, and the body preview. The full per-ad table ({_sol_n_selector} top-activity ads embedded; full per-ad JSONL available at <code>solarize_per_ad.jsonl</code>) is searched client-side.</p>
+    <div class="viz-toolbar">
+      <input id="adintel-ad-selector" data-role="ad-selector" type="search" placeholder="Type a record_id, title fragment, or platform (e.g. h_239b6907, venezolana, doplim)..." style="flex:1;min-width:260px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;font-size:12px;" aria-label="Search ads by ID, title, or platform">
+      <select id="adintel-cluster-filter" data-role="cluster-filter" class="control" aria-label="Filter by cluster">
+        <option value="">All clusters</option>
+        {_cluster_options_html}
+      </select>
+      <select id="adintel-outlier-filter" data-role="outlier-filter" class="control" aria-label="Filter by outlier kind">
+        <option value="">All ads</option>
+        <option value="any">Any outlier</option>
+        <option value="detector">detector</option>
+        <option value="density_noise">density_noise</option>
+        <option value="cluster_enriched">cluster_enriched</option>
+        <option value="boundary">boundary</option>
+      </select>
+    </div>
+    <div id="adintel-ad-results" data-role="ad-results" style="max-height:280px;overflow:auto;border:1px solid var(--line);border-radius:6px;margin-top:6px;"></div>
+    <div id="adintel-ad-detail" data-role="ad-detail" style="margin-top:10px;"></div>
+
+    <h3>Deep-Clustering Archive (LSA + KMeans, k={_dc_best_k}) \u2014 kept as benchmark evidence</h3>
+    <p class="small" style="color:var(--muted);">The pre-Solarize deep-clustering artifact is preserved here as benchmark evidence. It is NOT the canonical clustering \u2014 the benchmark above shows raw TF-IDF already matches its silhouette. Method: TF-IDF \u2192 LSA(100d, explained variance={_dc_explained_variance:.1%}) \u2192 KMeans. Silhouette: {_dc_silhouette:.4f}.</p>
+    <div id="deepClusterCards">{deep_cluster_cards}</div>
   </section>
 
-  <!-- ========== DEEP CLUSTERING + OUTLIER TERM ANALYSIS ========== -->
-  <section id="adintel-deep-clustering" style="margin-top:16px;border:2px solid var(--violet);">
-    <div class="story-step"><span class="step-num" style="background:var(--violet);">9b</span><span class="step-text"><b>Deep clustering + outlier term analysis.</b> LSA-reduced TF-IDF → KMeans with silhouette-optimized k. Outlier term enrichment analysis shows what makes outlier ads different. Each cluster shows real member ads with full text.</span></div>
-    <h2>adintel: Deep Clustering & Outlier Term Analysis <span class="section-tag new">new</span></h2>
-
-    <h3>Outlier vs Non-Outlier Term Comparison</h3>
-    <p class="small">Full-data analysis: {deep_clustering.get('outlier_analysis',{}).get('n_outliers',0)} outlier ads vs {deep_clustering.get('outlier_analysis',{}).get('n_non_outliers',0)} non-outlier ads. Terms enriched >1.5x in outliers:</p>
-    <table>
-      <thead><tr><th>Term</th><th class="num">Outlier prevalence</th><th class="num">Non-outlier prevalence</th><th class="num">Enrichment ratio</th><th>Interpretation</th></tr></thead>
-      <tbody>{enriched_term_rows}</tbody>
-    </table>
-    <p class="small" style="margin-top:8px;"><b>Finding:</b> {len(deep_clustering.get('outlier_analysis',{}).get('enriched_terms',[]))} terms are significantly enriched in outliers. Outliers ARE term-different — they include geographic-specific terms (juliaca, puno, huancayo), structured-info patterns (situacion, informacion), and different verb constructions (da ayuda vs brindo ayuda).</p>
-
-    <h3>Deep Clustering Results (LSA + KMeans, k={deep_clustering.get('deep_clustering',{}).get('best_k',3)})</h3>
-    <p class="small">Method: TF-IDF → LSA(100d, explained variance={deep_clustering.get('deep_clustering',{}).get('explained_variance',0):.1%}) → KMeans. Silhouette: {deep_clustering.get('deep_clustering',{}).get('silhouette',0):.4f}. LSA improves cluster quality by capturing latent semantic structure that raw TF-IDF misses.</p>
-    <div id="deepClusterCards">
-      {deep_cluster_cards}
-    </div>
-
-    <h3>Cluster Membership Explorer</h3>
-    <p class="small">Click a cluster to see its representative ads with full text. Each card shows the ad title, platform, body preview, and why it's in this cluster.</p>
-    <div id="clusterExplorer" style="display:grid;gap:12px;">
-      <p class="small" style="color:var(--muted);">Select a cluster above to explore its members.</p>
-    </div>
-  </section>
-
-  <!-- ========== ADINTEL NEW SECTION: Authorship ========== -->
+  <!-- ========== ADINTEL NEW SECTION: Authorship ========== -->  <!-- ========== ADINTEL NEW SECTION: Authorship ========== -->
   <div class="story-transition v1-to-new">↓ Clustering groups similar ads; authorship analysis asks a different question: <b>did two ads come from the same creative source?</b> This uses stylometry, template signatures, and structural similarity — with strict privacy guardrails.</div>
   <section id="adintel-authorship" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">10</span><span class="step-text"><b>New: authorship verification.</b> Pairwise, closed-set, open-set, and creative-source clustering. Length-aware abstention for short ads. Never names a person — model similarity is never sufficient evidence for identity.</span></div>
@@ -931,51 +1220,41 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
     </div>
   </section>
 
-  <!-- ========== ADINTEL NEW SECTION: Outliers ========== -->
-  <div class="story-transition v1-to-new">↓ Authorship finds pairs; outlier analysis finds the <b>unusual individual ads</b> — creatively novel, technically rare, stylistically weird, or extraction/metadata errors that need human attention.</div>
+  <!-- ========== ADINTEL NEW SECTION: Outliers (Solarize) ========== -->
+  <div class="story-transition v1-to-new">\u2193 Authorship finds pairs; outlier analysis finds the <b>unusual individual ads</b> \u2014 and now honestly classifies them four ways, reports whether they are term-different from controls, and explicitly says when they are NOT.</div>
   <section id="adintel-outliers" style="margin-top:16px;border:2px solid var(--violet);">
-    <div class="story-step"><span class="step-num" style="background:var(--violet);">11</span><span class="step-text"><b>New: 11 outlier types.</b> Creative novelty, unusual technique combinations, style/visual outliers, performance over/under-performers, temporal anomalies, duplicates, extraction/metadata/model errors. Every report carries an alternative explanation.</span></div>
-    <h2>adintel: Outlier Analysis <span class="section-tag new">new</span></h2>
-    <p class="small">Sample n={outliers.get('n_sampled', 1000)} ads. Every report carries: comparison population, feature space, score, method, supporting features, alternative explanation, uncertainty, review status.</p>
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">11</span><span class="step-text"><b>Solarize outlier analysis.</b> 4-way classification (detector / density_noise / cluster_enriched / boundary), three-population term comparison with Wilson CI + Cohen's h + BH FDR + min-support flag, explicit "NOT meaningfully different" verdict when warranted.</span></div>
+    <h2>adintel: Outlier Analysis &amp; Term-Prevalence Comparison <span class="section-tag new">solarize</span></h2>
+    <p class="small">Sample n={outliers.get('n_sampled', 1000)} for historical detector outliers; full-data n={_sol_n_records:,} for density-noise, cluster-enriched, and boundary classification. Every report carries: comparison population, feature space, score, method, supporting features, alternative explanation, uncertainty, review status.</p>
 
-    <h3>Outlier Distribution</h3>
+    <h3>4-Way Outlier Classification (R9)</h3>
+    <p class="small">Each ad may belong to zero, one, or several outlier kinds. Kinds are not mutually exclusive \u2014 an ad can simultaneously be a detector outlier AND a boundary member.</p>
     <table>
-      <thead><tr><th>Outlier kind</th><th class="num">Reports</th><th class="num">% of sample</th><th>What it means</th></tr></thead>
-      <tbody>{outlier_rows}</tbody>
+      <thead><tr><th>Outlier kind</th><th class="num">N ads</th><th class="num">% of corpus</th><th>What it means</th></tr></thead>
+      <tbody>{_outlier_kind_rows}</tbody>
     </table>
 
-    <h3>Example Outlier Reports (with real ad text)</h3>
-    <div class="dossier-card" style="border-left:4px solid var(--blue);">
-      <p class="small"><b>Creative novelty</b> — <code>h_239b6907cfc835...</code></p>
-      <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Se brinda ayuda económica a damas que lo requieran con urgencia — Información clave Estatura 164 cm Color de pelo Negro Situación sentimental En una relación abierta..."</p>
-      <p class="small">This ad is semantically distant from the corpus centroid because it includes a structured "Información clave" section (height, hair color, relationship status) that most ads don't have. Score: 0.838, method: tfidf_cosine_distance, uncertainty: 0.4.</p>
-    </div>
-    <div class="dossier-card" style="border-left:4px solid var(--amber);">
-      <p class="small"><b>Style outlier</b> — <code>h_f434253642f4ad...</code></p>
-      <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Ayuda economica arequipa peru. Solo +18 — Hola. Soy profesional soltero y solvente con ganas de ayudar a señorita soltera y menor..."</p>
-      <p class="small">This ad's rhetorical-style vector deviates >2.5 SD from the mean because it uses unusually formal language ("profesional soltero y solvente") combined with direct age targeting ("Solo +18"). Score: 0.93, method: rhetorical_feature_z_score.</p>
-    </div>
-    <div class="dossier-card" style="border-left:4px solid var(--red);">
-      <p class="small"><b>Duplicate</b> — <code>h_55fbaa0f330622...</code></p>
-      <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Brindo servicio sexual a cambio de ayuda económica — Te doy servicio sexual a cambio de ayuda económica..."</p>
-      <p class="small">Exact-text SHA-256 duplicate. Certainty: 1.0, uncertainty: 0.0. This is the only outlier type with zero uncertainty — duplicates are definitionally certain.</p>
-    </div>
-    <div class="dossier-card" style="border-left:4px solid var(--muted);">
-      <p class="small"><b>Metadata error</b> — <code>h_00255b3c098e9c...</code></p>
-      <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Amiga venezolana que quiera apoyo económico — Hola pongo este anuncio a ver si una amiga venezolana que este pasando apuros económico..."</p>
-      <p class="small">This record has a metadata schema violation (inconsistent source_platform vs platform_family). The ad content is valid but the metadata needs fixing in the pipeline.</p>
+    <h3>Example Outlier Reports (real ad text, one per kind)</h3>
+    {_outlier_examples_html}
+
+    <h3>Term-Prevalence Comparison (R1\u2013R4)</h3>
+    <p class="small">For each comparison population, every term row reports: outlier_count / outlier_denominator, outlier prevalence %, control_count / control_denominator, control prevalence %, <b>Cohen's h effect size</b> (with conventional label), <b>95% Wilson-style CI</b> on the difference, <b>two-sided z-test p-value</b>, <b>Benjamini\u2013Hochberg FDR-adjusted q-value</b>, and <b>min-support flag</b> (\u22655 hits in both arms). Rows marked \u2605 are <b>meaningfully different</b>: q&lt;0.05, |h|\u22650.50, CI lower bound &gt; 0, meets min-support.</p>
+    {_term_comparison_tables}
+
+    <h3>Explicit Non-Difference Statement (R4)</h3>
+    <div class="disclaimer" style="background:#fef3c7;border:1px solid #fde68a;">
+      <p class="small" style="color:#451a03;"><b>When outliers are NOT meaningfully different, we say so.</b> The comparison <code>outlier_vs_all_non_outlier</code> above is the most-stringent test (full-corpus control arm). Its verdict is reported verbatim from the aggregate statistics \u2014 if it reads <code>NOT_MEANINGFULLY_DIFFERENT</code>, that means no term meets the q&lt;0.05 + |h|\u22650.50 + CI&gt;0 + min-support criteria. Outliers in this corpus differ structurally (geographic terms, structured-info sections) but not in their overall persuasion technique distribution. The <code>outlier_vs_same_cluster_non_outlier</code> comparison is more sensitive because it controls for cluster-level baseline.</p>
     </div>
 
-    <h3>Key Findings</h3>
-    <ul class="small">
-      <li><b>82% of outlier reports</b> are metadata errors — the pipeline should fix these, not treat them as ad-content anomalies.</li>
-      <li><b>50 creative-novelty outliers</b> represent ads that are semantically distinct — useful for identifying new ad patterns or corpus gaps.</li>
-      <li><b>3 duplicates</b> found by exact-text SHA-256 — certainty 1.0, no uncertainty.</li>
-      <li><b>0 extraction errors</b> in this sample — the rebuild pipeline is clean.</li>
-    </ul>
+    <h3>Historical Outlier Distribution (sample n={outliers.get('n_sampled', 1000)})</h3>
+    <p class="small" style="color:var(--muted);">For backward compatibility, the original 11-kind detector taxonomy is preserved below. All 11 kinds roll up to the <code>detector</code> bucket in the 4-way classification above.</p>
+    <table>
+      <thead><tr><th>Outlier kind (historical)</th><th class="num">Reports</th><th class="num">% of sample</th></tr></thead>
+      <tbody>{outlier_rows}</tbody>
+    </table>
   </section>
 
-  <!-- ========== ADINTEL NEW SECTION: Migration ========== -->
+  <!-- ========== ADINTEL NEW SECTION: Migration ========== -->  <!-- ========== ADINTEL NEW SECTION: Migration ========== -->
   <div class="story-transition v1-to-new">↓ Outliers surface problems; the migration shows how the <b>existing 5,717 annotations</b> project forward to the new v2 taxonomy without losing any v1 labels.</div>
   <section id="adintel-migration" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">12</span><span class="step-text"><b>New: v1→v2 migration.</b> All 5,717 annotations projected to v2 with 0 unmapped labels. v1 labels preserved as <code>v1_label</code>; v2 leaves projected to <code>v2_labels</code>.</span></div>
@@ -1042,6 +1321,7 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 <script type="application/json" id="report-data">{v1_inf_json}</script>
 <script type="application/json" id="model-report">{v1_model_json}</script>
 <script type="application/json" id="segment-report">{v1_segment_json}</script>
+<script type="application/json" id="solarize-data">{_solarize_json}</script>
 """ + """
 <script>
 // ============ V1 observatory logic (restored from original) ============
@@ -1438,6 +1718,161 @@ window.addEventListener('scroll', () => {{ requestAnimationFrame(updateActiveNav
 // Init
 initFilters(); renderObs(); renderDiagnostics(); renderExplainabilityAtlas(); renderTermNetwork(); renderCorpusMap(); renderFacetOverview(); renderExpertPoc();
 if(!applyHash()) renderList();
+
+// ============ Solarize: ad selector + cluster explorer ============
+(function solarizeInit() {{
+  const solarize = JSON.parse(document.getElementById('solarize-data').textContent || '{{}}');
+  if (!solarize || !solarize.per_ad_selector) return;
+
+  const perAd = solarize.per_ad_selector;
+  const outlierKindById = solarize.outlier_kind_by_record_id || {{}};
+  const clusters = solarize.clusters || [];
+  const selector = document.getElementById('adintel-ad-selector');
+  const clusterFilter = document.getElementById('adintel-cluster-filter');
+  const outlierFilter = document.getElementById('adintel-outlier-filter');
+  const resultsEl = document.getElementById('adintel-ad-results');
+  const detailEl = document.getElementById('adintel-ad-detail');
+  if (!selector || !resultsEl || !detailEl) return;
+
+  let activeRid = null;
+
+  function escapeHtml(s) {{
+    return String(s || '').replace(/[&<>"']/g, c => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}})[c]);
+  }}
+
+  function matchesFilters(ad) {{
+    if (clusterFilter && clusterFilter.value && String(ad.cluster_id) !== clusterFilter.value) return false;
+    if (outlierFilter && outlierFilter.value) {{
+      const kinds = ad.outlier_kinds || [];
+      if (outlierFilter.value === 'any') {{
+        if (kinds.length === 0) return false;
+      }} else {{
+        if (!kinds.includes(outlierFilter.value)) return false;
+      }}
+    }}
+    return true;
+  }}
+
+  function matchesQuery(ad, q) {{
+    if (!q) return true;
+    q = q.toLowerCase();
+    return (
+      (ad.record_id || '').toLowerCase().includes(q) ||
+      (ad.title || '').toLowerCase().includes(q) ||
+      (ad.platform || '').toLowerCase().includes(q) ||
+      (ad.body_preview || '').toLowerCase().includes(q)
+    );
+  }}
+
+  function renderResults() {{
+    const q = selector.value || '';
+    const filtered = perAd.filter(ad => matchesFilters(ad) && matchesQuery(ad, q)).slice(0, 50);
+    if (filtered.length === 0) {{
+      resultsEl.innerHTML = '<p class="small" style="padding:8px;color:var(--muted);">No ads match. Try a different record ID, title fragment, or platform.</p>';
+      return;
+    }}
+    resultsEl.innerHTML = filtered.map(ad => {{
+      const kinds = (ad.outlier_kinds || []).join(', ') || 'inlier';
+      const active = ad.record_id === activeRid ? ' active' : '';
+      return `<div class="ad-result-row${{active}}" data-rid="${{escapeHtml(ad.record_id)}}">
+        <b>${{escapeHtml((ad.title || 'Untitled').slice(0, 60))}}</b>
+        <span class="plat-tag" style="background:var(--soft);border-radius:3px;padding:0 4px;font-size:9px;color:var(--muted);">${{escapeHtml(ad.platform || '?')}}</span>
+        <code style="font-size:9px;color:var(--muted);">${{escapeHtml((ad.record_id || '').slice(0, 20))}}...</code>
+        <span style="color:var(--muted);font-size:10px;">cluster=${{ad.cluster_id}} | ${{kinds}}</span>
+      </div>`;
+    }}).join('');
+    resultsEl.querySelectorAll('.ad-result-row').forEach(row => {{
+      row.addEventListener('click', () => selectAd(row.dataset.rid));
+    }});
+  }}
+
+  function selectAd(rid) {{
+    activeRid = rid;
+    const ad = perAd.find(a => a.record_id === rid);
+    if (!ad) {{
+      detailEl.innerHTML = '<p class="small" style="color:var(--red);">Ad not found in the embedded top-N selector. The full per-ad table is available at <code>solarize_per_ad.jsonl</code> in this directory.</p>';
+      return;
+    }}
+    const kinds = ad.outlier_kinds || [];
+    const kindsStr = kinds.length ? kinds.join(', ') : 'none (inlier)';
+    const altStr = ad.alternative_cluster_id >= 0 ? `Cluster ${{ad.alternative_cluster_id}} (strength=${{ad.alternative_cluster_membership_strength}})` : 'N/A';
+    const neighbors = perAd
+      .filter(a => a.cluster_id === ad.cluster_id && a.record_id !== rid)
+      .sort((a, b) => Math.abs(a.silhouette - ad.silhouette) - Math.abs(b.silhouette - ad.silhouette))
+      .slice(0, 5);
+    const neighborsHtml = neighbors.map(n => `
+      <button class="neighbor-pick" data-rid="${{escapeHtml(n.record_id)}}" style="text-align:left;background:#fff;border:1px solid var(--line);border-radius:6px;padding:6px;cursor:pointer;font-size:10px;display:block;margin:3px 0;">
+        <b>${{escapeHtml((n.title || 'Untitled').slice(0, 50))}}</b>
+        <span style="color:var(--muted);">sil=${{n.silhouette}} | ${{(n.outlier_kinds || []).join(',') || 'inlier'}}</span>
+      </button>`).join('') || '<p class="small" style="color:var(--muted);">No same-cluster neighbors in embedded selector.</p>';
+    detailEl.innerHTML = `
+      <div class="ad-detail-card">
+        <h4>Ad Detail: ${{escapeHtml((ad.title || 'Untitled').slice(0, 80))}}</h4>
+        <div class="meta-row"><b>record_id</b><code>${{escapeHtml(ad.record_id)}}</code></div>
+        <div class="meta-row"><b>platform</b><span>${{escapeHtml(ad.platform || '?')}}</span></div>
+        <div class="meta-row"><b>cluster_id</b><span>Cluster ${{ad.cluster_id}} (membership strength = ${{ad.cluster_membership_strength}})</span></div>
+        <div class="meta-row"><b>distance_to_centroid</b><span>${{ad.distance_to_centroid}}</span></div>
+        <div class="meta-row"><b>silhouette</b><span>${{ad.silhouette}} ${{ad.silhouette < 0 ? '(boundary: closer to another cluster)' : '(well-assigned)'}}</span></div>
+        <div class="meta-row"><b>alternative_cluster</b><span>${{altStr}}</span></div>
+        <div class="meta-row"><b>outlier_kinds</b><span>${{kindsStr}}</span></div>
+        <div class="meta-row"><b>outlier_score</b><span>${{ad.outlier_score}}</span></div>
+        <div class="meta-row"><b>body_preview</b><span style="font-style:italic;background:var(--soft);padding:4px;border-radius:4px;display:block;">"${{escapeHtml((ad.body_preview || '').slice(0, 300))}}..."</span></div>
+        <h5 style="margin:10px 0 4px;font-size:11px;color:var(--muted);text-transform:uppercase;">Representative neighbors in same cluster</h5>
+        <div class="neighbor-list">${{neighborsHtml}}</div>
+        <h5 style="margin:10px 0 4px;font-size:11px;color:var(--muted);text-transform:uppercase;">Why this cluster assignment</h5>
+        <p class="small">Assigned to cluster ${{ad.cluster_id}} because its TF-IDF vector is closest to that cluster's centroid (distance = ${{ad.distance_to_centroid}}). Membership strength = ${{ad.cluster_membership_strength}} (softmax over inverse distance to top-2 centroids).</p>
+        <h5 style="margin:10px 0 4px;font-size:11px;color:var(--muted);text-transform:uppercase;">Evidence against the assignment</h5>
+        <p class="small">${{ad.silhouette < 0 ? 'Silhouette is negative \u2014 the ad is closer to another cluster (see alternative_cluster above). This is a boundary case.' : 'Silhouette is non-negative \u2014 assignment is consistent, though the overall corpus silhouette is low (clusters are weakly separated on this short-text corpus).'}}</p>
+        <h5 style="margin:10px 0 4px;font-size:11px;color:var(--muted);text-transform:uppercase;">Uncertainty &amp; data limitations</h5>
+        <p class="small">Cluster silhouette_mean for this corpus is ${{(solarize.clustering || {{}}).silhouette_mean || 'N/A'}} \u2014 close to zero, meaning cluster structure is weak. Outlier kinds are not mutually exclusive. The full per-ad table (${{perAd.length}} top-activity ads embedded; full ${{Object.keys(outlierKindById).length}} outlier-flagged ads at <code>solarize_per_ad.jsonl</code>) excludes the inliers with no outlier flag that fall in the bottom of the activity score.</p>
+      </div>`;
+    detailEl.querySelectorAll('.neighbor-pick').forEach(btn => {{
+      btn.addEventListener('click', () => selectAd(btn.dataset.rid));
+    }});
+    renderResults();
+    if (location.hash !== `#adintel-ad=${{rid}}`) {{
+      history.replaceState(null, '', `#adintel-ad=${{rid}}`);
+    }}
+  }}
+
+  window.solarizeSelectAd = selectAd;
+
+  selector.addEventListener('input', renderResults);
+  if (clusterFilter) clusterFilter.addEventListener('change', renderResults);
+  if (outlierFilter) outlierFilter.addEventListener('change', renderResults);
+
+  document.querySelectorAll('.cluster-example').forEach(el => {{
+    el.addEventListener('click', () => {{
+      const rid = el.dataset.recordId;
+      if (rid) {{
+        selector.value = rid.slice(0, 16);
+        renderResults();
+        selectAd(rid);
+        document.getElementById('ad-explorer-heading').scrollIntoView({{behavior:'smooth', block:'start'}});
+      }}
+    }});
+  }});
+
+  renderResults();
+
+  function applySolarizeHash() {{
+    const h = (location.hash || '').slice(1);
+    if (h.startsWith('adintel-ad=')) {{
+      const rid = decodeURIComponent(h.slice('adintel-ad='.length));
+      const found = perAd.find(a => a.record_id === rid);
+      if (found) {{
+        selector.value = rid.slice(0, 16);
+        renderResults();
+        selectAd(rid);
+        document.getElementById('ad-explorer-heading').scrollIntoView({{behavior:'smooth', block:'start'}});
+        return true;
+      }}
+    }}
+    return false;
+  }}
+  setTimeout(applySolarizeHash, 100);
+  window.addEventListener('hashchange', () => setTimeout(applySolarizeHash, 50));
+}})();
 </script>
 
 </body>
