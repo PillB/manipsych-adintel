@@ -94,6 +94,7 @@ def render() -> str:
 
     # Build technique results rows from FULL DATA
     tech_rows = ""
+    tech_examples_html = ""
     if full_data and full_data.get("techniques", {}).get("results"):
         techs = sorted(full_data["techniques"]["results"], key=lambda x: -x["count"])
         for t in techs:
@@ -109,6 +110,20 @@ def render() -> str:
               <td class="dim">{v2}</td>
               <td>{ex_title} <span class="small">({ex_rid}...)</span></td>
             </tr>"""
+        # Build example cards for top 5 techniques with full ad text
+        for t in techs[:5]:
+            ex = t.get("examples", [{}])[0] if t.get("examples") else {}
+            ex_title = ex.get("title", "N/A")
+            ex_rid = ex.get("record_id", "N/A")
+            ex_platform = ex.get("platform", "N/A")
+            tech_examples_html += f"""
+            <div class="dossier-card" style="border-left:4px solid var(--violet);">
+              <p class="small"><b>{t['label']}</b> (count={t['count']}, prevalence={t['prevalence']*100:.1f}%)</p>
+              <p class="small"><b>Example ad:</b> {ex_title}</p>
+              <p class="small"><b>Record:</b> <code>{ex_rid[:30]}...</code> | <b>Platform:</b> {ex_platform}</p>
+              <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"{ex_title}"</p>
+              <p class="small"><b>v2 mapping:</b> {', '.join(t.get('v2_leaves', []))}</p>
+            </div>"""
 
     cluster_rows = ""
     if clustering:
@@ -741,6 +756,10 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <tbody>{tech_rows}</tbody>
     </table>
 
+    <h3>Technique Example Explorer (top 5 by prevalence)</h3>
+    <p class="small">Real advertisement examples for each technique, with record ID, platform, and v2 taxonomy mapping.</p>
+    {tech_examples_html}
+
     <h3>Example: Highest-Scoring Ad</h3>
     <div class="dossier-card">
       <p class="small"><b>Record:</b> {profile.get('first_profile',{}).get('record_id','N/A')[:40]}...</p>
@@ -816,12 +835,15 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <p class="small"><b>Calibration</b>: Platt scaling fitted on 400 pairs (200 positive, 200 negative). Brier score = 0.0034, ECE = 0.0525.</p>
     </div>
 
-    <h3>Example: Known Same-Source Pair</h3>
-    <div class="dossier-card">
-      <p class="small"><b>Pair:</b> Two ads from the same campaign group (accepted similarity link)</p>
-      <p class="small"><b>Verdict:</b> same_source (confidence: 0.62)</p>
-      <p class="small"><b>Stylometry:</b> 0.94 (very high — near-identical character n-gram profile)</p>
-      <p class="small"><b>Template:</b> 0.83 (high — shares structural template after digit/URL normalization)</p>
+    <h3>Example: Known Same-Source Pair (with real ad text)</h3>
+    <div class="dossier-card" style="border-left:4px solid var(--green);">
+      <p class="small"><b>Left ad:</b> <code>h_000c73d78bf8e1a...</code></p>
+      <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Ofrezco ayuda económica a señorita sola, linda chi — Ayuda económica a señoritas de forma permanente de 18 años hasta 20 años, que estén atravesando malos momentos económicos."</p>
+      <p class="small"><b>Right ad:</b> <code>h_880fb361c484a33e...</code></p>
+      <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Ofrezco ayuda económica a señorita sola gracias — Ayuda económica a señoritas de forma permanente de 18 años hasta 19 años, que estén atravesando malos momentos económicos."</p>
+      <p class="small"><b>Verdict:</b> same_source (confidence: 0.866)</p>
+      <p class="small"><b>Stylometry:</b> 0.935 (near-identical character n-gram profile)</p>
+      <p class="small"><b>Why same-source:</b> Both ads use identical phrasing ("ayuda económica a señoritas de forma permanente"), same age targeting (18-20), same structure. The only differences are "18 hasta 20" vs "18 hasta 19" and "linda chi" vs "gracias" — consistent with minor template edits by the same author.</p>
       <p class="small"><b>Robustness:</b> Survived brand-name removal, slogan removal, disclaimer removal, and template removal — verdict did not flip.</p>
       <p class="small"><b>Privacy:</b> <code>person_named = False</code>. The system identifies same creative SOURCE, never a person.</p>
     </div>
@@ -844,18 +866,26 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <tbody>{outlier_rows}</tbody>
     </table>
 
-    <h3>Example Outlier Reports</h3>
-    <div class="dossier-card">
-      <p class="small"><b>Creative novelty (50 reports):</b> Ads whose semantic content is far from the corpus centroid (TF-IDF cosine distance > 95th percentile). These cover topics the corpus rarely covers. Each carries <code>alternative_explanation: "Ad may be novel because it covers a topic the corpus rarely covers"</code> and <code>uncertainty: 0.4</code>.</p>
+    <h3>Example Outlier Reports (with real ad text)</h3>
+    <div class="dossier-card" style="border-left:4px solid var(--blue);">
+      <p class="small"><b>Creative novelty</b> — <code>h_239b6907cfc835...</code></p>
+      <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Se brinda ayuda económica a damas que lo requieran con urgencia — Información clave Estatura 164 cm Color de pelo Negro Situación sentimental En una relación abierta..."</p>
+      <p class="small">This ad is semantically distant from the corpus centroid because it includes a structured "Información clave" section (height, hair color, relationship status) that most ads don't have. Score: 0.838, method: tfidf_cosine_distance, uncertainty: 0.4.</p>
     </div>
-    <div class="dossier-card">
-      <p class="small"><b>Metadata errors (630 reports):</b> Records with missing required fields, inconsistent platform_family vs source_platform, or other schema violations. These are pipeline issues, not ad-content issues. Each carries <code>alternative_explanation</code> explaining the specific violation.</p>
+    <div class="dossier-card" style="border-left:4px solid var(--amber);">
+      <p class="small"><b>Style outlier</b> — <code>h_f434253642f4ad...</code></p>
+      <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Ayuda economica arequipa peru. Solo +18 — Hola. Soy profesional soltero y solvente con ganas de ayudar a señorita soltera y menor..."</p>
+      <p class="small">This ad's rhetorical-style vector deviates >2.5 SD from the mean because it uses unusually formal language ("profesional soltero y solvente") combined with direct age targeting ("Solo +18"). Score: 0.93, method: rhetorical_feature_z_score.</p>
     </div>
-    <div class="dossier-card">
-      <p class="small"><b>Style outliers (29 reports):</b> Ads whose rhetorical-style feature vector (function-word frequencies, punctuation ratios, sentence-length profile) deviates > 2.5 standard deviations from the corpus mean. These may indicate a different author, format, or platform norm.</p>
+    <div class="dossier-card" style="border-left:4px solid var(--red);">
+      <p class="small"><b>Duplicate</b> — <code>h_55fbaa0f330622...</code></p>
+      <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Brindo servicio sexual a cambio de ayuda económica — Te doy servicio sexual a cambio de ayuda económica..."</p>
+      <p class="small">Exact-text SHA-256 duplicate. Certainty: 1.0, uncertainty: 0.0. This is the only outlier type with zero uncertainty — duplicates are definitionally certain.</p>
     </div>
-    <div class="dossier-card">
-      <p class="small"><b>Performance overperformers (28 reports):</b> Ads with quality_score > 2 SD above mean. <strong>WARNING:</strong> quality_score is a rebuild-pipeline proxy, NOT a real performance metric. Treat as descriptive only.</p>
+    <div class="dossier-card" style="border-left:4px solid var(--muted);">
+      <p class="small"><b>Metadata error</b> — <code>h_00255b3c098e9c...</code></p>
+      <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Amiga venezolana que quiera apoyo económico — Hola pongo este anuncio a ver si una amiga venezolana que este pasando apuros económico..."</p>
+      <p class="small">This record has a metadata schema violation (inconsistent source_platform vs platform_family). The ad content is valid but the metadata needs fixing in the pipeline.</p>
     </div>
 
     <h3>Key Findings</h3>

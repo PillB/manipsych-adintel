@@ -1,0 +1,153 @@
+{
+  "audited_at": "2026-08-05T21:35:03Z",
+  "url": "http://localhost:8765/reports/adintel/adintel_dashboard.html",
+  "js_errors": [],
+  "n_js_errors": 0,
+  "sections": [
+    {
+      "section": "metrics",
+      "name": "KPI Metrics",
+      "issues": [],
+      "has_real_ads": false,
+      "has_examples": true,
+      "has_drilldown": false
+    },
+    {
+      "section": "pipeline",
+      "name": "Pipeline Diagram",
+      "issues": [],
+      "has_real_ads": false,
+      "has_examples": false,
+      "has_drilldown": false
+    },
+    {
+      "section": "diagnostics",
+      "name": "Diagnostics",
+      "issues": [],
+      "has_real_ads": false,
+      "has_examples": false,
+      "has_drilldown": false
+    },
+    {
+      "section": "explainability-atlas",
+      "name": "Explainability Atlas",
+      "issues": [],
+      "has_real_ads": true,
+      "has_examples": false,
+      "has_drilldown": true
+    },
+    {
+      "section": "term-network",
+      "name": "Term Network",
+      "issues": [],
+      "has_real_ads": false,
+      "has_examples": true,
+      "has_drilldown": true,
+      "network_nodes": 100
+    },
+    {
+      "section": "corpus-map",
+      "name": "Corpus Map",
+      "issues": [],
+      "has_real_ads": true,
+      "has_examples": true,
+      "has_drilldown": true,
+      "map_points": 500
+    },
+    {
+      "section": "explorer",
+      "name": "Top 25 Explorer",
+      "issues": [],
+      "has_real_ads": true,
+      "has_examples": true,
+      "has_drilldown": true,
+      "rank_count": 25,
+      "annotated_text_length": 169
+    },
+    {
+      "section": "observability",
+      "name": "Observability",
+      "issues": [],
+      "has_real_ads": false,
+      "has_examples": true,
+      "has_drilldown": false
+    },
+    {
+      "section": "adintel-taxonomy",
+      "name": "Taxonomy v2",
+      "issues": [],
+      "has_real_ads": false,
+      "has_examples": false,
+      "has_drilldown": false
+    },
+    {
+      "section": "adintel-profile",
+      "name": "17-dim Profile + Techniques",
+      "issues": [],
+      "has_real_ads": true,
+      "has_examples": true,
+      "has_drilldown": false,
+      "technique_rows": 20
+    },
+    {
+      "section": "adintel-clustering",
+      "name": "7-Space Clustering",
+      "issues": [],
+      "has_real_ads": true,
+      "has_examples": true,
+      "has_drilldown": false
+    },
+    {
+      "section": "adintel-authorship",
+      "name": "Authorship",
+      "issues": [],
+      "has_real_ads": true,
+      "has_examples": true,
+      "has_drilldown": false
+    },
+    {
+      "section": "adintel-outliers",
+      "name": "Outliers",
+      "issues": [],
+      "has_real_ads": true,
+      "has_examples": true,
+      "has_drilldown": false
+    },
+    {
+      "section": "adintel-checkpoints",
+      "name": "Checkpoints",
+      "issues": [],
+      "has_real_ads": false,
+      "has_examples": true,
+      "has_drilldown": false
+    },
+    {
+      "section": "explorer_interaction",
+      "detail_visible": true,
+      "annotated_text": 169,
+      "has_spans": true,
+      "has_waterfall": true,
+      "has_adintel_profile": true,
+      "ledger_rows": 11,
+      "has_real_ad_text": false
+    },
+    {
+      "section": "interactive_analyzer",
+      "tags": 8,
+      "bars": 18,
+      "annotated_has_spans": true,
+      "ledger_has_rows": true,
+      "has_gan_button": true,
+      "has_generate_button": true,
+      "has_export_button": true,
+      "gan_steps": 6
+    }
+  ],
+  "summary": {
+    "total_sections": 14,
+    "sections_with_real_ads": 7,
+    "sections_with_examples": 10,
+    "sections_with_drilldown": 4,
+    "total_issues": 0
+  }
+}
