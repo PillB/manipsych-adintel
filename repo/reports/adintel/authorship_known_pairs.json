@@ -3,7 +3,7 @@
   "n_same_source_predicted": 50,
   "n_abstained": 0,
   "accuracy_against_accepted_links": 1.0,
-  "elapsed_ms": 948.3,
+  "elapsed_ms": 929.6,
   "results_sample": [
     {
       "left_id": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",

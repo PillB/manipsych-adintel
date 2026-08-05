@@ -371,43 +371,93 @@ def explain_clusters(
     labels: np.ndarray,
     records: list[dict],
     texts: list[str],
-    top_k_words: int = 5,
+    top_k_words: int = 8,
+    feature_names: list[str] | None = None,
+    centroids: np.ndarray | None = None,
 ) -> list[dict]:
-    """For each cluster, return the top-K distinguishing words and the most
-    central member (representative) and the most ambiguous member (boundary)."""
+    """For each cluster, return DISTINGUISHING terms (high in this cluster, low in others)
+    plus representative/boundary members, platform mix, and sample titles.
+
+    Key improvement: instead of just top-frequency words (which are the same
+    across all clusters — 'ayuda', 'economica', 'de'), we compute the
+    centroid difference: terms where this cluster's centroid is much higher
+    than the average of all other clusters. This shows what makes each
+    cluster UNIQUE.
+    """
     if hasattr(X, "toarray"):
         X_arr = X.toarray()
     else:
         X_arr = np.asarray(X)
     explanations: list[dict] = []
     n_clusters = len(set(labels.tolist()))
-    # Compute centroid for each cluster
+
+    # Compute centroids if not provided
+    if centroids is None:
+        centroids = np.zeros((n_clusters, X_arr.shape[1]))
+        for c in range(n_clusters):
+            members = [i for i, l in enumerate(labels) if l == c]
+            if members:
+                centroids[c] = X_arr[members].mean(axis=0)
+
     for c in range(n_clusters):
         members = [i for i, l in enumerate(labels) if l == c]
         if not members:
             continue
-        centroid = X_arr[members].mean(axis=0)
+        centroid = centroids[c]
+
         # Representative = closest to centroid
         dists = np.linalg.norm(X_arr[members] - centroid, axis=1)
         rep_idx = members[int(np.argmin(dists))]
         # Boundary = farthest from centroid
         bnd_idx = members[int(np.argmax(dists))]
-        # Top words by frequency in cluster vs corpus
-        cluster_words: dict[str, int] = {}
+
+        # DISTINGUISHING terms: high in this cluster, low in others
+        other_mean = np.delete(centroids, c, axis=0).mean(axis=0) if n_clusters > 1 else np.zeros_like(centroid)
+        diff = centroid - other_mean
+
+        if feature_names is not None and len(feature_names) == len(centroid):
+            # Use TF-IDF feature names for distinguishing terms
+            top_idx = np.argsort(diff)[-top_k_words:][::-1]
+            dist_terms = [
+                {"term": feature_names[i], "weight": round(float(centroid[i]), 4), "delta": round(float(diff[i]), 4)}
+                for i in top_idx if diff[i] > 0.001
+            ]
+        else:
+            # Fallback: frequency-based (less informative)
+            cluster_words: dict[str, int] = {}
+            for i in members:
+                for w in str(texts[i]).lower().split():
+                    w = w.strip(".,;:!?¡¿\"'()[]")
+                    if len(w) > 3:
+                        cluster_words[w] = cluster_words.get(w, 0) + 1
+            dist_terms = [{"term": w, "count": cnt} for w, cnt in sorted(cluster_words.items(), key=lambda x: -x[1])[:top_k_words]]
+
+        # Platform distribution
+        platforms: dict[str, int] = {}
         for i in members:
-            for w in str(texts[i]).lower().split():
-                w = w.strip(".,;:!?¡¿\"'()[]")
-                if len(w) > 3:
-                    cluster_words[w] = cluster_words.get(w, 0) + 1
-        top_words = sorted(cluster_words.items(), key=lambda x: -x[1])[:top_k_words]
+            meta = records[i].get("metadata", {}) if isinstance(records[i], dict) else {}
+            plat = str(meta.get("platform_family", records[i].get("source_platform", "unknown")))
+            platforms[plat] = platforms.get(plat, 0) + 1
+        platform_dist = sorted(platforms.items(), key=lambda x: -x[1])[:3]
+
+        # Sample titles
+        sample_titles = []
+        for i in members[:3]:
+            title = records[i].get("title", "")[:80] if isinstance(records[i], dict) else ""
+            sample_titles.append(title)
+
         rec_id = records[rep_idx].get("record_id", str(rep_idx)) if isinstance(records[rep_idx], dict) else str(rep_idx)
         bnd_id = records[bnd_idx].get("record_id", str(bnd_idx)) if isinstance(records[bnd_idx], dict) else str(bnd_idx)
+
         explanations.append({
             "cluster_id": int(c),
             "n_members": len(members),
             "representative_id": rec_id,
             "boundary_id": bnd_id,
-            "top_words": [w for w, _ in top_words],
+            "distinguishing_terms": dist_terms,
+            "top_words": [t["term"] if isinstance(t, dict) else t for t in dist_terms[:5]],
+            "platform_distribution": [{"platform": p, "count": n} for p, n in platform_dist],
+            "sample_titles": sample_titles,
         })
     return explanations
 
@@ -422,14 +472,26 @@ def cluster_space(
     X: np.ndarray,
     records: list[dict],
     texts: list[str],
-    k: int = 6,
+    k: int = 5,
     random_state: int = 42,
     compute_stability: bool = True,
+    feature_names: list[str] | None = None,
 ) -> tuple[list[ClusterAssignment], ClusterReport]:
-    """Cluster one space and return assignments + report."""
+    """Cluster one space and return assignments + report.
+    Uses k=5 by default (reduced from 6 to avoid near-duplicate clusters).
+    Passes feature_names to explain_clusters for distinguishing-term analysis."""
     labels = _kmeans(X, k, random_state=random_state)
     n_clusters = int(len(set(labels.tolist())))
-    n_noise = int(np.sum(labels == -1))  # always 0 for kmeans but kept for HDBSCAN parity
+    n_noise = int(np.sum(labels == -1))
+
+    # Compute centroids for distinguishing-term analysis
+    X_arr = X.toarray() if hasattr(X, "toarray") else np.asarray(X)
+    centroids = np.zeros((n_clusters, X_arr.shape[1]))
+    for c in range(n_clusters):
+        members = [i for i, l in enumerate(labels) if l == c]
+        if members:
+            centroids[c] = X_arr[members].mean(axis=0)
+
     if compute_stability:
         ari, pc = evaluate_stability(X, k, random_state=random_state)
         sens = evaluate_parameter_sensitivity(X, random_state=random_state)
@@ -439,7 +501,7 @@ def cluster_space(
     topic_leak = evaluate_leakage(records, labels, field="platform_family")
     reps: list[str] = []
     bounds: list[str] = []
-    explanations = explain_clusters(X, labels, records, texts)
+    explanations = explain_clusters(X, labels, records, texts, feature_names=feature_names, centroids=centroids)
     for e in explanations:
         reps.append(e["representative_id"])
         bounds.append(e["boundary_id"])
@@ -505,28 +567,38 @@ def cluster_all_spaces(
     records: list[dict],
     texts: list[str],
     profiles: list[dict] | None = None,
-    k: int = 6,
+    k: int = 5,
     compute_stability: bool = True,
 ) -> dict[str, tuple[list[ClusterAssignment], ClusterReport]]:
     """Run clustering in all 7 spaces and return assignments + reports.
 
-    Spaces: persuasive, semantic, rhetorical, visual, multimodal, authorial,
-    performance. If `profiles` is None, persuasive is skipped (returned as
-    an empty report)."""
+    Uses k=5 by default (reduced from 6 to avoid near-duplicate clusters).
+    For semantic space, passes TF-IDF feature names to enable distinguishing-term analysis.
+    """
     results: dict[str, tuple[list[ClusterAssignment], ClusterReport]] = {}
     if profiles is not None and len(profiles) == len(records):
         X_pers = build_persuasive_features(profiles)
-        results["persuasive"] = cluster_space("persuasive", X_pers, records, texts, k=k, compute_stability=compute_stability)
-    X_sem, _ = build_semantic_features(texts)
-    results["semantic"] = cluster_space("semantic", X_sem, records, texts, k=k, compute_stability=compute_stability)
+        pers_dims = [
+            "urgency","scarcity","emotional_intensity","directiveness","certainty",
+            "specificity","benefit_density","evidence_density","social_proof",
+            "objection_handling","risk_reversal","claim_extremity","readability",
+            "offer_clarity","action_clarity","trust_risk","manipulation_risk",
+        ]
+        results["persuasive"] = cluster_space("persuasive", X_pers, records, texts, k=k, compute_stability=compute_stability, feature_names=pers_dims)
+    X_sem, sem_vec = build_semantic_features(texts)
+    sem_features = sem_vec.get_feature_names_out().tolist() if hasattr(sem_vec, 'get_feature_names_out') else None
+    results["semantic"] = cluster_space("semantic", X_sem, records, texts, k=k, compute_stability=compute_stability, feature_names=sem_features)
     X_rh = build_rhetorical_features(texts)
-    results["rhetorical"] = cluster_space("rhetorical", X_rh, records, texts, k=k, compute_stability=compute_stability)
+    rh_features = [f"fw_{i}" for i in range(X_rh.shape[1])] if X_rh.ndim > 1 else None
+    results["rhetorical"] = cluster_space("rhetorical", X_rh, records, texts, k=k, compute_stability=compute_stability, feature_names=rh_features)
     X_vis = build_visual_features(records)
     results["visual"] = cluster_space("visual", X_vis, records, texts, k=k, compute_stability=compute_stability)
     X_mm = build_multimodal_features(texts, records)
     results["multimodal"] = cluster_space("multimodal", X_mm, records, texts, k=k, compute_stability=compute_stability)
     X_au = build_authorial_features(texts)
-    results["authorial"] = cluster_space("authorial", X_au, records, texts, k=k, compute_stability=compute_stability)
+    au_features = [f"char_ngram_{i}" for i in range(min(50, X_au.shape[1]))] if hasattr(X_au, 'shape') else None
+    results["authorial"] = cluster_space("authorial", X_au, records, texts, k=k, compute_stability=compute_stability, feature_names=au_features)
     X_pf = build_performance_features(records)
-    results["performance"] = cluster_space("performance", X_pf, records, texts, k=k, compute_stability=compute_stability)
+    pf_features = ["quality_score","paid","featured","engagement"]
+    results["performance"] = cluster_space("performance", X_pf, records, texts, k=k, compute_stability=compute_stability, feature_names=pf_features)
     return results
