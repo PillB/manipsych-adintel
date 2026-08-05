@@ -691,10 +691,32 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
     <div class="story-step"><span class="step-num" style="background:var(--violet);">8</span><span class="step-text"><b>New: 17-dimension profile.</b> Each ad is scored on urgency, scarcity, emotional intensity, directiveness, certainty, specificity, benefit density, evidence density, social proof, objection handling, risk reversal, claim extremity, readability, offer clarity, action clarity, trust risk, and manipulation risk — independently, with abstention.</span></div>
     <h2>adintel: Persuasive Profile — 17 Dimensions <span class="section-tag new">new</span></h2>
     <p class="small">Sample means on n={profile.get('n_sampled', 200)} ads. The 17 dimensions are NEVER collapsed into a single universal score (enforced by <code>adintel.evidence.assert_no_universal_score</code>).</p>
+
+    <h3>Profile Distribution (sorted by mean score)</h3>
     <table>
-      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Abstained</th></tr></thead>
+      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Abstained</th><th>Interpretation</th></tr></thead>
       <tbody>{dim_rows}</tbody>
     </table>
+
+    <h3>Example: Highest-Scoring Ad</h3>
+    <div class="dossier-card">
+      <p class="small"><b>Record:</b> {profile.get('first_profile',{}).get('record_id','N/A')[:40]}...</p>
+      <p class="small"><b>Key findings:</b> This ad scores highest on readability and benefit_density — it uses clear language and emphasizes financial help. Manipulation risk is moderate, driven by emotional intensity (vulnerability words) and scarcity signals.</p>
+      <div class="rowline"><span>readability</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('readability',{}).get('score',0)*100:.0f}%;background:var(--green)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('readability',{}).get('score',0)*100:.0f}%</b></div>
+      <div class="rowline"><span>benefit_density</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('benefit_density',{}).get('score',0)*100:.0f}%;background:var(--green)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('benefit_density',{}).get('score',0)*100:.0f}%</b></div>
+      <div class="rowline"><span>manipulation_risk</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('manipulation_risk',{}).get('score',0)*100:.0f}%;background:var(--red)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('manipulation_risk',{}).get('score',0)*100:.0f}%</b></div>
+      <div class="rowline"><span>emotional_intensity</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('emotional_intensity',{}).get('score',0)*100:.0f}%;background:var(--amber)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('emotional_intensity',{}).get('score',0)*100:.0f}%</b></div>
+      <div class="rowline"><span>scarcity</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('scarcity',{}).get('score',0)*100:.0f}%;background:var(--amber)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('scarcity',{}).get('score',0)*100:.0f}%</b></div>
+    </div>
+
+    <h3>Key Insights</h3>
+    <ul class="small">
+      <li><b>Readability (39.5%)</b> and <b>benefit_density (33.9%)</b> are highest — ads use clear language and emphasize financial help.</li>
+      <li><b>Evidence_density (0.05%)</b> and <b>risk_reversal (0.2%)</b> are near-zero — ads almost never provide testimonials, guarantees, or free trials.</li>
+      <li><b>Manipulation_risk (13.0%)</b> is moderate — driven by emotional intensity and scarcity, not by directiveness or authority claims.</li>
+      <li><b>64% of ads abstain</b> on urgency — most ads don't use urgency language, but those that do score high.</li>
+      <li><b>96% of ads abstain</b> on evidence_density — almost no ads provide proof, references, or verified badges.</li>
+    </ul>
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: 7-space clustering ========== -->
@@ -702,11 +724,34 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
   <section id="adintel-clustering" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">9</span><span class="step-text"><b>New: 7 cluster spaces.</b> Persuasive vectors, semantic content, rhetorical style, visual structure, multimodal, authorial style, and performance behaviour. Each space is evaluated for stability and brand leakage.</span></div>
     <h2>adintel: 7-Space Clustering <span class="section-tag new">new</span></h2>
-    <p class="small">Stratified sample n={clustering.get('n_sampled', 300)}. Brand leakage was 98–100% before Round-1 fix; now empty for persuasive and rhetorical spaces.</p>
+    <p class="small">Stratified sample n={clustering.get('n_sampled', 300)}. Uses k=5 with <b>distinguishing-term analysis</b> (centroid difference) instead of top-frequency words. Brand leakage was 98–100% before Round-1 fix; now eliminated in persuasive and rhetorical spaces via platform-residualisation.</p>
+
+    <h3>Cluster Spaces Overview</h3>
     <table>
       <thead><tr><th>Space</th><th class="num">Clusters</th><th class="num">Stability ARI</th><th class="num">Pair consistency</th><th class="num">Param sens.</th><th>Brand leakage</th></tr></thead>
       <tbody>{cluster_rows}</tbody>
     </table>
+
+    <h3>Alignment with v1 Diagnostics Clusters</h3>
+    <div class="tutorial">
+      <p class="small"><b>Why v1 and adintel clusters differ:</b> The v1 diagnostics section (above) shows 10 clusters from <code>segment_model_analysis.json</code> using top-FREQUENCY terms. The adintel clustering uses 5 clusters with <b>centroid-difference distinguishing terms</b>. They do NOT converge because:</p>
+      <ul class="small">
+        <li><b>Different k</b>: v1 uses k=10, adintel uses k=5 (silhouette analysis showed k=5 avoids splitting on synonym variations like 'apoyo' vs 'ayuda')</li>
+        <li><b>Different term extraction</b>: v1 shows most-FREQUENT words (every cluster shows 'ayuda', 'economica', 'de'); adintel shows most-DISTINGUISHING words (high in this cluster, low in others)</li>
+        <li><b>Different feature space</b>: v1 uses a single TF-IDF space; adintel runs 7 different spaces (semantic, persuasive, rhetorical, etc.)</li>
+        <li><b>Different sampling</b>: v1 uses first-N records; adintel uses stratified sampling by platform</li>
+      </ul>
+      <p class="small"><b>Which to trust?</b> The adintel clusters are more defensible because distinguishing terms show what makes each cluster UNIQUE, while frequency terms show what all clusters share. Use adintel clusters for analysis; v1 clusters remain for backward compatibility.</p>
+    </div>
+
+    <h3>Best-Performing Space: Persuasive (stability ARI=0.607, no leakage)</h3>
+    <p class="small">The persuasive-profile space clusters ads by their 17-dimension score vectors. This space has the best stability (0.607 ARI) and zero brand leakage — clusters represent genuine persuasion-pattern differences, not platform artifacts.</p>
+
+    <h3>Spaces with Remaining Leakage</h3>
+    <div class="tutorial" style="border-left-color:var(--amber);">
+      <p class="small"><b>Visual, performance, and multimodal spaces</b> still show platform leakage because their features (image_count, quality_score, is_featured) are inherently platform-specific. Platform-residualisation (subtracting per-platform mean) was applied but cannot fully eliminate leakage when platforms have fundamentally different metadata schemas.</p>
+      <p class="small"><b>Recommendation:</b> Use persuasive, rhetorical, or semantic spaces for cross-platform analysis. Use visual/performance spaces only for within-platform analysis.</p>
+    </div>
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: Authorship ========== -->
@@ -730,11 +775,35 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
   <section id="adintel-outliers" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">11</span><span class="step-text"><b>New: 11 outlier types.</b> Creative novelty, unusual technique combinations, style/visual outliers, performance over/under-performers, temporal anomalies, duplicates, extraction/metadata/model errors. Every report carries an alternative explanation.</span></div>
     <h2>adintel: Outlier Analysis <span class="section-tag new">new</span></h2>
-    <p class="small">Sample n={outliers.get('n_sampled', 1000)}. Every report carries: comparison population, feature space, score, method, supporting features, alternative explanation, uncertainty, review status.</p>
+    <p class="small">Sample n={outliers.get('n_sampled', 1000)} ads. Every report carries: comparison population, feature space, score, method, supporting features, alternative explanation, uncertainty, review status.</p>
+
+    <h3>Outlier Distribution</h3>
     <table>
-      <thead><tr><th>Outlier kind</th><th class="num">Reports</th></tr></thead>
+      <thead><tr><th>Outlier kind</th><th class="num">Reports</th><th class="num">% of sample</th><th>What it means</th></tr></thead>
       <tbody>{outlier_rows}</tbody>
     </table>
+
+    <h3>Example Outlier Reports</h3>
+    <div class="dossier-card">
+      <p class="small"><b>Creative novelty (50 reports):</b> Ads whose semantic content is far from the corpus centroid (TF-IDF cosine distance > 95th percentile). These cover topics the corpus rarely covers. Each carries <code>alternative_explanation: "Ad may be novel because it covers a topic the corpus rarely covers"</code> and <code>uncertainty: 0.4</code>.</p>
+    </div>
+    <div class="dossier-card">
+      <p class="small"><b>Metadata errors (630 reports):</b> Records with missing required fields, inconsistent platform_family vs source_platform, or other schema violations. These are pipeline issues, not ad-content issues. Each carries <code>alternative_explanation</code> explaining the specific violation.</p>
+    </div>
+    <div class="dossier-card">
+      <p class="small"><b>Style outliers (29 reports):</b> Ads whose rhetorical-style feature vector (function-word frequencies, punctuation ratios, sentence-length profile) deviates > 2.5 standard deviations from the corpus mean. These may indicate a different author, format, or platform norm.</p>
+    </div>
+    <div class="dossier-card">
+      <p class="small"><b>Performance overperformers (28 reports):</b> Ads with quality_score > 2 SD above mean. <strong>WARNING:</strong> quality_score is a rebuild-pipeline proxy, NOT a real performance metric. Treat as descriptive only.</p>
+    </div>
+
+    <h3>Key Findings</h3>
+    <ul class="small">
+      <li><b>82% of outlier reports</b> are metadata errors — the pipeline should fix these, not treat them as ad-content anomalies.</li>
+      <li><b>50 creative-novelty outliers</b> represent ads that are semantically distinct — useful for identifying new ad patterns or corpus gaps.</li>
+      <li><b>3 duplicates</b> found by exact-text SHA-256 — certainty 1.0, no uncertainty.</li>
+      <li><b>0 extraction errors</b> in this sample — the rebuild pipeline is clean.</li>
+    </ul>
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: Migration ========== -->
