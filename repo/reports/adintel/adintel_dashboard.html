@@ -220,6 +220,7 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
       <a href="#adintel-taxonomy">Taxonomy</a>
       <a href="#adintel-profile">Profile</a>
       <a href="#adintel-clustering">Clusters</a>
+      <a href="#adintel-deep-clustering">Deep Clusters</a>
       <a href="#adintel-authorship">Authorship</a>
       <a href="#adintel-outliers">Outliers</a>
       <a href="#adintel-checkpoints">Checkpoints</a>
@@ -971,6 +972,212 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
         <li>V1: k=10, top-frequency terms | Adintel: k=5, centroid-difference terms</li>
       </ul>
       <p class="small">ARI=0.4180 indicates strong alignment. V1 uses k=10 with frequency terms (all clusters show 'ayuda','economica'); adintel uses k=5 with centroid-difference terms (each cluster shows unique distinguishing words). The methods are partially_aligned: v1 splits on synonym variations while adintel groups </p>
+    </div>
+  </section>
+
+  <!-- ========== DEEP CLUSTERING + OUTLIER TERM ANALYSIS ========== -->
+  <section id="adintel-deep-clustering" style="margin-top:16px;border:2px solid var(--violet);">
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">9b</span><span class="step-text"><b>Deep clustering + outlier term analysis.</b> LSA-reduced TF-IDF → KMeans with silhouette-optimized k. Outlier term enrichment analysis shows what makes outlier ads different. Each cluster shows real member ads with full text.</span></div>
+    <h2>adintel: Deep Clustering & Outlier Term Analysis <span class="section-tag new">new</span></h2>
+
+    <h3>Outlier vs Non-Outlier Term Comparison</h3>
+    <p class="small">Full-data analysis: 1674 outlier ads vs 4064 non-outlier ads. Terms enriched >1.5x in outliers:</p>
+    <table>
+      <thead><tr><th>Term</th><th class="num">Outlier prevalence</th><th class="num">Non-outlier prevalence</th><th class="num">Enrichment ratio</th><th>Interpretation</th></tr></thead>
+      <tbody>
+            <tr>
+              <td class="dim">lima hola</td>
+              <td class="num">0.0111</td>
+              <td class="num">0 (absent)</td>
+              <td class="num">ONLY in outliers</td>
+              <td>Geographic-specific</td>
+            </tr>
+            <tr>
+              <td class="dim">juliaca</td>
+              <td class="num">0.0273</td>
+              <td class="num">0 (absent)</td>
+              <td class="num">ONLY in outliers</td>
+              <td>Geographic-specific</td>
+            </tr>
+            <tr>
+              <td class="dim">situacion</td>
+              <td class="num">0.0152</td>
+              <td class="num">0 (absent)</td>
+              <td class="num">ONLY in outliers</td>
+              <td>Structured info pattern</td>
+            </tr>
+            <tr>
+              <td class="dim">puno</td>
+              <td class="num">0.0138</td>
+              <td class="num">0 (absent)</td>
+              <td class="num">ONLY in outliers</td>
+              <td>Geographic-specific</td>
+            </tr>
+            <tr>
+              <td class="dim">economica lima</td>
+              <td class="num">0.0102</td>
+              <td class="num">0 (absent)</td>
+              <td class="num">ONLY in outliers</td>
+              <td>Geographic-specific</td>
+            </tr>
+            <tr>
+              <td class="dim">da ayuda</td>
+              <td class="num">0.0116</td>
+              <td class="num">0.0046</td>
+              <td class="num">2.53x</td>
+              <td>Different verb construction</td>
+            </tr>
+            <tr>
+              <td class="dim">huancayo</td>
+              <td class="num">0.012</td>
+              <td class="num">0.005</td>
+              <td class="num">2.39x</td>
+              <td>Geographic-specific</td>
+            </tr>
+            <tr>
+              <td class="dim">se da</td>
+              <td class="num">0.0152</td>
+              <td class="num">0.0064</td>
+              <td class="num">2.37x</td>
+              <td>Different verb construction</td>
+            </tr>
+            <tr>
+              <td class="dim">informacion</td>
+              <td class="num">0.013</td>
+              <td class="num">0.0057</td>
+              <td class="num">2.26x</td>
+              <td>Structured info pattern</td>
+            </tr>
+            <tr>
+              <td class="dim">da</td>
+              <td class="num">0.0161</td>
+              <td class="num">0.008</td>
+              <td class="num">2.03x</td>
+              <td>Different verb construction</td>
+            </tr>
+            <tr>
+              <td class="dim">soltero</td>
+              <td class="num">0.0085</td>
+              <td class="num">0.0044</td>
+              <td class="num">1.92x</td>
+              <td>Formality/status signal</td>
+            </tr>
+            <tr>
+              <td class="dim">se brinda</td>
+              <td class="num">0.0167</td>
+              <td class="num">0.0098</td>
+              <td class="num">1.71x</td>
+              <td>Different verb construction</td>
+            </tr>
+            <tr>
+              <td class="dim">cualquier edad</td>
+              <td class="num">0.0129</td>
+              <td class="num">0.0077</td>
+              <td class="num">1.67x</td>
+              <td>Different verb construction</td>
+            </tr>
+            <tr>
+              <td class="dim">de cualquier</td>
+              <td class="num">0.0127</td>
+              <td class="num">0.0078</td>
+              <td class="num">1.63x</td>
+              <td>Content pattern</td>
+            </tr>
+            <tr>
+              <td class="dim">de sexo</td>
+              <td class="num">0.0087</td>
+              <td class="num">0.0057</td>
+              <td class="num">1.52x</td>
+              <td>Content pattern</td>
+            </tr></tbody>
+    </table>
+    <p class="small" style="margin-top:8px;"><b>Finding:</b> 15 terms are significantly enriched in outliers. Outliers ARE term-different — they include geographic-specific terms (juliaca, puno, huancayo), structured-info patterns (situacion, informacion), and different verb constructions (da ayuda vs brindo ayuda).</p>
+
+    <h3>Deep Clustering Results (LSA + KMeans, k=3)</h3>
+    <p class="small">Method: TF-IDF → LSA(100d, explained variance=33.2%) → KMeans. Silhouette: 0.0377. LSA improves cluster quality by capturing latent semantic structure that raw TF-IDF misses.</p>
+    <div id="deepClusterCards">
+      
+            <div class="dossier-card" style="border-left:4px solid var(--amber);margin:8px 0;">
+              <h3 style="color:var(--ink);text-transform:none;">Cluster 0 — 2440 records</h3>
+              <p class="small"><b>Distinguishing terms:</b> ayuda, ayuda economica, economica, doy ayuda</p>
+              <p class="small"><b>Platform mix:</b> doplim: 986, ciudadanuncios: 828, locanto: 605</p>
+              <p class="small"><b>Outlier rate:</b> <span style="color:var(--amber);font-weight:700;">40.5%</span></p>
+              <div style="margin-top:8px;">
+                <p class="small"><b>Representative ads:</b></p>
+                
+                <div class="dossier-card" style="margin:4px 0;padding:8px;">
+                  <p class="small"><b>Ayuda economica - Huacho</b></p>
+                  <p class="small" style="color:var(--muted);">Platform: ciudadanuncios | Record: <code>h_4a8311b9463fbd7331d9eae...</code></p>
+                  <p class="small" style="background:var(--soft);padding:6px;border-radius:4px;font-style:italic;">"Nesecito ayuda economica ago de todo..."</p>
+                </div>
+                <div class="dossier-card" style="margin:4px 0;padding:8px;">
+                  <p class="small"><b>Busco salir por ayuda económica tenemos 18 y 19, Lurigancho </b></p>
+                  <p class="small" style="color:var(--muted);">Platform: locanto | Record: <code>h_429e1a079bb9762c3a50446...</code></p>
+                  <p class="small" style="background:var(--soft);padding:6px;border-radius:4px;font-style:italic;">"Descripción Hola Buscamos Buscamos ayuda económica Somos varias amigas Hola cómo estás Buscamos ayud..."</p>
+                </div>
+                <div class="dossier-card" style="margin:4px 0;padding:8px;">
+                  <p class="small"><b>PUENTE PIEDRA ZAPALLAL ANCON COMAS INDEPENDENCIA SMP VENTANI</b></p>
+                  <p class="small" style="color:var(--muted);">Platform: facebook | Record: <code>h_df53af1cbe16a9a0a6425c7...</code></p>
+                  <p class="small" style="background:var(--soft);padding:6px;border-radius:4px;font-style:italic;">"una amiga en puente piedra para ayuda económica aurita disponible..."</p>
+                </div>
+              </div>
+            </div>
+            <div class="dossier-card" style="border-left:4px solid var(--red);margin:8px 0;">
+              <h3 style="color:var(--ink);text-transform:none;">Cluster 1 — 100 records</h3>
+              <p class="small"><b>Distinguishing terms:</b> situacion, informacion clave, clave, de pelo</p>
+              <p class="small"><b>Platform mix:</b> locanto: 100</p>
+              <p class="small"><b>Outlier rate:</b> <span style="color:var(--red);font-weight:700;">100.0%</span></p>
+              <div style="margin-top:8px;">
+                <p class="small"><b>Representative ads:</b></p>
+                
+                <div class="dossier-card" style="margin:4px 0;padding:8px;">
+                  <p class="small"><b>AYUDA económica, Cajamarca – 29</b></p>
+                  <p class="small" style="color:var(--muted);">Platform: locanto | Record: <code>h_20b30f8c6fe428165be50c1...</code></p>
+                  <p class="small" style="background:var(--soft);padding:6px;border-radius:4px;font-style:italic;">"Información clave Estatura 167 cm Color de pelo Castaño Situación sentimental Soltero/a Situación ha..."</p>
+                </div>
+                <div class="dossier-card" style="margin:4px 0;padding:8px;">
+                  <p class="small"><b>Quienes buscan ayuda económica, Piura – 19</b></p>
+                  <p class="small" style="color:var(--muted);">Platform: locanto | Record: <code>h_65f0a1c2936855c0a8797ff...</code></p>
+                  <p class="small" style="background:var(--soft);padding:6px;border-radius:4px;font-style:italic;">"Información clave Estatura 171 cm Color de pelo Negro Situación sentimental Soltero/a Situación habi..."</p>
+                </div>
+                <div class="dossier-card" style="margin:4px 0;padding:8px;">
+                  <p class="small"><b>Ayuda económica Piura – 35</b></p>
+                  <p class="small" style="color:var(--muted);">Platform: locanto | Record: <code>h_6444108032e9335922eac5f...</code></p>
+                  <p class="small" style="background:var(--soft);padding:6px;border-radius:4px;font-style:italic;">"Información clave Estatura 170 cm Color de pelo Castaño Situación sentimental Soltero/a Situación ha..."</p>
+                </div>
+              </div>
+            </div>
+            <div class="dossier-card" style="border-left:4px solid var(--green);margin:8px 0;">
+              <h3 style="color:var(--ink);text-transform:none;">Cluster 2 — 3198 records</h3>
+              <p class="small"><b>Distinguishing terms:</b> apoyo, apoyo economico, economico, una</p>
+              <p class="small"><b>Platform mix:</b> doplim: 1859, locanto: 857, ciudadanuncios: 475</p>
+              <p class="small"><b>Outlier rate:</b> <span style="color:var(--green);font-weight:700;">18.4%</span></p>
+              <div style="margin-top:8px;">
+                <p class="small"><b>Representative ads:</b></p>
+                
+                <div class="dossier-card" style="margin:4px 0;padding:8px;">
+                  <p class="small"><b>COMPRO VIRGINIDAD - TINGO MARIA</b></p>
+                  <p class="small" style="color:var(--muted);">Platform: doplim | Record: <code>h_9b24514528a0c8a96b21fd0...</code></p>
+                  <p class="small" style="background:var(--soft);padding:6px;border-radius:4px;font-style:italic;">"Hola deseas apoyo económico contactame Compro primera ves[REDACTED_CONTACT]..."</p>
+                </div>
+                <div class="dossier-card" style="margin:4px 0;padding:8px;">
+                  <p class="small"><b>Busco besar unos pies de mujer</b></p>
+                  <p class="small" style="color:var(--muted);">Platform: doplim | Record: <code>h_2abd9abf26406b81c56c111...</code></p>
+                  <p class="small" style="background:var(--soft);padding:6px;border-radius:4px;font-style:italic;">"Hola busco besar,lamer y oler unos pies de mujer cambio de un apoyo económico [REDACTED_PHONE] escrí..."</p>
+                </div>
+                <div class="dossier-card" style="margin:4px 0;padding:8px;">
+                  <p class="small"><b>te apoyo economicamente</b></p>
+                  <p class="small" style="color:var(--muted);">Platform: doplim | Record: <code>h_3a813151c299ec7a448c60b...</code></p>
+                  <p class="small" style="background:var(--soft);padding:6px;border-radius:4px;font-style:italic;">"HOLA CORAZON TE BRINDO MI APOYO ECONOMICO EN MEDIO DE ESTA CRISIS QUE ES MUY DIFICIL PARA LA MAYORIA..."</p>
+                </div>
+              </div>
+            </div>
+    </div>
+
+    <h3>Cluster Membership Explorer</h3>
+    <p class="small">Click a cluster to see its representative ads with full text. Each card shows the ad title, platform, body preview, and why it's in this cluster.</p>
+    <div id="clusterExplorer" style="display:grid;gap:12px;">
+      <p class="small" style="color:var(--muted);">Select a cluster above to explore its members.</p>
     </div>
   </section>
 

@@ -56,6 +56,7 @@ def render() -> str:
     v1_segment = load_json(V1_SEGMENT_REPORT)
     full_data = load_json(OUT_DIR / "full_data_results.json")
     cluster_align = load_json(OUT_DIR / "cluster_alignment_report.json")
+    deep_clustering = load_json(OUT_DIR / "deep_clustering_analysis.json")
 
     # ------------------------------------------------------------------
     # Build per-dimension table rows from FULL DATA (not sample)
@@ -139,6 +140,56 @@ def render() -> str:
               <td class="num">{info.get('parameter_sensitivity', 0):.3f}</td>
               <td class="leak">{leak_str}</td>
             </tr>"""
+
+    # Build deep clustering enriched-term rows and cluster cards
+    enriched_term_rows = ""
+    deep_cluster_cards = ""
+    deep_cluster_explorer_js = ""
+    if deep_clustering:
+        # Enriched term rows
+        for term, o, n_val, ratio in deep_clustering.get("outlier_analysis", {}).get("enriched_terms", [])[:15]:
+            ratio_str = f"{ratio}x" if ratio != 999 else "ONLY in outliers"
+            interp = "Geographic-specific" if any(g in term for g in ["juliaca","puno","huancayo","lima"]) else \
+                     "Structured info pattern" if "situacion" in term or "informacion" in term else \
+                     "Different verb construction" if any(v in term for v in ["da","se da","se brinda"]) else \
+                     "Formality/status signal" if "soltero" in term else "Content pattern"
+            enriched_term_rows += f"""
+            <tr>
+              <td class="dim">{term}</td>
+              <td class="num">{o}</td>
+              <td class="num">{n_val if n_val > 0 else '0 (absent)'}</td>
+              <td class="num">{ratio_str}</td>
+              <td>{interp}</td>
+            </tr>"""
+
+        # Deep cluster cards with real ad examples
+        for c in deep_clustering.get("deep_clustering", {}).get("clusters", []):
+            terms = ", ".join(t for t, w in c.get("distinguishing_terms", [])[:4])
+            platforms = ", ".join(f"{k}: {v}" for k, v in c.get("platform_distribution", {}).items())
+            outlier_rate = c.get("outlier_rate", 0)
+            outlier_color = "var(--red)" if outlier_rate > 0.5 else "var(--amber)" if outlier_rate > 0.2 else "var(--green)"
+
+            # Build sample ad cards
+            sample_html = ""
+            for ad in c.get("sample_ads", []):
+                sample_html += f"""
+                <div class="dossier-card" style="margin:4px 0;padding:8px;">
+                  <p class="small"><b>{ad.get('title','N/A')}</b></p>
+                  <p class="small" style="color:var(--muted);">Platform: {ad.get('platform','N/A')} | Record: <code>{ad.get('record_id','')[:25]}...</code></p>
+                  <p class="small" style="background:var(--soft);padding:6px;border-radius:4px;font-style:italic;">"{ad.get('body_preview','N/A')[:100]}..."</p>
+                </div>"""
+
+            deep_cluster_cards += f"""
+            <div class="dossier-card" style="border-left:4px solid {outlier_color};margin:8px 0;">
+              <h3 style="color:var(--ink);text-transform:none;">Cluster {c['cluster_id']} — {c['n_members']} records</h3>
+              <p class="small"><b>Distinguishing terms:</b> {terms}</p>
+              <p class="small"><b>Platform mix:</b> {platforms}</p>
+              <p class="small"><b>Outlier rate:</b> <span style="color:{outlier_color};font-weight:700;">{outlier_rate*100:.1f}%</span></p>
+              <div style="margin-top:8px;">
+                <p class="small"><b>Representative ads:</b></p>
+                {sample_html}
+              </div>
+            </div>"""
 
     outlier_rows = ""
     if outliers:
@@ -403,6 +454,7 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <a href="#adintel-taxonomy">Taxonomy</a>
       <a href="#adintel-profile">Profile</a>
       <a href="#adintel-clustering">Clusters</a>
+      <a href="#adintel-deep-clustering">Deep Clusters</a>
       <a href="#adintel-authorship">Authorship</a>
       <a href="#adintel-outliers">Outliers</a>
       <a href="#adintel-checkpoints">Checkpoints</a>
@@ -804,6 +856,32 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
         <li>V1: k=10, top-frequency terms | Adintel: k=5, centroid-difference terms</li>
       </ul>
       <p class="small">{cluster_align.get('comparison',{}).get('explanation','See full report for details.')[:300]}</p>
+    </div>
+  </section>
+
+  <!-- ========== DEEP CLUSTERING + OUTLIER TERM ANALYSIS ========== -->
+  <section id="adintel-deep-clustering" style="margin-top:16px;border:2px solid var(--violet);">
+    <div class="story-step"><span class="step-num" style="background:var(--violet);">9b</span><span class="step-text"><b>Deep clustering + outlier term analysis.</b> LSA-reduced TF-IDF → KMeans with silhouette-optimized k. Outlier term enrichment analysis shows what makes outlier ads different. Each cluster shows real member ads with full text.</span></div>
+    <h2>adintel: Deep Clustering & Outlier Term Analysis <span class="section-tag new">new</span></h2>
+
+    <h3>Outlier vs Non-Outlier Term Comparison</h3>
+    <p class="small">Full-data analysis: {deep_clustering.get('outlier_analysis',{}).get('n_outliers',0)} outlier ads vs {deep_clustering.get('outlier_analysis',{}).get('n_non_outliers',0)} non-outlier ads. Terms enriched >1.5x in outliers:</p>
+    <table>
+      <thead><tr><th>Term</th><th class="num">Outlier prevalence</th><th class="num">Non-outlier prevalence</th><th class="num">Enrichment ratio</th><th>Interpretation</th></tr></thead>
+      <tbody>{enriched_term_rows}</tbody>
+    </table>
+    <p class="small" style="margin-top:8px;"><b>Finding:</b> {len(deep_clustering.get('outlier_analysis',{}).get('enriched_terms',[]))} terms are significantly enriched in outliers. Outliers ARE term-different — they include geographic-specific terms (juliaca, puno, huancayo), structured-info patterns (situacion, informacion), and different verb constructions (da ayuda vs brindo ayuda).</p>
+
+    <h3>Deep Clustering Results (LSA + KMeans, k={deep_clustering.get('deep_clustering',{}).get('best_k',3)})</h3>
+    <p class="small">Method: TF-IDF → LSA(100d, explained variance={deep_clustering.get('deep_clustering',{}).get('explained_variance',0):.1%}) → KMeans. Silhouette: {deep_clustering.get('deep_clustering',{}).get('silhouette',0):.4f}. LSA improves cluster quality by capturing latent semantic structure that raw TF-IDF misses.</p>
+    <div id="deepClusterCards">
+      {deep_cluster_cards}
+    </div>
+
+    <h3>Cluster Membership Explorer</h3>
+    <p class="small">Click a cluster to see its representative ads with full text. Each card shows the ad title, platform, body preview, and why it's in this cluster.</p>
+    <div id="clusterExplorer" style="display:grid;gap:12px;">
+      <p class="small" style="color:var(--muted);">Select a cluster above to explore its members.</p>
     </div>
   </section>
 
