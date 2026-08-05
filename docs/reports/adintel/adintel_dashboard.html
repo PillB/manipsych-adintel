@@ -23,9 +23,12 @@ header.hero { background:linear-gradient(135deg,#0f172a,#0f766e 55%,#714f28); co
 .eyebrow { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#a8d7bd; font-weight:800; }
 header.hero h1 { margin:6px 0; font-size:clamp(22px,3vw,32px); font-weight:700; line-height:1.1; }
 header.hero .sub { color:#dce9e1; margin:0; font-size:13px; line-height:1.5; }
-nav.nav { display:flex; flex-wrap:wrap; gap:6px; justify-content:flex-end; }
-nav.nav a { border:1px solid #ffffff36; background:#ffffff14; color:inherit; border-radius:999px; padding:6px 10px; text-decoration:none; font-size:11px; font-weight:700; }
-nav.nav a:hover { background:#ffffff28; }
+nav.nav { display:flex; flex-wrap:wrap; gap:4px; justify-content:flex-end; align-items:center; }
+nav.nav a { border:1px solid #ffffff36; background:#ffffff14; color:inherit; border-radius:6px; padding:4px 9px; text-decoration:none; font-size:11px; font-weight:600; transition:background 0.15s; }
+nav.nav a:hover { background:#ffffff30; }
+nav.nav a.active { background:#0f766e; border-color:#0f766e; }
+nav.nav .nav-group { font-size:9px; color:#a8d7bd; text-transform:uppercase; letter-spacing:0.08em; padding:0 4px; opacity:0.7; }
+nav.nav .nav-sep { width:1px; height:20px; background:#ffffff30; margin:0 2px; }
 
 /* Layout */
 main { padding:20px 32px; max-width:1500px; margin:0 auto; }
@@ -42,7 +45,8 @@ section h3 { margin:12px 0 6px; font-size:12px; color:var(--muted); text-transfo
 
 /* Tables */
 table { width:100%; border-collapse:collapse; font-size:12px; display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
-th,td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); }
+th,td { text-align:left; padding:7px 8px; border-bottom:1px solid var(--line); }
+tr:nth-child(even) td { background:rgba(241,245,249,0.5); }
 th { background:var(--soft); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
 td.num,th.num { text-align:right; font-variant-numeric:tabular-nums; }
 td.dim { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; }
@@ -87,7 +91,7 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
 .swatch { width:12px; height:12px; border-radius:3px; display:inline-block; }
 
 /* Explorer */
-.layout { display:grid; grid-template-columns:280px 1fr 320px; gap:12px; }
+.layout { display:grid; grid-template-columns:280px 1fr 320px; gap:16px; }
 .layout .controls { }
 .layout .controls label { display:block; font-size:11px; color:var(--muted); margin:6px 0 2px; }
 .list { max-height:60vh; overflow:auto; display:grid; gap:6px; margin-top:8px; }
@@ -201,24 +205,25 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
       <p class="sub">Corpus 5,717 records · 36,585 visible candidate spans · candidate consensus only, not human-adjudicated gold · taxonomy adintel-taxonomy-v2</p>
     </div>
     <nav class="nav" aria-label="Report navigation">
+      <span class="nav-group">Overview</span>
       <a href="#pipeline">Pipeline</a>
       <a href="#metrics">Metrics</a>
       <a href="#diagnostics">Diagnostics</a>
+      <span class="nav-sep"></span>
+      <span class="nav-group">Analysis</span>
       <a href="#explainability-atlas">Explainability</a>
-      <a href="#term-network">Term Network</a>
-      <a href="#corpus-map">Corpus Map</a>
-      <a href="#facet-overview">Facets</a>
-      <a href="#explorer">Top 25</a>
-      <a href="#observability">Observability</a>
-      <a href="#expert-poc">Expert POC</a>
-      <a href="#adintel-taxonomy">adintel Taxonomy</a>
-      <a href="#adintel-profile">17-dim Profile</a>
-      <a href="#adintel-clustering">7-space Clusters</a>
+      <a href="#term-network">Network</a>
+      <a href="#corpus-map">Map</a>
+      <a href="#explorer">Explorer</a>
+      <span class="nav-sep"></span>
+      <span class="nav-group">adintel</span>
+      <a href="#adintel-taxonomy">Taxonomy</a>
+      <a href="#adintel-profile">Profile</a>
+      <a href="#adintel-clustering">Clusters</a>
       <a href="#adintel-authorship">Authorship</a>
       <a href="#adintel-outliers">Outliers</a>
-      <a href="#adintel-migration">v1→v2 Migration</a>
       <a href="#adintel-checkpoints">Checkpoints</a>
-      <a href="#adintel-challenges">Challenge Rounds</a>
+      <span class="nav-sep"></span>
       <a href="#research">Research</a>
     </nav>
   </div>
@@ -1173,6 +1178,24 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape') document.activeElement?.blur?.()
 });
 window.addEventListener('hashchange',()=>applyHash());
+
+// Active nav state — highlight current section
+function updateActiveNav(){
+  const links = document.querySelectorAll('nav.nav a[href^="#"]');
+  let activeId = '';
+  for (const link of links) {
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    if (target) {
+      const rect = target.getBoundingClientRect();
+      if (rect.top >= 80 && rect.top <= 300) {
+        activeId = link.getAttribute('href');
+        break;
+      }
+    }
+  }
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === activeId));
+}
+window.addEventListener('scroll', () => { requestAnimationFrame(updateActiveNav); }, { passive: true });
 
 // Init
 initFilters(); renderObs(); renderDiagnostics(); renderExplainabilityAtlas(); renderTermNetwork(); renderCorpusMap(); renderFacetOverview(); renderExpertPoc();
