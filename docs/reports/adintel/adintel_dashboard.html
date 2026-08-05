@@ -989,6 +989,18 @@ const segmentReport = JSON.parse(document.getElementById('segment-report').textC
 </script>
 <script>
 // adintel 17-dim live profile (mirrors interactive_analyzer.html signals)
+// Also: real colorFor function (can't be in f-string due to {} in JS)
+function realColorFor(value) {
+  var palette = ['#315d8c','#2f6f4e','#c9802f','#b4473d','#6d4fa3','#72806e','#8f5b2d'];
+  var hash = 0;
+  for (var i = 0; i < String(value || '').length; i++) {
+    hash = (hash * 31 + String(value || '').charCodeAt(i)) >>> 0;
+  }
+  return palette[hash % palette.length];
+}
+// Override the stub
+colorFor = realColorFor;
+
 var ADINTEL_SIGNALS = {
   urgency: [['urgente|ahora|ya|hoy|inmediato','gi',0.3,'urgency'],['último|ultima','gi',0.2,'last-chance']],
   scarcity: [['solo|unico|limitad|pocos|cupos','gi',0.25,'scarcity']],
@@ -1055,7 +1067,7 @@ const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function guideFor(label){ return labelGuide[label] || {type:'project label',meaning:'Project-specific persuasion/manipulation annotation.',eli5:'This marks a phrase the council considered relevant.',watch:'Review the excerpt, rationale, and score fields.'} }
 function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1800) }
-function colorFor(value){ const palette=['#315d8c','#2f6f4e','#c9802f','#b4473d','#6d4fa3','#72806e','#8f5b2d']; let hash=0; for(const ch of String(value||'')) hash=(hash*31+ch.charCodeAt(0))>>>0; return palette[hash%palette.length] }
+function colorFor(value){ /* moved to separate script block */ return '#2f6f4e'; }
 
 let mode='top_by_review_priority', selected=0, currentRows=[], activeMapClusters=new Set(), activeMapQuadrant='';
 
