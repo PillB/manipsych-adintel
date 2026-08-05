@@ -20,8 +20,8 @@ import shutil
 import sys
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parents[1]
-SRC = REPO / "reports" / "adintel"
+REPO = Path(__file__).resolve().parents[2]  # /home/z/my-project/
+SRC = REPO / "repo" / "reports" / "adintel"
 DST = REPO / "docs" / "reports" / "adintel"
 
 REQUIRED_FILES = [

@@ -1,0 +1,97 @@
+{
+  "n_sampled": 300,
+  "elapsed_ms": 2771.8,
+  "spaces": {
+    "persuasive": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.6069,
+      "resampling_consistency": 0.7198,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {},
+      "topic_leakage": {}
+    },
+    "semantic": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.0924,
+      "resampling_consistency": 0.4368,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {
+        "Locanto Peru": 1.0
+      },
+      "topic_leakage": {
+        "locanto": 1.0
+      }
+    },
+    "rhetorical": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.4844,
+      "resampling_consistency": 0.7175,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {},
+      "topic_leakage": {}
+    },
+    "visual": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.7669,
+      "resampling_consistency": 0.997,
+      "parameter_sensitivity": 1.291,
+      "brand_leakage": {
+        "Ciudad Anuncios Peru": 0.967741935483871,
+        "Locanto Peru": 0.9696969696969697,
+        "Doplim Peru": 1.0,
+        "Facebook Public": 1.0
+      },
+      "topic_leakage": {
+        "ciudadanuncios": 0.967741935483871,
+        "locanto": 0.9696969696969697,
+        "doplim": 1.0,
+        "facebook": 1.0
+      }
+    },
+    "multimodal": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.4405,
+      "resampling_consistency": 0.5848,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {
+        "Locanto Peru": 0.9696969696969697
+      },
+      "topic_leakage": {
+        "locanto": 0.9696969696969697
+      }
+    },
+    "authorial": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.1597,
+      "resampling_consistency": 0.3873,
+      "parameter_sensitivity": 1.7078,
+      "brand_leakage": {
+        "Ciudad Anuncios Peru": 0.8
+      },
+      "topic_leakage": {
+        "ciudadanuncios": 0.8
+      }
+    },
+    "performance": {
+      "n_clusters": 5,
+      "n_noise": 0,
+      "stability_ari": 0.9942,
+      "resampling_consistency": 1.0,
+      "parameter_sensitivity": 1.0672,
+      "brand_leakage": {
+        "Facebook Public": 1.0,
+        "Locanto Peru": 1.0
+      },
+      "topic_leakage": {
+        "facebook": 1.0,
+        "locanto": 1.0
+      }
+    }
+  }
+}

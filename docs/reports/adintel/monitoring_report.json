@@ -1,0 +1,56 @@
+{
+  "monitored_at": "2026-08-05T06:06:29.650841+00:00",
+  "thresholds": {
+    "authorship_tpr_min": 0.6,
+    "authorship_fpr_max": 0.05,
+    "calibration_brier_max": 0.1,
+    "calibration_ece_max": 0.15,
+    "test_pass_rate_min": 0.99,
+    "pipeline_record_count_min": 5000
+  },
+  "checks": [
+    {
+      "check": "authorship",
+      "tpr": 0.8077,
+      "fpr": 0.0,
+      "tpr_threshold": 0.6,
+      "fpr_threshold": 0.05,
+      "tpr_pass": true,
+      "fpr_pass": true,
+      "status": "pass"
+    },
+    {
+      "check": "calibration",
+      "brier": 0.0034,
+      "ece": 0.0525,
+      "brier_threshold": 0.1,
+      "ece_threshold": 0.15,
+      "brier_pass": true,
+      "ece_pass": true,
+      "status": "pass"
+    },
+    {
+      "check": "file_integrity",
+      "file_count": 49,
+      "generated_at": "2026-08-05T03:53:24.528114Z",
+      "status": "pass"
+    },
+    {
+      "check": "pipeline",
+      "n_records": 5738,
+      "threshold": 5000,
+      "status": "pass"
+    },
+    {
+      "check": "dashboard",
+      "size_bytes": 12862174,
+      "size_mb": 12.3,
+      "status": "pass"
+    }
+  ],
+  "n_checks": 5,
+  "n_pass": 5,
+  "n_fail": 0,
+  "n_not_verified": 0,
+  "overall_status": "pass"
+}

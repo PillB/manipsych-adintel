@@ -1,0 +1,275 @@
+{
+  "n_sampled": 200,
+  "dimension_means": {
+    "urgency": 0.03769973180453459,
+    "scarcity": 0.09695796071922219,
+    "emotional_intensity": 0.11137207265146493,
+    "directiveness": 0.05759108043257681,
+    "certainty": 0.02557137081465487,
+    "specificity": 0.23741752612262867,
+    "benefit_density": 0.3388349420139684,
+    "evidence_density": 0.0005066420036788615,
+    "social_proof": 0.009641223181914243,
+    "objection_handling": 0.09076357229545047,
+    "risk_reversal": 0.0019673467014368327,
+    "claim_extremity": 0.08294008787617307,
+    "readability": 0.39508687101797046,
+    "offer_clarity": 0.38815827347719806,
+    "action_clarity": 0.03772228060833177,
+    "trust_risk": 0.02320536955511189,
+    "manipulation_risk": 0.1303360762475893
+  },
+  "dimension_abstain_counts": {
+    "urgency": 177,
+    "scarcity": 128,
+    "emotional_intensity": 128,
+    "directiveness": 162,
+    "certainty": 161,
+    "specificity": 36,
+    "benefit_density": 26,
+    "evidence_density": 199,
+    "social_proof": 191,
+    "objection_handling": 131,
+    "risk_reversal": 199,
+    "claim_extremity": 133,
+    "readability": 0,
+    "offer_clarity": 24,
+    "action_clarity": 171,
+    "trust_risk": 159,
+    "manipulation_risk": 5
+  },
+  "sample_record_ids": [
+    "h_68a899b6fd6d4592e819422812c1f1acfd570ab965a5a7e4e7003275744d3243",
+    "h_82e03cfcce7ebd02ea44387150d0036e6533f56d7e3e7284ece7a44ec86b7d5b",
+    "h_02d685dc6eabcd83f995a81fba8244b81d3d9ecd0e66a605281ee160a54986aa",
+    "h_12a8b45645ea3c2bf2ebd6b1828e538d3daa5e2d3d97f05758d4dfd994eb8072",
+    "h_488fd658ea859b9bd9b7903d768e2ecd0ce24eacd1d8a6f5b151c36605b60a25",
+    "h_1a2e0b4e835fd29599281d53f69fd7d31e24ad104a1b1bbebe453d87e189f244",
+    "h_9fb6461982436dfb692f9cba72e496d2205bc79937d76264f67638448c14a906",
+    "h_8464f0bdbf6bde5450a085b823af0ff73d5f11f5564db9bb163bf50406b0c15c",
+    "h_12aeec74210b97a0ed60be6978a9e18bd968cac11d70417d12d8a680bf497139",
+    "h_cb4e938fd01d01c804fcaf9d67299c4d8c04df1f61a8c60ffdd78ea488125833"
+  ],
+  "first_profile": {
+    "output_version": "persuasive-profile-v1.0.0",
+    "record_id": "h_68a899b6fd6d4592e819422812c1f1acfd570ab965a5a7e4e7003275744d3243",
+    "taxonomy_version": "adintel-taxonomy-v2",
+    "checkpoint_id": "persuasive-profile-v1",
+    "dimensions": {
+      "urgency": {
+        "dimension": "urgency",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.6
+      },
+      "scarcity": {
+        "dimension": "scarcity",
+        "score": 0.22119921692859512,
+        "raw_score": 0.22119921692859512,
+        "signals": [
+          "scarcity word"
+        ],
+        "supporting_evidence": [
+          {
+            "kind": "text_span",
+            "modality": "text",
+            "start": 25,
+            "end": 29,
+            "timestamp_s": null,
+            "surface": "solo"
+          }
+        ],
+        "abstained": false,
+        "abstention_reason": null,
+        "confidence": 0.6
+      },
+      "emotional_intensity": {
+        "dimension": "emotional_intensity",
+        "score": 0.2591817793182821,
+        "raw_score": 0.2591817793182821,
+        "signals": [
+          "vulnerability word"
+        ],
+        "supporting_evidence": [
+          {
+            "kind": "text_span",
+            "modality": "text",
+            "start": 25,
+            "end": 29,
+            "timestamp_s": null,
+            "surface": "solo"
+          }
+        ],
+        "abstained": false,
+        "abstention_reason": null,
+        "confidence": 0.55
+      },
+      "directiveness": {
+        "dimension": "directiveness",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.65
+      },
+      "certainty": {
+        "dimension": "certainty",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.55
+      },
+      "specificity": {
+        "dimension": "specificity",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.6
+      },
+      "benefit_density": {
+        "dimension": "benefit_density",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.55
+      },
+      "evidence_density": {
+        "dimension": "evidence_density",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.5
+      },
+      "social_proof": {
+        "dimension": "social_proof",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.55
+      },
+      "objection_handling": {
+        "dimension": "objection_handling",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.6
+      },
+      "risk_reversal": {
+        "dimension": "risk_reversal",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.6
+      },
+      "claim_extremity": {
+        "dimension": "claim_extremity",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.55
+      },
+      "readability": {
+        "dimension": "readability",
+        "score": 0.1569432432432434,
+        "raw_score": 27.84716216216217,
+        "signals": [
+          "Spanish-adapted Flesch reading-ease; lower score = harder text. Normalised so 1.0 = easiest."
+        ],
+        "supporting_evidence": [],
+        "abstained": false,
+        "abstention_reason": null,
+        "confidence": 0.5
+      },
+      "offer_clarity": {
+        "dimension": "offer_clarity",
+        "score": 0.22119921692859512,
+        "raw_score": 0.22119921692859512,
+        "signals": [
+          "offer verb"
+        ],
+        "supporting_evidence": [
+          {
+            "kind": "text_span",
+            "modality": "text",
+            "start": 0,
+            "end": 6,
+            "timestamp_s": null,
+            "surface": "brindo"
+          }
+        ],
+        "abstained": false,
+        "abstention_reason": null,
+        "confidence": 0.55
+      },
+      "action_clarity": {
+        "dimension": "action_clarity",
+        "score": 0.0,
+        "raw_score": 0.0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.6
+      },
+      "trust_risk": {
+        "dimension": "trust_risk",
+        "score": 0.0,
+        "raw_score": 0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": true,
+        "abstention_reason": "no_signal",
+        "confidence": 0.5
+      },
+      "manipulation_risk": {
+        "dimension": "manipulation_risk",
+        "score": 0.051836355863656425,
+        "raw_score": 0,
+        "signals": [],
+        "supporting_evidence": [],
+        "abstained": false,
+        "abstention_reason": null,
+        "confidence": 0.5
+      }
+    },
+    "composite_summary": {
+      "max_dimension": 0.2591817793182821,
+      "mean_dimension": 0.05355057719308071,
+      "n_abstained": 12,
+      "high_risk_dimensions": []
+    },
+    "review_status": "unreviewed",
+    "dimensions_present": 17,
+    "dimensions_abstained": 12
+  }
+}

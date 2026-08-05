@@ -1,0 +1,295 @@
+{
+  "analysis_type": "propensity_score_matching_causal",
+  "method": "logistic regression propensity + nearest-neighbor matching with caliper=0.2",
+  "n_techniques_analyzed": 18,
+  "n_quasi_causal": 15,
+  "n_associative": 1,
+  "n_descriptive": 2,
+  "causal_claims_made": 0,
+  "causal_claims_supported": 0,
+  "results": [
+    {
+      "label": "age_or_youth_targeting",
+      "n_treated": 3680,
+      "n_control": 2058,
+      "n_matched_pairs": 3680,
+      "effect_estimate": -0.001272,
+      "standard_error": 6.4e-05,
+      "ci_95": [
+        -0.001397,
+        -0.001148
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "authority_or_status_appeal",
+      "n_treated": 1688,
+      "n_control": 4050,
+      "n_matched_pairs": 1688,
+      "effect_estimate": 0.001772,
+      "standard_error": 7.7e-05,
+      "ci_95": [
+        0.001621,
+        0.001922
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "commitment_escalation",
+      "n_treated": 459,
+      "n_control": 5279,
+      "n_matched_pairs": 459,
+      "effect_estimate": 0.001238,
+      "standard_error": 0.000174,
+      "ci_95": [
+        0.000898,
+        0.001578
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "conditional_financial_support",
+      "n_treated": 1480,
+      "n_control": 4258,
+      "n_matched_pairs": 1480,
+      "effect_estimate": 0.002772,
+      "standard_error": 7.4e-05,
+      "ci_95": [
+        0.002627,
+        0.002916
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "deceptive_assurance",
+      "n_treated": 467,
+      "n_control": 5271,
+      "n_matched_pairs": 467,
+      "effect_estimate": 0.001544,
+      "standard_error": 0.000147,
+      "ci_95": [
+        0.001255,
+        0.001833
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "economic_vulnerability_targeting",
+      "n_treated": 1496,
+      "n_control": 4242,
+      "n_matched_pairs": 1496,
+      "effect_estimate": 0.002114,
+      "standard_error": 8.6e-05,
+      "ci_95": [
+        0.001946,
+        0.002283
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "education_or_student_targeting",
+      "n_treated": 1468,
+      "n_control": 4270,
+      "n_matched_pairs": 1468,
+      "effect_estimate": 0.000909,
+      "standard_error": 9.6e-05,
+      "ci_95": [
+        0.000721,
+        0.001098
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "exclusivity_or_special_treatment",
+      "n_treated": 240,
+      "n_control": 5498,
+      "n_matched_pairs": 240,
+      "effect_estimate": -0.002023,
+      "standard_error": 0.000203,
+      "ci_95": [
+        -0.00242,
+        -0.001626
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "family_obligation_targeting",
+      "n_treated": 790,
+      "n_control": 4948,
+      "n_matched_pairs": 790,
+      "effect_estimate": 0.000287,
+      "standard_error": 0.00011,
+      "ci_95": [
+        7.2e-05,
+        0.000502
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "foot_in_the_door",
+      "n_treated": 396,
+      "n_control": 5342,
+      "n_matched_pairs": 396,
+      "effect_estimate": 0.000536,
+      "standard_error": 0.000193,
+      "ci_95": [
+        0.000157,
+        0.000915
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "guilt_or_shame_pressure",
+      "n_treated": 23,
+      "n_control": 5715,
+      "n_matched_pairs": 23,
+      "effect_estimate": 0.000991,
+      "standard_error": 0.000623,
+      "ci_95": [
+        -0.000229,
+        0.002212
+      ],
+      "evidence_level": "associative",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "platform_migration",
+      "n_treated": 1293,
+      "n_control": 4445,
+      "n_matched_pairs": 1293,
+      "effect_estimate": -0.002659,
+      "standard_error": 8.6e-05,
+      "ci_95": [
+        -0.002827,
+        -0.002491
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "privacy_or_secrecy_pressure",
+      "n_treated": 2257,
+      "n_control": 3481,
+      "n_matched_pairs": 2257,
+      "effect_estimate": -7.8e-05,
+      "standard_error": 6.3e-05,
+      "ci_95": [
+        -0.0002,
+        4.5e-05
+      ],
+      "evidence_level": "descriptive",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "reciprocity_obligation",
+      "n_treated": 5711,
+      "n_control": 27,
+      "n_matched_pairs": 5711,
+      "effect_estimate": 0.0011,
+      "standard_error": 3.9e-05,
+      "ci_95": [
+        0.001023,
+        0.001177
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "repetition_or_campaign_escalation",
+      "n_treated": 75,
+      "n_control": 5663,
+      "n_matched_pairs": 75,
+      "effect_estimate": -0.001933,
+      "standard_error": 0.000404,
+      "ci_95": [
+        -0.002726,
+        -0.001141
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "scarcity_or_urgency",
+      "n_treated": 288,
+      "n_control": 5450,
+      "n_matched_pairs": 288,
+      "effect_estimate": 3e-06,
+      "standard_error": 0.000222,
+      "ci_95": [
+        -0.000433,
+        0.000439
+      ],
+      "evidence_level": "descriptive",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "sexualized_appearance_condition",
+      "n_treated": 890,
+      "n_control": 4848,
+      "n_matched_pairs": 890,
+      "effect_estimate": 0.001282,
+      "standard_error": 0.000114,
+      "ci_95": [
+        0.001059,
+        0.001506
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    },
+    {
+      "label": "transactional_ambiguity",
+      "n_treated": 479,
+      "n_control": 5259,
+      "n_matched_pairs": 479,
+      "effect_estimate": 0.001735,
+      "standard_error": 0.000139,
+      "ci_95": [
+        0.001464,
+        0.002007
+      ],
+      "evidence_level": "quasi_causal",
+      "method": "propensity_score_matching",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
+    }
+  ],
+  "limitations": [
+    "Synthetic performance data — not real observed outcomes",
+    "Propensity score matching controls for observed confounders only",
+    "Unmeasured confounders (audience, creative quality, bid strategy) not controlled",
+    "No randomized A/B holdout — cannot establish causality"
+  ],
+  "what_real_causal_would_require": [
+    "Randomized A/B holdout with pre-registration",
+    "Real performance metrics from ad platform APIs",
+    "Power analysis and adequate sample size",
+    "Blinded outcome assessment",
+    "Sensitivity analysis for unmeasured confounders (E-value)"
+  ]
+}
