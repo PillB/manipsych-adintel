@@ -275,18 +275,29 @@ class TestSolarizeLiveDashboard(unittest.TestCase):
     def test_07_ad_selector_returns_cluster_and_neighbors(self):
         """R8: user can search/select an ad and see cluster, neighbors, alternative cluster, evidence."""
         self._page.goto(f"{LIVE_URL}#adintel-clustering", wait_until="networkidle")
-        self._page.wait_for_timeout(1500)
+        self._page.wait_for_timeout(2500)
         # Must have an ad selector input
-        selector = self._page.locator("#adintel-ad-selector, [data-role='ad-selector']")
+        selector = self._page.locator("#adintel-ad-selector")
         self.assertGreater(selector.count(), 0, "no ad selector input found")
         # Type a record_id (use a known one from the dashboard)
         selector.first.fill("h_")
-        self._page.wait_for_timeout(500)
+        self._page.wait_for_timeout(1500)
         # Must show some result panel
-        results = self._page.locator("#adintel-ad-detail, [data-role='ad-detail']")
-        self.assertGreater(results.count(), 0, "no ad detail panel found")
+        results = self._page.locator("#adintel-ad-results .ad-result-row")
+        self.assertGreater(results.count(), 0, "no results rendered after typing")
+        # Click first result and wait for detail panel to populate
+        results.first.click()
+        self._page.wait_for_timeout(1500)
+        detail = self._page.locator("#adintel-ad-detail")
+        self.assertGreater(detail.count(), 0, "no ad detail panel found")
+        # Wait for detail panel to populate (escape empty state)
+        for _ in range(10):
+            txt = detail.first.inner_text()
+            if txt.strip():
+                break
+            self._page.wait_for_timeout(500)
+        detail_text = detail.first.inner_text().lower()
         # Detail panel must show cluster assignment
-        detail_text = results.first.inner_text().lower()
         self.assertIn("cluster", detail_text)
         # Must mention outlier status
         self.assertTrue(
