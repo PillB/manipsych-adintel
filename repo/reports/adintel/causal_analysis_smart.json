@@ -2,22 +2,22 @@
   "analysis_type": "propensity_score_matching_causal",
   "method": "logistic regression propensity + nearest-neighbor matching with caliper=0.2",
   "n_techniques_analyzed": 18,
-  "n_quasi_causal": 14,
-  "n_associative": 2,
+  "n_quasi_causal": 15,
+  "n_associative": 1,
   "n_descriptive": 2,
   "causal_claims_made": 0,
   "causal_claims_supported": 0,
   "results": [
     {
       "label": "age_or_youth_targeting",
-      "n_treated": 3429,
-      "n_control": 1760,
-      "n_matched_pairs": 3429,
-      "effect_estimate": 0.00022,
-      "standard_error": 5.8e-05,
+      "n_treated": 3680,
+      "n_control": 2058,
+      "n_matched_pairs": 3680,
+      "effect_estimate": -0.001272,
+      "standard_error": 6.4e-05,
       "ci_95": [
-        0.000105,
-        0.000334
+        -0.001397,
+        -0.001148
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -25,14 +25,14 @@
     },
     {
       "label": "authority_or_status_appeal",
-      "n_treated": 1583,
-      "n_control": 3606,
-      "n_matched_pairs": 1583,
-      "effect_estimate": -0.003191,
-      "standard_error": 9.3e-05,
+      "n_treated": 1688,
+      "n_control": 4050,
+      "n_matched_pairs": 1688,
+      "effect_estimate": 0.001772,
+      "standard_error": 7.7e-05,
       "ci_95": [
-        -0.003373,
-        -0.003009
+        0.001621,
+        0.001922
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -40,29 +40,29 @@
     },
     {
       "label": "commitment_escalation",
-      "n_treated": 454,
-      "n_control": 4735,
-      "n_matched_pairs": 454,
-      "effect_estimate": -0.000326,
-      "standard_error": 0.000179,
+      "n_treated": 459,
+      "n_control": 5279,
+      "n_matched_pairs": 459,
+      "effect_estimate": 0.001238,
+      "standard_error": 0.000174,
       "ci_95": [
-        -0.000676,
-        2.4e-05
+        0.000898,
+        0.001578
       ],
-      "evidence_level": "associative",
+      "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
     },
     {
       "label": "conditional_financial_support",
-      "n_treated": 1329,
-      "n_control": 3860,
-      "n_matched_pairs": 1329,
-      "effect_estimate": 0.002447,
-      "standard_error": 8.4e-05,
+      "n_treated": 1480,
+      "n_control": 4258,
+      "n_matched_pairs": 1480,
+      "effect_estimate": 0.002772,
+      "standard_error": 7.4e-05,
       "ci_95": [
-        0.002282,
-        0.002611
+        0.002627,
+        0.002916
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -70,14 +70,14 @@
     },
     {
       "label": "deceptive_assurance",
-      "n_treated": 446,
-      "n_control": 4743,
-      "n_matched_pairs": 446,
-      "effect_estimate": 0.002055,
-      "standard_error": 0.000144,
+      "n_treated": 467,
+      "n_control": 5271,
+      "n_matched_pairs": 467,
+      "effect_estimate": 0.001544,
+      "standard_error": 0.000147,
       "ci_95": [
-        0.001772,
-        0.002338
+        0.001255,
+        0.001833
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -85,14 +85,14 @@
     },
     {
       "label": "economic_vulnerability_targeting",
-      "n_treated": 1384,
-      "n_control": 3805,
-      "n_matched_pairs": 1384,
-      "effect_estimate": 0.001189,
-      "standard_error": 9.9e-05,
+      "n_treated": 1496,
+      "n_control": 4242,
+      "n_matched_pairs": 1496,
+      "effect_estimate": 0.002114,
+      "standard_error": 8.6e-05,
       "ci_95": [
-        0.000994,
-        0.001384
+        0.001946,
+        0.002283
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -100,14 +100,14 @@
     },
     {
       "label": "education_or_student_targeting",
-      "n_treated": 1406,
-      "n_control": 3783,
-      "n_matched_pairs": 1406,
-      "effect_estimate": 0.00312,
-      "standard_error": 8.2e-05,
+      "n_treated": 1468,
+      "n_control": 4270,
+      "n_matched_pairs": 1468,
+      "effect_estimate": 0.000909,
+      "standard_error": 9.6e-05,
       "ci_95": [
-        0.002958,
-        0.003281
+        0.000721,
+        0.001098
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -115,14 +115,14 @@
     },
     {
       "label": "exclusivity_or_special_treatment",
-      "n_treated": 233,
-      "n_control": 4956,
-      "n_matched_pairs": 233,
-      "effect_estimate": 0.000493,
-      "standard_error": 0.000222,
+      "n_treated": 240,
+      "n_control": 5498,
+      "n_matched_pairs": 240,
+      "effect_estimate": -0.002023,
+      "standard_error": 0.000203,
       "ci_95": [
-        5.7e-05,
-        0.000928
+        -0.00242,
+        -0.001626
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -130,14 +130,14 @@
     },
     {
       "label": "family_obligation_targeting",
-      "n_treated": 752,
-      "n_control": 4437,
-      "n_matched_pairs": 752,
-      "effect_estimate": -0.000689,
-      "standard_error": 0.000109,
+      "n_treated": 790,
+      "n_control": 4948,
+      "n_matched_pairs": 790,
+      "effect_estimate": 0.000287,
+      "standard_error": 0.00011,
       "ci_95": [
-        -0.000902,
-        -0.000476
+        7.2e-05,
+        0.000502
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -145,14 +145,14 @@
     },
     {
       "label": "foot_in_the_door",
-      "n_treated": 365,
-      "n_control": 4824,
-      "n_matched_pairs": 365,
-      "effect_estimate": -0.002058,
-      "standard_error": 0.000216,
+      "n_treated": 396,
+      "n_control": 5342,
+      "n_matched_pairs": 396,
+      "effect_estimate": 0.000536,
+      "standard_error": 0.000193,
       "ci_95": [
-        -0.002482,
-        -0.001634
+        0.000157,
+        0.000915
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -160,14 +160,14 @@
     },
     {
       "label": "guilt_or_shame_pressure",
-      "n_treated": 22,
-      "n_control": 5167,
-      "n_matched_pairs": 22,
-      "effect_estimate": -0.000854,
-      "standard_error": 0.000912,
+      "n_treated": 23,
+      "n_control": 5715,
+      "n_matched_pairs": 23,
+      "effect_estimate": 0.000991,
+      "standard_error": 0.000623,
       "ci_95": [
-        -0.002641,
-        0.000932
+        -0.000229,
+        0.002212
       ],
       "evidence_level": "associative",
       "method": "propensity_score_matching",
@@ -175,14 +175,14 @@
     },
     {
       "label": "platform_migration",
-      "n_treated": 1196,
-      "n_control": 3993,
-      "n_matched_pairs": 1196,
-      "effect_estimate": 0.001122,
-      "standard_error": 0.000105,
+      "n_treated": 1293,
+      "n_control": 4445,
+      "n_matched_pairs": 1293,
+      "effect_estimate": -0.002659,
+      "standard_error": 8.6e-05,
       "ci_95": [
-        0.000915,
-        0.001328
+        -0.002827,
+        -0.002491
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -190,14 +190,14 @@
     },
     {
       "label": "privacy_or_secrecy_pressure",
-      "n_treated": 2086,
-      "n_control": 3103,
-      "n_matched_pairs": 2086,
-      "effect_estimate": 9.4e-05,
-      "standard_error": 9.4e-05,
+      "n_treated": 2257,
+      "n_control": 3481,
+      "n_matched_pairs": 2257,
+      "effect_estimate": -7.8e-05,
+      "standard_error": 6.3e-05,
       "ci_95": [
-        -9e-05,
-        0.000278
+        -0.0002,
+        4.5e-05
       ],
       "evidence_level": "descriptive",
       "method": "propensity_score_matching",
@@ -205,29 +205,29 @@
     },
     {
       "label": "reciprocity_obligation",
-      "n_treated": 5156,
-      "n_control": 33,
-      "n_matched_pairs": 5156,
-      "effect_estimate": -7e-05,
-      "standard_error": 4.3e-05,
+      "n_treated": 5711,
+      "n_control": 27,
+      "n_matched_pairs": 5711,
+      "effect_estimate": 0.0011,
+      "standard_error": 3.9e-05,
       "ci_95": [
-        -0.000154,
-        1.4e-05
+        0.001023,
+        0.001177
       ],
-      "evidence_level": "descriptive",
+      "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
     },
     {
       "label": "repetition_or_campaign_escalation",
-      "n_treated": 74,
-      "n_control": 5115,
-      "n_matched_pairs": 74,
-      "effect_estimate": 0.00332,
-      "standard_error": 0.000367,
+      "n_treated": 75,
+      "n_control": 5663,
+      "n_matched_pairs": 75,
+      "effect_estimate": -0.001933,
+      "standard_error": 0.000404,
       "ci_95": [
-        0.002601,
-        0.004038
+        -0.002726,
+        -0.001141
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -235,29 +235,29 @@
     },
     {
       "label": "scarcity_or_urgency",
-      "n_treated": 271,
-      "n_control": 4918,
-      "n_matched_pairs": 271,
-      "effect_estimate": 0.00157,
-      "standard_error": 0.000196,
+      "n_treated": 288,
+      "n_control": 5450,
+      "n_matched_pairs": 288,
+      "effect_estimate": 3e-06,
+      "standard_error": 0.000222,
       "ci_95": [
-        0.001185,
-        0.001954
+        -0.000433,
+        0.000439
       ],
-      "evidence_level": "quasi_causal",
+      "evidence_level": "descriptive",
       "method": "propensity_score_matching",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout"
     },
     {
       "label": "sexualized_appearance_condition",
-      "n_treated": 837,
-      "n_control": 4352,
-      "n_matched_pairs": 837,
-      "effect_estimate": 0.001242,
-      "standard_error": 0.000112,
+      "n_treated": 890,
+      "n_control": 4848,
+      "n_matched_pairs": 890,
+      "effect_estimate": 0.001282,
+      "standard_error": 0.000114,
       "ci_95": [
-        0.001023,
-        0.001462
+        0.001059,
+        0.001506
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",
@@ -265,14 +265,14 @@
     },
     {
       "label": "transactional_ambiguity",
-      "n_treated": 456,
-      "n_control": 4733,
-      "n_matched_pairs": 456,
-      "effect_estimate": -0.000505,
-      "standard_error": 0.000197,
+      "n_treated": 479,
+      "n_control": 5259,
+      "n_matched_pairs": 479,
+      "effect_estimate": 0.001735,
+      "standard_error": 0.000139,
       "ci_95": [
-        -0.000891,
-        -0.000119
+        0.001464,
+        0.002007
       ],
       "evidence_level": "quasi_causal",
       "method": "propensity_score_matching",

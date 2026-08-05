@@ -1,39 +1,39 @@
 {
   "analysis_type": "annotation_agreement_simulated_gold_vs_silver",
-  "n_records": 5162,
+  "n_records": 5717,
   "gold_source": "simulated from council annotations (agreement-based noise model)",
   "silver_source": "independent rule-based annotator with different signal patterns",
   "label_set_agreement": {
-    "mean_f1": 0.5517,
+    "mean_f1": 0.5531,
     "median_f1": 0.5,
-    "std_f1": 0.2063
+    "std_f1": 0.2084
   },
   "exact_span_agreement": {
-    "mean_f1": 0.0835,
+    "mean_f1": 0.0809,
     "median_f1": 0.0,
-    "std_f1": 0.1279
+    "std_f1": 0.1278
   },
   "per_label_cohen_kappa": {
-    "age_or_youth_targeting": 0.3533,
-    "authority_or_status_appeal": 0.4447,
-    "commitment_escalation": 0.2467,
-    "conditional_financial_support": 0.0511,
-    "deceptive_assurance": 0.2553,
+    "age_or_youth_targeting": 0.3669,
+    "authority_or_status_appeal": 0.4524,
+    "commitment_escalation": 0.2502,
+    "conditional_financial_support": 0.0491,
+    "deceptive_assurance": 0.2387,
     "economic_vulnerability_targeting": 0.0,
-    "education_or_student_targeting": 0.013,
+    "education_or_student_targeting": 0.0147,
     "exclusivity_or_special_treatment": 0.0,
     "family_obligation_targeting": 0.0,
     "fear_or_threat": 0.0,
     "foot_in_the_door": 0.0,
     "guilt_or_shame_pressure": 0.0,
     "other": 0.0,
-    "platform_migration": 0.0345,
-    "privacy_or_secrecy_pressure": 0.0029,
-    "reciprocity_obligation": 0.0028,
+    "platform_migration": 0.0384,
+    "privacy_or_secrecy_pressure": 0.0009,
+    "reciprocity_obligation": 0.0215,
     "repetition_or_campaign_escalation": 0.0,
-    "scarcity_or_urgency": 0.3317,
-    "sexualized_appearance_condition": 0.2524,
-    "social_proof": -0.0057,
+    "scarcity_or_urgency": 0.3274,
+    "sexualized_appearance_condition": 0.2457,
+    "social_proof": 0.0189,
     "transactional_ambiguity": 0.0
   },
   "interpretation": {
