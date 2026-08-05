@@ -46,8 +46,9 @@ textarea:focus { outline:2px solid var(--green); outline-offset:1px; }
 .evidence-list { max-height:200px; overflow:auto; border:1px solid var(--line); border-radius:8px; padding:8px; }
 .evidence-item { padding:4px 0; border-bottom:1px solid var(--line); font-size:12px; }
 .evidence-item:last-child { border-bottom:none; }
-.gan-step { padding:12px; border-left:3px solid var(--violet); margin:8px 0; background:rgba(109,79,163,0.05); border-radius:0 8px 8px 0; }
+.gan-step { padding:12px; border-left:3px solid var(--violet); margin:8px 0; background:rgba(109,79,163,0.08); border-radius:0 8px 8px 0; font-size:13px; line-height:1.6; }
 .gan-step b { color:var(--violet); }
+#ganLog { max-height:450px; overflow-y:auto; padding-right:4px; }
 .disclaimer { background:#fef3c7; border:1px solid #fde68a; border-radius:8px; padding:10px; font-size:12px; color:#78350f; margin-top:12px; }
 </style>
 </head>
@@ -76,6 +77,8 @@ textarea:focus { outline:2px solid var(--green); outline-offset:1px; }
     <button class="btn secondary" onclick="loadSample('high')">Load high-pressure sample</button>
     <button class="btn secondary" onclick="loadSample('neutral')">Load neutral sample</button>
     <button class="btn violet" onclick="generateVariant()">Generate adversarial variant</button>
+    <button class="btn violet" onclick="generateAd()">Generate ad from techniques</button>
+    <button class="btn secondary" onclick="exportResults()">Export results (JSON)</button>
   </div>
 
   <h3>Detected Techniques (live)</h3>
@@ -346,6 +349,94 @@ function runGanCycle() {
 
 function clearGanLog() {
   document.getElementById('ganLog').innerHTML = '';
+}
+
+// F-02: Export analysis results as JSON
+function exportResults() {
+  const text = document.getElementById('adInput').value;
+  const results = analyzeAd(text);
+  const exportData = {
+    text: text,
+    analyzed_at: new Date().toISOString(),
+    dimensions: Object.entries(results).map(([dim, r]) => ({
+      dimension: dim,
+      score: r.score,
+      raw_score: r.rawScore,
+      n_hits: r.hits.length,
+      hits: r.hits,
+    })),
+    high_risk_dimensions: Object.entries(results)
+      .filter(([, r]) => r.score >= 0.5)
+      .map(([dim]) => dim),
+    tool_version: 'adintel-interactive-analyzer-v1',
+  };
+  const blob = new Blob([JSON.stringify(exportData, null, 2)], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'ad_analysis_' + Date.now() + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// F-05: Generate a synthetic ad using detected techniques
+function generateAd() {
+  const text = document.getElementById('adInput').value;
+  const results = analyzeAd(text);
+  // Find the top 3 scoring dimensions
+  const topDims = Object.entries(results)
+    .filter(([, r]) => r.score > 0.1)
+    .sort(([, a], [, b]) => b.score - a.score)
+    .slice(0, 3)
+    .map(([dim]) => dim);
+
+  if (topDims.length === 0) {
+    document.getElementById('adInput').value = 'No techniques detected to generate from. Try loading a sample first.';
+    return;
+  }
+
+  // Map dimensions to ad-copy fragments
+  const fragments = {
+    urgency: 'urgente hoy',
+    scarcity: 'solo por esta semana, ultimo cupo',
+    emotional_intensity: 'comprende tu situacion',
+    directiveness: 'escribeme ya por whatsapp',
+    certainty: '100% garantizado y seguro',
+    specificity: 'en lima, todo el ano',
+    benefit_density: 'ayuda economica semanal fija',
+    evidence_density: 'referencias verificadas',
+    social_proof: 'muchas chicas ya confian',
+    objection_handling: 'sin compromiso, discreto',
+    risk_reversal: 'primera consulta gratis',
+    claim_extremity: 'el mejor apoyo de lima',
+    readability: 'informacion clara y directa',
+    offer_clarity: 'monto fijo semanal',
+    action_clarity: 'escribeme al whatsapp',
+    trust_risk: 'serio y formal',
+    manipulation_risk: '',
+    platform_migration: 'whatsapp privado',
+    privacy_or_secrecy_pressure: 'total discrecion',
+    financial_lure: 'dinero semanal',
+    authority_or_status_appeal: 'profesional y solvente',
+    age_or_youth_targeting: 'chicas estudiantes',
+    education_or_student_targeting: 'universitarias',
+    sexualized_appearance_condition: '',
+    scarcity_or_urgency: 'urgente, solo hoy',
+    reciprocity_obligation: 'brindo ayuda',
+    deceptive_assurance: 'serio, real, confiable',
+    social_proof: 'muchos ya confian',
+    commitment_escalation: 'apoyo constante y permanente',
+  };
+
+  // Build ad from top dimensions
+  const parts = topDims.map(d => fragments[d] || '').filter(f => f);
+  // Add a greeting and closing
+  const greeting = 'Hola, ';
+  const closing = ' Lima. Escribeme para mas informacion.';
+  const generatedAd = greeting + parts.join('. ') + '.' + closing;
+
+  document.getElementById('adInput').value = generatedAd;
+  runAnalysis();
 }
 
 function renderTaxonomy() {

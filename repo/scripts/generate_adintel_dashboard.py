@@ -144,7 +144,7 @@ def render() -> str:
   --shadow:0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
 }}
 * {{ box-sizing:border-box; }}
-html {{ scroll-behavior:smooth; scroll-padding-top:120px; }}
+html {{ scroll-behavior:smooth; scroll-padding-top:140px; }}
 body {{ margin:0; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif; line-height:1.55; overflow-x:hidden; }}
 a {{ color:var(--blue); }}
 .skip {{ position:absolute;left:-999px; }} .skip:focus {{ left:16px;top:16px;background:#fff;padding:10px;border-radius:10px;z-index:9; }}
@@ -161,7 +161,7 @@ nav.nav a:hover {{ background:#ffffff28; }}
 
 /* Layout */
 main {{ padding:20px 32px; max-width:1500px; margin:0 auto; }}
-section {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:120px; }}
+section {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:140px; }}
 section h2 {{ margin:0 0 10px; font-size:16px; font-weight:700; border-bottom:2px solid var(--line); padding-bottom:6px; }}
 section h3 {{ margin:12px 0 6px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }}
 
@@ -198,6 +198,7 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 
 /* Pipeline SVG */
 .pipe-svg {{ width:100%; height:auto; max-height:400px; }}
+.svg-scroll {{ overflow-x:auto; -webkit-overflow-scrolling:touch; }}
 .pipe-svg .node {{ fill:#fffffb; stroke:var(--green); stroke-width:2; }}
 .pipe-svg .node-title {{ font-size:13px; font-weight:800; fill:var(--ink); }}
 .pipe-svg .node-sub {{ font-size:10px; fill:var(--muted); }}
@@ -208,7 +209,7 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 /* Viz grids */
 .viz-grid {{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }}
 .viz-grid .full {{ grid-column:1 / -1; }}
-.big-viz {{ width:100%; height:500px; background:var(--soft); border:1px solid var(--line); border-radius:8px; }}
+.big-viz {{ width:100%; height:500px; background:var(--soft); border:1px solid var(--line); border-radius:8px; overflow:hidden; }}
 .tutorial-grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:8px; }}
 .tutorial-card {{ background:#fff; border:1px solid var(--line); border-radius:6px; padding:6px 8px; font-size:11px; }}
 .viz-toolbar {{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:6px 0; }}
@@ -401,6 +402,7 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
         <li>adintel adds: hierarchical taxonomy v2, 17-dim profile, 7-space clustering, 4-task authorship, 11 outlier detectors — all reading the same manifest and council annotations.</li>
       </ul>
     </div>
+    <div class="svg-scroll">
     <svg class="pipe-svg" viewBox="0 0 1140 420" role="img" aria-label="Pipeline diagram from websites to raw archives to processed manifest to council annotations to model stack to report">
       <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#527762"/></marker></defs>
       <path class="flow pulse" d="M120 90 C190 90 190 90 260 90" marker-end="url(#arrow)"/>
@@ -448,9 +450,8 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <text class="node-title" x="906" y="337">Slice analysis</text>
       <text class="node-sub" x="906" y="356">engineered variables, clusters</text>
     </svg>
+    </div>
   </section>
-
-  <!-- ========== V1 SECTION: Diagnostics ========== -->
   <div class="story-transition">↓ Now that you know where the data comes from, the next sections show <b>how well the model performs</b> and <b>where it struggles</b>. Start with the KPI cards above, then drill into the curves, heatmap, and slices below.</div>
   <section id="diagnostics" style="margin-top:16px">
     <div class="story-step"><span class="step-num">2</span><span class="step-text"><b>Assess model quality.</b> ROC curves, precision-recall, per-label heatmaps, and underperforming slices tell you which labels to trust and which need human review.</span></div>
