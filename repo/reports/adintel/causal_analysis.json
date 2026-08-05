@@ -11,636 +11,636 @@
   ],
   "highest_evidence_achieved": "quasi_causal",
   "n_techniques_analyzed": 18,
-  "n_techniques_quasi_causal": 16,
+  "n_techniques_quasi_causal": 8,
   "causal_claims_made": 0,
   "causal_claims_supported": 0,
   "results": [
     {
       "label": "age_or_youth_targeting",
-      "n_with_label": 3429,
-      "n_without_label": 1733,
-      "ctr_with_label": 0.008781,
-      "ctr_without_label": 0.008749,
-      "descriptive_diff": 3.2e-05,
+      "n_with_label": 3680,
+      "n_without_label": 2037,
+      "ctr_with_label": 0.008601,
+      "ctr_without_label": 0.008273,
+      "descriptive_diff": 0.000328,
       "platform_stratified": {
         "doplim": {
           "n_with": 1805,
           "n_without": 1019,
-          "ctr_with": 0.009009690858725763,
-          "ctr_without": 0.008990781157998036,
-          "diff": 1.8909700727726825e-05
+          "ctr_with": 0.009150836011080332,
+          "ctr_without": 0.008989248282630029,
+          "diff": 0.00016158772845030304
         },
         "locanto": {
-          "n_with": 1099,
+          "n_with": 1100,
           "n_without": 462,
-          "ctr_with": 0.009724557779799818,
-          "ctr_without": 0.009683192640692641,
-          "diff": 4.136513910717697e-05
+          "ctr_with": 0.009658033636363637,
+          "ctr_without": 0.009622119047619046,
+          "diff": 3.591458874459101e-05
         },
         "ciudadanuncios": {
-          "n_with": 509,
-          "n_without": 240,
-          "ctr_with": 0.005796891944990177,
-          "ctr_without": 0.005556404166666667,
-          "diff": 0.00024048777832350998
+          "n_with": 759,
+          "n_without": 544,
+          "ctr_with": 0.005666606060606062,
+          "ctr_without": 0.005680393382352941,
+          "diff": -1.378732174687862e-05
         }
       },
-      "matched_estimate": -0.002859,
-      "matched_se": 6.1e-05,
-      "matched_n_pairs": 3428,
+      "matched_estimate": -0.003062,
+      "matched_se": 5.2e-05,
+      "matched_n_pairs": 3680,
       "evidence_level": "quasi_causal",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'age_or_youth_targeting', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "authority_or_status_appeal",
-      "n_with_label": 1583,
-      "n_without_label": 3579,
-      "ctr_with_label": 0.008994,
-      "ctr_without_label": 0.008671,
-      "descriptive_diff": 0.000322,
+      "n_with_label": 1688,
+      "n_without_label": 4029,
+      "ctr_with_label": 0.00888,
+      "ctr_without_label": 0.008319,
+      "descriptive_diff": 0.000561,
       "platform_stratified": {
         "doplim": {
           "n_with": 958,
           "n_without": 1866,
-          "ctr_with": 0.00900327139874739,
-          "ctr_without": 0.0090026602357985,
-          "diff": 6.111629488898124e-07
+          "ctr_with": 0.00912414509394572,
+          "ctr_without": 0.009076297963558412,
+          "diff": 4.784713038730702e-05
         },
         "locanto": {
-          "n_with": 516,
+          "n_with": 517,
           "n_without": 1045,
-          "ctr_with": 0.009688939922480619,
-          "ctr_without": 0.009723857416267943,
-          "diff": -3.491749378732416e-05
+          "ctr_with": 0.009785435203094777,
+          "ctr_without": 0.009579125358851675,
+          "diff": 0.00020630984424310252
         },
         "ciudadanuncios": {
-          "n_with": 108,
-          "n_without": 641,
-          "ctr_with": 0.005564462962962963,
-          "ctr_without": 0.005746010920436817,
-          "diff": -0.00018154795747385433
+          "n_with": 212,
+          "n_without": 1091,
+          "ctr_with": 0.00557238679245283,
+          "ctr_without": 0.0056917891842346476,
+          "diff": -0.00011940239178181728
         }
       },
-      "matched_estimate": 0.001923,
-      "matched_se": 7.9e-05,
-      "matched_n_pairs": 1582,
-      "evidence_level": "quasi_causal",
+      "matched_estimate": 0.000921,
+      "matched_se": 6.7e-05,
+      "matched_n_pairs": 1688,
+      "evidence_level": "descriptive",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'authority_or_status_appeal', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "commitment_escalation",
-      "n_with_label": 454,
-      "n_without_label": 4708,
-      "ctr_with_label": 0.009215,
-      "ctr_without_label": 0.008727,
-      "descriptive_diff": 0.000488,
+      "n_with_label": 459,
+      "n_without_label": 5258,
+      "ctr_with_label": 0.00926,
+      "ctr_without_label": 0.008417,
+      "descriptive_diff": 0.000843,
       "platform_stratified": {
         "doplim": {
           "n_with": 179,
           "n_without": 2645,
-          "ctr_with": 0.00882395530726257,
-          "ctr_without": 0.009014975425330814,
-          "diff": -0.0001910201180682445
+          "ctr_with": 0.009156541899441342,
+          "ctr_without": 0.009088197353497165,
+          "diff": 6.834454594417672e-05
         },
         "locanto": {
-          "n_with": 259,
+          "n_with": 260,
           "n_without": 1302,
-          "ctr_with": 0.009693795366795366,
-          "ctr_without": 0.009715999231950847,
-          "diff": -2.2203865155480396e-05
+          "ctr_with": 0.009583169230769233,
+          "ctr_without": 0.009660239631336404,
+          "diff": -7.707040056717171e-05
         },
         "ciudadanuncios": {
-          "n_with": 16,
-          "n_without": 733,
-          "ctr_with": 0.0058370625,
-          "ctr_without": 0.005717274215552523,
-          "diff": 0.00011978828444747687
+          "n_with": 20,
+          "n_without": 1283,
+          "ctr_with": 0.005982899999999999,
+          "ctr_without": 0.005667521434138738,
+          "diff": 0.00031537856586126133
         }
       },
-      "matched_estimate": -0.001772,
-      "matched_se": 0.000182,
-      "matched_n_pairs": 454,
+      "matched_estimate": -0.001011,
+      "matched_se": 0.000179,
+      "matched_n_pairs": 459,
       "evidence_level": "quasi_causal",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'commitment_escalation', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "conditional_financial_support",
-      "n_with_label": 1329,
-      "n_without_label": 3833,
-      "ctr_with_label": 0.008931,
-      "ctr_without_label": 0.008715,
-      "descriptive_diff": 0.000216,
+      "n_with_label": 1480,
+      "n_without_label": 4237,
+      "ctr_with_label": 0.008564,
+      "ctr_without_label": 0.008456,
+      "descriptive_diff": 0.000108,
       "platform_stratified": {
         "doplim": {
           "n_with": 747,
           "n_without": 2077,
-          "ctr_with": 0.009146551539491298,
-          "ctr_without": 0.00895119114106885,
-          "diff": 0.00019536039842244814
+          "ctr_with": 0.009172595716198126,
+          "ctr_without": 0.00906373326913818,
+          "diff": 0.00010886244705994585
         },
         "locanto": {
-          "n_with": 414,
+          "n_with": 415,
           "n_without": 1147,
-          "ctr_with": 0.009830951690821257,
-          "ctr_without": 0.00966949433304272,
-          "diff": 0.00016145735777853623
+          "ctr_with": 0.009664869879518072,
+          "ctr_without": 0.009641094158674804,
+          "diff": 2.377572084326894e-05
         },
         "ciudadanuncios": {
-          "n_with": 166,
-          "n_without": 583,
-          "ctr_with": 0.005659759036144578,
-          "ctr_without": 0.005736938250428816,
-          "diff": -7.717921428423806e-05
+          "n_with": 316,
+          "n_without": 987,
+          "ctr_with": 0.005680075949367088,
+          "ctr_without": 0.005669892603850051,
+          "diff": 1.018334551703727e-05
         }
       },
-      "matched_estimate": 0.001996,
-      "matched_se": 8.8e-05,
-      "matched_n_pairs": 1328,
-      "evidence_level": "quasi_causal",
+      "matched_estimate": 0.000556,
+      "matched_se": 7.5e-05,
+      "matched_n_pairs": 1480,
+      "evidence_level": "descriptive",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'conditional_financial_support', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "deceptive_assurance",
-      "n_with_label": 446,
-      "n_without_label": 4716,
-      "ctr_with_label": 0.009425,
-      "ctr_without_label": 0.008708,
-      "descriptive_diff": 0.000717,
+      "n_with_label": 467,
+      "n_without_label": 5250,
+      "ctr_with_label": 0.009249,
+      "ctr_without_label": 0.008416,
+      "descriptive_diff": 0.000833,
       "platform_stratified": {
         "doplim": {
           "n_with": 131,
           "n_without": 2693,
-          "ctr_with": 0.009317984732824428,
-          "ctr_without": 0.008987538804307464,
-          "diff": 0.00033044592851696336
+          "ctr_with": 0.00899575572519084,
+          "ctr_without": 0.009097236910508726,
+          "diff": -0.00010148118531788479
         },
         "locanto": {
-          "n_with": 290,
+          "n_with": 291,
           "n_without": 1271,
-          "ctr_with": 0.009777844827586207,
-          "ctr_without": 0.009697363493312352,
-          "diff": 8.048133427385543e-05
+          "ctr_with": 0.009930003436426117,
+          "ctr_without": 0.009582710464201418,
+          "diff": 0.0003472929722246991
         },
         "ciudadanuncios": {
-          "n_with": 25,
-          "n_without": 724,
-          "ctr_with": 0.00589304,
-          "ctr_without": 0.005713852209944751,
-          "diff": 0.00017918779005524944
+          "n_with": 45,
+          "n_without": 1258,
+          "ctr_with": 0.005582044444444445,
+          "ctr_without": 0.005675593004769475,
+          "diff": -9.354856032503002e-05
         }
       },
-      "matched_estimate": 0.001294,
-      "matched_se": 0.00016,
-      "matched_n_pairs": 446,
-      "evidence_level": "quasi_causal",
+      "matched_estimate": 0.000842,
+      "matched_se": 0.000145,
+      "matched_n_pairs": 467,
+      "evidence_level": "descriptive",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'deceptive_assurance', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "economic_vulnerability_targeting",
-      "n_with_label": 1384,
-      "n_without_label": 3778,
-      "ctr_with_label": 0.009081,
-      "ctr_without_label": 0.008656,
-      "descriptive_diff": 0.000425,
+      "n_with_label": 1496,
+      "n_without_label": 4221,
+      "ctr_with_label": 0.008754,
+      "ctr_without_label": 0.008389,
+      "descriptive_diff": 0.000365,
       "platform_stratified": {
         "doplim": {
           "n_with": 731,
           "n_without": 2093,
-          "ctr_with": 0.009078978112175102,
-          "ctr_without": 0.008976285236502629,
-          "diff": 0.00010269287567247348
+          "ctr_with": 0.009153632010943913,
+          "ctr_without": 0.009071188724319158,
+          "diff": 8.244328662475493e-05
         },
         "locanto": {
           "n_with": 517,
-          "n_without": 1044,
-          "ctr_with": 0.009898992263056093,
-          "ctr_without": 0.009619870689655172,
-          "diff": 0.0002791215734009207
+          "n_without": 1045,
+          "ctr_with": 0.009706510638297873,
+          "ctr_without": 0.009618172248803826,
+          "diff": 8.83383894940467e-05
         },
         "ciudadanuncios": {
-          "n_with": 135,
-          "n_without": 614,
-          "ctr_with": 0.005924725925925927,
-          "ctr_without": 0.00567478338762215,
-          "diff": 0.00024994253830377695
+          "n_with": 247,
+          "n_without": 1056,
+          "ctr_with": 0.005562838056680162,
+          "ctr_without": 0.005697980113636364,
+          "diff": -0.00013514205695620233
         }
       },
-      "matched_estimate": -0.002248,
-      "matched_se": 0.000105,
-      "matched_n_pairs": 1384,
+      "matched_estimate": -0.001883,
+      "matched_se": 9e-05,
+      "matched_n_pairs": 1496,
       "evidence_level": "quasi_causal",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'economic_vulnerability_targeting', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "education_or_student_targeting",
-      "n_with_label": 1406,
-      "n_without_label": 3756,
-      "ctr_with_label": 0.008957,
-      "ctr_without_label": 0.008701,
-      "descriptive_diff": 0.000256,
+      "n_with_label": 1468,
+      "n_without_label": 4249,
+      "ctr_with_label": 0.008834,
+      "ctr_without_label": 0.008363,
+      "descriptive_diff": 0.000471,
       "platform_stratified": {
         "doplim": {
           "n_with": 794,
           "n_without": 2030,
-          "ctr_with": 0.009017497481108312,
-          "ctr_without": 0.008997145320197042,
-          "diff": 2.0352160911269943e-05
+          "ctr_with": 0.009172431989924434,
+          "ctr_without": 0.009061276847290639,
+          "diff": 0.00011115514263379533
         },
         "locanto": {
           "n_with": 460,
-          "n_without": 1101,
-          "ctr_with": 0.009861284782608695,
-          "ctr_without": 0.009650075386012714,
-          "diff": 0.0002112093965959804
+          "n_without": 1102,
+          "ctr_with": 0.009660193478260868,
+          "ctr_without": 0.009642075317604356,
+          "diff": 1.811816065651166e-05
         },
         "ciudadanuncios": {
-          "n_with": 152,
-          "n_without": 597,
-          "ctr_with": 0.00590028947368421,
-          "ctr_without": 0.005673887772194306,
-          "diff": 0.00022640170148990457
+          "n_with": 214,
+          "n_without": 1089,
+          "ctr_with": 0.0058057476635514004,
+          "ctr_without": 0.00564615059687787,
+          "diff": 0.00015959706667353045
         }
       },
-      "matched_estimate": -0.002417,
-      "matched_se": 0.000106,
-      "matched_n_pairs": 1406,
+      "matched_estimate": -0.001874,
+      "matched_se": 9.1e-05,
+      "matched_n_pairs": 1468,
       "evidence_level": "quasi_causal",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'education_or_student_targeting', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "exclusivity_or_special_treatment",
-      "n_with_label": 233,
-      "n_without_label": 4929,
-      "ctr_with_label": 0.009031,
-      "ctr_without_label": 0.008758,
-      "descriptive_diff": 0.000273,
+      "n_with_label": 240,
+      "n_without_label": 5477,
+      "ctr_with_label": 0.00939,
+      "ctr_without_label": 0.008445,
+      "descriptive_diff": 0.000946,
       "platform_stratified": {
         "doplim": {
           "n_with": 104,
           "n_without": 2720,
-          "ctr_with": 0.008590211538461538,
-          "ctr_without": 0.009018645588235294,
-          "diff": -0.0004284340497737564
+          "ctr_with": 0.009332067307692307,
+          "ctr_without": 0.009083370588235292,
+          "diff": 0.00024869671945701444
         },
         "locanto": {
           "n_with": 123,
-          "n_without": 1438,
-          "ctr_with": 0.00957630081300813,
-          "ctr_without": 0.00972394923504868,
-          "diff": -0.00014764842204054857
+          "n_without": 1439,
+          "ctr_with": 0.009718268292682929,
+          "ctr_without": 0.009641354412786659,
+          "diff": 7.691387989627006e-05
         },
         "ciudadanuncios": {
-          "n_with": 6,
-          "n_without": 743,
-          "ctr_with": 0.0054806666666666675,
-          "ctr_without": 0.005721764468371466,
-          "diff": -0.00024109780170479805
+          "n_with": 13,
+          "n_without": 1290,
+          "ctr_with": 0.006756615384615384,
+          "ctr_without": 0.0056614356589147295,
+          "diff": 0.001095179725700655
         }
       },
-      "matched_estimate": 0.001199,
-      "matched_se": 0.0002,
-      "matched_n_pairs": 233,
+      "matched_estimate": 0.00113,
+      "matched_se": 0.000193,
+      "matched_n_pairs": 240,
       "evidence_level": "quasi_causal",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'exclusivity_or_special_treatment', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "family_obligation_targeting",
-      "n_with_label": 752,
-      "n_without_label": 4410,
-      "ctr_with_label": 0.008707,
-      "ctr_without_label": 0.008781,
-      "descriptive_diff": -7.4e-05,
+      "n_with_label": 790,
+      "n_without_label": 4927,
+      "ctr_with_label": 0.008622,
+      "ctr_without_label": 0.008462,
+      "descriptive_diff": 0.00016,
       "platform_stratified": {
         "doplim": {
           "n_with": 447,
           "n_without": 2377,
-          "ctr_with": 0.008882825503355705,
-          "ctr_without": 0.009025441733277241,
-          "diff": -0.0001426162299215366
+          "ctr_with": 0.009083847874720358,
+          "ctr_without": 0.009094161968868322,
+          "diff": -1.0314094147964581e-05
         },
         "locanto": {
           "n_with": 211,
-          "n_without": 1350,
-          "ctr_with": 0.009468104265402844,
-          "ctr_without": 0.009750484444444443,
-          "diff": -0.00028238017904159973
+          "n_without": 1351,
+          "ctr_with": 0.009356829383886257,
+          "ctr_without": 0.00969279422649889,
+          "diff": -0.00033596484261263354
         },
         "ciudadanuncios": {
-          "n_with": 92,
-          "n_without": 657,
-          "ctr_with": 0.005991695652173912,
-          "ctr_without": 0.0056817640791476404,
-          "diff": 0.00030993157302627167
+          "n_with": 130,
+          "n_without": 1173,
+          "ctr_with": 0.005800438461538462,
+          "ctr_without": 0.005658167945439045,
+          "diff": 0.00014227051609941657
         }
       },
-      "matched_estimate": 0.001906,
-      "matched_se": 0.000109,
-      "matched_n_pairs": 752,
-      "evidence_level": "quasi_causal",
+      "matched_estimate": 0.00076,
+      "matched_se": 9.8e-05,
+      "matched_n_pairs": 790,
+      "evidence_level": "descriptive",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'family_obligation_targeting', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "foot_in_the_door",
-      "n_with_label": 365,
-      "n_without_label": 4797,
-      "ctr_with_label": 0.009026,
-      "ctr_without_label": 0.008751,
-      "descriptive_diff": 0.000275,
+      "n_with_label": 396,
+      "n_without_label": 5321,
+      "ctr_with_label": 0.008924,
+      "ctr_without_label": 0.008452,
+      "descriptive_diff": 0.000472,
       "platform_stratified": {
         "doplim": {
           "n_with": 177,
           "n_without": 2647,
-          "ctr_with": 0.008994152542372881,
-          "ctr_without": 0.009003450321118246,
-          "diff": -9.297778745365193e-06
+          "ctr_with": 0.009305723163841808,
+          "ctr_without": 0.009078273517189272,
+          "diff": 0.00022744964665253643
         },
         "locanto": {
           "n_with": 166,
-          "n_without": 1395,
-          "ctr_with": 0.009443590361445781,
-          "ctr_without": 0.009744292473118279,
-          "diff": -0.00030070211167249755
+          "n_without": 1396,
+          "ctr_with": 0.009628909638554218,
+          "ctr_without": 0.009649611031518623,
+          "diff": -2.0701392964405513e-05
         },
         "ciudadanuncios": {
-          "n_with": 21,
-          "n_without": 728,
-          "ctr_with": 0.006102666666666666,
-          "ctr_without": 0.0057087898351648346,
-          "diff": 0.0003938768315018314
+          "n_with": 52,
+          "n_without": 1251,
+          "ctr_with": 0.0054085192307692315,
+          "ctr_without": 0.0056833293365307755,
+          "diff": -0.00027481010576154395
         }
       },
-      "matched_estimate": 0.001486,
-      "matched_se": 0.000178,
-      "matched_n_pairs": 364,
-      "evidence_level": "quasi_causal",
+      "matched_estimate": 0.000841,
+      "matched_se": 0.000142,
+      "matched_n_pairs": 396,
+      "evidence_level": "descriptive",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'foot_in_the_door', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "guilt_or_shame_pressure",
-      "n_with_label": 22,
-      "n_without_label": 5140,
-      "ctr_with_label": 0.009793,
-      "ctr_without_label": 0.008766,
-      "descriptive_diff": 0.001027,
+      "n_with_label": 23,
+      "n_without_label": 5694,
+      "ctr_with_label": 0.008468,
+      "ctr_without_label": 0.008484,
+      "descriptive_diff": -1.7e-05,
       "platform_stratified": {
         "doplim": {
           "n_with": 8,
           "n_without": 2816,
-          "ctr_with": 0.0087765,
-          "ctr_without": 0.009003510653409092,
-          "diff": -0.00022701065340909217
+          "ctr_with": 0.00928925,
+          "ctr_without": 0.009091970525568182,
+          "diff": 0.00019727947443181834
         },
         "locanto": {
           "n_with": 13,
-          "n_without": 1548,
-          "ctr_with": 0.010739153846153844,
-          "ctr_without": 0.009703691860465116,
-          "diff": 0.0010354619856887282
+          "n_without": 1549,
+          "ctr_with": 0.00800546153846154,
+          "ctr_without": 0.009661191091026469,
+          "diff": -0.0016557295525649295
         }
       },
-      "matched_estimate": 0.002367,
-      "matched_se": 0.000684,
-      "matched_n_pairs": 22,
-      "evidence_level": "quasi_causal",
+      "matched_estimate": 0.000195,
+      "matched_se": 0.000577,
+      "matched_n_pairs": 23,
+      "evidence_level": "descriptive",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'guilt_or_shame_pressure', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "platform_migration",
-      "n_with_label": 1196,
-      "n_without_label": 3966,
-      "ctr_with_label": 0.009037,
-      "ctr_without_label": 0.00869,
-      "descriptive_diff": 0.000347,
+      "n_with_label": 1293,
+      "n_without_label": 4424,
+      "ctr_with_label": 0.00869,
+      "ctr_without_label": 0.008424,
+      "descriptive_diff": 0.000266,
       "platform_stratified": {
         "doplim": {
           "n_with": 409,
           "n_without": 2415,
-          "ctr_with": 0.009064938875305623,
-          "ctr_without": 0.008992355279503105,
-          "diff": 7.258359580251776e-05
+          "ctr_with": 0.008753022004889977,
+          "ctr_without": 0.00915002774327122,
+          "diff": -0.0003970057383812439
         },
         "locanto": {
           "n_with": 644,
-          "n_without": 917,
-          "ctr_with": 0.00964814596273292,
-          "ctr_without": 0.009757380588876772,
-          "diff": -0.00010923462614385177
+          "n_without": 918,
+          "ctr_with": 0.00966579192546584,
+          "ctr_without": 0.009634516339869281,
+          "diff": 3.12755855965581e-05
         },
         "ciudadanuncios": {
-          "n_with": 133,
-          "n_without": 616,
-          "ctr_with": 0.0057534210526315795,
-          "ctr_without": 0.005712581168831168,
-          "diff": 4.083988380041131e-05
+          "n_with": 230,
+          "n_without": 1073,
+          "ctr_with": 0.005633482608695653,
+          "ctr_without": 0.005680696178937559,
+          "diff": -4.721357024190572e-05
         }
       },
-      "matched_estimate": 0.000248,
-      "matched_se": 0.000108,
-      "matched_n_pairs": 1196,
-      "evidence_level": "descriptive",
+      "matched_estimate": -0.001322,
+      "matched_se": 0.000103,
+      "matched_n_pairs": 1293,
+      "evidence_level": "quasi_causal",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'platform_migration', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "privacy_or_secrecy_pressure",
-      "n_with_label": 2086,
-      "n_without_label": 3076,
-      "ctr_with_label": 0.008963,
-      "ctr_without_label": 0.00864,
-      "descriptive_diff": 0.000323,
+      "n_with_label": 2257,
+      "n_without_label": 3460,
+      "ctr_with_label": 0.008683,
+      "ctr_without_label": 0.008355,
+      "descriptive_diff": 0.000328,
       "platform_stratified": {
         "doplim": {
           "n_with": 993,
           "n_without": 1831,
-          "ctr_with": 0.009084735146022156,
-          "ctr_without": 0.008958468596395413,
-          "diff": 0.0001262665496267433
+          "ctr_with": 0.009122309164149044,
+          "ctr_without": 0.009076379027853633,
+          "diff": 4.5930136295410304e-05
         },
         "locanto": {
           "n_with": 857,
-          "n_without": 704,
-          "ctr_with": 0.00967393348891482,
-          "ctr_without": 0.009759038352272728,
-          "diff": -8.510486335790851e-05
+          "n_without": 705,
+          "ctr_with": 0.009592131855309218,
+          "ctr_without": 0.009714608510638297,
+          "diff": -0.00012247665532907903
         },
         "ciudadanuncios": {
-          "n_with": 233,
-          "n_without": 516,
-          "ctr_with": 0.005787772532188841,
-          "ctr_without": 0.00568915503875969,
-          "diff": 9.861749342915047e-05
+          "n_with": 404,
+          "n_without": 899,
+          "ctr_with": 0.005638908415841584,
+          "ctr_without": 0.005687395995550611,
+          "diff": -4.8487579709027145e-05
         }
       },
-      "matched_estimate": 0.000925,
-      "matched_se": 8.1e-05,
-      "matched_n_pairs": 2085,
+      "matched_estimate": -0.00075,
+      "matched_se": 7.7e-05,
+      "matched_n_pairs": 2257,
       "evidence_level": "descriptive",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'privacy_or_secrecy_pressure', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "reciprocity_obligation",
-      "n_with_label": 5156,
+      "n_with_label": 5711,
       "n_without_label": 6,
-      "ctr_with_label": 0.008771,
-      "ctr_without_label": 0.008531,
-      "descriptive_diff": 0.000239,
+      "ctr_with_label": 0.008485,
+      "ctr_without_label": 0.007532,
+      "descriptive_diff": 0.000953,
       "platform_stratified": {},
-      "matched_estimate": 0.001309,
-      "matched_se": 3.8e-05,
-      "matched_n_pairs": 5121,
-      "evidence_level": "quasi_causal",
+      "matched_estimate": 0.000315,
+      "matched_se": 4.3e-05,
+      "matched_n_pairs": 5677,
+      "evidence_level": "descriptive",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'reciprocity_obligation', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "repetition_or_campaign_escalation",
-      "n_with_label": 74,
-      "n_without_label": 5088,
-      "ctr_with_label": 0.009937,
-      "ctr_without_label": 0.008753,
-      "descriptive_diff": 0.001184,
+      "n_with_label": 75,
+      "n_without_label": 5642,
+      "ctr_with_label": 0.00968,
+      "ctr_without_label": 0.008468,
+      "descriptive_diff": 0.001212,
       "platform_stratified": {
         "doplim": {
           "n_with": 19,
           "n_without": 2805,
-          "ctr_with": 0.009793368421052629,
-          "ctr_without": 0.008997513012477719,
-          "diff": 0.0007958554085749098
+          "ctr_with": 0.009460842105263156,
+          "ctr_without": 0.009090034581105168,
+          "diff": 0.0003708075241579886
         },
         "locanto": {
           "n_with": 52,
-          "n_without": 1509,
-          "ctr_with": 0.010330711538461537,
-          "ctr_without": 0.009691005301524187,
-          "diff": 0.0006397062369373503
+          "n_without": 1510,
+          "ctr_with": 0.010080769230769233,
+          "ctr_without": 0.009632487417218543,
+          "diff": 0.0004482818135506904
         }
       },
-      "matched_estimate": 0.001701,
-      "matched_se": 0.000378,
-      "matched_n_pairs": 74,
-      "evidence_level": "quasi_causal",
+      "matched_estimate": 0.000996,
+      "matched_se": 0.000338,
+      "matched_n_pairs": 75,
+      "evidence_level": "descriptive",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'repetition_or_campaign_escalation', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "scarcity_or_urgency",
-      "n_with_label": 271,
-      "n_without_label": 4891,
-      "ctr_with_label": 0.009205,
-      "ctr_without_label": 0.008746,
-      "descriptive_diff": 0.000459,
+      "n_with_label": 288,
+      "n_without_label": 5429,
+      "ctr_with_label": 0.009076,
+      "ctr_without_label": 0.008453,
+      "descriptive_diff": 0.000623,
       "platform_stratified": {
         "doplim": {
           "n_with": 97,
           "n_without": 2727,
-          "ctr_with": 0.008950350515463917,
-          "ctr_without": 0.009004735606894023,
-          "diff": -5.438509143010535e-05
+          "ctr_with": 0.0092720206185567,
+          "ctr_without": 0.009086144847818115,
+          "diff": 0.00018587577073858434
         },
         "locanto": {
           "n_with": 153,
-          "n_without": 1408,
-          "ctr_with": 0.009802098039215687,
-          "ctr_without": 0.009702558948863637,
-          "diff": 9.953909035204968e-05
+          "n_without": 1409,
+          "ctr_with": 0.009827803921568628,
+          "ctr_without": 0.009627822569198013,
+          "diff": 0.00019998135237061544
         },
         "ciudadanuncios": {
-          "n_with": 20,
-          "n_without": 729,
-          "ctr_with": 0.00548675,
-          "ctr_without": 0.005726227709190673,
-          "diff": -0.00023947770919067243
+          "n_with": 37,
+          "n_without": 1266,
+          "ctr_with": 0.005341162162162163,
+          "ctr_without": 0.00568204186413902,
+          "diff": -0.0003408797019768574
         }
       },
-      "matched_estimate": 0.001484,
-      "matched_se": 0.000206,
-      "matched_n_pairs": 271,
-      "evidence_level": "quasi_causal",
+      "matched_estimate": 0.000719,
+      "matched_se": 0.000163,
+      "matched_n_pairs": 288,
+      "evidence_level": "descriptive",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'scarcity_or_urgency', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "sexualized_appearance_condition",
-      "n_with_label": 837,
-      "n_without_label": 4325,
-      "ctr_with_label": 0.008989,
-      "ctr_without_label": 0.008728,
-      "descriptive_diff": 0.000261,
+      "n_with_label": 890,
+      "n_without_label": 4827,
+      "ctr_with_label": 0.008786,
+      "ctr_without_label": 0.008429,
+      "descriptive_diff": 0.000357,
       "platform_stratified": {
         "doplim": {
           "n_with": 468,
           "n_without": 2356,
-          "ctr_with": 0.008849369658119657,
-          "ctr_without": 0.009033358658743633,
-          "diff": -0.00018398900062397555
+          "ctr_with": 0.008939457264957264,
+          "ctr_without": 0.009122935908319184,
+          "diff": -0.0001834786433619201
         },
         "locanto": {
-          "n_with": 319,
+          "n_with": 320,
           "n_without": 1242,
-          "ctr_with": 0.009716485893416928,
-          "ctr_without": 0.009711243961352655,
-          "diff": 5.241932064272564e-06
+          "ctr_with": 0.009504718750000002,
+          "ctr_without": 0.009684175523349436,
+          "diff": -0.00017945677334943455
         },
         "ciudadanuncios": {
-          "n_with": 50,
-          "n_without": 699,
-          "ctr_with": 0.005654139999999999,
-          "ctr_without": 0.005724532188841201,
-          "diff": -7.039218884120207e-05
+          "n_with": 102,
+          "n_without": 1201,
+          "ctr_with": 0.005822813725490197,
+          "ctr_without": 0.005659584512905912,
+          "diff": 0.00016322921258428522
         }
       },
-      "matched_estimate": -0.002657,
-      "matched_se": 0.000132,
-      "matched_n_pairs": 837,
+      "matched_estimate": -0.001966,
+      "matched_se": 0.000121,
+      "matched_n_pairs": 890,
       "evidence_level": "quasi_causal",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'sexualized_appearance_condition', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
     },
     {
       "label": "transactional_ambiguity",
-      "n_with_label": 456,
-      "n_without_label": 4706,
-      "ctr_with_label": 0.009407,
-      "ctr_without_label": 0.008709,
-      "descriptive_diff": 0.000699,
+      "n_with_label": 479,
+      "n_without_label": 5238,
+      "ctr_with_label": 0.009363,
+      "ctr_without_label": 0.008404,
+      "descriptive_diff": 0.000959,
       "platform_stratified": {
         "doplim": {
           "n_with": 160,
           "n_without": 2664,
-          "ctr_with": 0.009146968750000001,
-          "ctr_without": 0.008994212837837837,
-          "diff": 0.00015275591216216446
+          "ctr_with": 0.00918916875,
+          "ctr_without": 0.009086725225225226,
+          "diff": 0.00010244352477477466
         },
         "locanto": {
           "n_with": 274,
-          "n_without": 1287,
-          "ctr_with": 0.009812448905109489,
-          "ctr_without": 0.009690996891996892,
-          "diff": 0.00012145201311259714
+          "n_without": 1288,
+          "ctr_with": 0.00999265693430657,
+          "ctr_without": 0.009573965838509316,
+          "diff": 0.00041869109579725436
         },
         "ciudadanuncios": {
-          "n_with": 21,
-          "n_without": 728,
-          "ctr_with": 0.006231380952380953,
-          "ctr_without": 0.005705076923076923,
-          "diff": 0.0005263040293040297
+          "n_with": 44,
+          "n_without": 1259,
+          "ctr_with": 0.006119613636363636,
+          "ctr_without": 0.005656731532962669,
+          "diff": 0.000462882103400967
         }
       },
-      "matched_estimate": 0.00153,
-      "matched_se": 0.000149,
-      "matched_n_pairs": 455,
+      "matched_estimate": 0.001031,
+      "matched_se": 0.000135,
+      "matched_n_pairs": 479,
       "evidence_level": "quasi_causal",
       "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
       "recommendation": "To establish causality for 'transactional_ambiguity', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."

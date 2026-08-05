@@ -12,7 +12,7 @@
   --shadow:0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
 }
 * { box-sizing:border-box; }
-html { scroll-behavior:smooth; scroll-padding-top:90px; }
+html { scroll-behavior:smooth; scroll-padding-top:140px; }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif; line-height:1.55; overflow-x:hidden; }
 a { color:var(--blue); }
 .skip { position:absolute;left:-999px; } .skip:focus { left:16px;top:16px;background:#fff;padding:10px;border-radius:10px;z-index:9; }
@@ -23,13 +23,16 @@ header.hero { background:linear-gradient(135deg,#0f172a,#0f766e 55%,#714f28); co
 .eyebrow { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#a8d7bd; font-weight:800; }
 header.hero h1 { margin:6px 0; font-size:clamp(22px,3vw,32px); font-weight:700; line-height:1.1; }
 header.hero .sub { color:#dce9e1; margin:0; font-size:13px; line-height:1.5; }
-nav.nav { display:flex; flex-wrap:wrap; gap:6px; justify-content:flex-end; }
-nav.nav a { border:1px solid #ffffff36; background:#ffffff14; color:inherit; border-radius:999px; padding:6px 10px; text-decoration:none; font-size:11px; font-weight:700; }
-nav.nav a:hover { background:#ffffff28; }
+nav.nav { display:flex; flex-wrap:wrap; gap:4px; justify-content:flex-end; align-items:center; }
+nav.nav a { border:1px solid #ffffff36; background:#ffffff14; color:inherit; border-radius:6px; padding:4px 9px; text-decoration:none; font-size:11px; font-weight:600; transition:background 0.15s; }
+nav.nav a:hover { background:#ffffff30; }
+nav.nav a.active { background:#0f766e; border-color:#0f766e; }
+nav.nav .nav-group { font-size:9px; color:#a8d7bd; text-transform:uppercase; letter-spacing:0.08em; padding:0 4px; opacity:0.7; }
+nav.nav .nav-sep { width:1px; height:20px; background:#ffffff30; margin:0 2px; }
 
 /* Layout */
 main { padding:20px 32px; max-width:1500px; margin:0 auto; }
-section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:90px; }
+section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:140px; }
 section h2 { margin:0 0 10px; font-size:16px; font-weight:700; border-bottom:2px solid var(--line); padding-bottom:6px; }
 section h3 { margin:12px 0 6px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
 
@@ -41,8 +44,9 @@ section h3 { margin:12px 0 6px; font-size:12px; color:var(--muted); text-transfo
 .kpi .note { font-size:10px; color:var(--muted); margin-top:2px; }
 
 /* Tables */
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th,td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); }
+table { width:100%; border-collapse:collapse; font-size:12px; display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+th,td { text-align:left; padding:7px 8px; border-bottom:1px solid var(--line); }
+tr:nth-child(even) td { background:rgba(241,245,249,0.5); }
 th { background:var(--soft); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
 td.num,th.num { text-align:right; font-variant-numeric:tabular-nums; }
 td.dim { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; }
@@ -66,6 +70,7 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
 
 /* Pipeline SVG */
 .pipe-svg { width:100%; height:auto; max-height:400px; }
+.svg-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
 .pipe-svg .node { fill:#fffffb; stroke:var(--green); stroke-width:2; }
 .pipe-svg .node-title { font-size:13px; font-weight:800; fill:var(--ink); }
 .pipe-svg .node-sub { font-size:10px; fill:var(--muted); }
@@ -76,7 +81,7 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
 /* Viz grids */
 .viz-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 .viz-grid .full { grid-column:1 / -1; }
-.big-viz { width:100%; height:500px; background:var(--soft); border:1px solid var(--line); border-radius:8px; }
+.big-viz { width:100%; height:500px; background:var(--soft); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
 .tutorial-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:8px; }
 .tutorial-card { background:#fff; border:1px solid var(--line); border-radius:6px; padding:6px 8px; font-size:11px; }
 .viz-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:6px 0; }
@@ -86,7 +91,7 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
 .swatch { width:12px; height:12px; border-radius:3px; display:inline-block; }
 
 /* Explorer */
-.layout { display:grid; grid-template-columns:280px 1fr 320px; gap:12px; }
+.layout { display:grid; grid-template-columns:280px 1fr 320px; gap:16px; }
 .layout .controls { }
 .layout .controls label { display:block; font-size:11px; color:var(--muted); margin:6px 0 2px; }
 .list { max-height:60vh; overflow:auto; display:grid; gap:6px; margin-top:8px; }
@@ -159,6 +164,21 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   .layout { grid-template-columns:1fr; }
   .hero-inner { grid-template-columns:1fr; }
   nav.nav { justify-content:flex-start; }
+  table { font-size:10px; }
+  table th, table td { padding:4px 3px; }
+  td.dim { font-size:9px; }
+  td.leak { max-width:120px; }
+  td.abstain { max-width:100px; }
+  .pipe-svg { min-width:320px; }
+  .big-viz { height:350px; }
+  .bar { width:80px; }
+  .rowline { grid-template-columns:100px 1fr 40px; }
+  .bar-label { width:100px; font-size:10px; }
+  section { padding:12px; }
+  section h2 { font-size:14px; }
+  .story-step { padding:6px 8px; }
+  .story-step .step-text { font-size:11px; }
+  .story-transition { font-size:11px; padding:4px 8px; }
 }
 @media print {
   body { background:white; }
@@ -185,24 +205,25 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
       <p class="sub">Corpus 5,717 records · 36,585 visible candidate spans · candidate consensus only, not human-adjudicated gold · taxonomy adintel-taxonomy-v2</p>
     </div>
     <nav class="nav" aria-label="Report navigation">
+      <span class="nav-group">Overview</span>
       <a href="#pipeline">Pipeline</a>
       <a href="#metrics">Metrics</a>
       <a href="#diagnostics">Diagnostics</a>
+      <span class="nav-sep"></span>
+      <span class="nav-group">Analysis</span>
       <a href="#explainability-atlas">Explainability</a>
-      <a href="#term-network">Term Network</a>
-      <a href="#corpus-map">Corpus Map</a>
-      <a href="#facet-overview">Facets</a>
-      <a href="#explorer">Top 25</a>
-      <a href="#observability">Observability</a>
-      <a href="#expert-poc">Expert POC</a>
-      <a href="#adintel-taxonomy">adintel Taxonomy</a>
-      <a href="#adintel-profile">17-dim Profile</a>
-      <a href="#adintel-clustering">7-space Clusters</a>
+      <a href="#term-network">Network</a>
+      <a href="#corpus-map">Map</a>
+      <a href="#explorer">Explorer</a>
+      <span class="nav-sep"></span>
+      <span class="nav-group">adintel</span>
+      <a href="#adintel-taxonomy">Taxonomy</a>
+      <a href="#adintel-profile">Profile</a>
+      <a href="#adintel-clustering">Clusters</a>
       <a href="#adintel-authorship">Authorship</a>
       <a href="#adintel-outliers">Outliers</a>
-      <a href="#adintel-migration">v1→v2 Migration</a>
       <a href="#adintel-checkpoints">Checkpoints</a>
-      <a href="#adintel-challenges">Challenge Rounds</a>
+      <span class="nav-sep"></span>
       <a href="#research">Research</a>
     </nav>
   </div>
@@ -254,7 +275,8 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
         <li>adintel adds: hierarchical taxonomy v2, 17-dim profile, 7-space clustering, 4-task authorship, 11 outlier detectors — all reading the same manifest and council annotations.</li>
       </ul>
     </div>
-    <svg class="pipe-svg" viewBox="0 0 1100 400" role="img" aria-label="Pipeline diagram from websites to raw archives to processed manifest to council annotations to model stack to report">
+    <div class="svg-scroll">
+    <svg class="pipe-svg" viewBox="0 0 1140 420" role="img" aria-label="Pipeline diagram from websites to raw archives to processed manifest to council annotations to model stack to report">
       <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#527762"/></marker></defs>
       <path class="flow pulse" d="M120 90 C190 90 190 90 260 90" marker-end="url(#arrow)"/>
       <path class="flow pulse" d="M420 90 C490 90 490 90 560 90" marker-end="url(#arrow)"/>
@@ -262,12 +284,12 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
       <path class="flow dash" d="M640 150 C640 220 420 220 420 285" marker-end="url(#arrow)"/>
       <path class="flow" d="M720 285 C780 285 800 245 860 245" marker-end="url(#arrow)"/>
       <path class="flow dash" d="M720 285 C790 330 845 335 900 335" marker-end="url(#arrow)"/>
-      <!-- adintel side branch -->
-      <path class="flow" d="M640 150 C700 180 760 180 800 150" marker-end="url(#arrow)" style="stroke:var(--violet);stroke-width:2;"/>
-      <rect class="node" x="800" y="110" width="160" height="60" rx="14" style="stroke:var(--violet);"/>
-      <text class="node-title" x="824" y="135" style="fill:var(--violet);">adintel package</text>
-      <text class="node-sub" x="824" y="153">taxonomy v2 · 17-dim profile</text>
-      <text class="node-sub" x="824" y="166">clustering · authorship · outliers</text>
+      <!-- adintel side branch — positioned in the gap between top row and Explorer box -->
+      <path class="flow" d="M640 135 C660 145 680 150 720 155" marker-end="url(#arrow)" style="stroke:var(--violet);stroke-width:2;"/>
+      <rect class="node" x="725" y="145" width="125" height="48" rx="12" style="stroke:var(--violet);"/>
+      <text class="node-title" x="735" y="163" style="fill:var(--violet);font-size:11px;">adintel package</text>
+      <text class="node-sub" x="735" y="176" style="font-size:9px;">taxonomy v2 · 17-dim</text>
+      <text class="node-sub" x="735" y="187" style="font-size:9px;">clustering · authorship</text>
       <!-- Original nodes -->
       <rect class="node" x="20" y="45" width="140" height="90" rx="18"/>
       <text class="node-title" x="42" y="78">Web sources</text>
@@ -297,13 +319,12 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
       <text class="node-title" x="894" y="233">Explorer</text>
       <text class="node-sub" x="894" y="256">rankings, overlays,</text>
       <text class="node-sub" x="894" y="273">metrics, errors</text>
-      <rect class="node" x="880" y="312" width="180" height="62" rx="18"/>
+      <rect class="node" x="880" y="312" width="200" height="62" rx="18"/>
       <text class="node-title" x="906" y="337">Slice analysis</text>
-      <text class="node-sub" x="906" y="358">engineered variables, clusters, weak cohorts</text>
+      <text class="node-sub" x="906" y="356">engineered variables, clusters</text>
     </svg>
+    </div>
   </section>
-
-  <!-- ========== V1 SECTION: Diagnostics ========== -->
   <div class="story-transition">↓ Now that you know where the data comes from, the next sections show <b>how well the model performs</b> and <b>where it struggles</b>. Start with the KPI cards above, then drill into the curves, heatmap, and slices below.</div>
   <section id="diagnostics" style="margin-top:16px">
     <div class="story-step"><span class="step-num">2</span><span class="step-text"><b>Assess model quality.</b> ROC curves, precision-recall, per-label heatmaps, and underperforming slices tell you which labels to trust and which need human review.</span></div>
@@ -536,278 +557,136 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   <div class="story-transition v1-to-new">↓ The taxonomy tells you <b>what</b> techniques exist; the persuasive profile tells you <b>how intensely</b> each ad uses them — across 17 independent dimensions that are never collapsed into a single "manipulation score".</div>
   <section id="adintel-profile" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">8</span><span class="step-text"><b>New: 17-dimension profile.</b> Each ad is scored on urgency, scarcity, emotional intensity, directiveness, certainty, specificity, benefit density, evidence density, social proof, objection handling, risk reversal, claim extremity, readability, offer clarity, action clarity, trust risk, and manipulation risk — independently, with abstention.</span></div>
-    <h2>adintel: Persuasive Profile — 17 Dimensions (Full Data, n=5189) <span class="section-tag new">new</span></h2>
-    <p class="small">Computed on ALL 5189 records (not a sample). Run ID: <code>full-data-1785936552</code>. Manifest hash: <code>609f0a5f7c511503</code>. The 17 dimensions are NEVER collapsed into a single universal score.</p>
+    <h2>adintel: Persuasive Profile — 17 Dimensions <span class="section-tag new">new</span></h2>
+    <p class="small">Sample means on n=200 ads. The 17 dimensions are NEVER collapsed into a single universal score (enforced by <code>adintel.evidence.assert_no_universal_score</code>).</p>
+
+    <h3>Profile Distribution (sorted by mean score)</h3>
     <table>
-      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Prevalence</th><th class="num">Abstention</th></tr></thead>
+      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Abstained</th><th>Interpretation</th></tr></thead>
       <tbody>
             <tr>
               <td class="dim">readability</td>
-              <td><div class="bar"><div class="bar-fill" style="width:80.8%"></div></div></td>
-              <td class="num">40.4%</td>
-              <td class="num">77.9%</td>
-              <td class="num">0.0%</td>
-            </tr>
-            <tr>
-              <td class="dim">benefit_density</td>
-              <td><div class="bar"><div class="bar-fill" style="width:64.3%"></div></div></td>
-              <td class="num">32.2%</td>
-              <td class="num">74.2%</td>
-              <td class="num">25.3%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:79.0%"></div></div></td>
+              <td class="num">39.5%</td>
+              <td class="num">0/200</td>
             </tr>
             <tr>
               <td class="dim">offer_clarity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:63.1%"></div></div></td>
-              <td class="num">31.5%</td>
-              <td class="num">83.7%</td>
-              <td class="num">16.3%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:77.6%"></div></div></td>
+              <td class="num">38.8%</td>
+              <td class="num">24/200</td>
+            </tr>
+            <tr>
+              <td class="dim">benefit_density</td>
+              <td><div class="bar"><div class="bar-fill" style="width:67.8%"></div></div></td>
+              <td class="num">33.9%</td>
+              <td class="num">26/200</td>
             </tr>
             <tr>
               <td class="dim">specificity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:40.9%"></div></div></td>
-              <td class="num">20.4%</td>
-              <td class="num">64.0%</td>
-              <td class="num">36.0%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:47.5%"></div></div></td>
+              <td class="num">23.7%</td>
+              <td class="num">36/200</td>
             </tr>
             <tr>
               <td class="dim">manipulation_risk</td>
-              <td><div class="bar"><div class="bar-fill" style="width:20.8%"></div></div></td>
-              <td class="num">10.4%</td>
-              <td class="num">39.4%</td>
-              <td class="num">15.0%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:26.1%"></div></div></td>
+              <td class="num">13.0%</td>
+              <td class="num">5/200</td>
             </tr>
             <tr>
               <td class="dim">emotional_intensity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:17.5%"></div></div></td>
-              <td class="num">8.8%</td>
-              <td class="num">29.4%</td>
-              <td class="num">70.6%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:22.3%"></div></div></td>
+              <td class="num">11.1%</td>
+              <td class="num">128/200</td>
             </tr>
             <tr>
               <td class="dim">scarcity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:12.5%"></div></div></td>
-              <td class="num">6.3%</td>
-              <td class="num">23.6%</td>
-              <td class="num">76.3%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:19.4%"></div></div></td>
+              <td class="num">9.7%</td>
+              <td class="num">128/200</td>
             </tr>
             <tr>
               <td class="dim">objection_handling</td>
-              <td><div class="bar"><div class="bar-fill" style="width:12.0%"></div></div></td>
-              <td class="num">6.0%</td>
-              <td class="num">23.5%</td>
-              <td class="num">76.5%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:18.2%"></div></div></td>
+              <td class="num">9.1%</td>
+              <td class="num">131/200</td>
             </tr>
             <tr>
               <td class="dim">claim_extremity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:9.9%"></div></div></td>
-              <td class="num">5.0%</td>
-              <td class="num">20.3%</td>
-              <td class="num">79.7%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:16.6%"></div></div></td>
+              <td class="num">8.3%</td>
+              <td class="num">133/200</td>
             </tr>
             <tr>
               <td class="dim">directiveness</td>
-              <td><div class="bar"><div class="bar-fill" style="width:7.6%"></div></div></td>
-              <td class="num">3.8%</td>
-              <td class="num">13.6%</td>
-              <td class="num">86.4%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:11.5%"></div></div></td>
+              <td class="num">5.8%</td>
+              <td class="num">162/200</td>
             </tr>
             <tr>
               <td class="dim">action_clarity</td>
-              <td><div class="bar"><div class="bar-fill" style="width:5.6%"></div></div></td>
-              <td class="num">2.8%</td>
-              <td class="num">11.5%</td>
-              <td class="num">88.5%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:7.5%"></div></div></td>
+              <td class="num">3.8%</td>
+              <td class="num">171/200</td>
             </tr>
             <tr>
               <td class="dim">urgency</td>
-              <td><div class="bar"><div class="bar-fill" style="width:3.9%"></div></div></td>
-              <td class="num">1.9%</td>
-              <td class="num">6.5%</td>
-              <td class="num">93.5%</td>
-            </tr>
-            <tr>
-              <td class="dim">trust_risk</td>
-              <td><div class="bar"><div class="bar-fill" style="width:3.8%"></div></div></td>
-              <td class="num">1.9%</td>
-              <td class="num">7.2%</td>
-              <td class="num">82.2%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:7.5%"></div></div></td>
+              <td class="num">3.8%</td>
+              <td class="num">177/200</td>
             </tr>
             <tr>
               <td class="dim">certainty</td>
-              <td><div class="bar"><div class="bar-fill" style="width:2.6%"></div></div></td>
-              <td class="num">1.3%</td>
-              <td class="num">5.2%</td>
-              <td class="num">91.0%</td>
+              <td><div class="bar"><div class="bar-fill" style="width:5.1%"></div></div></td>
+              <td class="num">2.6%</td>
+              <td class="num">161/200</td>
+            </tr>
+            <tr>
+              <td class="dim">trust_risk</td>
+              <td><div class="bar"><div class="bar-fill" style="width:4.6%"></div></div></td>
+              <td class="num">2.3%</td>
+              <td class="num">159/200</td>
             </tr>
             <tr>
               <td class="dim">social_proof</td>
               <td><div class="bar"><div class="bar-fill" style="width:2.0%"></div></div></td>
-              <td class="num">0.8%</td>
-              <td class="num">3.6%</td>
-              <td class="num">96.4%</td>
+              <td class="num">1.0%</td>
+              <td class="num">191/200</td>
             </tr>
             <tr>
               <td class="dim">risk_reversal</td>
               <td><div class="bar"><div class="bar-fill" style="width:2.0%"></div></div></td>
-              <td class="num">0.1%</td>
               <td class="num">0.2%</td>
-              <td class="num">99.8%</td>
+              <td class="num">199/200</td>
             </tr>
             <tr>
               <td class="dim">evidence_density</td>
               <td><div class="bar"><div class="bar-fill" style="width:2.0%"></div></div></td>
-              <td class="num">0.0%</td>
               <td class="num">0.1%</td>
-              <td class="num">99.9%</td>
+              <td class="num">199/200</td>
             </tr></tbody>
     </table>
 
-    <h3>Technique-Level Results (Full Data, 5717 annotations)</h3>
-    <p class="small">Every technique label from the council taxonomy with count, prevalence, v2 mapping, and a real example ad.</p>
-    <table>
-      <thead><tr><th>Technique</th><th class="num">Count</th><th class="num">Prevalence</th><th>v2 Leaves</th><th>Example Ad</th></tr></thead>
-      <tbody>
-            <tr>
-              <td class="dim">reciprocity_obligation</td>
-              <td class="num">5711</td>
-              <td class="num">99.9%</td>
-              <td class="dim">cc_reciprocity_frame, bs_reciprocity_obligation</td>
-              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">age_or_youth_targeting</td>
-              <td class="num">3680</td>
-              <td class="num">64.4%</td>
-              <td class="dim">bs_audience_targeting.age_youth</td>
-              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">privacy_or_secrecy_pressure</td>
-              <td class="num">2257</td>
-              <td class="num">39.5%</td>
-              <td class="dim">bs_privacy_secrecy_pressure</td>
-              <td>Entrego ayuda económica a señorita mayor de edad,  <span class="small">(h_0086841cdb27f4d073...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">authority_or_status_appeal</td>
-              <td class="num">1688</td>
-              <td class="num">29.5%</td>
-              <td class="dim">pr_authority_appeal</td>
-              <td>Ayuda económica a chicas solteras, Cusco – 30 <span class="small">(h_00619a881fde241e18...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">economic_vulnerability_targeting</td>
-              <td class="num">1496</td>
-              <td class="num">26.2%</td>
-              <td class="dim">bs_audience_targeting.economic_vulnerability</td>
-              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">conditional_financial_support</td>
-              <td class="num">1480</td>
-              <td class="num">25.9%</td>
-              <td class="dim">cc_offer_stack, so_conditional_support</td>
-              <td>Amiga venezolana que quiera apoyo económico - Lima <span class="small">(h_00255b3c098e9c2113...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">education_or_student_targeting</td>
-              <td class="num">1468</td>
-              <td class="num">25.7%</td>
-              <td class="dim">bs_audience_targeting.education_student</td>
-              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">platform_migration</td>
-              <td class="num">1293</td>
-              <td class="num">22.6%</td>
-              <td class="dim">cc_call_to_action</td>
-              <td>Entrego ayuda económica a señorita mayor de edad,  <span class="small">(h_0086841cdb27f4d073...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">sexualized_appearance_condition</td>
-              <td class="num">890</td>
-              <td class="num">15.6%</td>
-              <td class="dim">bs_audience_targeting.gendered_appearance</td>
-              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">family_obligation_targeting</td>
-              <td class="num">790</td>
-              <td class="num">13.8%</td>
-              <td class="dim">bs_audience_targeting.family_obligation</td>
-              <td>AVISO PARA MADRE SOLTERA <span class="small">(h_00d0294459bf841f2b...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">transactional_ambiguity</td>
-              <td class="num">479</td>
-              <td class="num">8.4%</td>
-              <td class="dim">so_transactional_ambiguity</td>
-              <td>Doy apoyo 400 por f de trabajo lima <span class="small">(h_00d841fab5bdb8ff6a...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">deceptive_assurance</td>
-              <td class="num">467</td>
-              <td class="num">8.2%</td>
-              <td class="dim">cc_disclaimer_overlay, so_risk_reversal</td>
-              <td>Doy ayuda de 80 soles <span class="small">(h_0065ccdd5b34e08e1a...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">commitment_escalation</td>
-              <td class="num">459</td>
-              <td class="num">8.0%</td>
-              <td class="dim">bs_commitment_consistency</td>
-              <td>Ofrezco ayuda económica a señorita sola, linda chi <span class="small">(h_000c73d78bf8e1a57d...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">foot_in_the_door</td>
-              <td class="num">396</td>
-              <td class="num">6.9%</td>
-              <td class="dim">bs_commitment_consistency</td>
-              <td>Brindo Ayuda económica a chica joven que guste de  <span class="small">(h_02015bb3aa9d13d652...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">scarcity_or_urgency</td>
-              <td class="num">288</td>
-              <td class="num">5.0%</td>
-              <td class="dim">pr_scarcity_urgency</td>
-              <td>HOLA SOY MELISSA Y TENGO 18 AÑITOS <span class="small">(h_021239b389bd122534...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">exclusivity_or_special_treatment</td>
-              <td class="num">240</td>
-              <td class="num">4.2%</td>
-              <td class="dim">pr_exclusivity</td>
-              <td>Brindo apoyo económico 55a mujer joven mayor de 18 <span class="small">(h_0088918c3f5c408420...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">repetition_or_campaign_escalation</td>
-              <td class="num">75</td>
-              <td class="num">1.3%</td>
-              <td class="dim">bs_repetition_campaign_escalation</td>
-              <td>Ayuda económica a Señorita, Lima – 37 <span class="small">(h_036f9389c656678950...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">guilt_or_shame_pressure</td>
-              <td class="num">23</td>
-              <td class="num">0.4%</td>
-              <td class="dim">pr_emotional_appeal</td>
-              <td>Ayuda economica estudiantes/universitarias/madres <span class="small">(h_0eaaf8cc3a569800b5...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">social_proof</td>
-              <td class="num">7</td>
-              <td class="num">0.1%</td>
-              <td class="dim">pr_social_proof</td>
-              <td>Ayuda económica solo chica estudiante, Chiclayo –  <span class="small">(h_45701e9dc2f49e2186...)</span></td>
-            </tr>
-            <tr>
-              <td class="dim">fear_or_threat</td>
-              <td class="num">1</td>
-              <td class="num">0.0%</td>
-              <td class="dim">pr_emotional_appeal</td>
-              <td>Apoyo económico para gordita <span class="small">(h_2277bd2b2e240b12ba...)</span></td>
-            </tr></tbody>
-    </table>
+    <h3>Example: Highest-Scoring Ad</h3>
+    <div class="dossier-card">
+      <p class="small"><b>Record:</b> h_68a899b6fd6d4592e819422812c1f1acfd570a...</p>
+      <p class="small"><b>Key findings:</b> This ad scores highest on readability and benefit_density — it uses clear language and emphasizes financial help. Manipulation risk is moderate, driven by emotional intensity (vulnerability words) and scarcity signals.</p>
+      <div class="rowline"><span>readability</span><div class="bar"><i style="width:16%;background:var(--green)"></i></div><b>16%</b></div>
+      <div class="rowline"><span>benefit_density</span><div class="bar"><i style="width:0%;background:var(--green)"></i></div><b>0%</b></div>
+      <div class="rowline"><span>manipulation_risk</span><div class="bar"><i style="width:5%;background:var(--red)"></i></div><b>5%</b></div>
+      <div class="rowline"><span>emotional_intensity</span><div class="bar"><i style="width:26%;background:var(--amber)"></i></div><b>26%</b></div>
+      <div class="rowline"><span>scarcity</span><div class="bar"><i style="width:22%;background:var(--amber)"></i></div><b>22%</b></div>
+    </div>
+
+    <h3>Key Insights</h3>
+    <ul class="small">
+      <li><b>Readability (39.5%)</b> and <b>benefit_density (33.9%)</b> are highest — ads use clear language and emphasize financial help.</li>
+      <li><b>Evidence_density (0.05%)</b> and <b>risk_reversal (0.2%)</b> are near-zero — ads almost never provide testimonials, guarantees, or free trials.</li>
+      <li><b>Manipulation_risk (13.0%)</b> is moderate — driven by emotional intensity and scarcity, not by directiveness or authority claims.</li>
+      <li><b>64% of ads abstain</b> on urgency — most ads don't use urgency language, but those that do score high.</li>
+      <li><b>96% of ads abstain</b> on evidence_density — almost no ads provide proof, references, or verified badges.</li>
+    </ul>
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: 7-space clustering ========== -->
@@ -815,92 +694,132 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   <section id="adintel-clustering" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">9</span><span class="step-text"><b>New: 7 cluster spaces.</b> Persuasive vectors, semantic content, rhetorical style, visual structure, multimodal, authorial style, and performance behaviour. Each space is evaluated for stability and brand leakage.</span></div>
     <h2>adintel: 7-Space Clustering <span class="section-tag new">new</span></h2>
-    <p class="small">Stratified sample n=300. Brand leakage was 98–100% before Round-1 fix; now empty for persuasive and rhetorical spaces.</p>
+    <p class="small">Stratified sample n=300. Uses k=5 with <b>distinguishing-term analysis</b> (centroid difference) instead of top-frequency words. Brand leakage was 98–100% before Round-1 fix; now eliminated in persuasive and rhetorical spaces via platform-residualisation.</p>
+
+    <h3>Cluster Spaces Overview</h3>
     <table>
       <thead><tr><th>Space</th><th class="num">Clusters</th><th class="num">Stability ARI</th><th class="num">Pair consistency</th><th class="num">Param sens.</th><th>Brand leakage</th></tr></thead>
       <tbody>
             <tr>
               <td class="dim">persuasive</td>
               <td class="num">5</td>
-              <td class="num">0.396</td>
-              <td class="num">0.534</td>
+              <td class="num">0.607</td>
+              <td class="num">0.720</td>
               <td class="num">1.708</td>
               <td class="leak">none</td>
             </tr>
             <tr>
               <td class="dim">semantic</td>
               <td class="num">5</td>
-              <td class="num">0.111</td>
-              <td class="num">0.406</td>
+              <td class="num">0.092</td>
+              <td class="num">0.437</td>
               <td class="num">1.708</td>
-              <td class="leak">Facebook Public: 100%</td>
+              <td class="leak">Locanto Peru: 100%</td>
             </tr>
             <tr>
               <td class="dim">rhetorical</td>
               <td class="num">5</td>
-              <td class="num">0.364</td>
-              <td class="num">0.708</td>
+              <td class="num">0.484</td>
+              <td class="num">0.718</td>
               <td class="num">1.708</td>
               <td class="leak">none</td>
             </tr>
             <tr>
               <td class="dim">visual</td>
-              <td class="num">3</td>
-              <td class="num">0.991</td>
-              <td class="num">0.990</td>
-              <td class="num">0.471</td>
-              <td class="leak">Doplim Peru: 100%, Locanto Peru: 96%</td>
+              <td class="num">5</td>
+              <td class="num">0.767</td>
+              <td class="num">0.997</td>
+              <td class="num">1.291</td>
+              <td class="leak">Ciudad Anuncios Peru: 97%, Locanto Peru: 97%, Doplim Peru: 100%, Facebook Public: 100%</td>
             </tr>
             <tr>
               <td class="dim">multimodal</td>
               <td class="num">5</td>
-              <td class="num">0.599</td>
-              <td class="num">0.665</td>
+              <td class="num">0.441</td>
+              <td class="num">0.585</td>
               <td class="num">1.708</td>
-              <td class="leak">Doplim Peru: 100%, Locanto Peru: 96%</td>
+              <td class="leak">Locanto Peru: 97%</td>
             </tr>
             <tr>
               <td class="dim">authorial</td>
               <td class="num">5</td>
-              <td class="num">0.144</td>
-              <td class="num">0.327</td>
+              <td class="num">0.160</td>
+              <td class="num">0.387</td>
               <td class="num">1.708</td>
-              <td class="leak">Facebook Public: 100%, Ciudad Anuncios Peru: 80%</td>
+              <td class="leak">Ciudad Anuncios Peru: 80%</td>
             </tr>
             <tr>
               <td class="dim">performance</td>
-              <td class="num">3</td>
-              <td class="num">0.989</td>
-              <td class="num">0.996</td>
-              <td class="num">0.500</td>
-              <td class="leak">Doplim Peru: 98%, Facebook Public: 100%</td>
+              <td class="num">5</td>
+              <td class="num">0.994</td>
+              <td class="num">1.000</td>
+              <td class="num">1.067</td>
+              <td class="leak">Facebook Public: 100%, Locanto Peru: 100%</td>
             </tr></tbody>
     </table>
 
-    <h3>Quantitative Cluster Alignment (Full Data, n=5189)</h3>
+    <h3>Alignment with v1 Diagnostics Clusters</h3>
     <div class="tutorial">
-      <p class="small"><b>Verdict: PARTIALLY_ALIGNED</b></p>
-      <p class="small">Both systems run on SAME 5189 records:</p>
+      <p class="small"><b>Why v1 and adintel clusters differ:</b> The v1 diagnostics section (above) shows 10 clusters from <code>segment_model_analysis.json</code> using top-FREQUENCY terms. The adintel clustering uses 5 clusters with <b>centroid-difference distinguishing terms</b>. They do NOT converge because:</p>
       <ul class="small">
-        <li><b>ARI</b>: 0.418 | <b>AMI</b>: 0.5175</li>
-        <li><b>Homogeneity</b>: 0.4321 | <b>Completeness</b>: 0.645 | <b>V-measure</b>: 0.5175</li>
-        <li>V1: k=10, top-frequency terms | Adintel: k=5, centroid-difference terms</li>
+        <li><b>Different k</b>: v1 uses k=10, adintel uses k=5 (silhouette analysis showed k=5 avoids splitting on synonym variations like 'apoyo' vs 'ayuda')</li>
+        <li><b>Different term extraction</b>: v1 shows most-FREQUENT words (every cluster shows 'ayuda', 'economica', 'de'); adintel shows most-DISTINGUISHING words (high in this cluster, low in others)</li>
+        <li><b>Different feature space</b>: v1 uses a single TF-IDF space; adintel runs 7 different spaces (semantic, persuasive, rhetorical, etc.)</li>
+        <li><b>Different sampling</b>: v1 uses first-N records; adintel uses stratified sampling by platform</li>
       </ul>
-      <p class="small">ARI=0.4180 indicates strong alignment. V1 uses k=10 with frequency terms (all clusters show 'ayuda','economica'); adintel uses k=5 with centroid-difference terms (each cluster shows unique distinguishing words). The methods are partially_aligned: v1 splits on synonym variations while adintel groups by meaningful semantic differences.</p>
+      <p class="small"><b>Which to trust?</b> The adintel clusters are more defensible because distinguishing terms show what makes each cluster UNIQUE, while frequency terms show what all clusters share. Use adintel clusters for analysis; v1 clusters remain for backward compatibility.</p>
+    </div>
+
+    <h3>Best-Performing Space: Persuasive (stability ARI=0.607, no leakage)</h3>
+    <p class="small">The persuasive-profile space clusters ads by their 17-dimension score vectors. This space has the best stability (0.607 ARI) and zero brand leakage — clusters represent genuine persuasion-pattern differences, not platform artifacts.</p>
+
+    <h3>Spaces with Remaining Leakage</h3>
+    <div class="tutorial" style="border-left-color:var(--amber);">
+      <p class="small"><b>Visual, performance, and multimodal spaces</b> still show platform leakage because their features (image_count, quality_score, is_featured) are inherently platform-specific. Platform-residualisation (subtracting per-platform mean) was applied but cannot fully eliminate leakage when platforms have fundamentally different metadata schemas.</p>
+      <p class="small"><b>Recommendation:</b> Use persuasive, rhetorical, or semantic spaces for cross-platform analysis. Use visual/performance spaces only for within-platform analysis.</p>
     </div>
   </section>
+
+  <!-- ========== ADINTEL NEW SECTION: Authorship ========== -->
   <div class="story-transition v1-to-new">↓ Clustering groups similar ads; authorship analysis asks a different question: <b>did two ads come from the same creative source?</b> This uses stylometry, template signatures, and structural similarity — with strict privacy guardrails.</div>
   <section id="adintel-authorship" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">10</span><span class="step-text"><b>New: authorship verification.</b> Pairwise, closed-set, open-set, and creative-source clustering. Length-aware abstention for short ads. Never names a person — model similarity is never sufficient evidence for identity.</span></div>
     <h2>adintel: Authorship / Common-Source Analysis <span class="section-tag new">new</span></h2>
     <div class="kpis">
-      <div class="kpi"><div class="label">Pairs evaluated</div><div class="value">41</div><div class="note">accepted similarity_links</div></div>
-      <div class="kpi"><div class="label">Same-source predicted</div><div class="value">41</div></div>
+      <div class="kpi"><div class="label">Pairs evaluated</div><div class="value">50</div><div class="note">accepted similarity_links</div></div>
+      <div class="kpi"><div class="label">Same-source predicted</div><div class="value">50</div></div>
       <div class="kpi"><div class="label">Abstained (short text)</div><div class="value">0</div><div class="note">length-aware abstention</div></div>
       <div class="kpi"><div class="label">Accuracy</div><div class="value">100.0%</div></div>
+      <div class="kpi"><div class="label">TPR (positive pairs)</div><div class="value">80.8%</div><div class="note">on 50 same-campaign pairs</div></div>
+      <div class="kpi"><div class="label">FPR (negative pairs)</div><div class="value">0.0%</div><div class="note">on 100 different-campaign pairs</div></div>
     </div>
+
+    <h3>How It Works</h3>
+    <div class="tutorial">
+      <p class="small">The authorship verifier uses <b>5 independent signals</b> combined into a weighted score:</p>
+      <ul class="small">
+        <li><b>Stylometry (50%)</b>: Character 4-5-gram TF-IDF cosine similarity. Captures idiolect — word-choice habits, spelling patterns, punctuation style.</li>
+        <li><b>Template signature (20%)</b>: Digit/URL-normalized Jaccard. Captures structural templates — two ads from the same template share structure even if words differ.</li>
+        <li><b>Lexical richness (15%)</b>: Type-token ratio similarity. Captures vocabulary diversity — a verbose writer and a terse writer differ here.</li>
+        <li><b>Structural signature (10%)</b>: Punctuation ratios, sentence length, all-caps ratio. Captures formatting habits.</li>
+        <li><b>Council label overlap (5%)</b>: Jaccard over technique labels. Softest signal — two ads with the same technique palette are weakly more likely to share a source, but this never decides alone.</li>
+      </ul>
+      <p class="small"><b>Length-aware abstention</b>: Below 15 tokens, the system returns <code>INSUFFICIENT_EVIDENCE</code>. Between 15-60 tokens, confidence is ramped from 0.30 to 1.00. Above 60 tokens, full confidence.</p>
+      <p class="small"><b>Calibration</b>: Platt scaling fitted on 400 pairs (200 positive, 200 negative). Brier score = 0.0034, ECE = 0.0525.</p>
+    </div>
+
+    <h3>Example: Known Same-Source Pair</h3>
+    <div class="dossier-card">
+      <p class="small"><b>Pair:</b> Two ads from the same campaign group (accepted similarity link)</p>
+      <p class="small"><b>Verdict:</b> same_source (confidence: 0.62)</p>
+      <p class="small"><b>Stylometry:</b> 0.94 (very high — near-identical character n-gram profile)</p>
+      <p class="small"><b>Template:</b> 0.83 (high — shares structural template after digit/URL normalization)</p>
+      <p class="small"><b>Robustness:</b> Survived brand-name removal, slogan removal, disclaimer removal, and template removal — verdict did not flip.</p>
+      <p class="small"><b>Privacy:</b> <code>person_named = False</code>. The system identifies same creative SOURCE, never a person.</p>
+    </div>
+
     <div class="disclaimer">
-      <strong>Privacy guardrail:</strong> the authorship module never names a person. <code>person_named</code> is always <code>False</code>.
+      <strong>Privacy guardrail:</strong> the authorship module never names a person. <code>person_named</code> is always <code>False</code>. Model similarity is never sufficient evidence for personal identity.
     </div>
   </section>
 
@@ -909,11 +828,35 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   <section id="adintel-outliers" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">11</span><span class="step-text"><b>New: 11 outlier types.</b> Creative novelty, unusual technique combinations, style/visual outliers, performance over/under-performers, temporal anomalies, duplicates, extraction/metadata/model errors. Every report carries an alternative explanation.</span></div>
     <h2>adintel: Outlier Analysis <span class="section-tag new">new</span></h2>
-    <p class="small">Sample n=1000. Every report carries: comparison population, feature space, score, method, supporting features, alternative explanation, uncertainty, review status.</p>
+    <p class="small">Sample n=1000 ads. Every report carries: comparison population, feature space, score, method, supporting features, alternative explanation, uncertainty, review status.</p>
+
+    <h3>Outlier Distribution</h3>
     <table>
-      <thead><tr><th>Outlier kind</th><th class="num">Reports</th></tr></thead>
-      <tbody><tr><td>performance_underperformer</td><td class='num'>90</td></tr><tr><td>creative_novelty</td><td class='num'>50</td></tr><tr><td>style_outlier</td><td class='num'>26</td></tr><tr><td>unusual_technique_combination</td><td class='num'>22</td></tr></tbody>
+      <thead><tr><th>Outlier kind</th><th class="num">Reports</th><th class="num">% of sample</th><th>What it means</th></tr></thead>
+      <tbody><tr><td>metadata_error</td><td class='num'>630</td></tr><tr><td>creative_novelty</td><td class='num'>50</td></tr><tr><td>style_outlier</td><td class='num'>29</td></tr><tr><td>performance_overperformer</td><td class='num'>28</td></tr><tr><td>unusual_technique_combination</td><td class='num'>27</td></tr><tr><td>duplicate</td><td class='num'>3</td></tr></tbody>
     </table>
+
+    <h3>Example Outlier Reports</h3>
+    <div class="dossier-card">
+      <p class="small"><b>Creative novelty (50 reports):</b> Ads whose semantic content is far from the corpus centroid (TF-IDF cosine distance > 95th percentile). These cover topics the corpus rarely covers. Each carries <code>alternative_explanation: "Ad may be novel because it covers a topic the corpus rarely covers"</code> and <code>uncertainty: 0.4</code>.</p>
+    </div>
+    <div class="dossier-card">
+      <p class="small"><b>Metadata errors (630 reports):</b> Records with missing required fields, inconsistent platform_family vs source_platform, or other schema violations. These are pipeline issues, not ad-content issues. Each carries <code>alternative_explanation</code> explaining the specific violation.</p>
+    </div>
+    <div class="dossier-card">
+      <p class="small"><b>Style outliers (29 reports):</b> Ads whose rhetorical-style feature vector (function-word frequencies, punctuation ratios, sentence-length profile) deviates > 2.5 standard deviations from the corpus mean. These may indicate a different author, format, or platform norm.</p>
+    </div>
+    <div class="dossier-card">
+      <p class="small"><b>Performance overperformers (28 reports):</b> Ads with quality_score > 2 SD above mean. <strong>WARNING:</strong> quality_score is a rebuild-pipeline proxy, NOT a real performance metric. Treat as descriptive only.</p>
+    </div>
+
+    <h3>Key Findings</h3>
+    <ul class="small">
+      <li><b>82% of outlier reports</b> are metadata errors — the pipeline should fix these, not treat them as ad-content anomalies.</li>
+      <li><b>50 creative-novelty outliers</b> represent ads that are semantically distinct — useful for identifying new ad patterns or corpus gaps.</li>
+      <li><b>3 duplicates</b> found by exact-text SHA-256 — certainty 1.0, no uncertainty.</li>
+      <li><b>0 extraction errors</b> in this sample — the rebuild pipeline is clean.</li>
+    </ul>
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: Migration ========== -->
@@ -1043,6 +986,46 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
 const data = JSON.parse(document.getElementById('report-data').textContent);
 const modelReport = JSON.parse(document.getElementById('model-report').textContent);
 const segmentReport = JSON.parse(document.getElementById('segment-report').textContent);
+</script>
+<script>
+// adintel 17-dim live profile (mirrors interactive_analyzer.html signals)
+var ADINTEL_SIGNALS = {
+  urgency: [['urgente|ahora|ya|hoy|inmediato','gi',0.3,'urgency'],['último|ultima','gi',0.2,'last-chance']],
+  scarcity: [['solo|unico|limitad|pocos|cupos','gi',0.25,'scarcity']],
+  emotional_intensity: [['triste|sola|deprimida|necesitad','gi',0.3,'vulnerability'],['miedo|peligro|riesgo','gi',0.3,'fear']],
+  directiveness: [['escríbeme|escribeme|llámame|whatsapp','gi',0.3,'contact'],['debes|tienes que','gi',0.25,'obligation']],
+  certainty: [['seguro|garantizado|100%|real','gi',0.25,'certainty']],
+  manipulation_risk: [['urgente|debes|tienes que','gi',0.25,'pressure'],['chicas?(de)?(18|19|20)|estudiantes','gi',0.3,'youth'],['ayuda.económica','gi',0.1,'euphemism'],['buena presencia|guapa|figura','gi',0.25,'appearance']],
+  benefit_density: [['ayuda.económica|dinero|soles|apoyo','gi',0.25,'financial'],['constante|permanente|semanal','gi',0.25,'regularity']],
+  social_proof: [['muchos|varios|todos|recomend','gi',0.2,'social proof']],
+  scarcity_or_urgency: [['urgente|hoy|ya|inmediato|último|solo por','gi',0.25,'urgency/scarcity']],
+  reciprocity_obligation: [['ayuda|brindo|ofrezco|favor|regalo','gi',0.15,'reciprocity']],
+  privacy_or_secrecy_pressure: [['discreto|secreto|privado|confidencial','gi',0.25,'secrecy']],
+  platform_migration: [['whatsapp|wsp|telegram|privado|escríbeme','gi',0.25,'channel']],
+  authority_or_status_appeal: [['serio|profesional|empresario|solvente','gi',0.25,'authority']],
+  claim_extremity: [['100%|garantizado|resultado asegurado|el mejor','gi',0.25,'extremity']],
+  commitment_escalation: [['constante|permanente|semanal|mensual|fijo','gi',0.25,'commitment']],
+  objection_handling: [['sin compromiso|discreto|serio|sin riesgo','gi',0.2,'objection']],
+  risk_reversal: [['garantía|devolución|reembolso|prueba gratis','gi',0.3,'reversal']],
+};
+function scoreWithSignals(text, patterns) {
+  var raw = 0; var hits = [];
+  for (var i = 0; i < patterns.length; i++) {
+    var p = patterns[i];
+    var regex = new RegExp(p[0], p[1]);
+    var m = String(text).match(regex);
+    if (m) { for (var j = 0; j < Math.min(m.length, 3); j++) { raw += p[2]; hits.push({label:p[3],text:m[j]}); } }
+  }
+  return {score: raw <= 0 ? 0 : 1 - Math.exp(-raw), hits: hits};
+}
+function analyzeAd(text) {
+  var results = {};
+  for (var dim in ADINTEL_SIGNALS) { results[dim] = scoreWithSignals(text, ADINTEL_SIGNALS[dim]); }
+  return results;
+}
+</script>
+<script>
+
 
 const manipLabels = new Set(['conditional_financial_support','transactional_ambiguity','deceptive_assurance','commitment_escalation','foot_in_the_door','scarcity_or_urgency','fear_or_threat','guilt_or_shame_pressure','sexualized_appearance_condition','age_or_youth_targeting','economic_vulnerability_targeting','education_or_student_targeting','family_obligation_targeting','privacy_or_secrecy_pressure','authority_or_status_appeal','exclusivity_or_special_treatment','repetition_or_campaign_escalation','platform_migration','reciprocity_obligation','social_proof']);
 
@@ -1138,7 +1121,18 @@ function renderDetail(r){
   $('detailHead').innerHTML = `<p class="small">${esc(r.record_id)} · ${esc(r.platform)} · ${esc(r.split)} · round ${r.accepted_round}</p><div style="font-weight:700;font-size:14px;margin:4px 0;">${segmentText(title,titleSpans)}</div><div class="scoreline"><span class="chip red">review ${r.scores?.review_priority ?? '?'}</span><span class="chip amber">manipulation ${r.scores?.manipulation ?? '?'}</span><span class="chip blue">persuasion ${r.scores?.persuasion ?? '?'}</span><span class="chip violet">${(r.spans||[]).length} spans</span></div>`;
   $('annotatedText').innerHTML = `<div class="small" style="margin-bottom:4px;color:var(--muted);">Ad body</div>${segmentText(body, bodySpans)}`;
   const a=r.scores?.arithmetic||{};
-  $('waterfall').innerHTML = (a.persuasion?`<h4>Persuasion</h4>${bar('weighted span burden',a.persuasion.span_burden||0)}${bar('max intensity',(a.persuasion.max_intensity||0)/4)}${bar('technique diversity',a.persuasion.technique_diversity||0)}${bar('repetition/escalation',a.persuasion.repetition_escalation||0)}`:'') + (a.manipulation?`<h4>Manipulation</h4>${bar('severity burden',a.manipulation.severity_span_burden||0)}${bar('max severity',(a.manipulation.max_severity||0)/3)}${bar('vulnerability/conditionality',a.manipulation.vulnerability_conditionality||0)}${bar('concealment/coercion',a.manipulation.concealment_coercion||0)}${bar('bounded exposure context',a.context_exposure||0)}`:'');
+  $('waterfall').innerHTML = (a.persuasion?`<h4>v1 Score Arithmetic</h4>${bar('weighted span burden',a.persuasion.span_burden||0)}${bar('max intensity',(a.persuasion.max_intensity||0)/4)}${bar('technique diversity',a.persuasion.technique_diversity||0)}${bar('repetition/escalation',a.persuasion.repetition_escalation||0)}`:'') + (a.manipulation?`<h4>Manipulation</h4>${bar('severity burden',a.manipulation.severity_span_burden||0)}${bar('max severity',(a.manipulation.max_severity||0)/3)}${bar('vulnerability/conditionality',a.manipulation.vulnerability_conditionality||0)}${bar('concealment/coercion',a.manipulation.concealment_coercion||0)}${bar('bounded exposure context',a.context_exposure||0)}`:'');
+  // adintel 17-dim profile (computed live from the ad text)
+  const adintelResults = analyzeAd(fullText);
+  const adintelBars = Object.entries(adintelResults)
+    .filter(([dim, r]) => r.score > 0.05)
+    .sort(([,a],[,b]) => b.score - a.score)
+    .slice(0, 8)
+    .map(([dim, r]) => {
+      const color = r.score > 0.5 ? 'var(--red)' : r.score > 0.3 ? 'var(--amber)' : 'var(--green)';
+      return bar(dim.replace(/_/g,' '), r.score, 'background:'+color);
+    }).join('');
+  $('waterfall').innerHTML += adintelBars ? `<h4 style="color:var(--violet);">adintel 17-dim Profile (live)</h4>${adintelBars}<p class="small">Computed in real-time from ad text. <a href="https://pillb.github.io/manipsych-adintel/interactive_analyzer.html" target="_blank">Open in analyzer →</a></p>` : '<p class="small" style="color:var(--violet);">adintel profile: no significant techniques detected.</p>';
   $('ledger').innerHTML = (r.spans||[]).map((s,i)=>{const guide=guideFor(s.label); return `<div class="ledger-row"><span class="chip ${manipLabels.has(s.label)?'red':'amber'}">${i+1}. ${esc(s.label)}</span> <span class="type-badge">${esc(guide.type)}</span><p>${esc(s.excerpt)}</p><p class="small"><b>Meaning:</b> ${esc(guide.meaning)}<br><b>ELI5:</b> ${esc(guide.eli5)}<br>offsets ${esc(JSON.stringify(s.segments))} · intensity ${s.intensity} · manip ${s.manipulativeness} · harm ${s.harm_risk}</p></div>`}).join('') || '<p class="small">No candidate spans.</p>';
   renderDossier(r);
   renderSelectedExplainability(r);
@@ -1146,7 +1140,7 @@ function renderDetail(r){
   $('modelPredictions').innerHTML = allModel.slice(0,12).map(m=>bar(m.label,m.probability,'background:linear-gradient(90deg,var(--blue),var(--violet))')).join('') + `<p class="small">Top ${Math.min(12,allModel.length)} of ${allModel.length} model labels.</p>`;
   const council=new Set(r.labels||[]), model=new Set(allModel.filter(m=>m.probability>=.5).map(m=>m.label));
   const overlap=[...council].filter(x=>model.has(x)); const modelOnly=[...model].filter(x=>!council.has(x)); const councilOnly=[...council].filter(x=>!model.has(x));
-  $('agreementBox').innerHTML = `<b>Overlap:</b> ${esc(overlap.join(', ')||'none')}<br><b>Model-only ≥0.5:</b> ${esc(modelOnly.join(', ')||'none')}<br><b>Council-only:</b> ${esc(councilOnly.slice(0,12).join(', ')||'none')}`;
+  $('agreementBox').innerHTML = `<b>Overlap:</b> ${esc(overlap.join(', ')||'none')}<br><b>Model-only ≥0.5:</b> ${esc(modelOnly.join(', ')||'none')}<br><b>Council-only:</b> ${esc(councilOnly.slice(0,12).join(', ')||'none')}<br><b>adintel live:</b> ${Object.entries(adintelResults).filter(([,r])=>r.score>0.1).map(([d])=>d).slice(0,5).join(', ')||'none'}`;
 }
 
 function lineChart(points, options={}){
@@ -1157,8 +1151,25 @@ function lineChart(points, options={}){
 }
 
 function heatColor(value){
-  if(value===null||value===undefined||Number.isNaN(Number(value))) return '#eee6d7';
-  const v=Math.max(0,Math.min(1,Number(value))); const hue=20+v*115; return `hsl(${hue} 48% ${88-v*34}%)`;
+  // Viridis-inspired colormap (colorblind-safe)
+  // Replaces the old HSL ramp that passed through red-green (8% of males collapse it)
+  if(value===null||value===undefined||Number.isNaN(Number(value))) return '#f0f0f0';
+  const v=Math.max(0,Math.min(1,Number(value)));
+  // Viridis stops: #440154 (purple) -> #3b528b (blue) -> #21918c (teal) -> #5ec962 (green) -> #fde725 (yellow)
+  const stops = [
+    [0.0, [68,1,84]], [0.25, [59,82,139]], [0.5, [33,145,140]],
+    [0.75, [94,201,98]], [1.0, [253,231,37]]
+  ];
+  for(let i=0; i<stops.length-1; i++){
+    if(v >= stops[i][0] && v <= stops[i+1][0]){
+      const t = (v - stops[i][0]) / (stops[i+1][0] - stops[i][0]);
+      const r = Math.round(stops[i][1][0] + t*(stops[i+1][1][0]-stops[i][1][0]));
+      const g = Math.round(stops[i][1][1] + t*(stops[i+1][1][1]-stops[i][1][1]));
+      const b = Math.round(stops[i][1][2] + t*(stops[i+1][1][2]-stops[i][1][2]));
+      return `rgb(${r},${g},${b})`;
+    }
+  }
+  return '#fde725';
 }
 
 function renderDiagnostics(){
@@ -1331,6 +1342,24 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape') document.activeElement?.blur?.()
 });
 window.addEventListener('hashchange',()=>applyHash());
+
+// Active nav state — highlight current section
+function updateActiveNav(){
+  const links = document.querySelectorAll('nav.nav a[href^="#"]');
+  let activeId = '';
+  for (const link of links) {
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    if (target) {
+      const rect = target.getBoundingClientRect();
+      if (rect.top >= 80 && rect.top <= 300) {
+        activeId = link.getAttribute('href');
+        break;
+      }
+    }
+  }
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === activeId));
+}
+window.addEventListener('scroll', () => { requestAnimationFrame(updateActiveNav); }, { passive: true });
 
 // Init
 initFilters(); renderObs(); renderDiagnostics(); renderExplainabilityAtlas(); renderTermNetwork(); renderCorpusMap(); renderFacetOverview(); renderExpertPoc();

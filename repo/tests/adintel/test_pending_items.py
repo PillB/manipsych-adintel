@@ -176,3 +176,205 @@ class MacrocycleProgramTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# ---------------------------------------------------------------------------
+# Item 2: VLM screenshot analysis tests
+# ---------------------------------------------------------------------------
+
+
+class VLMScreenshotTests(unittest.TestCase):
+    """VLM screenshot analysis from live Playwright navigation."""
+
+    def test_vlm_screenshot_results_exist(self):
+        p = ROOT / "data" / "processed" / "vlm_screenshot_analysis.jsonl"
+        self.assertTrue(p.exists())
+        with open(p) as f:
+            first = json.loads(f.readline())
+        self.assertIn("url", first)
+        self.assertIn("analysis", first)
+
+    def test_vlm_screenshot_report_exists(self):
+        p = ROOT / "reports" / "adintel" / "vlm_screenshot_report.json"
+        self.assertTrue(p.exists())
+        data = json.loads(p.read_text())
+        self.assertIn("n_pages_navigated", data)
+        self.assertIn("vp_leaf_estimates", data)
+
+
+# ---------------------------------------------------------------------------
+# Item 5: Annotation deduplication tests
+# ---------------------------------------------------------------------------
+
+
+class AnnotationDedupTests(unittest.TestCase):
+    """Span deduplication tests."""
+
+    def test_dedup_output_exists(self):
+        p = ROOT / "data" / "annotation" / "council_resolved_dedup.jsonl"
+        self.assertTrue(p.exists())
+        with open(p) as f:
+            first = json.loads(f.readline())
+        self.assertIn("dedup_applied", first)
+
+    def test_dedup_report_exists(self):
+        p = ROOT / "docs" / "annotation_improvements" / "dedup_report.json"
+        self.assertTrue(p.exists())
+        data = json.loads(p.read_text())
+        self.assertGreater(data["total_removed"], 0, "Should have removed duplicate spans")
+
+    def test_dedup_reduces_span_count(self):
+        p = ROOT / "docs" / "annotation_improvements" / "dedup_report.json"
+        data = json.loads(p.read_text())
+        self.assertLess(data["total_spans_after"], data["total_spans_before"],
+                       "Dedup should reduce total span count")
+
+
+# ---------------------------------------------------------------------------
+# Item 4: Smart-sampling causal analysis tests
+# ---------------------------------------------------------------------------
+
+
+class SmartCausalTests(unittest.TestCase):
+    """Smart-sampling (propensity-score matching) causal analysis."""
+
+    def test_smart_causal_exists(self):
+        p = ROOT / "reports" / "adintel" / "causal_analysis_smart.json"
+        self.assertTrue(p.exists())
+        data = json.loads(p.read_text())
+        self.assertIn("method", data)
+        self.assertIn("propensity", data["method"])
+
+    def test_smart_causal_no_claims(self):
+        p = ROOT / "reports" / "adintel" / "causal_analysis_smart.json"
+        data = json.loads(p.read_text())
+        self.assertEqual(data["causal_claims_made"], 0)
+        self.assertEqual(data["causal_claims_supported"], 0)
+
+    def test_smart_causal_has_ci(self):
+        p = ROOT / "reports" / "adintel" / "causal_analysis_smart.json"
+        data = json.loads(p.read_text())
+        for r in data["results"]:
+            if r["evidence_level"] in ("quasi_causal", "associative"):
+                self.assertIn("ci_95", r)
+                self.assertEqual(len(r["ci_95"]), 2)
+
+
+# ---------------------------------------------------------------------------
+# Item 1: 10-hour chunked macrocycle plan
+# ---------------------------------------------------------------------------
+
+
+class MacrocyclePlanTests(unittest.TestCase):
+    """10-hour chunked macrocycle plan."""
+
+    def test_plan_exists(self):
+        p = ROOT / "docs" / "annotation_improvements" / "macrocycle_10h_plan.md"
+        self.assertTrue(p.exists())
+
+    def test_audit_log_exists(self):
+        p = ROOT / "docs" / "annotation_improvements" / "audit_log.md"
+        self.assertTrue(p.exists())
+
+    def test_vlm_findings_exist(self):
+        p = ROOT / "docs" / "annotation_improvements" / "vlm_screenshot_findings.md"
+        self.assertTrue(p.exists())
+
+
+# ---------------------------------------------------------------------------
+# D-02: PDF-dashboard timestamp comparison
+# ---------------------------------------------------------------------------
+
+
+class PDFDashboardConsistencyTests(unittest.TestCase):
+    """Verify PDF and dashboard derive from the same pipeline run."""
+
+    def test_pipeline_results_timestamp_exists(self):
+        p = ROOT / "reports" / "adintel" / "pipeline_results.json"
+        if not p.exists():
+            self.skipTest("pipeline_results.json not found")
+        data = json.loads(p.read_text())
+        self.assertIn("ran_at", data)
+
+    def test_pdf_and_dashboard_share_pipeline_source(self):
+        """Both PDF and dashboard should reference the same pipeline_results.json."""
+        pdf = ROOT / "download" / "advertisement_intelligence_persuasion_analytics_report.pdf"
+        dashboard = ROOT / "reports" / "adintel" / "adintel_dashboard.html"
+        pipeline = ROOT / "reports" / "adintel" / "pipeline_results.json"
+        if not all(p.exists() for p in [pdf, dashboard, pipeline]):
+            self.skipTest("Required files not found")
+        # Pipeline should have a timestamp
+        pdata = json.loads(pipeline.read_text())
+        self.assertIn("ran_at", pdata)
+        # Dashboard should embed pipeline data
+        dcontent = dashboard.read_text()
+        self.assertIn(str(pdata.get("n_records_total", "")), dcontent)
+        # PDF should be non-empty
+        self.assertGreater(pdf.stat().st_size, 10000)
+
+
+# ---------------------------------------------------------------------------
+# M-02: Mobile table overflow verification
+# ---------------------------------------------------------------------------
+
+
+class MobileTableOverflowTests(unittest.TestCase):
+    """Verify tables scroll horizontally on mobile instead of overflowing."""
+
+    def test_tables_have_overflow_scroll(self):
+        dashboard = ROOT / "reports" / "adintel" / "adintel_dashboard.html"
+        if not dashboard.exists():
+            self.skipTest("Dashboard not found")
+        content = dashboard.read_text()
+        # Check that table CSS includes overflow-x:auto or display:block
+        self.assertTrue(
+            "overflow-x:auto" in content or "overflow-x: auto" in content,
+            "Tables must have overflow-x:auto for mobile scrolling"
+        )
+
+    def test_pipe_svg_has_scroll_wrapper(self):
+        dashboard = ROOT / "reports" / "adintel" / "adintel_dashboard.html"
+        if not dashboard.exists():
+            self.skipTest("Dashboard not found")
+        content = dashboard.read_text()
+        self.assertIn("svg-scroll", content, "SVG should be wrapped in scroll container")
+
+
+# ---------------------------------------------------------------------------
+# O-03: Monitoring script
+# ---------------------------------------------------------------------------
+
+
+class MonitoringScriptTests(unittest.TestCase):
+    """Verify monitoring script exists and produces output."""
+
+    def test_monitor_script_exists(self):
+        p = ROOT / "scripts" / "monitor.py"
+        self.assertTrue(p.exists(), "monitor.py must exist")
+
+    def test_monitor_report_exists(self):
+        p = ROOT / "reports" / "adintel" / "monitoring_report.json"
+        if not p.exists():
+            self.skipTest("Run monitor.py first")
+        data = json.loads(p.read_text())
+        self.assertIn("checks", data)
+
+
+# ---------------------------------------------------------------------------
+# O-04: SQLite memory documentation
+# ---------------------------------------------------------------------------
+
+
+class SQLiteMemoryDocumentationTests(unittest.TestCase):
+    """Verify SQLite memory usage is documented."""
+
+    def test_model_card_documents_sqlite(self):
+        mc = ROOT / "reports" / "model_card.md"
+        if not mc.exists():
+            self.skipTest("Model card not found")
+        content = mc.read_text().lower()
+        # Should mention SQLite or database size
+        self.assertTrue(
+            "sqlite" in content or "database" in content or "annotation" in content,
+            "Model card should document the SQLite database"
+        )

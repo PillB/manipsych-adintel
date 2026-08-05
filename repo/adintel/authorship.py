@@ -53,8 +53,8 @@ SHORT_TEXT_CONFIDENCE_FLOOR = 0.3  # at MIN_TOKENS, confidence is at least this
 # even near-identical pairs only reach ~0.55-0.65 char n-gram cosine similarity
 # because of n-gram sparsity. Thresholds set conservatively; the dashboard must
 # always render the underlying similarity score alongside the verdict.
-SAME_SOURCE_THRESHOLD = 0.55
-DIFFERENT_SOURCE_THRESHOLD = 0.30
+SAME_SOURCE_THRESHOLD = 0.45
+DIFFERENT_SOURCE_THRESHOLD = 0.25
 OPEN_SET_UNKNOWN_THRESHOLD = 0.30  # below this in open-set -> unknown
 
 # ---------------------------------------------------------------------------

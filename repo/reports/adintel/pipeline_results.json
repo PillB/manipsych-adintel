@@ -1,13 +1,13 @@
 {
-  "ran_at": "2026-08-04T19:43:10Z",
-  "elapsed_s": 5.19,
+  "ran_at": "2026-08-05T06:26:55Z",
+  "elapsed_s": 4.67,
   "taxonomy_version": "adintel-taxonomy-v2",
-  "n_records_total": 5189,
+  "n_records_total": 5738,
   "n_council_annotations": 5717,
   "n_similarity_links": 642,
   "n_profile_sampled": 200,
   "n_cluster_sampled": 300,
-  "n_authorship_pairs": 41,
+  "n_authorship_pairs": 50,
   "n_outlier_sampled": 1000,
   "profile_dimension_means": {
     "urgency": 0.03769973180453459,
@@ -32,8 +32,8 @@
     "persuasive": {
       "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 0.3963,
-      "resampling_consistency": 0.5345,
+      "stability_ari": 0.6069,
+      "resampling_consistency": 0.7198,
       "parameter_sensitivity": 1.7078,
       "brand_leakage": {},
       "topic_leakage": {}
@@ -41,92 +41,94 @@
     "semantic": {
       "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 0.1108,
-      "resampling_consistency": 0.4059,
+      "stability_ari": 0.0924,
+      "resampling_consistency": 0.4368,
       "parameter_sensitivity": 1.7078,
       "brand_leakage": {
-        "Facebook Public": 1.0
+        "Locanto Peru": 1.0
       },
       "topic_leakage": {
-        "facebook": 1.0
+        "locanto": 1.0
       }
     },
     "rhetorical": {
       "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 0.3642,
-      "resampling_consistency": 0.7075,
+      "stability_ari": 0.4844,
+      "resampling_consistency": 0.7175,
       "parameter_sensitivity": 1.7078,
       "brand_leakage": {},
       "topic_leakage": {}
     },
     "visual": {
-      "n_clusters": 3,
+      "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 0.9914,
-      "resampling_consistency": 0.9904,
-      "parameter_sensitivity": 0.4714,
+      "stability_ari": 0.7669,
+      "resampling_consistency": 0.997,
+      "parameter_sensitivity": 1.291,
       "brand_leakage": {
+        "Ciudad Anuncios Peru": 0.967741935483871,
+        "Locanto Peru": 0.9696969696969697,
         "Doplim Peru": 1.0,
-        "Locanto Peru": 0.9629629629629629
+        "Facebook Public": 1.0
       },
       "topic_leakage": {
+        "ciudadanuncios": 0.967741935483871,
+        "locanto": 0.9696969696969697,
         "doplim": 1.0,
-        "locanto": 0.9629629629629629
+        "facebook": 1.0
       }
     },
     "multimodal": {
       "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 0.5994,
-      "resampling_consistency": 0.665,
+      "stability_ari": 0.4405,
+      "resampling_consistency": 0.5848,
       "parameter_sensitivity": 1.7078,
       "brand_leakage": {
-        "Doplim Peru": 1.0,
-        "Locanto Peru": 0.9629629629629629
+        "Locanto Peru": 0.9696969696969697
       },
       "topic_leakage": {
-        "doplim": 1.0,
-        "locanto": 0.9629629629629629
+        "locanto": 0.9696969696969697
       }
     },
     "authorial": {
       "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 0.1438,
-      "resampling_consistency": 0.3268,
+      "stability_ari": 0.1597,
+      "resampling_consistency": 0.3873,
       "parameter_sensitivity": 1.7078,
       "brand_leakage": {
-        "Facebook Public": 1.0,
-        "Ciudad Anuncios Peru": 0.8048780487804879
+        "Ciudad Anuncios Peru": 0.8
       },
       "topic_leakage": {
-        "facebook": 1.0,
-        "ciudadanuncios": 0.8048780487804879
+        "ciudadanuncios": 0.8
       }
     },
     "performance": {
-      "n_clusters": 3,
+      "n_clusters": 5,
       "n_noise": 0,
-      "stability_ari": 0.9888,
-      "resampling_consistency": 0.9962,
-      "parameter_sensitivity": 0.5,
+      "stability_ari": 0.9942,
+      "resampling_consistency": 1.0,
+      "parameter_sensitivity": 1.0672,
       "brand_leakage": {
-        "Doplim Peru": 0.9836065573770492,
-        "Facebook Public": 1.0
+        "Facebook Public": 1.0,
+        "Locanto Peru": 1.0
       },
       "topic_leakage": {
-        "doplim": 0.9836065573770492,
-        "facebook": 1.0
+        "facebook": 1.0,
+        "locanto": 1.0
       }
     }
   },
   "authorship_accuracy_against_accepted_links": 1.0,
   "outlier_by_kind": {
     "creative_novelty": 50,
-    "unusual_technique_combination": 22,
-    "style_outlier": 26,
-    "performance_underperformer": 90
+    "unusual_technique_combination": 27,
+    "style_outlier": 29,
+    "performance_overperformer": 28,
+    "duplicate": 3,
+    "metadata_error": 630
   },
   "checkpoint_count": 6,
   "outputs": {

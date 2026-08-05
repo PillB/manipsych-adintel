@@ -1,0 +1,222 @@
+{
+  "url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html",
+  "audited_at": "2026-08-05T00:11:47Z",
+  "console_errors": [],
+  "n_console_errors": 0,
+  "sections": [
+    {
+      "section": "metrics",
+      "name": "01_kpi_metrics",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/01_kpi_metrics.png",
+      "found": true,
+      "visible": true,
+      "top": 180.234375,
+      "height": 255
+    },
+    {
+      "section": "pipeline",
+      "name": "02_pipeline_diagram",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/02_pipeline_diagram.png",
+      "found": true,
+      "visible": true,
+      "top": 180.109375,
+      "height": 688.421875
+    },
+    {
+      "section": "diagnostics",
+      "name": "03_diagnostics",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/03_diagnostics.png",
+      "found": true,
+      "visible": true,
+      "top": 179.71875,
+      "height": 201.9375
+    },
+    {
+      "section": "explainability-atlas",
+      "name": "04_explainability",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/04_explainability.png",
+      "found": true,
+      "visible": true,
+      "top": 179.8125,
+      "height": 699.5
+    },
+    {
+      "section": "term-network",
+      "name": "05_term_network",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/05_term_network.png",
+      "found": true,
+      "visible": true,
+      "top": 179.90625,
+      "height": 812.625
+    },
+    {
+      "section": "corpus-map",
+      "name": "06_corpus_map",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/06_corpus_map.png",
+      "found": true,
+      "visible": true,
+      "top": 180.125,
+      "height": 1268.109375
+    },
+    {
+      "section": "facet-overview",
+      "name": "07_facets",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/07_facets.png",
+      "found": true,
+      "visible": true,
+      "top": 180.234375,
+      "height": 1487.890625
+    },
+    {
+      "section": "explorer",
+      "name": "08_top_explorer",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/08_top_explorer.png",
+      "found": true,
+      "visible": true,
+      "top": 179.71875,
+      "height": 3624
+    },
+    {
+      "section": "observability",
+      "name": "09_observability",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/09_observability.png",
+      "found": true,
+      "visible": true,
+      "top": 179.71875,
+      "height": 587.828125
+    },
+    {
+      "section": "expert-poc",
+      "name": "10_expert_poc",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/10_expert_poc.png",
+      "found": true,
+      "visible": true,
+      "top": 179.546875,
+      "height": 325.359375
+    },
+    {
+      "section": "adintel-taxonomy",
+      "name": "11_adintel_taxonomy",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/11_adintel_taxonomy.png",
+      "found": true,
+      "visible": true,
+      "top": 180.09375,
+      "height": 270.984375
+    },
+    {
+      "section": "adintel-profile",
+      "name": "12_adintel_profile",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/12_adintel_profile.png",
+      "found": true,
+      "visible": true,
+      "top": 179.671875,
+      "height": 740.578125
+    },
+    {
+      "section": "adintel-clustering",
+      "name": "13_adintel_clustering",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/13_adintel_clustering.png",
+      "found": true,
+      "visible": true,
+      "top": 179.84375,
+      "height": 424.640625
+    },
+    {
+      "section": "adintel-authorship",
+      "name": "14_adintel_authorship",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/14_adintel_authorship.png",
+      "found": true,
+      "visible": true,
+      "top": 179.671875,
+      "height": 275.4375
+    },
+    {
+      "section": "adintel-outliers",
+      "name": "15_adintel_outliers",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/15_adintel_outliers.png",
+      "found": true,
+      "visible": true,
+      "top": 179.703125,
+      "height": 329.859375
+    },
+    {
+      "section": "adintel-migration",
+      "name": "16_adintel_migration",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/16_adintel_migration.png",
+      "found": true,
+      "visible": true,
+      "top": 180.15625,
+      "height": 226.796875
+    },
+    {
+      "section": "adintel-checkpoints",
+      "name": "17_adintel_checkpoints",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/17_adintel_checkpoints.png",
+      "found": true,
+      "visible": true,
+      "top": 180.140625,
+      "height": 409.859375
+    },
+    {
+      "section": "adintel-challenges",
+      "name": "18_adintel_challenges",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/18_adintel_challenges.png",
+      "found": true,
+      "visible": true,
+      "top": 242.59375,
+      "height": 202.890625
+    },
+    {
+      "section": "research",
+      "name": "19_research",
+      "screenshot": "/home/z/my-project/repo/audit/assurance/evidence/screenshots/19_research.png",
+      "found": true,
+      "visible": true,
+      "top": 508.078125,
+      "height": 356.40625
+    }
+  ],
+  "user_flows": [
+    {
+      "flow": "keyboard_navigation",
+      "initial_detail": "h_f4fc363a9b8f997059ec332d2ec0effd3960edf30c9f677131a8a9061e43fd81 · doplim · tr",
+      "changed_after_n": true,
+      "mode_after_2": "top_by_manipulation",
+      "status": "pass"
+    },
+    {
+      "flow": "mouse_explorer",
+      "n_buttons": 25,
+      "hash_after_second_click": "#h_91a3599da0d9f4cca6a14f231ef22066c1692c9786d03ae4d3feefd439822442",
+      "hash_after_first_click": "#h_f4fc363a9b8f997059ec332d2ec0effd3960edf30c9f677131a8a9061e43fd81",
+      "status": "pass"
+    },
+    {
+      "flow": "term_network_filter",
+      "nodes_after_term_filter": 100,
+      "nodes_after_reset": 100,
+      "d3_lite_force_loaded": true,
+      "status": "pass"
+    },
+    {
+      "flow": "corpus_map",
+      "initial_points": 500,
+      "legend_after_split": 5,
+      "status": "pass"
+    },
+    {
+      "flow": "explainability_atlas",
+      "n_labels": 20,
+      "n_cards_after_select": 3,
+      "status": "pass"
+    },
+    {
+      "flow": "search",
+      "results_for_ayuda": 25,
+      "status": "pass"
+    }
+  ],
+  "mobile_overflow_px": 285,
+  "screenshots_dir": "/home/z/my-project/repo/audit/assurance/evidence/screenshots",
+  "n_screenshots": 24
+}

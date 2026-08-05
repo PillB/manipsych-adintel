@@ -55,4 +55,8 @@ python3 tools/phase_gate.py --all
 - Lexical matching misses paraphrases and obfuscation.
 - Regex rules can false-positive on benign text.
 - The score is heuristic, not calibrated.
+- The annotation SQLite database (annotations.sqlite3) is 204MB and contains 85,476 annotation sets with 489,558 spans. Scripts that load all rows into memory may experience high memory usage. Use streaming queries (cursor.fetchmany) for large analyses.
+- The HTTP server for local development should bind to 127.0.0.1 only (see scripts/safe_server.py) to avoid exposing raw HTML with PII to the network.
+- Calibration (Platt scaling) is applied to the authorship checkpoint only (Brier=0.0034, ECE=0.0525). Other checkpoints remain uncalibrated because they are rule-based, not probabilistic.
+- Council annotations show 100% unanimity (agreement=1.0) because the 3 subagents use the same rule family with slightly different parameters. True inter-annotator reliability is unknown without independent human annotators.
 - Deep learning remains deferred until a human-labeled dataset exists.

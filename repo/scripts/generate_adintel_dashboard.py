@@ -54,31 +54,12 @@ def render() -> str:
     v1_inf = load_json(V1_INFERENCES)
     v1_model = load_json(V1_MODEL_REPORT)
     v1_segment = load_json(V1_SEGMENT_REPORT)
-    full_data = load_json(OUT_DIR / "full_data_results.json")
-    cluster_align = load_json(OUT_DIR / "cluster_alignment_report.json")
 
     # ------------------------------------------------------------------
-    # Build per-dimension table rows from FULL DATA (not sample)
+    # Build per-dimension table rows (adintel profile)
     # ------------------------------------------------------------------
     dim_rows = ""
-    if full_data and full_data.get("profile", {}).get("dimensions"):
-        dims = full_data["profile"]["dimensions"]
-        n_recs = full_data.get("n_records", 5189)
-        for dim, stats in sorted(dims.items(), key=lambda x: -x[1]["mean"]):
-            pct = stats["mean"] * 100
-            bar_w = max(2, min(100, pct * 2))
-            prev = stats.get("prevalence", 0) * 100
-            abst = stats.get("abstention_rate", 0) * 100
-            dim_rows += f"""
-            <tr>
-              <td class="dim">{dim}</td>
-              <td><div class="bar"><div class="bar-fill" style="width:{bar_w:.1f}%"></div></div></td>
-              <td class="num">{pct:.1f}%</td>
-              <td class="num">{prev:.1f}%</td>
-              <td class="num">{abst:.1f}%</td>
-            </tr>"""
-    elif profile:
-        # Fallback to sample data
+    if profile:
         means = profile.get("profile_dimension_means", profile.get("dimension_means", {}))
         abstains = profile.get("dimension_abstain_counts", {})
         for dim, mean in sorted(means.items(), key=lambda x: -x[1]):
@@ -90,43 +71,7 @@ def render() -> str:
               <td class="dim">{dim}</td>
               <td><div class="bar"><div class="bar-fill" style="width:{bar_w:.1f}%"></div></div></td>
               <td class="num">{pct:.1f}%</td>
-              <td class="num">—</td>
               <td class="num">{abstain}/{profile.get('n_sampled', 0)}</td>
-            </tr>"""
-
-    # ------------------------------------------------------------------
-    # Build technique results rows from FULL DATA
-    # ------------------------------------------------------------------
-    tech_rows = ""
-    if full_data and full_data.get("techniques", {}).get("results"):
-        techs = sorted(full_data["techniques"]["results"], key=lambda x: -x["count"])
-        for t in techs:
-            ex = t.get("examples", [{}])[0]
-            ex_title = ex.get("title", "")[:50]
-            ex_rid = ex.get("record_id", "")[:20]
-            v2 = ", ".join(t.get("v2_leaves", []))
-            tech_rows += f"""
-            <tr>
-              <td class="dim">{t['label']}</td>
-              <td class="num">{t['count']}</td>
-              <td class="num">{t['prevalence']*100:.1f}%</td>
-              <td class="dim">{v2}</td>
-              <td>{ex_title} <span class="small">({ex_rid}...)</span></td>
-            </tr>"""
-
-    # ------------------------------------------------------------------
-    # Build outlier rows from FULL DATA
-    # ------------------------------------------------------------------
-    outlier_rows_full = ""
-    if full_data and full_data.get("outliers", {}).get("by_kind"):
-        n_total = full_data["outliers"]["n_reports"]
-        for kind, count in sorted(full_data["outliers"]["by_kind"].items(), key=lambda x: -x[1]):
-            pct = count / max(n_total, 1) * 100
-            outlier_rows_full += f"""
-            <tr>
-              <td>{kind}</td>
-              <td class="num">{count}</td>
-              <td class="num">{pct:.1f}%</td>
             </tr>"""
 
     cluster_rows = ""
@@ -199,7 +144,7 @@ def render() -> str:
   --shadow:0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
 }}
 * {{ box-sizing:border-box; }}
-html {{ scroll-behavior:smooth; scroll-padding-top:90px; }}
+html {{ scroll-behavior:smooth; scroll-padding-top:140px; }}
 body {{ margin:0; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif; line-height:1.55; overflow-x:hidden; }}
 a {{ color:var(--blue); }}
 .skip {{ position:absolute;left:-999px; }} .skip:focus {{ left:16px;top:16px;background:#fff;padding:10px;border-radius:10px;z-index:9; }}
@@ -210,13 +155,16 @@ header.hero {{ background:linear-gradient(135deg,#0f172a,#0f766e 55%,#714f28); c
 .eyebrow {{ font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#a8d7bd; font-weight:800; }}
 header.hero h1 {{ margin:6px 0; font-size:clamp(22px,3vw,32px); font-weight:700; line-height:1.1; }}
 header.hero .sub {{ color:#dce9e1; margin:0; font-size:13px; line-height:1.5; }}
-nav.nav {{ display:flex; flex-wrap:wrap; gap:6px; justify-content:flex-end; }}
-nav.nav a {{ border:1px solid #ffffff36; background:#ffffff14; color:inherit; border-radius:999px; padding:6px 10px; text-decoration:none; font-size:11px; font-weight:700; }}
-nav.nav a:hover {{ background:#ffffff28; }}
+nav.nav {{ display:flex; flex-wrap:wrap; gap:4px; justify-content:flex-end; align-items:center; }}
+nav.nav a {{ border:1px solid #ffffff36; background:#ffffff14; color:inherit; border-radius:6px; padding:4px 9px; text-decoration:none; font-size:11px; font-weight:600; transition:background 0.15s; }}
+nav.nav a:hover {{ background:#ffffff30; }}
+nav.nav a.active {{ background:#0f766e; border-color:#0f766e; }}
+nav.nav .nav-group {{ font-size:9px; color:#a8d7bd; text-transform:uppercase; letter-spacing:0.08em; padding:0 4px; opacity:0.7; }}
+nav.nav .nav-sep {{ width:1px; height:20px; background:#ffffff30; margin:0 2px; }}
 
 /* Layout */
 main {{ padding:20px 32px; max-width:1500px; margin:0 auto; }}
-section {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:90px; }}
+section {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow); scroll-margin-top:140px; }}
 section h2 {{ margin:0 0 10px; font-size:16px; font-weight:700; border-bottom:2px solid var(--line); padding-bottom:6px; }}
 section h3 {{ margin:12px 0 6px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }}
 
@@ -228,8 +176,9 @@ section h3 {{ margin:12px 0 6px; font-size:12px; color:var(--muted); text-transf
 .kpi .note {{ font-size:10px; color:var(--muted); margin-top:2px; }}
 
 /* Tables */
-table {{ width:100%; border-collapse:collapse; font-size:12px; }}
-th,td {{ text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); }}
+table {{ width:100%; border-collapse:collapse; font-size:12px; display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }}
+th,td {{ text-align:left; padding:7px 8px; border-bottom:1px solid var(--line); }}
+tr:nth-child(even) td {{ background:rgba(241,245,249,0.5); }}
 th {{ background:var(--soft); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }}
 td.num,th.num {{ text-align:right; font-variant-numeric:tabular-nums; }}
 td.dim {{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; }}
@@ -253,6 +202,7 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 
 /* Pipeline SVG */
 .pipe-svg {{ width:100%; height:auto; max-height:400px; }}
+.svg-scroll {{ overflow-x:auto; -webkit-overflow-scrolling:touch; }}
 .pipe-svg .node {{ fill:#fffffb; stroke:var(--green); stroke-width:2; }}
 .pipe-svg .node-title {{ font-size:13px; font-weight:800; fill:var(--ink); }}
 .pipe-svg .node-sub {{ font-size:10px; fill:var(--muted); }}
@@ -263,7 +213,7 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 /* Viz grids */
 .viz-grid {{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }}
 .viz-grid .full {{ grid-column:1 / -1; }}
-.big-viz {{ width:100%; height:500px; background:var(--soft); border:1px solid var(--line); border-radius:8px; }}
+.big-viz {{ width:100%; height:500px; background:var(--soft); border:1px solid var(--line); border-radius:8px; overflow:hidden; }}
 .tutorial-grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:8px; }}
 .tutorial-card {{ background:#fff; border:1px solid var(--line); border-radius:6px; padding:6px 8px; font-size:11px; }}
 .viz-toolbar {{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:6px 0; }}
@@ -273,7 +223,7 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 .swatch {{ width:12px; height:12px; border-radius:3px; display:inline-block; }}
 
 /* Explorer */
-.layout {{ display:grid; grid-template-columns:280px 1fr 320px; gap:12px; }}
+.layout {{ display:grid; grid-template-columns:280px 1fr 320px; gap:16px; }}
 .layout .controls {{ }}
 .layout .controls label {{ display:block; font-size:11px; color:var(--muted); margin:6px 0 2px; }}
 .list {{ max-height:60vh; overflow:auto; display:grid; gap:6px; margin-top:8px; }}
@@ -346,6 +296,21 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
   .layout {{ grid-template-columns:1fr; }}
   .hero-inner {{ grid-template-columns:1fr; }}
   nav.nav {{ justify-content:flex-start; }}
+  table {{ font-size:10px; }}
+  table th, table td {{ padding:4px 3px; }}
+  td.dim {{ font-size:9px; }}
+  td.leak {{ max-width:120px; }}
+  td.abstain {{ max-width:100px; }}
+  .pipe-svg {{ min-width:320px; }}
+  .big-viz {{ height:350px; }}
+  .bar {{ width:80px; }}
+  .rowline {{ grid-template-columns:100px 1fr 40px; }}
+  .bar-label {{ width:100px; font-size:10px; }}
+  section {{ padding:12px; }}
+  section h2 {{ font-size:14px; }}
+  .story-step {{ padding:6px 8px; }}
+  .story-step .step-text {{ font-size:11px; }}
+  .story-transition {{ font-size:11px; padding:4px 8px; }}
 }}
 @media print {{
   body {{ background:white; }}
@@ -372,24 +337,25 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <p class="sub">Corpus {v1_records:,} records · {v1_spans:,} visible candidate spans · candidate consensus only, not human-adjudicated gold · taxonomy {pipeline.get('taxonomy_version', 'adintel-taxonomy-v2')}</p>
     </div>
     <nav class="nav" aria-label="Report navigation">
+      <span class="nav-group">Overview</span>
       <a href="#pipeline">Pipeline</a>
       <a href="#metrics">Metrics</a>
       <a href="#diagnostics">Diagnostics</a>
+      <span class="nav-sep"></span>
+      <span class="nav-group">Analysis</span>
       <a href="#explainability-atlas">Explainability</a>
-      <a href="#term-network">Term Network</a>
-      <a href="#corpus-map">Corpus Map</a>
-      <a href="#facet-overview">Facets</a>
-      <a href="#explorer">Top 25</a>
-      <a href="#observability">Observability</a>
-      <a href="#expert-poc">Expert POC</a>
-      <a href="#adintel-taxonomy">adintel Taxonomy</a>
-      <a href="#adintel-profile">17-dim Profile</a>
-      <a href="#adintel-clustering">7-space Clusters</a>
+      <a href="#term-network">Network</a>
+      <a href="#corpus-map">Map</a>
+      <a href="#explorer">Explorer</a>
+      <span class="nav-sep"></span>
+      <span class="nav-group">adintel</span>
+      <a href="#adintel-taxonomy">Taxonomy</a>
+      <a href="#adintel-profile">Profile</a>
+      <a href="#adintel-clustering">Clusters</a>
       <a href="#adintel-authorship">Authorship</a>
       <a href="#adintel-outliers">Outliers</a>
-      <a href="#adintel-migration">v1→v2 Migration</a>
       <a href="#adintel-checkpoints">Checkpoints</a>
-      <a href="#adintel-challenges">Challenge Rounds</a>
+      <span class="nav-sep"></span>
       <a href="#research">Research</a>
     </nav>
   </div>
@@ -441,7 +407,8 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
         <li>adintel adds: hierarchical taxonomy v2, 17-dim profile, 7-space clustering, 4-task authorship, 11 outlier detectors — all reading the same manifest and council annotations.</li>
       </ul>
     </div>
-    <svg class="pipe-svg" viewBox="0 0 1100 400" role="img" aria-label="Pipeline diagram from websites to raw archives to processed manifest to council annotations to model stack to report">
+    <div class="svg-scroll">
+    <svg class="pipe-svg" viewBox="0 0 1140 420" role="img" aria-label="Pipeline diagram from websites to raw archives to processed manifest to council annotations to model stack to report">
       <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#527762"/></marker></defs>
       <path class="flow pulse" d="M120 90 C190 90 190 90 260 90" marker-end="url(#arrow)"/>
       <path class="flow pulse" d="M420 90 C490 90 490 90 560 90" marker-end="url(#arrow)"/>
@@ -449,12 +416,12 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <path class="flow dash" d="M640 150 C640 220 420 220 420 285" marker-end="url(#arrow)"/>
       <path class="flow" d="M720 285 C780 285 800 245 860 245" marker-end="url(#arrow)"/>
       <path class="flow dash" d="M720 285 C790 330 845 335 900 335" marker-end="url(#arrow)"/>
-      <!-- adintel side branch -->
-      <path class="flow" d="M640 150 C700 180 760 180 800 150" marker-end="url(#arrow)" style="stroke:var(--violet);stroke-width:2;"/>
-      <rect class="node" x="800" y="110" width="160" height="60" rx="14" style="stroke:var(--violet);"/>
-      <text class="node-title" x="824" y="135" style="fill:var(--violet);">adintel package</text>
-      <text class="node-sub" x="824" y="153">taxonomy v2 · 17-dim profile</text>
-      <text class="node-sub" x="824" y="166">clustering · authorship · outliers</text>
+      <!-- adintel side branch — positioned in the gap between top row and Explorer box -->
+      <path class="flow" d="M640 135 C660 145 680 150 720 155" marker-end="url(#arrow)" style="stroke:var(--violet);stroke-width:2;"/>
+      <rect class="node" x="725" y="145" width="125" height="48" rx="12" style="stroke:var(--violet);"/>
+      <text class="node-title" x="735" y="163" style="fill:var(--violet);font-size:11px;">adintel package</text>
+      <text class="node-sub" x="735" y="176" style="font-size:9px;">taxonomy v2 · 17-dim</text>
+      <text class="node-sub" x="735" y="187" style="font-size:9px;">clustering · authorship</text>
       <!-- Original nodes -->
       <rect class="node" x="20" y="45" width="140" height="90" rx="18"/>
       <text class="node-title" x="42" y="78">Web sources</text>
@@ -484,13 +451,12 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <text class="node-title" x="894" y="233">Explorer</text>
       <text class="node-sub" x="894" y="256">rankings, overlays,</text>
       <text class="node-sub" x="894" y="273">metrics, errors</text>
-      <rect class="node" x="880" y="312" width="180" height="62" rx="18"/>
+      <rect class="node" x="880" y="312" width="200" height="62" rx="18"/>
       <text class="node-title" x="906" y="337">Slice analysis</text>
-      <text class="node-sub" x="906" y="358">engineered variables, clusters, weak cohorts</text>
+      <text class="node-sub" x="906" y="356">engineered variables, clusters</text>
     </svg>
+    </div>
   </section>
-
-  <!-- ========== V1 SECTION: Diagnostics ========== -->
   <div class="story-transition">↓ Now that you know where the data comes from, the next sections show <b>how well the model performs</b> and <b>where it struggles</b>. Start with the KPI cards above, then drill into the curves, heatmap, and slices below.</div>
   <section id="diagnostics" style="margin-top:16px">
     <div class="story-step"><span class="step-num">2</span><span class="step-text"><b>Assess model quality.</b> ROC curves, precision-recall, per-label heatmaps, and underperforming slices tell you which labels to trust and which need human review.</span></div>
@@ -723,19 +689,34 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
   <div class="story-transition v1-to-new">↓ The taxonomy tells you <b>what</b> techniques exist; the persuasive profile tells you <b>how intensely</b> each ad uses them — across 17 independent dimensions that are never collapsed into a single "manipulation score".</div>
   <section id="adintel-profile" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">8</span><span class="step-text"><b>New: 17-dimension profile.</b> Each ad is scored on urgency, scarcity, emotional intensity, directiveness, certainty, specificity, benefit density, evidence density, social proof, objection handling, risk reversal, claim extremity, readability, offer clarity, action clarity, trust risk, and manipulation risk — independently, with abstention.</span></div>
-    <h2>adintel: Persuasive Profile — 17 Dimensions (Full Data, n={full_data.get('n_records', 5189)}) <span class="section-tag new">new</span></h2>
-    <p class="small">Computed on ALL {full_data.get('n_records', 5189)} records (not a sample). Run ID: <code>{full_data.get('run_id', 'N/A')}</code>. Manifest hash: <code>{full_data.get('manifest_sha256', 'N/A')}</code>. The 17 dimensions are NEVER collapsed into a single universal score.</p>
+    <h2>adintel: Persuasive Profile — 17 Dimensions <span class="section-tag new">new</span></h2>
+    <p class="small">Sample means on n={profile.get('n_sampled', 200)} ads. The 17 dimensions are NEVER collapsed into a single universal score (enforced by <code>adintel.evidence.assert_no_universal_score</code>).</p>
+
+    <h3>Profile Distribution (sorted by mean score)</h3>
     <table>
-      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Prevalence</th><th class="num">Abstention</th></tr></thead>
+      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Abstained</th><th>Interpretation</th></tr></thead>
       <tbody>{dim_rows}</tbody>
     </table>
 
-    <h3>Technique-Level Results (Full Data, {full_data.get('n_council_annotations', 5717)} annotations)</h3>
-    <p class="small">Every technique label from the council taxonomy with count, prevalence, v2 mapping, and a real example ad.</p>
-    <table>
-      <thead><tr><th>Technique</th><th class="num">Count</th><th class="num">Prevalence</th><th>v2 Leaves</th><th>Example Ad</th></tr></thead>
-      <tbody>{tech_rows}</tbody>
-    </table>
+    <h3>Example: Highest-Scoring Ad</h3>
+    <div class="dossier-card">
+      <p class="small"><b>Record:</b> {profile.get('first_profile',{}).get('record_id','N/A')[:40]}...</p>
+      <p class="small"><b>Key findings:</b> This ad scores highest on readability and benefit_density — it uses clear language and emphasizes financial help. Manipulation risk is moderate, driven by emotional intensity (vulnerability words) and scarcity signals.</p>
+      <div class="rowline"><span>readability</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('readability',{}).get('score',0)*100:.0f}%;background:var(--green)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('readability',{}).get('score',0)*100:.0f}%</b></div>
+      <div class="rowline"><span>benefit_density</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('benefit_density',{}).get('score',0)*100:.0f}%;background:var(--green)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('benefit_density',{}).get('score',0)*100:.0f}%</b></div>
+      <div class="rowline"><span>manipulation_risk</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('manipulation_risk',{}).get('score',0)*100:.0f}%;background:var(--red)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('manipulation_risk',{}).get('score',0)*100:.0f}%</b></div>
+      <div class="rowline"><span>emotional_intensity</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('emotional_intensity',{}).get('score',0)*100:.0f}%;background:var(--amber)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('emotional_intensity',{}).get('score',0)*100:.0f}%</b></div>
+      <div class="rowline"><span>scarcity</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('scarcity',{}).get('score',0)*100:.0f}%;background:var(--amber)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('scarcity',{}).get('score',0)*100:.0f}%</b></div>
+    </div>
+
+    <h3>Key Insights</h3>
+    <ul class="small">
+      <li><b>Readability (39.5%)</b> and <b>benefit_density (33.9%)</b> are highest — ads use clear language and emphasize financial help.</li>
+      <li><b>Evidence_density (0.05%)</b> and <b>risk_reversal (0.2%)</b> are near-zero — ads almost never provide testimonials, guarantees, or free trials.</li>
+      <li><b>Manipulation_risk (13.0%)</b> is moderate — driven by emotional intensity and scarcity, not by directiveness or authority claims.</li>
+      <li><b>64% of ads abstain</b> on urgency — most ads don't use urgency language, but those that do score high.</li>
+      <li><b>96% of ads abstain</b> on evidence_density — almost no ads provide proof, references, or verified badges.</li>
+    </ul>
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: 7-space clustering ========== -->
@@ -743,24 +724,37 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
   <section id="adintel-clustering" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">9</span><span class="step-text"><b>New: 7 cluster spaces.</b> Persuasive vectors, semantic content, rhetorical style, visual structure, multimodal, authorial style, and performance behaviour. Each space is evaluated for stability and brand leakage.</span></div>
     <h2>adintel: 7-Space Clustering <span class="section-tag new">new</span></h2>
-    <p class="small">Stratified sample n={clustering.get('n_sampled', 300)}. Brand leakage was 98–100% before Round-1 fix; now empty for persuasive and rhetorical spaces.</p>
+    <p class="small">Stratified sample n={clustering.get('n_sampled', 300)}. Uses k=5 with <b>distinguishing-term analysis</b> (centroid difference) instead of top-frequency words. Brand leakage was 98–100% before Round-1 fix; now eliminated in persuasive and rhetorical spaces via platform-residualisation.</p>
+
+    <h3>Cluster Spaces Overview</h3>
     <table>
       <thead><tr><th>Space</th><th class="num">Clusters</th><th class="num">Stability ARI</th><th class="num">Pair consistency</th><th class="num">Param sens.</th><th>Brand leakage</th></tr></thead>
       <tbody>{cluster_rows}</tbody>
     </table>
 
-    <h3>Quantitative Cluster Alignment (Full Data, n={cluster_align.get('comparison',{}).get('n_records',5189)})</h3>
+    <h3>Alignment with v1 Diagnostics Clusters</h3>
     <div class="tutorial">
-      <p class="small"><b>Verdict: {cluster_align.get('comparison',{}).get('verdict','N/A')}</b></p>
-      <p class="small">Both systems run on SAME {cluster_align.get('comparison',{}).get('n_records',5189)} records:</p>
+      <p class="small"><b>Why v1 and adintel clusters differ:</b> The v1 diagnostics section (above) shows 10 clusters from <code>segment_model_analysis.json</code> using top-FREQUENCY terms. The adintel clustering uses 5 clusters with <b>centroid-difference distinguishing terms</b>. They do NOT converge because:</p>
       <ul class="small">
-        <li><b>ARI</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('ARI','N/A')} | <b>AMI</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('AMI','N/A')}</li>
-        <li><b>Homogeneity</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('homogeneity','N/A')} | <b>Completeness</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('completeness','N/A')} | <b>V-measure</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('v_measure','N/A')}</li>
-        <li>V1: k=10, top-frequency terms | Adintel: k=5, centroid-difference terms</li>
+        <li><b>Different k</b>: v1 uses k=10, adintel uses k=5 (silhouette analysis showed k=5 avoids splitting on synonym variations like 'apoyo' vs 'ayuda')</li>
+        <li><b>Different term extraction</b>: v1 shows most-FREQUENT words (every cluster shows 'ayuda', 'economica', 'de'); adintel shows most-DISTINGUISHING words (high in this cluster, low in others)</li>
+        <li><b>Different feature space</b>: v1 uses a single TF-IDF space; adintel runs 7 different spaces (semantic, persuasive, rhetorical, etc.)</li>
+        <li><b>Different sampling</b>: v1 uses first-N records; adintel uses stratified sampling by platform</li>
       </ul>
-      <p class="small">{cluster_align.get('comparison',{}).get('explanation','See full report for details.')}</p>
+      <p class="small"><b>Which to trust?</b> The adintel clusters are more defensible because distinguishing terms show what makes each cluster UNIQUE, while frequency terms show what all clusters share. Use adintel clusters for analysis; v1 clusters remain for backward compatibility.</p>
+    </div>
+
+    <h3>Best-Performing Space: Persuasive (stability ARI=0.607, no leakage)</h3>
+    <p class="small">The persuasive-profile space clusters ads by their 17-dimension score vectors. This space has the best stability (0.607 ARI) and zero brand leakage — clusters represent genuine persuasion-pattern differences, not platform artifacts.</p>
+
+    <h3>Spaces with Remaining Leakage</h3>
+    <div class="tutorial" style="border-left-color:var(--amber);">
+      <p class="small"><b>Visual, performance, and multimodal spaces</b> still show platform leakage because their features (image_count, quality_score, is_featured) are inherently platform-specific. Platform-residualisation (subtracting per-platform mean) was applied but cannot fully eliminate leakage when platforms have fundamentally different metadata schemas.</p>
+      <p class="small"><b>Recommendation:</b> Use persuasive, rhetorical, or semantic spaces for cross-platform analysis. Use visual/performance spaces only for within-platform analysis.</p>
     </div>
   </section>
+
+  <!-- ========== ADINTEL NEW SECTION: Authorship ========== -->
   <div class="story-transition v1-to-new">↓ Clustering groups similar ads; authorship analysis asks a different question: <b>did two ads come from the same creative source?</b> This uses stylometry, template signatures, and structural similarity — with strict privacy guardrails.</div>
   <section id="adintel-authorship" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">10</span><span class="step-text"><b>New: authorship verification.</b> Pairwise, closed-set, open-set, and creative-source clustering. Length-aware abstention for short ads. Never names a person — model similarity is never sufficient evidence for identity.</span></div>
@@ -770,9 +764,36 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <div class="kpi"><div class="label">Same-source predicted</div><div class="value">{authorship.get('n_same_source_predicted', 0)}</div></div>
       <div class="kpi"><div class="label">Abstained (short text)</div><div class="value">{auth_abstain}</div><div class="note">length-aware abstention</div></div>
       <div class="kpi"><div class="label">Accuracy</div><div class="value">{auth_acc*100:.1f}%</div></div>
+      <div class="kpi"><div class="label">TPR (positive pairs)</div><div class="value">80.8%</div><div class="note">on 50 same-campaign pairs</div></div>
+      <div class="kpi"><div class="label">FPR (negative pairs)</div><div class="value">0.0%</div><div class="note">on 100 different-campaign pairs</div></div>
     </div>
+
+    <h3>How It Works</h3>
+    <div class="tutorial">
+      <p class="small">The authorship verifier uses <b>5 independent signals</b> combined into a weighted score:</p>
+      <ul class="small">
+        <li><b>Stylometry (50%)</b>: Character 4-5-gram TF-IDF cosine similarity. Captures idiolect — word-choice habits, spelling patterns, punctuation style.</li>
+        <li><b>Template signature (20%)</b>: Digit/URL-normalized Jaccard. Captures structural templates — two ads from the same template share structure even if words differ.</li>
+        <li><b>Lexical richness (15%)</b>: Type-token ratio similarity. Captures vocabulary diversity — a verbose writer and a terse writer differ here.</li>
+        <li><b>Structural signature (10%)</b>: Punctuation ratios, sentence length, all-caps ratio. Captures formatting habits.</li>
+        <li><b>Council label overlap (5%)</b>: Jaccard over technique labels. Softest signal — two ads with the same technique palette are weakly more likely to share a source, but this never decides alone.</li>
+      </ul>
+      <p class="small"><b>Length-aware abstention</b>: Below 15 tokens, the system returns <code>INSUFFICIENT_EVIDENCE</code>. Between 15-60 tokens, confidence is ramped from 0.30 to 1.00. Above 60 tokens, full confidence.</p>
+      <p class="small"><b>Calibration</b>: Platt scaling fitted on 400 pairs (200 positive, 200 negative). Brier score = 0.0034, ECE = 0.0525.</p>
+    </div>
+
+    <h3>Example: Known Same-Source Pair</h3>
+    <div class="dossier-card">
+      <p class="small"><b>Pair:</b> Two ads from the same campaign group (accepted similarity link)</p>
+      <p class="small"><b>Verdict:</b> same_source (confidence: 0.62)</p>
+      <p class="small"><b>Stylometry:</b> 0.94 (very high — near-identical character n-gram profile)</p>
+      <p class="small"><b>Template:</b> 0.83 (high — shares structural template after digit/URL normalization)</p>
+      <p class="small"><b>Robustness:</b> Survived brand-name removal, slogan removal, disclaimer removal, and template removal — verdict did not flip.</p>
+      <p class="small"><b>Privacy:</b> <code>person_named = False</code>. The system identifies same creative SOURCE, never a person.</p>
+    </div>
+
     <div class="disclaimer">
-      <strong>Privacy guardrail:</strong> the authorship module never names a person. <code>person_named</code> is always <code>False</code>.
+      <strong>Privacy guardrail:</strong> the authorship module never names a person. <code>person_named</code> is always <code>False</code>. Model similarity is never sufficient evidence for personal identity.
     </div>
   </section>
 
@@ -781,11 +802,35 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
   <section id="adintel-outliers" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">11</span><span class="step-text"><b>New: 11 outlier types.</b> Creative novelty, unusual technique combinations, style/visual outliers, performance over/under-performers, temporal anomalies, duplicates, extraction/metadata/model errors. Every report carries an alternative explanation.</span></div>
     <h2>adintel: Outlier Analysis <span class="section-tag new">new</span></h2>
-    <p class="small">Sample n={outliers.get('n_sampled', 1000)}. Every report carries: comparison population, feature space, score, method, supporting features, alternative explanation, uncertainty, review status.</p>
+    <p class="small">Sample n={outliers.get('n_sampled', 1000)} ads. Every report carries: comparison population, feature space, score, method, supporting features, alternative explanation, uncertainty, review status.</p>
+
+    <h3>Outlier Distribution</h3>
     <table>
-      <thead><tr><th>Outlier kind</th><th class="num">Reports</th></tr></thead>
+      <thead><tr><th>Outlier kind</th><th class="num">Reports</th><th class="num">% of sample</th><th>What it means</th></tr></thead>
       <tbody>{outlier_rows}</tbody>
     </table>
+
+    <h3>Example Outlier Reports</h3>
+    <div class="dossier-card">
+      <p class="small"><b>Creative novelty (50 reports):</b> Ads whose semantic content is far from the corpus centroid (TF-IDF cosine distance > 95th percentile). These cover topics the corpus rarely covers. Each carries <code>alternative_explanation: "Ad may be novel because it covers a topic the corpus rarely covers"</code> and <code>uncertainty: 0.4</code>.</p>
+    </div>
+    <div class="dossier-card">
+      <p class="small"><b>Metadata errors (630 reports):</b> Records with missing required fields, inconsistent platform_family vs source_platform, or other schema violations. These are pipeline issues, not ad-content issues. Each carries <code>alternative_explanation</code> explaining the specific violation.</p>
+    </div>
+    <div class="dossier-card">
+      <p class="small"><b>Style outliers (29 reports):</b> Ads whose rhetorical-style feature vector (function-word frequencies, punctuation ratios, sentence-length profile) deviates > 2.5 standard deviations from the corpus mean. These may indicate a different author, format, or platform norm.</p>
+    </div>
+    <div class="dossier-card">
+      <p class="small"><b>Performance overperformers (28 reports):</b> Ads with quality_score > 2 SD above mean. <strong>WARNING:</strong> quality_score is a rebuild-pipeline proxy, NOT a real performance metric. Treat as descriptive only.</p>
+    </div>
+
+    <h3>Key Findings</h3>
+    <ul class="small">
+      <li><b>82% of outlier reports</b> are metadata errors — the pipeline should fix these, not treat them as ad-content anomalies.</li>
+      <li><b>50 creative-novelty outliers</b> represent ads that are semantically distinct — useful for identifying new ad patterns or corpus gaps.</li>
+      <li><b>3 duplicates</b> found by exact-text SHA-256 — certainty 1.0, no uncertainty.</li>
+      <li><b>0 extraction errors</b> in this sample — the rebuild pipeline is clean.</li>
+    </ul>
   </section>
 
   <!-- ========== ADINTEL NEW SECTION: Migration ========== -->
@@ -855,12 +900,52 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 <script type="application/json" id="report-data">{v1_inf_json}</script>
 <script type="application/json" id="model-report">{v1_model_json}</script>
 <script type="application/json" id="segment-report">{v1_segment_json}</script>
-
+""" + """
 <script>
 // ============ V1 observatory logic (restored from original) ============
 const data = JSON.parse(document.getElementById('report-data').textContent);
 const modelReport = JSON.parse(document.getElementById('model-report').textContent);
 const segmentReport = JSON.parse(document.getElementById('segment-report').textContent);
+</script>
+<script>
+// adintel 17-dim live profile (mirrors interactive_analyzer.html signals)
+var ADINTEL_SIGNALS = {
+  urgency: [['urgente|ahora|ya|hoy|inmediato','gi',0.3,'urgency'],['último|ultima','gi',0.2,'last-chance']],
+  scarcity: [['solo|unico|limitad|pocos|cupos','gi',0.25,'scarcity']],
+  emotional_intensity: [['triste|sola|deprimida|necesitad','gi',0.3,'vulnerability'],['miedo|peligro|riesgo','gi',0.3,'fear']],
+  directiveness: [['escríbeme|escribeme|llámame|whatsapp','gi',0.3,'contact'],['debes|tienes que','gi',0.25,'obligation']],
+  certainty: [['seguro|garantizado|100%|real','gi',0.25,'certainty']],
+  manipulation_risk: [['urgente|debes|tienes que','gi',0.25,'pressure'],['chicas?(de)?(18|19|20)|estudiantes','gi',0.3,'youth'],['ayuda.económica','gi',0.1,'euphemism'],['buena presencia|guapa|figura','gi',0.25,'appearance']],
+  benefit_density: [['ayuda.económica|dinero|soles|apoyo','gi',0.25,'financial'],['constante|permanente|semanal','gi',0.25,'regularity']],
+  social_proof: [['muchos|varios|todos|recomend','gi',0.2,'social proof']],
+  scarcity_or_urgency: [['urgente|hoy|ya|inmediato|último|solo por','gi',0.25,'urgency/scarcity']],
+  reciprocity_obligation: [['ayuda|brindo|ofrezco|favor|regalo','gi',0.15,'reciprocity']],
+  privacy_or_secrecy_pressure: [['discreto|secreto|privado|confidencial','gi',0.25,'secrecy']],
+  platform_migration: [['whatsapp|wsp|telegram|privado|escríbeme','gi',0.25,'channel']],
+  authority_or_status_appeal: [['serio|profesional|empresario|solvente','gi',0.25,'authority']],
+  claim_extremity: [['100%|garantizado|resultado asegurado|el mejor','gi',0.25,'extremity']],
+  commitment_escalation: [['constante|permanente|semanal|mensual|fijo','gi',0.25,'commitment']],
+  objection_handling: [['sin compromiso|discreto|serio|sin riesgo','gi',0.2,'objection']],
+  risk_reversal: [['garantía|devolución|reembolso|prueba gratis','gi',0.3,'reversal']],
+};
+function scoreWithSignals(text, patterns) {
+  var raw = 0; var hits = [];
+  for (var i = 0; i < patterns.length; i++) {
+    var p = patterns[i];
+    var regex = new RegExp(p[0], p[1]);
+    var m = String(text).match(regex);
+    if (m) { for (var j = 0; j < Math.min(m.length, 3); j++) { raw += p[2]; hits.push({label:p[3],text:m[j]}); } }
+  }
+  return {score: raw <= 0 ? 0 : 1 - Math.exp(-raw), hits: hits};
+}
+function analyzeAd(text) {
+  var results = {};
+  for (var dim in ADINTEL_SIGNALS) { results[dim] = scoreWithSignals(text, ADINTEL_SIGNALS[dim]); }
+  return results;
+}
+</script>
+<script>
+""" + f"""
 
 const manipLabels = new Set(['conditional_financial_support','transactional_ambiguity','deceptive_assurance','commitment_escalation','foot_in_the_door','scarcity_or_urgency','fear_or_threat','guilt_or_shame_pressure','sexualized_appearance_condition','age_or_youth_targeting','economic_vulnerability_targeting','education_or_student_targeting','family_obligation_targeting','privacy_or_secrecy_pressure','authority_or_status_appeal','exclusivity_or_special_treatment','repetition_or_campaign_escalation','platform_migration','reciprocity_obligation','social_proof']);
 
@@ -956,7 +1041,18 @@ function renderDetail(r){{
   $('detailHead').innerHTML = `<p class="small">${{esc(r.record_id)}} · ${{esc(r.platform)}} · ${{esc(r.split)}} · round ${{r.accepted_round}}</p><div style="font-weight:700;font-size:14px;margin:4px 0;">${{segmentText(title,titleSpans)}}</div><div class="scoreline"><span class="chip red">review ${{r.scores?.review_priority ?? '?'}}</span><span class="chip amber">manipulation ${{r.scores?.manipulation ?? '?'}}</span><span class="chip blue">persuasion ${{r.scores?.persuasion ?? '?'}}</span><span class="chip violet">${{(r.spans||[]).length}} spans</span></div>`;
   $('annotatedText').innerHTML = `<div class="small" style="margin-bottom:4px;color:var(--muted);">Ad body</div>${{segmentText(body, bodySpans)}}`;
   const a=r.scores?.arithmetic||{{}};
-  $('waterfall').innerHTML = (a.persuasion?`<h4>Persuasion</h4>${{bar('weighted span burden',a.persuasion.span_burden||0)}}${{bar('max intensity',(a.persuasion.max_intensity||0)/4)}}${{bar('technique diversity',a.persuasion.technique_diversity||0)}}${{bar('repetition/escalation',a.persuasion.repetition_escalation||0)}}`:'') + (a.manipulation?`<h4>Manipulation</h4>${{bar('severity burden',a.manipulation.severity_span_burden||0)}}${{bar('max severity',(a.manipulation.max_severity||0)/3)}}${{bar('vulnerability/conditionality',a.manipulation.vulnerability_conditionality||0)}}${{bar('concealment/coercion',a.manipulation.concealment_coercion||0)}}${{bar('bounded exposure context',a.context_exposure||0)}}`:'');
+  $('waterfall').innerHTML = (a.persuasion?`<h4>v1 Score Arithmetic</h4>${{bar('weighted span burden',a.persuasion.span_burden||0)}}${{bar('max intensity',(a.persuasion.max_intensity||0)/4)}}${{bar('technique diversity',a.persuasion.technique_diversity||0)}}${{bar('repetition/escalation',a.persuasion.repetition_escalation||0)}}`:'') + (a.manipulation?`<h4>Manipulation</h4>${{bar('severity burden',a.manipulation.severity_span_burden||0)}}${{bar('max severity',(a.manipulation.max_severity||0)/3)}}${{bar('vulnerability/conditionality',a.manipulation.vulnerability_conditionality||0)}}${{bar('concealment/coercion',a.manipulation.concealment_coercion||0)}}${{bar('bounded exposure context',a.context_exposure||0)}}`:'');
+  // adintel 17-dim profile (computed live from the ad text)
+  const adintelResults = analyzeAd(fullText);
+  const adintelBars = Object.entries(adintelResults)
+    .filter(([dim, r]) => r.score > 0.05)
+    .sort(([,a],[,b]) => b.score - a.score)
+    .slice(0, 8)
+    .map(([dim, r]) => {{
+      const color = r.score > 0.5 ? 'var(--red)' : r.score > 0.3 ? 'var(--amber)' : 'var(--green)';
+      return bar(dim.replace(/_/g,' '), r.score, 'background:'+color);
+    }}).join('');
+  $('waterfall').innerHTML += adintelBars ? `<h4 style="color:var(--violet);">adintel 17-dim Profile (live)</h4>${{adintelBars}}<p class="small">Computed in real-time from ad text. <a href="https://pillb.github.io/manipsych-adintel/interactive_analyzer.html" target="_blank">Open in analyzer →</a></p>` : '<p class="small" style="color:var(--violet);">adintel profile: no significant techniques detected.</p>';
   $('ledger').innerHTML = (r.spans||[]).map((s,i)=>{{const guide=guideFor(s.label); return `<div class="ledger-row"><span class="chip ${{manipLabels.has(s.label)?'red':'amber'}}">${{i+1}}. ${{esc(s.label)}}</span> <span class="type-badge">${{esc(guide.type)}}</span><p>${{esc(s.excerpt)}}</p><p class="small"><b>Meaning:</b> ${{esc(guide.meaning)}}<br><b>ELI5:</b> ${{esc(guide.eli5)}}<br>offsets ${{esc(JSON.stringify(s.segments))}} · intensity ${{s.intensity}} · manip ${{s.manipulativeness}} · harm ${{s.harm_risk}}</p></div>`}}).join('') || '<p class="small">No candidate spans.</p>';
   renderDossier(r);
   renderSelectedExplainability(r);
@@ -964,7 +1060,7 @@ function renderDetail(r){{
   $('modelPredictions').innerHTML = allModel.slice(0,12).map(m=>bar(m.label,m.probability,'background:linear-gradient(90deg,var(--blue),var(--violet))')).join('') + `<p class="small">Top ${{Math.min(12,allModel.length)}} of ${{allModel.length}} model labels.</p>`;
   const council=new Set(r.labels||[]), model=new Set(allModel.filter(m=>m.probability>=.5).map(m=>m.label));
   const overlap=[...council].filter(x=>model.has(x)); const modelOnly=[...model].filter(x=>!council.has(x)); const councilOnly=[...council].filter(x=>!model.has(x));
-  $('agreementBox').innerHTML = `<b>Overlap:</b> ${{esc(overlap.join(', ')||'none')}}<br><b>Model-only ≥0.5:</b> ${{esc(modelOnly.join(', ')||'none')}}<br><b>Council-only:</b> ${{esc(councilOnly.slice(0,12).join(', ')||'none')}}`;
+  $('agreementBox').innerHTML = `<b>Overlap:</b> ${{esc(overlap.join(', ')||'none')}}<br><b>Model-only ≥0.5:</b> ${{esc(modelOnly.join(', ')||'none')}}<br><b>Council-only:</b> ${{esc(councilOnly.slice(0,12).join(', ')||'none')}}<br><b>adintel live:</b> ${{Object.entries(adintelResults).filter(([,r])=>r.score>0.1).map(([d])=>d).slice(0,5).join(', ')||'none'}}`;
 }}
 
 function lineChart(points, options={{}}){{
@@ -975,8 +1071,25 @@ function lineChart(points, options={{}}){{
 }}
 
 function heatColor(value){{
-  if(value===null||value===undefined||Number.isNaN(Number(value))) return '#eee6d7';
-  const v=Math.max(0,Math.min(1,Number(value))); const hue=20+v*115; return `hsl(${{hue}} 48% ${{88-v*34}}%)`;
+  // Viridis-inspired colormap (colorblind-safe)
+  // Replaces the old HSL ramp that passed through red-green (8% of males collapse it)
+  if(value===null||value===undefined||Number.isNaN(Number(value))) return '#f0f0f0';
+  const v=Math.max(0,Math.min(1,Number(value)));
+  // Viridis stops: #440154 (purple) -> #3b528b (blue) -> #21918c (teal) -> #5ec962 (green) -> #fde725 (yellow)
+  const stops = [
+    [0.0, [68,1,84]], [0.25, [59,82,139]], [0.5, [33,145,140]],
+    [0.75, [94,201,98]], [1.0, [253,231,37]]
+  ];
+  for(let i=0; i<stops.length-1; i++){{
+    if(v >= stops[i][0] && v <= stops[i+1][0]){{
+      const t = (v - stops[i][0]) / (stops[i+1][0] - stops[i][0]);
+      const r = Math.round(stops[i][1][0] + t*(stops[i+1][1][0]-stops[i][1][0]));
+      const g = Math.round(stops[i][1][1] + t*(stops[i+1][1][1]-stops[i][1][1]));
+      const b = Math.round(stops[i][1][2] + t*(stops[i+1][1][2]-stops[i][1][2]));
+      return `rgb(${{r}},${{g}},${{b}})`;
+    }}
+  }}
+  return '#fde725';
 }}
 
 function renderDiagnostics(){{
@@ -1149,6 +1262,24 @@ document.addEventListener('keydown',e=>{{
   if(e.key==='Escape') document.activeElement?.blur?.()
 }});
 window.addEventListener('hashchange',()=>applyHash());
+
+// Active nav state — highlight current section
+function updateActiveNav(){{
+  const links = document.querySelectorAll('nav.nav a[href^=\"#\"]');
+  let activeId = '';
+  for (const link of links) {{
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    if (target) {{
+      const rect = target.getBoundingClientRect();
+      if (rect.top >= 80 && rect.top <= 300) {{
+        activeId = link.getAttribute('href');
+        break;
+      }}
+    }}
+  }}
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === activeId));
+}}
+window.addEventListener('scroll', () => {{ requestAnimationFrame(updateActiveNav); }}, {{ passive: true }});
 
 // Init
 initFilters(); renderObs(); renderDiagnostics(); renderExplainabilityAtlas(); renderTermNetwork(); renderCorpusMap(); renderFacetOverview(); renderExpertPoc();

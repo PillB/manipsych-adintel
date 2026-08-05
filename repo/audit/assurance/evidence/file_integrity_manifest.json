@@ -1,0 +1,203 @@
+{
+  "generated_at": "2026-08-05T03:53:24.528114Z",
+  "root": "/home/z/my-project/repo",
+  "files": {
+    "adintel/__init__.py": {
+      "sha256": "c8b62b3d5c8ea5c671aed9e9c5e3357a6d2992f174dd9749d6ac2af6930233e4",
+      "size": 1077
+    },
+    "adintel/checkpoints.py": {
+      "sha256": "f3b1e6c6f6d02c1510e944756eda8eb13c5cb891123b42b6c0c278dc9b5dde7b",
+      "size": 13981
+    },
+    "adintel/profile.py": {
+      "sha256": "84ba80f178f0f6bd70559188ac1dbed7eb274ed7aa72b62ce0822115137252bc",
+      "size": 26647
+    },
+    "adintel/outlier.py": {
+      "sha256": "4d01f0ac1847977c000ded26da44c1ddf1309dae3f813f3bad080a3b53c80c97",
+      "size": 22249
+    },
+    "adintel/api.py": {
+      "sha256": "5a12a3fb8bd4e05872aee425699121f01ef4e0a72001230731931f71921f575c",
+      "size": 11508
+    },
+    "adintel/evidence.py": {
+      "sha256": "d8a3c225dceecd74f7d355bc8cc0d412af9ad94c1195f9fd49ee5c33f0b9900d",
+      "size": 6324
+    },
+    "adintel/authorship.py": {
+      "sha256": "7a45405f4b5d51f4ecf5b8a9d2aac7c974134fcc6b0a3876350ea3a032d48161",
+      "size": 20667
+    },
+    "adintel/taxonomy.py": {
+      "sha256": "26066c1fe7be52b89e9ddd77745bcd732b29195a902350ee380c159105437210",
+      "size": 21142
+    },
+    "adintel/types.py": {
+      "sha256": "24fe0506d42aeab64ba59b04ddb2cadace221e99d0179f734d9f825cf1f3e2a9",
+      "size": 11218
+    },
+    "adintel/clustering.py": {
+      "sha256": "609b82090c2a018301828d452f893c733a35ade576e7eddf7adb83cd7c479244",
+      "size": 20943
+    },
+    "scripts/evaluate_negative_pairs.py": {
+      "sha256": "82c0ff2279e398806d466365ab64568272614c14fda6dde1721854c1aae511ec",
+      "size": 7998
+    },
+    "scripts/simulate_gold_and_silver.py": {
+      "sha256": "031fae5b2f0c135828e8711e1be2fce5d7438517db53a877b9246f6763583ab9",
+      "size": 12909
+    },
+    "scripts/causal_analysis.py": {
+      "sha256": "6ad85335dd079f60bc16235fadc54472aa57fc4399715f3d756d8f25844bde40",
+      "size": 8311
+    },
+    "scripts/playwright_dashboard_audit.py": {
+      "sha256": "f0b9ac03f204cb1faefd13596ca32e0ddc845ceeab7c483073c663783747d7cd",
+      "size": 27989
+    },
+    "scripts/migrate_v1_annotations_to_v2.py": {
+      "sha256": "4d3f51884e099e229ac846fbf3be919f42152b85d06277ad463b647aedcec052",
+      "size": 3145
+    },
+    "scripts/vlm_screenshot_analysis.py": {
+      "sha256": "2125d81c32aa5b104679fea782ca4fb1ad93018c9eadd7ec240f7e9b4b9c6410",
+      "size": 7047
+    },
+    "scripts/generate_visual_features.py": {
+      "sha256": "412a00fba94079911c03033530ceb044ff6d94bbf5e1398dffe6ba5b34340967",
+      "size": 7270
+    },
+    "scripts/run_full_macrocycles.py": {
+      "sha256": "e45ba399b3a3f41d695d66c0f8986e1ca8eb731bbdaf804c428f45becac386e9",
+      "size": 12012
+    },
+    "scripts/generate_final_report_pdf.py": {
+      "sha256": "d0374e2bd3b0f1014ea94d61eefa7f0e376bc9ce921a794f2242ee7e261c2f63",
+      "size": 65137
+    },
+    "scripts/generate_adintel_dashboard.py": {
+      "sha256": "df85017e4068cf307d1a7db9f2b2386d268f9d55c8a0654e99da5881d2f74c7e",
+      "size": 95695
+    },
+    "scripts/generate_interactive_analyzer.py": {
+      "sha256": "db45cf6e0d3ce61a7a7741e1531579b766e2e748f21014a126ddc91834d680c7",
+      "size": 26042
+    },
+    "scripts/wire_calibration.py": {
+      "sha256": "625cee424af82555849400c3d0facf6ab9e214bd69a548e4ef4fb65837197517",
+      "size": 7352
+    },
+    "scripts/deduplicate_annotations.py": {
+      "sha256": "176b666cfd1a115f66f817dd508f829ef3ef6e0228d733508196bbfea03aa6c8",
+      "size": 3036
+    },
+    "scripts/generate_integrity_manifest.py": {
+      "sha256": "77f92db056a0826515cbdd8de56cdcf44c498ba7a4f59d2bfb73260c207cb535",
+      "size": 2328
+    },
+    "scripts/run_adintel_pipeline.py": {
+      "sha256": "cb8fb1e36ad5082d4100a6d599eee3277da3fc0cc01e25f9e7a80aca7be44c23",
+      "size": 11139
+    },
+    "scripts/generate_synthetic_performance.py": {
+      "sha256": "ba2705265f3c52ca488e0a6f94ee714a57f5767ae2832d16f2c17c0787918bd5",
+      "size": 8439
+    },
+    "scripts/deep_dive_audit.py": {
+      "sha256": "b0258a92ecfe9db8cc69845b8f576d89755c334a0f636d39dd228b1dbd62ceba",
+      "size": 6570
+    },
+    "scripts/causal_analysis_smart.py": {
+      "sha256": "90c3c4922f03fa112f49aad3437c654f47a027820a1661b4f91e2c4cf5bf7fff",
+      "size": 7090
+    },
+    "scripts/vlm_visual_analysis.py": {
+      "sha256": "92d5247e7ce363d549594e5529ff44e26a015f47688647a19f53d51664b40bae",
+      "size": 6936
+    },
+    "scripts/pages_audit.py": {
+      "sha256": "269f1249964b712161e40dde6c7fc84c6578087cf176cf24bd58c84b6d3b7790",
+      "size": 10094
+    },
+    "tests/adintel/test_api.py": {
+      "sha256": "3a3b502d606c4181da28291ad32adfcaf46dc9a3816db472f3ff1fc4bc69a001",
+      "size": 5487
+    },
+    "tests/adintel/test_outlier.py": {
+      "sha256": "81bce0e9f38590a69ac32d7db086fdfb7b6cb425307c35a925d3531c09c3d1d1",
+      "size": 7294
+    },
+    "tests/adintel/test_attack_fixtures.py": {
+      "sha256": "0c9f71d731659ae208e87258819ca96aeb6d627ba7c0baecef74d485473bea90",
+      "size": 33800
+    },
+    "tests/adintel/test_evidence.py": {
+      "sha256": "f130f1719000563d0b5d2424bdf46936ddef2c3139774dd3efc3e03cf9f1d46a",
+      "size": 5041
+    },
+    "tests/adintel/test_clustering.py": {
+      "sha256": "c206f209055df8322a9f3ffccf811e8d5df823cbc829e194159e00d123640371",
+      "size": 6339
+    },
+    "tests/adintel/test_authorship.py": {
+      "sha256": "bd323ec9d83d9cfc977b583af0848e81be1f7bcaeb2bc962be693bed57c12575",
+      "size": 7763
+    },
+    "tests/adintel/test_taxonomy.py": {
+      "sha256": "4dd08da7204264887597cbb68ea7686eb9009974e4bf2e15b0a1ff4acb5ec27e",
+      "size": 5637
+    },
+    "tests/adintel/test_checkpoints.py": {
+      "sha256": "05ea0687639cf1c98df536579e6018ae1fc51dfdef62d27579ade4ddf689cb3f",
+      "size": 5987
+    },
+    "tests/adintel/test_pending_items.py": {
+      "sha256": "65115b2aec6be6bf39c16cb633918cd5efd38c71ee8ac0f69401488c68db9fd0",
+      "size": 11526
+    },
+    "tests/adintel/test_profile.py": {
+      "sha256": "bb800536d64680b4006f61c9f234963b151b94edf9e7daa07153138a28e9e271",
+      "size": 7603
+    },
+    "models/manipulation_council_tfidf_ovr.joblib": {
+      "sha256": "25b1bcabc15e13180dd969f6f3a0a779a48bf56a0c9e226b3d3264989fe77b28",
+      "size": 3425035
+    },
+    "models/manipulation_tfidf_ovr.joblib": {
+      "sha256": "6bb0fbe2eb1c723d1f4473880afaabbc32ab9d7954601a3795bf02c03a05cecc",
+      "size": 390941
+    },
+    "models/authorship_platt_calibration.pkl": {
+      "sha256": "0b5f2d53bb2fce666e4cda100e3689794499e1a9508b01209e126e3d99426987",
+      "size": 724
+    },
+    "data/processed/ad_manifest.jsonl": {
+      "sha256": "ca9bd02cd858230e18a11721437d077b23e1522cac521227555de107a7d82442",
+      "size": 6205344
+    },
+    "data/annotation/council_resolved_annotations.jsonl": {
+      "sha256": "0e1fa1257828c6171dc2a82c0dc75ff2ee9d67f0f67291c55309ad438ea857ea",
+      "size": 17089970
+    },
+    "data/annotation/similarity_links.jsonl": {
+      "sha256": "d927f4cfd9e83d51ff2dfe4491f48a9771a0bfb66faa4b7e1412e4b8e070e06d",
+      "size": 187969
+    },
+    "reports/adintel/pipeline_results.json": {
+      "sha256": "3e66e5be09aabe54da34d4d0854200d44f169f229468b508bb74abc567aed08c",
+      "size": 4207
+    },
+    "reports/adintel/adintel_dashboard.html": {
+      "sha256": "07023dbd17c4e1265542407d5b512d9663b8d0b886f5d02a82f10a294d7b1b73",
+      "size": 12862174
+    },
+    "docs/interactive_analyzer.html": {
+      "sha256": "05ed67d5b806cdbf77a5338a3eff73adcc243fe8fd704d5957f77ea51f6dee73",
+      "size": 39907
+    }
+  },
+  "file_count": 49
+}
