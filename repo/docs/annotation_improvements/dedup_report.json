@@ -1,0 +1,10 @@
+{
+  "total_records": 5717,
+  "records_with_duplicates": 2245,
+  "pct_records_with_dups": 39.27,
+  "total_spans_before": 36585,
+  "total_spans_after": 32398,
+  "total_removed": 4187,
+  "pct_spans_removed": 11.44,
+  "output": "/home/z/my-project/repo/data/annotation/council_resolved_dedup.jsonl"
+}

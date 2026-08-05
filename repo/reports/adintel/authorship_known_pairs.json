@@ -1,9 +1,9 @@
 {
-  "n_pairs": 41,
-  "n_same_source_predicted": 41,
+  "n_pairs": 50,
+  "n_same_source_predicted": 50,
   "n_abstained": 0,
   "accuracy_against_accepted_links": 1.0,
-  "elapsed_ms": 894.5,
+  "elapsed_ms": 940.6,
   "results_sample": [
     {
       "left_id": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
@@ -19,6 +19,66 @@
       },
       "n_left_tokens": 40,
       "n_right_tokens": 39
+    },
+    {
+      "left_id": "h_02148aaa29a64ba97a1dbabf4aef16325f2c83a2184c8a914214d3a07284f13e",
+      "right_id": "h_4afb339cff5efc2627716050b7f16f9082eab2cfcf359091b66a2ae461c99c5b",
+      "verdict": "same_source",
+      "confidence": 0.913,
+      "stylometry": 0.957,
+      "survived": {
+        "brand_name_removal": false,
+        "slogan_removal": false,
+        "disclaimer_removal": false,
+        "template_removal": false
+      },
+      "n_left_tokens": 19,
+      "n_right_tokens": 19
+    },
+    {
+      "left_id": "h_02148aaa29a64ba97a1dbabf4aef16325f2c83a2184c8a914214d3a07284f13e",
+      "right_id": "h_55fbaa0f330622e9402d02f068cd8173bbbb2c81c42989e01a071863ad629ac5",
+      "verdict": "same_source",
+      "confidence": 1.0,
+      "stylometry": 1.0,
+      "survived": {
+        "brand_name_removal": false,
+        "slogan_removal": false,
+        "disclaimer_removal": false,
+        "template_removal": false
+      },
+      "n_left_tokens": 19,
+      "n_right_tokens": 19
+    },
+    {
+      "left_id": "h_02148aaa29a64ba97a1dbabf4aef16325f2c83a2184c8a914214d3a07284f13e",
+      "right_id": "h_8e6376b769d916b01fba9b3908aa9161e963446a3cbbc39233caa29c93d946a6",
+      "verdict": "same_source",
+      "confidence": 1.0,
+      "stylometry": 1.0,
+      "survived": {
+        "brand_name_removal": false,
+        "slogan_removal": false,
+        "disclaimer_removal": false,
+        "template_removal": false
+      },
+      "n_left_tokens": 19,
+      "n_right_tokens": 19
+    },
+    {
+      "left_id": "h_02148aaa29a64ba97a1dbabf4aef16325f2c83a2184c8a914214d3a07284f13e",
+      "right_id": "h_98a47fd3635069de7aff3d959f6a55843eb0daa936724cbcc3ef8f8b19b09939",
+      "verdict": "same_source",
+      "confidence": 1.0,
+      "stylometry": 1.0,
+      "survived": {
+        "brand_name_removal": false,
+        "slogan_removal": false,
+        "disclaimer_removal": false,
+        "template_removal": false
+      },
+      "n_left_tokens": 19,
+      "n_right_tokens": 19
     },
     {
       "left_id": "h_032e21b71e2d96cceecbb4b45436211379fa23266df3d2d36e1f82109c4d02b5",
@@ -94,66 +154,6 @@
       },
       "n_left_tokens": 41,
       "n_right_tokens": 39
-    },
-    {
-      "left_id": "h_04936c7bebd43e9124ba14a880642028d549601e22655d5afdae1ee42520e1af",
-      "right_id": "h_b52e0d8500c065d1af0b467fcd0035bf52de4837110b408c74f43ea93d02d8f2",
-      "verdict": "same_source",
-      "confidence": 0.965,
-      "stylometry": 0.966,
-      "survived": {
-        "brand_name_removal": true,
-        "slogan_removal": true,
-        "disclaimer_removal": true,
-        "template_removal": true
-      },
-      "n_left_tokens": 127,
-      "n_right_tokens": 127
-    },
-    {
-      "left_id": "h_04936c7bebd43e9124ba14a880642028d549601e22655d5afdae1ee42520e1af",
-      "right_id": "h_fc873658ae35de262189b3aa04b450137cf93ecd7d88179a19a4ec1d773d8c7f",
-      "verdict": "same_source",
-      "confidence": 0.966,
-      "stylometry": 0.965,
-      "survived": {
-        "brand_name_removal": true,
-        "slogan_removal": true,
-        "disclaimer_removal": true,
-        "template_removal": true
-      },
-      "n_left_tokens": 127,
-      "n_right_tokens": 126
-    },
-    {
-      "left_id": "h_0516f93f88dddb21e76869ad6b3a71c9b40eac33780c5c312cd90f217f421298",
-      "right_id": "h_080470d9d9f5f6a77f17afe0e13b11e56fc00c7470f3619c76acf14d8d27b777",
-      "verdict": "same_source",
-      "confidence": 0.901,
-      "stylometry": 0.907,
-      "survived": {
-        "brand_name_removal": true,
-        "slogan_removal": true,
-        "disclaimer_removal": true,
-        "template_removal": true
-      },
-      "n_left_tokens": 58,
-      "n_right_tokens": 58
-    },
-    {
-      "left_id": "h_0516f93f88dddb21e76869ad6b3a71c9b40eac33780c5c312cd90f217f421298",
-      "right_id": "h_0fe3dcd7afb26dcabe74cb0b4e846431d30baccd39dc73bf3ff3b06de89bc59a",
-      "verdict": "same_source",
-      "confidence": 0.945,
-      "stylometry": 0.967,
-      "survived": {
-        "brand_name_removal": true,
-        "slogan_removal": true,
-        "disclaimer_removal": true,
-        "template_removal": true
-      },
-      "n_left_tokens": 58,
-      "n_right_tokens": 58
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "analysis_type": "vlm_screenshot_analysis_live_pages",
+  "n_pages_navigated": 10,
+  "n_successful": 10,
+  "vlm_model": "z-ai-web-dev-sdk vision (GLM-4V)",
+  "findings": {
+    "pages_with_person": 0,
+    "pages_with_text_overlay": 10,
+    "pages_with_logo": 10,
+    "pages_with_sexualised_content": 0,
+    "pages_with_urgency_words": 0
+  },
+  "vp_leaf_estimates": {
+    "vp_gaze_direction": 0.0,
+    "vp_luxury_aesthetic": 0.0,
+    "vp_sexualised_imagery": 0.0
+  },
+  "method": "Playwright navigated to live ad URLs, captured screenshots, VLM analyzed each",
+  "output": "/home/z/my-project/repo/data/processed/vlm_screenshot_analysis.jsonl",
+  "screenshots_dir": "/home/z/my-project/repo/data/processed/ad_screenshots"
+}
