@@ -1,6 +1,6 @@
 {
   "url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html",
-  "audited_at": "2026-08-04T22:31:48Z",
+  "audited_at": "2026-08-05T00:11:47Z",
   "console_errors": [],
   "n_console_errors": 0,
   "sections": [
@@ -218,5 +218,5 @@
   ],
   "mobile_overflow_px": 285,
   "screenshots_dir": "/home/z/my-project/repo/audit/assurance/evidence/screenshots",
-  "n_screenshots": 21
+  "n_screenshots": 24
 }
