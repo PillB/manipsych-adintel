@@ -1,0 +1,41 @@
+{
+  "version": "adintel-v0.2.0",
+  "updated_at": "2026-08-05T21:20:37.331001+00:00",
+  "entries": [
+    {
+      "id": "GM-01",
+      "key": "pipeline_sample_vs_full",
+      "value": "Pipeline was using samples (200/300/1000); now uses full 5738 records"
+    },
+    {
+      "id": "GM-02",
+      "key": "cluster_alignment_verdict",
+      "value": "PARTIALLY_ALIGNED, ARI=0.418, n=5189"
+    },
+    {
+      "id": "GM-03",
+      "key": "fstring_js_escaping",
+      "value": "JS blocks with {} must be outside Python f-string; use string concatenation"
+    },
+    {
+      "id": "GM-04",
+      "key": "technique_prevalence",
+      "value": "reciprocity_obligation on 99.9% (label inflation); v2 splits it"
+    },
+    {
+      "id": "GM-05",
+      "key": "full_data_outlier_count",
+      "value": "1849 reports on 5738 records (was 188 on 1000 sample)"
+    },
+    {
+      "id": "GM-06",
+      "key": "colorFor_bug",
+      "value": "palette[hash] became paletteash due to f-string; fixed by separate script block"
+    },
+    {
+      "id": "GM-07",
+      "key": "run_id_provenance",
+      "value": "All results carry run_id and manifest_sha256 for traceability"
+    }
+  ]
+}

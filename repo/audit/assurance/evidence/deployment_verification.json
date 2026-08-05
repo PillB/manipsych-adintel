@@ -1,0 +1,24 @@
+{
+  "verified_at": "2026-08-05T14:00:00Z",
+  "local_checks": {
+    "dashboard_exists": true,
+    "contains_5738": true,
+    "contains_technique_table": true,
+    "contains_alignment": true,
+    "contains_run_id": true,
+    "full_data_n_records": 5738,
+    "full_data_uses_full": true
+  },
+  "deployed_checks": {
+    "accessible": true,
+    "contains_5738": true,
+    "contains_technique_table": true,
+    "contains_alignment": true
+  },
+  "not_verified": [
+    "Local/deployed byte-for-byte hash equivalence (HTML has dynamic timestamps)",
+    "Source-mutation propagation test (not yet implemented as Red test)",
+    "Model-run propagation test (not yet implemented as Red test)",
+    "Playwright DOM assertion on deployed version (timeout in this session)"
+  ]
+}
