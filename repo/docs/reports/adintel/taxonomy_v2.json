@@ -1,0 +1,597 @@
+{
+  "taxonomy_version": "adintel-taxonomy-v2",
+  "top_level_families": [
+    "copywriting_composition",
+    "persuasive_rhetoric",
+    "behavioural_science",
+    "sales_objection_handling",
+    "visual_persuasion",
+    "multimodal_combination"
+  ],
+  "nodes": [
+    {
+      "id": "copywriting_composition",
+      "name": "Copywriting and composition techniques",
+      "family": "copywriting_composition",
+      "parent": null,
+      "level": 0,
+      "definition": "Techniques of ad craft: how the copy is structured, sequenced, and presented.",
+      "mechanism": "Composition choices shape attention, comprehension, and action without necessarily persuading.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": []
+    },
+    {
+      "id": "cc_headline_hook",
+      "name": "Headline hook",
+      "family": "copywriting_composition",
+      "parent": "copywriting_composition",
+      "level": 1,
+      "definition": "A headline engineered to arrest attention (curiosity gap, startling claim, direct address).",
+      "mechanism": "Orienting response + curiosity gap.",
+      "hard_negatives": [],
+      "language_patterns": [
+        "curiosity gap",
+        "direct address 'tú/usted'",
+        "startling claim"
+      ],
+      "visual_patterns": [],
+      "v1_equivalents": []
+    },
+    {
+      "id": "cc_offer_stack",
+      "name": "Offer stack",
+      "family": "copywriting_composition",
+      "parent": "copywriting_composition",
+      "level": 1,
+      "definition": "Itemised list of benefits or components presented as a stack with anchors.",
+      "mechanism": "Anchoring on component value; transactional utility framing.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "conditional_financial_support"
+      ]
+    },
+    {
+      "id": "cc_call_to_action",
+      "name": "Call-to-action design",
+      "family": "copywriting_composition",
+      "parent": "copywriting_composition",
+      "level": 1,
+      "definition": "Explicit instruction on how to respond, including channel migration cues.",
+      "mechanism": "Reduces friction; specifies the next action.",
+      "hard_negatives": [],
+      "language_patterns": [
+        "escribeme",
+        "whatsapp",
+        "dm",
+        "inbox",
+        "privado"
+      ],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "platform_migration"
+      ]
+    },
+    {
+      "id": "cc_disclaimer_overlay",
+      "name": "Disclaimer / compliance overlay",
+      "family": "copywriting_composition",
+      "parent": "copywriting_composition",
+      "level": 1,
+      "definition": "Compliance-style language added to lend legitimacy or to limit liability.",
+      "mechanism": "Authority laundering through formal-sounding disclaimers.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "deceptive_assurance"
+      ]
+    },
+    {
+      "id": "cc_reciprocity_frame",
+      "name": "Reciprocity framing in copy",
+      "family": "copywriting_composition",
+      "parent": "copywriting_composition",
+      "level": 1,
+      "definition": "Copy that frames the offer as help, gift, or mutual aid.",
+      "mechanism": "Reciprocity heuristic (Cialdini).",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "reciprocity_obligation"
+      ]
+    },
+    {
+      "id": "persuasive_rhetoric",
+      "name": "Persuasive rhetorical techniques",
+      "family": "persuasive_rhetoric",
+      "parent": null,
+      "level": 0,
+      "definition": "Classical rhetorical moves (ethos, pathos, logos) and their modern ad variants.",
+      "mechanism": "Rhetorical figures shape perceived credibility, emotion, and logic.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": []
+    },
+    {
+      "id": "pr_scarcity_urgency",
+      "name": "Scarcity and urgency rhetoric",
+      "family": "persuasive_rhetoric",
+      "parent": "persuasive_rhetoric",
+      "level": 1,
+      "definition": "Rhetoric that implies limited time, limited supply, or limited access.",
+      "mechanism": "Loss aversion; time pressure reduces deliberation.",
+      "hard_negatives": [],
+      "language_patterns": [
+        "hoy",
+        "urgente",
+        "último",
+        "solo por",
+        "limited"
+      ],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "scarcity_or_urgency"
+      ]
+    },
+    {
+      "id": "pr_social_proof",
+      "name": "Social proof rhetoric",
+      "family": "persuasive_rhetoric",
+      "parent": "persuasive_rhetoric",
+      "level": 1,
+      "definition": "Claims of popularity, testimonials, or majority behaviour.",
+      "mechanism": "Conformity heuristic.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "social_proof"
+      ]
+    },
+    {
+      "id": "pr_authority_appeal",
+      "name": "Authority appeal",
+      "family": "persuasive_rhetoric",
+      "parent": "persuasive_rhetoric",
+      "level": 1,
+      "definition": "Citing titles, credentials, or institutional-sounding signals.",
+      "mechanism": "Authority heuristic (Milgram lineage).",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "authority_or_status_appeal"
+      ]
+    },
+    {
+      "id": "pr_exclusivity",
+      "name": "Exclusivity / special treatment",
+      "family": "persuasive_rhetoric",
+      "parent": "persuasive_rhetoric",
+      "level": 1,
+      "definition": "Rhetoric that frames the offer as available only to a select few.",
+      "mechanism": "In-group favouritism + scarcity.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "exclusivity_or_special_treatment"
+      ]
+    },
+    {
+      "id": "pr_emotional_appeal",
+      "name": "Emotional appeal",
+      "family": "persuasive_rhetoric",
+      "parent": "persuasive_rhetoric",
+      "level": 1,
+      "definition": "Pathos-driven framing: fear, hope, shame, pride, belonging.",
+      "mechanism": "Affect heuristic.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "fear_or_threat",
+        "guilt_or_shame_pressure"
+      ]
+    },
+    {
+      "id": "behavioural_science",
+      "name": "Behavioural-science techniques",
+      "family": "behavioural_science",
+      "parent": null,
+      "level": 0,
+      "definition": "Behavioural-economics levers (defaults, commitment, foot-in-the-door, etc.).",
+      "mechanism": "Bounded rationality; System 1 levers.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": []
+    },
+    {
+      "id": "bs_commitment_consistency",
+      "name": "Commitment and consistency / foot-in-the-door",
+      "family": "behavioural_science",
+      "parent": "behavioural_science",
+      "level": 1,
+      "definition": "Sequential asks that lock in commitment through consistency pressure.",
+      "mechanism": "Commitment-consistency (Cialdini); foot-in-the-door.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "commitment_escalation",
+        "foot_in_the_door"
+      ]
+    },
+    {
+      "id": "bs_reciprocity_obligation",
+      "name": "Reciprocity obligation",
+      "family": "behavioural_science",
+      "parent": "behavioural_science",
+      "level": 1,
+      "definition": "Behavioural lever: invoking a felt obligation to reciprocate.",
+      "mechanism": "Reciprocity heuristic.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "reciprocity_obligation"
+      ]
+    },
+    {
+      "id": "bs_repetition_campaign_escalation",
+      "name": "Repetition and campaign escalation",
+      "family": "behavioural_science",
+      "parent": "behavioural_science",
+      "level": 1,
+      "definition": "Repeat exposure and escalation across placements or time.",
+      "mechanism": "Mere exposure; availability cascade.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "repetition_or_campaign_escalation"
+      ]
+    },
+    {
+      "id": "bs_privacy_secrecy_pressure",
+      "name": "Privacy / secrecy pressure",
+      "family": "behavioural_science",
+      "parent": "behavioural_science",
+      "level": 1,
+      "definition": "Pressure to keep the exchange private or secret from others.",
+      "mechanism": "Information control; isolation of the target.",
+      "hard_negatives": [],
+      "language_patterns": [
+        "discreto",
+        "secreto",
+        "sin que nadie",
+        "confidencial"
+      ],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "privacy_or_secrecy_pressure"
+      ]
+    },
+    {
+      "id": "bs_audience_targeting",
+      "name": "Audience targeting (behavioural context, not a technique per se)",
+      "family": "behavioural_science",
+      "parent": "behavioural_science",
+      "level": 1,
+      "definition": "WHO the ad addresses; targeting is context, not a persuasion technique. Recorded separately so it is not collapsed with technique presence.",
+      "mechanism": "Vulnerability amplifiers operate on targeted audiences.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": []
+    },
+    {
+      "id": "bs_audience_targeting.age_youth",
+      "name": "Age / youth targeting",
+      "family": "behavioural_science",
+      "parent": "bs_audience_targeting",
+      "level": 2,
+      "definition": "Ad addresses or implies young-adult audience.",
+      "mechanism": "Asymmetric power; developmental vulnerability.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "age_or_youth_targeting"
+      ]
+    },
+    {
+      "id": "bs_audience_targeting.education_student",
+      "name": "Education / student targeting",
+      "family": "behavioural_science",
+      "parent": "bs_audience_targeting",
+      "level": 2,
+      "definition": "Ad addresses students or appeals to education-related financial pressure.",
+      "mechanism": "Income asymmetry; aspiration leverage.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "education_or_student_targeting"
+      ]
+    },
+    {
+      "id": "bs_audience_targeting.economic_vulnerability",
+      "name": "Economic-vulnerability targeting",
+      "family": "behavioural_science",
+      "parent": "bs_audience_targeting",
+      "level": 2,
+      "definition": "Ad explicitly frames the recipient as in financial distress.",
+      "mechanism": "Leverage over material need.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "economic_vulnerability_targeting"
+      ]
+    },
+    {
+      "id": "bs_audience_targeting.family_obligation",
+      "name": "Family-obligation targeting",
+      "family": "behavioural_science",
+      "parent": "bs_audience_targeting",
+      "level": 2,
+      "definition": "Ad invokes family care obligations as leverage.",
+      "mechanism": "Normative obligation pressure.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "family_obligation_targeting"
+      ]
+    },
+    {
+      "id": "bs_audience_targeting.gendered_appearance",
+      "name": "Gendered-appearance condition",
+      "family": "behavioural_science",
+      "parent": "bs_audience_targeting",
+      "level": 2,
+      "definition": "Ad conditions the offer on gendered appearance.",
+      "mechanism": "Objectification; gendered power asymmetry.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "sexualized_appearance_condition"
+      ]
+    },
+    {
+      "id": "sales_objection_handling",
+      "name": "Sales and objection-handling techniques",
+      "family": "sales_objection_handling",
+      "parent": null,
+      "level": 0,
+      "definition": "Direct-response sales techniques: risk reversal, guarantee, FAQ-as-objection-handling, transactional ambiguity.",
+      "mechanism": "Reduces perceived transactional risk; defers critical scrutiny.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": []
+    },
+    {
+      "id": "so_risk_reversal",
+      "name": "Risk reversal / guarantee",
+      "family": "sales_objection_handling",
+      "parent": "sales_objection_handling",
+      "level": 1,
+      "definition": "Money-back, satisfaction, or safety guarantees.",
+      "mechanism": "Loss-aversion offset.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "deceptive_assurance"
+      ]
+    },
+    {
+      "id": "so_transactional_ambiguity",
+      "name": "Transactional ambiguity",
+      "family": "sales_objection_handling",
+      "parent": "sales_objection_handling",
+      "level": 1,
+      "definition": "Deliberate vagueness about what is being exchanged for what.",
+      "mechanism": "Plausible deniability; deferred critical scrutiny.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "transactional_ambiguity"
+      ]
+    },
+    {
+      "id": "so_conditional_support",
+      "name": "Conditional support framing",
+      "family": "sales_objection_handling",
+      "parent": "sales_objection_handling",
+      "level": 1,
+      "definition": "Framing the offer as conditional help with unstated conditions.",
+      "mechanism": "Conceals the quid pro quo.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": [
+        "conditional_financial_support"
+      ]
+    },
+    {
+      "id": "visual_persuasion",
+      "name": "Visual persuasion techniques",
+      "family": "visual_persuasion",
+      "parent": null,
+      "level": 0,
+      "definition": "Image- and layout-level persuasion. v1 corpus had no image pixels; these leaves are scaffolded for future image modelling.",
+      "mechanism": "Visual salience, composition, and affective imagery.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": []
+    },
+    {
+      "id": "vp_gaze_direction",
+      "name": "Gaze direction",
+      "family": "visual_persuasion",
+      "parent": "visual_persuasion",
+      "level": 1,
+      "definition": "Subject gaze directed at viewer or at CTA.",
+      "mechanism": "Eye contact elevates attention and compliance.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [
+        "subject looking at camera",
+        "subject looking at CTA"
+      ],
+      "v1_equivalents": []
+    },
+    {
+      "id": "vp_luxury_aesthetic",
+      "name": "Luxury / status aesthetic",
+      "family": "visual_persuasion",
+      "parent": "visual_persuasion",
+      "level": 1,
+      "definition": "Visual cues of wealth, exclusivity, or status.",
+      "mechanism": "Status-transfer heuristic.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [
+        "gold accents",
+        "branded props",
+        "upscale interiors"
+      ],
+      "v1_equivalents": []
+    },
+    {
+      "id": "vp_sexualised_imagery",
+      "name": "Sexualised imagery",
+      "family": "visual_persuasion",
+      "parent": "visual_persuasion",
+      "level": 1,
+      "definition": "Sexualised depiction of subjects, especially conditioning the offer.",
+      "mechanism": "Affective arousal; objectification.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [
+        "revealing clothing",
+        "suggestive pose",
+        "body-part cropping"
+      ],
+      "v1_equivalents": []
+    },
+    {
+      "id": "multimodal_combination",
+      "name": "Multimodal technique combinations",
+      "family": "multimodal_combination",
+      "parent": null,
+      "level": 0,
+      "definition": "Cross-modal reinforcement or contradiction between text, image, audio, video.",
+      "mechanism": "Multimodal coherence increases perceived credibility; contradiction can signal deception.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": []
+    },
+    {
+      "id": "mm_text_image_reinforcement",
+      "name": "Text-image reinforcement",
+      "family": "multimodal_combination",
+      "parent": "multimodal_combination",
+      "level": 1,
+      "definition": "Image amplifies the same claim as the text.",
+      "mechanism": "Dual coding; redundancy gains.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": []
+    },
+    {
+      "id": "mm_text_image_contradiction",
+      "name": "Text-image contradiction",
+      "family": "multimodal_combination",
+      "parent": "multimodal_combination",
+      "level": 1,
+      "definition": "Image contradicts the literal text claim (e.g. text says 'help', image says otherwise).",
+      "mechanism": "May signal deceptive framing; needs human review.",
+      "hard_negatives": [],
+      "language_patterns": [],
+      "visual_patterns": [],
+      "v1_equivalents": []
+    }
+  ],
+  "leaf_count": 27,
+  "v1_to_v2": {
+    "conditional_financial_support": [
+      "cc_offer_stack",
+      "so_conditional_support"
+    ],
+    "platform_migration": [
+      "cc_call_to_action"
+    ],
+    "deceptive_assurance": [
+      "cc_disclaimer_overlay",
+      "so_risk_reversal"
+    ],
+    "reciprocity_obligation": [
+      "cc_reciprocity_frame",
+      "bs_reciprocity_obligation"
+    ],
+    "scarcity_or_urgency": [
+      "pr_scarcity_urgency"
+    ],
+    "social_proof": [
+      "pr_social_proof"
+    ],
+    "authority_or_status_appeal": [
+      "pr_authority_appeal"
+    ],
+    "exclusivity_or_special_treatment": [
+      "pr_exclusivity"
+    ],
+    "fear_or_threat": [
+      "pr_emotional_appeal"
+    ],
+    "guilt_or_shame_pressure": [
+      "pr_emotional_appeal"
+    ],
+    "commitment_escalation": [
+      "bs_commitment_consistency"
+    ],
+    "foot_in_the_door": [
+      "bs_commitment_consistency"
+    ],
+    "repetition_or_campaign_escalation": [
+      "bs_repetition_campaign_escalation"
+    ],
+    "privacy_or_secrecy_pressure": [
+      "bs_privacy_secrecy_pressure"
+    ],
+    "age_or_youth_targeting": [
+      "bs_audience_targeting.age_youth"
+    ],
+    "education_or_student_targeting": [
+      "bs_audience_targeting.education_student"
+    ],
+    "economic_vulnerability_targeting": [
+      "bs_audience_targeting.economic_vulnerability"
+    ],
+    "family_obligation_targeting": [
+      "bs_audience_targeting.family_obligation"
+    ],
+    "sexualized_appearance_condition": [
+      "bs_audience_targeting.gendered_appearance"
+    ],
+    "transactional_ambiguity": [
+      "so_transactional_ambiguity"
+    ]
+  }
+}

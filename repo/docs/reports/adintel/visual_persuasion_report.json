@@ -1,0 +1,25 @@
+{
+  "analysis_type": "synthetic_visual_persuasion",
+  "n_ads_scored": 50,
+  "data_source": "synthetic — rule-based inference from ad text + platform patterns",
+  "vp_leaf_means": {
+    "vp_gaze_direction": 0.3,
+    "vp_luxury_aesthetic": 0.26,
+    "vp_sexualised_imagery": 0.232
+  },
+  "n_text_image_contradictions": 0,
+  "contradiction_rate": 0.0,
+  "limitations": [
+    "No real image pixels in corpus — features are inferred from text",
+    "Visual LM was not used because no images exist to analyze",
+    "Real visual persuasion scoring requires archived image files",
+    "Text-image contradiction detection is limited to heuristics"
+  ],
+  "what_real_visual_analysis_would_require": [
+    "Archive image pixels from raw HTML",
+    "Run a vision model (CLIP, ViT, or VLM) on each image",
+    "Detect gaze direction, aesthetic style, sexualised content",
+    "Compare visual elements with text claims for contradiction"
+  ],
+  "output": "/home/z/my-project/repo/data/processed/synthetic_visual_features.jsonl"
+}

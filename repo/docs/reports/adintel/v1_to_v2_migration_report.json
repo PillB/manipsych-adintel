@@ -1,0 +1,29 @@
+{
+  "input_records": 5717,
+  "output_records": 5717,
+  "unmapped_v1_labels": [],
+  "n_multi_label_projections": 12338,
+  "projection_counts_by_v1_label": {
+    "age_or_youth_targeting": 7033,
+    "commitment_escalation": 650,
+    "economic_vulnerability_targeting": 2351,
+    "education_or_student_targeting": 2478,
+    "reciprocity_obligation": 10034,
+    "sexualized_appearance_condition": 1323,
+    "conditional_financial_support": 1689,
+    "authority_or_status_appeal": 2960,
+    "deceptive_assurance": 615,
+    "platform_migration": 1663,
+    "privacy_or_secrecy_pressure": 2945,
+    "exclusivity_or_special_treatment": 258,
+    "family_obligation_targeting": 1049,
+    "transactional_ambiguity": 594,
+    "foot_in_the_door": 458,
+    "scarcity_or_urgency": 364,
+    "repetition_or_campaign_escalation": 89,
+    "guilt_or_shame_pressure": 23,
+    "fear_or_threat": 1,
+    "social_proof": 8
+  },
+  "v2_taxonomy_version": "adintel-taxonomy-v2"
+}

@@ -1,0 +1,269 @@
+{
+  "n_records": 5738,
+  "outlier_analysis": {
+    "n_outliers": 1674,
+    "n_non_outliers": 4064,
+    "enriched_terms": [
+      [
+        "lima hola",
+        0.0111,
+        0,
+        999
+      ],
+      [
+        "juliaca",
+        0.0273,
+        0,
+        999
+      ],
+      [
+        "situacion",
+        0.0152,
+        0,
+        999
+      ],
+      [
+        "puno",
+        0.0138,
+        0,
+        999
+      ],
+      [
+        "economica lima",
+        0.0102,
+        0,
+        999
+      ],
+      [
+        "da ayuda",
+        0.0116,
+        0.0046,
+        2.53
+      ],
+      [
+        "huancayo",
+        0.012,
+        0.005,
+        2.39
+      ],
+      [
+        "se da",
+        0.0152,
+        0.0064,
+        2.37
+      ],
+      [
+        "informacion",
+        0.013,
+        0.0057,
+        2.26
+      ],
+      [
+        "da",
+        0.0161,
+        0.008,
+        2.03
+      ],
+      [
+        "soltero",
+        0.0085,
+        0.0044,
+        1.92
+      ],
+      [
+        "se brinda",
+        0.0167,
+        0.0098,
+        1.71
+      ],
+      [
+        "cualquier edad",
+        0.0129,
+        0.0077,
+        1.67
+      ],
+      [
+        "de cualquier",
+        0.0127,
+        0.0078,
+        1.63
+      ],
+      [
+        "de sexo",
+        0.0087,
+        0.0057,
+        1.52
+      ]
+    ],
+    "terms_differentiate": true,
+    "by_kind": {
+      "creative_novelty": 287,
+      "style_outlier": 175,
+      "visual_outlier": 62,
+      "duplicate": 7,
+      "metadata_error": 1303
+    }
+  },
+  "deep_clustering": {
+    "method": "TF-IDF -> LSA(100d) -> KMeans",
+    "best_k": 3,
+    "silhouette": 0.0377,
+    "explained_variance": 0.3323,
+    "clusters": [
+      {
+        "cluster_id": 0,
+        "n_members": 2440,
+        "distinguishing_terms": [
+          [
+            "ayuda",
+            0.0496
+          ],
+          [
+            "ayuda economica",
+            0.0491
+          ],
+          [
+            "economica",
+            0.0489
+          ],
+          [
+            "doy ayuda",
+            0.0377
+          ],
+          [
+            "redacted_contact",
+            0.0315
+          ]
+        ],
+        "platform_distribution": {
+          "doplim": 986,
+          "ciudadanuncios": 828,
+          "locanto": 605
+        },
+        "outlier_rate": 0.4045,
+        "sample_ads": [
+          {
+            "record_id": "h_4a8311b9463fbd7331d9eaedcf5904a6f9a5c5dc0d26d42ba0b0d183e148d9eb",
+            "title": "Ayuda economica - Huacho",
+            "platform": "ciudadanuncios",
+            "body_preview": "Nesecito ayuda economica ago de todo"
+          },
+          {
+            "record_id": "h_429e1a079bb9762c3a50446f25c6a5c0641386c416b48f0aa5faa3ab3262d88d",
+            "title": "Busco salir por ayuda económica tenemos 18 y 19, Lurigancho ",
+            "platform": "locanto",
+            "body_preview": "Descripción Hola Buscamos Buscamos ayuda económica Somos varias amigas Hola cómo estás Buscamos ayuda económica Somos va"
+          },
+          {
+            "record_id": "h_df53af1cbe16a9a0a6425c7c28c5e1a02236b4113c5474b7fb93ee3a0c2ba385",
+            "title": "PUENTE PIEDRA ZAPALLAL ANCON COMAS INDEPENDENCIA SMP VENTANI",
+            "platform": "facebook",
+            "body_preview": "una amiga en puente piedra para ayuda económica aurita disponible"
+          }
+        ]
+      },
+      {
+        "cluster_id": 1,
+        "n_members": 100,
+        "distinguishing_terms": [
+          [
+            "situacion",
+            0.229
+          ],
+          [
+            "informacion clave",
+            0.149
+          ],
+          [
+            "clave",
+            0.149
+          ],
+          [
+            "de pelo",
+            0.1481
+          ],
+          [
+            "situacion sentimental",
+            0.1474
+          ]
+        ],
+        "platform_distribution": {
+          "locanto": 100
+        },
+        "outlier_rate": 1.0,
+        "sample_ads": [
+          {
+            "record_id": "h_20b30f8c6fe428165be50c1a58a3ac84948c7681c28c235daa965422ea82d9c6",
+            "title": "AYUDA económica, Cajamarca – 29",
+            "platform": "locanto",
+            "body_preview": "Información clave Estatura 167 cm Color de pelo Castaño Situación sentimental Soltero/a Situación habitacional Solo/a Si"
+          },
+          {
+            "record_id": "h_65f0a1c2936855c0a8797ff3c5f005024c886a287f40f207cf5111a812ceb707",
+            "title": "Quienes buscan ayuda económica, Piura – 19",
+            "platform": "locanto",
+            "body_preview": "Información clave Estatura 171 cm Color de pelo Negro Situación sentimental Soltero/a Situación habitacional Solo/a Sign"
+          },
+          {
+            "record_id": "h_6444108032e9335922eac5f353ff5ed039cc9b73c4379ffa2c4898def7fe15f0",
+            "title": "Ayuda económica Piura – 35",
+            "platform": "locanto",
+            "body_preview": "Información clave Estatura 170 cm Color de pelo Castaño Situación sentimental Soltero/a Situación habitacional Solo/a Si"
+          }
+        ]
+      },
+      {
+        "cluster_id": 2,
+        "n_members": 3198,
+        "distinguishing_terms": [
+          [
+            "apoyo",
+            0.0519
+          ],
+          [
+            "apoyo economico",
+            0.0476
+          ],
+          [
+            "economico",
+            0.0475
+          ],
+          [
+            "una",
+            0.0282
+          ],
+          [
+            "que",
+            0.0274
+          ]
+        ],
+        "platform_distribution": {
+          "doplim": 1859,
+          "locanto": 857,
+          "ciudadanuncios": 475
+        },
+        "outlier_rate": 0.1836,
+        "sample_ads": [
+          {
+            "record_id": "h_9b24514528a0c8a96b21fd0131a7a7609873fba1dbbbe8a2811ecb94e5b9a871",
+            "title": "COMPRO VIRGINIDAD - TINGO MARIA",
+            "platform": "doplim",
+            "body_preview": "Hola deseas apoyo económico contactame Compro primera ves[REDACTED_CONTACT]"
+          },
+          {
+            "record_id": "h_2abd9abf26406b81c56c111ee5c20c776f41246f28f99dbba108c11cd40b12a7",
+            "title": "Busco besar unos pies de mujer",
+            "platform": "doplim",
+            "body_preview": "Hola busco besar,lamer y oler unos pies de mujer cambio de un apoyo económico [REDACTED_PHONE] escríbeme para poder qued"
+          },
+          {
+            "record_id": "h_3a813151c299ec7a448c60ba23a32aafa832137be8f2856227530a63d588598d",
+            "title": "te apoyo economicamente",
+            "platform": "doplim",
+            "body_preview": "HOLA CORAZON TE BRINDO MI APOYO ECONOMICO EN MEDIO DE ESTA CRISIS QUE ES MUY DIFICIL PARA LA MAYORIA Y POR ELLO HAY QUE "
+          }
+        ]
+      }
+    ]
+  }
+}

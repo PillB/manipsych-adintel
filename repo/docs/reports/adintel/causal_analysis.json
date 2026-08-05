@@ -1,0 +1,664 @@
+{
+  "analysis_type": "quasi_causal_association",
+  "data_source": "synthetic_performance.jsonl (SYNTHETIC — based on researched benchmarks, NOT real observed performance)",
+  "method": "matched-pair estimation on platform + quality_score",
+  "evidence_ladder": [
+    "descriptive",
+    "associative",
+    "predictive",
+    "quasi_causal",
+    "causal"
+  ],
+  "highest_evidence_achieved": "quasi_causal",
+  "n_techniques_analyzed": 18,
+  "n_techniques_quasi_causal": 8,
+  "causal_claims_made": 0,
+  "causal_claims_supported": 0,
+  "results": [
+    {
+      "label": "age_or_youth_targeting",
+      "n_with_label": 3680,
+      "n_without_label": 2037,
+      "ctr_with_label": 0.008601,
+      "ctr_without_label": 0.008273,
+      "descriptive_diff": 0.000328,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 1805,
+          "n_without": 1019,
+          "ctr_with": 0.009150836011080332,
+          "ctr_without": 0.008989248282630029,
+          "diff": 0.00016158772845030304
+        },
+        "locanto": {
+          "n_with": 1100,
+          "n_without": 462,
+          "ctr_with": 0.009658033636363637,
+          "ctr_without": 0.009622119047619046,
+          "diff": 3.591458874459101e-05
+        },
+        "ciudadanuncios": {
+          "n_with": 759,
+          "n_without": 544,
+          "ctr_with": 0.005666606060606062,
+          "ctr_without": 0.005680393382352941,
+          "diff": -1.378732174687862e-05
+        }
+      },
+      "matched_estimate": -0.003062,
+      "matched_se": 5.2e-05,
+      "matched_n_pairs": 3680,
+      "evidence_level": "quasi_causal",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'age_or_youth_targeting', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "authority_or_status_appeal",
+      "n_with_label": 1688,
+      "n_without_label": 4029,
+      "ctr_with_label": 0.00888,
+      "ctr_without_label": 0.008319,
+      "descriptive_diff": 0.000561,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 958,
+          "n_without": 1866,
+          "ctr_with": 0.00912414509394572,
+          "ctr_without": 0.009076297963558412,
+          "diff": 4.784713038730702e-05
+        },
+        "locanto": {
+          "n_with": 517,
+          "n_without": 1045,
+          "ctr_with": 0.009785435203094777,
+          "ctr_without": 0.009579125358851675,
+          "diff": 0.00020630984424310252
+        },
+        "ciudadanuncios": {
+          "n_with": 212,
+          "n_without": 1091,
+          "ctr_with": 0.00557238679245283,
+          "ctr_without": 0.0056917891842346476,
+          "diff": -0.00011940239178181728
+        }
+      },
+      "matched_estimate": 0.000921,
+      "matched_se": 6.7e-05,
+      "matched_n_pairs": 1688,
+      "evidence_level": "descriptive",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'authority_or_status_appeal', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "commitment_escalation",
+      "n_with_label": 459,
+      "n_without_label": 5258,
+      "ctr_with_label": 0.00926,
+      "ctr_without_label": 0.008417,
+      "descriptive_diff": 0.000843,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 179,
+          "n_without": 2645,
+          "ctr_with": 0.009156541899441342,
+          "ctr_without": 0.009088197353497165,
+          "diff": 6.834454594417672e-05
+        },
+        "locanto": {
+          "n_with": 260,
+          "n_without": 1302,
+          "ctr_with": 0.009583169230769233,
+          "ctr_without": 0.009660239631336404,
+          "diff": -7.707040056717171e-05
+        },
+        "ciudadanuncios": {
+          "n_with": 20,
+          "n_without": 1283,
+          "ctr_with": 0.005982899999999999,
+          "ctr_without": 0.005667521434138738,
+          "diff": 0.00031537856586126133
+        }
+      },
+      "matched_estimate": -0.001011,
+      "matched_se": 0.000179,
+      "matched_n_pairs": 459,
+      "evidence_level": "quasi_causal",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'commitment_escalation', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "conditional_financial_support",
+      "n_with_label": 1480,
+      "n_without_label": 4237,
+      "ctr_with_label": 0.008564,
+      "ctr_without_label": 0.008456,
+      "descriptive_diff": 0.000108,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 747,
+          "n_without": 2077,
+          "ctr_with": 0.009172595716198126,
+          "ctr_without": 0.00906373326913818,
+          "diff": 0.00010886244705994585
+        },
+        "locanto": {
+          "n_with": 415,
+          "n_without": 1147,
+          "ctr_with": 0.009664869879518072,
+          "ctr_without": 0.009641094158674804,
+          "diff": 2.377572084326894e-05
+        },
+        "ciudadanuncios": {
+          "n_with": 316,
+          "n_without": 987,
+          "ctr_with": 0.005680075949367088,
+          "ctr_without": 0.005669892603850051,
+          "diff": 1.018334551703727e-05
+        }
+      },
+      "matched_estimate": 0.000556,
+      "matched_se": 7.5e-05,
+      "matched_n_pairs": 1480,
+      "evidence_level": "descriptive",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'conditional_financial_support', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "deceptive_assurance",
+      "n_with_label": 467,
+      "n_without_label": 5250,
+      "ctr_with_label": 0.009249,
+      "ctr_without_label": 0.008416,
+      "descriptive_diff": 0.000833,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 131,
+          "n_without": 2693,
+          "ctr_with": 0.00899575572519084,
+          "ctr_without": 0.009097236910508726,
+          "diff": -0.00010148118531788479
+        },
+        "locanto": {
+          "n_with": 291,
+          "n_without": 1271,
+          "ctr_with": 0.009930003436426117,
+          "ctr_without": 0.009582710464201418,
+          "diff": 0.0003472929722246991
+        },
+        "ciudadanuncios": {
+          "n_with": 45,
+          "n_without": 1258,
+          "ctr_with": 0.005582044444444445,
+          "ctr_without": 0.005675593004769475,
+          "diff": -9.354856032503002e-05
+        }
+      },
+      "matched_estimate": 0.000842,
+      "matched_se": 0.000145,
+      "matched_n_pairs": 467,
+      "evidence_level": "descriptive",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'deceptive_assurance', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "economic_vulnerability_targeting",
+      "n_with_label": 1496,
+      "n_without_label": 4221,
+      "ctr_with_label": 0.008754,
+      "ctr_without_label": 0.008389,
+      "descriptive_diff": 0.000365,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 731,
+          "n_without": 2093,
+          "ctr_with": 0.009153632010943913,
+          "ctr_without": 0.009071188724319158,
+          "diff": 8.244328662475493e-05
+        },
+        "locanto": {
+          "n_with": 517,
+          "n_without": 1045,
+          "ctr_with": 0.009706510638297873,
+          "ctr_without": 0.009618172248803826,
+          "diff": 8.83383894940467e-05
+        },
+        "ciudadanuncios": {
+          "n_with": 247,
+          "n_without": 1056,
+          "ctr_with": 0.005562838056680162,
+          "ctr_without": 0.005697980113636364,
+          "diff": -0.00013514205695620233
+        }
+      },
+      "matched_estimate": -0.001883,
+      "matched_se": 9e-05,
+      "matched_n_pairs": 1496,
+      "evidence_level": "quasi_causal",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'economic_vulnerability_targeting', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "education_or_student_targeting",
+      "n_with_label": 1468,
+      "n_without_label": 4249,
+      "ctr_with_label": 0.008834,
+      "ctr_without_label": 0.008363,
+      "descriptive_diff": 0.000471,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 794,
+          "n_without": 2030,
+          "ctr_with": 0.009172431989924434,
+          "ctr_without": 0.009061276847290639,
+          "diff": 0.00011115514263379533
+        },
+        "locanto": {
+          "n_with": 460,
+          "n_without": 1102,
+          "ctr_with": 0.009660193478260868,
+          "ctr_without": 0.009642075317604356,
+          "diff": 1.811816065651166e-05
+        },
+        "ciudadanuncios": {
+          "n_with": 214,
+          "n_without": 1089,
+          "ctr_with": 0.0058057476635514004,
+          "ctr_without": 0.00564615059687787,
+          "diff": 0.00015959706667353045
+        }
+      },
+      "matched_estimate": -0.001874,
+      "matched_se": 9.1e-05,
+      "matched_n_pairs": 1468,
+      "evidence_level": "quasi_causal",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'education_or_student_targeting', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "exclusivity_or_special_treatment",
+      "n_with_label": 240,
+      "n_without_label": 5477,
+      "ctr_with_label": 0.00939,
+      "ctr_without_label": 0.008445,
+      "descriptive_diff": 0.000946,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 104,
+          "n_without": 2720,
+          "ctr_with": 0.009332067307692307,
+          "ctr_without": 0.009083370588235292,
+          "diff": 0.00024869671945701444
+        },
+        "locanto": {
+          "n_with": 123,
+          "n_without": 1439,
+          "ctr_with": 0.009718268292682929,
+          "ctr_without": 0.009641354412786659,
+          "diff": 7.691387989627006e-05
+        },
+        "ciudadanuncios": {
+          "n_with": 13,
+          "n_without": 1290,
+          "ctr_with": 0.006756615384615384,
+          "ctr_without": 0.0056614356589147295,
+          "diff": 0.001095179725700655
+        }
+      },
+      "matched_estimate": 0.00113,
+      "matched_se": 0.000193,
+      "matched_n_pairs": 240,
+      "evidence_level": "quasi_causal",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'exclusivity_or_special_treatment', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "family_obligation_targeting",
+      "n_with_label": 790,
+      "n_without_label": 4927,
+      "ctr_with_label": 0.008622,
+      "ctr_without_label": 0.008462,
+      "descriptive_diff": 0.00016,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 447,
+          "n_without": 2377,
+          "ctr_with": 0.009083847874720358,
+          "ctr_without": 0.009094161968868322,
+          "diff": -1.0314094147964581e-05
+        },
+        "locanto": {
+          "n_with": 211,
+          "n_without": 1351,
+          "ctr_with": 0.009356829383886257,
+          "ctr_without": 0.00969279422649889,
+          "diff": -0.00033596484261263354
+        },
+        "ciudadanuncios": {
+          "n_with": 130,
+          "n_without": 1173,
+          "ctr_with": 0.005800438461538462,
+          "ctr_without": 0.005658167945439045,
+          "diff": 0.00014227051609941657
+        }
+      },
+      "matched_estimate": 0.00076,
+      "matched_se": 9.8e-05,
+      "matched_n_pairs": 790,
+      "evidence_level": "descriptive",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'family_obligation_targeting', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "foot_in_the_door",
+      "n_with_label": 396,
+      "n_without_label": 5321,
+      "ctr_with_label": 0.008924,
+      "ctr_without_label": 0.008452,
+      "descriptive_diff": 0.000472,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 177,
+          "n_without": 2647,
+          "ctr_with": 0.009305723163841808,
+          "ctr_without": 0.009078273517189272,
+          "diff": 0.00022744964665253643
+        },
+        "locanto": {
+          "n_with": 166,
+          "n_without": 1396,
+          "ctr_with": 0.009628909638554218,
+          "ctr_without": 0.009649611031518623,
+          "diff": -2.0701392964405513e-05
+        },
+        "ciudadanuncios": {
+          "n_with": 52,
+          "n_without": 1251,
+          "ctr_with": 0.0054085192307692315,
+          "ctr_without": 0.0056833293365307755,
+          "diff": -0.00027481010576154395
+        }
+      },
+      "matched_estimate": 0.000841,
+      "matched_se": 0.000142,
+      "matched_n_pairs": 396,
+      "evidence_level": "descriptive",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'foot_in_the_door', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "guilt_or_shame_pressure",
+      "n_with_label": 23,
+      "n_without_label": 5694,
+      "ctr_with_label": 0.008468,
+      "ctr_without_label": 0.008484,
+      "descriptive_diff": -1.7e-05,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 8,
+          "n_without": 2816,
+          "ctr_with": 0.00928925,
+          "ctr_without": 0.009091970525568182,
+          "diff": 0.00019727947443181834
+        },
+        "locanto": {
+          "n_with": 13,
+          "n_without": 1549,
+          "ctr_with": 0.00800546153846154,
+          "ctr_without": 0.009661191091026469,
+          "diff": -0.0016557295525649295
+        }
+      },
+      "matched_estimate": 0.000195,
+      "matched_se": 0.000577,
+      "matched_n_pairs": 23,
+      "evidence_level": "descriptive",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'guilt_or_shame_pressure', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "platform_migration",
+      "n_with_label": 1293,
+      "n_without_label": 4424,
+      "ctr_with_label": 0.00869,
+      "ctr_without_label": 0.008424,
+      "descriptive_diff": 0.000266,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 409,
+          "n_without": 2415,
+          "ctr_with": 0.008753022004889977,
+          "ctr_without": 0.00915002774327122,
+          "diff": -0.0003970057383812439
+        },
+        "locanto": {
+          "n_with": 644,
+          "n_without": 918,
+          "ctr_with": 0.00966579192546584,
+          "ctr_without": 0.009634516339869281,
+          "diff": 3.12755855965581e-05
+        },
+        "ciudadanuncios": {
+          "n_with": 230,
+          "n_without": 1073,
+          "ctr_with": 0.005633482608695653,
+          "ctr_without": 0.005680696178937559,
+          "diff": -4.721357024190572e-05
+        }
+      },
+      "matched_estimate": -0.001322,
+      "matched_se": 0.000103,
+      "matched_n_pairs": 1293,
+      "evidence_level": "quasi_causal",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'platform_migration', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "privacy_or_secrecy_pressure",
+      "n_with_label": 2257,
+      "n_without_label": 3460,
+      "ctr_with_label": 0.008683,
+      "ctr_without_label": 0.008355,
+      "descriptive_diff": 0.000328,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 993,
+          "n_without": 1831,
+          "ctr_with": 0.009122309164149044,
+          "ctr_without": 0.009076379027853633,
+          "diff": 4.5930136295410304e-05
+        },
+        "locanto": {
+          "n_with": 857,
+          "n_without": 705,
+          "ctr_with": 0.009592131855309218,
+          "ctr_without": 0.009714608510638297,
+          "diff": -0.00012247665532907903
+        },
+        "ciudadanuncios": {
+          "n_with": 404,
+          "n_without": 899,
+          "ctr_with": 0.005638908415841584,
+          "ctr_without": 0.005687395995550611,
+          "diff": -4.8487579709027145e-05
+        }
+      },
+      "matched_estimate": -0.00075,
+      "matched_se": 7.7e-05,
+      "matched_n_pairs": 2257,
+      "evidence_level": "descriptive",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'privacy_or_secrecy_pressure', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "reciprocity_obligation",
+      "n_with_label": 5711,
+      "n_without_label": 6,
+      "ctr_with_label": 0.008485,
+      "ctr_without_label": 0.007532,
+      "descriptive_diff": 0.000953,
+      "platform_stratified": {},
+      "matched_estimate": 0.000315,
+      "matched_se": 4.3e-05,
+      "matched_n_pairs": 5677,
+      "evidence_level": "descriptive",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'reciprocity_obligation', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "repetition_or_campaign_escalation",
+      "n_with_label": 75,
+      "n_without_label": 5642,
+      "ctr_with_label": 0.00968,
+      "ctr_without_label": 0.008468,
+      "descriptive_diff": 0.001212,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 19,
+          "n_without": 2805,
+          "ctr_with": 0.009460842105263156,
+          "ctr_without": 0.009090034581105168,
+          "diff": 0.0003708075241579886
+        },
+        "locanto": {
+          "n_with": 52,
+          "n_without": 1510,
+          "ctr_with": 0.010080769230769233,
+          "ctr_without": 0.009632487417218543,
+          "diff": 0.0004482818135506904
+        }
+      },
+      "matched_estimate": 0.000996,
+      "matched_se": 0.000338,
+      "matched_n_pairs": 75,
+      "evidence_level": "descriptive",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'repetition_or_campaign_escalation', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "scarcity_or_urgency",
+      "n_with_label": 288,
+      "n_without_label": 5429,
+      "ctr_with_label": 0.009076,
+      "ctr_without_label": 0.008453,
+      "descriptive_diff": 0.000623,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 97,
+          "n_without": 2727,
+          "ctr_with": 0.0092720206185567,
+          "ctr_without": 0.009086144847818115,
+          "diff": 0.00018587577073858434
+        },
+        "locanto": {
+          "n_with": 153,
+          "n_without": 1409,
+          "ctr_with": 0.009827803921568628,
+          "ctr_without": 0.009627822569198013,
+          "diff": 0.00019998135237061544
+        },
+        "ciudadanuncios": {
+          "n_with": 37,
+          "n_without": 1266,
+          "ctr_with": 0.005341162162162163,
+          "ctr_without": 0.00568204186413902,
+          "diff": -0.0003408797019768574
+        }
+      },
+      "matched_estimate": 0.000719,
+      "matched_se": 0.000163,
+      "matched_n_pairs": 288,
+      "evidence_level": "descriptive",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'scarcity_or_urgency', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "sexualized_appearance_condition",
+      "n_with_label": 890,
+      "n_without_label": 4827,
+      "ctr_with_label": 0.008786,
+      "ctr_without_label": 0.008429,
+      "descriptive_diff": 0.000357,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 468,
+          "n_without": 2356,
+          "ctr_with": 0.008939457264957264,
+          "ctr_without": 0.009122935908319184,
+          "diff": -0.0001834786433619201
+        },
+        "locanto": {
+          "n_with": 320,
+          "n_without": 1242,
+          "ctr_with": 0.009504718750000002,
+          "ctr_without": 0.009684175523349436,
+          "diff": -0.00017945677334943455
+        },
+        "ciudadanuncios": {
+          "n_with": 102,
+          "n_without": 1201,
+          "ctr_with": 0.005822813725490197,
+          "ctr_without": 0.005659584512905912,
+          "diff": 0.00016322921258428522
+        }
+      },
+      "matched_estimate": -0.001966,
+      "matched_se": 0.000121,
+      "matched_n_pairs": 890,
+      "evidence_level": "quasi_causal",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'sexualized_appearance_condition', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    },
+    {
+      "label": "transactional_ambiguity",
+      "n_with_label": 479,
+      "n_without_label": 5238,
+      "ctr_with_label": 0.009363,
+      "ctr_without_label": 0.008404,
+      "descriptive_diff": 0.000959,
+      "platform_stratified": {
+        "doplim": {
+          "n_with": 160,
+          "n_without": 2664,
+          "ctr_with": 0.00918916875,
+          "ctr_without": 0.009086725225225226,
+          "diff": 0.00010244352477477466
+        },
+        "locanto": {
+          "n_with": 274,
+          "n_without": 1288,
+          "ctr_with": 0.00999265693430657,
+          "ctr_without": 0.009573965838509316,
+          "diff": 0.00041869109579725436
+        },
+        "ciudadanuncios": {
+          "n_with": 44,
+          "n_without": 1259,
+          "ctr_with": 0.006119613636363636,
+          "ctr_without": 0.005656731532962669,
+          "diff": 0.000462882103400967
+        }
+      },
+      "matched_estimate": 0.001031,
+      "matched_se": 0.000135,
+      "matched_n_pairs": 479,
+      "evidence_level": "quasi_causal",
+      "causal_claim": "NOT SUPPORTED — synthetic data; requires live A/B holdout for causal claim",
+      "recommendation": "To establish causality for 'transactional_ambiguity', run a randomized A/B holdout where the technique is deliberately varied while holding all else constant."
+    }
+  ],
+  "limitations": [
+    "Synthetic performance data — not real observed outcomes",
+    "No randomized A/B holdout — cannot establish causality",
+    "Matching on platform + quality_score only — residual confounding likely",
+    "Small sample sizes for rare labels reduce statistical power",
+    "Seasonality and audience effects not fully controlled"
+  ],
+  "what_would_be_needed_for_causal": [
+    "Randomized A/B holdout where the technique is deliberately varied",
+    "Real performance metrics (CTR, conversion, spend) from ad platform APIs",
+    "Pre-registration of hypothesis and analysis plan",
+    "Adequate sample size (power analysis)",
+    "Attribution window consistency across arms",
+    "Blinded outcome assessment"
+  ]
+}

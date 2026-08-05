@@ -1,0 +1,100 @@
+{
+  "n_sampled": 1000,
+  "n_reports": 767,
+  "by_kind": {
+    "creative_novelty": 50,
+    "unusual_technique_combination": 27,
+    "style_outlier": 29,
+    "performance_overperformer": 28,
+    "duplicate": 3,
+    "metadata_error": 630
+  },
+  "elapsed_ms": 205.8,
+  "sample_reports": [
+    {
+      "record_id": "h_86bd5d72dd627584f2b8e13b1119cb766c82a0b63677002773b36caf257c4165",
+      "kind": "creative_novelty",
+      "score": 0.8263912558697567,
+      "method": "tfidf_cosine_distance_to_centroid",
+      "comparison_population": "full corpus",
+      "feature_space": "semantic_tfidf",
+      "supporting_features": {
+        "distance_to_centroid": 0.8263912558697567,
+        "threshold": 0.8233215677498166
+      },
+      "alternative_explanation": "Ad may be novel because it covers a topic the corpus rarely covers; review before classifying as creative innovation.",
+      "uncertainty": 0.4,
+      "review_status": "unreviewed",
+      "checkpoint_id": "outlier-v1",
+      "output_version": "outlier-v1.0.0"
+    },
+    {
+      "record_id": "h_351a4a3e62856f1c721ca62247d8e4e4271e83e623a17dcbfb919bd1e17d7154",
+      "kind": "creative_novelty",
+      "score": 0.8284534890520099,
+      "method": "tfidf_cosine_distance_to_centroid",
+      "comparison_population": "full corpus",
+      "feature_space": "semantic_tfidf",
+      "supporting_features": {
+        "distance_to_centroid": 0.8284534890520099,
+        "threshold": 0.8233215677498166
+      },
+      "alternative_explanation": "Ad may be novel because it covers a topic the corpus rarely covers; review before classifying as creative innovation.",
+      "uncertainty": 0.4,
+      "review_status": "unreviewed",
+      "checkpoint_id": "outlier-v1",
+      "output_version": "outlier-v1.0.0"
+    },
+    {
+      "record_id": "h_3923b7defab53bbcb6269b5699bea6de622221ce8dbeb40562a36f2eb27c20c7",
+      "kind": "creative_novelty",
+      "score": 0.8509615196686735,
+      "method": "tfidf_cosine_distance_to_centroid",
+      "comparison_population": "full corpus",
+      "feature_space": "semantic_tfidf",
+      "supporting_features": {
+        "distance_to_centroid": 0.8509615196686735,
+        "threshold": 0.8233215677498166
+      },
+      "alternative_explanation": "Ad may be novel because it covers a topic the corpus rarely covers; review before classifying as creative innovation.",
+      "uncertainty": 0.4,
+      "review_status": "unreviewed",
+      "checkpoint_id": "outlier-v1",
+      "output_version": "outlier-v1.0.0"
+    },
+    {
+      "record_id": "h_7bd3fcf4b69d4fc97d53b26e34e138a02faf71b467b5f0e066716f51d7fe2666",
+      "kind": "creative_novelty",
+      "score": 0.8274975666742703,
+      "method": "tfidf_cosine_distance_to_centroid",
+      "comparison_population": "full corpus",
+      "feature_space": "semantic_tfidf",
+      "supporting_features": {
+        "distance_to_centroid": 0.8274975666742703,
+        "threshold": 0.8233215677498166
+      },
+      "alternative_explanation": "Ad may be novel because it covers a topic the corpus rarely covers; review before classifying as creative innovation.",
+      "uncertainty": 0.4,
+      "review_status": "unreviewed",
+      "checkpoint_id": "outlier-v1",
+      "output_version": "outlier-v1.0.0"
+    },
+    {
+      "record_id": "h_d3dde2c0b533370cbc2072fdd5ff7e6521826c0790568a1e5eb2c479927b6171",
+      "kind": "creative_novelty",
+      "score": 0.846377997276616,
+      "method": "tfidf_cosine_distance_to_centroid",
+      "comparison_population": "full corpus",
+      "feature_space": "semantic_tfidf",
+      "supporting_features": {
+        "distance_to_centroid": 0.846377997276616,
+        "threshold": 0.8233215677498166
+      },
+      "alternative_explanation": "Ad may be novel because it covers a topic the corpus rarely covers; review before classifying as creative innovation.",
+      "uncertainty": 0.4,
+      "review_status": "unreviewed",
+      "checkpoint_id": "outlier-v1",
+      "output_version": "outlier-v1.0.0"
+    }
+  ]
+}
