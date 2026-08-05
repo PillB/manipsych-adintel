@@ -1,0 +1,630 @@
+{
+  "comparison": {
+    "n_records": 5189,
+    "v1": {
+      "k": 10,
+      "method": "TF-IDF + KMeans, top-frequency terms",
+      "feature_space": "word 1-2grams, 3000 features"
+    },
+    "adintel": {
+      "k": 5,
+      "method": "TF-IDF + KMeans, centroid-difference terms",
+      "feature_space": "word 1-2grams, 3000 features"
+    },
+    "metrics": {
+      "ARI": 0.418,
+      "AMI": 0.5175,
+      "homogeneity": 0.4321,
+      "completeness": 0.645,
+      "v_measure": 0.5175
+    },
+    "contingency_matrix": [
+      [
+        44,
+        0,
+        84,
+        10,
+        546
+      ],
+      [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        898,
+        0,
+        110,
+        32,
+        6
+      ],
+      [
+        6,
+        0,
+        867,
+        4,
+        1
+      ],
+      [
+        25,
+        0,
+        11,
+        428,
+        3
+      ],
+      [
+        24,
+        0,
+        16,
+        17,
+        407
+      ],
+      [
+        393,
+        0,
+        28,
+        10,
+        195
+      ],
+      [
+        4,
+        0,
+        20,
+        62,
+        82
+      ],
+      [
+        37,
+        0,
+        5,
+        376,
+        4
+      ],
+      [
+        190,
+        0,
+        124,
+        15,
+        5
+      ]
+    ],
+    "v1_cluster_sizes": {
+      "4": 467,
+      "5": 464,
+      "3": 878,
+      "2": 1046,
+      "6": 626,
+      "0": 684,
+      "1": 100,
+      "7": 168,
+      "9": 334,
+      "8": 422
+    },
+    "adintel_cluster_sizes": {
+      "3": 954,
+      "4": 1249,
+      "2": 1265,
+      "0": 1621,
+      "1": 100
+    },
+    "v1_terms": {
+      "0": [
+        [
+          "ayuda",
+          0.0837
+        ],
+        [
+          "economica",
+          0.0818
+        ],
+        [
+          "ayuda economica",
+          0.0817
+        ],
+        [
+          "mujeres",
+          0.0784
+        ],
+        [
+          "doy ayuda",
+          0.0728
+        ],
+        [
+          "doy",
+          0.0669
+        ],
+        [
+          "economica mujeres",
+          0.0583
+        ],
+        [
+          "redacted_contact",
+          0.0513
+        ]
+      ],
+      "1": [
+        [
+          "situacion",
+          0.2268
+        ],
+        [
+          "informacion clave",
+          0.1485
+        ],
+        [
+          "clave",
+          0.1485
+        ],
+        [
+          "situacion sentimental",
+          0.1473
+        ],
+        [
+          "de pelo",
+          0.1471
+        ],
+        [
+          "sentimental",
+          0.1464
+        ],
+        [
+          "habitacional",
+          0.1462
+        ],
+        [
+          "situacion habitacional",
+          0.1462
+        ]
+      ],
+      "2": [
+        [
+          "de",
+          0.0592
+        ],
+        [
+          "mujer",
+          0.0586
+        ],
+        [
+          "busca",
+          0.0577
+        ],
+        [
+          "hombre",
+          0.0554
+        ],
+        [
+          "una",
+          0.0527
+        ],
+        [
+          "hombre busca",
+          0.0479
+        ],
+        [
+          "busca mujer",
+          0.0474
+        ],
+        [
+          "ayuda",
+          0.0454
+        ]
+      ],
+      "3": [
+        [
+          "que",
+          0.0496
+        ],
+        [
+          "descripcion",
+          0.0485
+        ],
+        [
+          "de",
+          0.0483
+        ],
+        [
+          "para",
+          0.0473
+        ],
+        [
+          "en",
+          0.0438
+        ],
+        [
+          "si",
+          0.0428
+        ],
+        [
+          "un",
+          0.0407
+        ],
+        [
+          "con",
+          0.0397
+        ]
+      ],
+      "4": [
+        [
+          "brindo apoyo",
+          0.1202
+        ],
+        [
+          "apoyo",
+          0.1147
+        ],
+        [
+          "apoyo economico",
+          0.1081
+        ],
+        [
+          "economico",
+          0.1074
+        ],
+        [
+          "brindo",
+          0.0852
+        ],
+        [
+          "senoritas",
+          0.0461
+        ],
+        [
+          "de",
+          0.0444
+        ],
+        [
+          "economico senoritas",
+          0.0437
+        ]
+      ],
+      "5": [
+        [
+          "senoritas",
+          0.0942
+        ],
+        [
+          "ayuda",
+          0.0863
+        ],
+        [
+          "ayuda economica",
+          0.0857
+        ],
+        [
+          "economica senoritas",
+          0.0857
+        ],
+        [
+          "economica",
+          0.0855
+        ],
+        [
+          "brinda ayuda",
+          0.0659
+        ],
+        [
+          "madres",
+          0.0655
+        ],
+        [
+          "brinda",
+          0.0623
+        ]
+      ],
+      "6": [
+        [
+          "chicas",
+          0.0763
+        ],
+        [
+          "ayuda",
+          0.0731
+        ],
+        [
+          "economica",
+          0.07
+        ],
+        [
+          "ayuda economica",
+          0.0694
+        ],
+        [
+          "economica chicas",
+          0.063
+        ],
+        [
+          "de",
+          0.0565
+        ],
+        [
+          "brindo ayuda",
+          0.0555
+        ],
+        [
+          "brindo",
+          0.0488
+        ]
+      ],
+      "7": [
+        [
+          "se da",
+          0.1883
+        ],
+        [
+          "da",
+          0.18
+        ],
+        [
+          "se",
+          0.1353
+        ],
+        [
+          "da ayuda",
+          0.1219
+        ],
+        [
+          "da apoyo",
+          0.0836
+        ],
+        [
+          "senoritas",
+          0.0566
+        ],
+        [
+          "ayuda",
+          0.0533
+        ],
+        [
+          "economica",
+          0.0526
+        ]
+      ],
+      "8": [
+        [
+          "doy apoyo",
+          0.115
+        ],
+        [
+          "apoyo",
+          0.112
+        ],
+        [
+          "apoyo economico",
+          0.105
+        ],
+        [
+          "economico",
+          0.1038
+        ],
+        [
+          "doy",
+          0.0824
+        ],
+        [
+          "de",
+          0.0519
+        ],
+        [
+          "mujer",
+          0.0436
+        ],
+        [
+          "busca",
+          0.04
+        ]
+      ],
+      "9": [
+        [
+          "eres",
+          0.0695
+        ],
+        [
+          "te",
+          0.065
+        ],
+        [
+          "necesitas",
+          0.0584
+        ],
+        [
+          "tus",
+          0.0575
+        ],
+        [
+          "si eres",
+          0.0556
+        ],
+        [
+          "si",
+          0.0552
+        ],
+        [
+          "eres una",
+          0.0545
+        ],
+        [
+          "para",
+          0.0459
+        ]
+      ]
+    },
+    "adintel_terms": {
+      "0": [
+        [
+          "busca",
+          0.0531
+        ],
+        [
+          "hombre",
+          0.0513
+        ],
+        [
+          "mujer",
+          0.0509
+        ],
+        [
+          "hombre busca",
+          0.0506
+        ],
+        [
+          "busca mujer",
+          0.0504
+        ],
+        [
+          "una",
+          0.0218
+        ],
+        [
+          "soy",
+          0.0206
+        ],
+        [
+          "anos",
+          0.0177
+        ]
+      ],
+      "1": [
+        [
+          "situacion",
+          0.2255
+        ],
+        [
+          "clave",
+          0.1485
+        ],
+        [
+          "informacion clave",
+          0.1485
+        ],
+        [
+          "situacion sentimental",
+          0.1473
+        ],
+        [
+          "de pelo",
+          0.147
+        ],
+        [
+          "sentimental",
+          0.1463
+        ],
+        [
+          "habitacional",
+          0.1462
+        ],
+        [
+          "situacion habitacional",
+          0.1462
+        ]
+      ],
+      "2": [
+        [
+          "descripcion",
+          0.04
+        ],
+        [
+          "si",
+          0.0303
+        ],
+        [
+          "para",
+          0.0253
+        ],
+        [
+          "una",
+          0.0234
+        ],
+        [
+          "te",
+          0.023
+        ],
+        [
+          "la",
+          0.0224
+        ],
+        [
+          "que",
+          0.0222
+        ],
+        [
+          "tu",
+          0.0219
+        ]
+      ],
+      "3": [
+        [
+          "apoyo",
+          0.1013
+        ],
+        [
+          "apoyo economico",
+          0.099
+        ],
+        [
+          "economico",
+          0.0971
+        ],
+        [
+          "brindo apoyo",
+          0.0542
+        ],
+        [
+          "doy apoyo",
+          0.0485
+        ],
+        [
+          "economico senoritas",
+          0.0298
+        ],
+        [
+          "economico mujeres",
+          0.0254
+        ],
+        [
+          "economico chicas",
+          0.021
+        ]
+      ],
+      "4": [
+        [
+          "ayuda economica",
+          0.0548
+        ],
+        [
+          "economica",
+          0.0543
+        ],
+        [
+          "ayuda",
+          0.0539
+        ],
+        [
+          "doy ayuda",
+          0.0502
+        ],
+        [
+          "economica senoritas",
+          0.0355
+        ],
+        [
+          "redacted_contact",
+          0.0337
+        ],
+        [
+          "doy",
+          0.0335
+        ],
+        [
+          "senoritas",
+          0.0312
+        ]
+      ]
+    },
+    "verdict": "PARTIALLY_ALIGNED",
+    "explanation": "ARI=0.4180 indicates strong alignment. V1 uses k=10 with frequency terms (all clusters show 'ayuda','economica'); adintel uses k=5 with centroid-difference terms (each cluster shows unique distinguishing words). The methods are partially_aligned: v1 splits on synonym variations while adintel groups by meaningful semantic differences.",
+    "which_to_use": "adintel for cross-platform analysis (distinguishing terms, no leakage in persuasive/rhetorical spaces); v1 for backward compatibility only."
+  }
+}

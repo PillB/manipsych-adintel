@@ -1,0 +1,1903 @@
+{
+  "run_id": "full-data-1785936552",
+  "ran_at": "2026-08-05T13:29:12Z",
+  "n_records": 5189,
+  "n_council_annotations": 5717,
+  "manifest_sha256": "609f0a5f7c511503",
+  "council_sha256": "0e1fa1257828c617",
+  "taxonomy_version": "adintel-taxonomy-v2",
+  "elapsed_s": 8.32,
+  "profile": {
+    "n_records": 5189,
+    "uses_full_data": true,
+    "dimensions": {
+      "urgency": {
+        "mean": 0.0194,
+        "median": 0.0,
+        "max": 0.5934,
+        "n_above_0.3": 63,
+        "n_above_0.5": 16,
+        "n_abstained": 4851,
+        "abstention_rate": 0.9349,
+        "prevalence": 0.0651
+      },
+      "scarcity": {
+        "mean": 0.0627,
+        "median": 0.0,
+        "max": 0.5507,
+        "n_above_0.3": 259,
+        "n_above_0.5": 71,
+        "n_abstained": 3962,
+        "abstention_rate": 0.7635,
+        "prevalence": 0.2365
+      },
+      "emotional_intensity": {
+        "mean": 0.0877,
+        "median": 0.0,
+        "max": 0.8347,
+        "n_above_0.3": 365,
+        "n_above_0.5": 110,
+        "n_abstained": 3665,
+        "abstention_rate": 0.7063,
+        "prevalence": 0.2937
+      },
+      "directiveness": {
+        "mean": 0.0379,
+        "median": 0.0,
+        "max": 0.6671,
+        "n_above_0.3": 97,
+        "n_above_0.5": 24,
+        "n_abstained": 4485,
+        "abstention_rate": 0.8643,
+        "prevalence": 0.1357
+      },
+      "certainty": {
+        "mean": 0.013,
+        "median": 0.0,
+        "max": 0.5276,
+        "n_above_0.3": 39,
+        "n_above_0.5": 6,
+        "n_abstained": 4722,
+        "abstention_rate": 0.91,
+        "prevalence": 0.0516
+      },
+      "specificity": {
+        "mean": 0.2043,
+        "median": 0.1393,
+        "max": 0.8775,
+        "n_above_0.3": 1587,
+        "n_above_0.5": 604,
+        "n_abstained": 1870,
+        "abstention_rate": 0.3604,
+        "prevalence": 0.6396
+      },
+      "benefit_density": {
+        "mean": 0.3216,
+        "median": 0.3153,
+        "max": 0.9719,
+        "n_above_0.3": 2749,
+        "n_above_0.5": 1310,
+        "n_abstained": 1311,
+        "abstention_rate": 0.2526,
+        "prevalence": 0.7423
+      },
+      "evidence_density": {
+        "mean": 0.0001,
+        "median": 0.0,
+        "max": 0.2742,
+        "n_above_0.3": 0,
+        "n_above_0.5": 0,
+        "n_abstained": 5183,
+        "abstention_rate": 0.9988,
+        "prevalence": 0.0006
+      },
+      "social_proof": {
+        "mean": 0.0075,
+        "median": 0.0,
+        "max": 0.4512,
+        "n_above_0.3": 29,
+        "n_above_0.5": 0,
+        "n_abstained": 5001,
+        "abstention_rate": 0.9638,
+        "prevalence": 0.0362
+      },
+      "objection_handling": {
+        "mean": 0.0598,
+        "median": 0.0,
+        "max": 0.7769,
+        "n_above_0.3": 353,
+        "n_above_0.5": 59,
+        "n_abstained": 3971,
+        "abstention_rate": 0.7653,
+        "prevalence": 0.2347
+      },
+      "risk_reversal": {
+        "mean": 0.0006,
+        "median": 0.0,
+        "max": 0.3935,
+        "n_above_0.3": 1,
+        "n_above_0.5": 0,
+        "n_abstained": 5178,
+        "abstention_rate": 0.9979,
+        "prevalence": 0.0021
+      },
+      "claim_extremity": {
+        "mean": 0.0496,
+        "median": 0.0,
+        "max": 0.7408,
+        "n_above_0.3": 180,
+        "n_above_0.5": 29,
+        "n_abstained": 4133,
+        "abstention_rate": 0.7965,
+        "prevalence": 0.2035
+      },
+      "readability": {
+        "mean": 0.4041,
+        "median": 0.3737,
+        "max": 1.0,
+        "n_above_0.3": 2975,
+        "n_above_0.5": 1985,
+        "n_abstained": 0,
+        "abstention_rate": 0.0,
+        "prevalence": 0.7791
+      },
+      "offer_clarity": {
+        "mean": 0.3153,
+        "median": 0.3935,
+        "max": 0.8347,
+        "n_above_0.3": 2916,
+        "n_above_0.5": 1128,
+        "n_abstained": 848,
+        "abstention_rate": 0.1634,
+        "prevalence": 0.8366
+      },
+      "action_clarity": {
+        "mean": 0.028,
+        "median": 0.0,
+        "max": 0.5276,
+        "n_above_0.3": 71,
+        "n_above_0.5": 15,
+        "n_abstained": 4592,
+        "abstention_rate": 0.8849,
+        "prevalence": 0.1151
+      },
+      "trust_risk": {
+        "mean": 0.0188,
+        "median": 0.0,
+        "max": 0.3855,
+        "n_above_0.3": 12,
+        "n_above_0.5": 0,
+        "n_abstained": 4267,
+        "abstention_rate": 0.8223,
+        "prevalence": 0.0723
+      },
+      "manipulation_risk": {
+        "mean": 0.1041,
+        "median": 0.0816,
+        "max": 0.5527,
+        "n_above_0.3": 123,
+        "n_above_0.5": 5,
+        "n_abstained": 781,
+        "abstention_rate": 0.1505,
+        "prevalence": 0.3935
+      }
+    },
+    "sample_record_ids": [
+      "h_02d685dc6eabcd83f995a81fba8244b81d3d9ecd0e66a605281ee160a54986aa",
+      "h_12a8b45645ea3c2bf2ebd6b1828e538d3daa5e2d3d97f05758d4dfd994eb8072",
+      "h_1a2e0b4e835fd29599281d53f69fd7d31e24ad104a1b1bbebe453d87e189f244",
+      "h_488fd658ea859b9bd9b7903d768e2ecd0ce24eacd1d8a6f5b151c36605b60a25",
+      "h_68a899b6fd6d4592e819422812c1f1acfd570ab965a5a7e4e7003275744d3243"
+    ],
+    "first_profile": {
+      "output_version": "persuasive-profile-v1.0.0",
+      "record_id": "h_02d685dc6eabcd83f995a81fba8244b81d3d9ecd0e66a605281ee160a54986aa",
+      "taxonomy_version": "adintel-taxonomy-v2",
+      "checkpoint_id": "persuasive-profile-v1",
+      "dimensions": {
+        "urgency": {
+          "dimension": "urgency",
+          "score": 0.0,
+          "raw_score": 0.0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.6
+        },
+        "scarcity": {
+          "dimension": "scarcity",
+          "score": 0.0,
+          "raw_score": 0.0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.6
+        },
+        "emotional_intensity": {
+          "dimension": "emotional_intensity",
+          "score": 0.0,
+          "raw_score": 0.0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.55
+        },
+        "directiveness": {
+          "dimension": "directiveness",
+          "score": 0.0,
+          "raw_score": 0.0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.65
+        },
+        "certainty": {
+          "dimension": "certainty",
+          "score": 0.0,
+          "raw_score": 0.0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.55
+        },
+        "specificity": {
+          "dimension": "specificity",
+          "score": 0.3296799539643607,
+          "raw_score": 0.3296799539643607,
+          "signals": [
+            "education-specific"
+          ],
+          "supporting_evidence": [
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 106,
+              "end": 117,
+              "timestamp_s": null,
+              "surface": "universidad"
+            },
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 119,
+              "end": 128,
+              "timestamp_s": null,
+              "surface": "instituto"
+            }
+          ],
+          "abstained": false,
+          "abstention_reason": null,
+          "confidence": 0.6
+        },
+        "benefit_density": {
+          "dimension": "benefit_density",
+          "score": 0.6370584632646004,
+          "raw_score": 1.0135135135135136,
+          "signals": [
+            "financial benefit",
+            "regularity benefit"
+          ],
+          "supporting_evidence": [
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 7,
+              "end": 22,
+              "timestamp_s": null,
+              "surface": "ayuda económica"
+            },
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 23,
+              "end": 32,
+              "timestamp_s": null,
+              "surface": "constante"
+            },
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 84,
+              "end": 93,
+              "timestamp_s": null,
+              "surface": "constante"
+            }
+          ],
+          "abstained": false,
+          "abstention_reason": null,
+          "confidence": 0.55
+        },
+        "evidence_density": {
+          "dimension": "evidence_density",
+          "score": 0.0,
+          "raw_score": 0.0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.5
+        },
+        "social_proof": {
+          "dimension": "social_proof",
+          "score": 0.0,
+          "raw_score": 0.0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.55
+        },
+        "objection_handling": {
+          "dimension": "objection_handling",
+          "score": 0.0,
+          "raw_score": 0.0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.6
+        },
+        "risk_reversal": {
+          "dimension": "risk_reversal",
+          "score": 0.0,
+          "raw_score": 0.0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.6
+        },
+        "claim_extremity": {
+          "dimension": "claim_extremity",
+          "score": 0.22119921692859512,
+          "raw_score": 0.22119921692859512,
+          "signals": [
+            "absolute claim"
+          ],
+          "supporting_evidence": [
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 210,
+              "end": 215,
+              "timestamp_s": null,
+              "surface": "Total"
+            }
+          ],
+          "abstained": false,
+          "abstention_reason": null,
+          "confidence": 0.55
+        },
+        "readability": {
+          "dimension": "readability",
+          "score": 0.753943918918919,
+          "raw_score": 57.69719594594595,
+          "signals": [
+            "Spanish-adapted Flesch reading-ease; lower score = harder text. Normalised so 1.0 = easiest."
+          ],
+          "supporting_evidence": [],
+          "abstained": false,
+          "abstention_reason": null,
+          "confidence": 0.5
+        },
+        "offer_clarity": {
+          "dimension": "offer_clarity",
+          "score": 0.6833632306209467,
+          "raw_score": 0.6833632306209467,
+          "signals": [
+            "offer verb",
+            "regularity term"
+          ],
+          "supporting_evidence": [
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 0,
+              "end": 6,
+              "timestamp_s": null,
+              "surface": "Brindo"
+            },
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 7,
+              "end": 22,
+              "timestamp_s": null,
+              "surface": "ayuda económica"
+            },
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 59,
+              "end": 65,
+              "timestamp_s": null,
+              "surface": "brindo"
+            },
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 23,
+              "end": 32,
+              "timestamp_s": null,
+              "surface": "constante"
+            },
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 84,
+              "end": 93,
+              "timestamp_s": null,
+              "surface": "constante"
+            }
+          ],
+          "abstained": false,
+          "abstention_reason": null,
+          "confidence": 0.55
+        },
+        "action_clarity": {
+          "dimension": "action_clarity",
+          "score": 0.0,
+          "raw_score": 0.0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.6
+        },
+        "trust_risk": {
+          "dimension": "trust_risk",
+          "score": 0.0,
+          "raw_score": 0,
+          "signals": [],
+          "supporting_evidence": [],
+          "abstained": true,
+          "abstention_reason": "no_signal",
+          "confidence": 0.5
+        },
+        "manipulation_risk": {
+          "dimension": "manipulation_risk",
+          "score": 0.04282316188381822,
+          "raw_score": 0.1,
+          "signals": [
+            "transactional euphemism"
+          ],
+          "supporting_evidence": [
+            {
+              "kind": "text_span",
+              "modality": "text",
+              "start": 7,
+              "end": 22,
+              "timestamp_s": null,
+              "surface": "ayuda económica"
+            }
+          ],
+          "abstained": false,
+          "abstention_reason": null,
+          "confidence": 0.5
+        }
+      },
+      "composite_summary": {
+        "max_dimension": 0.753943918918919,
+        "mean_dimension": 0.1569451732694847,
+        "n_abstained": 11,
+        "high_risk_dimensions": [
+          "benefit_density",
+          "readability",
+          "offer_clarity"
+        ]
+      },
+      "review_status": "unreviewed",
+      "dimensions_present": 17,
+      "dimensions_abstained": 11
+    }
+  },
+  "techniques": {
+    "n_techniques": 20,
+    "results": [
+      {
+        "label": "age_or_youth_targeting",
+        "count": 3680,
+        "prevalence": 0.6437,
+        "denominator": 5717,
+        "example_ids": [
+          "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+          "h_00619a881fde241e18257396000fd12d42c2a977df700c90ce60176d5726ae8d",
+          "h_0077371399bd6d105d10a6073d0a88d5a772a041210963a3ae9dbac1c54ee712",
+          "h_0086841cdb27f4d073bbc3773079fbcc545a341271c375d65086f12a6aa53bb0",
+          "h_009cd3e7643b934d0b00fa8432f8f29bc0f7cc82c1f7c4a4dd98b1d94ff404fc"
+        ],
+        "examples": [
+          {
+            "record_id": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+            "title": "Ofrezco ayuda económica a señorita sola, linda chi",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_00619a881fde241e18257396000fd12d42c2a977df700c90ce60176d5726ae8d",
+            "title": "Ayuda económica a chicas solteras, Cusco – 30",
+            "platform": "locanto"
+          },
+          {
+            "record_id": "h_0077371399bd6d105d10a6073d0a88d5a772a041210963a3ae9dbac1c54ee712",
+            "title": "Brindo ayuda económica a Venezolanas",
+            "platform": "doplim"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "bs_audience_targeting.age_youth"
+        ]
+      },
+      {
+        "label": "authority_or_status_appeal",
+        "count": 1688,
+        "prevalence": 0.2953,
+        "denominator": 5717,
+        "example_ids": [
+          "h_00619a881fde241e18257396000fd12d42c2a977df700c90ce60176d5726ae8d",
+          "h_0077f9e12354f66ec76ff2a2f6b424322ded508e9422b001b8327c67fb8cf21c",
+          "h_0088918c3f5c408420a7868f2664312dbf4f13c5caa1915add21eaf4a914d0b1",
+          "h_00aca17aa1cadf9c64c10f1eaa15aea7399f41e800cadc8f577ca998818bb724",
+          "h_00b6dfee04f5f6b5a9cca47be1f7e7312a5dc666d77874e453a7d9cd7c4b7c4f"
+        ],
+        "examples": [
+          {
+            "record_id": "h_00619a881fde241e18257396000fd12d42c2a977df700c90ce60176d5726ae8d",
+            "title": "Ayuda económica a chicas solteras, Cusco – 30",
+            "platform": "locanto"
+          },
+          {
+            "record_id": "h_0088918c3f5c408420a7868f2664312dbf4f13c5caa1915add21eaf4a914d0b1",
+            "title": "Brindo apoyo económico 55a mujer joven mayor de 18",
+            "platform": "doplim"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "pr_authority_appeal"
+        ]
+      },
+      {
+        "label": "commitment_escalation",
+        "count": 459,
+        "prevalence": 0.0803,
+        "denominator": 5717,
+        "example_ids": [
+          "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+          "h_00619a881fde241e18257396000fd12d42c2a977df700c90ce60176d5726ae8d",
+          "h_00af1c0aa3f87501379e3d37066c44f8912eb4e588b324c1e79fc63423b14229",
+          "h_00f1ce5fd01ed1f8ee9ee1830c82f440646faef29f941d807375ce60aab155c8",
+          "h_02951f4d9cb275a2f8216e9b279bbe44aa83e3529396d853c41177d8d0ba7e33"
+        ],
+        "examples": [
+          {
+            "record_id": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+            "title": "Ofrezco ayuda económica a señorita sola, linda chi",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_00619a881fde241e18257396000fd12d42c2a977df700c90ce60176d5726ae8d",
+            "title": "Ayuda económica a chicas solteras, Cusco – 30",
+            "platform": "locanto"
+          },
+          {
+            "record_id": "h_00af1c0aa3f87501379e3d37066c44f8912eb4e588b324c1e79fc63423b14229",
+            "title": "Busco mujer gordita de pechos grandes",
+            "platform": "doplim"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "bs_commitment_consistency"
+        ]
+      },
+      {
+        "label": "conditional_financial_support",
+        "count": 1480,
+        "prevalence": 0.2589,
+        "denominator": 5717,
+        "example_ids": [
+          "h_00255b3c098e9c2113fd5b9e8c92378f93ec8bb9451a1f6eb20fc7461b455f11",
+          "h_00332ec64ce60aaa08cf837f0c7321f2716f523bb01a5fa82e193833aa5cf054",
+          "h_0077371399bd6d105d10a6073d0a88d5a772a041210963a3ae9dbac1c54ee712",
+          "h_009cd3e7643b934d0b00fa8432f8f29bc0f7cc82c1f7c4a4dd98b1d94ff404fc",
+          "h_00b6dfee04f5f6b5a9cca47be1f7e7312a5dc666d77874e453a7d9cd7c4b7c4f"
+        ],
+        "examples": [
+          {
+            "record_id": "h_00255b3c098e9c2113fd5b9e8c92378f93ec8bb9451a1f6eb20fc7461b455f11",
+            "title": "Amiga venezolana que quiera apoyo económico - Lima",
+            "platform": "ciudadanuncios"
+          },
+          {
+            "record_id": "h_00332ec64ce60aaa08cf837f0c7321f2716f523bb01a5fa82e193833aa5cf054",
+            "title": "Apoyo eco a dama solo masajes y oral",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_0077371399bd6d105d10a6073d0a88d5a772a041210963a3ae9dbac1c54ee712",
+            "title": "Brindo ayuda económica a Venezolanas",
+            "platform": "doplim"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "cc_offer_stack",
+          "so_conditional_support"
+        ]
+      },
+      {
+        "label": "deceptive_assurance",
+        "count": 467,
+        "prevalence": 0.0817,
+        "denominator": 5717,
+        "example_ids": [
+          "h_0065ccdd5b34e08e1acab51043709ffc9ef4b8e250e2b2afaa4a71a70e158af1",
+          "h_00d841fab5bdb8ff6a8abb2203a6fd4cd2cfd3eb00310ad458cd330f891298d6",
+          "h_02015bb3aa9d13d652de2bf3a46447b1727908cdc39addde11f43f60aa09f7a0",
+          "h_02b082e3e7434b998c37142bdec5413f6949ec9322ce014174cfcc290e8ce6ef",
+          "h_031402623dd155beb8d7601091893a120b36b83050ee164048af8f5f898f5e8e"
+        ],
+        "examples": [
+          {
+            "record_id": "h_0065ccdd5b34e08e1acab51043709ffc9ef4b8e250e2b2afaa4a71a70e158af1",
+            "title": "Doy ayuda de 80 soles",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_00d841fab5bdb8ff6a8abb2203a6fd4cd2cfd3eb00310ad458cd330f891298d6",
+            "title": "Doy apoyo 400 por f de trabajo lima",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_02015bb3aa9d13d652de2bf3a46447b1727908cdc39addde11f43f60aa09f7a0",
+            "title": "Brindo Ayuda económica a chica joven que guste de hombre mayor, Arequipa – 58",
+            "platform": "locanto"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "cc_disclaimer_overlay",
+          "so_risk_reversal"
+        ]
+      },
+      {
+        "label": "economic_vulnerability_targeting",
+        "count": 1496,
+        "prevalence": 0.2617,
+        "denominator": 5717,
+        "example_ids": [
+          "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+          "h_00255b3c098e9c2113fd5b9e8c92378f93ec8bb9451a1f6eb20fc7461b455f11",
+          "h_00e7c29f69b51c947bf36c1087cfb9cd7a8c005e4ed89f12ffd60c857237c485",
+          "h_00fb9a15541704ccc7530263c7eb98f22fac090901eb96e23d27c9906ab86c1e",
+          "h_01be3043ef27b6a6a99e2d2b40f185e7ad36f3888ea1353f6728e3ac23dae6d1"
+        ],
+        "examples": [
+          {
+            "record_id": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+            "title": "Ofrezco ayuda económica a señorita sola, linda chi",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_00255b3c098e9c2113fd5b9e8c92378f93ec8bb9451a1f6eb20fc7461b455f11",
+            "title": "Amiga venezolana que quiera apoyo económico - Lima",
+            "platform": "ciudadanuncios"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "bs_audience_targeting.economic_vulnerability"
+        ]
+      },
+      {
+        "label": "education_or_student_targeting",
+        "count": 1468,
+        "prevalence": 0.2568,
+        "denominator": 5717,
+        "example_ids": [
+          "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+          "h_009cd3e7643b934d0b00fa8432f8f29bc0f7cc82c1f7c4a4dd98b1d94ff404fc",
+          "h_01046343d69c696d376aac5f0124d2fccfbf0b8c46e0a53c2cf570cd59248e86",
+          "h_01b2ab208a0fd38c27a19283ec93eaaea0e20399cdd8fbf439d25eadd5b0e226",
+          "h_02015bb3aa9d13d652de2bf3a46447b1727908cdc39addde11f43f60aa09f7a0"
+        ],
+        "examples": [
+          {
+            "record_id": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+            "title": "Ofrezco ayuda económica a señorita sola, linda chi",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_009cd3e7643b934d0b00fa8432f8f29bc0f7cc82c1f7c4a4dd98b1d94ff404fc",
+            "title": "Brindo apoyo economico a jovensitas estudiantes a cambio de su compañia solo en ",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_01046343d69c696d376aac5f0124d2fccfbf0b8c46e0a53c2cf570cd59248e86",
+            "title": "Doy ayuda economica a señorita madres solteras - Puno",
+            "platform": "ciudadanuncios"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "bs_audience_targeting.education_student"
+        ]
+      },
+      {
+        "label": "exclusivity_or_special_treatment",
+        "count": 240,
+        "prevalence": 0.042,
+        "denominator": 5717,
+        "example_ids": [
+          "h_0088918c3f5c408420a7868f2664312dbf4f13c5caa1915add21eaf4a914d0b1",
+          "h_01159dcad735bb8c5594f5955d2f0dcec7039da31cee303974b414b100de0ac3",
+          "h_020b0f83491576a21b48c2940eb000e143e1f892c26238401cc85e642d2405b0",
+          "h_0434561ee776fde35a62b05a292757137c3f249da1eb540d301ff97955257de3",
+          "h_04d124276babb711facc05e17eb27c859d882d4480f334352d1c6ea1adac3fc6"
+        ],
+        "examples": [
+          {
+            "record_id": "h_0088918c3f5c408420a7868f2664312dbf4f13c5caa1915add21eaf4a914d0b1",
+            "title": "Brindo apoyo económico 55a mujer joven mayor de 18",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_020b0f83491576a21b48c2940eb000e143e1f892c26238401cc85e642d2405b0",
+            "title": "Ayuda económica a señorita a cambio de compañía - NO SEXO - Lima",
+            "platform": "ciudadanuncios"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "pr_exclusivity"
+        ]
+      },
+      {
+        "label": "family_obligation_targeting",
+        "count": 790,
+        "prevalence": 0.1382,
+        "denominator": 5717,
+        "example_ids": [
+          "h_00d0294459bf841f2b4be2e33deb2fccefadcf89e3034b189569d8dcf0cbcc8d",
+          "h_01046343d69c696d376aac5f0124d2fccfbf0b8c46e0a53c2cf570cd59248e86",
+          "h_0290c4c9c5ce7b95cf959c145e9dcec567511bb8f29c989476b0d4db93262ec9",
+          "h_02c9dd3126b9c25487f0fb8dac6ddebbbfbfa460d9f655d8505ff937b3921452",
+          "h_032d9a642e79b83f3223d0ee2145b3f3412b4302cb98c0e1033aec571fc0fc80"
+        ],
+        "examples": [
+          {
+            "record_id": "h_00d0294459bf841f2b4be2e33deb2fccefadcf89e3034b189569d8dcf0cbcc8d",
+            "title": "AVISO PARA MADRE SOLTERA",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_01046343d69c696d376aac5f0124d2fccfbf0b8c46e0a53c2cf570cd59248e86",
+            "title": "Doy ayuda economica a señorita madres solteras - Puno",
+            "platform": "ciudadanuncios"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "bs_audience_targeting.family_obligation"
+        ]
+      },
+      {
+        "label": "fear_or_threat",
+        "count": 1,
+        "prevalence": 0.0002,
+        "denominator": 5717,
+        "example_ids": [
+          "h_2277bd2b2e240b12ba3fee7919c9dd0da6d1ae17e41aa970da6c5ab07b87c3ab"
+        ],
+        "examples": [
+          {
+            "record_id": "h_2277bd2b2e240b12ba3fee7919c9dd0da6d1ae17e41aa970da6c5ab07b87c3ab",
+            "title": "Apoyo económico para gordita",
+            "platform": "doplim"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "pr_emotional_appeal"
+        ]
+      },
+      {
+        "label": "foot_in_the_door",
+        "count": 396,
+        "prevalence": 0.0693,
+        "denominator": 5717,
+        "example_ids": [
+          "h_02015bb3aa9d13d652de2bf3a46447b1727908cdc39addde11f43f60aa09f7a0",
+          "h_0290c4c9c5ce7b95cf959c145e9dcec567511bb8f29c989476b0d4db93262ec9",
+          "h_02951f4d9cb275a2f8216e9b279bbe44aa83e3529396d853c41177d8d0ba7e33",
+          "h_03bcd8593f882924b0882779dd82090828eab45380da48eacf31767a2b796a34",
+          "h_03c6de38bee2d19bbb48ead95ceea8fdc9e60ebdc063affacb6fbf03a56b27e6"
+        ],
+        "examples": [
+          {
+            "record_id": "h_02015bb3aa9d13d652de2bf3a46447b1727908cdc39addde11f43f60aa09f7a0",
+            "title": "Brindo Ayuda económica a chica joven que guste de hombre mayor, Arequipa – 58",
+            "platform": "locanto"
+          },
+          {
+            "record_id": "h_02951f4d9cb275a2f8216e9b279bbe44aa83e3529396d853c41177d8d0ba7e33",
+            "title": "BRINDO AYUDA ECONOMICA A CHICA JOVEN AMA DE CASA",
+            "platform": "doplim"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "bs_commitment_consistency"
+        ]
+      },
+      {
+        "label": "guilt_or_shame_pressure",
+        "count": 23,
+        "prevalence": 0.004,
+        "denominator": 5717,
+        "example_ids": [
+          "h_0eaaf8cc3a569800b58879560d451b3d4214efccc9bcdd56cfa64617d074e8ed",
+          "h_107b10a42e737421a5a502803719de3c4dc4d12d53a6055d7a589c46d8a2fa27",
+          "h_1669b04169bb4626a898e6eb29d3ec56d7f4a2e15a6bdf8cbde81f8f22bd506b",
+          "h_27dc349a077fde9aedecf73582cb7e2096440d5fc96eca519b2a701b2a5331aa",
+          "h_2ad07c7974910775dcd740fb1aa1ae83569679e69ff1a7640c9de57012f5824d"
+        ],
+        "examples": [
+          {
+            "record_id": "h_0eaaf8cc3a569800b58879560d451b3d4214efccc9bcdd56cfa64617d074e8ed",
+            "title": "Ayuda economica estudiantes/universitarias/madres",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_107b10a42e737421a5a502803719de3c4dc4d12d53a6055d7a589c46d8a2fa27",
+            "title": "Brindo ayuda económica señorita decidida, Lima",
+            "platform": "locanto"
+          },
+          {
+            "record_id": "h_1669b04169bb4626a898e6eb29d3ec56d7f4a2e15a6bdf8cbde81f8f22bd506b",
+            "title": "AYUDA ECONOMICA ESCRIBEME , TOTAL CONFIDENCIALIDAD Y SEGURO, Los olivos – 25",
+            "platform": "locanto"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "pr_emotional_appeal"
+        ]
+      },
+      {
+        "label": "platform_migration",
+        "count": 1293,
+        "prevalence": 0.2262,
+        "denominator": 5717,
+        "example_ids": [
+          "h_0086841cdb27f4d073bbc3773079fbcc545a341271c375d65086f12a6aa53bb0",
+          "h_00d0294459bf841f2b4be2e33deb2fccefadcf89e3034b189569d8dcf0cbcc8d",
+          "h_01159dcad735bb8c5594f5955d2f0dcec7039da31cee303974b414b100de0ac3",
+          "h_01871ef5eb00c4cbca10f51118a6b10f8f810d56d785fdca30238124de7b58f3",
+          "h_01883ca433eb855d40ff445163c9c9efe9cab7865a716b9b855642702f5e6cd5"
+        ],
+        "examples": [
+          {
+            "record_id": "h_0086841cdb27f4d073bbc3773079fbcc545a341271c375d65086f12a6aa53bb0",
+            "title": "Entrego ayuda económica a señorita mayor de edad, Trujillo – 40",
+            "platform": "locanto"
+          },
+          {
+            "record_id": "h_00d0294459bf841f2b4be2e33deb2fccefadcf89e3034b189569d8dcf0cbcc8d",
+            "title": "AVISO PARA MADRE SOLTERA",
+            "platform": "doplim"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "cc_call_to_action"
+        ]
+      },
+      {
+        "label": "privacy_or_secrecy_pressure",
+        "count": 2257,
+        "prevalence": 0.3948,
+        "denominator": 5717,
+        "example_ids": [
+          "h_0086841cdb27f4d073bbc3773079fbcc545a341271c375d65086f12a6aa53bb0",
+          "h_00fb9a15541704ccc7530263c7eb98f22fac090901eb96e23d27c9906ab86c1e",
+          "h_01871ef5eb00c4cbca10f51118a6b10f8f810d56d785fdca30238124de7b58f3",
+          "h_01a8b4dc6eb714b6b95ffbf0141c415e9f1816ab8e192f955ebbff156d9bba96",
+          "h_01abbb50ce9ae4b225ea61c1c0f251bb90e62fdf41176661b495e2b34d7e053e"
+        ],
+        "examples": [
+          {
+            "record_id": "h_0086841cdb27f4d073bbc3773079fbcc545a341271c375d65086f12a6aa53bb0",
+            "title": "Entrego ayuda económica a señorita mayor de edad, Trujillo – 40",
+            "platform": "locanto"
+          },
+          {
+            "record_id": "h_01871ef5eb00c4cbca10f51118a6b10f8f810d56d785fdca30238124de7b58f3",
+            "title": "AYUDA ECONOMICA A MUJER SOLA O PAREJAS, Huancayo – 30",
+            "platform": "locanto"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "bs_privacy_secrecy_pressure"
+        ]
+      },
+      {
+        "label": "reciprocity_obligation",
+        "count": 5711,
+        "prevalence": 0.999,
+        "denominator": 5717,
+        "example_ids": [
+          "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+          "h_00255b3c098e9c2113fd5b9e8c92378f93ec8bb9451a1f6eb20fc7461b455f11",
+          "h_0026dd14f87a9b4ec0cc2f6d8f639b6148ca2e3c242de89e3edd8751ca2209b2",
+          "h_00332ec64ce60aaa08cf837f0c7321f2716f523bb01a5fa82e193833aa5cf054",
+          "h_00619a881fde241e18257396000fd12d42c2a977df700c90ce60176d5726ae8d"
+        ],
+        "examples": [
+          {
+            "record_id": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+            "title": "Ofrezco ayuda económica a señorita sola, linda chi",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_00255b3c098e9c2113fd5b9e8c92378f93ec8bb9451a1f6eb20fc7461b455f11",
+            "title": "Amiga venezolana que quiera apoyo económico - Lima",
+            "platform": "ciudadanuncios"
+          },
+          {
+            "record_id": "h_0026dd14f87a9b4ec0cc2f6d8f639b6148ca2e3c242de89e3edd8751ca2209b2",
+            "title": "Brindo ayuda economico - San Vicente de Cañete",
+            "platform": "ciudadanuncios"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "cc_reciprocity_frame",
+          "bs_reciprocity_obligation"
+        ]
+      },
+      {
+        "label": "repetition_or_campaign_escalation",
+        "count": 75,
+        "prevalence": 0.0131,
+        "denominator": 5717,
+        "example_ids": [
+          "h_036f9389c6566789507cfdf47f282dbffe53bb67514d1c5639046c82ec3fd4cf",
+          "h_04936c7bebd43e9124ba14a880642028d549601e22655d5afdae1ee42520e1af",
+          "h_082c855ec0fea7227d1a0c15b822b22511c1025e2095841bec7c8822ac5c8ab7",
+          "h_0a3f44a1faa5e00480f6bd1aa25cb81b31b4ae2f5771178c1e541824033613b8",
+          "h_0b5a6760416043bfbf1ab35b3dcd4dec1a570329154cde5735335e5c0ff26dbb"
+        ],
+        "examples": [
+          {
+            "record_id": "h_036f9389c6566789507cfdf47f282dbffe53bb67514d1c5639046c82ec3fd4cf",
+            "title": "Ayuda económica a Señorita, Lima – 37",
+            "platform": "locanto"
+          },
+          {
+            "record_id": "h_04936c7bebd43e9124ba14a880642028d549601e22655d5afdae1ee42520e1af",
+            "title": "Apoyo económico hoy mismo para señoritas, Cajamarca – 33",
+            "platform": "locanto"
+          },
+          {
+            "record_id": "h_082c855ec0fea7227d1a0c15b822b22511c1025e2095841bec7c8822ac5c8ab7",
+            "title": "Ayuda económica para chika estudiante o madre soltera, Trujillo – 28",
+            "platform": "locanto"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "bs_repetition_campaign_escalation"
+        ]
+      },
+      {
+        "label": "scarcity_or_urgency",
+        "count": 288,
+        "prevalence": 0.0504,
+        "denominator": 5717,
+        "example_ids": [
+          "h_021239b389bd122534fcc9b9cf43651de4a8127523eb01ef2d605fe2847b9779",
+          "h_032f4ef73091f0e2bdf517f6b26e9a89466534043fc3ba5a8063348a3377ccaf",
+          "h_03aad92bd6ca3a4a91c3c70101cfba94b34f36f4985e8bef01a67c0df099e84a",
+          "h_03f0b0748a396a493663f14e0998345bb341aeaa74f4810cbf68226cc418ea02",
+          "h_04936c7bebd43e9124ba14a880642028d549601e22655d5afdae1ee42520e1af"
+        ],
+        "examples": [
+          {
+            "record_id": "h_021239b389bd122534fcc9b9cf43651de4a8127523eb01ef2d605fe2847b9779",
+            "title": "HOLA SOY MELISSA Y TENGO 18 AÑITOS",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_032f4ef73091f0e2bdf517f6b26e9a89466534043fc3ba5a8063348a3377ccaf",
+            "title": "Se brinda ayuda económica a mujeres jovenes...., Lima – 40",
+            "platform": "locanto"
+          },
+          {
+            "record_id": "h_03aad92bd6ca3a4a91c3c70101cfba94b34f36f4985e8bef01a67c0df099e84a",
+            "title": "Ayuda económica, Piura – 35",
+            "platform": "locanto"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "pr_scarcity_urgency"
+        ]
+      },
+      {
+        "label": "sexualized_appearance_condition",
+        "count": 890,
+        "prevalence": 0.1557,
+        "denominator": 5717,
+        "example_ids": [
+          "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+          "h_00619a881fde241e18257396000fd12d42c2a977df700c90ce60176d5726ae8d",
+          "h_0077f9e12354f66ec76ff2a2f6b424322ded508e9422b001b8327c67fb8cf21c",
+          "h_00d841fab5bdb8ff6a8abb2203a6fd4cd2cfd3eb00310ad458cd330f891298d6",
+          "h_01d396114f9ad4d20662cd181ef78a54674951ac0b3e1ba13032b43db2d39a8d"
+        ],
+        "examples": [
+          {
+            "record_id": "h_000c73d78bf8e1a57d46d297b9d2c2bb549f503f16a9b4d5e8d937f9a10e05e9",
+            "title": "Ofrezco ayuda económica a señorita sola, linda chi",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_00619a881fde241e18257396000fd12d42c2a977df700c90ce60176d5726ae8d",
+            "title": "Ayuda económica a chicas solteras, Cusco – 30",
+            "platform": "locanto"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "bs_audience_targeting.gendered_appearance"
+        ]
+      },
+      {
+        "label": "social_proof",
+        "count": 7,
+        "prevalence": 0.0012,
+        "denominator": 5717,
+        "example_ids": [
+          "h_30dd2c7e3a6d3e12a6f3ff55d7d9d4b4cb7ac2b9daebc35ea1a7d780a285f238",
+          "h_368e1aba741199dc4ca2dccaaf37f2570a7ed2d0ef23cef13a2692d6bb1f356c",
+          "h_45701e9dc2f49e218639bc5dd0f202de4f336331b050b984e14ce55fa52cad18",
+          "h_5e1069e1e126090cc5e8005ca39f084ce162e08a6d2337f7f50a23b2dceb7a88",
+          "h_6787342ee468fd1148b29121be8ba5b5ffd6f6350e9077bc905766b14ced74e9"
+        ],
+        "examples": [
+          {
+            "record_id": "h_45701e9dc2f49e218639bc5dd0f202de4f336331b050b984e14ce55fa52cad18",
+            "title": "Ayuda económica solo chica estudiante, Chiclayo – 30",
+            "platform": "locanto"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "pr_social_proof"
+        ]
+      },
+      {
+        "label": "transactional_ambiguity",
+        "count": 479,
+        "prevalence": 0.0838,
+        "denominator": 5717,
+        "example_ids": [
+          "h_00d841fab5bdb8ff6a8abb2203a6fd4cd2cfd3eb00310ad458cd330f891298d6",
+          "h_02b082e3e7434b998c37142bdec5413f6949ec9322ce014174cfcc290e8ce6ef",
+          "h_02d685dc6eabcd83f995a81fba8244b81d3d9ecd0e66a605281ee160a54986aa",
+          "h_036d0f1bd943af62e7f5ef1b5c33759ee30aa3a5d3a4f579f6367bfd25da4566",
+          "h_03797321acf5e072126609bd23844671f92814e360a20e9f74ac0c4837eccb62"
+        ],
+        "examples": [
+          {
+            "record_id": "h_00d841fab5bdb8ff6a8abb2203a6fd4cd2cfd3eb00310ad458cd330f891298d6",
+            "title": "Doy apoyo 400 por f de trabajo lima",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_02b082e3e7434b998c37142bdec5413f6949ec9322ce014174cfcc290e8ce6ef",
+            "title": "NECESITAS DINERO - BRINDO AYUDA ECONOMICA A SEÑORI",
+            "platform": "doplim"
+          },
+          {
+            "record_id": "h_02d685dc6eabcd83f995a81fba8244b81d3d9ecd0e66a605281ee160a54986aa",
+            "title": "Brindo ayuda económica constante a chicas",
+            "platform": "doplim"
+          }
+        ],
+        "model_version": "council-v5",
+        "taxonomy_version": "adintel-taxonomy-v2",
+        "v2_leaves": [
+          "so_transactional_ambiguity"
+        ]
+      }
+    ]
+  },
+  "outliers": {
+    "n_records": 5189,
+    "uses_full_data": true,
+    "n_reports": 1181,
+    "by_kind": {
+      "creative_novelty": 260,
+      "unusual_technique_combination": 13,
+      "style_outlier": 154,
+      "visual_outlier": 1,
+      "duplicate": 2,
+      "metadata_error": 751
+    },
+    "examples": {
+      "creative_novelty": [
+        {
+          "record_id": "h_239b6907cfc835790abeb530499e9aebf383cd747bf39e685426330912812c1e",
+          "score": 0.8259995487821288,
+          "method": "tfidf_cosine_distance_to_centroid",
+          "alternative_explanation": "Ad may be novel because it covers a topic the corpus rarely covers; review before classifying as creative innovation.",
+          "uncertainty": 0.4
+        },
+        {
+          "record_id": "h_86bd5d72dd627584f2b8e13b1119cb766c82a0b63677002773b36caf257c4165",
+          "score": 0.8391579887864214,
+          "method": "tfidf_cosine_distance_to_centroid",
+          "alternative_explanation": "Ad may be novel because it covers a topic the corpus rarely covers; review before classifying as creative innovation.",
+          "uncertainty": 0.4
+        },
+        {
+          "record_id": "h_351a4a3e62856f1c721ca62247d8e4e4271e83e623a17dcbfb919bd1e17d7154",
+          "score": 0.842794708279116,
+          "method": "tfidf_cosine_distance_to_centroid",
+          "alternative_explanation": "Ad may be novel because it covers a topic the corpus rarely covers; review before classifying as creative innovation.",
+          "uncertainty": 0.4
+        }
+      ],
+      "unusual_technique_combination": [
+        {
+          "record_id": "h_aca6cb11cf45ded86dba5b8ccd7723ed918a82c3006a10cce641f3e3575e66cd",
+          "score": 0.2,
+          "method": "rare_label_pair_support",
+          "alternative_explanation": "A rare combination may be a genuinely novel technique mix OR an annotation artefact; review labels.",
+          "uncertainty": 0.5
+        },
+        {
+          "record_id": "h_e6fed917118c4a933e0ed899705767f712234e42c1c76e3455e8960424e2b22b",
+          "score": 0.2,
+          "method": "rare_label_pair_support",
+          "alternative_explanation": "A rare combination may be a genuinely novel technique mix OR an annotation artefact; review labels.",
+          "uncertainty": 0.5
+        },
+        {
+          "record_id": "h_65192f7fe01bcd44dbc70b8936a9f64ac12daae82058dcebd8a5b02bac7eafae",
+          "score": 0.2,
+          "method": "rare_label_pair_support",
+          "alternative_explanation": "A rare combination may be a genuinely novel technique mix OR an annotation artefact; review labels.",
+          "uncertainty": 0.5
+        }
+      ],
+      "style_outlier": [
+        {
+          "record_id": "h_f434253642f4ad4c2a77134222692d61ff68966f90b2bff5d20b0c32347c6b1d",
+          "score": 0.6304742746210069,
+          "method": "rhetorical_feature_z_score",
+          "alternative_explanation": "Style outlier may indicate a different author, format, or platform norm rather than a problematic ad.",
+          "uncertainty": 0.4
+        },
+        {
+          "record_id": "h_6705a3607002f02ece3bee2b15e6fc6d0946aeb92e575f17e321732887f5dab8",
+          "score": 0.5850064381514408,
+          "method": "rhetorical_feature_z_score",
+          "alternative_explanation": "Style outlier may indicate a different author, format, or platform norm rather than a problematic ad.",
+          "uncertainty": 0.4
+        },
+        {
+          "record_id": "h_c39192583e00e4846d6b9c9b8a78f5a3f9e53ab3c8f22e22acf84fb28fe5fe92",
+          "score": 0.8790171400134368,
+          "method": "rhetorical_feature_z_score",
+          "alternative_explanation": "Style outlier may indicate a different author, format, or platform norm rather than a problematic ad.",
+          "uncertainty": 0.4
+        }
+      ],
+      "visual_outlier": [
+        {
+          "record_id": "h_bee2fa5b4bfc1ddd49007afeb3e21b89789528cc7d0e32b361821738e612fd12",
+          "score": 0.99999999801868,
+          "method": "visual_metadata_z_score",
+          "alternative_explanation": "v1 corpus has no image pixels; this is a metadata-only proxy. Real visual outlier detection requires archived pixels.",
+          "uncertainty": 0.6
+        }
+      ],
+      "duplicate": [
+        {
+          "record_id": "h_6d4bbddbf8f23e23ebb4c354b32ec2d248806396072a6ec8a00f901dcd85d0fa",
+          "score": 1.0,
+          "method": "exact_text_sha256",
+          "alternative_explanation": "Exact-text duplicate by hash. This is the only outlier type with certainty 1.0.",
+          "uncertainty": 0.0
+        },
+        {
+          "record_id": "h_e5d93c49203a0c2ed7dba44e7973750f1a85ffcbd3c59238e336908e03f78821",
+          "score": 1.0,
+          "method": "exact_text_sha256",
+          "alternative_explanation": "Exact-text duplicate by hash. This is the only outlier type with certainty 1.0.",
+          "uncertainty": 0.0
+        }
+      ],
+      "metadata_error": [
+        {
+          "record_id": "h_776eed5bcf78680a6d495debe5fadf0187581fdcc94d1153e7d05c50807a5092",
+          "score": 0.6,
+          "method": "metadata_cross_field_check",
+          "alternative_explanation": "source_platform and platform_family disagree. Possible metadata corruption.",
+          "uncertainty": 0.4
+        },
+        {
+          "record_id": "h_66ed40a5dd8b5ff30b88c2118ea090e8f9a579f1b961632ded184bd5abbb04ba",
+          "score": 0.6,
+          "method": "metadata_cross_field_check",
+          "alternative_explanation": "source_platform and platform_family disagree. Possible metadata corruption.",
+          "uncertainty": 0.4
+        },
+        {
+          "record_id": "h_75afe2f1d6a3ede9c3286499a28d0b36880dfa37a24218fb5cda5bf420df4453",
+          "score": 0.6,
+          "method": "metadata_cross_field_check",
+          "alternative_explanation": "source_platform and platform_family disagree. Possible metadata corruption.",
+          "uncertainty": 0.4
+        }
+      ]
+    }
+  },
+  "cluster_alignment": {
+    "n_records": 5189,
+    "v1": {
+      "k": 10,
+      "method": "TF-IDF + KMeans, top-frequency terms",
+      "feature_space": "word 1-2grams, 3000 features"
+    },
+    "adintel": {
+      "k": 5,
+      "method": "TF-IDF + KMeans, centroid-difference terms",
+      "feature_space": "word 1-2grams, 3000 features"
+    },
+    "metrics": {
+      "ARI": 0.418,
+      "AMI": 0.5175,
+      "homogeneity": 0.4321,
+      "completeness": 0.645,
+      "v_measure": 0.5175
+    },
+    "contingency_matrix": [
+      [
+        44,
+        0,
+        84,
+        10,
+        546
+      ],
+      [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        898,
+        0,
+        110,
+        32,
+        6
+      ],
+      [
+        6,
+        0,
+        867,
+        4,
+        1
+      ],
+      [
+        25,
+        0,
+        11,
+        428,
+        3
+      ],
+      [
+        24,
+        0,
+        16,
+        17,
+        407
+      ],
+      [
+        393,
+        0,
+        28,
+        10,
+        195
+      ],
+      [
+        4,
+        0,
+        20,
+        62,
+        82
+      ],
+      [
+        37,
+        0,
+        5,
+        376,
+        4
+      ],
+      [
+        190,
+        0,
+        124,
+        15,
+        5
+      ]
+    ],
+    "v1_cluster_sizes": {
+      "4": 467,
+      "5": 464,
+      "3": 878,
+      "2": 1046,
+      "6": 626,
+      "0": 684,
+      "1": 100,
+      "7": 168,
+      "9": 334,
+      "8": 422
+    },
+    "adintel_cluster_sizes": {
+      "3": 954,
+      "4": 1249,
+      "2": 1265,
+      "0": 1621,
+      "1": 100
+    },
+    "v1_terms": {
+      "0": [
+        [
+          "ayuda",
+          0.0837
+        ],
+        [
+          "economica",
+          0.0818
+        ],
+        [
+          "ayuda economica",
+          0.0817
+        ],
+        [
+          "mujeres",
+          0.0784
+        ],
+        [
+          "doy ayuda",
+          0.0728
+        ],
+        [
+          "doy",
+          0.0669
+        ],
+        [
+          "economica mujeres",
+          0.0583
+        ],
+        [
+          "redacted_contact",
+          0.0513
+        ]
+      ],
+      "1": [
+        [
+          "situacion",
+          0.2268
+        ],
+        [
+          "informacion clave",
+          0.1485
+        ],
+        [
+          "clave",
+          0.1485
+        ],
+        [
+          "situacion sentimental",
+          0.1473
+        ],
+        [
+          "de pelo",
+          0.1471
+        ],
+        [
+          "sentimental",
+          0.1464
+        ],
+        [
+          "habitacional",
+          0.1462
+        ],
+        [
+          "situacion habitacional",
+          0.1462
+        ]
+      ],
+      "2": [
+        [
+          "de",
+          0.0592
+        ],
+        [
+          "mujer",
+          0.0586
+        ],
+        [
+          "busca",
+          0.0577
+        ],
+        [
+          "hombre",
+          0.0554
+        ],
+        [
+          "una",
+          0.0527
+        ],
+        [
+          "hombre busca",
+          0.0479
+        ],
+        [
+          "busca mujer",
+          0.0474
+        ],
+        [
+          "ayuda",
+          0.0454
+        ]
+      ],
+      "3": [
+        [
+          "que",
+          0.0496
+        ],
+        [
+          "descripcion",
+          0.0485
+        ],
+        [
+          "de",
+          0.0483
+        ],
+        [
+          "para",
+          0.0473
+        ],
+        [
+          "en",
+          0.0438
+        ],
+        [
+          "si",
+          0.0428
+        ],
+        [
+          "un",
+          0.0407
+        ],
+        [
+          "con",
+          0.0397
+        ]
+      ],
+      "4": [
+        [
+          "brindo apoyo",
+          0.1202
+        ],
+        [
+          "apoyo",
+          0.1147
+        ],
+        [
+          "apoyo economico",
+          0.1081
+        ],
+        [
+          "economico",
+          0.1074
+        ],
+        [
+          "brindo",
+          0.0852
+        ],
+        [
+          "senoritas",
+          0.0461
+        ],
+        [
+          "de",
+          0.0444
+        ],
+        [
+          "economico senoritas",
+          0.0437
+        ]
+      ],
+      "5": [
+        [
+          "senoritas",
+          0.0942
+        ],
+        [
+          "ayuda",
+          0.0863
+        ],
+        [
+          "ayuda economica",
+          0.0857
+        ],
+        [
+          "economica senoritas",
+          0.0857
+        ],
+        [
+          "economica",
+          0.0855
+        ],
+        [
+          "brinda ayuda",
+          0.0659
+        ],
+        [
+          "madres",
+          0.0655
+        ],
+        [
+          "brinda",
+          0.0623
+        ]
+      ],
+      "6": [
+        [
+          "chicas",
+          0.0763
+        ],
+        [
+          "ayuda",
+          0.0731
+        ],
+        [
+          "economica",
+          0.07
+        ],
+        [
+          "ayuda economica",
+          0.0694
+        ],
+        [
+          "economica chicas",
+          0.063
+        ],
+        [
+          "de",
+          0.0565
+        ],
+        [
+          "brindo ayuda",
+          0.0555
+        ],
+        [
+          "brindo",
+          0.0488
+        ]
+      ],
+      "7": [
+        [
+          "se da",
+          0.1883
+        ],
+        [
+          "da",
+          0.18
+        ],
+        [
+          "se",
+          0.1353
+        ],
+        [
+          "da ayuda",
+          0.1219
+        ],
+        [
+          "da apoyo",
+          0.0836
+        ],
+        [
+          "senoritas",
+          0.0566
+        ],
+        [
+          "ayuda",
+          0.0533
+        ],
+        [
+          "economica",
+          0.0526
+        ]
+      ],
+      "8": [
+        [
+          "doy apoyo",
+          0.115
+        ],
+        [
+          "apoyo",
+          0.112
+        ],
+        [
+          "apoyo economico",
+          0.105
+        ],
+        [
+          "economico",
+          0.1038
+        ],
+        [
+          "doy",
+          0.0824
+        ],
+        [
+          "de",
+          0.0519
+        ],
+        [
+          "mujer",
+          0.0436
+        ],
+        [
+          "busca",
+          0.04
+        ]
+      ],
+      "9": [
+        [
+          "eres",
+          0.0695
+        ],
+        [
+          "te",
+          0.065
+        ],
+        [
+          "necesitas",
+          0.0584
+        ],
+        [
+          "tus",
+          0.0575
+        ],
+        [
+          "si eres",
+          0.0556
+        ],
+        [
+          "si",
+          0.0552
+        ],
+        [
+          "eres una",
+          0.0545
+        ],
+        [
+          "para",
+          0.0459
+        ]
+      ]
+    },
+    "adintel_terms": {
+      "0": [
+        [
+          "busca",
+          0.0531
+        ],
+        [
+          "hombre",
+          0.0513
+        ],
+        [
+          "mujer",
+          0.0509
+        ],
+        [
+          "hombre busca",
+          0.0506
+        ],
+        [
+          "busca mujer",
+          0.0504
+        ],
+        [
+          "una",
+          0.0218
+        ],
+        [
+          "soy",
+          0.0206
+        ],
+        [
+          "anos",
+          0.0177
+        ]
+      ],
+      "1": [
+        [
+          "situacion",
+          0.2255
+        ],
+        [
+          "clave",
+          0.1485
+        ],
+        [
+          "informacion clave",
+          0.1485
+        ],
+        [
+          "situacion sentimental",
+          0.1473
+        ],
+        [
+          "de pelo",
+          0.147
+        ],
+        [
+          "sentimental",
+          0.1463
+        ],
+        [
+          "habitacional",
+          0.1462
+        ],
+        [
+          "situacion habitacional",
+          0.1462
+        ]
+      ],
+      "2": [
+        [
+          "descripcion",
+          0.04
+        ],
+        [
+          "si",
+          0.0303
+        ],
+        [
+          "para",
+          0.0253
+        ],
+        [
+          "una",
+          0.0234
+        ],
+        [
+          "te",
+          0.023
+        ],
+        [
+          "la",
+          0.0224
+        ],
+        [
+          "que",
+          0.0222
+        ],
+        [
+          "tu",
+          0.0219
+        ]
+      ],
+      "3": [
+        [
+          "apoyo",
+          0.1013
+        ],
+        [
+          "apoyo economico",
+          0.099
+        ],
+        [
+          "economico",
+          0.0971
+        ],
+        [
+          "brindo apoyo",
+          0.0542
+        ],
+        [
+          "doy apoyo",
+          0.0485
+        ],
+        [
+          "economico senoritas",
+          0.0298
+        ],
+        [
+          "economico mujeres",
+          0.0254
+        ],
+        [
+          "economico chicas",
+          0.021
+        ]
+      ],
+      "4": [
+        [
+          "ayuda economica",
+          0.0548
+        ],
+        [
+          "economica",
+          0.0543
+        ],
+        [
+          "ayuda",
+          0.0539
+        ],
+        [
+          "doy ayuda",
+          0.0502
+        ],
+        [
+          "economica senoritas",
+          0.0355
+        ],
+        [
+          "redacted_contact",
+          0.0337
+        ],
+        [
+          "doy",
+          0.0335
+        ],
+        [
+          "senoritas",
+          0.0312
+        ]
+      ]
+    },
+    "verdict": "PARTIALLY_ALIGNED",
+    "explanation": "ARI=0.4180 indicates strong alignment. V1 uses k=10 with frequency terms (all clusters show 'ayuda','economica'); adintel uses k=5 with centroid-difference terms (each cluster shows unique distinguishing words). The methods are partially_aligned: v1 splits on synonym variations while adintel groups by meaningful semantic differences.",
+    "which_to_use": "adintel for cross-platform analysis (distinguishing terms, no leakage in persuasive/rhetorical spaces); v1 for backward compatibility only."
+  }
+}

@@ -54,12 +54,31 @@ def render() -> str:
     v1_inf = load_json(V1_INFERENCES)
     v1_model = load_json(V1_MODEL_REPORT)
     v1_segment = load_json(V1_SEGMENT_REPORT)
+    full_data = load_json(OUT_DIR / "full_data_results.json")
+    cluster_align = load_json(OUT_DIR / "cluster_alignment_report.json")
 
     # ------------------------------------------------------------------
-    # Build per-dimension table rows (adintel profile)
+    # Build per-dimension table rows from FULL DATA (not sample)
     # ------------------------------------------------------------------
     dim_rows = ""
-    if profile:
+    if full_data and full_data.get("profile", {}).get("dimensions"):
+        dims = full_data["profile"]["dimensions"]
+        n_recs = full_data.get("n_records", 5189)
+        for dim, stats in sorted(dims.items(), key=lambda x: -x[1]["mean"]):
+            pct = stats["mean"] * 100
+            bar_w = max(2, min(100, pct * 2))
+            prev = stats.get("prevalence", 0) * 100
+            abst = stats.get("abstention_rate", 0) * 100
+            dim_rows += f"""
+            <tr>
+              <td class="dim">{dim}</td>
+              <td><div class="bar"><div class="bar-fill" style="width:{bar_w:.1f}%"></div></div></td>
+              <td class="num">{pct:.1f}%</td>
+              <td class="num">{prev:.1f}%</td>
+              <td class="num">{abst:.1f}%</td>
+            </tr>"""
+    elif profile:
+        # Fallback to sample data
         means = profile.get("profile_dimension_means", profile.get("dimension_means", {}))
         abstains = profile.get("dimension_abstain_counts", {})
         for dim, mean in sorted(means.items(), key=lambda x: -x[1]):
@@ -71,7 +90,43 @@ def render() -> str:
               <td class="dim">{dim}</td>
               <td><div class="bar"><div class="bar-fill" style="width:{bar_w:.1f}%"></div></div></td>
               <td class="num">{pct:.1f}%</td>
+              <td class="num">—</td>
               <td class="num">{abstain}/{profile.get('n_sampled', 0)}</td>
+            </tr>"""
+
+    # ------------------------------------------------------------------
+    # Build technique results rows from FULL DATA
+    # ------------------------------------------------------------------
+    tech_rows = ""
+    if full_data and full_data.get("techniques", {}).get("results"):
+        techs = sorted(full_data["techniques"]["results"], key=lambda x: -x["count"])
+        for t in techs:
+            ex = t.get("examples", [{}])[0]
+            ex_title = ex.get("title", "")[:50]
+            ex_rid = ex.get("record_id", "")[:20]
+            v2 = ", ".join(t.get("v2_leaves", []))
+            tech_rows += f"""
+            <tr>
+              <td class="dim">{t['label']}</td>
+              <td class="num">{t['count']}</td>
+              <td class="num">{t['prevalence']*100:.1f}%</td>
+              <td class="dim">{v2}</td>
+              <td>{ex_title} <span class="small">({ex_rid}...)</span></td>
+            </tr>"""
+
+    # ------------------------------------------------------------------
+    # Build outlier rows from FULL DATA
+    # ------------------------------------------------------------------
+    outlier_rows_full = ""
+    if full_data and full_data.get("outliers", {}).get("by_kind"):
+        n_total = full_data["outliers"]["n_reports"]
+        for kind, count in sorted(full_data["outliers"]["by_kind"].items(), key=lambda x: -x[1]):
+            pct = count / max(n_total, 1) * 100
+            outlier_rows_full += f"""
+            <tr>
+              <td>{kind}</td>
+              <td class="num">{count}</td>
+              <td class="num">{pct:.1f}%</td>
             </tr>"""
 
     cluster_rows = ""
@@ -668,11 +723,18 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
   <div class="story-transition v1-to-new">↓ The taxonomy tells you <b>what</b> techniques exist; the persuasive profile tells you <b>how intensely</b> each ad uses them — across 17 independent dimensions that are never collapsed into a single "manipulation score".</div>
   <section id="adintel-profile" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">8</span><span class="step-text"><b>New: 17-dimension profile.</b> Each ad is scored on urgency, scarcity, emotional intensity, directiveness, certainty, specificity, benefit density, evidence density, social proof, objection handling, risk reversal, claim extremity, readability, offer clarity, action clarity, trust risk, and manipulation risk — independently, with abstention.</span></div>
-    <h2>adintel: Persuasive Profile — 17 Dimensions <span class="section-tag new">new</span></h2>
-    <p class="small">Sample means on n={profile.get('n_sampled', 200)} ads. The 17 dimensions are NEVER collapsed into a single universal score (enforced by <code>adintel.evidence.assert_no_universal_score</code>).</p>
+    <h2>adintel: Persuasive Profile — 17 Dimensions (Full Data, n={full_data.get('n_records', 5189)}) <span class="section-tag new">new</span></h2>
+    <p class="small">Computed on ALL {full_data.get('n_records', 5189)} records (not a sample). Run ID: <code>{full_data.get('run_id', 'N/A')}</code>. Manifest hash: <code>{full_data.get('manifest_sha256', 'N/A')}</code>. The 17 dimensions are NEVER collapsed into a single universal score.</p>
     <table>
-      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Abstained</th></tr></thead>
+      <thead><tr><th>Dimension</th><th>Score distribution</th><th class="num">Mean</th><th class="num">Prevalence</th><th class="num">Abstention</th></tr></thead>
       <tbody>{dim_rows}</tbody>
+    </table>
+
+    <h3>Technique-Level Results (Full Data, {full_data.get('n_council_annotations', 5717)} annotations)</h3>
+    <p class="small">Every technique label from the council taxonomy with count, prevalence, v2 mapping, and a real example ad.</p>
+    <table>
+      <thead><tr><th>Technique</th><th class="num">Count</th><th class="num">Prevalence</th><th>v2 Leaves</th><th>Example Ad</th></tr></thead>
+      <tbody>{tech_rows}</tbody>
     </table>
   </section>
 
@@ -686,9 +748,19 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <thead><tr><th>Space</th><th class="num">Clusters</th><th class="num">Stability ARI</th><th class="num">Pair consistency</th><th class="num">Param sens.</th><th>Brand leakage</th></tr></thead>
       <tbody>{cluster_rows}</tbody>
     </table>
-  </section>
 
-  <!-- ========== ADINTEL NEW SECTION: Authorship ========== -->
+    <h3>Quantitative Cluster Alignment (Full Data, n={cluster_align.get('comparison',{}).get('n_records',5189)})</h3>
+    <div class="tutorial">
+      <p class="small"><b>Verdict: {cluster_align.get('comparison',{}).get('verdict','N/A')}</b></p>
+      <p class="small">Both systems run on SAME {cluster_align.get('comparison',{}).get('n_records',5189)} records:</p>
+      <ul class="small">
+        <li><b>ARI</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('ARI','N/A')} | <b>AMI</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('AMI','N/A')}</li>
+        <li><b>Homogeneity</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('homogeneity','N/A')} | <b>Completeness</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('completeness','N/A')} | <b>V-measure</b>: {cluster_align.get('comparison',{}).get('metrics',{}).get('v_measure','N/A')}</li>
+        <li>V1: k=10, top-frequency terms | Adintel: k=5, centroid-difference terms</li>
+      </ul>
+      <p class="small">{cluster_align.get('comparison',{}).get('explanation','See full report for details.')}</p>
+    </div>
+  </section>
   <div class="story-transition v1-to-new">↓ Clustering groups similar ads; authorship analysis asks a different question: <b>did two ads come from the same creative source?</b> This uses stylometry, template signatures, and structural similarity — with strict privacy guardrails.</div>
   <section id="adintel-authorship" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">10</span><span class="step-text"><b>New: authorship verification.</b> Pairwise, closed-set, open-set, and creative-source clustering. Length-aware abstention for short ads. Never names a person — model similarity is never sufficient evidence for identity.</span></div>

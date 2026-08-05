@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-08-05T13:28:00Z",
+  "data_sources": {
+    "ad_manifest": {
+      "path": "data/processed/ad_manifest.jsonl",
+      "records": 5189,
+      "sha256": "609f0a5f7c511503"
+    },
+    "council_annotations": {
+      "path": "data/annotation/council_resolved_annotations.jsonl",
+      "records": 5717,
+      "sha256": "0e1fa1257828c617"
+    },
+    "similarity_links": {
+      "path": "data/annotation/similarity_links.jsonl",
+      "records": 642,
+      "sha256": "d927f4cfd9e83d51"
+    },
+    "documents": {
+      "path": "data/annotation/documents.jsonl",
+      "records": 5717,
+      "sha256": "292e00f8be97b87a"
+    },
+    "annotations_export": {
+      "path": "data/annotation/annotations_export.jsonl",
+      "records": 0,
+      "sha256": "NOT_FOUND"
+    }
+  },
+  "record_counts": {
+    "manifest_records": 5189,
+    "council_annotations": 5717,
+    "similarity_links": 642,
+    "documents": 5717,
+    "annotations_export": 0,
+    "pipeline_reports": 5189,
+    "manifest_vs_pipeline_match": true
+  },
+  "duplicates": {
+    "normalized_text_hash_duplicates": 0,
+    "unique_records": 5189
+  },
+  "platform_coverage": {
+    "doplim": 2845,
+    "locanto": 1562,
+    "ciudadanuncios": 751,
+    "facebook": 26,
+    "evisos": 3,
+    "other": 2
+  },
+  "v1_clusters": {
+    "count": 10,
+    "k": 10,
+    "method": "TF-IDF + KMeans, top-frequency terms",
+    "total_records_in_clusters": 5717
+  },
+  "adintel_clusters": {
+    "count_per_space": {
+      "persuasive": 5,
+      "semantic": 5,
+      "rhetorical": 5,
+      "visual": 3,
+      "multimodal": 5,
+      "authorial": 5,
+      "performance": 3
+    },
+    "k": 5,
+    "method": "TF-IDF + KMeans, centroid-difference distinguishing terms",
+    "sample_size": 300,
+    "uses_stratified_sampling": true,
+    "uses_full_data": false
+  },
+  "outliers": {
+    "n_sampled": 1000,
+    "n_reports": 188,
+    "by_kind": {
+      "creative_novelty": 50,
+      "unusual_technique_combination": 22,
+      "style_outlier": 26,
+      "performance_underperformer": 90
+    },
+    "uses_full_data": false
+  },
+  "key_findings": {
+    "manifest_pipeline_match": true,
+    "adintel_uses_sample_not_full": true,
+    "outlier_uses_sample_not_full": true,
+    "v1_vs_adintel_k_mismatch": true,
+    "v1_vs_adintel_method_mismatch": true
+  }
+}
