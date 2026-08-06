@@ -43,3 +43,28 @@ Stage Summary:
 - adintel package delivers all spec-required capabilities: hierarchical multi-label taxonomy, 17-dimension persuasive profile, 7-space clustering with stability/leakage/noise, 4-task authorship with abstention and privacy guardrail, 10+ outlier types with full provenance, checkpoint registry with calibration hooks and no-averaging-uncalibrated rule, JSON API with versioned typed outputs, evidence-discipline linting.
 - Real corpus metrics: 97.6% authorship accuracy on 41 known same-source pairs, 1 length-aware abstention; brand leakage eliminated in 2 of 7 cluster spaces after Round-1 fix; 188 outlier reports on 1,000-ad sample; 5,717 annotations migrated v1->v2 with 0 unmapped labels.
 - Final checkpoint verdict: PASSED WITH DOCUMENTED RISKS. Risks: weak-label provenance, image-pixel absence, single-language bias, no human gold, no negative-pair calibration set, annotation GUI still v1.
+
+---
+Task ID: SOLARIZE-ROUND-2
+Agent: main (Super Z)
+Task: Round 2 of the Solarize cycle, addressing the new constraint "all content should be in the website and accessible from the website."
+
+Work Log:
+- Research: Verified the live deployment at commit abca4d6 (previous Solarize round 1). Found that the dashboard was missing: methodology section, audit evidence section, data-download section, full per-ad table searchable in-page (only 300 top-activity ads were embedded, the full 4,540-record table was only downloadable as JSONL).
+- Red phase: Wrote 6 new live-only Playwright acceptance tests (test_11 through test_16) covering methodology, full per-ad table, audit evidence, data download, cluster-card drill-down, and uncertainty/limitations. Ran against the live deployment: 5 of 6 new tests FAILED (Red evidence saved at audit/assurance/evidence/solarize/red_phase_round2_live.json).
+- Green phase: Patched scripts/generate_adintel_dashboard.py to add three new in-website sections:
+  * #adintel-methodology: explains Wilson CI vs Wald, Cohen's h vs enrichment ratio, BH FDR vs Bonferroni, min-support=5 threshold, k=5 choice, meaningfully-different 4-part criterion, 4-way outlier classification, 3 comparison populations, deep-clustering justification gate.
+  * #adintel-audit: surfaces the Solarize audit process, Red-phase baseline, Green-phase verification, two consecutive verification rounds, build fingerprint explanation.
+  * #adintel-data: data-download section with explicit download links + a searchable full per-ad table (4,540 records) that fetches solarize_per_ad.jsonl client-side via fetch().
+- Interaction improvements: cluster-card click now sets the cluster filter (so users can see ALL members of a cluster, not just 3 samples). Full-ad-table row click pre-fills the top-300 selector and scrolls to the clustering section.
+- JS fix: replaced text.split('\n') with text.split(String.fromCharCode(10)) to avoid f-string brace-escaping issues.
+- Local smoke tests: 10/10 passed (file://-based, generator correctness). Local dashboard snapshot saved at audit/assurance/evidence/solarize/round2/local_dashboard_round2.html.
+- DEPLOY BLOCKED: The previous Solarize cycle's `gh` authentication token is no longer available in this session. The hosts.yml contains only a placeholder. `git push origin main` fails with "Authentication failed". Per the task instructions, live validation is reported as BLOCKED — no local browser evidence is substituted for live acceptance.
+
+Stage Summary:
+- Local commit (unpushed): 1a51302 feat(solarize-round2): methodology + audit + data-download + full-per-ad-table in-website
+- Local tests: 233 passed, 16 skipped (live-only), 0 failed
+- Local smoke tests: 10/10 passed
+- Live deployment: still at previous Solarize round 1 (commit abca4d6) — Round 2 changes are NOT deployed
+- Live validation: BLOCKED (push permissions unavailable)
+- Final status: PARTIAL — source changes complete, live validation blocked
