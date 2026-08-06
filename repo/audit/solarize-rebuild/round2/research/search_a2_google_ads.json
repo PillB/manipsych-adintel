@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://www.searchapi.io/google-ads-transparency-center-api",
+    "name": "Google Ads Transparency Center API",
+    "snippet": "Access Google Ads Transparency Center data via API . Get advertiser information, campaign details, and ad creatives in JSON format.\nAccess Google Ads Transparency Center data via API. Get advertiser information, campaign details, and ad creatives in JSON format.",
+    "host_name": "www.searchapi.io",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/serpapi/public-roadmap/issues/1648",
+    "name": "[Google Ads Transparency Center API] Scraping",
+    "snippet": "Jun 3, 2024 — A user requested scraping the destination URL on Google Ads transparency . 's available only for image ads . We have deployed a new update that ...",
+    "host_name": "github.com",
+    "rank": 1,
+    "date": "Jun 3, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://groups.google.com/g/adwords-api/c/ajtctkqokEc",
+    "name": "Google Ads Transparency Center",
+    "snippet": "find an API for Google Ads transparency center . I have checked and found that there is no corresponding API for this yet.",
+    "host_name": "groups.google.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://adstransparency.google.com",
+    "name": "Google Ads Transparency Center",
+    "snippet": "Easily customize the ads you see on Google Search, YouTube, and Discover - and control the info used to personalize them.\nMake your ads more useful to you Easily customize the ads you see on Google Search, YouTube, and Discover - and control the info used to personalize them.",
+    "host_name": "adstransparency.google.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.facebook.com/groups/238292430933422/posts/1027127228716601",
+    "name": "Are there Google Ads Transparency Centre API endpoints",
+    "snippet": "It looks like the only way to access the data is through BigQuery or by downloading JSON datasets. Ads transparency is now official .",
+    "host_name": "www.facebook.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

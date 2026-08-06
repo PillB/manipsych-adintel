@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://transparency.meta.com/researchtools/ad-library-tools",
+    "name": "Meta Ad Library tools | Transparency Center",
+    "snippet": "Aug 24, 2023 — The Ad Library API is an application programming interface that allows for a deeper analysis of ads about social issues, elections or politics, ...\nMeta Ad Library is a comprehensive, searchable database for ads transparency. People can use the Ad Library to get more information about the ads they see across Meta technologies.",
+    "host_name": "transparency.meta.com",
+    "rank": 0,
+    "date": "Aug 24, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.facebook.com/ads/library/api",
+    "name": "Ad Library API",
+    "snippet": "The Ad Library API helps you perform customized searches of the Ad Library for: Ads about social issues, election or politics that were delivered anywhere ...\nAds of any type that were delivered to the United Kingdom (UK) or European Union during the past year To use the API, it helps to be a little familiar with programming. For a simpler research solution, you may want to start with our Ad Library Report. To search for all ads currently running across Meta technologies, please use the Ad Library.",
+    "host_name": "www.facebook.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://admanage.ai/blog/facebook-ads-library-api",
+    "name": "Facebook Ads Library API: How to Use It (2026 Guide)",
+    "snippet": "The Ad Library API is read-only access to publicly visible ads for transparency purposes . for ads by keyword or advertiser name and see basic details like ...",
+    "host_name": "admanage.ai",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://adlibrary.com/posts/is-meta-ad-library-free",
+    "name": "Is Meta Ad Library Free? What You Get in 2026",
+    "snippet": "May 16, 2026 — Meta Ad Library is Meta's public-facing transparency tool . By 2024, it expanded beyond political file, this is genuinely enough to get started. ...",
+    "host_name": "adlibrary.com",
+    "rank": 3,
+    "date": "May 16, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.searchapi.io/meta-ad-library-api",
+    "name": "Meta Ad Library API",
+    "snippet": "Meta Ad Library API. Programmatic access to Meta's advertising transparency data . Query ads by keyword, advertiser ID, or location; Filter by ad type, platform ...",
+    "host_name": "www.searchapi.io",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

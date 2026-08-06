@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://www.w3.org/TR/WCAG22",
+    "name": "Web Content Accessibility Guidelines (WCAG) 2.2",
+    "snippet": "Dec 12, 2024 — Abstract. Web Content Accessibility Guidelines ( WCAG ) 2.2 covers a wide range of recommendations for making web content more accessible . Read more",
+    "host_name": "www.w3.org",
+    "rank": 0,
+    "date": "Dec 12, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://accessibility.arizona.edu/web-apps/focus-management",
+    "name": "Focus Management | Accessibility - The University of Arizona",
+    "snippet": "New in WCAG 2.2 : When an element receives focus , it must not be entirely hidden by other content. Common problems. Sticky headers covering focused elements ... Read more",
+    "host_name": "accessibility.arizona.edu",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://vispero.com/resources/managing-focus-and-visible-focus-indicators-practical-accessibility-guidance-for-the-web",
+    "name": "Managing Focus and Visible Focus Indicators",
+    "snippet": "Jul 9, 2025 — In this post, we'll walk through three key WCAG success criteria related to keyboard focus and explain their practical implications to help you ... Read more",
+    "host_name": "vispero.com",
+    "rank": 2,
+    "date": "Jul 9, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.w3.org/WAI/WCAG22/quickref",
+    "name": "How to Meet WCAG (Quick Reference)",
+    "snippet": "This tool provides a customizable view of WCAG 2 resources: — WCAG 2.2 , documents Content on Hover or Focus 2.",
+    "host_name": "www.w3.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://primer.style/accessibility/design-guidance/focus-management",
+    "name": "Focus management - Accessibility",
+    "snippet": "To meet WCAG Guideline 2.1 (Keyboard Accessible), all interactive elements need to be accessed and activated by a keyboard alone . How to test focus management. Read more",
+    "host_name": "primer.style",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

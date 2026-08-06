@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "round": 2,
+  "gate": "ROUND_2_STORM_RESEARCH_ARCHITECTURE",
+  "checked_at": "2026-08-06T16:45:00Z",
+  "criteria": {
+    "research_completed": {
+      "status": "PASSED",
+      "evidence": "7 research areas completed (A-G) with 21 web searches, 20+ techniques evaluated. See research_ledger.json and audit/solarize-rebuild/round2/research/search_*.json."
+    },
+    "techniques_recorded": {
+      "status": "PASSED",
+      "evidence": "Each technique records: source, date, problem, evidence strength, applicability, implementation cost, performance cost, accessibility impact, privacy implications, selected/rejected decision, rationale."
+    },
+    "two_critique_passes": {
+      "status": "PASSED",
+      "evidence": "Pass 1 (model_integrity_verifier): no unsupported recommendations. Pass 2 (accessibility_verifier): no accessibility concerns. Two consecutive quiet passes."
+    },
+    "target_architecture_designed": {
+      "status": "PASSED",
+      "evidence": "5 task-oriented sections designed: Mission Control, Analyze an Ad, Explore Evidence, Models & Adversarial Lab, Guide/Methods/Audit. See architecture_graph.json with 20 nodes and 17 edges."
+    },
+    "data_contracts_defined": {
+      "status": "PASSED",
+      "evidence": "AdEvidenceRecord (35 fields) and CapabilityManifest (15 fields) canonical records defined. Honest labeling rules (7 rules) defined. See data_contract_registry.json."
+    },
+    "gan_renaming_decision": {
+      "status": "PASSED",
+      "evidence": "GAN gate FAILED (0/8 criteria). Decision: rename to 'Rule-Based Adversarial Sandbox'. Preserve behavior, correct label. Selected as technique D4."
+    },
+    "selected_techniques_feasible": {
+      "status": "PASSED",
+      "evidence": "All selected techniques (A1-A3, B1-B2, C2-C3, D3-D4, E1-E3, F2-F3, G1+G3+G4) are feasible on static GitHub Pages without remote inference."
+    },
+    "rejected_techniques_documented": {
+      "status": "PASSED",
+      "evidence": "6 techniques rejected with rationale: B3 (multilingual transformer), C1 (CLIP), D1 (GAN-BERT), D2 (constrained LLM), F1 (temperature scaling), G2 (Shepherd.js). All classified as research-only or heavier alternative."
+    }
+  },
+  "gate_state": "PASSED — proceed to Round 3 (Red tests: write failing behavior tests before implementation)",
+  "critical_decisions": [
+    "RENAME 'GAN' → 'Rule-Based Adversarial Sandbox' (0/8 GAN gate criteria met)",
+    "INTEGRATE standalone analyzer into 'Analyze an Ad' workspace (S2)",
+    "CONSOLIDATE 22 sections into 5 task-oriented sections",
+    "REPLACE static pipeline SVG with interactive 41-node pipeline diagram",
+    "CREATE tutorial system: Driver.js (5KB) + custom FSM (~2KB) for state management",
+    "CREATE 'Ask AdIntel' local evidence assistant with deterministic templates",
+    "CREATE canonical indicator dictionary with per-indicator formula and limitations",
+    "REJECT remote inference (transformer, CLIP, LLM) — privacy constraint",
+    "LABEL all rule-based scores as 'Uncalibrated' — no model probabilities exist yet",
+    "SPLIT 12.38 MB embedded report-data JSON into lazy-loaded fetch"
+  ],
+  "next_round": "Round 3 — Red tests: write failing behavior tests for the target architecture before any implementation"
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://link.springer.com/article/10.1007/s00521-024-09505-4",
+    "name": "Adaptive temperature scaling for Robust calibration of deep",
+    "snippet": "by SA Balanya · 2024 · Cited by 99 — In this paper, we study the post-hoc calibration of modern neural networks, a problem that has drawn a lot of attention in recent years.",
+    "host_name": "link.springer.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/data-science/model-calibration-explained-a-visual-guide-with-code-examples-for-beginners-55f368bafe72",
+    "name": "Model Calibration | TDS Archive",
+    "snippet": "The Brier Score measures the mean squared difference between predicted probabilities and actual outcomes. It ranges from 0 to 1, where lower ...",
+    "host_name": "medium.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://proceedings.neurips.cc/paper/2019/hash/8ca01ea920679a0fe3728441494041b9-Abstract.html",
+    "name": "Beyond temperature scaling: Obtaining well-calibrated",
+    "snippet": "by M Kull · 2019 · Cited by 688 — Experiments demonstrate improved probabilistic predictions according to multiple measures (confidence- ECE , classwise- ECE , log-loss, Brier score ) across a wide",
+    "host_name": "proceedings.neurips.cc",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://codefinity.com/courses/v2/75aa05fa-b08d-4685-a9a7-7df97ee1910b/1461dac6-8ac2-409a-a75c-94def2e47347/2767f08a-d32c-4870-9edf-7c591e0c9add",
+    "name": "Calibration Metrics: ECE, MCE, and Brier Score",
+    "snippet": "Calibration metrics provide quantitative ways to assess how well predicted probabilities from a model reflect true outcome frequencies.",
+    "host_name": "codefinity.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://aihub.org/2024/11/28/improving-calibration-by-relating-focal-loss-temperature-scaling-and-properness",
+    "name": "Improving calibration by relating focal loss, temperature",
+    "snippet": "Nov 28, 2024 — In this blog post, we will explore how to choose a loss function to achieve good calibration , focusing on the recently proposed focal loss and ...",
+    "host_name": "aihub.org",
+    "rank": 4,
+    "date": "Nov 28, 2024",
+    "favicon": ""
+  }
+]

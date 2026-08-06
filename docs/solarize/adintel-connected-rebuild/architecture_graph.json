@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0",
+  "round": 2,
+  "node": "data_contract_architect + information_architecture_researcher",
+  "created_at": "2026-08-06T16:35:00Z",
+  "description": "Target information architecture for the Solarize AdIntel Rebuild. 5 task-oriented top-level sections with contextual subtabs, breadcrumbs, deep links, and persistent filter state.",
+  "target_architecture": {
+    "sections": [
+      {
+        "section_id": "S1",
+        "name": "Mission Control",
+        "route": "#mission-control",
+        "user_task": "Understand the full data, annotation, model, and analysis architecture at a glance",
+        "contents": [
+          "Product purpose (defensive advertising transparency research)",
+          "Corpus overview (5,738 records, 4 platforms, Peru, ayuda económica ads)",
+          "Data freshness and source coverage",
+          "Provenance (collection → annotation → model → analysis pipeline)",
+          "Model and checkpoint status (6 checkpoints, calibration status)",
+          "Material warnings (weak cluster structure, 68% density noise, no human gold)",
+          "Recent changes (Solarize Round 1-4 improvements)",
+          "Direct task entry points (Analyze an Ad, Explore Evidence, Models & Lab, Guide)",
+          "Connected pipeline diagram (interactive, 41 nodes)",
+          "Concise headline findings (top 3-5 findings with links)"
+        ],
+        "replaces": ["#metrics", "#pipeline", "#observability", "#expert-poc"],
+        "parity_map": {
+          "#metrics KPIs": "Mission Control headline findings",
+          "#pipeline SVG": "Mission Control interactive pipeline (41 nodes)",
+          "#observability table": "Mission Control model/checkpoint status",
+          "#expert-poc": "Mission Control provenance + warnings"
+        }
+      },
+      {
+        "section_id": "S2",
+        "name": "Analyze an Ad",
+        "route": "#analyze",
+        "user_task": "Paste ad copy or upload supported ad material and obtain a technically honest assessment",
+        "contents": [
+          "Text input (textarea)",
+          "Image upload (file input, marked 'Metadata Only — pixel analysis unavailable' if no VLM)",
+          "Optional metadata (platform, language, country, advertiser, date, audience)",
+          "Example inputs (safe bundled examples)",
+          "Analysis mode selector (Rule-Based Baseline, Local Lightweight Model, Enhanced Remote Model [unavailable], Precomputed Demo)",
+          "Analyze / Cancel / Retry / Clear / Compare / Save locally / Export / Submit correction buttons",
+          "Result: detected techniques (hierarchical with parent/child)",
+          "Result: text evidence spans (highlighted)",
+          "Result: 17-dimensional persuasive profile",
+          "Result: per-label score (UNCALIBRATED — honestly labeled)",
+          "Result: abstention / insufficient-evidence outcome",
+          "Result: nearest corpus examples",
+          "Result: cluster membership + explanation",
+          "Result: outlier status",
+          "Result: authorship signals + limitations",
+          "Result: model version + checkpoint + dataset version",
+          "Result: known limitations",
+          "Result: correction control (enters isolated review queue, no auto-training)",
+          "Privacy notice: 'Your submission is not stored, not sent to analytics, not added to corpus, not used for training'"
+        ],
+        "replaces": ["docs/interactive_analyzer.html (standalone)"],
+        "parity_map": {
+          "interactive_analyzer.html text input": "S2 text input",
+          "interactive_analyzer.html evidence highlighting": "S2 evidence spans",
+          "interactive_analyzer.html persuasive profile": "S2 17-dim profile",
+          "interactive_analyzer.html evidence ledger": "S2 evidence ledger",
+          "interactive_analyzer.html export": "S2 export",
+          "interactive_analyzer.html 'GAN' section": "S4 Rule-Based Adversarial Sandbox (RENAMED)"
+        },
+        "integration_note": "The standalone analyzer is INTEGRATED into this section, not deleted. The analyzer's useful capabilities (text analysis, evidence highlighting, profile, ledger, export) are preserved. The 'GAN' section is renamed and moved to S4."
+      },
+      {
+        "section_id": "S3",
+        "name": "Explore Evidence",
+        "route": "#explore",
+        "user_task": "Explore the corpus, inspect individual ads, understand techniques, clusters, outliers, authorship",
+        "contents": [
+          "Unified corpus search (by record_id, title, platform, technique, outlier kind)",
+          "Ad-level inspection (per-ad detail page with provenance, content, annotations, predictions, cluster, outlier, authorship)",
+          "Technique prevalence (hierarchical, with counts and examples)",
+          "Term networks (co-occurrence graph)",
+          "17-dimensional profile distribution",
+          "Cluster cards (distinguishing terms, sample ads, outlier rate, silhouette, ad selector with cluster filter)",
+          "4-way outlier classification (detector, density_noise, cluster_enriched, boundary)",
+          "3-population term-prevalence comparison (Wilson CI, Cohen's h, BH FDR, min-support, explicit non-difference verdict)",
+          "Authorship / common-source analysis (5-signal weighting, calibration stats, example pair)",
+          "Corpus map (2D scatter with click-to-select, filter by query, color by mode, axis labels, rich hover tooltip)",
+          "Visual analysis (image metadata distribution, quality scores — pixel data unavailable)",
+          "Model vs heuristic vs expert label comparison (per-technique source marking)",
+          "Observational and causal-analysis panels (honestly labeled as 'Association' not 'Causal Effect')",
+          "Filters and comparisons (persistent filter state across subtabs)"
+        ],
+        "replaces": ["#explorer", "#term-network", "#corpus-map", "#facet-overview", "#adintel-taxonomy", "#adintel-profile", "#adintel-clustering", "#adintel-authorship", "#adintel-outliers", "#diagnostics", "#explainability-atlas"],
+        "parity_map": {
+          "#explorer Top 25": "S3 unified corpus search",
+          "#term-network": "S3 term networks subtab",
+          "#corpus-map": "S3 corpus map subtab",
+          "#facet-overview": "S3 technique prevalence subtab",
+          "#adintel-taxonomy": "S3 technique prevalence (hierarchical view)",
+          "#adintel-profile": "S3 profile distribution subtab",
+          "#adintel-clustering": "S3 clusters subtab",
+          "#adintel-authorship": "S3 authorship subtab",
+          "#adintel-outliers": "S3 outliers subtab",
+          "#diagnostics": "S3 model vs heuristic comparison",
+          "#explainability-atlas": "S3 model vs heuristic comparison"
+        }
+      },
+      {
+        "section_id": "S4",
+        "name": "Models & Adversarial Lab",
+        "route": "#models-lab",
+        "user_task": "Understand model registry, checkpoints, calibration, adversarial generation, synthetic-data review, training validation",
+        "contents": [
+          "Model registry (rule-based detector, TF-IDF OVR logistic regression, council model)",
+          "Checkpoint registry (6 checkpoints with version, calibration status, cost, latency, abstention conditions)",
+          "Calibration evidence (Brier score, ECE — honestly labeled as 'Uncalibrated' for rule-based)",
+          "Errors and failure slices",
+          "Annotation agreement (council round 5, agreement 1.0, gold=false)",
+          "Challenge rounds (Round 1 + Round 2 defect ledgers)",
+          "Rule-Based Adversarial Sandbox (RENAMED from 'GAN' — phrase insertion + regex mutation, honestly labeled)",
+          "Contrast-set robustness testing (perturbation evaluation)",
+          "Synthetic-data quarantine workflow (generated → quarantined → safety-screened → human-reviewed → approved OR rejected)",
+          "Augmentation experiments (documented as research-only)",
+          "Ablations (feature engineering benchmark: raw TF-IDF vs LSA vs SVD-scaled)",
+          "Deployment eligibility (which models are production-ready vs research-only)"
+        ],
+        "replaces": ["#adintel-checkpoints", "#adintel-challenges", "interactive_analyzer.html 'GAN' section"],
+        "parity_map": {
+          "#adintel-checkpoints": "S4 checkpoint registry",
+          "#adintel-challenges": "S4 challenge rounds",
+          "interactive_analyzer.html 'GAN'": "S4 Rule-Based Adversarial Sandbox (RENAMED)"
+        }
+      },
+      {
+        "section_id": "S5",
+        "name": "Guide, Methods & Audit",
+        "route": "#guide",
+        "user_task": "Access tutorials, indicator dictionary, methodology, audit evidence, limitations, reproducibility",
+        "contents": [
+          "Interactive tutorials (6 modes: Quick Orientation, Analyze an Ad, Explore Evidence, Models & Lab, Indicator Workshop, Research Reproducibility)",
+          "Ask AdIntel contextual assistant (local evidence assistant with deterministic templates)",
+          "Indicator dictionary (canonical definition for every visible indicator)",
+          "Taxonomy v2 (hierarchical, 6 families, 26 leaves)",
+          "Data documentation / data card",
+          "Model card",
+          "Methodology (Wilson CI, Cohen's h, BH FDR, min-support, k=5, meaningfully-different criterion)",
+          "Limitations (weak cluster structure, 68% density noise, no human gold, no pixel data, Spanish-only)",
+          "Release history (Solarize Round 1-4)",
+          "Validation evidence (Red phase, Green phase, 2 consecutive verification rounds)",
+          "Reproducibility instructions",
+          "Known issues"
+        ],
+        "replaces": ["#adintel-methodology", "#adintel-audit", "#adintel-data", "#adintel-migration", "#research"],
+        "parity_map": {
+          "#adintel-methodology": "S5 methodology subtab",
+          "#adintel-audit": "S5 audit evidence subtab",
+          "#adintel-data": "S5 data download subtab",
+          "#adintel-migration": "S5 taxonomy subtab",
+          "#research": "S5 methodology subtab"
+        }
+      }
+    ],
+    "navigation_principles": [
+      "5 top-level sections (Mission Control, Analyze, Explore, Models & Lab, Guide)",
+      "Contextual subtabs within each section (not peer-level)",
+      "Breadcrumbs showing current location",
+      "Deep links to every ad, cluster, outlier, technique, checkpoint, indicator",
+      "Persistent filter state across subtabs",
+      "Progressive disclosure (concise default → expandable evidence → expert controls → full methodology)"
+    ]
+  },
+  "architecture_graph": {
+    "nodes": [
+      {"id": "N1_mission_control", "type": "section", "route": "#mission-control"},
+      {"id": "N2_analyze", "type": "section", "route": "#analyze"},
+      {"id": "N3_explore", "type": "section", "route": "#explore"},
+      {"id": "N4_models_lab", "type": "section", "route": "#models-lab"},
+      {"id": "N5_guide", "type": "section", "route": "#guide"},
+      {"id": "N6_pipeline", "type": "interactive_diagram", "parent": "N1"},
+      {"id": "N7_ad_grader", "type": "workspace", "parent": "N2"},
+      {"id": "N8_evidence_explorer", "type": "workspace", "parent": "N3"},
+      {"id": "N9_cluster_explorer", "type": "subtab", "parent": "N3"},
+      {"id": "N10_outlier_explorer", "type": "subtab", "parent": "N3"},
+      {"id": "N11_authorship", "type": "subtab", "parent": "N3"},
+      {"id": "N12_corpus_map", "type": "subtab", "parent": "N3"},
+      {"id": "N13_adversarial_sandbox", "type": "subtab", "parent": "N4"},
+      {"id": "N14_checkpoint_registry", "type": "subtab", "parent": "N4"},
+      {"id": "N15_synthetic_quarantine", "type": "subtab", "parent": "N4"},
+      {"id": "N16_tutorial", "type": "workspace", "parent": "N5"},
+      {"id": "N17_ask_adintel", "type": "workspace", "parent": "N5"},
+      {"id": "N18_indicator_dictionary", "type": "subtab", "parent": "N5"},
+      {"id": "N19_methodology", "type": "subtab", "parent": "N5"},
+      {"id": "N20_audit_evidence", "type": "subtab", "parent": "N5"}
+    ],
+    "edges": [
+      {"from": "N1", "to": "N2", "type": "task_entry", "label": "Analyze an Ad"},
+      {"from": "N1", "to": "N3", "type": "task_entry", "label": "Explore Evidence"},
+      {"from": "N1", "to": "N4", "type": "task_entry", "label": "Models & Lab"},
+      {"from": "N1", "to": "N5", "type": "task_entry", "label": "Guide"},
+      {"from": "N2", "to": "N3", "type": "result_link", "label": "View in corpus"},
+      {"from": "N2", "to": "N9", "type": "result_link", "label": "Cluster"},
+      {"from": "N2", "to": "N10", "type": "result_link", "label": "Outlier status"},
+      {"from": "N2", "to": "N11", "type": "result_link", "label": "Authorship"},
+      {"from": "N3", "to": "N2", "type": "ad_link", "label": "Analyze similar"},
+      {"from": "N4", "to": "N13", "type": "subtab", "label": "Adversarial Sandbox"},
+      {"from": "N4", "to": "N14", "type": "subtab", "label": "Checkpoints"},
+      {"from": "N5", "to": "N16", "type": "workspace", "label": "Tutorial"},
+      {"from": "N5", "to": "N17", "type": "workspace", "label": "Ask AdIntel"},
+      {"from": "N5", "to": "N18", "type": "subtab", "label": "Indicators"},
+      {"from": "N5", "to": "N19", "type": "subtab", "label": "Methodology"},
+      {"from": "N5", "to": "N20", "type": "subtab", "label": "Audit"}
+    ]
+  }
+}

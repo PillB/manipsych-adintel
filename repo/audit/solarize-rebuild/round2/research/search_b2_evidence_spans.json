@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11623068",
+    "name": "Hierarchical multi-label classification model for science and",
+    "snippet": "by Q Cheng · 2024 · Cited by 4 — This study proposes a hierarchical multi-label classification model for science and technology news, enhanced by heterogeneous graph semantics. Read more\nThis study proposes a hierarchical multi-label classification model for science and technology news, enhanced by heterogeneous graph semantics. The model captures multi-dimensional themes and hierarchical structural features within science and technology news through a hierarchical transmission module.",
+    "host_name": "pmc.ncbi.nlm.nih.gov",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2505.03775v1",
+    "name": "Hierarchical Multi-Label Generation with Probabilistic",
+    "snippet": "Apr 30, 2025 — Extreme Multi-Label Classification . HECTOR Ostapuk et al. ( 2024 ) uses hard label relationships to improve prediction accuracy.",
+    "host_name": "arxiv.org",
+    "rank": 1,
+    "date": "Apr 30, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://aclanthology.org/2025.ranlp-stud.2.pdf",
+    "name": "Investigating Hierarchical Structure in Multi-Label",
+    "snippet": "by A Dampa · 2025 · Cited by 2 — In the work of Ahmad et al. ( 2024b ), the authors introduce a hierarchical multi-label classification task in the field of computational linguistics. In this ... Read more 10 pages",
+    "host_name": "aclanthology.org",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://link.springer.com/article/10.1007/s11063-024-11713-x",
+    "name": "HGBL: A Fine Granular Hierarchical Multi-Label Text",
+    "snippet": "by C Zhang · 2024 · Cited by 6 — HGBL consists of four components: (1) text encoder based on fine-tuned BERT module; (2) Graphormer based label encoding module; (3) contrastive ... Read more",
+    "host_name": "link.springer.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://dl.acm.org/doi/10.1145/3653303",
+    "name": "Classifying Multi-Labels and Extracting Rationale Spans in",
+    "snippet": "The key contribution is MuLX-QA , a question-answering based framework that reformulates multi-label explainable classification as a span extraction problem.",
+    "host_name": "dl.acm.org",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

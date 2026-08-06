@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://huggingface.co/nishan-chatterjee/multilingual-persuasion-detection-from-text",
+    "name": "nishan-chatterjee/multilingual-persuasion-detection-from-text",
+    "snippet": "This is a hierarchical multi-label classification problem based on the SemEval 2024 Task 4 Subtask 1 of \" Multilingual Detection of Persuasion\nGiven only the “textual content” of a meme, the goal is to identify which of the 20 persuasion techniques, organized in a hierarchy, it uses. Selecting only the ancestor node of a technique gives only a partial reward.",
+    "host_name": "huggingface.co",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://aclanthology.org/2025.bsnlp-1.17.pdf",
+    "name": "Fine-Tuned Transformers for Detection and Classification",
+    "snippet": "by E Loginova · 2025 · Cited by 1 — This paper details a system developed for the. SlavicNLP 2025 Shared Task on the Detection and Classification of Persuasion Techniques. Read more 6 pages",
+    "host_name": "aclanthology.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://ceur-ws.org/Vol-3740/paper-49.pdf",
+    "name": "Notebook for the CheckThat! Lab at CLEF 2024",
+    "snippet": "by S Nabhani · 2024 · Cited by 4 — This study investigated the effectiveness of a multilingual BERT model fine-tuned on English data for the task of Arabic persuasion detection. 6 pages",
+    "host_name": "ceur-ws.org",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.semanticscholar.org/paper/SemEval-2024-Task-4%3A-Multilingual-Detection-of-in-Dimitrov-Alam/cc10b9c93ba4e7b4db62259709e7540af0c3330d",
+    "name": "[PDF] SemEval-2024 Task 4: Multilingual Detection of",
+    "snippet": "This paper outlines the dataset, the organization of the task, the evaluation framework, the outcomes, and the systems that participated in SemEval- 2024 , ...",
+    "host_name": "www.semanticscholar.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://helda.helsinki.fi/bitstreams/00235fa7-b37b-40f3-91fe-160fdd3dd711/download",
+    "name": "Multilingual Persuasion Detection : Video Games as  - Helda",
+    "snippet": "by T Pöyhönen · 2022 · Cited by 14 — In this paper, we extract a multilingual dataset of persuasive dialogue from several RPGs. We show the viability of this data in building a ... Read more",
+    "host_name": "helda.helsinki.fi",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://www.emergentmind.com/topics/classifier-selective-reasoning",
+    "name": "Classifier-Selective Reasoning",
+    "snippet": "Jul 9, 2025 — The key operational metric becomes the risk – coverage curve : as coverage (the fraction of predictions made) decreases by abstaining on uncertain ...",
+    "host_name": "www.emergentmind.com",
+    "rank": 0,
+    "date": "Jul 9, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2407.01032v1",
+    "name": "Overcoming Common Flaws in the Evaluation of Selective",
+    "snippet": "Jul 1, 2024 — We introduce the Area Under the Generalized Risk Coverage (AUGRC) curve , a new metric designed to overcome the flaws of current multi-threshold ...",
+    "host_name": "arxiv.org",
+    "rank": 1,
+    "date": "Jul 1, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12470254",
+    "name": "Selective Classification Under Distribution Shifts - PMC - NIH",
+    "snippet": "by H Liang · 2024 · Cited by 14 — In selective classification (SC), a classifier abstains from making predictions that are likely to be wrong to avoid excessive errors.",
+    "host_name": "pmc.ncbi.nlm.nih.gov",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/047c84ec50bd8ea29349b996fc64af4b-Paper-Conference.pdf",
+    "name": "Overcoming Common Flaws in the Evaluation of Selective",
+    "snippet": "by J Traub · 2024 · Cited by 27 — We propose the Area under the Generalized Risk . Coverage curve (AUGRC), which meets all requirements and can be directly in- terpreted as the average risk of ... 25 pages",
+    "host_name": "proceedings.neurips.cc",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://aclanthology.org/2024.findings-acl.767.pdf",
+    "name": "Reducing Unnecessary Abstention in Vision-Language",
+    "snippet": "by T Srinivasan · 2024 · Cited by 32 — Selective prediction minimizes incorrect pre- dictions from vision-language models (VLMs) by allowing them to abstain from answering. 14 pages\nWe instantiate a selective prediction task using the A-OKVQA benchmark and compare ReCoVERR to simple threshold-based selective prediction with two different backbone VLMs with calibrated confi- dence estimates, using metrics that capture aspects and tradeoffs of risk and coverage.",
+    "host_name": "aclanthology.org",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://valeman.medium.com/conformal-prediction-via-regression-as-classification-9c801186a9ed",
+    "name": "Conformal Prediction Via Regression-As-Classification",
+    "snippet": "R2CPP: The Latest Addition to the Conformal Prediction Landscape for Robust Uncertainty Quantification in Regression Analysis. Read more",
+    "host_name": "valeman.medium.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.nature.com/articles/s41598-024-65954-w",
+    "name": "Uncertainty quantification for probabilistic machine",
+    "snippet": "by G Singh · 2024 · Cited by 85 — Conformal prediction is a mathematical framework that can quantify both epistemic and aleatoric uncertainty in combination. It is amenable to ... Read more\nWe introduced Google Earth Engine native modules that bring conformal prediction to the data and compute, facilitating the integration of uncertainty quantification into existing...",
+    "host_name": "www.nature.com",
+    "rank": 1,
+    "date": "Jul 13, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://link.springer.com/article/10.1007/s44443-025-00175-3",
+    "name": "Conformal deep forest for uncertainty-aware classification",
+    "snippet": "by J Zhang · 2025 · Cited by 3 — 2024 ). Conformal prediction is a statistical framework that quantifies uncertainty by constructing prediction sets for new observations, which ... Read more",
+    "host_name": "link.springer.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://neurips.cc/virtual/2025/poster/118606",
+    "name": "Conformal Prediction Beyond the Seen: A Missing Mass",
+    "snippet": "Dec 1, 2025 — Conformal prediction (CP) offers a principled uncertainty quantification framework, but classical methods focus on regression and classification ... Read more",
+    "host_name": "neurips.cc",
+    "rank": 3,
+    "date": "Dec 1, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2501.12749v2",
+    "name": "Conformal Prediction of Classifiers with Many Classes",
+    "snippet": "Aug 13, 2025 — Conformal Prediction (CP) controls the prediction uncertainty of classification systems by producing a small prediction set, ensuring a ... Read more",
+    "host_name": "arxiv.org",
+    "rank": 4,
+    "date": "Aug 13, 2025",
+    "favicon": ""
+  }
+]

@@ -1,0 +1,433 @@
+{
+  "schema_version": "1.0",
+  "round": 2,
+  "node": "information_architecture_researcher + advertising_transparency_researcher + behavioral_science_researcher + multimodal_ml_researcher + adversarial_ml_researcher + synthetic_data_governance_researcher + tutorial_ux_researcher",
+  "created_at": "2026-08-06T16:30:00Z",
+  "description": "STORM multi-perspective research ledger. Each technique is recorded with source, date, problem, evidence strength, applicability, cost, accessibility, privacy, and selected/rejected decision.",
+  "research_areas": {
+    "A_advertising_transparency": {
+      "summary": "Studied Meta Ad Library, Google Ads Transparency Center, and EU DSA Transparency Database. Key principles: task-oriented entry points, advertiser provenance, deep links to individual ads, downloadable data, field explanations, empty states, progressive disclosure.",
+      "techniques": [
+        {
+          "technique_id": "A1",
+          "name": "Meta Ad Library API pattern",
+          "source": "https://transparency.meta.com/researchtools/ad-library-tools",
+          "date": "2023-2024",
+          "problem": "Provide public transparency into political/social-issue advertising",
+          "evidence_strength": "HIGH — production system with documented API",
+          "applicability": "HIGH — task-oriented search by keyword/advertiser, deep links to individual ads, downloadable data",
+          "implementation_cost": "LOW — static JSON + client-side search",
+          "performance_cost": "LOW",
+          "accessibility_impact": "POSITIVE — clear entry points, field explanations",
+          "privacy_implications": "NEUTRAL — public ads only",
+          "selected": true,
+          "rationale": "Meta Ad Library's task-oriented search (by keyword, advertiser, category) and individual-ad deep links directly inform the 'Explore Evidence' section design. The ManiPsych dashboard already has per-ad deep links (#adintel-ad=<rid>) but lacks a unified task-oriented search entry point."
+        },
+        {
+          "technique_id": "A2",
+          "name": "Google Ads Transparency Center — per-ad detail page",
+          "source": "https://www.searchapi.io/google-ads-transparency-center-api",
+          "date": "2024",
+          "problem": "Show advertiser provenance, campaign details, ad creatives per ad",
+          "evidence_strength": "HIGH — production system",
+          "applicability": "HIGH — per-ad detail page with provenance, creative, dates, format",
+          "implementation_cost": "LOW",
+          "performance_cost": "LOW",
+          "accessibility_impact": "POSITIVE",
+          "privacy_implications": "NEUTRAL — public ads",
+          "selected": true,
+          "rationale": "The per-ad detail page pattern (provenance + creative + dates + format) directly informs the 'AdEvidenceRecord' canonical schema. Each ad should have a detail page showing collection metadata, platform, dates, and content."
+        },
+        {
+          "technique_id": "A3",
+          "name": "EU DSA — mandatory transparency fields",
+          "source": "https://digital-strategy.ec.europa.eu/en/policies/dsa-brings-transparency",
+          "date": "2024-2025",
+          "problem": "Mandate transparency in digital advertising — targeting parameters, advertiser identity, reach",
+          "evidence_strength": "HIGH — regulatory framework",
+          "applicability": "MEDIUM — ManiPsych is defensive research, not a regulated platform, but the field-explanation principle applies",
+          "implementation_cost": "LOW",
+          "performance_cost": "LOW",
+          "accessibility_impact": "POSITIVE — field explanations required",
+          "privacy_implications": "POSITIVE — user privacy protected",
+          "selected": true,
+          "rationale": "DSA's principle of field-level explanations (every visible field has a documented meaning) directly informs the indicator dictionary requirement. Every indicator must have a plain-language definition, formula, and limitation."
+        }
+      ]
+    },
+    "B_hierarchical_persuasion": {
+      "summary": "SemEval 2023/2024 Task 3/4 established hierarchical multilabel persuasion detection as the standard. Key findings: hierarchy-aware models outperform flat classifiers; evidence-span extraction is a separate task from classification; multilingual transformers (mBERT, XLM-R) are effective baselines.",
+      "techniques": [
+        {
+          "technique_id": "B1",
+          "name": "SemEval 2024 Task 4 — Multilingual Detection of Persuasion Techniques",
+          "source": "https://propaganda.math.unipd.it/semeval2024task4",
+          "date": "2024",
+          "problem": "Hierarchical multilabel classification of persuasion techniques in memes",
+          "evidence_strength": "HIGH — peer-reviewed shared task",
+          "applicability": "HIGH — ManiPsych's taxonomy v2 is already hierarchical (6 families, 26 leaves)",
+          "implementation_cost": "MEDIUM — requires transformer fine-tuning",
+          "performance_cost": "MEDIUM — transformer inference ~50-200ms/ad",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "NEUTRAL",
+          "selected": true,
+          "rationale": "SemEval 2024 Task 4 directly validates ManiPsych's hierarchical taxonomy approach. The hierarchy-aware multilabel classification pattern should be the target for the model-backed detection path. Current rule-based detector is a valid baseline but should be honestly labeled as 'Rule-Based Baseline' not 'Model Prediction'."
+        },
+        {
+          "technique_id": "B2",
+          "name": "Evidence-span extraction (token-level annotation)",
+          "source": "https://aclanthology.org/2023.semeval-1.193",
+          "date": "2023-2024",
+          "problem": "Identify the specific text spans that support each detected technique",
+          "evidence_strength": "HIGH — SemEval 2023 Task 3 included span-level annotation",
+          "applicability": "HIGH — ManiPsych's standalone analyzer already has evidence highlighting; needs to be integrated",
+          "implementation_cost": "MEDIUM — joint classification + span extraction model or pipeline",
+          "performance_cost": "MEDIUM",
+          "accessibility_impact": "POSITIVE — evidence spans make results explainable",
+          "privacy_implications": "NEUTRAL",
+          "selected": true,
+          "rationale": "Evidence-span extraction is critical for the 'Analyze an Ad' workspace. The standalone analyzer already highlights evidence via regex matching; this should be preserved and honestly labeled as 'Rule-Based Evidence Extraction' until a model-backed span extractor is available."
+        },
+        {
+          "technique_id": "B3",
+          "name": "Multilingual transformer (mBERT/XLM-R) for Spanish ad text",
+          "source": "https://huggingface.co/nishan-chatterjee/multilingual-persuasion-detection-from-text",
+          "date": "2024",
+          "problem": "Detect persuasion techniques in multilingual text including Spanish",
+          "evidence_strength": "HIGH — published model on HuggingFace",
+          "applicability": "MEDIUM — ManiPsych corpus is Spanish; mBERT/XLM-R would need fine-tuning on the ManiPsych annotations",
+          "implementation_cost": "HIGH — requires GPU fine-tuning, model hosting, inference pipeline",
+          "performance_cost": "HIGH — transformer inference not feasible client-side on static GitHub Pages",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "NEGATIVE — if remote inference, user ad text leaves the browser",
+          "selected": false,
+          "rationale": "REJECTED for production deployment on static GitHub Pages. A multilingual transformer would require remote inference, violating the privacy constraint (process locally where feasible). Retain as a RESEARCH-ONLY baseline for future server-side deployment. The rule-based detector + evidence highlighting remains the production path."
+        }
+      ]
+    },
+    "C_multimodal_detection": {
+      "summary": "CLIP-style image-text fusion is the dominant multimodal approach. Late fusion outperforms early fusion in recent studies. Missing-modality robustness is a critical research area. VLM zero-shot baselines are useful for research but not production.",
+      "techniques": [
+        {
+          "technique_id": "C1",
+          "name": "CLIP-style image-text fusion",
+          "source": "https://openai.com/index/clip",
+          "date": "2021-2024",
+          "problem": "Jointly understand image and text content for ad analysis",
+          "evidence_strength": "HIGH — foundational model with extensive follow-up work",
+          "applicability": "MEDIUM — ManiPsych corpus is text-heavy; image metadata exists but pixel data is absent",
+          "implementation_cost": "VERY HIGH — requires CLIP model, image hosting, inference pipeline",
+          "performance_cost": "VERY HIGH — not feasible client-side",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "NEGATIVE — image upload to remote service",
+          "selected": false,
+          "rationale": "REJECTED for production. ManiPsych's corpus has image metadata (image_count, quality_score) but no pixel data. CLIP would require image upload to a remote service, violating the privacy constraint. Retain as RESEARCH-ONLY for future multimodal expansion. The production path honestly marks image analysis as 'Metadata Only — pixel data not available'."
+        },
+        {
+          "technique_id": "C2",
+          "name": "Late fusion (text features + image metadata)",
+          "source": "https://www.mdpi.com/2076-3417/15/11/5823",
+          "date": "2025",
+          "problem": "Combine text features with image metadata for improved classification",
+          "evidence_strength": "HIGH — 2025 study shows late fusion outperforms early fusion",
+          "applicability": "HIGH — ManiPsych already has image metadata (image_count, quality_score, is_featured) that can be fused with text features",
+          "implementation_cost": "LOW — concatenate metadata features with TF-IDF",
+          "performance_cost": "LOW",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "NEUTRAL — metadata only, no pixel data",
+          "selected": true,
+          "rationale": "Late fusion of text TF-IDF + image metadata is feasible on static GitHub Pages. The current 'multimodal' cluster space already does this. Should be honestly labeled as 'Text + Metadata Fusion' not 'Multimodal Model'."
+        },
+        {
+          "technique_id": "C3",
+          "name": "Missing-modality robust inference",
+          "source": "https://www.ijcai.org/proceedings/2025/0274.pdf",
+          "date": "2025",
+          "problem": "Handle cases where image is not provided (text-only ad assessment)",
+          "evidence_strength": "HIGH — IJCAI 2025 paper",
+          "applicability": "HIGH — the 'Analyze an Ad' workspace must handle text-only input gracefully",
+          "implementation_cost": "LOW — fallback to text-only path with honest 'Image analysis unavailable' message",
+          "performance_cost": "LOW",
+          "accessibility_impact": "POSITIVE — clear unavailable state",
+          "privacy_implications": "NEUTRAL",
+          "selected": true,
+          "rationale": "The 'Analyze an Ad' workspace must honestly handle missing image input. When no image is provided, the system falls back to text-only analysis with a visible 'Image analysis unavailable — text-only mode' indicator. This follows the spec's 'Honest execution modes' requirement."
+        }
+      ]
+    },
+    "D_adversarial_improvement": {
+      "summary": "GAN-BERT is a genuine adversarial ML technique for semi-supervised text classification. Constrained LLM generation is a newer, safer alternative. Contrast-set evaluation is the gold standard for robustness testing. The current 'GAN' in ManiPsych is NONE of these — it's phrase injection + regex mutation.",
+      "techniques": [
+        {
+          "technique_id": "D1",
+          "name": "GAN-BERT (genuine adversarial semi-supervised learning)",
+          "source": "https://medium.com/data-science/semi-supervised-intent-classification-with-gan-bert",
+          "date": "2024-2026",
+          "problem": "Improve text classification with limited labeled data using adversarial training",
+          "evidence_strength": "HIGH — peer-reviewed, multiple follow-up papers (PrefGAN-BERT, CDGAN-BERT)",
+          "applicability": "LOW — requires GPU training, discriminator model, adversarial loss optimization",
+          "implementation_cost": "VERY HIGH — GPU training, model hosting, reproducible checkpoints",
+          "performance_cost": "VERY HIGH",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "NEUTRAL — training is offline",
+          "selected": false,
+          "rationale": "REJECTED for production. GAN-BERT is a legitimate adversarial ML technique but requires server-side GPU training and hosting. ManiPsych runs on static GitHub Pages. Retain as a RESEARCH-ONLY baseline with a genuine GAN experiment documented in the lab. The current 'GAN' in the standalone analyzer does NOT meet any GAN-BERT criteria and must be renamed."
+        },
+        {
+          "technique_id": "D2",
+          "name": "Constrained LLM adversarial generation",
+          "source": "https://proceedings.mlr.press/v235/beurer-kellner24a.html",
+          "date": "2024",
+          "problem": "Generate adversarial text examples using constrained LLM decoding",
+          "evidence_strength": "HIGH — PMLR 2024, cited 157 times",
+          "applicability": "MEDIUM — could generate challenge examples for detector testing",
+          "implementation_cost": "HIGH — requires LLM API or local LLM inference",
+          "performance_cost": "HIGH",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "NEGATIVE — if remote LLM, ad text leaves browser",
+          "selected": false,
+          "rationale": "REJECTED for production due to privacy constraint (no remote inference of user-submitted ad text). Retain as RESEARCH-ONLY for offline challenge-set generation. The production adversarial path remains the 'Rule-Based Adversarial Sandbox' (renamed from 'GAN')."
+        },
+        {
+          "technique_id": "D3",
+          "name": "Contrast-set evaluation",
+          "source": "https://cs.stanford.edu/~nfliu/papers/contrastsets.emnlpfindings2020.pdf",
+          "date": "2020-2024",
+          "problem": "Evaluate model robustness by testing minimal perturbations of inputs",
+          "evidence_strength": "HIGH — EMNLP findings, foundational robustness evaluation method",
+          "applicability": "HIGH — ManiPsych should build contrast sets for the persuasion detector",
+          "implementation_cost": "LOW — perturbation rules are simple",
+          "performance_cost": "LOW — client-side evaluation",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "POSITIVE — uses pre-built challenge sets, no user data",
+          "selected": true,
+          "rationale": "Contrast-set evaluation is the honest, feasible approach to detector robustness testing on static GitHub Pages. The Rule-Based Adversarial Sandbox already does a primitive version of this (phrase insertion + re-detection). Should be reframed as 'Contrast-Set Robustness Testing' rather than 'GAN Training'."
+        },
+        {
+          "technique_id": "D4",
+          "name": "Rule-Based Adversarial Sandbox (RENAME of current 'GAN')",
+          "source": "ManiPsych existing implementation (interactive_analyzer.html)",
+          "date": "2024-2026",
+          "problem": "Find detector gaps by inserting phrases and re-running detection",
+          "evidence_strength": "LOW — not a published technique, but a useful engineering tool",
+          "applicability": "HIGH — already implemented, works client-side",
+          "implementation_cost": "ZERO — already exists",
+          "performance_cost": "LOW",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "POSITIVE — fully local, no remote inference",
+          "selected": true,
+          "rationale": "SELECTED for production with CORRECTED NAMING. The existing 'GAN' is not a GAN — it's a rule-based adversarial sandbox that inserts phrases from a predefined list and re-runs regex detection. This is a legitimate detector-gap-discovery tool. Rename to 'Rule-Based Adversarial Sandbox' or 'Adversarial Phrase Perturbation Prototype'. Preserve the behavior, correct the label."
+        }
+      ]
+    },
+    "E_synthetic_data_governance": {
+      "summary": "Synthetic data memorization, near-duplication, and distribution shift are critical risks. Quarantine + human review + safety screening are required before any synthetic example reaches training. ManiPsych must not auto-train on user submissions.",
+      "techniques": [
+        {
+          "technique_id": "E1",
+          "name": "Synthetic data memorization screening",
+          "source": "https://arxiv.org/html/2501.03941v1",
+          "date": "2025",
+          "problem": "Detect when synthetic data memorizes real training examples",
+          "evidence_strength": "HIGH — arxiv 2025, active research area",
+          "applicability": "HIGH — if ManiPsych ever generates synthetic ads, must screen for memorization",
+          "implementation_cost": "MEDIUM — exact-match + near-duplicate + embedding similarity",
+          "performance_cost": "MEDIUM",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "POSITIVE — protects against privacy leakage",
+          "selected": true,
+          "rationale": "If the Rule-Based Adversarial Sandbox generates variants, each must be screened for exact-match and near-duplicate against the real corpus before any use. This is a hard requirement — no synthetic example may be used without memorization screening."
+        },
+        {
+          "technique_id": "E2",
+          "name": "Synthetic-data quarantine + human review pipeline",
+          "source": "https://dl.acm.org/doi/10.1145/3715275.3732005",
+          "date": "2024-2025",
+          "problem": "Ensure synthetic examples are reviewed, safety-screened, and approved before training",
+          "evidence_strength": "HIGH — ACM published, industry standard",
+          "applicability": "HIGH — ManiPsych must document the quarantine workflow even if not actively generating",
+          "implementation_cost": "LOW — documented workflow + review queue UI",
+          "performance_cost": "LOW",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "POSITIVE — human review gate",
+          "selected": true,
+          "rationale": "The spec requires a visible quarantine workflow: generated → quarantined → safety-screened → human-reviewed → approved-for-training OR rejected. Even though ManiPsych doesn't auto-train, the workflow must be documented and visible in the 'Models & Adversarial Lab' section."
+        },
+        {
+          "technique_id": "E3",
+          "name": "No automatic training ingestion",
+          "source": "Spec Section 12: 'Corrections enter an isolated review queue... never trigger automatic retraining'",
+          "date": "2026",
+          "problem": "Prevent user submissions from automatically reaching training",
+          "evidence_strength": "HIGH — spec requirement",
+          "applicability": "CRITICAL — hard requirement",
+          "implementation_cost": "ZERO — just don't do it",
+          "performance_cost": "ZERO",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "POSITIVE",
+          "selected": true,
+          "rationale": "Hard requirement: user-submitted ad assessments and corrections NEVER reach training automatically. They enter an isolated review queue or downloadable review package. The 'Analyze an Ad' workspace must clearly state 'Your submission is not stored, not sent to analytics, not added to the corpus, and not used for training.'"
+        }
+      ]
+    },
+    "F_calibration_abstention": {
+      "summary": "Temperature scaling is the standard post-hoc calibration method. ECE and Brier score are standard calibration metrics. Selective classification with risk-coverage curves is the standard abstention approach. Conformal prediction is newer but requires exchangeability assumptions.",
+      "techniques": [
+        {
+          "technique_id": "F1",
+          "name": "Temperature scaling for post-hoc calibration",
+          "source": "https://link.springer.com/article/10.1007/s00521-024-09505-4",
+          "date": "2024",
+          "problem": "Calibrate model confidence scores post-hoc without retraining",
+          "evidence_strength": "HIGH — standard technique, cited 99 times in 2024",
+          "applicability": "MEDIUM — ManiPsych's current 'confidence' values are rule-based scores, not model probabilities",
+          "implementation_cost": "LOW — single temperature parameter",
+          "performance_cost": "ZERO — inference-time scaling",
+          "accessibility_impact": "NEUTRAL",
+          "privacy_implications": "NEUTRAL",
+          "selected": false,
+          "rationale": "REJECTED for current production because there are no model probabilities to calibrate. The rule-based detector produces heuristic scores (0.0-1.0) that are NOT calibrated probabilities. Temperature scaling would be misleading. When a model-backed detector is available, temperature scaling should be applied. Until then, scores must be labeled 'Rule-Based Score (Uncalibrated)' not 'Confidence' or 'Probability'."
+        },
+        {
+          "technique_id": "F2",
+          "name": "Selective classification / abstention",
+          "source": "https://arxiv.org/html/2407.01032v1",
+          "date": "2024",
+          "problem": "Allow the system to abstain when uncertain",
+          "evidence_strength": "HIGH — arxiv 2024, active research",
+          "applicability": "HIGH — ManiPsych should abstain on short text, ambiguous cases, out-of-distribution input",
+          "implementation_cost": "LOW — threshold-based abstention",
+          "performance_cost": "ZERO",
+          "accessibility_impact": "POSITIVE — honest 'Insufficient Evidence' outcome",
+          "privacy_implications": "NEUTRAL",
+          "selected": true,
+          "rationale": "Abstention is critical for honesty. The 'Analyze an Ad' workspace must support an 'Insufficient Evidence' outcome when the text is too short, the techniques are ambiguous, or the input is out-of-distribution. The authorship module already has length-aware abstention (below 15 tokens = INSUFFICIENT_EVIDENCE). This pattern should extend to the ad grader."
+        },
+        {
+          "technique_id": "F3",
+          "name": "Honest confidence labeling (NO calibration until model exists)",
+          "source": "Spec Section 3: 'Never call... a heuristic score calibrated confidence'",
+          "date": "2026",
+          "problem": "Prevent misleading confidence labels",
+          "evidence_strength": "HIGH — spec requirement",
+          "applicability": "CRITICAL — hard requirement",
+          "implementation_cost": "ZERO — relabeling",
+          "performance_cost": "ZERO",
+          "accessibility_impact": "POSITIVE — honest labeling",
+          "privacy_implications": "NEUTRAL",
+          "selected": true,
+          "rationale": "All current scores must be relabeled: 'Rule-Based Score (Uncalibrated)' instead of 'Confidence', 'Heuristic Match' instead of 'Model Prediction', 'Association' instead of 'Causal Effect'. The methodology section already explains this; the UI labels must follow."
+        }
+      ]
+    },
+    "G_interactive_tutorials": {
+      "summary": "Driver.js is the lightest, most accessible tutorial library (no dependencies, 5KB). Shepherd.js is more feature-rich but heavier. A custom finite-state engine offers maximum control but requires more development. WCAG 2.2 requires focus management, visible focus, and keyboard support.",
+      "techniques": [
+        {
+          "technique_id": "G1",
+          "name": "Driver.js — lightweight no-dependency tutorial library",
+          "source": "https://driverjs.com",
+          "date": "2024-2026",
+          "problem": "Provide product tours and feature highlights with minimal bundle cost",
+          "evidence_strength": "HIGH — production library, 21k GitHub stars",
+          "applicability": "HIGH — 5KB gzipped, no dependencies, works on static sites",
+          "implementation_cost": "LOW — drop-in script + config",
+          "performance_cost": "VERY LOW — 5KB",
+          "accessibility_impact": "MEDIUM — has keyboard support but focus management needs custom work",
+          "privacy_implications": "POSITIVE — fully local",
+          "selected": true,
+          "rationale": "Driver.js is the best fit for ManiPsych's static GitHub Pages constraint. At 5KB gzipped with no dependencies, it adds negligible weight. It supports keyboard navigation, highlights, and popovers. However, the spec requires event-driven advancement, local persistence, and pause/resume/restart — these need a custom state machine wrapping Driver.js. SELECTED as the overlay engine, with a custom FSM for state management."
+        },
+        {
+          "technique_id": "G2",
+          "name": "Shepherd.js — feature-rich tutorial library",
+          "source": "https://blog.logrocket.com/best-product-tour-js-libraries-frontend-apps",
+          "date": "2024",
+          "problem": "Provide extensive customization and framework integration",
+          "evidence_strength": "HIGH — production library",
+          "applicability": "MEDIUM — more features but heavier (40KB+)",
+          "implementation_cost": "LOW",
+          "performance_cost": "MEDIUM — 40KB+",
+          "accessibility_impact": "MEDIUM — better built-in accessibility than Driver.js",
+          "privacy_implications": "POSITIVE — local",
+          "selected": false,
+          "rationale": "REJECTED in favor of Driver.js due to bundle size (40KB vs 5KB) and the spec's preference for the lightest justified architecture. Shepherd.js's extra features (framework integration, advanced positioning) are not needed for ManiPsych's use case."
+        },
+        {
+          "technique_id": "G3",
+          "name": "Custom finite-state tutorial engine + Driver.js overlay",
+          "source": "Spec Section 18 + Driver.js",
+          "date": "2026",
+          "problem": "Event-driven advancement, local persistence, pause/resume/restart/reset, version migration",
+          "evidence_strength": "HIGH — spec requirement",
+          "applicability": "CRITICAL — hard requirement",
+          "implementation_cost": "MEDIUM — custom FSM with localStorage persistence",
+          "performance_cost": "LOW — ~2KB custom JS + 5KB Driver.js",
+          "accessibility_impact": "POSITIVE — full focus management control",
+          "privacy_implications": "POSITIVE — localStorage only, no server",
+          "selected": true,
+          "rationale": "The spec requires event-driven advancement (not just Next-button clicks), local persistence (survive refresh), pause/resume/restart/reset, version migration, and missing-target recovery. Driver.js alone doesn't provide these. A custom FSM (~2KB) wrapping Driver.js for overlay rendering gives full control. State persists in localStorage with version keys. This is the selected architecture for the tutorial system."
+        },
+        {
+          "technique_id": "G4",
+          "name": "WCAG 2.2 focus management for tutorials",
+          "source": "https://www.w3.org/TR/WCAG22",
+          "date": "2024",
+          "problem": "Ensure tutorial is accessible — focus placement, restoration, Escape behavior",
+          "evidence_strength": "HIGH — W3C standard",
+          "applicability": "CRITICAL — hard requirement",
+          "implementation_cost": "LOW — focus management in custom FSM",
+          "performance_cost": "ZERO",
+          "accessibility_impact": "CRITICAL — enables keyboard-only operation",
+          "privacy_implications": "NEUTRAL",
+          "selected": true,
+          "rationale": "WCAG 2.2 requires: visible focus, focus placement on step start, focus restoration on step end, Escape to pause/exit, no content hidden by sticky headers when focused. The custom FSM must implement these. WCAG 2.2 AA is the target."
+        }
+      ]
+    }
+  },
+  "selected_techniques_summary": {
+    "advertising_transparency": ["A1 (Meta Ad Library pattern)", "A2 (per-ad detail page)", "A3 (DSA field explanations)"],
+    "hierarchical_persuasion": ["B1 (SemEval hierarchy validation)", "B2 (evidence-span extraction)"],
+    "multimodal": ["C2 (late fusion text+metadata)", "C3 (missing-modality handling)"],
+    "adversarial": ["D3 (contrast-set evaluation)", "D4 (Rule-Based Adversarial Sandbox — RENAMED)"],
+    "synthetic_data": ["E1 (memorization screening)", "E2 (quarantine pipeline)", "E3 (no auto-training)"],
+    "calibration": ["F2 (abstention)", "F3 (honest confidence labeling)"],
+    "tutorial": ["G1 (Driver.js overlay)", "G3 (custom FSM + Driver.js)", "G4 (WCAG 2.2 focus)"]
+  },
+  "rejected_techniques_summary": {
+    "multilingual_transformer": "B3 — requires remote inference, violates privacy constraint",
+    "CLIP_fusion": "C1 — requires image upload to remote service, violates privacy",
+    "GAN_BERT": "D1 — requires GPU training, not feasible on static GitHub Pages",
+    "constrained_LLM": "D2 — requires remote LLM, violates privacy",
+    "temperature_scaling": "F1 — no model probabilities to calibrate yet",
+    "Shepherd_js": "G2 — heavier than Driver.js (40KB vs 5KB)"
+  },
+  "critique_passes": [
+    {
+      "pass": 1,
+      "critic": "model_integrity_verifier",
+      "findings": [
+        "All selected techniques are feasible on static GitHub Pages without remote inference",
+        "The GAN renaming is justified — 0/8 gate criteria met",
+        "The rejected techniques (transformer, CLIP, GAN-BERT) are correctly classified as research-only",
+        "The tutorial architecture (Driver.js + custom FSM) is the lightest viable option",
+        "No unsupported architecture recommendations found"
+      ],
+      "verdict": "PASS — no unsupported recommendations"
+    },
+    {
+      "pass": 2,
+      "critic": "accessibility_verifier",
+      "findings": [
+        "WCAG 2.2 focus management is included in the tutorial design",
+        "Honest labeling (F3) improves accessibility by reducing confusion",
+        "Missing-modality handling (C3) provides clear unavailable states",
+        "Driver.js has keyboard support; custom FSM adds focus restoration",
+        "No accessibility concerns with selected techniques"
+      ],
+      "verdict": "PASS — two consecutive critique passes find no unsupported architecture recommendation"
+    }
+  ],
+  "gate_state": "PASSED — two consecutive critique passes complete. Proceed to target information architecture design."
+}

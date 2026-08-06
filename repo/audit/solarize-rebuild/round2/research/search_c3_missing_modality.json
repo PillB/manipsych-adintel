@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://www.ijcai.org/proceedings/2025/0274.pdf",
+    "name": "Enhancing Multimodal Model Robustness Under Missing",
+    "snippet": "by Y Zhao · Cited by 9 — Consequently, many researchers have focused on improving the robustness of multimodal models in scenarios with missing modalities. [Zhao et al., 2024b; Reza et ...",
+    "host_name": "www.ijcai.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://eccv.ecva.net/virtual/2024/poster/2300",
+    "name": "Missing Modality Prediction for Unpaired Multimodal",
+    "snippet": "This framework enables the model to predict the embedding of a missing modality in the representation space during inference.",
+    "host_name": "eccv.ecva.net",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2310.03986v3",
+    "name": "Robust Multimodal Learning with Missing Modalities via",
+    "snippet": "To enable robustness to missing modalities, we propose a simple and parameter-efficient adaptation procedure for pretrained multimodal networks.",
+    "host_name": "arxiv.org",
+    "rank": 2,
+    "date": "Feb 26, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://csiplab.github.io/Missing-Modality-Adaptation",
+    "name": "Robust Multimodal Learning with Missing Modalities",
+    "snippet": "To enable robustness to missing modalities, we propose a simple and parameter-efficient adaptation procedure for pretrained multimodal networks.",
+    "host_name": "csiplab.github.io",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://dl.acm.org/doi/full/10.1145/3746456",
+    "name": "Multimodal Inference with Fully Missing Modalities",
+    "snippet": "by J Geraghty · 2025 · Cited by 6 — In this article, we propose Cross-Modal Association Models (C-MAMs), a novel approach for handling missing modalities during inference in ...",
+    "host_name": "dl.acm.org",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

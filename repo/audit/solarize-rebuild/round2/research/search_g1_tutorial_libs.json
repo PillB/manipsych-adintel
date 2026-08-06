@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://inlinemanual.com/blog/driverjs-vs-introjs-vs-shepherdjs-vs-reactour",
+    "name": "Driver.js vs Intro.js vs Shepherd.js vs Reactour",
+    "snippet": "Mar 2, 2026 — Driver . js vs Intro.js vs Shepherd . js vs Reactour. A practical guide to choosing an open-source walkthrough library (2026). Read more\nCompare Driver.js, Intro.js, Shepherd.js, and Reactour for product tours and walkthroughs. Pick the best open-source onboarding library for your stack and licensing needs.",
+    "host_name": "inlinemanual.com",
+    "rank": 0,
+    "date": "Mar 2, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://blog.logrocket.com/best-product-tour-js-libraries-frontend-apps",
+    "name": "7 best product tour JavaScript libraries for frontend apps",
+    "snippet": "Jul 29, 2024 — Shepherd.js offers extensive customization options and seamless integration with your application. It prioritizes accessibility with full ... Read more",
+    "host_name": "blog.logrocket.com",
+    "rank": 1,
+    "date": "Jul 29, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://driverjs.com",
+    "name": "Driver.js - Product Tours & Highlights in Vanilla JS",
+    "snippet": "Driver.js is a lightweight, no-dependency JavaScript library for building product tours, feature highlights, hints and contextual help.",
+    "host_name": "driverjs.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://usertourkit.com/blog/react-tour-library-benchmark-2026",
+    "name": "React Joyride vs Shepherd vs Tour Kit vs Driver.js vs Intro.js",
+    "snippet": "Apr 7, 2026 — We benchmarked 5 React tour libraries on bundle size, init time, CWV impact, and accessibility . Actual numbers, not marketing claims.\nWe benchmarked 5 React tour libraries on bundle size, init time, CWV impact, and accessibility. Actual numbers, not marketing claims.",
+    "host_name": "usertourkit.com",
+    "rank": 3,
+    "date": "Apr 7, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://forum.openrefine.org/t/open-source-onboarding-libraries/1124",
+    "name": "Open source onboarding libraries - Development & Design",
+    "snippet": "Dec 15, 2023 — Shepherd . js got support for things like Driver . js's Async Tour too, through promises and native event-listeners, I have used it for years. It ... Read more",
+    "host_name": "forum.openrefine.org",
+    "rank": 4,
+    "date": "Dec 15, 2023",
+    "favicon": ""
+  }
+]

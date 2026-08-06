@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://arxiv.org/html/2404.01569v1",
+    "name": "Evaluating Large Language Models Using Contrast Sets",
+    "snippet": "The examples highlighted above demonstrate a significant challenge in natural language processing : the robustness of machine learning models in the face of the ... Read more\nTo assess if current models have acquired knowledge beyond these rudimentary patterns, we propose a contrast set designed to challenge inadequate models by modifying test examples.",
+    "host_name": "arxiv.org",
+    "rank": 0,
+    "date": "Apr 2, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.researchgate.net/publication/340474859_Evaluating_NLP_Models_via_Contrast_Sets",
+    "name": "(PDF) Evaluating NLP Models via Contrast Sets",
+    "snippet": "Apr 6, 2020 — Contrast sets provide a local view of a model's decision boundary, which can be used to more accurately evaluate a model's true linguistic ... Read more",
+    "host_name": "www.researchgate.net",
+    "rank": 1,
+    "date": "Apr 6, 2020",
+    "favicon": ""
+  },
+  {
+    "url": "https://cs.stanford.edu/~nfliu/papers/contrastsets.emnlpfindings2020.pdf",
+    "name": "Evaluating Models' Local Decision Boundaries via Contrast Sets",
+    "snippet": "Contrast sets provide a local view of a model's decision boundary, which can be used to more accurately evaluate a model's true lin- guistic capabilities. We ... Read more 17 pages",
+    "host_name": "cs.stanford.edu",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00591/117218/Exploring-Contrast-Consistency-of-Open-Domain",
+    "name": "Exploring Contrast Consistency of Open-Domain Question",
+    "snippet": "by Z Zhang · 2023 · Cited by 4 — In this work, we collect minimally edited questions as challenging contrast sets to evaluate OpenQA models.",
+    "host_name": "direct.mit.edu",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.ruder.io/nlp-benchmarking",
+    "name": "Challenges and Opportunities in NLP Benchmarking",
+    "snippet": "Aug 23, 2021 — Recent NLP models have outpaced the benchmarks to test for them. This post provides an overview of challenges and opportunities for NLP ...",
+    "host_name": "www.ruder.io",
+    "rank": 4,
+    "date": "Aug 23, 2021",
+    "favicon": ""
+  }
+]

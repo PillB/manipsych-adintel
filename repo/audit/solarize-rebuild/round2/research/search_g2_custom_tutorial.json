@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://mehmet-tosun.medium.com/finite-state-machines-with-martendb-an-in-depth-guide-1b8a3b35f95c",
+    "name": "Finite State Machines with MartenDB: An In-Depth Guide",
+    "snippet": "In this article, we'll explore how to implement a Finite State Machine (FSM) using MartenDB in a .NET Core application. we'll use MartenDB for  ...",
+    "host_name": "mehmet-tosun.medium.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.facebook.com/groups/godotengine/posts/889780024491926",
+    "name": "Lerning more about Finite states machine, they are really",
+    "snippet": "Here's a recorded tutorial that provides an in depth look on modeling state machines with Stateflow: Modeling State Machines with Stateflow | ...",
+    "host_name": "www.facebook.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://gdquest.com/tutorial/godot/design-patterns/finite-state-machine",
+    "name": "Make a Finite State Machine in Godot 4",
+    "snippet": "Jul 31, 2024 — In this guide , you will learn how to create a Finite State Machine (FSM) in Godot 4. breaking it down into separate states .",
+    "host_name": "gdquest.com",
+    "rank": 2,
+    "date": "Jul 31, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://temporal.io/blog/temporal-replaces-state-machines-for-distributed-applications",
+    "name": "Temporal: Beyond State Machines for Reliable Distributed",
+    "snippet": "Jul 20, 2026 — A state machine (or finite state machine — FSM) is a well-known paradigm for modeling the process logic by defining all possible states and ...",
+    "host_name": "temporal.io",
+    "rank": 3,
+    "date": "Jul 20, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.codurance.com/publications/2019/11/15/crafting-websites-using-finite-state-machines-part-i",
+    "name": "Crafting web apps using finite state machines - Part 1",
+    "snippet": "Nov 15, 2019 — Step 1 Draw the diagram of the UI state machine · Step 2: Domain modelling · Step 3: Solve the data problem · Step 4: Build the UI.",
+    "host_name": "www.codurance.com",
+    "rank": 4,
+    "date": "Nov 15, 2019",
+    "favicon": ""
+  }
+]

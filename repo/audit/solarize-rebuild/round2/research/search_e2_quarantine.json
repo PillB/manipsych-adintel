@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://dl.acm.org/doi/10.1145/3715275.3732005",
+    "name": "Examining the Expanding Role of Synthetic Data",
+    "snippet": "Within the training stage of the AI pipeline, synthetic data is used to improve generative model capabilities .",
+    "host_name": "dl.acm.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://datacebo.com/blog/synthetic-data-in-2024-the-year-in-review",
+    "name": "Synthetic Data in 2024: The Year In Review",
+    "snippet": "Dec 26, 2024 — A new report from Allied Market Research this month indicates that the global synthetic data market is estimated to reach $3.1 billion by 2031.",
+    "host_name": "datacebo.com",
+    "rank": 1,
+    "date": "Dec 26, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.k2view.com/what-is-synthetic-data-generation",
+    "name": "What is Synthetic Data Generation? A Practical Guide",
+    "snippet": "Jan 26, 2026 — Synthetic data generation is the process of creating artificial data that mimics the features, structures, and statistical attributes of ...",
+    "host_name": "www.k2view.com",
+    "rank": 2,
+    "date": "Jan 26, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2404.14445v2",
+    "name": "A Multi-Faceted Evaluation Framework for Assessing",
+    "snippet": "Jul 24, 2025 — To generate synthetic review data , we select 50 samples from a dataset of software product reviews to train LLMs through prompting techniques.",
+    "host_name": "arxiv.org",
+    "rank": 3,
+    "date": "Jul 24, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1f0wbfy/anyone_actually_using_synthetic_data_in_ml_how",
+    "name": "Anyone Actually Using Synthetic Data in ML? How Did It",
+    "snippet": "It can work really well . However, at least in computer vision, I haven't seen anyone get good results with synthetic data. I remember one ...",
+    "host_name": "www.reddit.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

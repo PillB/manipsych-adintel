@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8921642",
+    "name": "Multimodal deep learning for biomedical data fusion: a review",
+    "snippet": "by SR Stahlschmidt · 2022 · Cited by 946 — Largely, fusion strategies can be categorized according to the state of the input to the fusion layers into early , intermediate and late fusion ...",
+    "host_name": "pmc.ncbi.nlm.nih.gov",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.sciencedirect.com/science/article/pii/S2001037025004404",
+    "name": "Multimodal fusion strategies for survival prediction in breast",
+    "snippet": "by A Sucre · 2025 · Cited by 11 — The OM+CL late fusion model outperformed all early fusion and established late and intermediate multimodal benchmark models in discriminatory power ...",
+    "host_name": "www.sciencedirect.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.mdpi.com/2076-3417/15/11/5823",
+    "name": "Early and Late Fusion for Multimodal Aggression",
+    "snippet": "by I Galanakis · 2025 · Cited by 11 — The results showcase that Late Fusion is superior to Early Fusion in terms of accuracy (0.876 vs. 0.828), recall (0.914 vs. 0.818), F1-score ( ...",
+    "host_name": "www.mdpi.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/bigdata/comments/1ojtyoh/multimodal_data_fusion_strategies_in_computer",
+    "name": "Multimodal Data Fusion Strategies in Computer Vision to",
+    "snippet": "The late fusion strategy is easy to use and has a modular design , which are its main benefits. You can train and improve each single-modality ...",
+    "host_name": "www.reddit.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2511.21889v1",
+    "name": "Exploring Fusion Strategies for Multimodal Vision-",
+    "snippet": "Nov 26, 2025 — We present a hybrid BERT and MobileNetV2 framework that uses both image and text data for early , intermediate, and late fusion strategies .",
+    "host_name": "arxiv.org",
+    "rank": 4,
+    "date": "Nov 26, 2025",
+    "favicon": ""
+  }
+]

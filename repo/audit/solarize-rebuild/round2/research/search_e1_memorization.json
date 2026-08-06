@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11514179",
+    "name": "Synthetic data for privacy-preserving clinical risk prediction",
+    "snippet": "by Z Qian · 2024 · Cited by 88 — We demonstrate that synthetic data can be effectively used throughout the medical prognostic modeling pipeline even without eventual access to the real data.",
+    "host_name": "pmc.ncbi.nlm.nih.gov",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2501.03941v1",
+    "name": "Synthetic Data Privacy Metrics",
+    "snippet": "There is abundant evidence that synthetic generative models can suffer from unintended memorization [2] and can leak information associated with ...",
+    "host_name": "arxiv.org",
+    "rank": 1,
+    "date": "Jan 7, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://neurips.cc/virtual/2024/poster/95581",
+    "name": "Dealing with Synthetic Data Contamination in Online",
+    "snippet": "Prior research has shown that using datasets contaminated by synthetic images may result in performance degradation when used for training.",
+    "host_name": "neurips.cc",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.qwak.com/post/top-synthetic-data-generation-tools",
+    "name": "Top 14 Synthetic Data Generation Tools in 2024 | JFrog ML",
+    "snippet": "Explore the best synthetic data generation tools of 2024, including Datomize, Mostly AI, and MDClone, for innovative, secure data solutions.",
+    "host_name": "www.qwak.com",
+    "rank": 3,
+    "date": "Jan 9, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://facctconference.org/static/papers24/facct24-117.pdf",
+    "name": "Real Risks of Fake Data: Synthetic Data, Diversity-Washing",
+    "snippet": "by CD Whitney · 2024 · Cited by 79 — Bias in FRT models has resulted in mis-identification and expanded surveillance, causing unjust incarceration and other discriminatory outcomes.",
+    "host_name": "facctconference.org",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

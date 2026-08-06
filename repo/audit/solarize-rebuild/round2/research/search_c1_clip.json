@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://arxiv.org/html/2412.11375v1",
+    "name": "Enhancing Training-Free Few-Shot Classification with CLIP",
+    "snippet": "Dec 16, 2024 — CLIP-based Multimodal Fusion . We introduce the proposed technical details of image-text mutual guidance in CLIP-based few-shot classification.\nWe introduce the proposed technical details of image-text mutual guidance in CLIP-based few-shot classification. Firstly, we formulate the problem and establish relevant notations.",
+    "host_name": "arxiv.org",
+    "rank": 0,
+    "date": "Dec 16, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://openai.com/index/clip",
+    "name": "CLIP: Connecting text and images",
+    "snippet": "Jan 5, 2021 — We're introducing a neural network called CLIP which efficiently learns visual concepts from natural language supervision.",
+    "host_name": "openai.com",
+    "rank": 1,
+    "date": "Jan 5, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://medium.com/voxel51/a-history-of-clip-model-training-data-advances-599473b48e1b",
+    "name": "A History of CLIP Model Training Data Advances",
+    "snippet": "2024 is shaping up to be the year of multimodal machine learning. From real-time text -to- image models and open-world vocabulary models to ... Read more",
+    "host_name": "medium.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/view/32534/34689",
+    "name": "Enhancing Training-Free Few-Shot Classification with CLIP",
+    "snippet": "by Y Li · 2025 · Cited by 15 — Combining them with GDA- CLIP (Wang et al. 2024b) (TIMO) achieves a 1.32% improvement. This paper introduces TIMO, a novel model for CLIP - based few-shot image ...",
+    "host_name": "ojs.aaai.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=98POYg2HZqQ",
+    "name": "OpenAI's CLIP for Zero Shot Image Classification",
+    "snippet": "OpenAI CLIP : ConnectingText and Images (Paper Explained) OpenAI CLIP for Zero-Shot Image Classification and Similarity",
+    "host_name": "www.youtube.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

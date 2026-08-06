@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://onlinelibrary.wiley.com/doi/10.1002/aaai.70057",
+    "name": "Distribution shifts in trustworthy machine learning - Wu - 2026",
+    "snippet": "Mar 16, 2026 — This article investigates the impact of distribution shifts in trustworthy machine learning . To this end, we start by summarizing ... Read more",
+    "host_name": "onlinelibrary.wiley.com",
+    "rank": 0,
+    "date": "Mar 16, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://openreview.net/forum?id=CjPt1AC6w0",
+    "name": "is synthetic data useful for transfer learning? an",
+    "snippet": "by Y Li · Cited by 8 — Synthetic image data generation represents a promising avenue for training deep learning models, particularly in the realm of transfer learning ,",
+    "host_name": "openreview.net",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org/html/2405.03243v1",
+    "name": "Mind the Gap Between Synthetic and Real",
+    "snippet": "Our results suggest an improved trade-off between the amount of real training data used and the model's accuracy. Our findings contribute to the understanding ... Read more",
+    "host_name": "arxiv.org",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://datascience.stackexchange.com/questions/103762/distribution-shift-vs-transfer-learning",
+    "name": "Distribution Shift vs Transfer Learning",
+    "snippet": "Nov 3, 2021 — Transfer learning (TL) is a research problem in machine learning (ML) that focuses on storing knowledge gained while solving one problem and applying ...",
+    "host_name": "datascience.stackexchange.com",
+    "rank": 3,
+    "date": "Nov 3, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://neurips.cc/virtual/2021/workshop/21859",
+    "name": "Distribution shifts: connecting methods and applications",
+    "snippet": "With this workshop, we aim to facilitate deeper exchanges between domain experts in various ML application areas and more methods-oriented researchers, and ... Read more",
+    "host_name": "neurips.cc",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

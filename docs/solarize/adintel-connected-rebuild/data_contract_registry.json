@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "round": 2,
+  "node": "data_contract_architect",
+  "created_at": "2026-08-06T16:40:00Z",
+  "description": "Canonical data contracts for the Solarize AdIntel Rebuild. All sections must consume these canonical records or documented derived views. No independently recomputed conflicting labels.",
+  "canonical_records": {
+    "AdEvidenceRecord": {
+      "description": "The single typed canonical record for an advertisement and all its evidence",
+      "fields": {
+        "identity": {"type": "string", "required": true, "description": "Stable record ID (h_ + 64 hex chars)"},
+        "source_provenance": {"type": "object", "required": true, "description": "Collection source, collector, raw_archive_ref"},
+        "collection_metadata": {"type": "object", "required": true, "description": "collected_at, source_platform, source_url_hash"},
+        "advertiser_metadata": {"type": "object", "required": false, "description": "advertiser_id, advertiser_name (if known)"},
+        "temporal_metadata": {"type": "object", "required": false, "description": "ad_date, collection_date"},
+        "geographic_metadata": {"type": "object", "required": false, "description": "country, region, city"},
+        "language": {"type": "string", "required": true, "description": "ISO 639-1 code (es for Spanish)"},
+        "original_text": {"type": "string", "required": true, "description": "Redacted ad text (title + body_redacted)"},
+        "media_references": {"type": "array", "required": false, "description": "image_count, quality_score, is_featured"},
+        "ocr_text": {"type": "string", "required": false, "description": "OCR-extracted text from images (if available)"},
+        "visual_features": {"type": "object", "required": false, "description": "Visual feature vector (if pixel data available)"},
+        "human_annotations": {"type": "array", "required": false, "description": "Council annotations (spans, labels, annotator_profile)"},
+        "expert_adjudication": {"type": "object", "required": false, "description": "Expert gold label (if adjudicated)"},
+        "heuristic_results": {"type": "object", "required": true, "description": "Rule-based detector results (techniques, scores, evidence_spans)"},
+        "model_predictions": {"type": "object", "required": false, "description": "Model predictions (techniques, probabilities, model_version) — EMPTY until model-backed detector deployed"},
+        "technique_hierarchy": {"type": "object", "required": true, "description": "v2 taxonomy labels (family → leaf mappings)"},
+        "text_evidence_spans": {"type": "array", "required": true, "description": "Highlighted text spans supporting each technique"},
+        "visual_evidence_regions": {"type": "array", "required": false, "description": "Image regions supporting techniques (if pixel data available)"},
+        "persuasive_profile_17d": {"type": "object", "required": true, "description": "17-dimensional profile (urgency, scarcity, emotional_intensity, etc.)"},
+        "embedding_references": {"type": "object", "required": true, "description": "TF-IDF embedding, cluster embedding (2D x,y for corpus map)"},
+        "cluster_membership": {"type": "object", "required": true, "description": "cluster_id, membership_strength, distance_to_centroid, silhouette, alternative_cluster_id"},
+        "cluster_explanation": {"type": "object", "required": true, "description": "distinguishing_terms, why_assigned, evidence_against"},
+        "nearest_examples": {"type": "array", "required": true, "description": "Top-5 nearest corpus examples by Euclidean distance"},
+        "outlier_results": {"type": "object", "required": true, "description": "4-way classification: detector, density_noise, cluster_enriched, boundary"},
+        "authorship_signals": {"type": "object", "required": true, "description": "5-signal authorship analysis (stylometry, template, lexical, structural, council_overlap)"},
+        "observational_analysis_links": {"type": "array", "required": false, "description": "Links to observational association analyses"},
+        "causal_analysis_links": {"type": "array", "required": false, "description": "Links to causal analyses (honestly labeled as 'Association' unless identification is satisfied)"},
+        "uncertainty": {"type": "object", "required": true, "description": "Confidence limitations, data quality issues, abstention state"},
+        "calibration": {"type": "object", "required": true, "description": "calibration_status: 'UNCALIBRATED' for rule-based, 'PLATT_SCALED' for model-backed"},
+        "abstention_state": {"type": "string", "required": true, "description": "CONFIDENT | INSUFFICIENT_EVIDENCE | OUT_OF_DISTRIBUTION"},
+        "model_version": {"type": "string", "required": true, "description": "rule-based-v1 | tfidf-ovr-v1 | council-v5 | none"},
+        "checkpoint_version": {"type": "string", "required": true, "description": "Checkpoint ID from registry"},
+        "dataset_version": {"type": "string", "required": true, "description": "Manifest hash + taxonomy version"},
+        "synthetic_or_real_provenance": {"type": "string", "required": true, "description": "REAL | SYNTHETIC_QUARANTINED | SYNTHETIC_APPROVED"},
+        "review_state": {"type": "string", "required": true, "description": "NONE | PENDING_REVIEW | REVIEWED | CORRECTION_SUBMITTED"},
+        "limitations": {"type": "array", "required": true, "description": "Known limitations applicable to this record"}
+      }
+    },
+    "CapabilityManifest": {
+      "description": "Describes every analytical component in the system",
+      "fields": {
+        "capability_id": {"type": "string", "required": true},
+        "user_task": {"type": "string", "required": true},
+        "producer": {"type": "string", "required": true, "description": "Script or component that produces this capability"},
+        "inputs": {"type": "array", "required": true, "description": "Required source artifacts"},
+        "outputs": {"type": "array", "required": true, "description": "Output artifacts"},
+        "consumers": {"type": "array", "required": true, "description": "Downstream consumers (routes, components)"},
+        "route": {"type": "string", "required": true, "description": "UI route where this capability is exposed"},
+        "component": {"type": "string", "required": true, "description": "UI component that renders this capability"},
+        "definitions": {"type": "array", "required": true, "description": "Indicator definitions consumed"},
+        "model_dependency": {"type": "string", "required": false, "description": "Model version if model-backed"},
+        "checkpoint_dependency": {"type": "string", "required": false, "description": "Checkpoint ID if checkpoint-backed"},
+        "status": {"type": "string", "required": true, "description": "ACTIVE | RESEARCH_ONLY | DEPRECATED | MISSING"},
+        "tests": {"type": "array", "required": true, "description": "Test IDs that verify this capability"},
+        "tutorial_steps": {"type": "array", "required": false, "description": "Tutorial step IDs that cover this capability"},
+        "limitations": {"type": "array", "required": true}
+      }
+    }
+  },
+  "canonical_sources": {
+    "technique_names": {"source": "adintel/taxonomy.py", "consumer": "ALL sections"},
+    "label_hierarchy": {"source": "reports/adintel/taxonomy_v2.json", "consumer": "ALL sections"},
+    "profile_dimension_names": {"source": "adintel/types.py PROFILE_DIMENSIONS", "consumer": "ALL sections"},
+    "indicator_formulas": {"source": "docs/solarize/adintel-connected-rebuild/indicator_dictionary.json (TO BE CREATED)", "consumer": "ALL sections"},
+    "outlier_kind_definitions": {"source": "adintel/solarize_stats.py OUTLIER_KINDS", "consumer": "ALL sections"},
+    "color_semantics": {"source": "design system tokens", "consumer": "ALL sections"},
+    "evidence_types": {"source": "data_contract_registry.json", "consumer": "ALL sections"},
+    "synthetic_data_markings": {"source": "data_contract_registry.json", "consumer": "ALL sections"}
+  },
+  "honest_labeling_rules": [
+    "Rule-based scores MUST be labeled 'Rule-Based Score (Uncalibrated)' — never 'Confidence' or 'Probability'",
+    "Regex matching MUST be labeled 'Rule-Based Evidence Extraction' — never 'Model Prediction'",
+    "Phrase insertion + regex mutation MUST be labeled 'Rule-Based Adversarial Sandbox' — never 'GAN'",
+    "Regex array updates MUST be labeled 'Signal Inventory Update' — never 'Training' or 'Retraining'",
+    "Observational associations MUST be labeled 'Association' — never 'Causal Effect' or 'Impact'",
+    "Heuristic matches MUST be labeled 'Heuristic' — never 'Grounded Evidence' unless citing actual spans",
+    "Synthetic examples MUST be marked 'SYNTHETIC' with generator family and review state"
+  ]
+}
