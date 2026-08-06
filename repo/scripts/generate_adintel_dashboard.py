@@ -605,7 +605,9 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 .coef-grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:10px; }}
 .coef-card {{ background:var(--soft); border-radius:8px; padding:10px; }}
 .warn {{ background:#fae0dc; border-left:3px solid var(--red); padding:4px 8px; border-radius:4px; }}
-.tooltip {{ position:fixed; background:#17201d; color:#fff; padding:6px 8px; border-radius:6px; font-size:11px; display:none; z-index:50; pointer-events:none; max-width:280px; }}
+.tooltip {{ position:fixed; background:#17201d; color:#fff; padding:8px 10px; border-radius:8px; font-size:11px; display:none; z-index:50; pointer-events:none; max-width:320px; box-shadow:0 4px 12px rgba(0,0,0,0.3); line-height:1.5; }}
+.tooltip b {{ color:#a8d7bd; }}
+.map-axis-label {{ pointer-events:none; }}
 .toast {{ position:fixed; right:16px; bottom:16px; background:#17201d; color:#fff; border-radius:10px; padding:10px 12px; font-size:12px; opacity:0; transform:translateY(8px); transition:.2s; z-index:60; }}
 .toast.show {{ opacity:1; transform:translateY(0); }}
 
@@ -1823,41 +1825,154 @@ function renderCorpusMap(){{
   const map=data.corpus_map||{{}}, container=$('corpusMapViz');
   const allPoints=(map.points||[]);
   if(!allPoints.length){{container.innerHTML='<p class="small" style="padding:16px">No corpus map data.</p>';return}}
-  const width=900,height=500,pad=34;
-  function cx(p){{return pad+(p.x+1)/2*(width-2*pad)}} function cy(p){{return height-pad-(p.y+1)/2*(height-2*pad)}}
-  function fill(p){{return colorFor(p.platform||p.split||'unknown')}}
-  $('mapLegend').innerHTML = [...new Set(allPoints.map(p=>p.platform))].map(v=>`<span class="legend-item"><span class="swatch" style="background:${{colorFor(v)}}"></span>${{esc(v)}}</span>`).join('');
-  container.innerHTML = `<svg viewBox="0 0 ${{width}} ${{height}}" width="100%" height="100%" aria-label="corpus map"><path d="M${{pad}} ${{height/2}}H${{width-pad}}M${{width/2}} ${{pad}}V${{height-pad}}" stroke="var(--line)" fill="none"/>${{allPoints.slice(0,500).map((p,i)=>`<circle class="map-point" data-idx="${{i}}" cx="${{cx(p)}}" cy="${{cy(p)}}" r="4" fill="${{fill(p)}}" opacity=".82" style="cursor:pointer;"><title>${{esc(p.title||p.record_id||'')}} · ${{esc(p.platform||'')}}</title></circle>`).join('')}}</svg>`;
-  // Add click handlers to make points interactive (Round 3: corpus-map click-to-select)
+
+  // Read control values
+  const colorMode = $('mapColor') ? $('mapColor').value : 'platform';
+  const query = $('mapQuery') ? $('mapQuery').value.toLowerCase().trim() : '';
+
+  // Filter points by query (title, record_id, platform, labels)
+  let filtered = allPoints;
+  if (query) {{
+    filtered = allPoints.filter(p => {{
+      const title = (p.title || '').toLowerCase();
+      const rid = (p.record_id || '').toLowerCase();
+      const plat = (p.platform || p.split || '').toLowerCase();
+      const labels = (p.labels || []).join(' ').toLowerCase();
+      return title.includes(query) || rid.includes(query) || plat.includes(query) || labels.includes(query);
+    }});
+  }}
+  const visible = filtered.slice(0, 500);
+
+  const width=900,height=500,pad=50;
+  function cx(p){{return pad+(p.x+1)/2*(width-2*pad)}}
+  function cy(p){{return height-pad-(p.y+1)/2*(height-2*pad)}}
+
+  // Color function based on colorMode
+  const scoreColors = ['#2f6f4e','#4a9d6e','#6bbf8a','#f7cf78','#e8a838','#d97757','#c2410c','#9a3412'];
+  function scoreColor(s) {{
+    const idx = Math.min(Math.floor((s||0) * scoreColors.length), scoreColors.length - 1);
+    return scoreColors[idx];
+  }}
+  function fill(p) {{
+    if (colorMode === 'score') return scoreColor(p.manipulation_score || p.score || 0);
+    if (colorMode === 'split') return p.split === 'test' ? '#b91c1c' : '#0f766e';
+    if (colorMode === 'deep_cluster') return colorFor('cluster_' + (p.deep_cluster || 0));
+    if (colorMode === 'isolation_slice') return colorFor('iso_' + (p.isolation_slice || 0));
+    if (colorMode === 'isolation_score') return scoreColor(p.isolation_score || 0);
+    return colorFor(p.platform || p.split || 'unknown'); // default: platform
+  }}
+
+  // Point radius varies by manipulation score (3-7px)
+  function radius(p) {{
+    const s = p.manipulation_score || p.score || 0;
+    return 3 + s * 4;
+  }}
+
+  // Build legend based on colorMode
+  let legendHTML = '';
+  if (colorMode === 'platform') {{
+    const platforms = [...new Set(allPoints.map(p=>p.platform||p.split||'unknown'))];
+    legendHTML = platforms.map(v=>`<span class="legend-item"><span class="swatch" style="background:${{colorFor(v)}}"></span>${{esc(v)}}</span>`).join('');
+  }} else if (colorMode === 'score') {{
+    legendHTML = `<span class="legend-item"><span class="swatch" style="background:${{scoreColor(0)}}"></span>0.0</span>` +
+      `<span class="legend-item"><span class="swatch" style="background:${{scoreColor(0.25)}}"></span>0.25</span>` +
+      `<span class="legend-item"><span class="swatch" style="background:${{scoreColor(0.5)}}"></span>0.5</span>` +
+      `<span class="legend-item"><span class="swatch" style="background:${{scoreColor(0.75)}}"></span>0.75</span>` +
+      `<span class="legend-item"><span class="swatch" style="background:${{scoreColor(1.0)}}"></span>1.0</span>`;
+  }} else if (colorMode === 'split') {{
+    legendHTML = `<span class="legend-item"><span class="swatch" style="background:#0f766e"></span>train</span>` +
+      `<span class="legend-item"><span class="swatch" style="background:#b91c1c"></span>test</span>`;
+  }} else {{
+    legendHTML = `<span class="legend-item"><span class="swatch" style="background:var(--muted)"></span>Color mode: ${{esc(colorMode)}}</span>`;
+  }}
+  $('mapLegend').innerHTML = legendHTML;
+
+  // Build SVG with axes, labels, and points
+  const pointsHTML = visible.map((p,i) => {{
+    const r = radius(p);
+    const f = fill(p);
+    const cxv = cx(p);
+    const cyv = cy(p);
+    const title = esc((p.title || p.record_id || '').slice(0, 80));
+    const plat = esc(p.platform || p.split || '?');
+    const score = (p.manipulation_score || 0).toFixed(3);
+    return `<circle class="map-point" data-idx="${{i}}" data-orig-idx="${{allPoints.indexOf(p)}}" cx="${{cxv}}" cy="${{cyv}}" r="${{r}}" fill="${{f}}" opacity=".82" stroke="#fff" stroke-width="1" style="cursor:pointer;"><title>${{title}} · ${{plat}} · score=${{score}}</title></circle>`;
+  }}).join('');
+
+  // Quadrant labels
+  const quadLabels = `
+    <text x="${{pad + 10}}" y="${{pad + 20}}" class="map-axis-label" style="font-size:10px;fill:var(--muted);font-weight:600;">high manipulation · low frequency</text>
+    <text x="${{width - pad - 200}}" y="${{pad + 20}}" class="map-axis-label" style="font-size:10px;fill:var(--muted);font-weight:600;">high manipulation · high frequency</text>
+    <text x="${{pad + 10}}" y="${{height - pad - 5}}" class="map-axis-label" style="font-size:10px;fill:var(--muted);font-weight:600;">low manipulation · low frequency</text>
+    <text x="${{width - pad - 200}}" y="${{height - pad - 5}}" class="map-axis-label" style="font-size:10px;fill:var(--muted);font-weight:600;">low manipulation · high frequency</text>
+  `;
+
+  // Axis lines + labels
+  const axesHTML = `
+    <path d="M${{pad}} ${{height/2}}H${{width-pad}}M${{width/2}} ${{pad}}V${{height-pad}}" stroke="var(--line)" fill="none" stroke-width="1.5"/>
+    <text x="${{width/2}}" y="${{height - 10}}" text-anchor="middle" style="font-size:11px;fill:var(--ink);font-weight:600;">Semantic dimension 1 (frequency / specificity)</text>
+    <text x="${{15}}" y="${{height/2}}" text-anchor="middle" transform="rotate(-90 15 ${{height/2}})" style="font-size:11px;fill:var(--ink);font-weight:600;">Semantic dimension 2 (manipulation intensity)</text>
+    ${{quadLabels}}
+  `;
+
+  const ariaLabel = query ? `corpus map (${{colorMode}} mode, filtered: ${{query}})` : `corpus map (${{colorMode}} mode, no filter)`;
+  container.innerHTML = `<svg viewBox="0 0 ${{width}} ${{height}}" width="100%" height="100%" aria-label="${{ariaLabel}}">${{axesHTML}}${{pointsHTML}}</svg>`;
+
+  // Show filter count
+  const filterNote = query
+    ? `Showing ${{visible.length}} of ${{allPoints.length}} points matching "${{esc(query)}}"`
+    : `Showing ${{visible.length}} of ${{allPoints.length}} points · colored by ${{esc(colorMode)}}`;
+  $('mapInspector').innerHTML = `<b>How to interpret:</b> ${{filterNote}}. Each point is a representative ad; point size scales with manipulation score. Click any point to inspect it and see its 5 nearest neighbors.`;
+
+  // Initialize detail + neighbor panels (BEFORE click handlers)
+  $('mapSelectedDetail').innerHTML = '<h3>Selected point</h3><p class="small" style="color:var(--muted);">Click a map point to see ad metadata, record ID, platform, and manipulation score.</p>';
+  $('mapNeighbors').innerHTML = '<h3>Nearest neighbors</h3><p class="small" style="color:var(--muted);">Select a point to see its 5 nearest neighbors by Euclidean distance.</p>';
+  $('mapQuadrants').innerHTML = '';
+  $('deepClusterPanel').innerHTML = (map.deep_clusters?.clusters||[]).slice(0,6).map(c=>`<div class="map-card"><h3>${{esc(c.eli5_title||c.name)}}</h3><p class="small">${{c.count}} ads · ${{esc((c.top_terms||[]).slice(0,5).map(t=>t.term).join(', '))}}</p></div>`).join('') || '<p class="small">No deep clusters.</p>';
+  $('isolationPanel').innerHTML = '<p class="small">Isolation slices available in full report.</p>';
+
+  // Add click handlers to make points interactive
   container.querySelectorAll('circle.map-point').forEach(c => {{
-    c.addEventListener('click', () => {{
-      const idx = parseInt(c.dataset.idx);
+    c.addEventListener('click', (event) => {{
+      const idx = parseInt(c.dataset.origIdx);
       const p = allPoints[idx];
       if (!p) return;
-      // Populate the existing #mapSelectedDetail panel
+      // Populate the #mapSelectedDetail panel
       const rid = (p.record_id || '').slice(0, 24) + '...';
+      const fullRid = p.record_id || '';
       const title = (p.title || 'Untitled').slice(0, 80);
       const platform = p.platform || p.split || '?';
       const manipulation = (p.manipulation_score || 0).toFixed(3);
       const x = (p.x || 0).toFixed(3);
       const y = (p.y || 0).toFixed(3);
+      const split = p.split || '?';
+      const labels = (p.labels || []).join(', ') || 'none';
       if ($('mapSelectedDetail')) {{
-        $('mapSelectedDetail').innerHTML = `<h3>Selected point</h3><p class="small"><b>Title:</b> ${{esc(title)}}</p><p class="small"><b>Record ID:</b> <code>${{esc(rid)}}</code></p><p class="small"><b>Platform:</b> ${{esc(platform)}}</p><p class="small"><b>Manipulation score:</b> ${{manipulation}}</p><p class="small"><b>Map position:</b> x=${{x}}, y=${{y}}</p>`;
+        $('mapSelectedDetail').innerHTML = `
+          <h3>Selected point</h3>
+          <p class="small"><b>Title:</b> ${{esc(title)}}</p>
+          <p class="small"><b>Record ID:</b> <code title="${{esc(fullRid)}}">${{esc(rid)}}</code></p>
+          <p class="small"><b>Platform:</b> ${{esc(platform)}} · <b>Split:</b> ${{esc(split)}}</p>
+          <p class="small"><b>Manipulation score:</b> <span style="font-weight:700;color:${{manipulation > 0.5 ? 'var(--red)' : 'var(--ink)'}};">${{manipulation}}</span></p>
+          <p class="small"><b>Map position:</b> x=${{x}}, y=${{y}}</p>
+          <p class="small"><b>Labels:</b> ${{esc(labels)}}</p>
+        `;
       }}
-      // Find nearest neighbors by Euclidean distance
+      // Find nearest neighbors by Euclidean distance (search ALL points, not just filtered)
       const dists = allPoints.map((q, j) => ({{idx: j, d: Math.hypot((q.x||0)-(p.x||0), (q.y||0)-(p.y||0))}})).filter(o => o.idx !== idx).sort((a,b) => a.d - b.d).slice(0, 5);
       if ($('mapNeighbors')) {{
         $('mapNeighbors').innerHTML = `<h3>Nearest neighbors</h3>${{dists.map(o => {{
           const q = allPoints[o.idx];
           const qTitle = (q.title || 'Untitled').slice(0, 50);
           const qPlat = q.platform || q.split || '?';
-          return `<div class="neighbor-list"><button class="map-neighbor-pick" data-idx="${{o.idx}}" style="text-align:left;background:#fff;border:1px solid var(--line);border-radius:6px;padding:4px 6px;cursor:pointer;font-size:10px;display:block;margin:2px 0;"><b>${{esc(qTitle)}}</b> <span style="color:var(--muted);">d=${{o.d.toFixed(3)}} · ${{esc(qPlat)}}</span></button></div>`;
+          const qScore = (q.manipulation_score || 0).toFixed(2);
+          return `<div class="neighbor-list"><button class="map-neighbor-pick" data-idx="${{o.idx}}" style="text-align:left;background:#fff;border:1px solid var(--line);border-radius:6px;padding:4px 6px;cursor:pointer;font-size:10px;display:block;margin:2px 0;width:100%;"><b>${{esc(qTitle)}}</b> <span style="color:var(--muted);">d=${{o.d.toFixed(3)}} · ${{esc(qPlat)}} · score=${{qScore}}</span></button></div>`;
         }}).join('')}}`;
         // Wire neighbor click handlers
         $('mapNeighbors').querySelectorAll('.map-neighbor-pick').forEach(btn => {{
           btn.addEventListener('click', () => {{
             const nIdx = parseInt(btn.dataset.idx);
-            const circle = container.querySelector(`circle.map-point[data-idx="${{nIdx}}"]`);
+            const circle = container.querySelector(`circle.map-point[data-orig-idx="${{nIdx}}"]`);
             if (circle) circle.click();
           }});
         }});
@@ -1867,13 +1982,28 @@ function renderCorpusMap(){{
       c.setAttribute('stroke', 'var(--blue)');
       c.setAttribute('stroke-width', '3');
     }});
+    // Rich hover annotation via mouseenter/mouseleave
+    c.addEventListener('mouseenter', (event) => {{
+      const idx = parseInt(c.dataset.origIdx);
+      const p = allPoints[idx];
+      if (!p) return;
+      const tip = tooltip();
+      const title = (p.title || 'Untitled').slice(0, 60);
+      const plat = p.platform || p.split || '?';
+      const score = (p.manipulation_score || 0).toFixed(3);
+      tip.innerHTML = `<b>${{esc(title)}}</b><br><span style="color:#a8d7bd;">${{esc(plat)}}</span> · score=${{score}}`;
+      tip.style.display = 'block';
+    }});
+    c.addEventListener('mousemove', (event) => {{
+      const tip = tooltip();
+      tip.style.left = (event.pageX + 12) + 'px';
+      tip.style.top = (event.pageY + 12) + 'px';
+    }});
+    c.addEventListener('mouseleave', () => {{
+      const tip = tooltip();
+      tip.style.display = 'none';
+    }});
   }});
-  $('mapInspector').innerHTML = `<b>How to interpret:</b> ${{allPoints.length}} ads plotted. Each point is a representative ad. Inspect annotations before inferring technique from neighborhood.`;
-  $('mapSelectedDetail').innerHTML = '<h3>Selected point</h3><p class="small">Click a map point to see ad metadata.</p>';
-  $('mapNeighbors').innerHTML = '<h3>Nearest neighbors</h3><p class="small">Select a point to see neighbors.</p>';
-  $('mapQuadrants').innerHTML = '';
-  $('deepClusterPanel').innerHTML = (map.deep_clusters?.clusters||[]).slice(0,6).map(c=>`<div class="map-card"><h3>${{esc(c.eli5_title||c.name)}}</h3><p class="small">${{c.count}} ads · ${{esc((c.top_terms||[]).slice(0,5).map(t=>t.term).join(', '))}}</p></div>`).join('') || '<p class="small">No deep clusters.</p>';
-  $('isolationPanel').innerHTML = '<p class="small">Isolation slices available in full report.</p>';
 }}
 
 function renderFacetOverview(){{
@@ -1906,7 +2036,7 @@ $('networkLabelMode').addEventListener('change',renderTermNetwork);
 $('networkReset').addEventListener('click',()=>{{$('networkKind').value='';$('networkTopN').value='100';$('networkLabelMode').value='smart';renderTermNetwork()}});
 $('mapColor').addEventListener('change',renderCorpusMap);
 $('mapQuery').addEventListener('input',renderCorpusMap);
-$('mapResetLayers').addEventListener('click',renderCorpusMap);
+$('mapResetLayers').addEventListener('click',()=>{{if($('mapQuery'))$('mapQuery').value='';if($('mapColor'))$('mapColor').value='platform';renderCorpusMap()}});
 
 async function copyDeepLink(){{try{{if(navigator.clipboard?.writeText){{await navigator.clipboard.writeText(location.href);toast('Deep link copied');return}}}}catch(e){{}} const area=document.createElement('textarea');area.value=location.href;area.setAttribute('readonly','');area.style.position='fixed';area.style.left='-9999px';document.body.appendChild(area);area.select();let ok=false;try{{ok=document.execCommand('copy')}}catch(e){{}}area.remove();toast(ok?'Deep link copied':'Deep link ready in address bar')}}
 $('copyLink').addEventListener('click',copyDeepLink);

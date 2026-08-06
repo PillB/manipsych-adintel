@@ -647,6 +647,112 @@ class TestSolarizeLiveDashboard(unittest.TestCase):
             "should pull from authorship_known_pairs.json",
         )
 
+    # -----------------------------------------------------------------------
+    # Round 4: scatterplot + control fixes (corpus map)
+    # -----------------------------------------------------------------------
+
+    def test_21_corpus_map_query_filter_works(self):
+        """The mapQuery search filter must actually filter scatter points.
+
+        Typing 'lima' should reduce the visible circle count.
+        """
+        self._page.goto(f"{LIVE_URL}#corpus-map", wait_until="networkidle")
+        self._page.wait_for_timeout(2000)
+        # Get initial circle count
+        initial = self._page.locator("#corpusMapViz circle.map-point").count()
+        self.assertGreater(initial, 0, "no map points rendered initially")
+        # Type a query
+        self._page.locator("#mapQuery").fill("lima")
+        self._page.wait_for_timeout(1500)
+        filtered = self._page.locator("#corpusMapViz circle.map-point").count()
+        # The filtered count must be less than initial
+        self.assertLess(
+            filtered, initial,
+            f"mapQuery filter not working: initial={initial}, filtered={filtered}",
+        )
+        # Inspector must mention the filter
+        inspector = self._page.locator("#mapInspector").inner_text().lower()
+        self.assertIn("matching", inspector, f"inspector should mention 'matching', got: {inspector[:200]}")
+
+    def test_22_corpus_map_color_mode_works(self):
+        """Changing mapColor must change the legend and point fills."""
+        self._page.goto(f"{LIVE_URL}#corpus-map", wait_until="networkidle")
+        self._page.wait_for_timeout(2000)
+        # Get initial legend (platform mode)
+        legend_initial = self._page.locator("#mapLegend").inner_text().lower()
+        # Change to score mode
+        self._page.locator("#mapColor").select_option("score")
+        self._page.wait_for_timeout(1000)
+        legend_after = self._page.locator("#mapLegend").inner_text().lower()
+        # Legend must change — score mode shows numeric gradient
+        self.assertNotEqual(
+            legend_initial, legend_after,
+            f"mapColor change didn't update legend: initial='{legend_initial[:80]}', after='{legend_after[:80]}'",
+        )
+        # Score legend should show numeric values like 0.0, 0.25, 0.5, 0.75, 1.0
+        self.assertTrue(
+            "0.0" in legend_after and "1.0" in legend_after,
+            f"score legend should show gradient values, got: {legend_after[:200]}",
+        )
+
+    def test_23_corpus_map_axis_labels_present(self):
+        """The corpus map SVG must have axis labels and quadrant annotations."""
+        self._page.goto(f"{LIVE_URL}#corpus-map", wait_until="networkidle")
+        self._page.wait_for_timeout(2000)
+        # Get all text elements in the SVG
+        texts = self._page.locator("#corpusMapViz svg text").all_text_contents()
+        all_text = " ".join(texts).lower()
+        # Must have axis labels
+        self.assertIn("semantic dimension", all_text, f"missing axis labels, got: {all_text[:200]}")
+        # Must have quadrant labels
+        self.assertTrue(
+            "high manipulation" in all_text or "low frequency" in all_text,
+            f"missing quadrant labels, got: {all_text[:200]}",
+        )
+
+    def test_24_corpus_map_reset_button_works(self):
+        """The Reset button must clear the query and reset color to platform."""
+        self._page.goto(f"{LIVE_URL}#corpus-map", wait_until="networkidle")
+        self._page.wait_for_timeout(2000)
+        # Set a query and change color
+        self._page.locator("#mapQuery").fill("lima")
+        self._page.locator("#mapColor").select_option("score")
+        self._page.wait_for_timeout(1000)
+        # Click reset
+        self._page.locator("#mapResetLayers").click()
+        self._page.wait_for_timeout(1000)
+        # Query should be cleared
+        query_val = self._page.locator("#mapQuery").evaluate("el => el.value")
+        self.assertEqual(query_val, "", f"reset didn't clear query, got '{query_val}'")
+        # Color should be back to platform
+        color_val = self._page.locator("#mapColor").evaluate("el => el.value")
+        self.assertEqual(color_val, "platform", f"reset didn't reset color, got '{color_val}'")
+
+    def test_25_corpus_map_rich_hover_tooltip(self):
+        """Hovering over a map point should show a rich tooltip (not just basic <title>)."""
+        self._page.goto(f"{LIVE_URL}#corpus-map", wait_until="networkidle")
+        self._page.wait_for_timeout(2000)
+        points = self._page.locator("#corpusMapViz circle.map-point")
+        self.assertGreater(points.count(), 0)
+        # Dispatch mouseenter directly (bypasses pointer interception from sticky header)
+        self._page.evaluate("""() => {
+            const c = document.querySelector('#corpusMapViz circle.map-point');
+            if (!c) return;
+            const event = new MouseEvent('mouseenter', {bubbles: true});
+            c.dispatchEvent(event);
+        }""")
+        self._page.wait_for_timeout(500)
+        # The .tooltip div should be visible (display != none)
+        tooltip_visible = self._page.evaluate("""() => {
+            const t = document.querySelector('.tooltip');
+            if (!t) return false;
+            return t.style.display === 'block' && t.textContent.length > 5;
+        }""")
+        self.assertTrue(
+            tooltip_visible,
+            "hover did not show a rich tooltip — .tooltip div is missing or empty",
+        )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
