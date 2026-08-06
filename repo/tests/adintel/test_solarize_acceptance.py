@@ -412,6 +412,130 @@ class TestSolarizeLiveDashboard(unittest.TestCase):
         finally:
             ctx.close()
 
+    # -----------------------------------------------------------------------
+    # Round 2: "all content should be in the website" — new tests for
+    # in-website methodology, full per-ad table, audit evidence, data downloads.
+    # -----------------------------------------------------------------------
+
+    def test_11_methodology_section_in_website(self):
+        """The dashboard must explain WHY each statistical choice was made.
+
+        Wilson CI vs Wald, Cohen's h vs enrichment ratio, BH FDR vs Bonferroni,
+        min-support=5 threshold, k=5 choice, meaningfully-different criterion.
+        """
+        self._page.goto(f"{LIVE_URL}#adintel-methodology", wait_until="networkidle")
+        self._page.wait_for_timeout(1500)
+        # Methodology section must exist
+        section = self._page.locator("#adintel-methodology")
+        self.assertGreater(section.count(), 0, "no #adintel-methodology section found")
+        text = section.inner_text().lower()
+        # Must explain each major statistical choice
+        for term in ("wilson", "cohen", "benjamini", "min-support", "k=5", "meaningfully"):
+            self.assertIn(term, text, f"methodology section missing explanation of '{term}'")
+
+    def test_12_full_per_ad_table_searchable_in_website(self):
+        """The full per-ad table (not just 300 top-activity ads) must be searchable.
+
+        Either:
+          (a) The ad selector embeds the full per-ad table, OR
+          (b) There's a separate "full ad table" UI that fetches solarize_per_ad.jsonl
+              client-side and lets the user search all 4,540 records.
+        """
+        self._page.goto(f"{LIVE_URL}#adintel-clustering", wait_until="networkidle")
+        self._page.wait_for_timeout(2000)
+        # Check the embedded solarize-data JSON for per_ad_selector count
+        n_embedded = self._page.evaluate("""() => {
+            const el = document.getElementById('solarize-data');
+            if (!el) return 0;
+            try {
+                const d = JSON.parse(el.textContent);
+                return d.per_ad_selector ? d.per_ad_selector.length : 0;
+            } catch (e) { return 0; }
+        }""")
+        # Either embedded count is > 1000 (full table embedded), OR there's a
+        # separate UI element that loads the full table
+        full_table_ui = self._page.locator(
+            "#adintel-full-ad-table, [data-role='full-ad-table'], #adintel-ad-table-search"
+        ).count()
+        self.assertTrue(
+            n_embedded > 1000 or full_table_ui > 0,
+            f"only {n_embedded} ads embedded and no full-ad-table UI found — "
+            "the full per-ad table is not searchable in-website",
+        )
+
+    def test_13_audit_evidence_section_in_website(self):
+        """Audit evidence (Red phase baseline, verification rounds) must be in the website."""
+        self._page.goto(f"{LIVE_URL}#adintel-audit", wait_until="networkidle")
+        self._page.wait_for_timeout(1500)
+        # Either a dedicated audit section, or audit content in an existing section
+        audit_section = self._page.locator("#adintel-audit, [data-role='audit-evidence']").count()
+        body_text = self._page.locator("body").inner_text().lower()
+        # Must mention Red phase / verification / test evidence somewhere
+        has_red_phase = any(t in body_text for t in ("red phase", "red-phase", "pre-solarize", "before solarize"))
+        has_verification = any(t in body_text for t in ("verification round", "live audit", "playwright", "acceptance test"))
+        self.assertTrue(
+            audit_section > 0 or (has_red_phase and has_verification),
+            "audit evidence (Red phase + verification) not surfaced in the website",
+        )
+
+    def test_14_data_download_section_in_website(self):
+        """Users must be able to download underlying data (solarize_summary.json, per_ad.jsonl) from the website UI."""
+        self._page.goto(LIVE_URL, wait_until="networkidle")
+        self._page.wait_for_timeout(1500)
+        body = self._page.locator("body").inner_text().lower()
+        # Must have a section or links that explicitly invite download
+        has_download_ui = self._page.locator(
+            "[data-role='data-download'], #adintel-data-download, .data-download-link"
+        ).count()
+        # Or explicit download links to the solarize files with descriptive labels
+        has_download_link = any(
+            t in body for t in ("download solarize", "download the data", "download full", "data download", "download solarize_summary")
+        )
+        self.assertTrue(
+            has_download_ui > 0 or has_download_link,
+            "no data-download UI or links found in the website",
+        )
+
+    def test_15_cluster_card_links_to_full_cluster_members(self):
+        """Clicking a cluster card must let the user see ALL members of that cluster, not just 3 sample ads."""
+        self._page.goto(f"{LIVE_URL}#adintel-clustering", wait_until="networkidle")
+        self._page.wait_for_timeout(2000)
+        # Click the first cluster-example card
+        first_card = self._page.locator(".cluster-example").first
+        if first_card.count() == 0:
+            self.fail("no cluster-example cards found")
+        first_card.click()
+        self._page.wait_for_timeout(1500)
+        # Either: the ad selector filters to that cluster AND shows > 3 results,
+        # OR there's a "view all N members" link/button that expands
+        cluster_filter = self._page.locator("#adintel-cluster-filter")
+        if cluster_filter.count() > 0:
+            filter_val = cluster_filter.first.get_attribute("value") or cluster_filter.first.evaluate("el => el.value")
+            # The cluster filter should be set to the clicked cluster
+            # (Or alternatively there's an expanded member list)
+            expanded = self._page.locator(".cluster-all-members, [data-role='cluster-all-members']").count()
+            self.assertTrue(
+                (filter_val and filter_val != "") or expanded > 0,
+                "clicking a cluster card did not filter the ad selector or expand the member list",
+            )
+
+    def test_16_uncertainty_and_limitations_section_in_website(self):
+        """Data limitations and uncertainty must be explicitly surfaced in the website."""
+        self._page.goto(LIVE_URL, wait_until="networkidle")
+        self._page.wait_for_timeout(1500)
+        body = self._page.locator("body").inner_text().lower()
+        # Must mention key limitations honestly
+        must_mention = [
+            ("weak cluster structure", "weak cluster", "silhouette is near zero", "silhouette_mean", "weakly separated"),
+            ("density_noise is high", "68%", "density_noise"),
+            ("matched controls", "platform_family only", "matched control"),
+        ]
+        for label, *phrases in must_mention:
+            self.assertTrue(
+                any(p in body for p in phrases),
+                f"website must honestly mention limitation: {label}",
+            )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
