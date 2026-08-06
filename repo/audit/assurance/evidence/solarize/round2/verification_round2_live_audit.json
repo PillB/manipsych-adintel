@@ -1,6 +1,6 @@
 {
-  "audit_started_at": "2026-08-06T06:42:57Z",
-  "live_url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html?cb=1785998540",
+  "audit_started_at": "2026-08-06T06:41:21Z",
+  "live_url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html?cb=1785998481",
   "expected_sha": "2301ea10f0a94c63a55cdbbbcb7fed9bc4804636",
   "desktop": {
     "name": "desktop",
@@ -9,7 +9,7 @@
       {
         "name": "page_loads",
         "title": "ManiPsych + adintel — Unified Observatory",
-        "url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html?cb=1785998540",
+        "url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html?cb=1785998481",
         "passed": true
       },
       {
@@ -112,7 +112,7 @@
   "console_errors": [],
   "page_errors": [],
   "failed_requests": [],
-  "audit_completed_at": "2026-08-06T06:43:29Z",
+  "audit_completed_at": "2026-08-06T06:41:53Z",
   "summary": {
     "desktop_pass": "13/13",
     "mobile_pass": "4/4",
