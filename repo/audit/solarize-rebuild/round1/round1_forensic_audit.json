@@ -1,0 +1,595 @@
+{
+  "audit_started_at": "2026-08-06T16:11:12Z",
+  "live_dashboard_url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html",
+  "live_analyzer_url": "https://pillb.github.io/manipsych-adintel/interactive_analyzer.html",
+  "cache_bust": "1786032672",
+  "journeys": [
+    {
+      "journey_id": "J01",
+      "journey_name": "Assess a newly supplied ad",
+      "entry_point": "",
+      "clicks": [
+        "Loaded dashboard"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": 5,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "PARTIAL — input exists but may not be a full ad grader",
+      "notes": ""
+    },
+    {
+      "journey_id": "J02",
+      "journey_name": "Determine why a persuasion technique was detected",
+      "entry_point": "",
+      "clicks": [
+        "Navigated to #explorer"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [
+        "No technique labels found in explorer"
+      ],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "DEAD_END",
+      "notes": ""
+    },
+    {
+      "journey_id": "J03",
+      "journey_name": "Find the formula and limitations of an indicator",
+      "entry_point": "",
+      "clicks": [
+        "Navigated to #adintel-methodology"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [],
+      "broken_controls": [],
+      "missing_explanations": [
+        "No canonical indicator dictionary with per-indicator formula, numerator, denominator, thresholds"
+      ],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "COMPLETED — methodology section explains formulas and limitations",
+      "notes": ""
+    },
+    {
+      "journey_id": "J04",
+      "journey_name": "Navigate from one ad to its cluster",
+      "entry_point": "",
+      "clicks": [
+        "Navigated to #adintel-clustering",
+        "Typed 'h_' in ad selector",
+        "Clicked first ad result"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "COMPLETED — ad detail shows cluster assignment",
+      "notes": ""
+    },
+    {
+      "journey_id": "J05",
+      "journey_name": "Understand why the ad belongs to that cluster",
+      "entry_point": "",
+      "clicks": [
+        "Navigated to #adintel-clustering",
+        "Found 5 cluster cards with distinguishing terms"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "COMPLETED — ad detail explains why it belongs to the cluster",
+      "notes": ""
+    },
+    {
+      "journey_id": "J06",
+      "journey_name": "Compare an outlier with normal examples",
+      "entry_point": "",
+      "clicks": [
+        "Navigated to #adintel-outliers",
+        "Found 12 outlier examples + 3 term-comparison tables"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "COMPLETED — outlier examples and term comparison tables present",
+      "notes": ""
+    },
+    {
+      "journey_id": "J07",
+      "journey_name": "Distinguish model, heuristic, and expert labels",
+      "entry_point": "",
+      "clicks": [
+        "Navigated to #explorer"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [
+        "Label sources (model vs heuristic vs expert) are not clearly marked per technique"
+      ],
+      "duplicated_info": [],
+      "dead_ends": [],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "PARTIAL — all three label types mentioned but not clearly distinguished per-ad",
+      "notes": ""
+    },
+    {
+      "journey_id": "J08",
+      "journey_name": "Identify the checkpoint that produced a result",
+      "entry_point": "",
+      "clicks": [
+        "Navigated to #adintel-checkpoints",
+        "Found 7 checkpoint rows"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [],
+      "broken_controls": [],
+      "missing_explanations": [
+        "Individual ad results and technique detections do not cite which checkpoint produced them"
+      ],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "PARTIAL — checkpoint registry exists but individual results don't link to specific checkpoints",
+      "notes": ""
+    },
+    {
+      "journey_id": "J09",
+      "journey_name": "Locate the adversarial-generation stage",
+      "entry_point": "",
+      "clicks": [
+        "Loaded dashboard",
+        "Found 'adversarial' text in dashboard"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [
+        "No dedicated adversarial-generation section in the dashboard — adversarial functionality is only in the standalone analyzer"
+      ],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [
+        "Dashboard or analyzer uses 'GAN' label — needs verification that it's a genuine GAN",
+        "Standalone analyzer uses 'GAN' label — CRITICAL: needs forensic code verification"
+      ],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "DEAD_END — adversarial generation not in dashboard",
+      "notes": ""
+    },
+    {
+      "journey_id": "J10",
+      "journey_name": "Understand how generated data reaches training",
+      "entry_point": "",
+      "clicks": [
+        "Loaded dashboard",
+        "Found 'training' text"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [
+        "The dashboard does not show how generated examples are reviewed, quarantined, evaluated, and admitted to training"
+      ],
+      "broken_controls": [],
+      "missing_explanations": [
+        "No synthetic-data quarantine workflow documented"
+      ],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "DEAD_END — no visible connected workflow from adversarial generation to training",
+      "notes": ""
+    },
+    {
+      "journey_id": "J11",
+      "journey_name": "Begin a tutorial",
+      "entry_point": "",
+      "clicks": [
+        "Loaded dashboard"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [
+        "No tutorial button, link, or overlay found anywhere in the dashboard"
+      ],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "DEAD_END — no tutorial exists",
+      "notes": ""
+    },
+    {
+      "journey_id": "J12",
+      "journey_name": "Stop tutorial midway",
+      "entry_point": "",
+      "clicks": [],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [
+        "Cannot test tutorial stop/resume because no tutorial exists"
+      ],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "BLOCKED — no tutorial exists (see J11)",
+      "notes": ""
+    },
+    {
+      "journey_id": "J13",
+      "journey_name": "Refresh the page",
+      "entry_point": "",
+      "clicks": [
+        "Navigated to #adintel-clustering",
+        "Selected an ad",
+        "Refreshed the page"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "STATE PERSISTED",
+      "notes": ""
+    },
+    {
+      "journey_id": "J14",
+      "journey_name": "Resume from saved step",
+      "entry_point": "",
+      "clicks": [],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [
+        "Cannot test tutorial resume because no tutorial exists"
+      ],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "BLOCKED — no tutorial exists to resume (see J11)",
+      "notes": ""
+    },
+    {
+      "journey_id": "J15",
+      "journey_name": "Send a guided message through the analysis assistant",
+      "entry_point": "",
+      "clicks": [
+        "Loaded dashboard"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [
+        "No 'Ask AdIntel' or contextual assistant found in the dashboard"
+      ],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "DEAD_END — no contextual assistant exists",
+      "notes": ""
+    },
+    {
+      "journey_id": "J16",
+      "journey_name": "Export the current result",
+      "entry_point": "",
+      "clicks": [
+        "Navigated to #adintel-data",
+        "Found 10 download links in #adintel-data"
+      ],
+      "url_changes": [],
+      "time_to_evidence_s": null,
+      "time_to_complete_s": null,
+      "confusion_points": [],
+      "duplicated_info": [],
+      "dead_ends": [],
+      "broken_controls": [],
+      "missing_explanations": [],
+      "lost_state": [],
+      "inconsistent_terminology": [],
+      "orphaned_results": [],
+      "misleading_claims": [],
+      "console_errors": [],
+      "network_failures": [],
+      "visual_defects": [],
+      "verdict": "COMPLETED — data download section has export links",
+      "notes": ""
+    }
+  ],
+  "performance_baselines": {
+    "html_size_bytes": 13986878,
+    "html_size_kb": 13659.1,
+    "html_size_mb": 13.34,
+    "top_level_nav_count": 18,
+    "section_count": 22,
+    "embedded_json_scripts": 4,
+    "embedded_json_details": [
+      {
+        "id": "report-data",
+        "size": 12678311
+      },
+      {
+        "id": "model-report",
+        "size": 18806
+      },
+      {
+        "id": "segment-report",
+        "size": 39721
+      },
+      {
+        "id": "solarize-data",
+        "size": 736617
+      }
+    ],
+    "total_embedded_json_bytes": 13473455,
+    "load_time_ms": 914,
+    "dom_interactive_ms": 914,
+    "response_end_ms": 514,
+    "lcp_ms": null,
+    "memory": {
+      "usedJSMB": 78,
+      "totalJSMB": 87
+    },
+    "gan_mentions": 4,
+    "adversarial_mentions": 3,
+    "confidence_mentions": 5,
+    "calibrated_mentions": 8,
+    "causal_mentions": 1
+  },
+  "standalone_analyzer_inspection": {
+    "url": "https://pillb.github.io/manipsych-adintel/interactive_analyzer.html",
+    "gan_label_count": 4,
+    "gan_contexts": [
+      "adintel — interactive analyzer & adversarial gan\ntype any ad text and see techniques detected in real time. ",
+      " run the generate→detect→improve loop.\nanalyzer\nadversarial gan\ntaxonomy\n← back to dashboard\ninteractive ad analyzer\n\ntype ",
+      "lation constante — commitment escalation (0.25)\nadversarial gan: generate → detect → improve loop\n\nthis section implements ",
+      "cts to measure detector sensitivity and identify gaps.\n\nrun gan cycle (5 rounds)\nclear log\nevidence discipline: the generat"
+    ],
+    "adversarial_count": 5,
+    "perturbation_count": 0,
+    "phrase_injection_count": 0,
+    "regex_mutation_count": 0,
+    "training_count": 0,
+    "retraining_count": 0,
+    "has_generator": false,
+    "has_discriminator": false,
+    "has_adversarial_loss": false,
+    "has_optimization_steps": false,
+    "has_saved_checkpoints": false,
+    "has_held_out_evaluation": false,
+    "has_baseline_comparison": false,
+    "gan_gate_passed": false,
+    "gan_gate_verdict": "GAN LABEL NOT JUSTIFIED — rename to 'Rule-Based Adversarial Sandbox' or 'Adversarial Phrase Perturbation Prototype'",
+    "has_text_input": true,
+    "has_image_upload": false,
+    "has_analyze_button": true,
+    "has_evidence_highlight": true,
+    "has_profile_dimensions": true,
+    "has_evidence_ledger": true,
+    "has_export": true,
+    "capabilities": {
+      "text_analysis": true,
+      "image_upload": false,
+      "evidence_highlighting": true,
+      "persuasive_profile": true,
+      "evidence_ledger": true,
+      "export": true,
+      "multimodal": false,
+      "model_backed_confidence": false,
+      "calibration": false,
+      "abstention": false,
+      "corpus_connections": false,
+      "checkpoint_provenance": false,
+      "tutorial_state": false,
+      "contextual_assistant": false,
+      "dashboard_integration": false
+    }
+  },
+  "multi_viewport_audit": [
+    {
+      "viewport": "desktop_1440x900",
+      "width": 1440,
+      "height": 900,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "horizontal_overflow": false,
+      "n_page_errors": 0,
+      "page_errors": []
+    },
+    {
+      "viewport": "laptop_1366x768",
+      "width": 1366,
+      "height": 768,
+      "scrollW": 1366,
+      "clientW": 1366,
+      "horizontal_overflow": false,
+      "n_page_errors": 0,
+      "page_errors": []
+    },
+    {
+      "viewport": "tablet_landscape_1024x768",
+      "width": 1024,
+      "height": 768,
+      "scrollW": 1024,
+      "clientW": 1024,
+      "horizontal_overflow": false,
+      "n_page_errors": 0,
+      "page_errors": []
+    },
+    {
+      "viewport": "tablet_portrait_768x1024",
+      "width": 768,
+      "height": 1024,
+      "scrollW": 786,
+      "clientW": 768,
+      "horizontal_overflow": true,
+      "n_page_errors": 0,
+      "page_errors": []
+    },
+    {
+      "viewport": "mobile_390x844",
+      "width": 390,
+      "height": 844,
+      "scrollW": 390,
+      "clientW": 390,
+      "horizontal_overflow": false,
+      "n_page_errors": 0,
+      "page_errors": []
+    }
+  ],
+  "console_errors_all": [],
+  "summary": {
+    "total_journeys": 16,
+    "completed": 5,
+    "partial": 3,
+    "dead_ends": 5,
+    "blocked": 2,
+    "errors": 0,
+    "console_error_count": 0,
+    "html_size_mb": 13.34,
+    "gan_gate_passed": false,
+    "top_level_nav_count": 18,
+    "section_count": 22
+  },
+  "audit_completed_at": "2026-08-06T16:12:27Z"
+}

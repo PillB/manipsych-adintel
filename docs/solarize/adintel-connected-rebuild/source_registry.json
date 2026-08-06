@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-08-06T16:05:00Z",
+  "round": 0,
+  "description": "Registry of all source artifacts in the ManiPsych AdIntel project. Each source is categorized by type, location, and consumer status.",
+  "sources": [
+    {
+      "source_id": "S001",
+      "name": "ad_manifest.jsonl",
+      "path": "data/processed/ad_manifest.jsonl",
+      "type": "primary_corpus",
+      "n_records": 5738,
+      "description": "Full ManiPsych classified-ad corpus (Peru, ayuda económica ads)",
+      "consumers": ["full_data_pipeline", "solarize_pipeline", "profile_scoring", "outlier_detection", "clustering"],
+      "status": "active"
+    },
+    {
+      "source_id": "S002",
+      "name": "council_resolved_annotations.jsonl",
+      "path": "data/annotation/council_resolved_annotations.jsonl",
+      "type": "human_annotation",
+      "n_records": 5717,
+      "description": "3-profile council annotations (round 5, 100% coverage, agreement 1.0, gold=false)",
+      "consumers": ["technique_results", "authorship_verification", "label_distribution"],
+      "status": "active"
+    },
+    {
+      "source_id": "S003",
+      "name": "solarize_summary.json",
+      "path": "reports/adintel/solarize_summary.json",
+      "type": "derived_analysis",
+      "size_bytes": 891579,
+      "description": "Aggregate Solarize summary: build fingerprint, clustering benchmark, 4-way outlier counts, 3-population term-prevalence comparison, per-cluster explanations, top-300 per-ad selector",
+      "consumers": ["dashboard#adintel-clustering", "dashboard#adintel-outliers", "dashboard#adintel-data"],
+      "status": "active"
+    },
+    {
+      "source_id": "S004",
+      "name": "solarize_per_ad.jsonl",
+      "path": "reports/adintel/solarize_per_ad.jsonl",
+      "type": "derived_analysis",
+      "size_bytes": 2818757,
+      "n_records": 4540,
+      "description": "Full per-ad table with record_id, cluster_id, membership_strength, silhouette, outlier_kinds, body_preview",
+      "consumers": ["dashboard#adintel-data (client-side fetch)"],
+      "status": "active"
+    },
+    {
+      "source_id": "S005",
+      "name": "full_data_results.json",
+      "path": "reports/adintel/full_data_results.json",
+      "type": "derived_analysis",
+      "description": "Full-data profile dimensions, technique-level results, outlier examples, cluster alignment",
+      "consumers": ["dashboard#adintel-profile", "dashboard#adintel-authorship"],
+      "status": "active"
+    },
+    {
+      "source_id": "S006",
+      "name": "authorship_known_pairs.json",
+      "path": "reports/adintel/authorship_known_pairs.json",
+      "type": "derived_analysis",
+      "description": "Authorship verification results on 50 known same-source pairs with confidence, stylometry, robustness",
+      "consumers": ["dashboard#adintel-authorship"],
+      "status": "active"
+    },
+    {
+      "source_id": "S007",
+      "name": "clustering_summary.json",
+      "path": "reports/adintel/clustering_summary.json",
+      "type": "derived_analysis",
+      "description": "7-space clustering summary with stability ARI, pair consistency, parameter sensitivity, brand leakage",
+      "consumers": ["dashboard#adintel-clustering"],
+      "status": "active"
+    },
+    {
+      "source_id": "S008",
+      "name": "outlier_summary.json",
+      "path": "reports/adintel/outlier_summary.json",
+      "type": "derived_analysis",
+      "description": "Historical 11-kind outlier detection summary (sample n=1000)",
+      "consumers": ["dashboard#adintel-outliers"],
+      "status": "active"
+    },
+    {
+      "source_id": "S009",
+      "name": "cluster_alignment_report.json",
+      "path": "reports/adintel/cluster_alignment_report.json",
+      "type": "derived_analysis",
+      "description": "V1 vs adintel cluster alignment (ARI, AMI, homogeneity, completeness, V-measure)",
+      "consumers": ["dashboard#adintel-clustering"],
+      "status": "active"
+    },
+    {
+      "source_id": "S010",
+      "name": "deep_clustering_analysis.json",
+      "path": "reports/adintel/deep_clustering_analysis.json",
+      "type": "derived_analysis",
+      "description": "LSA+KMeans deep clustering with outlier term enrichment (preserved as benchmark evidence)",
+      "consumers": ["dashboard#adintel-clustering (archive subsection)"],
+      "status": "active"
+    },
+    {
+      "source_id": "S011",
+      "name": "interactive_analyzer.html",
+      "path": "docs/interactive_analyzer.html",
+      "type": "standalone_interface",
+      "size_bytes": 39907,
+      "description": "Standalone interactive analyzer — pasted-text analysis, highlighted evidence, technique labels, persuasive profile, adversarial experiments",
+      "consumers": ["none (standalone, not integrated into dashboard)"],
+      "status": "ORPHAN — needs integration decision"
+    },
+    {
+      "source_id": "S012",
+      "name": "adintel_dashboard.html",
+      "path": "docs/reports/adintel/adintel_dashboard.html",
+      "type": "primary_interface",
+      "size_bytes": 13738013,
+      "description": "Monolithic self-contained dashboard HTML (13.1 MB) — the main product interface",
+      "consumers": ["end users"],
+      "status": "active — but monolithic and fragmented"
+    },
+    {
+      "source_id": "S013",
+      "name": "checkpoint_registry.json",
+      "path": "reports/adintel/checkpoint_registry.json",
+      "type": "model_registry",
+      "description": "6 registered checkpoints with version, calibration status, cost, latency, abstention conditions",
+      "consumers": ["dashboard#adintel-checkpoints"],
+      "status": "active"
+    },
+    {
+      "source_id": "S014",
+      "name": "GAN / adversarial loop",
+      "path": "scripts/generate_interactive_analyzer.py + docs/interactive_analyzer.html",
+      "type": "adversarial_component",
+      "description": "SUSPECTED: phrase injection + regex mutation mislabeled as 'GAN'. Needs forensic verification.",
+      "consumers": ["interactive_analyzer.html"],
+      "status": "SUSPECTED MISLABELING — needs Round 1 verification"
+    }
+  ],
+  "orphan_candidates": [
+    "S011 — interactive_analyzer.html is standalone, not integrated into the dashboard",
+    "S014 — GAN/adversarial loop may be mislabeled phrase injection"
+  ]
+}

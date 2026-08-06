@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "round": 0,
+  "gate": "ROUND_0_BOOTSTRAP",
+  "checked_at": "2026-08-06T16:10:00Z",
+  "criteria": {
+    "relevant_memory_loaded": {
+      "status": "PASSED",
+      "evidence": "Loaded worklog.md (4 prior Solarize rounds), source_registry.json (14 sources), capability_ledger.json (16 capabilities), issue_registry.json (10 issues). Prior round evidence at audit/assurance/evidence/solarize/round1-4/."
+    },
+    "starting_state_reproducible": {
+      "status": "PASSED",
+      "evidence": "deployed_commit=b1b1a21, live_dashboard_size=13738013 bytes, build_fingerprint=solarize-0aa26795-ca9bd02cd858230e-1785970989, embedded_sha=43341db (ancestor of deployed)"
+    },
+    "ledgers_initialized": {
+      "status": "PASSED",
+      "evidence": "Created docs/solarize/adintel-connected-rebuild/ with graph_memory.json, source_registry.json, capability_ledger.json, issue_registry.json. Additional ledgers will be created as rounds progress."
+    },
+    "no_production_modification_yet": {
+      "status": "PASSED",
+      "evidence": "No changes to docs/reports/adintel/adintel_dashboard.html or scripts/generate_adintel_dashboard.py. Only new files under docs/solarize/ created."
+    }
+  },
+  "gate_state": "PASSED — proceed to Round 1 (Forensic pre-execution)",
+  "next_round": "Round 1 — Forensic pre-execution: run Playwright journeys against the live site before any production changes"
+}

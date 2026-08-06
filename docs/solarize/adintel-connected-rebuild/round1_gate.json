@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "round": 1,
+  "gate": "ROUND_1_FORENSIC_PRE_EXECUTION",
+  "checked_at": "2026-08-06T16:25:00Z",
+  "criteria": {
+    "all_16_journeys_executed": {
+      "status": "PASSED",
+      "evidence": "16/16 journeys run against live deployment. Results: 5 COMPLETED, 3 PARTIAL, 5 DEAD_END, 2 BLOCKED, 1 STATE_PERSISTED. See round1_forensic_audit.json."
+    },
+    "all_viewports_tested": {
+      "status": "PASSED",
+      "evidence": "5 viewports tested (1440×900, 1366×768, 1024×768, 768×1024, 390×844). Found horizontal overflow at 768×1024 tablet portrait. All other viewports clean. 0 console errors across all viewports."
+    },
+    "performance_baselines_captured": {
+      "status": "PASSED",
+      "evidence": "HTML size=13.34MB (91× over 150KB budget), 22 sections, 18 nav links, 4 embedded JSON scripts (13.3MB total), load_time=914ms, 0 console errors. report-data JSON alone is 12.38MB."
+    },
+    "gan_mislabeling_reproduced": {
+      "status": "PASSED",
+      "evidence": "GAN gate FAILED — 0 of 8 criteria met. runGanCycle() picks random phrase from hardcoded array of 13, appends to text, re-runs regex detection, adds missed phrases to SIGNALS array. No generator, no discriminator, no adversarial loss, no optimization, no checkpoints, no held-out evaluation, no baseline comparison. Must rename to 'Rule-Based Adversarial Sandbox'."
+    },
+    "pre_execution_report_created": {
+      "status": "PASSED",
+      "evidence": "pre_execution_report.md created at repo/audit/solarize-rebuild/round1/. Covers all 8 hypotheses, 16 journeys, performance baselines, multi-viewport audit, standalone analyzer inspection, GAN gate assessment, issue summary, and next steps."
+    },
+    "no_production_modification": {
+      "status": "PASSED",
+      "evidence": "No changes to docs/reports/adintel/adintel_dashboard.html, scripts/generate_adintel_dashboard.py, or docs/interactive_analyzer.html. Only new files under docs/solarize/ and repo/audit/solarize-rebuild/ created."
+    }
+  },
+  "gate_state": "PASSED — proceed to Round 2 (STORM research and architecture challenge)",
+  "critical_findings": [
+    "GAN mislabeling CONFIRMED — 0/8 gate criteria met",
+    "13.34 MB monolithic HTML — 91× over budget (12.38MB is embedded report-data JSON)",
+    "22 peer-level sections — violates target 5-section task-oriented architecture",
+    "Standalone analyzer disconnected — not linked from dashboard, no integration",
+    "5 of 16 user journeys are DEAD_END (no ad assessment, no adversarial in dashboard, no tutorial, no assistant)",
+    "No tutorial, no assistant, no indicator dictionary — 3 capabilities completely missing",
+    "Tablet portrait (768×1024) horizontal overflow"
+  ],
+  "next_round": "Round 2 — STORM research: advertising-transparency interfaces, hierarchical persuasion detection, multimodal detection, adversarial improvement, synthetic-data governance, calibration/abstention, interactive tutorials"
+}

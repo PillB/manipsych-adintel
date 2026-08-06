@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-08-06T16:05:00Z",
+  "round": 0,
+  "node": "graph_memory_manager",
+  "description": "Initial Graph Memory for the Solarize AdIntel Rebuild. Records the starting state before any production modification.",
+  "baseline": {
+    "repository": "https://github.com/PillB/manipsych-adintel",
+    "deployed_commit_sha": "b1b1a21",
+    "deployed_commit_short": "b1b1a21",
+    "deployed_commit_message": "evidence: solarize round 4 live verification — 2 consecutive PASSED rounds",
+    "deployed_at": "2026-08-06T08:16:40Z",
+    "live_dashboard_url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html",
+    "live_analyzer_url": "https://pillb.github.io/manipsych-adintel/interactive_analyzer.html",
+    "live_dashboard_size_bytes": 13738013,
+    "live_dashboard_size_mb": 13.1,
+    "embedded_commit_sha": "43341db4c36dd05fdf0dfc0a3e23763b0a696e92",
+    "build_fingerprint": "solarize-0aa26795-ca9bd02cd858230e-1785970989",
+    "solarize_version": "1.0",
+    "github_pages_source": "branch=main, path=/docs"
+  },
+  "prior_solarize_rounds": [
+    {
+      "round": 1,
+      "commit": "11503b5",
+      "summary": "Consolidated cluster/outlier explorer, statistical engine (Wilson CI, Cohen's h, BH FDR), 4-way outlier classification, interactive ad selector",
+      "status": "PASSED"
+    },
+    {
+      "round": 2,
+      "commit": "04a0256",
+      "summary": "Methodology section, audit evidence section, data-download section, full per-ad table (4,540 records via client-side fetch)",
+      "status": "PASSED"
+    },
+    {
+      "round": 3,
+      "commit": "bd7e822",
+      "summary": "Data-driven profile/authorship (replaced hardcoded values), corpus-map click-to-select interactivity",
+      "status": "PASSED"
+    },
+    {
+      "round": 4,
+      "commit": "b1b1a21",
+      "summary": "Fixed broken corpus-map controls (mapQuery filter, mapColor change, mapResetLayers), added axis labels, rich hover tooltips, dynamic legends",
+      "status": "PASSED"
+    }
+  ],
+  "immutable_constraints": [
+    "Static GitHub Pages only — no server-side execution",
+    "No service credentials embedded in client code",
+    "No automatic retention of user submissions",
+    "No automatic training ingestion from user submissions",
+    "Defensive boundary: no manipulation-optimization advice",
+    "Preserve useful functionality when correcting misleading names",
+    "No production artifact disappears without a recorded parity decision",
+    "Every generated production artifact must have a registered consumer or be explicitly categorized as research-only"
+  ],
+  "measurable_gates": {
+    "round_0_gate": {
+      "relevant_memory_loaded": true,
+      "starting_state_reproducible": true,
+      "ledgers_initialized": "pending",
+      "no_production_modification_yet": true
+    },
+    "round_1_gate": {
+      "pre_execution_report_created": "pending",
+      "all_16_journeys_executed": "pending",
+      "all_viewports_tested": "pending",
+      "performance_baselines_captured": "pending",
+      "gan_mislabeling_reproduced": "pending"
+    }
+  },
+  "nodes_initialized": [
+    "orchestrator",
+    "graph_memory_manager",
+    "repository_auditor"
+  ],
+  "typed_handoffs": []
+}

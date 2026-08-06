@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-08-06T16:05:00Z",
+  "round": 0,
+  "description": "Ledger of all issues identified during Round 0 bootstrap. Issues will be expanded during Round 1 forensic pre-execution.",
+  "issues": [
+    {
+      "issue_id": "I001",
+      "category": "information_architecture",
+      "severity": "CRITICAL",
+      "title": "Flat, fragmented navigation with too many peer-level destinations",
+      "description": "The dashboard has 21+ peer-level sections (#metrics, #pipeline, #diagnostics, #explainability-atlas, #term-network, #corpus-map, #facet-overview, #explorer, #observability, #expert-poc, #adintel-taxonomy, #adintel-profile, #adintel-clustering, #adintel-authorship, #adintel-outliers, #adintel-migration, #adintel-checkpoints, #adintel-challenges, #adintel-methodology, #adintel-audit, #adintel-data, #research). This violates the target 5-section task-oriented architecture (Mission Control, Analyze an Ad, Explore Evidence, Models & Adversarial Lab, Guide/Methods/Audit).",
+      "reproduced": false,
+      "evidence_refs": [],
+      "status": "HYPOTHESIS — needs Round 1 verification"
+    },
+    {
+      "issue_id": "I002",
+      "category": "pipeline_integration",
+      "severity": "CRITICAL",
+      "title": "AdIntel placed BESIDE the pipeline rather than INSIDE it",
+      "description": "The dashboard has a static pipeline SVG (#pipeline) that shows the v1 model stack. AdIntel sections (#adintel-*) are placed AFTER the pipeline as a separate block, separated by a 'v1-to-new' story-transition div. AdIntel should be the connected intelligence layer spanning collection, annotation, modelling, analysis, user assessment, validation, and feedback — not a sidebar.",
+      "reproduced": false,
+      "evidence_refs": [],
+      "status": "HYPOTHESIS — needs Round 1 verification"
+    },
+    {
+      "issue_id": "I003",
+      "category": "disconnected_interface",
+      "severity": "CRITICAL",
+      "title": "Standalone analyzer is disconnected from the dashboard",
+      "description": "docs/interactive_analyzer.html (39 KB) is a standalone page at /interactive_analyzer.html, not linked from or integrated into the main dashboard. It contains useful functionality (pasted-text analysis, highlighted evidence, technique labels, persuasive profile, evidence ledger, export, adversarial experiments) that should be integrated into the main dashboard's 'Analyze an Ad' workspace.",
+      "reproduced": false,
+      "evidence_refs": [],
+      "status": "HYPOTHESIS — needs Round 1 verification"
+    },
+    {
+      "issue_id": "I004",
+      "category": "mislabeling",
+      "severity": "CRITICAL",
+      "title": "'Adversarial GAN' may be phrase injection + regex mutation",
+      "description": "The interactive analyzer contains a feature labeled 'GAN' or 'Adversarial GAN'. Based on prior code inspection, it likely inserts phrases from a predefined list, re-runs rule-based detection, and adds missed phrases to mutable regular expressions — which is NOT a genuine GAN. A genuine GAN requires: (1) trainable generator, (2) trainable discriminator, (3) explicit adversarial objective, (4) actual optimization steps, (5) saved training evidence, (6) reproducible checkpoints, (7) held-out evaluation, (8) comparison with non-GAN baselines. Must be renamed to 'Rule-Based Adversarial Sandbox' or 'Adversarial Phrase Perturbation Prototype' if the gate fails.",
+      "reproduced": false,
+      "evidence_refs": [],
+      "status": "HYPOTHESIS — needs Round 1 code + browser verification"
+    },
+    {
+      "issue_id": "I005",
+      "category": "performance",
+      "severity": "HIGH",
+      "title": "Monolithic 13.1 MB dashboard HTML",
+      "description": "The dashboard is a single self-contained HTML file of 13,738,013 bytes (13.1 MB). This creates maintainability, loading, caching, and browser-performance risks. Target budget: initial HTML below 150 KB uncompressed. The current size is 91× over budget. The bulk is embedded JSON data (solarize-data, report-data, model-report, segment-report) and inline CSS/JS.",
+      "reproduced": true,
+      "evidence_refs": ["curl -sI content-length: 13738013"],
+      "status": "VERIFIED"
+    },
+    {
+      "issue_id": "I006",
+      "category": "duplicate_definitions",
+      "severity": "HIGH",
+      "title": "Potential duplicate definitions and orphaned reports",
+      "description": "The repo has 22 JSON files in reports/adintel/ + docs/reports/adintel/. Some may be duplicated (e.g. clustering_summary.json vs deep_clustering_analysis.json vs cluster_alignment_report.json all relate to clustering). Need to verify which are consumed by the dashboard and which are orphaned.",
+      "reproduced": false,
+      "evidence_refs": [],
+      "status": "HYPOTHESIS — needs Round 1 artifact-consumption audit"
+    },
+    {
+      "issue_id": "I007",
+      "category": "missing_capability",
+      "severity": "HIGH",
+      "title": "No connected workflow for submitting and assessing a new ad",
+      "description": "The dashboard does not have an 'Analyze an Ad' workspace. Users cannot paste new ad text or upload an image and get an assessment. The standalone analyzer has this capability but is disconnected.",
+      "reproduced": false,
+      "evidence_refs": [],
+      "status": "HYPOTHESIS — needs Round 1 verification"
+    },
+    {
+      "issue_id": "I008",
+      "category": "missing_capability",
+      "severity": "HIGH",
+      "title": "No restartable interactive tutorial",
+      "description": "No tutorial system exists. The spec requires 6 tutorial modes (Quick Orientation, Analyze an Ad, Explore Evidence, Models & Adversarial Lab, Expert Indicator Workshop, Research Reproducibility Walkthrough) with event-driven advancement, local persistence, pause/resume/restart/reset, focus management, and keyboard support.",
+      "reproduced": true,
+      "evidence_refs": ["grep -c 'tutorial\\|driver\\.js\\|shepherd' dashboard.html → 0"],
+      "status": "VERIFIED"
+    },
+    {
+      "issue_id": "I009",
+      "category": "missing_capability",
+      "severity": "MEDIUM",
+      "title": "No 'Ask AdIntel' contextual assistant",
+      "description": "No contextual assistant exists. The spec requires a local evidence assistant that explains loaded evidence, cites evidence spans, cites indicator definitions, shows confidence limitations, and refuses manipulation-optimization requests.",
+      "reproduced": true,
+      "evidence_refs": ["grep -c 'ask.adintel\\|contextual.assistant' dashboard.html → 0"],
+      "status": "VERIFIED"
+    },
+    {
+      "issue_id": "I010",
+      "category": "missing_capability",
+      "severity": "MEDIUM",
+      "title": "No canonical indicator dictionary",
+      "description": "No canonical definition exists for visible indicators (profile dimensions, outlier kinds, cluster metrics, etc.). The methodology section explains the statistical methods but doesn't define each indicator's formula, numerator, denominator, unit, valid range, thresholds, and failure modes.",
+      "reproduced": true,
+      "evidence_refs": ["grep -c 'indicator.dictionary\\|indicator_id' dashboard.html → 0"],
+      "status": "VERIFIED"
+    }
+  ],
+  "summary": {
+    "total_issues": 10,
+    "critical": 4,
+    "high": 4,
+    "medium": 2,
+    "verified": 4,
+    "hypothesis": 6
+  }
+}
