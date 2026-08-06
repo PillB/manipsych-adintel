@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "round": 3,
+  "gate": "ROUND_3_RED_TESTS",
+  "checked_at": "2026-08-06T17:05:00Z",
+  "criteria": {
+    "red_tests_written_before_implementation": {
+      "status": "PASSED",
+      "evidence": "48 Red tests in tests/adintel/test_solarize_rebuild_red.py covering all 10 categories from spec Section 23."
+    },
+    "red_tests_run_against_live_deployment": {
+      "status": "PASSED",
+      "evidence": "All 48 tests run against https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard.html?cb=<timestamp>. 22 failed, 26 passed."
+    },
+    "failures_capture_intended_reasons": {
+      "status": "PASSED",
+      "evidence": "Each failure has a documented reason and fix in test_ledger.json. Examples: R009 fails because 'GAN' label used (0/8 gate criteria), R036 fails because HTML 13.4 MB > 150 KB budget, R025 fails because no tutorial exists."
+    },
+    "no_tests_written_after_implementation": {
+      "status": "PASSED",
+      "evidence": "Tests committed before any production code changes. No implementation has started."
+    }
+  },
+  "gate_state": "PASSED — proceed to Round 4 (Green implementation)",
+  "failed_tests_count": 22,
+  "passed_tests_count": 26,
+  "categories_with_failures": [
+    "architecture (1 failure: R001)",
+    "truthfulness (2 failures: R009, R021 — GAN mislabeling)",
+    "ad_assessment (5 failures: R013-R015, R018-R019 — no ad grader, no privacy notice)",
+    "tutorial (4 failures: R025-R028 — no tutorial system)",
+    "navigation (1 failure: R030 — new section deep links)",
+    "performance (2 failures: R036-R037 — 13.4 MB HTML, 12.38 MB embedded JSON)",
+    "accessibility (2 failures: R040, R043 — tablet overflow, missing aria-labels)",
+    "contextual_assistant (2 failures: R044, R046 — no assistant, no refusal notice)",
+    "indicator_dictionary (2 failures: R047-R048 — no dictionary exists)"
+  ],
+  "next_round": "Round 4 — Green implementation: fix all 22 failing Red tests through production code changes"
+}
