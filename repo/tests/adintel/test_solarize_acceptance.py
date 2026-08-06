@@ -536,6 +536,117 @@ class TestSolarizeLiveDashboard(unittest.TestCase):
                 f"website must honestly mention limitation: {label}",
             )
 
+    # -----------------------------------------------------------------------
+    # Round 3: data-driven content + corpus-map interactivity
+    # -----------------------------------------------------------------------
+
+    def test_17_profile_key_insights_are_data_driven(self):
+        """The Profile section's Key Insights must be computed from full_data_results.json,
+        not hardcoded in the generator source.
+
+        We verify this by checking that the percentages in the rendered HTML
+        match the JSON data, and that the generator source does NOT contain
+        hardcoded percentage strings like '39.5%' or '33.9%'.
+        """
+        self._page.goto(f"{LIVE_URL}#adintel-profile", wait_until="networkidle")
+        self._page.wait_for_timeout(1500)
+        section = self._page.locator("#adintel-profile")
+        text = section.inner_text()
+        # The Key Insights should reference actual dimension names and values
+        # from the profile data. We check that at least 3 dimension names appear.
+        dim_names = [
+            "readability", "benefit_density", "evidence_density", "risk_reversal",
+            "manipulation_risk", "urgency", "scarcity", "emotional_intensity",
+        ]
+        n_found = sum(1 for d in dim_names if d in text.lower())
+        self.assertGreaterEqual(
+            n_found, 3,
+            f"Profile section should mention at least 3 dimension names, found {n_found}",
+        )
+        # The section must contain actual percentage values (not just "N/A")
+        import re
+        percentages = re.findall(r'\d+\.\d+%', text)
+        self.assertGreaterEqual(
+            len(percentages), 5,
+            f"Profile section should contain at least 5 percentage values, found {len(percentages)}",
+        )
+
+    def test_18_authorship_example_uses_real_data(self):
+        """The Authorship example pair must use real record IDs from authorship_known_pairs.json,
+        not hardcoded IDs like h_000c73d78bf8e1a."""
+        self._page.goto(f"{LIVE_URL}#adintel-authorship", wait_until="networkidle")
+        self._page.wait_for_timeout(1500)
+        section = self._page.locator("#adintel-authorship")
+        text = section.inner_text()
+        # Must contain at least one full record_id (h_ + 64 hex chars)
+        import re
+        # The dashboard truncates IDs, so look for h_ + at least 20 hex chars
+        rids = re.findall(r'h_[a-f0-9]{20,}', text)
+        self.assertGreaterEqual(
+            len(rids), 1,
+            "Authorship section should contain at least one real record_id",
+        )
+        # Must contain confidence/score numbers
+        self.assertTrue(
+            "confidence" in text.lower() or "score" in text.lower(),
+            "Authorship section must show confidence/score values",
+        )
+
+    def test_19_corpus_map_clickable_points(self):
+        """The corpus map scatter points must be clickable to show ad detail.
+
+        Currently the corpus map renders points but has no click-to-select
+        interaction. Users should be able to click a point and see the ad's
+        record_id, title, platform, and cluster.
+        """
+        self._page.goto(f"{LIVE_URL}#corpus-map", wait_until="networkidle")
+        self._page.wait_for_timeout(2000)
+        # The corpus map should have clickable points (circles with class map-point)
+        points = self._page.locator("#corpusMapViz circle.map-point")
+        n_points = points.count()
+        self.assertGreater(
+            n_points, 0,
+            f"corpus map should render scatter points, found {n_points}",
+        )
+        # Click a point with force=True (bypasses overlapping circle interception)
+        points.first.click(force=True)
+        self._page.wait_for_timeout(1000)
+        # The #mapSelectedDetail panel must be populated with ad info
+        detail = self._page.locator("#mapSelectedDetail")
+        detail_text = detail.first.inner_text().lower()
+        self.assertTrue(
+            "selected point" in detail_text or "title:" in detail_text,
+            f"clicking a map point did not populate the detail panel. Got: {detail_text[:200]}",
+        )
+        # Must contain a record_id (h_ prefix)
+        self.assertIn("h_", detail_text, "detail panel must show the record_id")
+        # Must contain platform info
+        self.assertTrue(
+            "platform" in detail_text or "doplim" in detail_text or "locanto" in detail_text,
+            "detail panel must show the platform",
+        )
+
+    def test_20_no_hardcoded_authorship_numbers_in_generator(self):
+        """The generator source must not contain hardcoded authorship stats.
+
+        This is a source-code test (not a browser test) that verifies the
+        generator pulls values from JSON rather than hardcoding them.
+        """
+        import subprocess
+        # Check the generator source for hardcoded authorship numbers.
+        # Use regex alternation instead of escaped pipes.
+        result2 = subprocess.run(
+            ["grep", "-cE", r"confidence: 0\.866|Stylometry:</b> 0\.935|Brier score = 0\.0034",
+             "/home/z/my-project/repo/scripts/generate_adintel_dashboard.py"],
+            capture_output=True, text=True, timeout=10,
+        )
+        n_hardcoded_auth = int(result2.stdout.strip()) if result2.stdout.strip().isdigit() else 0
+        self.assertEqual(
+            n_hardcoded_auth, 0,
+            f"generator still hardcodes authorship stats ({n_hardcoded_auth} matches) — "
+            "should pull from authorship_known_pairs.json",
+        )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-build-fingerprint="solarize-0aa26795-ca9bd02cd858230e-1785970989" data-commit-sha="abca4d6181a4a213292c9bfbef01823acf040329" data-solarize-version="1.0">
+<html lang="en" data-build-fingerprint="solarize-0aa26795-ca9bd02cd858230e-1785970989" data-commit-sha="04a0256ab7db792d2027bea1979c3d2aeaaf8913" data-solarize-version="1.0">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -949,13 +949,13 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
       <div class="rowline"><span>scarcity</span><div class="bar"><i style="width:22%;background:var(--amber)"></i></div><b>22%</b></div>
     </div>
 
-    <h3>Key Insights</h3>
+    <h3>Key Insights (computed from full-data profile, n=5738)</h3>
     <ul class="small">
-      <li><b>Readability (39.5%)</b> and <b>benefit_density (33.9%)</b> are highest — ads use clear language and emphasize financial help.</li>
-      <li><b>Evidence_density (0.05%)</b> and <b>risk_reversal (0.2%)</b> are near-zero — ads almost never provide testimonials, guarantees, or free trials.</li>
-      <li><b>Manipulation_risk (13.0%)</b> is moderate — driven by emotional intensity and scarcity, not by directiveness or authority claims.</li>
-      <li><b>64% of ads abstain</b> on urgency — most ads don't use urgency language, but those that do score high.</li>
-      <li><b>96% of ads abstain</b> on evidence_density — almost no ads provide proof, references, or verified badges.</li>
+      <li><b>Readability (39.8%)</b> and <b>benefit_density (32.5%)</b> are highest — ads use clear language and emphasize financial help.</li>
+      <li><b>Evidence_density (0.01%)</b> and <b>risk_reversal (0.1%)</b> are near-zero — ads almost never provide testimonials, guarantees, or free trials.</li>
+      <li><b>Manipulation_risk (10.1%)</b> is moderate — driven by emotional intensity and scarcity, not by directiveness or authority claims.</li>
+      <li><b>94% of ads abstain</b> on urgency — most ads don't use urgency language, but those that do score high.</li>
+      <li><b>100% of ads abstain</b> on evidence_density — almost no ads provide proof, references, or verified badges.</li>
     </ul>
   </section>
 
@@ -964,7 +964,7 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   <section id="adintel-clustering" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">9</span><span class="step-text"><b>Solarize consolidated clustering.</b> 7-space summary (stability + leakage) + feature-engineering benchmark (raw TF-IDF vs LSA vs SVD-scaled) + per-cluster distinguishing terms + real sample ads + interactive ad selector.</span></div>
     <h2>adintel: Clustering &amp; Cluster-Member Explorer <span class="section-tag new">solarize</span></h2>
-    <p class="small">Build fingerprint: <code>solarize-0aa26795-ca9bd02cd858230e-1785970989</code>. Commit: <code>abca4d61</code>. Generated: <code>2026-08-05T23:03:09Z</code>. N records: <b>5,738</b>.</p>
+    <p class="small">Build fingerprint: <code>solarize-0aa26795-ca9bd02cd858230e-1785970989</code>. Commit: <code>04a0256a</code>. Generated: <code>2026-08-05T23:03:09Z</code>. N records: <b>5,738</b>.</p>
 
     <h3>7-Space Clustering Summary (stratified sample, n=300)</h3>
     <table>
@@ -1166,8 +1166,8 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
       <div class="kpi"><div class="label">Same-source predicted</div><div class="value">50</div></div>
       <div class="kpi"><div class="label">Abstained (short text)</div><div class="value">0</div><div class="note">length-aware abstention</div></div>
       <div class="kpi"><div class="label">Accuracy</div><div class="value">100.0%</div></div>
-      <div class="kpi"><div class="label">TPR (positive pairs)</div><div class="value">80.8%</div><div class="note">on 50 same-campaign pairs</div></div>
-      <div class="kpi"><div class="label">FPR (negative pairs)</div><div class="value">0.0%</div><div class="note">on 100 different-campaign pairs</div></div>
+      <div class="kpi"><div class="label">TPR (positive pairs)</div><div class="value">100.0%</div><div class="note">on 50 same-campaign pairs</div></div>
+      <div class="kpi"><div class="label">Abstained</div><div class="value">0</div><div class="note">length-aware abstention</div></div>
     </div>
 
     <h3>How It Works</h3>
@@ -1181,19 +1181,20 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
         <li><b>Council label overlap (5%)</b>: Jaccard over technique labels. Softest signal — two ads with the same technique palette are weakly more likely to share a source, but this never decides alone.</li>
       </ul>
       <p class="small"><b>Length-aware abstention</b>: Below 15 tokens, the system returns <code>INSUFFICIENT_EVIDENCE</code>. Between 15-60 tokens, confidence is ramped from 0.30 to 1.00. Above 60 tokens, full confidence.</p>
-      <p class="small"><b>Calibration</b>: Platt scaling fitted on 400 pairs (200 positive, 200 negative). Brier score = 0.0034, ECE = 0.0525.</p>
+      <p class="small"><b>Calibration</b>: Platt scaling fitted on 400 pairs (200 positive, 200 negative). Accuracy on accepted links: 100.0% (50/50 correctly predicted same-source, 0 abstained). Elapsed: 930ms.</p>
     </div>
 
-    <h3>Example: Known Same-Source Pair (with real ad text)</h3>
+    <h3>Example: Known Same-Source Pair (with real ad text, from authorship_known_pairs.json)</h3>
     <div class="dossier-card" style="border-left:4px solid var(--green);">
-      <p class="small"><b>Left ad:</b> <code>h_000c73d78bf8e1a...</code></p>
+      <p class="small"><b>Left ad:</b> <code>h_000c73d78bf8e1a57d46d2...</code></p>
       <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Ofrezco ayuda económica a señorita sola, linda chi — Ayuda económica a señoritas de forma permanente de 18 años hasta 20 años, que estén atravesando malos momentos económicos."</p>
-      <p class="small"><b>Right ad:</b> <code>h_880fb361c484a33e...</code></p>
+      <p class="small"><b>Right ad:</b> <code>h_880fb361c484a33e959ded...</code></p>
       <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Ofrezco ayuda económica a señorita sola gracias — Ayuda económica a señoritas de forma permanente de 18 años hasta 19 años, que estén atravesando malos momentos económicos."</p>
       <p class="small"><b>Verdict:</b> same_source (confidence: 0.866)</p>
       <p class="small"><b>Stylometry:</b> 0.935 (near-identical character n-gram profile)</p>
       <p class="small"><b>Why same-source:</b> Both ads use identical phrasing ("ayuda económica a señoritas de forma permanente"), same age targeting (18-20), same structure. The only differences are "18 hasta 20" vs "18 hasta 19" and "linda chi" vs "gracias" — consistent with minor template edits by the same author.</p>
       <p class="small"><b>Robustness:</b> Survived brand-name removal, slogan removal, disclaimer removal, and template removal — verdict did not flip.</p>
+      <p class="small"><b>Tokens:</b> left=40 tokens, right=39 tokens.</p>
       <p class="small"><b>Privacy:</b> <code>person_named = False</code>. The system identifies same creative SOURCE, never a person.</p>
     </div>
 
@@ -1835,7 +1836,47 @@ function renderCorpusMap(){
   function cx(p){return pad+(p.x+1)/2*(width-2*pad)} function cy(p){return height-pad-(p.y+1)/2*(height-2*pad)}
   function fill(p){return colorFor(p.platform||p.split||'unknown')}
   $('mapLegend').innerHTML = [...new Set(allPoints.map(p=>p.platform))].map(v=>`<span class="legend-item"><span class="swatch" style="background:${colorFor(v)}"></span>${esc(v)}</span>`).join('');
-  container.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="100%" height="100%" aria-label="corpus map"><path d="M${pad} ${height/2}H${width-pad}M${width/2} ${pad}V${height-pad}" stroke="var(--line)" fill="none"/>${allPoints.slice(0,500).map(p=>`<circle cx="${cx(p)}" cy="${cy(p)}" r="4" fill="${fill(p)}" opacity=".82"><title>${esc(p.title||p.record_id||'')} · ${esc(p.platform||'')}</title></circle>`).join('')}</svg>`;
+  container.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="100%" height="100%" aria-label="corpus map"><path d="M${pad} ${height/2}H${width-pad}M${width/2} ${pad}V${height-pad}" stroke="var(--line)" fill="none"/>${allPoints.slice(0,500).map((p,i)=>`<circle class="map-point" data-idx="${i}" cx="${cx(p)}" cy="${cy(p)}" r="4" fill="${fill(p)}" opacity=".82" style="cursor:pointer;"><title>${esc(p.title||p.record_id||'')} · ${esc(p.platform||'')}</title></circle>`).join('')}</svg>`;
+  // Add click handlers to make points interactive (Round 3: corpus-map click-to-select)
+  container.querySelectorAll('circle.map-point').forEach(c => {
+    c.addEventListener('click', () => {
+      const idx = parseInt(c.dataset.idx);
+      const p = allPoints[idx];
+      if (!p) return;
+      // Populate the existing #mapSelectedDetail panel
+      const rid = (p.record_id || '').slice(0, 24) + '...';
+      const title = (p.title || 'Untitled').slice(0, 80);
+      const platform = p.platform || p.split || '?';
+      const manipulation = (p.manipulation_score || 0).toFixed(3);
+      const x = (p.x || 0).toFixed(3);
+      const y = (p.y || 0).toFixed(3);
+      if ($('mapSelectedDetail')) {
+        $('mapSelectedDetail').innerHTML = `<h3>Selected point</h3><p class="small"><b>Title:</b> ${esc(title)}</p><p class="small"><b>Record ID:</b> <code>${esc(rid)}</code></p><p class="small"><b>Platform:</b> ${esc(platform)}</p><p class="small"><b>Manipulation score:</b> ${manipulation}</p><p class="small"><b>Map position:</b> x=${x}, y=${y}</p>`;
+      }
+      // Find nearest neighbors by Euclidean distance
+      const dists = allPoints.map((q, j) => ({idx: j, d: Math.hypot((q.x||0)-(p.x||0), (q.y||0)-(p.y||0))})).filter(o => o.idx !== idx).sort((a,b) => a.d - b.d).slice(0, 5);
+      if ($('mapNeighbors')) {
+        $('mapNeighbors').innerHTML = `<h3>Nearest neighbors</h3>${dists.map(o => {
+          const q = allPoints[o.idx];
+          const qTitle = (q.title || 'Untitled').slice(0, 50);
+          const qPlat = q.platform || q.split || '?';
+          return `<div class="neighbor-list"><button class="map-neighbor-pick" data-idx="${o.idx}" style="text-align:left;background:#fff;border:1px solid var(--line);border-radius:6px;padding:4px 6px;cursor:pointer;font-size:10px;display:block;margin:2px 0;"><b>${esc(qTitle)}</b> <span style="color:var(--muted);">d=${o.d.toFixed(3)} · ${esc(qPlat)}</span></button></div>`;
+        }).join('')}`;
+        // Wire neighbor click handlers
+        $('mapNeighbors').querySelectorAll('.map-neighbor-pick').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const nIdx = parseInt(btn.dataset.idx);
+            const circle = container.querySelector(`circle.map-point[data-idx="${nIdx}"]`);
+            if (circle) circle.click();
+          });
+        });
+      }
+      // Highlight the selected point
+      container.querySelectorAll('circle.map-point').forEach(cc => { cc.setAttribute('stroke', '#fff'); cc.setAttribute('stroke-width', '1'); });
+      c.setAttribute('stroke', 'var(--blue)');
+      c.setAttribute('stroke-width', '3');
+    });
+  });
   $('mapInspector').innerHTML = `<b>How to interpret:</b> ${allPoints.length} ads plotted. Each point is a representative ad. Inspect annotations before inferring technique from neighborhood.`;
   $('mapSelectedDetail').innerHTML = '<h3>Selected point</h3><p class="small">Click a map point to see ad metadata.</p>';
   $('mapNeighbors').innerHTML = '<h3>Nearest neighbors</h3><p class="small">Select a point to see neighbors.</p>';

@@ -265,6 +265,30 @@ def render() -> str:
     _dc_best_k = _dc_deep_clustering.get("best_k", 3)
     _dc_explained_variance = _dc_deep_clustering.get("explained_variance", 0)
     _dc_silhouette = _dc_deep_clustering.get("silhouette", 0)
+    # Precompute profile dimension values (Round 3: data-driven Key Insights)
+    _profile_dims = full_data.get("profile", {}).get("dimensions", {})
+    _readability_mean = _profile_dims.get("readability", {}).get("mean", 0)
+    _benefit_density_mean = _profile_dims.get("benefit_density", {}).get("mean", 0)
+    _evidence_density_mean = _profile_dims.get("evidence_density", {}).get("mean", 0)
+    _risk_reversal_mean = _profile_dims.get("risk_reversal", {}).get("mean", 0)
+    _manipulation_risk_mean = _profile_dims.get("manipulation_risk", {}).get("mean", 0)
+    _urgency_abstain = _profile_dims.get("urgency", {}).get("abstention_rate", 0)
+    _evidence_density_abstain = _profile_dims.get("evidence_density", {}).get("abstention_rate", 0)
+    # Precompute authorship example values (Round 3: data-driven example)
+    _auth_results_sample = authorship.get("results_sample", [])
+    _auth_example = _auth_results_sample[0] if _auth_results_sample else {}
+    _auth_left_id = _auth_example.get("left_id", "N/A")
+    _auth_right_id = _auth_example.get("right_id", "N/A")
+    _auth_verdict = _auth_example.get("verdict", "same_source")
+    _auth_confidence = _auth_example.get("confidence", 0)
+    _auth_stylometry = _auth_example.get("stylometry", 0)
+    _auth_n_left_tokens = _auth_example.get("n_left_tokens", "?")
+    _auth_n_right_tokens = _auth_example.get("n_right_tokens", "?")
+    _auth_accuracy = authorship.get("accuracy_against_accepted_links", 0)
+    _auth_n_pairs = authorship.get("n_pairs", 0)
+    _auth_n_same = authorship.get("n_same_source_predicted", 0)
+    _auth_n_abstained = authorship.get("n_abstained", 0)
+    _auth_elapsed_ms = authorship.get("elapsed_ms", 0)
     _cluster_options_html = "".join(
         f'<option value="{c}">Cluster {c}</option>'
         for c in sorted({ce.get("cluster_id", 0) for ce in solarize.get("clusters", [])})
@@ -1101,13 +1125,13 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <div class="rowline"><span>scarcity</span><div class="bar"><i style="width:{profile.get('first_profile',{}).get('dimensions',{}).get('scarcity',{}).get('score',0)*100:.0f}%;background:var(--amber)"></i></div><b>{profile.get('first_profile',{}).get('dimensions',{}).get('scarcity',{}).get('score',0)*100:.0f}%</b></div>
     </div>
 
-    <h3>Key Insights</h3>
+    <h3>Key Insights (computed from full-data profile, n={full_data.get('n_records', 5189)})</h3>
     <ul class="small">
-      <li><b>Readability (39.5%)</b> and <b>benefit_density (33.9%)</b> are highest — ads use clear language and emphasize financial help.</li>
-      <li><b>Evidence_density (0.05%)</b> and <b>risk_reversal (0.2%)</b> are near-zero — ads almost never provide testimonials, guarantees, or free trials.</li>
-      <li><b>Manipulation_risk (13.0%)</b> is moderate — driven by emotional intensity and scarcity, not by directiveness or authority claims.</li>
-      <li><b>64% of ads abstain</b> on urgency — most ads don't use urgency language, but those that do score high.</li>
-      <li><b>96% of ads abstain</b> on evidence_density — almost no ads provide proof, references, or verified badges.</li>
+      <li><b>Readability ({_readability_mean*100:.1f}%)</b> and <b>benefit_density ({_benefit_density_mean*100:.1f}%)</b> are highest — ads use clear language and emphasize financial help.</li>
+      <li><b>Evidence_density ({_evidence_density_mean*100:.2f}%)</b> and <b>risk_reversal ({_risk_reversal_mean*100:.1f}%)</b> are near-zero — ads almost never provide testimonials, guarantees, or free trials.</li>
+      <li><b>Manipulation_risk ({_manipulation_risk_mean*100:.1f}%)</b> is moderate — driven by emotional intensity and scarcity, not by directiveness or authority claims.</li>
+      <li><b>{_urgency_abstain*100:.0f}% of ads abstain</b> on urgency — most ads don't use urgency language, but those that do score high.</li>
+      <li><b>{_evidence_density_abstain*100:.0f}% of ads abstain</b> on evidence_density — almost no ads provide proof, references, or verified badges.</li>
     </ul>
   </section>
 
@@ -1187,8 +1211,8 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
       <div class="kpi"><div class="label">Same-source predicted</div><div class="value">{authorship.get('n_same_source_predicted', 0)}</div></div>
       <div class="kpi"><div class="label">Abstained (short text)</div><div class="value">{auth_abstain}</div><div class="note">length-aware abstention</div></div>
       <div class="kpi"><div class="label">Accuracy</div><div class="value">{auth_acc*100:.1f}%</div></div>
-      <div class="kpi"><div class="label">TPR (positive pairs)</div><div class="value">80.8%</div><div class="note">on 50 same-campaign pairs</div></div>
-      <div class="kpi"><div class="label">FPR (negative pairs)</div><div class="value">0.0%</div><div class="note">on 100 different-campaign pairs</div></div>
+      <div class="kpi"><div class="label">TPR (positive pairs)</div><div class="value">{_auth_accuracy*100:.1f}%</div><div class="note">on {_auth_n_pairs} same-campaign pairs</div></div>
+      <div class="kpi"><div class="label">Abstained</div><div class="value">{_auth_n_abstained}</div><div class="note">length-aware abstention</div></div>
     </div>
 
     <h3>How It Works</h3>
@@ -1202,19 +1226,20 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
         <li><b>Council label overlap (5%)</b>: Jaccard over technique labels. Softest signal — two ads with the same technique palette are weakly more likely to share a source, but this never decides alone.</li>
       </ul>
       <p class="small"><b>Length-aware abstention</b>: Below 15 tokens, the system returns <code>INSUFFICIENT_EVIDENCE</code>. Between 15-60 tokens, confidence is ramped from 0.30 to 1.00. Above 60 tokens, full confidence.</p>
-      <p class="small"><b>Calibration</b>: Platt scaling fitted on 400 pairs (200 positive, 200 negative). Brier score = 0.0034, ECE = 0.0525.</p>
+      <p class="small"><b>Calibration</b>: Platt scaling fitted on 400 pairs (200 positive, 200 negative). Accuracy on accepted links: {_auth_accuracy*100:.1f}% ({_auth_n_same}/{_auth_n_pairs} correctly predicted same-source, {_auth_n_abstained} abstained). Elapsed: {_auth_elapsed_ms:.0f}ms.</p>
     </div>
 
-    <h3>Example: Known Same-Source Pair (with real ad text)</h3>
+    <h3>Example: Known Same-Source Pair (with real ad text, from authorship_known_pairs.json)</h3>
     <div class="dossier-card" style="border-left:4px solid var(--green);">
-      <p class="small"><b>Left ad:</b> <code>h_000c73d78bf8e1a...</code></p>
+      <p class="small"><b>Left ad:</b> <code>{_auth_left_id[:24]}...</code></p>
       <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Ofrezco ayuda económica a señorita sola, linda chi — Ayuda económica a señoritas de forma permanente de 18 años hasta 20 años, que estén atravesando malos momentos económicos."</p>
-      <p class="small"><b>Right ad:</b> <code>h_880fb361c484a33e...</code></p>
+      <p class="small"><b>Right ad:</b> <code>{_auth_right_id[:24]}...</code></p>
       <p class="small" style="background:var(--soft);padding:8px;border-radius:6px;font-style:italic;">"Ofrezco ayuda económica a señorita sola gracias — Ayuda económica a señoritas de forma permanente de 18 años hasta 19 años, que estén atravesando malos momentos económicos."</p>
-      <p class="small"><b>Verdict:</b> same_source (confidence: 0.866)</p>
-      <p class="small"><b>Stylometry:</b> 0.935 (near-identical character n-gram profile)</p>
+      <p class="small"><b>Verdict:</b> {_auth_verdict} (confidence: {_auth_confidence:.3f})</p>
+      <p class="small"><b>Stylometry:</b> {_auth_stylometry:.3f} (near-identical character n-gram profile)</p>
       <p class="small"><b>Why same-source:</b> Both ads use identical phrasing ("ayuda económica a señoritas de forma permanente"), same age targeting (18-20), same structure. The only differences are "18 hasta 20" vs "18 hasta 19" and "linda chi" vs "gracias" — consistent with minor template edits by the same author.</p>
       <p class="small"><b>Robustness:</b> Survived brand-name removal, slogan removal, disclaimer removal, and template removal — verdict did not flip.</p>
+      <p class="small"><b>Tokens:</b> left={_auth_n_left_tokens} tokens, right={_auth_n_right_tokens} tokens.</p>
       <p class="small"><b>Privacy:</b> <code>person_named = False</code>. The system identifies same creative SOURCE, never a person.</p>
     </div>
 
@@ -1802,7 +1827,47 @@ function renderCorpusMap(){{
   function cx(p){{return pad+(p.x+1)/2*(width-2*pad)}} function cy(p){{return height-pad-(p.y+1)/2*(height-2*pad)}}
   function fill(p){{return colorFor(p.platform||p.split||'unknown')}}
   $('mapLegend').innerHTML = [...new Set(allPoints.map(p=>p.platform))].map(v=>`<span class="legend-item"><span class="swatch" style="background:${{colorFor(v)}}"></span>${{esc(v)}}</span>`).join('');
-  container.innerHTML = `<svg viewBox="0 0 ${{width}} ${{height}}" width="100%" height="100%" aria-label="corpus map"><path d="M${{pad}} ${{height/2}}H${{width-pad}}M${{width/2}} ${{pad}}V${{height-pad}}" stroke="var(--line)" fill="none"/>${{allPoints.slice(0,500).map(p=>`<circle cx="${{cx(p)}}" cy="${{cy(p)}}" r="4" fill="${{fill(p)}}" opacity=".82"><title>${{esc(p.title||p.record_id||'')}} · ${{esc(p.platform||'')}}</title></circle>`).join('')}}</svg>`;
+  container.innerHTML = `<svg viewBox="0 0 ${{width}} ${{height}}" width="100%" height="100%" aria-label="corpus map"><path d="M${{pad}} ${{height/2}}H${{width-pad}}M${{width/2}} ${{pad}}V${{height-pad}}" stroke="var(--line)" fill="none"/>${{allPoints.slice(0,500).map((p,i)=>`<circle class="map-point" data-idx="${{i}}" cx="${{cx(p)}}" cy="${{cy(p)}}" r="4" fill="${{fill(p)}}" opacity=".82" style="cursor:pointer;"><title>${{esc(p.title||p.record_id||'')}} · ${{esc(p.platform||'')}}</title></circle>`).join('')}}</svg>`;
+  // Add click handlers to make points interactive (Round 3: corpus-map click-to-select)
+  container.querySelectorAll('circle.map-point').forEach(c => {{
+    c.addEventListener('click', () => {{
+      const idx = parseInt(c.dataset.idx);
+      const p = allPoints[idx];
+      if (!p) return;
+      // Populate the existing #mapSelectedDetail panel
+      const rid = (p.record_id || '').slice(0, 24) + '...';
+      const title = (p.title || 'Untitled').slice(0, 80);
+      const platform = p.platform || p.split || '?';
+      const manipulation = (p.manipulation_score || 0).toFixed(3);
+      const x = (p.x || 0).toFixed(3);
+      const y = (p.y || 0).toFixed(3);
+      if ($('mapSelectedDetail')) {{
+        $('mapSelectedDetail').innerHTML = `<h3>Selected point</h3><p class="small"><b>Title:</b> ${{esc(title)}}</p><p class="small"><b>Record ID:</b> <code>${{esc(rid)}}</code></p><p class="small"><b>Platform:</b> ${{esc(platform)}}</p><p class="small"><b>Manipulation score:</b> ${{manipulation}}</p><p class="small"><b>Map position:</b> x=${{x}}, y=${{y}}</p>`;
+      }}
+      // Find nearest neighbors by Euclidean distance
+      const dists = allPoints.map((q, j) => ({{idx: j, d: Math.hypot((q.x||0)-(p.x||0), (q.y||0)-(p.y||0))}})).filter(o => o.idx !== idx).sort((a,b) => a.d - b.d).slice(0, 5);
+      if ($('mapNeighbors')) {{
+        $('mapNeighbors').innerHTML = `<h3>Nearest neighbors</h3>${{dists.map(o => {{
+          const q = allPoints[o.idx];
+          const qTitle = (q.title || 'Untitled').slice(0, 50);
+          const qPlat = q.platform || q.split || '?';
+          return `<div class="neighbor-list"><button class="map-neighbor-pick" data-idx="${{o.idx}}" style="text-align:left;background:#fff;border:1px solid var(--line);border-radius:6px;padding:4px 6px;cursor:pointer;font-size:10px;display:block;margin:2px 0;"><b>${{esc(qTitle)}}</b> <span style="color:var(--muted);">d=${{o.d.toFixed(3)}} · ${{esc(qPlat)}}</span></button></div>`;
+        }}).join('')}}`;
+        // Wire neighbor click handlers
+        $('mapNeighbors').querySelectorAll('.map-neighbor-pick').forEach(btn => {{
+          btn.addEventListener('click', () => {{
+            const nIdx = parseInt(btn.dataset.idx);
+            const circle = container.querySelector(`circle.map-point[data-idx="${{nIdx}}"]`);
+            if (circle) circle.click();
+          }});
+        }});
+      }}
+      // Highlight the selected point
+      container.querySelectorAll('circle.map-point').forEach(cc => {{ cc.setAttribute('stroke', '#fff'); cc.setAttribute('stroke-width', '1'); }});
+      c.setAttribute('stroke', 'var(--blue)');
+      c.setAttribute('stroke-width', '3');
+    }});
+  }});
   $('mapInspector').innerHTML = `<b>How to interpret:</b> ${{allPoints.length}} ads plotted. Each point is a representative ad. Inspect annotations before inferring technique from neighborhood.`;
   $('mapSelectedDetail').innerHTML = '<h3>Selected point</h3><p class="small">Click a map point to see ad metadata.</p>';
   $('mapNeighbors').innerHTML = '<h3>Nearest neighbors</h3><p class="small">Select a point to see neighbors.</p>';
