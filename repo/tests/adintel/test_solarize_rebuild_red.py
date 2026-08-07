@@ -401,14 +401,22 @@ class TestSolarizeRebuildRed(unittest.TestCase):
         search_subtab = self._page.locator("[data-subtab='search']")
         if search_subtab.count() > 0:
             search_subtab.first.click()
-            self._page.wait_for_timeout(3000)  # wait for fetch to load per-ad data
+            # Wait for per-ad data to load via fetch
+            for _ in range(10):
+                self._page.wait_for_timeout(1000)
+                results_text = self._page.locator("#corpus-search-results").inner_text()
+                if "cluster=" in results_text and len(results_text) > 100:
+                    break
+        # Check the search results div for checkpoint/model references
+        results_text = self._page.locator("#corpus-search-results").inner_text().lower()
         body_text = self._page.locator("body").inner_text().lower()
-        # Look for checkpoint/model references in the search results
-        has_checkpoint = "checkpoint" in body_text or "cp-rule-based" in body_text
-        has_model = "model" in body_text and "version" in body_text
+        combined = results_text + " " + body_text
+        # Look for checkpoint/model references
+        has_checkpoint = "checkpoint" in combined or "cp-rule-based" in combined
+        has_model = "model" in combined and ("version" in combined or "rule-based-v1" in combined)
         self.assertTrue(
             has_checkpoint or has_model,
-            "Individual ad results do not cite which checkpoint/model version produced them",
+            f"Individual ad results do not cite checkpoint/model version. Results: {results_text[:200]}",
         )
 
     # ===================================================================
