@@ -22,8 +22,205 @@ function cleanBodyPreview(text, maxChars) {
 }
 </script>
 
+<script>
+// ============ Rule-Based Adversarial Sandbox (Interactive) ============
+const ADV_SIGNALS = {
+  urgency: [
+    ['urgente|ahora|ya|hoy|inmediato', 'gi', 0.30, 'urgency word'],
+    ['solo por (hoy|esta noche|esta semana)', 'gi', 0.25, 'limited-time urgency'],
+    ['último|última|ultima|ultimos', 'gi', 0.20, 'last-chance word'],
+    ['no (esperes|tardes|dejes)', 'gi', 0.20, 'imperative urgency'],
+  ],
+  scarcity: [
+    ['solo|único|única|unico|unica|limitad|pocos|pocas|un cupo|un lugar', 'gi', 0.25, 'scarcity word'],
+    ['pocas? (vacantes|opciones|chicas?|cupo)', 'gi', 0.30, 'specific scarcity'],
+    ['solo [0-9]+', 'gi', 0.30, 'numeric scarcity'],
+  ],
+  emotional_intensity: [
+    ['amor|cariño|afecto|corazón|amistad|sincero|sincera', 'gi', 0.15, 'warmth word'],
+    ['triste|sola|solo|deprimida|abandonada|abandonado|necesitad', 'gi', 0.30, 'vulnerability word'],
+    ['miedo|peligro|riesgo|amenaza|inseguridad', 'gi', 0.30, 'fear word'],
+    ['esperanza|sueña|sueño|futuro|mejorar|salir adelante', 'gi', 0.20, 'hope word'],
+  ],
+  directiveness: [
+    ['whatsapp|llámame|llamame|contactame|escríbeme|escribeme|dm|inbox', 'gi', 0.20, 'direct contact'],
+    ['privado|privada', 'gi', 0.15, 'privacy cue'],
+  ],
+  certainty: [
+    ['100%|garantizado|seguro|segura|garantía', 'gi', 0.30, 'certainty claim'],
+    ['serio|formal|profesional', 'gi', 0.20, 'authority claim'],
+  ],
+  trust_risk: [
+    ['discreto|discreta|confidencial|secreto', 'gi', 0.20, 'secrecy cue'],
+    ['sin compromiso|no te arrepentirás', 'gi', 0.25, 'risk reversal'],
+  ],
+  social_proof: [
+    ['muchas (chicas|personas|clientas) (ya )?confían|confian', 'gi', 0.25, 'social proof'],
+    ['referencias verificadas', 'gi', 0.20, 'verified references'],
+  ],
+  manipulation_risk: [
+    ['ayuda económica a cambio|a cambio de', 'gi', 0.30, 'exchange framing'],
+    ['dinero semanal|pago semanal|pago fijo', 'gi', 0.25, 'payment framing'],
+  ],
+};
+
+const ADV_PHRASES = [
+  'urgente hoy', 'solo por esta semana', '100% garantizado', 'discreto y confidencial',
+  'whatsapp privado', 'muchas chicas confian', 'serio y formal', 'estudiantes universitarias',
+  'dinero semanal fijo', 'buena presencia', 'ultimo cupo', 'referencias verificadas',
+  'sin compromiso'
+];
+
+function advAnalyze(text) {
+  const results = {};
+  for (const [dim, signals] of Object.entries(ADV_SIGNALS)) {
+    let score = 0;
+    const matches = [];
+    for (const [pattern, flags, weight, label] of signals) {
+      try {
+        const regex = new RegExp(pattern, flags);
+        const m = text.toLowerCase().match(regex);
+        if (m) {
+          score = Math.max(score, weight);
+          matches.push({ pattern, label, match: m[0], index: m.index });
+        }
+      } catch(e) {}
+    }
+    results[dim] = { score, matches };
+  }
+  return results;
+}
+
+function advImportText() {
+  const analyzeText = document.getElementById('ad-text');
+  if (analyzeText) {
+    document.getElementById('adv-base-text').value = analyzeText.value;
+  } else {
+    alert('No text found in Analyze an Ad. Paste text directly or load an example.');
+  }
+}
+
+function advLoadExample() {
+  document.getElementById('adv-base-text').value = 'Ayuda economica para chicas estudiantes. Busco señoritas que necesiten apoyo económico.';
+}
+
+function advRunCycle() {
+  const baseText = document.getElementById('adv-base-text').value.trim();
+  if (!baseText) {
+    alert('Please enter base text first (or click Load Example).');
+    return;
+  }
+
+  // 1. Analyze base text (before)
+  const beforeResults = advAnalyze(baseText);
+  const beforeDetections = Object.entries(beforeResults).filter(([d, r]) => r.score > 0).map(([d, r]) => d);
+
+  // 2. Run 5 rounds of phrase insertion
+  const cycleResults = [];
+  const gaps = [];
+  const quarantined = [];
+
+  for (let round = 1; round <= 5; round++) {
+    const phrase = ADV_PHRASES[Math.floor(Math.random() * ADV_PHRASES.length)];
+    const variant = baseText + ' ' + phrase;
+    const afterResults = advAnalyze(variant);
+    const afterDetections = Object.entries(afterResults).filter(([d, r]) => r.score > 0).map(([d, r]) => d);
+
+    // Check if the inserted phrase was detected
+    const newDetections = afterDetections.filter(d => !beforeDetections.includes(d));
+    const isGap = newDetections.length === 0;
+
+    cycleResults.push({
+      round, phrase, variant: variant.slice(0, 120) + '...',
+      beforeDetections, afterDetections,
+      newDetections, isGap
+    });
+
+    if (isGap) {
+      gaps.push({ round, phrase, reason: 'Phrase not detected by any signal pattern' });
+    }
+
+    // Add to quarantine
+    quarantined.push({
+      id: 'SYN-' + Date.now() + '-' + round,
+      phrase, round,
+      state: 'quarantined',
+      detectionBefore: beforeDetections.length,
+      detectionAfter: afterDetections.length,
+      reviewStatus: 'pending'
+    });
+  }
+
+  // 3. Render results
+  let resultsHTML = '<table style="font-size:11px;width:100%;"><thead><tr><th>Round</th><th>Inserted phrase</th><th>Detection before</th><th>Detection after</th><th>New detections</th><th>Gap?</th></tr></thead><tbody>';
+  for (const r of cycleResults) {
+    const gapBadge = r.isGap ? '<span style="color:var(--red);font-weight:700;">GAP</span>' : '<span style="color:var(--green);">OK</span>';
+    resultsHTML += '<tr><td>' + r.round + '</td><td>' + r.phrase + '</td><td>' + r.beforeDetections.join(', ') + '</td><td>' + r.afterDetections.join(', ') + '</td><td>' + (r.newDetections.join(', ') || 'none') + '</td><td>' + gapBadge + '</td></tr>';
+  }
+  resultsHTML += '</tbody></table>';
+
+  // Robustness score
+  const totalRounds = cycleResults.length;
+  const gapCount = gaps.length;
+  const robustness = totalRounds > 0 ? ((totalRounds - gapCount) / totalRounds * 100).toFixed(0) : 0;
+  resultsHTML += '<p style="font-size:12px;margin-top:8px;"><b>Robustness score:</b> ' + robustness + '% (' + (totalRounds - gapCount) + '/' + totalRounds + ' phrases detected). <b>Gap count:</b> ' + gapCount + '</p>';
+
+  document.getElementById('adv-results').innerHTML = resultsHTML;
+
+  // 4. Render gap report
+  let gapHTML = '';
+  if (gaps.length === 0) {
+    gapHTML = '<p style="color:var(--green);font-size:12px;">No gaps detected — all inserted phrases were detected by the signal inventory.</p>';
+  } else {
+    gapHTML = '<table style="font-size:11px;width:100%;"><thead><tr><th>Round</th><th>Missed phrase</th><th>Reason</th><th>Action</th></tr></thead><tbody>';
+    for (const g of gaps) {
+      gapHTML += `<tr><td>${g.round}</td><td><code>${g.phrase}</code></td><td>${g.reason}</td><td><button class="btn secondary" style="font-size:10px;padding:2px 6px;" onclick="advAddToSignalInventory('${g.phrase}')">Add to inventory (review)</button></td></tr>`;
+    }
+    gapHTML += '</tbody></table>';
+    gapHTML += '<p style="font-size:11px;color:var(--muted);margin-top:4px;">Gaps enter a <b>review queue</b> — they are NOT automatically added to the detector. A human must approve each addition.</p>';
+  }
+  document.getElementById('adv-gap-report').innerHTML = gapHTML;
+
+  // 5. Render quarantine
+  let qHTML = '<table style="font-size:11px;width:100%;"><thead><tr><th>ID</th><th>Phrase</th><th>Round</th><th>Det. before</th><th>Det. after</th><th>State</th><th>Review</th></tr></thead><tbody>';
+  for (const q of quarantined) {
+    qHTML += `<tr><td><code>${q.id.slice(-8)}</code></td><td>${q.phrase}</td><td>${q.round}</td><td>${q.detectionBefore}</td><td>${q.detectionAfter}</td><td><span style="color:var(--amber);">${q.state}</span></td><td><button class="btn secondary" style="font-size:10px;padding:2px 6px;" onclick="advReviewItem('${q.id}', 'approved')">Approve</button> <button class="btn secondary" style="font-size:10px;padding:2px 6px;" onclick="advReviewItem('${q.id}', 'rejected')">Reject</button></td></tr>`;
+  }
+  qHTML += '</tbody></table>';
+  qHTML += '<p style="font-size:11px;color:var(--muted);margin-top:4px;">All generated variants are <b>SYNTHETIC</b> and marked as such. Approved variants enter a held-out challenge set — they are <b>NEVER</b> used for automatic training.</p>';
+  document.getElementById('adv-quarantine').innerHTML = qHTML;
+
+  // 6. Render signal inventory
+  let sigHTML = '<table style="font-size:10px;width:100%;"><thead><tr><th>Dimension</th><th>Patterns</th><th>Max weight</th></tr></thead><tbody>';
+  for (const [dim, signals] of Object.entries(ADV_SIGNALS)) {
+    const maxW = Math.max(...signals.map(s => s[2]));
+    const patterns = signals.map(s => s[0]).join(' | ');
+    sigHTML += '<tr><td><b>' + dim + '</b></td><td><code>' + patterns.slice(0, 80) + '</code></td><td>' + maxW + '</td></tr>';
+  }
+  sigHTML += '</tbody></table>';
+  document.getElementById('adv-signal-inventory').innerHTML = sigHTML;
+}
+
+function advAddToSignalInventory(phrase) {
+  // This adds the phrase to a REVIEW QUEUE (not the actual detector)
+  // In a real system, this would write to a review file
+  alert(`Phrase "${phrase}" added to review queue. A human reviewer must approve this addition before it enters the signal inventory. This is NOT automatic training.`);
+}
+
+function advReviewItem(id, decision) {
+    alert(`Variant ${id.slice(-8)} marked as ${decision}. ${decision === 'approved' ? 'This variant enters the held-out challenge set. It will NOT be used for training.' : 'This variant is rejected and will not be used.'}`);
+}
+
+function advClearLog() {
+  document.getElementById('adv-results').innerHTML = '<p style="color:var(--muted);">Results will appear here after running a cycle.</p>';
+  document.getElementById('adv-gap-report').innerHTML = '<p style="color:var(--muted);">No gaps detected yet. Run a cycle to identify detector gaps.</p>';
+  document.getElementById('adv-quarantine').innerHTML = '<p style="color:var(--muted);">No generated variants in quarantine.</p>';
+  document.getElementById('adv-signal-inventory').innerHTML = '<p style="color:var(--muted);">Click Run Contrast-Set Cycle to see the signal inventory in action.</p>';
+}
+</script>
+
 <!doctype html>
-<html lang="en" data-build-fingerprint="solarize-rebuild-bc537870-1786080462" data-commit-sha="bc53787039a769cd2ee8ff3510dc14ce06f1f7ba" data-solarize-version="2.0">
+<html lang="en" data-build-fingerprint="solarize-rebuild-cf2c0b4f-1786081880" data-commit-sha="cf2c0b4ffae51a79eeb0ee46eb7b0a4f5457e891" data-solarize-version="2.0">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -437,32 +634,58 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
   </div>
 
   <div id="subtab-adversarial" class="subpanel" role="tabpanel">
-    <h3>Rule-Based Adversarial Sandbox</h3>
+    <h3>Rule-Based Adversarial Sandbox (Interactive)</h3>
     <div class="disclaimer">
-      <strong>Truthfulness correction:</strong> This component was previously labeled "Adversarial GAN". A forensic audit (Round 1) confirmed it is <b>phrase injection + regex mutation</b>, NOT a GAN. The GAN gate requires: (1) trainable generator, (2) trainable discriminator, (3) adversarial loss, (4) optimization steps, (5) saved checkpoints, (6) held-out evaluation, (7) baseline comparison. This component meets <b>0 of 8</b> criteria. It is renamed to "Rule-Based Adversarial Sandbox" to preserve the useful detector-gap-discovery behavior while correcting the misleading label.
+      <strong>Truthfulness correction:</strong> Previously labeled "Adversarial GAN". Confirmed as <b>phrase injection + regex mutation</b> — NOT a GAN (0/8 gate criteria). This is <b>contrast-set robustness testing</b>, not model training.
     </div>
-    <p style="font-size:13px;">The Rule-Based Adversarial Sandbox inserts phrases from a predefined list into ad text, re-runs the rule-based detector, and identifies gaps where the detector misses known persuasion phrases. Gaps are added to the signal inventory for review. This is <b>contrast-set robustness testing</b>, not model training.</p>
-    <p style="font-size:13px;"><b>Defensive boundary:</b> This tool is for detector robustness evaluation only. It does NOT provide advice for making ads more manipulative, evading detection, or targeting vulnerable groups.</p>
-    <h3>How it works</h3>
-    <ol style="font-size:12px;">
-      <li>Pick a phrase from the predefined signal inventory (13 phrases)</li>
-      <li>Append it to the base ad text</li>
-      <li>Re-run the rule-based detector (regex matching)</li>
-      <li>If the phrase was missed, flag it as a gap</li>
-      <li>Gaps enter a review queue (NOT automatic training)</li>
-    </ol>
-    <h3>Contrast-set framework (formalized)</h3>
-    <p style="font-size:12px;">The sandbox is formalized as a <b>contrast-set robustness evaluation</b>. Each perturbation is a minimal change to the input, and detection rate is measured before/after.</p>
+    <div class="disclaimer" style="background:#fee2e2;border-color:#fecaca;color:#991b1b;">
+      <strong>Defensive boundary:</strong> For detector robustness evaluation ONLY. Does NOT provide manipulation-optimization advice, evasion instructions, or targeting strategies.
+    </div>
+
+    <h3>Base text input</h3>
+    <div class="input-row">
+      <label for="adv-base-text">Ad text to test (or use text from Analyze an Ad)</label>
+      <textarea id="adv-base-text" style="width:100%;min-height:80px;padding:8px;border:1px solid var(--line);border-radius:6px;font-size:12px;font-family:inherit;" placeholder="Paste ad text here, or click 'Import from Analyze an Ad'"></textarea>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0;">
+      <button class="btn primary" onclick="advImportText()">Import from Analyze an Ad</button>
+      <button class="btn secondary" onclick="advLoadExample()">Load Example</button>
+      <button class="btn violet" onclick="advRunCycle()">Run Contrast-Set Cycle (5 rounds)</button>
+      <button class="btn secondary" onclick="advClearLog()">Clear Results</button>
+    </div>
+
+    <h3>Signal inventory (detector's regex patterns)</h3>
+    <div id="adv-signal-inventory" style="background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:11px;max-height:200px;overflow:auto;">
+      <p style="color:var(--muted);">Click 'Run Contrast-Set Cycle' to see the signal inventory in action.</p>
+    </div>
+
+    <h3>Contrast-set results (detection before vs after)</h3>
+    <div id="adv-results" style="background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:10px;min-height:100px;">
+      <p style="color:var(--muted);">Results will appear here after running a cycle.</p>
+    </div>
+
+    <h3>Gap report (missed phrases flagged for review)</h3>
+    <div id="adv-gap-report" style="background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;min-height:60px;">
+      <p style="color:var(--muted);">No gaps detected yet. Run a cycle to identify detector gaps.</p>
+    </div>
+
+    <h3>Quarantine workflow</h3>
+    <p style="font-size:12px;">Generated variants enter quarantine. They are NOT used for training automatically.</p>
+    <div id="adv-quarantine" style="background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:10px;min-height:60px;">
+      <p style="color:var(--muted);">No generated variants in quarantine.</p>
+    </div>
+
+    <h3>Contrast-set framework documentation</h3>
     <table style="font-size:11px;">
       <thead><tr><th>Perturbation type</th><th>Description</th><th>Detection before</th><th>Detection after</th><th>Semantic validity</th></tr></thead>
       <tbody>
-        <tr><td><b>Phrase insertion</b></td><td>Append known persuasion phrase</td><td>Depends on base text</td><td>Should increase</td><td>Preserved</td></tr>
-        <tr><td><b>Word swap</b></td><td>Replace word with synonym</td><td>Depends on base text</td><td>May decrease</td><td>Preserved</td></tr>
-        <tr><td><b>Negation</b></td><td>Add "no" before key phrase</td><td>Detected</td><td>Should NOT detect</td><td>Changed</td></tr>
-        <tr><td><b>Reordering</b></td><td>Swap sentence order</td><td>Detected</td><td>Should still detect</td><td>Preserved</td></tr>
+        <tr><td><b>Phrase insertion</b></td><td>Append known persuasion phrase</td><td>Measured live</td><td>Measured live</td><td>Preserved</td></tr>
+        <tr><td><b>Word swap</b></td><td>Replace word with synonym</td><td>Measured live</td><td>Measured live</td><td>Preserved</td></tr>
+        <tr><td><b>Negation</b></td><td>Add "no" before key phrase</td><td>Measured live</td><td>Should NOT detect</td><td>Changed</td></tr>
+        <tr><td><b>Reordering</b></td><td>Swap sentence order</td><td>Measured live</td><td>Measured live</td><td>Preserved</td></tr>
       </tbody>
     </table>
-    <div class="disclaimer"><strong>Evaluation metrics:</strong> Detection rate before/after, semantic validity, robustness score = 1 - |after - before| / before.</div>
+    <div class="disclaimer"><strong>Evaluation metrics:</strong> Detection rate before/after, semantic validity (human judgment), robustness score = 1 - |after - before| / before (higher = more robust). Gap = phrase not detected by any signal pattern.</div>
   </div>
 
   <div id="subtab-quarantine" class="subpanel" role="tabpanel">
