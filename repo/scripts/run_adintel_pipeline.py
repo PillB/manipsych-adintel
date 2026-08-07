@@ -31,6 +31,7 @@ from adintel import clustering as cl
 from adintel import outlier as ot
 from adintel import profile as pf
 from adintel import taxonomy as tx
+from adintel.clean_body import clean_ad_text
 from adintel.api import AdIntelAPI
 
 
@@ -75,7 +76,7 @@ def main() -> int:
 
     # Build text + record_id index
     rec_by_id = {r.get("record_id"): r for r in records if isinstance(r, dict) and r.get("record_id")}
-    texts_full = [(r.get("record_id", ""), f"{r.get('title', '')}\n{r.get('body_redacted', '')}") for r in records if isinstance(r, dict)]
+    texts_full = [(r.get("record_id", ""), clean_ad_text(r.get('title', ''), r.get('body_redacted', ''))) for r in records if isinstance(r, dict)]
 
     # Council labels per record
     labels_by_id: dict[str, set[str]] = {}
@@ -117,10 +118,10 @@ def main() -> int:
     # R1-D01 fix: use stratified sampling by platform to avoid the
     # ingestion-order-induced brand leakage we saw in Round 1.
     cluster_records = cl.stratified_sample(records, by_field="source_platform", n_per_stratum=CLUSTER_SAMPLE // 5)
-    cluster_texts = [f"{r.get('title', '')}\n{r.get('body_redacted', '')}" for r in cluster_records]
+    cluster_texts = [clean_ad_text(r.get('title', ''), r.get('body_redacted', '')) for r in cluster_records]
     cluster_profiles = []
     for r in cluster_records:
-        text = f"{r.get('title', '')}\n{r.get('body_redacted', '')}"
+        text = clean_ad_text(r.get('title', ''), r.get('body_redacted', ''))
         cluster_profiles.append(pf.score_profile(text, record_id=r.get("record_id", "")).to_dict())
     t_c = time.perf_counter()
     cluster_results = cl.cluster_all_spaces(cluster_records, cluster_texts, profiles=cluster_profiles, k=5, compute_stability=True)
@@ -186,7 +187,7 @@ def main() -> int:
     # ---- 5. Outlier detection on a larger sample ---------------------
     print(f"[adintel-pipeline] outlier detection on sample of {OUTLIER_SAMPLE} ...")
     out_records = records[:OUTLIER_SAMPLE]
-    out_texts = [f"{r.get('title', '')}\n{r.get('body_redacted', '')}" for r in out_records]
+    out_texts = [clean_ad_text(r.get('title', ''), r.get('body_redacted', '')) for r in out_records]
     out_labels = [labels_by_id.get(r.get("record_id", ""), set()) for r in out_records]
     t_o = time.perf_counter()
     outlier_reports = ot.detect_all_outliers(out_texts, out_records, label_sets=out_labels)

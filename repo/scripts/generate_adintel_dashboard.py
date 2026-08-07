@@ -64,6 +64,7 @@ def render() -> str:
     # term-comparison rows, and the per-ad selector JSON payload.
     # ------------------------------------------------------------------
     import subprocess as _sp
+    from adintel.clean_body import clean_body_preview
     try:
         _commit_sha = _sp.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, stderr=_sp.DEVNULL).decode().strip()
     except Exception:
@@ -92,7 +93,7 @@ def render() -> str:
             ad_rid = ad.get("record_id", "")
             ad_title = (ad.get("title", "") or "Untitled")[:60]
             ad_plat = ad.get("platform", "?")
-            ad_body = (ad.get("body_preview", "") or "")[:160]
+            ad_body = clean_body_preview(ad.get("body_preview", "") or "", 160)
             ad_ms = ad.get("cluster_membership_strength", "?")
             ad_sil = ad.get("silhouette", "?")
             sample_html += (
@@ -526,6 +527,8 @@ td.abstain {{ font-size:10px; color:var(--muted); max-width:200px; overflow-wrap
 /* Bars */
 .bar {{ width:120px; height:7px; background:var(--line); border-radius:4px; overflow:hidden; display:inline-block; vertical-align:middle; }}
 .bar-fill {{ height:100%; background:linear-gradient(90deg,var(--green),var(--amber),var(--red)); }}
+.bar > i {{ display:block; height:100%; border-radius:inherit; }}
+.rowline .bar > i {{ display:block; height:100%; border-radius:inherit; }}
 .rowline {{ display:grid; grid-template-columns:140px 1fr 50px; gap:8px; align-items:center; padding:3px 0; font-size:11px; }}
 .rowline .bar {{ width:100%; }}
 
@@ -1647,6 +1650,16 @@ function renderList(){{
   renderDetail(currentRows[selected] || (data[mode]||[])[0]);
 }}
 window.selectRow = i => {{ selected=i; renderList(); if(currentRows[i]) history.replaceState(null,'','#'+currentRows[i].record_id) }}
+window.selectRowById = rid => {{
+  for(const candidateMode of ['top_by_review_priority','top_by_manipulation','top_by_persuasion']){{
+    if((data[candidateMode]||[]).some(r=>r.record_id===rid)){{
+      mode=candidateMode; $('rankMode').value=mode; $('platformFilter').value=''; $('labelFilter').value=''; $('query').value='';
+      currentRows=rows(); const idx=currentRows.findIndex(r=>r.record_id===rid);
+      if(idx>=0){{selected=idx;renderList();document.getElementById('explorer').scrollIntoView({{behavior:'smooth',block:'start'}});return;}}
+    }}
+  }}
+  toast('Record '+rid.slice(0,16)+'… not found in Top-25.');
+}};
 
 function segmentText(text, spans){{
   const safeSpans = (spans||[]).map(s=>({{...s,segments:(s.segments||[]).map(([a,b])=>[Math.max(0,Math.min(text.length,a)),Math.max(0,Math.min(text.length,b))]).filter(([a,b])=>a<b)}})).filter(s=>s.segments.length);
@@ -1817,7 +1830,22 @@ function renderTermNetwork(){{
   container.querySelectorAll('.network-node').forEach((el,i)=>{{
     const node=laid[i];
     el.style.cursor='pointer';
-    el.addEventListener('click',()=>$('networkInspector').innerHTML=`<b>${{esc(node.name)}}</b> · ${{esc(node.kind)}}<br>Examples: ${{(node.examples||[]).map(id=>`<a href="#${{esc(id)}}">${{esc(id.slice(0,10))}}</a>`).join(' ')||'n/a'}}`);
+    el.addEventListener('click',()=>{{
+      const exampleIds = (node.examples||[]).slice(0,5);
+      const exampleHTML = exampleIds.length > 0
+        ? exampleIds.map(id => {{
+            let adData = null;
+            for (const mode of ['top_by_review_priority','top_by_manipulation','top_by_persuasion']) {{
+              if (data[mode]) {{ adData = data[mode].find(r => r.record_id === id); if (adData) break; }}
+            }}
+            if (adData) {{
+              return `<div style="background:var(--soft);padding:6px 8px;border-radius:6px;margin:4px 0;cursor:pointer;border:1px solid var(--line);" onclick="selectRowById('${{esc(id)}}')" tabindex="0" role="button" aria-label="View ad"><b>${{esc((adData.title||'Untitled').slice(0,60))}}</b> <code style="font-size:9px;color:var(--muted);">${{esc(id.slice(0,16))}}…</code><br><span style="font-size:10px;color:var(--muted);">${{esc((adData.text||'').slice(0,120))}}…</span></div>`;
+            }}
+            return `<div style="background:var(--soft);padding:6px 8px;border-radius:6px;margin:4px 0;border:1px solid var(--line);"><code style="font-size:9px;color:var(--muted);">${{esc(id.slice(0,24))}}…</code><br><span style="font-size:10px;color:var(--muted);">Not in Top-25. Search in <a href="#adintel-data">full per-ad table</a>.</span></div>`;
+          }}).join('')
+        : '<span style="color:var(--muted);font-size:11px;">No example records linked.</span>';
+      $('networkInspector').innerHTML = `<div style="background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;"><h4 style="margin:0 0 6px;font-size:13px;">${{esc(node.name)}}</h4><p style="font-size:11px;color:var(--muted);margin:0 0 8px;">Type: ${{esc(node.kind)}} · ${{exampleIds.length}} example(s)</p><div>${{exampleHTML}}</div></div>`;
+    }});
   }});
 }}
 

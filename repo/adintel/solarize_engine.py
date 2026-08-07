@@ -44,6 +44,11 @@ from adintel.solarize_stats import (
     aggregate_verdict,
 )
 
+def _clean_preview(text: str, max_chars: int = 200) -> str:
+    """Clean body text by stripping ' - Category - ID' suffix, then truncate."""
+    from adintel.clean_body import clean_body_preview
+    return clean_body_preview(text or "", max_chars)
+
 
 # ---------------------------------------------------------------------------
 # Per-ad cluster membership
@@ -802,7 +807,7 @@ def build_solarize_summary(
                 "record_id": r.get("record_id", str(i)),
                 "title": (r.get("title", "") or "")[:80],
                 "platform": r.get("metadata", {}).get("platform_family", "unknown"),
-                "body_preview": (texts[i] or "")[:200],
+                "body_preview": _clean_preview(texts[i]),
                 "cluster_membership_strength": round(memberships[i].membership_strength, 3),
                 "silhouette": round(memberships[i].silhouette, 4),
             })

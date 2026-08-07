@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT))
 from adintel import profile as pf
 from adintel import outlier as ot
 from adintel import taxonomy as tx
+from adintel.clean_body import clean_ad_text
 
 MANIFEST = ROOT / "data" / "processed" / "ad_manifest.jsonl"
 COUNCIL = ROOT / "data" / "annotation" / "council_resolved_annotations.jsonl"
@@ -45,7 +46,7 @@ def main():
     print(f"Loaded {len(records)} manifest records, {len(council)} council annotations")
 
     # Build text and label index
-    texts = [f"{r.get('title','')} {r.get('body_redacted','')}" for r in records]
+    texts = [clean_ad_text(r.get('title',''), r.get('body_redacted','')) for r in records]
     labels_by_id = {}
     for c in council:
         rid = c.get("record_id")

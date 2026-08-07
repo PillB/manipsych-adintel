@@ -28,6 +28,7 @@ sys.path.insert(0, str(ROOT))
 
 from adintel import outlier as ot
 from adintel import solarize_engine as se
+from adintel.clean_body import clean_body_preview, clean_ad_text
 
 MANIFEST = ROOT / "data" / "processed" / "ad_manifest.jsonl"
 COUNCIL = ROOT / "data" / "annotation" / "council_resolved_annotations.jsonl"
@@ -76,7 +77,7 @@ def main():
         print("ERROR: no records loaded")
         sys.exit(1)
 
-    texts = [f"{r.get('title','')} {r.get('body_redacted','')}" for r in records]
+    texts = [clean_ad_text(r.get('title',''), r.get('body_redacted','')) for r in records]
     label_sets = []
     labels_by_id = {}
     for c in council:
