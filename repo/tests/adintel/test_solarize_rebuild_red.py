@@ -842,10 +842,16 @@ class TestSolarizeRebuildRed(unittest.TestCase):
         """R048: The indicator dictionary must be accessible from the dashboard UI."""
         self._page.goto(f"{LIVE_URL}#guide", wait_until="networkidle", timeout=60_000)
         self._page.wait_for_timeout(2000)
+        # In v2, click the Indicator Dictionary subtab to reveal it
+        ind_subtab = self._page.locator("[data-subtab='indicators']")
+        if ind_subtab.count() > 0:
+            ind_subtab.first.click()
+            self._page.wait_for_timeout(500)
         # Look for indicator dictionary section or link
         dict_section = self._page.locator(
             "#indicator-dictionary, [data-role='indicator-dictionary'], "
-            "a:has-text('indicator dictionary'), a:has-text('Indicator Dictionary')"
+            "a:has-text('indicator dictionary'), a:has-text('Indicator Dictionary'), "
+            "#subtab-indicators, [data-subtab='indicators'], .indicator-card"
         ).count()
         self.assertGreater(dict_section, 0, "No indicator dictionary section or link in the dashboard")
 
