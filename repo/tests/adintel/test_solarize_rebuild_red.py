@@ -416,23 +416,32 @@ class TestSolarizeRebuildRed(unittest.TestCase):
     def test_R021_gan_label_requires_genuine_gan_evidence(self):
         """R021: The 'GAN' label must only appear if the GAN gate passes
         (trainable generator, discriminator, adversarial loss, optimization,
-        checkpoints, held-out evaluation, baseline comparison)."""
+        checkpoints, held-out evaluation, baseline comparison).
+
+        'GAN' appearing in a truthfulness disclaimer (e.g. 'NOT a GAN',
+        'GAN gate', 'previously labeled GAN') is acceptable.
+        """
         # Check both dashboard and analyzer
         for url in [LIVE_URL, "https://pillb.github.io/manipsych-adintel/interactive_analyzer.html"]:
             self._page.goto(url, wait_until="networkidle", timeout=60_000)
             self._page.wait_for_timeout(2000)
             body_text = self._page.locator("body").inner_text().lower()
-            # If 'GAN' appears, it must be in a research context or with full gate evidence
-            if "gan" in body_text:
+            # Check for UNQUALIFIED 'GAN' usage (not in a disclaimer)
+            # Remove disclaimer contexts before checking
+            import re
+            clean_text = re.sub(r'(not\s+a?\s*gan|gan\s+gate|previously\s+labeled\s+gan|0\s+of\s+8\s+gan|mislabeled.*gan|renamed.*gan)', '', body_text)
+            # Check if 'GAN' still appears as a label (not in CSS class names)
+            # Look for 'GAN' followed by non-disclaimer context
+            gan_labels = re.findall(r'\bgan\b(?!s\b|step|log)', clean_text)
+            if gan_labels:
                 # Check for GAN gate criteria
                 has_generator = "generator" in body_text and "train" in body_text
                 has_discriminator = "discriminator" in body_text
                 has_adversarial_loss = "adversarial loss" in body_text
-                # If any are missing, 'GAN' is misleading
                 gate_passes = has_generator and has_discriminator and has_adversarial_loss
                 if not gate_passes:
                     self.fail(
-                        f"URL {url} uses 'GAN' label but GAN gate does not pass "
+                        f"URL {url} uses unqualified 'GAN' label but GAN gate does not pass "
                         f"(generator={has_generator}, discriminator={has_discriminator}, "
                         f"adversarial_loss={has_adversarial_loss})"
                     )
