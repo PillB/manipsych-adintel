@@ -522,7 +522,7 @@ class TestSolarizeRebuildRed(unittest.TestCase):
 
     def test_R027_tutorial_pause_stop_resume(self):
         """R027: Tutorial must have Pause, Stop, and Resume controls."""
-        self._page.goto(LIVE_URL, wait_until="networkidle", timeout=60_000)
+        self._page.goto(f"{LIVE_URL}#guide", wait_until="networkidle", timeout=60_000)
         self._page.wait_for_timeout(2000)
         body_text = self._page.locator("body").inner_text().lower()
         # Must have pause/stop/resume controls (or at least the concept)
@@ -536,14 +536,19 @@ class TestSolarizeRebuildRed(unittest.TestCase):
 
     def test_R028_tutorial_persists_after_refresh(self):
         """R028: Tutorial state must persist after page refresh (localStorage)."""
-        self._page.goto(LIVE_URL, wait_until="networkidle", timeout=60_000)
+        self._page.goto(f"{LIVE_URL}#guide", wait_until="networkidle", timeout=60_000)
         self._page.wait_for_timeout(2000)
+        # Start a tutorial to trigger localStorage save
+        start_btn = self._page.locator("button:has-text('Quick Orientation')")
+        if start_btn.count() > 0:
+            start_btn.first.click()
+            self._page.wait_for_timeout(1000)
         # Check if localStorage has tutorial state keys
         ls_keys = self._page.evaluate("() => Object.keys(localStorage)")
         tutorial_keys = [k for k in ls_keys if "tutorial" in k.lower() or "tour" in k.lower()]
         self.assertGreater(
             len(tutorial_keys), 0,
-            f"No tutorial state in localStorage. Keys: {ls_keys[:10]}",
+            f"No tutorial state in localStorage after starting tutorial. Keys: {ls_keys[:10]}",
         )
 
     def test_R029_tutorial_keyboard_accessible(self):
