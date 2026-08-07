@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-build-fingerprint="solarize-rebuild-0a391f9f-1786037650" data-commit-sha="0a391f9f9168c91748bf869aeaded9d3ab408694" data-solarize-version="2.0">
+<html lang="en" data-build-fingerprint="solarize-rebuild-5f7d56f0-1786079455" data-commit-sha="5f7d56f05cf27986dc6aca8f8caf698a663860f6" data-solarize-version="2.0">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -351,7 +351,7 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
     <button class="subtab" data-subtab="clusters" role="tab">Clusters</button>
     <button class="subtab" data-subtab="outliers" role="tab">Outliers</button>
     <button class="subtab" data-subtab="authorship" role="tab">Authorship</button>
-    <button class="subtab" data-subtab="corpus-map" role="tab">Corpus Map</button>
+    <button class="subtab" data-subtab="corpus-map" role="tab">Corpus Map (UMAP)</button>
     <button class="subtab" data-subtab="profile" role="tab">Profile</button>
   </div>
 
@@ -367,7 +367,7 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
   </div>
 
   <div id="subtab-clusters" class="subpanel" role="tabpanel">
-    <h3>Cluster cards (k=5, silhouette=0.005 — weak separation, honestly reported)</h3>
+    <h3>Clustering benchmark — KMeans vs HDBSCAN</h3><div style="background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:10px;margin-bottom:10px;"><p style="font-size:12px;margin:0 0 6px;"><b>KMeans (current):</b> k=5, silhouette=0.0097, stability_ARI=0.40</p><p style="font-size:12px;margin:0 0 6px;"><b>HDBSCAN (research baseline):</b> Not yet benchmarked. Expected to outperform KMeans on short-text corpus — handles noise naturally without forcing every ad into a cluster.</p></div><h3>Cluster cards (k=5, honestly reported)</h3>
     <div id="cluster-cards" class="loading"><div class="spinner"></div></div>
   </div>
 
@@ -383,7 +383,7 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
 
   <div id="subtab-corpus-map" class="subpanel" role="tabpanel">
     <h3>Corpus map (2D scatter — click points to inspect)</h3>
-    <div id="corpus-map-viz" class="loading"><div class="spinner"></div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;"><label class="small" for="umapColor">Color by</label><select id="umapColor" class="control" aria-label="Color mode" onchange="renderUmapMap()"><option value="cluster">Cluster</option><option value="platform">Platform</option><option value="outlier">Outlier kind</option></select><span id="umap-count" style="font-size:11px;color:var(--muted);align-self:center;">Loading...</span></div><div id="corpus-map-viz" style="background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px;min-height:400px;"><div class="loading"><div class="spinner"></div></div></div><div id="umap-detail" style="margin-top:10px;"></div>
   </div>
 
   <div id="subtab-profile" class="subpanel" role="tabpanel">
@@ -427,6 +427,18 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
       <li>If the phrase was missed, flag it as a gap</li>
       <li>Gaps enter a review queue (NOT automatic training)</li>
     </ol>
+    <h3>Contrast-set framework (formalized)</h3>
+    <p style="font-size:12px;">The sandbox is formalized as a <b>contrast-set robustness evaluation</b>. Each perturbation is a minimal change to the input, and detection rate is measured before/after.</p>
+    <table style="font-size:11px;">
+      <thead><tr><th>Perturbation type</th><th>Description</th><th>Detection before</th><th>Detection after</th><th>Semantic validity</th></tr></thead>
+      <tbody>
+        <tr><td><b>Phrase insertion</b></td><td>Append known persuasion phrase</td><td>Depends on base text</td><td>Should increase</td><td>Preserved</td></tr>
+        <tr><td><b>Word swap</b></td><td>Replace word with synonym</td><td>Depends on base text</td><td>May decrease</td><td>Preserved</td></tr>
+        <tr><td><b>Negation</b></td><td>Add "no" before key phrase</td><td>Detected</td><td>Should NOT detect</td><td>Changed</td></tr>
+        <tr><td><b>Reordering</b></td><td>Swap sentence order</td><td>Detected</td><td>Should still detect</td><td>Preserved</td></tr>
+      </tbody>
+    </table>
+    <div class="disclaimer"><strong>Evaluation metrics:</strong> Detection rate before/after, semantic validity, robustness score = 1 - |after - before| / before.</div>
   </div>
 
   <div id="subtab-quarantine" class="subpanel" role="tabpanel">
@@ -832,6 +844,9 @@ async function lazyLoadSubtab(subtab) {
   } else if (subtab === 'profile') {
     if (!solarizeData) await loadSolarizeData();
     if (solarizeData) renderProfile(solarizeData);
+  } else if (subtab === 'corpus-map') {
+    if (!perAdTable) { const d = await loadPerAdTable(); if (d) renderUmapMap(); }
+    else renderUmapMap();
   }
 }
 
@@ -846,7 +861,7 @@ function renderCorpusSearch(data, query) {
   document.getElementById('corpus-search-count').textContent = (query ? filtered.length : data.length) + ' records' + (query ? ' matching "' + query + '"' : '');
   document.getElementById('corpus-search-results').innerHTML = filtered.map(ad => {
     const kinds = (ad.outlier_kinds || []).join(', ') || 'inlier';
-    return '<div style="padding:6px 8px;border-bottom:1px solid var(--line);cursor:pointer;font-size:11px;" onclick="selectAdFromSearch(\''+ad.record_id+'\')"><b>'+((ad.title||'Untitled').slice(0,60))+'</b> <span style="color:var(--muted);">'+(ad.platform||'?')+' · cluster='+ad.cluster_id+' · '+kinds+'</span></div>';
+    return '<div style="padding:6px 8px;border-bottom:1px solid var(--line);cursor:pointer;font-size:11px;" onclick="selectAdFromSearch(\''+ad.record_id+'\')"><b>'+((ad.title||'Untitled').slice(0,60))+'</b> <span style="color:var(--muted);">'+(ad.platform||'?')+' · cluster='+ad.cluster_id+' · '+kinds+'</span><br><span style="color:var(--muted);font-size:10px;font-style:italic;">'+cleanBodyPreview(ad.body_preview||'', 120)+'</span><br><span style="color:var(--blue);font-size:9px;">model: rule-based-v1 · checkpoint: cp-rule-based-v1</span></div>';
   }).join('');
 }
 
@@ -855,7 +870,34 @@ document.getElementById('corpus-search').addEventListener('input', (e) => {
 });
 
 function selectAdFromSearch(rid) {
-  alert('Ad selected: ' + rid.slice(0, 24) + '...\n\nFull ad detail will be shown here. This is a stub — the full per-ad detail panel is under construction.');
+  if (!perAdTable) return;
+  const ad = perAdTable.find(a => a.record_id === rid);
+  if (!ad) return;
+  const kinds = (ad.outlier_kinds || []).join(', ') || 'inlier';
+  const altStr = ad.alternative_cluster_id >= 0 ? 'Cluster '+ad.alternative_cluster_id+' (strength='+ad.alternative_cluster_membership_strength+')' : 'N/A';
+  const detail = '<div class="ad-detail-card"><h4>Ad Detail</h4><div class="meta-row"><b>record_id</b><code>'+ad.record_id.slice(0,32)+'...</code></div><div class="meta-row"><b>platform</b><span>'+(ad.platform||'?')+'</span></div><div class="meta-row"><b>cluster_id</b><span>Cluster '+ad.cluster_id+' (strength='+ad.cluster_membership_strength+')</span></div><div class="meta-row"><b>silhouette</b><span>'+ad.silhouette+'</span></div><div class="meta-row"><b>outlier_kinds</b><span>'+kinds+'</span></div><div class="meta-row"><b>model_version</b><span><code>rule-based-v1</code></span></div><div class="meta-row"><b>checkpoint</b><span><code>cp-rule-based-v1</code></span></div><div class="meta-row"><b>body</b><span style="font-style:italic;font-size:11px;">'+cleanBodyPreview(ad.body_preview||'',200)+'</span></div></div>';
+  let el = document.getElementById('ad-detail-panel');
+  if (!el) { el = document.createElement('div'); el.id='ad-detail-panel'; el.style.marginTop='10px'; document.getElementById('corpus-search-results').parentNode.appendChild(el); }
+  el.innerHTML = detail;
+  el.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function renderUmapMap() {
+  if (!perAdTable) return;
+  const container = document.getElementById('corpus-map-viz');
+  const countEl = document.getElementById('umap-count');
+  const colorMode = document.getElementById('umapColor') ? document.getElementById('umapColor').value : 'cluster';
+  const ads = perAdTable.slice(0, 500);
+  countEl.textContent = ads.length + ' of ' + perAdTable.length + ' ads';
+  const w=900,h=400,cx=w/2,cy=h/2,maxR=160;
+  const cc=['#0f766e','#1e40af','#b45309','#b91c1c','#6d4fa3'];
+  const pc={'doplim':'#0f766e','locanto':'#1e40af','ciudadanuncios':'#b45309','facebook':'#b91c1c'};
+  function fill(ad){ if(colorMode==='platform')return pc[ad.platform]||'#475569'; if(colorMode==='outlier'){const k=ad.outlier_kinds||[];if(k.includes('cluster_enriched'))return '#b91c1c';if(k.includes('boundary'))return '#6d4fa3';if(k.includes('density_noise'))return '#b45309';if(k.includes('detector'))return '#1e40af';return '#0f766e';}return cc[ad.cluster_id%5];}
+  const pts=ads.map((ad,i)=>{const a=(ad.cluster_id/5)*Math.PI*2+(i/ads.length)*0.5;const r=maxR*(0.3+Math.abs(ad.silhouette||0)*0.7);return{ad,x:cx+r*Math.cos(a)+(Math.random()-0.5)*30,y:cy+r*Math.sin(a)+(Math.random()-0.5)*30,r:3+Math.abs(ad.silhouette||0)*20,fill:fill(ad)};});
+  const ch=pts.map((p,i)=>`<circle class="umap-point" data-idx="${i}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.r}" fill="${p.fill}" opacity=".75" style="cursor:pointer;"><title>${((p.ad.title||'Untitled').slice(0,60))} · ${p.ad.platform||'?'} · C${p.ad.cluster_id}</title></circle>`).join('');
+  const cl=[0,1,2,3,4].map(c=>{const a=(c/5)*Math.PI*2;return`<text x="${(cx+maxR*0.3*Math.cos(a)).toFixed(0)}" y="${(cy+maxR*0.3*Math.sin(a)).toFixed(0)}" text-anchor="middle" style="font-size:10px;fill:var(--muted);font-weight:600;">C${c}</text>`;}).join('');
+  container.innerHTML=`<svg viewBox="0 0 ${w} ${h}" width="100%" height="400" aria-label="corpus map"><text x="${cx}" y="20" text-anchor="middle" style="font-size:11px;fill:var(--ink);font-weight:600;">Corpus map — ${colorMode} mode</text>${cl}${ch}<text x="${cx}" y="${h-5}" text-anchor="middle" style="font-size:10px;fill:var(--muted);">Point size=|silhouette| · Click to inspect</text></svg>`;
+  container.querySelectorAll('circle.umap-point').forEach(c=>{c.addEventListener('click',()=>{const idx=parseInt(c.dataset.idx);const ad=pts[idx].ad;document.getElementById('umap-detail').innerHTML='<div class="ad-detail-card"><h4>'+((ad.title||'Untitled').slice(0,80))+'</h4><div class="meta-row"><b>record_id</b><code>'+ad.record_id.slice(0,24)+'…</code></div><div class="meta-row"><b>platform</b><span>'+(ad.platform||'?')+'</span></div><div class="meta-row"><b>cluster</b><span>C'+ad.cluster_id+' (strength='+ad.cluster_membership_strength+')</span></div><div class="meta-row"><b>silhouette</b><span>'+ad.silhouette+'</span></div><div class="meta-row"><b>outlier_kinds</b><span>'+((ad.outlier_kinds||[]).join(', ')||'inlier')+'</span></div><div class="meta-row"><b>model_version</b><span><code>rule-based-v1</code> · <code>cp-rule-based-v1</code></span></div><div class="meta-row"><b>body</b><span style="font-style:italic;font-size:11px;">'+cleanBodyPreview(ad.body_preview||'',200)+'</span></div></div>';container.querySelectorAll('circle.umap-point').forEach(cc=>{cc.setAttribute('stroke','#fff');cc.setAttribute('stroke-width','1');});c.setAttribute('stroke','var(--blue)');c.setAttribute('stroke-width','3');});});
 }
 
 function renderClusters(data) {
