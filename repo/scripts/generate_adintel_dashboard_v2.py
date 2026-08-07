@@ -46,7 +46,33 @@ def main():
     sha = get_commit_sha()
     fingerprint = f"solarize-rebuild-{sha[:8]}-{int(time.time())}"
 
-    html = f"""<!doctype html>
+    clean_body_js = """<script>
+function cleanBody(text) {
+  if (!text) return '';
+  let t = text.trim();
+  const m = t.match(/\s*[-\u2013\u2014]\s*((?:Otros|Hombre\s+busca\s+Mujer|Mujer\s+busca\s+Hombre|Trabajo|Servicios|Venta|Alquiler|Contactos|\[REDACTED_\w+\]))\s*[-\u2013\u2014]\s*(\d+|\[REDACTED_\w+\]|.+)?\s*$/i);
+  if (m) return t.substring(0, m.index).trim();
+  const parts = t.split(' - ');
+  if (parts.length >= 3) {
+    const last = parts[parts.length - 1].trim();
+    if (/^\d+$/.test(last) || last.startsWith('[REDACTED')) return parts.slice(0, -2).join(' - ').trim();
+  }
+  return t;
+}
+function cleanBodyPreview(text, maxChars) {
+  maxChars = maxChars || 200;
+  const clean = cleanBody(text);
+  if (clean.length <= maxChars) return clean;
+  let tr = clean.substring(0, maxChars);
+  const ls = tr.lastIndexOf(' ');
+  if (ls > maxChars * 0.7) tr = tr.substring(0, ls);
+  return tr + '\u2026';
+}
+</script>
+
+"""
+
+    html = clean_body_js + f"""<!doctype html>
 <html lang="en" data-build-fingerprint="{fingerprint}" data-commit-sha="{sha}" data-solarize-version="2.0">
 <head>
 <meta charset="utf-8">
