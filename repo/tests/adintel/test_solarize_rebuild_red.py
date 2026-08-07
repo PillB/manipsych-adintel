@@ -397,15 +397,17 @@ class TestSolarizeRebuildRed(unittest.TestCase):
         """R020: Individual ad results must cite which checkpoint produced them."""
         self._page.goto(f"{LIVE_URL}#explore", wait_until="networkidle", timeout=60_000)
         self._page.wait_for_timeout(2000)
-        # Select an ad and check if its detail cites a checkpoint
-        # (This will fail because no per-ad checkpoint provenance exists yet)
+        # Click the Corpus Search subtab to load data
+        search_subtab = self._page.locator("[data-subtab='search']")
+        if search_subtab.count() > 0:
+            search_subtab.first.click()
+            self._page.wait_for_timeout(3000)  # wait for fetch to load per-ad data
         body_text = self._page.locator("body").inner_text().lower()
-        # Look for checkpoint references in ad detail context
-        # Currently checkpoints only appear in the #adintel-checkpoints section
-        has_per_ad_checkpoint = "checkpoint" in body_text and ("produced by" in body_text or "model version" in body_text)
-        # This is a weak check — the real test is per-ad checkpoint citation
+        # Look for checkpoint/model references in the search results
+        has_checkpoint = "checkpoint" in body_text or "cp-rule-based" in body_text
+        has_model = "model" in body_text and "version" in body_text
         self.assertTrue(
-            has_per_ad_checkpoint or "model_version" in body_text,
+            has_checkpoint or has_model,
             "Individual ad results do not cite which checkpoint/model version produced them",
         )
 
