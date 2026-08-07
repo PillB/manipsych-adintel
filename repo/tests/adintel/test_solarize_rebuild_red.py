@@ -89,7 +89,7 @@ class TestSolarizeRebuildRed(unittest.TestCase):
         self._page.goto(LIVE_URL, wait_until="networkidle", timeout=60_000)
         self._page.wait_for_timeout(2000)
         # Get top-level nav links
-        nav_links = self._page.locator("nav.nav a, header.hero nav a").all_text_contents()
+        nav_links = self._page.locator("nav.task-nav a, nav.nav a, header.hero nav a").all_text_contents()
         nav_texts = [t.strip().lower() for t in nav_links if t.strip()]
         # Target 5 task-oriented sections
         target_sections = ["mission control", "analyze", "explore", "models", "guide"]
@@ -771,10 +771,16 @@ class TestSolarizeRebuildRed(unittest.TestCase):
         """R044: An 'Ask AdIntel' contextual assistant must exist in the dashboard."""
         self._page.goto(f"{LIVE_URL}#guide", wait_until="networkidle", timeout=60_000)
         self._page.wait_for_timeout(2000)
+        # In v2, the assistant is in a subtab — click it to reveal
+        assistant_subtab = self._page.locator("[data-subtab='assistant']")
+        if assistant_subtab.count() > 0:
+            assistant_subtab.first.click()
+            self._page.wait_for_timeout(500)
         assistant = self._page.locator(
             "#ask-adintel, [data-role='assistant'], "
             "input[placeholder*='ask'], input[placeholder*='question'], "
-            ".chat-input, #assistantInput, [data-role='ask-adintel']"
+            ".chat-input, #assistantInput, [data-role='ask-adintel'], "
+            "#subtab-assistant input, #assistant-input"
         ).count()
         self.assertGreater(assistant, 0, "No 'Ask AdIntel' contextual assistant found")
 
