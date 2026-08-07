@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-build-fingerprint="solarize-a1104dee-ca9bd02cd858230e-1786070223" data-commit-sha="a1104dee33c81f6251505fe1c980cc20364966c2" data-solarize-version="1.0">
+<html lang="en" data-build-fingerprint="solarize-a1104dee-ca9bd02cd858230e-1786070223" data-commit-sha="3ef9804a5832a601cd02fd35b4a508237d2257c1" data-solarize-version="1.0">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -968,7 +968,7 @@ td.abstain { font-size:10px; color:var(--muted); max-width:200px; overflow-wrap:
   <section id="adintel-clustering" style="margin-top:16px;border:2px solid var(--violet);">
     <div class="story-step"><span class="step-num" style="background:var(--violet);">9</span><span class="step-text"><b>Solarize consolidated clustering.</b> 7-space summary (stability + leakage) + feature-engineering benchmark (raw TF-IDF vs LSA vs SVD-scaled) + per-cluster distinguishing terms + real sample ads + interactive ad selector.</span></div>
     <h2>adintel: Clustering &amp; Cluster-Member Explorer <span class="section-tag new">solarize</span></h2>
-    <p class="small">Build fingerprint: <code>solarize-a1104dee-ca9bd02cd858230e-1786070223</code>. Commit: <code>a1104dee</code>. Generated: <code>2026-08-07T02:37:03Z</code>. N records: <b>5,738</b>.</p>
+    <p class="small">Build fingerprint: <code>solarize-a1104dee-ca9bd02cd858230e-1786070223</code>. Commit: <code>3ef9804a</code>. Generated: <code>2026-08-07T02:37:03Z</code>. N records: <b>5,738</b>.</p>
 
     <h3>7-Space Clustering Summary (stratified sample, n=300)</h3>
     <table>
@@ -1840,6 +1840,34 @@ function renderTermNetwork(){
     el.style.cursor='pointer';
     el.addEventListener('click',()=>{
       const exampleIds = (node.examples||[]).slice(0,5);
+      // If node has no examples (label/platform nodes), look them up from the v1 data
+      if (exampleIds.length === 0) {
+        if (node.kind === 'label' && node.name) {
+          // Search all records for ones that have this label
+          for (const mode of ['top_by_review_priority','top_by_manipulation','top_by_persuasion']) {
+            if (!data[mode]) continue;
+            for (const r of data[mode]) {
+              if ((r.labels||[]).includes(node.name) && !exampleIds.includes(r.record_id)) {
+                exampleIds.push(r.record_id);
+                if (exampleIds.length >= 5) break;
+              }
+            }
+            if (exampleIds.length >= 5) break;
+          }
+        } else if (node.kind === 'platform' && node.name) {
+          // Search all records for ones from this platform
+          for (const mode of ['top_by_review_priority','top_by_manipulation','top_by_persuasion']) {
+            if (!data[mode]) continue;
+            for (const r of data[mode]) {
+              if ((r.platform||'').toLowerCase() === node.name.toLowerCase() && !exampleIds.includes(r.record_id)) {
+                exampleIds.push(r.record_id);
+                if (exampleIds.length >= 5) break;
+              }
+            }
+            if (exampleIds.length >= 5) break;
+          }
+        }
+      }
       const exampleHTML = exampleIds.length > 0
         ? exampleIds.map(id => {
             let adData = null;
@@ -1851,7 +1879,7 @@ function renderTermNetwork(){
             }
             return `<div style="background:var(--soft);padding:6px 8px;border-radius:6px;margin:4px 0;border:1px solid var(--line);"><code style="font-size:9px;color:var(--muted);">${esc(id.slice(0,24))}…</code><br><span style="font-size:10px;color:var(--muted);">Not in Top-25. Search in <a href="#adintel-data">full per-ad table</a>.</span></div>`;
           }).join('')
-        : '<span style="color:var(--muted);font-size:11px;">No example records linked.</span>';
+        : '<span style="color:var(--muted);font-size:11px;">No example records found for this node.</span>';
       $('networkInspector').innerHTML = `<div style="background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;"><h4 style="margin:0 0 6px;font-size:13px;">${esc(node.name)}</h4><p style="font-size:11px;color:var(--muted);margin:0 0 8px;">Type: ${esc(node.kind)} · ${exampleIds.length} example(s)</p><div>${exampleHTML}</div></div>`;
     });
   });

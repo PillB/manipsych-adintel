@@ -1832,6 +1832,34 @@ function renderTermNetwork(){{
     el.style.cursor='pointer';
     el.addEventListener('click',()=>{{
       const exampleIds = (node.examples||[]).slice(0,5);
+      // If node has no examples (label/platform nodes), look them up from the v1 data
+      if (exampleIds.length === 0) {{
+        if (node.kind === 'label' && node.name) {{
+          // Search all records for ones that have this label
+          for (const mode of ['top_by_review_priority','top_by_manipulation','top_by_persuasion']) {{
+            if (!data[mode]) continue;
+            for (const r of data[mode]) {{
+              if ((r.labels||[]).includes(node.name) && !exampleIds.includes(r.record_id)) {{
+                exampleIds.push(r.record_id);
+                if (exampleIds.length >= 5) break;
+              }}
+            }}
+            if (exampleIds.length >= 5) break;
+          }}
+        }} else if (node.kind === 'platform' && node.name) {{
+          // Search all records for ones from this platform
+          for (const mode of ['top_by_review_priority','top_by_manipulation','top_by_persuasion']) {{
+            if (!data[mode]) continue;
+            for (const r of data[mode]) {{
+              if ((r.platform||'').toLowerCase() === node.name.toLowerCase() && !exampleIds.includes(r.record_id)) {{
+                exampleIds.push(r.record_id);
+                if (exampleIds.length >= 5) break;
+              }}
+            }}
+            if (exampleIds.length >= 5) break;
+          }}
+        }}
+      }}
       const exampleHTML = exampleIds.length > 0
         ? exampleIds.map(id => {{
             let adData = null;
@@ -1843,7 +1871,7 @@ function renderTermNetwork(){{
             }}
             return `<div style="background:var(--soft);padding:6px 8px;border-radius:6px;margin:4px 0;border:1px solid var(--line);"><code style="font-size:9px;color:var(--muted);">${{esc(id.slice(0,24))}}…</code><br><span style="font-size:10px;color:var(--muted);">Not in Top-25. Search in <a href="#adintel-data">full per-ad table</a>.</span></div>`;
           }}).join('')
-        : '<span style="color:var(--muted);font-size:11px;">No example records linked.</span>';
+        : '<span style="color:var(--muted);font-size:11px;">No example records found for this node.</span>';
       $('networkInspector').innerHTML = `<div style="background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;"><h4 style="margin:0 0 6px;font-size:13px;">${{esc(node.name)}}</h4><p style="font-size:11px;color:var(--muted);margin:0 0 8px;">Type: ${{esc(node.kind)}} · ${{exampleIds.length}} example(s)</p><div>${{exampleHTML}}</div></div>`;
     }});
   }});
