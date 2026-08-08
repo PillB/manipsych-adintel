@@ -548,11 +548,9 @@ class TestSolarizeRebuildRed(unittest.TestCase):
         """R028: Tutorial state must persist after page refresh (localStorage)."""
         self._page.goto(f"{LIVE_URL}#guide", wait_until="networkidle", timeout=60_000)
         self._page.wait_for_timeout(2000)
-        # Start a tutorial to trigger localStorage save
-        start_btn = self._page.locator("button:has-text('Quick Orientation')")
-        if start_btn.count() > 0:
-            start_btn.first.click()
-            self._page.wait_for_timeout(1000)
+        # Start a tutorial to trigger localStorage save — use JS to avoid duplicate button issue
+        self._page.evaluate("() => { if (typeof startTutorial === 'function') startTutorial('orientation'); }")
+        self._page.wait_for_timeout(1000)
         # Check if localStorage has tutorial state keys
         ls_keys = self._page.evaluate("() => Object.keys(localStorage)")
         tutorial_keys = [k for k in ls_keys if "tutorial" in k.lower() or "tour" in k.lower()]
