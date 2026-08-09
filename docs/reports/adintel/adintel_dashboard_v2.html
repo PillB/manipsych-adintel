@@ -1362,7 +1362,38 @@ container.querySelectorAll('circle.umap-point').forEach(c => {
 c.addEventListener('click', () => {
 const idx = parseInt(c.dataset.idx);
 const ad = pts[idx].ad;
-document.getElementById('umap-detail').innerHTML = '<div class="ad-detail-card"><h4>' + (ad.title || 'Untitled').slice(0, 80) + '</h4><div class="meta-row"><b>record_id</b><code>' + (ad.record_id || '').slice(0, 24) + '…</code></div><div class="meta-row"><b>platform</b><span>' + (ad.platform || ad.source_platform || '?') + '</span></div><div class="meta-row"><b>cluster</b><span>C' + ad.cluster_id + ' (strength=' + ad.cluster_membership_strength + ')</span></div><div class="meta-row"><b>silhouette</b><span>' + ad.silhouette + '</span></div><div class="meta-row"><b>outlier_kinds</b><span>' + ((ad.outlier_kinds || []).join(', ') || 'inlier') + '</span></div><div class="meta-row"><b>model_version</b><span><code>rule-based-v1</code> · <code>cp-rule-based-v1</code></span></div><div class="meta-row"><b>umap_coords</b><span>(' + pts[idx].x.toFixed(3) + ', ' + pts[idx].y.toFixed(3) + ')</span></div><div class="meta-row"><b>body</b><span style="font-style:italic;font-size:11px;">' + cleanBodyPreview(ad.body_preview || '', 200) + '</span></div></div>';
+const rid = (ad.record_id || ad.r || '').slice(0, 16);
+const body = ad.body_preview || ad.b || '';
+const bodyLower = body.toLowerCase();
+
+// Determine which cluster this ad belongs to
+const colorModeNow = document.getElementById('umapColor') ? document.getElementById('umapColor').value : 'cluster';
+let clusterId = ad.cluster_id;
+let clusterSource = 'KMeans';
+if (colorModeNow === 'hdbscan' && window.__HDBSCAN_LABELS__) {
+ clusterId = window.__HDBSCAN_LABELS__[rid];
+ clusterSource = 'HDBSCAN';
+}
+
+// Find cluster details (distinguishing terms)
+let driversHtml = '<div class="meta-row"><b>cluster drivers</b><span style="font-size:10px;color:var(--muted);">Load cluster details to see drivers</span></div>';
+if (window.__CLUSTER_DETAILS__) {
+ const detail = window.__CLUSTER_DETAILS__[String(clusterId)];
+ if (detail) {
+  const matched = (detail.distinguishing_terms || []).filter(t => bodyLower.includes(t.term.toLowerCase()));
+  const unmatched = (detail.distinguishing_terms || []).filter(t => !bodyLower.includes(t.term.toLowerCase()));
+  let termsHtml = '';
+  if (matched.length > 0) {
+   termsHtml += '<div style="color:var(--green);font-size:10px;"><b>✓ Present in this ad:</b> ' + matched.map(t => t.term + ' (h=' + t.h + ')').join(', ') + '</div>';
+  }
+  if (unmatched.length > 0) {
+   termsHtml += '<div style="color:var(--muted);font-size:10px;"><b>Other cluster drivers:</b> ' + unmatched.map(t => t.term).join(', ') + '</div>';
+  }
+  driversHtml = '<div class="meta-row"><b>why C' + clusterId + '?</b><div style="font-size:10px;">' + termsHtml + '</div></div>';
+ }
+}
+
+document.getElementById('umap-detail').innerHTML = '<div class="ad-detail-card"><h4>' + (ad.title || ad.t || 'Untitled').slice(0, 80) + '</h4><div class="meta-row"><b>record_id</b><code>' + (ad.record_id || ad.r || '').slice(0, 24) + '…</code></div><div class="meta-row"><b>platform</b><span>' + (ad.platform || ad.p || ad.source_platform || '?') + '</span></div><div class="meta-row"><b>cluster</b><span>' + clusterSource + ' C' + clusterId + ' (strength=' + (ad.cluster_membership_strength || ad.m || '?') + ')</span></div>' + driversHtml + '<div class="meta-row"><b>silhouette</b><span>' + (ad.silhouette || ad.s || '?') + '</span></div><div class="meta-row"><b>body</b><span style="font-style:italic;font-size:11px;">' + cleanBodyPreview(body, 200) + '</span></div></div>';
 container.querySelectorAll('circle.umap-point').forEach(cc => { cc.setAttribute('stroke', '#fff'); cc.setAttribute('stroke-width', '1'); });
 c.setAttribute('stroke', 'var(--blue)');
 c.setAttribute('stroke-width', '3');
@@ -1810,6 +1841,10 @@ return 'I can explain loaded evidence, cite indicator definitions, and show conf
 
 renderCheckpoints();
 setTimeout(initCorpusSearch, 100);
+fetch('hdbscan_cluster_details.json').then(r => r.json()).then(d => {
+ window.__CLUSTER_DETAILS__ = {};
+ (d.clusters || []).forEach(c => { window.__CLUSTER_DETAILS__[String(c.cluster_id)] = c; });
+}).catch(e => { console.warn('Cluster details fetch failed:', e); });
 </script>
 </body>
 </html>
