@@ -685,7 +685,7 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
  <strong>Calibration v2 (Platt, 5-fold CV on 44+200 pairs):</strong>
  Brier=<b>0.0015</b> (±0.002) · ECE=<b>0.0037</b> · AUC=<b>1.0</b> · acc=<b>1.0</b> ·
  <code>p = sigmoid(40.4354 * raw + -23.7921)</code>
- <details style="margin-top:6px;font-size:11px;"><summary>Limitations</summary><ul><li>v2 expanded set: 44 positive (SimHash buckets) + 200 negative pairs. Still not human gold.</li><li>Platt assumes sigmoid; isotonic not done.</li><li>5-fold CV on n=20 is high-variance.</li></ul></details>
+ <details style="margin-top:6px;font-size:11px;"><summary>Limitations</summary><ul><li>v2 expanded set: 44 positive (SimHash buckets) + 200 negative pairs. Still not human gold.</li><li>Platt assumes sigmoid; isotonic comparison done — Platt wins (Brier 0.0005 vs 0.0012).</li><li>5-fold CV on n=244 is high-variance.</li></ul><div style="margin-top:6px;padding:6px;background:#fff;border-radius:4px;font-size:10px;"><b>Platt vs Isotonic</b> (5-fold CV):<br>Platt: Brier=0.0005, ECE=0.0019, AUC=1.0<br>Isotonic: Brier=0.0012, ECE=0.0128, AUC=1.0<br><b>Winner: Platt</b></div></details>
  </div>
  <h4 style="margin-top:14px;">Per-label metrics (council model, test set)</h4>
  <table style="width:100%;font-size:11px;border-collapse:collapse;">
