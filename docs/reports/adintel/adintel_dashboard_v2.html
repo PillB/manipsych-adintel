@@ -1235,8 +1235,8 @@ function renderUmapMap() {
  countEl.textContent = ads.length + ' of ' + perAdTable.length + ' ads (real UMAP projection)';
 
  // Decode packed Float32 UMAP coords (5738 × 2)
- // Try inline first, then lazy-fetch from umap_coords.b64
- function decodeAndRender(umapCoords) {
+ // FIXED: match by record_id, not positional index
+ function decodeAndRender(umapCoordMap) {
  const w = 900, h = 480, pad = 40;
  const cc = ['#0f766e','#1e40af','#b45309','#b91c1c','#6d4fa3','#0891b2','#a16207','#4338ca','#9f1239','#15803d'];
  const pc = {'Doplim Peru':'#0f766e','Locanto Peru':'#1e40af','Ciudad Anuncios Peru':'#b45309','Facebook Public':'#b91c1c','Evisos/Evisex Peru':'#6d4fa3','doplim':'#0f766e','locanto':'#1e40af','ciudadanuncios':'#b45309','facebook':'#b91c1c','evisos':'#6d4fa3'};
@@ -1261,9 +1261,11 @@ function renderUmapMap() {
 
  const pts = ads.map((ad, i) => {
  let x, y;
- if (umapCoords && umapCoords.length > i) {
- x = pad + umapCoords[i][0] * (w - 2 * pad);
- y = pad + umapCoords[i][1] * (h - 2 * pad);
+ const rid = (ad.record_id || ad.r || '').slice(0, 16);
+ const coord = umapCoordMap ? umapCoordMap[rid] : null;
+ if (coord) {
+ x = pad + coord[0] * (w - 2 * pad);
+ y = pad + coord[1] * (h - 2 * pad);
  } else {
  const a = (ad.cluster_id / 5) * Math.PI * 2 + (i / ads.length) * 0.5;
  const r = 160 * (0.3 + Math.abs(ad.silhouette || 0) * 0.7);
@@ -1276,7 +1278,7 @@ function renderUmapMap() {
  const ch = pts.map((p, i) => `<circle class="umap-point" data-idx="${i}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.r}" fill="${p.fill}" opacity=".75" style="cursor:pointer;"><title>${(p.ad.title || 'Untitled').slice(0, 60)} · ${p.ad.platform || p.ad.source_platform || '?'} · C${p.ad.cluster_id}</title></circle>`).join('');
  const legend = colorMode === 'cluster' ? [0,1,2,3,4].map(c => `<text x="${pad + c * 100}" y="${h - 10}" style="font-size:10px;fill:${cc[c]};font-weight:600;">C${c}</text>`).join('') : '';
 
- container.innerHTML = `<svg viewBox="0 0 ${w} ${h}" width="100%" height="480" aria-label="corpus map (real UMAP)"><text x="${w/2}" y="20" text-anchor="middle" style="font-size:13px;fill:var(--ink);font-weight:600;">Real UMAP projection — ${colorMode} mode</text><text x="${w/2}" y="36" text-anchor="middle" style="font-size:10px;fill:var(--muted);">n_neighbors=12, min_dist=0.1, metric=cosine, random_state=42 · ${umapCoords ? umapCoords.length + ' points (real coords)' : 'fallback radial'}</text>${ch}${legend}<text x="${w/2}" y="${h - 25}" text-anchor="middle" style="font-size:10px;fill:var(--muted);">Point size = |silhouette| · Click to inspect · Coords packed as Float32 base64</text></svg>`;
+ container.innerHTML = `<svg viewBox="0 0 ${w} ${h}" width="100%" height="480" aria-label="corpus map (real UMAP)"><text x="${w/2}" y="20" text-anchor="middle" style="font-size:13px;fill:var(--ink);font-weight:600;">Real UMAP projection — ${colorMode} mode</text><text x="${w/2}" y="36" text-anchor="middle" style="font-size:10px;fill:var(--muted);">n_neighbors=12, min_dist=0.1, metric=cosine, random_state=42 · ${umapCoordMap ? Object.keys(umapCoordMap).length + ' coords (matched by record_id)' : 'fallback radial'}</text>${ch}${legend}<text x="${w/2}" y="${h - 25}" text-anchor="middle" style="font-size:10px;fill:var(--muted);">Point size = |silhouette| · Click to inspect · Coords matched by record_id (not position)</text></svg>`;
 
  container.querySelectorAll('circle.umap-point').forEach(c => {
  c.addEventListener('click', () => {
@@ -1307,31 +1309,29 @@ function renderUmapMap() {
  return;
  }
 
- // Try inline first
- if (window.__UMAP_COORDS_B64__) {
- try {
- const bytes = Uint8Array.from(atob(window.__UMAP_COORDS_B64__), c => c.charCodeAt(0));
- const floats = new Float32Array(bytes.buffer);
- const coords = [];
- for (let i = 0; i < floats.length; i += 2) coords.push([floats[i], floats[i+1]]);
- decodeAndRender(coords);
+ // Try cached map first
+ if (window.__UMAP_COORD_MAP__) {
+ decodeAndRender(window.__UMAP_COORD_MAP__);
  return;
- } catch (e) { console.warn('Inline UMAP decode failed:', e); }
  }
 
- // Lazy-fetch the packed coords from umap_coords.b64
- container.innerHTML = '<div class="loading"><div class="spinner"></div><p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px;">Fetching real UMAP coordinates (60KB, packed Float32)…</p></div>';
- fetch('umap_coords.b64')
- .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
- .then(b64 => {
+ // Lazy-fetch the packed coords + record_id order
+ container.innerHTML = '<div class="loading"><div class="spinner"></div><p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px;">Fetching real UMAP coordinates (60KB + 107KB record order)…</p></div>';
+
+ Promise.all([
+ fetch('umap_coords.b64').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); }),
+ fetch('umap_record_order.json').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+ ]).then(([b64, orderData]) => {
  const bytes = Uint8Array.from(atob(b64.trim()), c => c.charCodeAt(0));
  const floats = new Float32Array(bytes.buffer);
- const coords = [];
- for (let i = 0; i < floats.length; i += 2) coords.push([floats[i], floats[i+1]]);
- window.__UMAP_COORDS_B64__ = b64.trim(); // cache for next render
- decodeAndRender(coords);
- })
- .catch(err => {
+ const ids = orderData.ids;
+ const map = {};
+ for (let i = 0; i < ids.length && i * 2 + 1 < floats.length; i++) {
+ map[ids[i]] = [floats[i * 2], floats[i * 2 + 1]];
+ }
+ window.__UMAP_COORD_MAP__ = map; // cache for next render
+ decodeAndRender(map);
+ }).catch(err => {
  console.warn('UMAP fetch failed, using radial fallback:', err);
  decodeAndRender(null);
  });
