@@ -96,3 +96,38 @@ Stage Summary:
   * Dashboard embedding: pack coords as Float32 base64 (~61KB inline), Canvas + rbush for 5738-point scatter, fetch JSONL lazily; budget HTML ≤210KB raw / 65KB gzipped.
   * Priority ranking: P0 = HDBSCAN + UMAP + dashboard embedding (blocking v2 release); P1 = authorship calibration + contrast-set eval (ship in v2.1).
   * Total implementation effort: ~7 working days; all required packages already installed.
+
+---
+Task ID: SOLARIZE-ROUND-5
+Agent: main (Super Z)
+Task: Research best-in-class, architect, identify & optimize gap items, deploy & validate on live, ensure GitHub repo parity with local
+
+Work Log:
+- Phase A (Audit): Verified live deployment at commit 655cb0f matches local. Identified 7 gap items: G1 fake UMAP (radial proxy), G2 HDBSCAN placeholder text, G3 uncalibrated authorship, G4 contrast-set interactive-only (no measured rates), G5 analyzer integration verification, G6 local↔live parity, G7 unknown Red test pass rate.
+- Phase B (Research): Launched general-purpose subagent to research 5 topics (HDBSCAN for short text, UMAP for embeddings, authorship calibration, contrast-set eval, dashboard embedding strategies). Report saved at audit/solarize-rebuild/round5/research_best_in_class.md (4,862 words, 26KB).
+- Phase C (Architect): Wrote audit/solarize-rebuild/round5/architecture_and_ranking.md with strategy ranking matrix (impact × cost). Chose: real HDBSCAN benchmark, real UMAP projection, Platt scaling, 6-type contrast-set suite, lazy-fetch UMAP coords.
+- Phase D (Implement): Wrote 4 Python scripts under scripts/:
+  * run_hdbscan_benchmark.py: HDBSCAN(min_cluster_size=8, leaf, cosine) → 68 clusters, 83.9% noise, silhouette 0.3267 (excl noise) vs KMeans 0.0198. ARI 0.0028. Also ran fallback (eom, min_cluster_size=20) → 8 clusters, 84.4% noise, silhouette 0.1148. Saved hdbscan_benchmark.json + hdbscan_labels.jsonl (per-record KMeans + HDBSCAN labels for all 5,738 ads).
+  * run_umap_projection.py: UMAP(n_neighbors=12, min_dist=0.1, cosine, random_state=42) → 5,738 × 2 coords, 29.1s elapsed. Saved umap_coords.json (full, 923KB), umap_coords.b64 (Float32 packed, 60KB), umap_coords_sample.json (50-record seed).
+  * run_authorship_calibration.py: Platt scaling (LogisticRegression) on 10 positive + 10 synthetic negative pairs, 5-fold CV. Brier=0.0001 (±0.0002), ECE=0.0023, log-loss=0.0024, AUC=1.0, accuracy=1.0. Formula: p = sigmoid(24.7299 * raw + -15.4728). 6 limitations documented.
+  * run_contrast_sets.py: 6 perturbation types (synonym_swap, negation_insert, formality_shift, perspective_shift, paraphrase, length_truncate) × 82 ads = 492 perturbations. Baseline det rate 0.037, 0 high-severity drops, length_truncate increases detection (-0.159 robustness_drop, due to keyword density rising in shorter text).
+- Phase D5 (Patch dashboard): Wrote scripts/patch_dashboard_v2.py to patch the existing dashboard HTML in place (more robust than re-running the generator with f-string escaping). Replaced: HDBSCAN placeholder → real benchmark, radial UMAP proxy → real UMAP (lazy-fetch packed coords), validation tab → real contrast-set table, registry calibration note → real Platt metrics. Also manually edited renderValidation and renderAuthorship functions to use real data.
+- Phase E (Deploy): Committed and pushed 3 commits to main: e8b2a75 (Round 5 changes), 39186d9 (compression fix to get under 150KB R036 budget), 3da1df1 (per-label metrics table to fix R035). All GitHub Pages builds succeeded.
+- Phase F (Validate): Ran critical Red tests against live deployment:
+  * Batch 1 (9 tests): R001, R008, R020, R032, R034, R036, R044, R047, R048 — all 9 PASSED
+  * Batch 2 (6 tests): R009, R010, R013, R021, R035, R037 — 5/6 PASSED (R035 failed initially, fixed by adding per-label metrics table to registry subpanel; re-tested → PASSED)
+  * Total verified: 15/15 PASSED on live
+- Phase G (Parity): Confirmed live HTML (151,586 bytes) byte-identical to local HTML. Local↔live parity TRUE.
+
+Stage Summary:
+- 4 new data files in repo/reports/adintel/: hdbscan_benchmark.json, hdbscan_labels.jsonl, umap_coords.json, umap_coords.b64, umap_coords_sample.json, umap_projection_meta.json, authorship_calibration.json, contrast_set_results.json
+- 1 new file in docs/reports/adintel/: umap_coords.b64 (served to dashboard for lazy-fetch)
+- 6 new scripts in scripts/: run_hdbscan_benchmark.py, run_umap_projection.py, run_authorship_calibration.py, run_contrast_sets.py, patch_dashboard_v2.py, local_smoke_v2.py, run_red_tests_critical.py, run_red_tests_additional.py, run_red_tests_batched.py, run_red_tests.py
+- 2 new audit reports in audit/solarize-rebuild/round5/: research_best_in_class.md (4,862 words), architecture_and_ranking.md
+- Dashboard size: 141.1 KB → 147.3 KB (under 150 KB R036 budget)
+- Live deployment: https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard_v2.html at commit 3da1df1
+- All 4 inline script blocks pass `node -c` syntax check
+- 15/15 critical Red tests PASSED on live (R001, R008, R009, R010, R013, R020, R021, R032, R034, R035, R036, R037, R044, R047, R048)
+- Local smoke test: 9/10 checks pass (1 expected file:// fetch limitation)
+- Local↔live parity: TRUE (byte-identical)
+- Gap closure: G1 (real UMAP) ✓, G2 (real HDBSCAN) ✓, G3 (Platt calibration) ✓, G4 (contrast-set table) ✓, G5 (analyzer integration) verified, G6 (parity) ✓, G7 (Red tests) 15/15 ✓
