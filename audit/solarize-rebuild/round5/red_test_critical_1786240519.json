@@ -1,0 +1,45 @@
+{
+  "live_url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard_v2.html?cb=1786240519",
+  "expected_sha": "e8b2a75a",
+  "ran_at": 1786240568,
+  "passed": 8,
+  "total": 9,
+  "tests": [
+    {
+      "test": "R001_top_level_navigation_is_task_oriented",
+      "status": "PASSED"
+    },
+    {
+      "test": "R008_rule_based_not_labeled_as_trained_model",
+      "status": "PASSED"
+    },
+    {
+      "test": "R020_checkpoint_provenance_for_results",
+      "status": "PASSED"
+    },
+    {
+      "test": "R032_no_console_errors",
+      "status": "PASSED"
+    },
+    {
+      "test": "R034_calibration_evidence_present",
+      "status": "PASSED"
+    },
+    {
+      "test": "R036_html_size_under_150kb",
+      "status": "FAILED"
+    },
+    {
+      "test": "R044_ask_adintel_assistant_exists",
+      "status": "PASSED"
+    },
+    {
+      "test": "R047_indicator_dictionary_exists",
+      "status": "PASSED"
+    },
+    {
+      "test": "R048_indicator_dictionary_in_dashboard",
+      "status": "PASSED"
+    }
+  ]
+}

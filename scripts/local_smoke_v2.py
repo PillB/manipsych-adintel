@@ -50,9 +50,11 @@ def main():
 
         # Click corpus map subtab
         page.evaluate('document.querySelector(\'[data-subtab="corpus-map"]\').click();')
-        page.wait_for_timeout(1500)
+        page.wait_for_timeout(3000)  # Wait for fetch
         map_text = page.locator("#corpus-map-viz").inner_text()
         checks.append(("Real UMAP projection label", "Real UMAP" in map_text))
+        # Check that real coords were loaded (not fallback)
+        checks.append(("Real UMAP coords loaded (not fallback)", "real coords" in map_text))
 
         # Click registry subtab
         page.evaluate('document.querySelector(\'[data-subtab="registry"]\').click();')
