@@ -54,17 +54,23 @@ def main():
             const summaries = document.querySelectorAll('details summary');
             if (summaries.length > 0) {
                 const firstClusterLink = summaries[0].querySelector('b');
-                if (firstClusterLink) firstClusterLink.click();
+                if (firstClusterLink) {
+                    const evt = new MouseEvent('click', {bubbles: true});
+                    firstClusterLink.dispatchEvent(evt);
+                }
             }
         }''')
-        page.wait_for_timeout(5000)  # Wait for highlight + UMAP
+        page.wait_for_timeout(8000)  # Wait longer for HDBSCAN labels fetch + highlight
         page.screenshot(path=str(OUT_DIR / "04_cluster_highlighted.png"))
         
         # 5. Click a point on the map
         print("5. Click map point...")
         page.evaluate('''() => {
             const circles = document.querySelectorAll('circle.umap-point');
-            if (circles.length > 0) circles[0].click();
+            if (circles.length > 0) {
+                const evt = new MouseEvent('click', {bubbles: true});
+                circles[0].dispatchEvent(evt);
+            }
         }''')
         page.wait_for_timeout(1000)
         page.screenshot(path=str(OUT_DIR / "05_ad_detail.png"))

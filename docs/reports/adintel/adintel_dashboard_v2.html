@@ -1341,13 +1341,20 @@ const colorModeNow = document.getElementById('umapColor') ? document.getElementB
 container.querySelectorAll('circle.umap-point').forEach(c => {
 const idx = parseInt(c.dataset.idx);
 const ad = pts[idx].ad;
-const cid = colorModeNow === 'hdbscan' ? (window.__HDBSCAN_LABELS__ ? window.__HDBSCAN_LABELS__[(ad.record_id||ad.r||'').slice(0,16)] : undefined) : ad.cluster_id;
-if (cid === highlightedCluster) {
-c.setAttribute('stroke', 'var(--blue)');
-c.setAttribute('stroke-width', '3');
-c.setAttribute('opacity', '1');
+const rid = (ad.record_id||ad.r||'').slice(0,16);
+let cid;
+if (colorModeNow === 'hdbscan') {
+ cid = window.__HDBSCAN_LABELS__ ? window.__HDBSCAN_LABELS__[rid] : undefined;
 } else {
-c.setAttribute('opacity', '0.2');
+ cid = ad.cluster_id;
+}
+if (cid === highlightedCluster || String(cid) === String(highlightedCluster)) {
+ c.setAttribute('stroke', '#1e40af');
+ c.setAttribute('stroke-width', '4');
+ c.setAttribute('opacity', '1');
+ c.setAttribute('r', parseFloat(c.getAttribute('r')) * 1.5);
+} else {
+ c.setAttribute('opacity', '0.1');
 }
 });
 }
