@@ -237,3 +237,36 @@ Stage Summary:
 - All 7 previously-failing tests now pass: R005, R007, R016, R023, R033, R045, R046
 - Live URL: https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard_v2.html
 - Commit: 3bc247d
+
+---
+Task ID: SOLARIZE-ROUND-7-RESEARCH
+Agent: general-purpose subagent
+Task: Research best practices for reducing HDBSCAN noise fraction on short-text TF-IDF corpora (ManiPsych AdIntel: 5,738 short Spanish classified ads, 21,660 TF-IDF features, current HDBSCAN noise=83.9%, target 15-35%).
+
+Work Log:
+- Read /home/z/my-project/worklog.md (239 lines) for context. Round 6 deployed 48/48 Red tests passing on live; Round 5 prior HDBSCAN research recommended min_cluster_size=8 / leaf / cosine directly on raw TF-IDF — which produced the 83.9% noise problem this round investigates.
+- Read /home/z/my-project/repo/adintel/clustering.py (605 lines) — confirmed the production clustering pipeline uses MiniBatchKMeans with k=5; HDBSCAN is benchmarked separately.
+- Read /home/z/my-project/scripts/run_hdbscan_benchmark.py (326 lines) — confirmed current HDBSCAN params: min_cluster_size=8, min_samples=3, cluster_selection_epsilon=0.05, cluster_selection_method='leaf', metric='cosine', alpha=1.0.
+- Read /home/z/my-project/repo/reports/adintel/hdbscan_benchmark.json — confirmed measurements: primary config 68 clusters / 83.91% noise / silhouette excl-noise 0.3267 / silhouette incl-noise -0.0205; fallback (mcs=20, eom) 8 clusters / 84.35% noise / silhouette 0.1148; ARI(KMeans, HDBSCAN-primary)=0.0028. Critical diagnostic: fallback made noise WORSE (not better), proving the root cause is not parameter choice but input-space geometry (curse of dimensionality: 21,660 features on 5,738 docs, ratio 3.78:1).
+- Researched 5 topics: (1) dimensionality pre-reduction (TruncatedSVD/LSA vs UMAP), (2) HDBSCAN parameter tuning for short text, (3) distance metrics (cosine vs euclidean vs jaccard; L2-norm + euclidean ≈ cosine monotonic equivalence), (4) soft clustering / approximate_predict for noise visualization, (5) UMAP+HDBSCAN pipeline (McInnes standard, n_components=5-15, min_dist=0.0 critical gotcha).
+- Key findings:
+  * Root cause: curse of dimensionality / distance concentration (Aggarwal-Hinneburg-Keim 2001) — 21,660-dim sparse cosine space makes most pairwise distances near-orthogonal, so HDBSCAN cannot find dense neighborhoods.
+  * The misleading silhouette 0.3267 is computed on only the tightest 16% of points; the fair silhouette-incl-noise (-0.0205) is worse than KMeans baseline (0.0198). HDBSCAN is currently REFUSING to assign the hard 84%, not winning.
+  * Single highest-impact fix: UMAP pre-reduction to 10 dims before HDBSCAN. Expected to drop noise from 84% → 15-30%, which is the literature expectation for short text.
+  * Critical UMAP parameter: min_dist=0.0 (not default 0.1) — the default is for visualization and is actively harmful for clustering downstream.
+  * After UMAP, switch HDBSCAN to metric='euclidean' (UMAP output is not L2-normed) and cluster_selection_method='eom' (better than 'leaf' on dense spaces).
+  * min_cluster_size=15, min_samples=5 (slightly larger than current 8/3) is appropriate AFTER dim reduction; current 8/3 was actually reasonable for the raw space but the geometry was the problem.
+  * Trade-off warning: silhouette-excl-noise WILL DROP after the fix (from misleading 0.33 to honest 0.15-0.30) — this is expected and correct.
+  * Interpretability recovery: explain clusters in ORIGINAL TF-IDF space (not UMAP space) using existing explain_clusters() function — clustering in UMAP space, explanation in TF-IDF space.
+  * Soft-assignment rule: hard -1 labels MUST be preserved for all metrics; soft cluster_id* labels (offset by +1000) are visualization-only.
+- Wrote /home/z/my-project/audit/solarize-rebuild/round7/research_hdbscan_noise.md (2,487 words, structured as required: 1. Recommended approach, 2. Parameter recommendations with code, 3. Expected noise range table, 4. Trade-offs table, 5. Citations, ending with RECOMMENDED CONFIG FOR MANIPSYCH block with exact UMAP+HDBSCAN params to try).
+- Citations included: Campello/Moulavi/Sander 2013 (PAKDD), McInnes/Healy/Astels 2017 (JOSS), McInnes/Healy 2017 (ICDMW), McInnes/Healy/Melville 2018 (UMAP paper), Aggarwal/Hinneburg/Keim 2001 (distance concentration), Aggarwal/Zhai 2012 (text clustering survey), Deerwester et al. 1990 (LSA), plus Allasiwi/Yu/Ramayya 2018 (Arabic short-text UMAP+HDBSCAN benchmark).
+- No other files modified.
+
+Stage Summary:
+- Report saved at: audit/solarize-rebuild/round7/research_hdbscan_noise.md (2,487 words)
+- Primary recommendation: TF-IDF (unchanged) → UMAP(n_components=10, n_neighbors=15, min_dist=0.0, metric='cosine', random_state=42) → HDBSCAN(min_cluster_size=15, min_samples=5, cluster_selection_epsilon=0.0, cluster_selection_method='eom', metric='euclidean', alpha=1.0, prediction_data=True)
+- Deterministic fallback: TruncatedSVD(n_components=200, target 60-70% cum. var) → L2-normalize → HDBSCAN(mcs=15, min_samples=5, eom, euclidean)
+- Expected post-fix metrics: 15-30% noise (was 83.9%), 25-60 clusters (was 68), silhouette-incl-noise rising from -0.02 to +0.05-0.15, silhouette-excl-noise dropping from misleading 0.33 to honest 0.15-0.30
+- 18-config hyperparameter sweep proposed for after primary lands: n_components × min_cluster_size × cluster_selection_method, ~36 min CPU total
+- Next action: implement UMAP pre-reduction in scripts/run_hdbscan_benchmark.py, re-run benchmark, compare noise fraction and silhouette-incl-noise against the values documented in this report.

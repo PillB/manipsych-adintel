@@ -1,0 +1,298 @@
+{
+  "n_records": 5738,
+  "tfidf_shape": [
+    5738,
+    21660
+  ],
+  "kmeans_baseline": {
+    "k": 5,
+    "silhouette_cosine": 0.0198
+  },
+  "configs": [
+    {
+      "config_name": "umap10_mcs15_eom",
+      "umap_params": {
+        "n_components": 10,
+        "n_neighbors": 15,
+        "min_dist": 0.0,
+        "metric": "cosine",
+        "random_state": 42
+      },
+      "hdbscan_params": {
+        "min_cluster_size": 15,
+        "min_samples": 5,
+        "cluster_selection_epsilon": 0.0,
+        "cluster_selection_method": "eom",
+        "metric": "euclidean",
+        "alpha": 1.0,
+        "core_dist_n_jobs": 1
+      },
+      "n_clusters": 98,
+      "n_noise": 2299,
+      "noise_fraction": 0.4007,
+      "silhouette_excl_noise": 0.5929,
+      "silhouette_incl_noise": 0.1011,
+      "top_10_cluster_sizes": [
+        {
+          "cluster_id": 74,
+          "n_members": 128
+        },
+        {
+          "cluster_id": 5,
+          "n_members": 114
+        },
+        {
+          "cluster_id": 64,
+          "n_members": 104
+        },
+        {
+          "cluster_id": 0,
+          "n_members": 101
+        },
+        {
+          "cluster_id": 49,
+          "n_members": 93
+        },
+        {
+          "cluster_id": 60,
+          "n_members": 87
+        },
+        {
+          "cluster_id": 85,
+          "n_members": 79
+        },
+        {
+          "cluster_id": 62,
+          "n_members": 75
+        },
+        {
+          "cluster_id": 84,
+          "n_members": 73
+        },
+        {
+          "cluster_id": 95,
+          "n_members": 69
+        }
+      ],
+      "umap_elapsed_s": 35.0,
+      "hdbscan_elapsed_s": 0.2,
+      "ari_vs_kmeans": 0.0296
+    },
+    {
+      "config_name": "umap10_mcs10_eom",
+      "umap_params": {
+        "n_components": 10,
+        "n_neighbors": 15,
+        "min_dist": 0.0,
+        "metric": "cosine",
+        "random_state": 42
+      },
+      "hdbscan_params": {
+        "min_cluster_size": 10,
+        "min_samples": 3,
+        "cluster_selection_epsilon": 0.0,
+        "cluster_selection_method": "eom",
+        "metric": "euclidean",
+        "alpha": 1.0,
+        "core_dist_n_jobs": 1
+      },
+      "n_clusters": 164,
+      "n_noise": 1914,
+      "noise_fraction": 0.3336,
+      "silhouette_excl_noise": 0.5972,
+      "silhouette_incl_noise": 0.1735,
+      "top_10_cluster_sizes": [
+        {
+          "cluster_id": 126,
+          "n_members": 143
+        },
+        {
+          "cluster_id": 8,
+          "n_members": 114
+        },
+        {
+          "cluster_id": 0,
+          "n_members": 101
+        },
+        {
+          "cluster_id": 163,
+          "n_members": 72
+        },
+        {
+          "cluster_id": 119,
+          "n_members": 66
+        },
+        {
+          "cluster_id": 96,
+          "n_members": 65
+        },
+        {
+          "cluster_id": 15,
+          "n_members": 65
+        },
+        {
+          "cluster_id": 86,
+          "n_members": 65
+        },
+        {
+          "cluster_id": 81,
+          "n_members": 59
+        },
+        {
+          "cluster_id": 110,
+          "n_members": 59
+        }
+      ],
+      "umap_elapsed_s": 15.7,
+      "hdbscan_elapsed_s": 0.3,
+      "ari_vs_kmeans": 0.0223
+    },
+    {
+      "config_name": "umap5_mcs15_eom",
+      "umap_params": {
+        "n_components": 5,
+        "n_neighbors": 15,
+        "min_dist": 0.0,
+        "metric": "cosine",
+        "random_state": 42
+      },
+      "hdbscan_params": {
+        "min_cluster_size": 15,
+        "min_samples": 5,
+        "cluster_selection_epsilon": 0.0,
+        "cluster_selection_method": "eom",
+        "metric": "euclidean",
+        "alpha": 1.0,
+        "core_dist_n_jobs": 1
+      },
+      "n_clusters": 94,
+      "n_noise": 2321,
+      "noise_fraction": 0.4045,
+      "silhouette_excl_noise": 0.5831,
+      "silhouette_incl_noise": 0.0766,
+      "top_10_cluster_sizes": [
+        {
+          "cluster_id": 82,
+          "n_members": 103
+        },
+        {
+          "cluster_id": 0,
+          "n_members": 101
+        },
+        {
+          "cluster_id": 80,
+          "n_members": 101
+        },
+        {
+          "cluster_id": 63,
+          "n_members": 89
+        },
+        {
+          "cluster_id": 72,
+          "n_members": 85
+        },
+        {
+          "cluster_id": 66,
+          "n_members": 82
+        },
+        {
+          "cluster_id": 10,
+          "n_members": 80
+        },
+        {
+          "cluster_id": 73,
+          "n_members": 79
+        },
+        {
+          "cluster_id": 50,
+          "n_members": 77
+        },
+        {
+          "cluster_id": 90,
+          "n_members": 74
+        }
+      ],
+      "umap_elapsed_s": 13.2,
+      "hdbscan_elapsed_s": 0.1,
+      "ari_vs_kmeans": 0.0259
+    },
+    {
+      "config_name": "umap10_mcs25_leaf",
+      "umap_params": {
+        "n_components": 10,
+        "n_neighbors": 15,
+        "min_dist": 0.0,
+        "metric": "cosine",
+        "random_state": 42
+      },
+      "hdbscan_params": {
+        "min_cluster_size": 25,
+        "min_samples": 5,
+        "cluster_selection_epsilon": 0.0,
+        "cluster_selection_method": "leaf",
+        "metric": "euclidean",
+        "alpha": 1.0,
+        "core_dist_n_jobs": 1
+      },
+      "n_clusters": 56,
+      "n_noise": 2792,
+      "noise_fraction": 0.4866,
+      "silhouette_excl_noise": 0.5534,
+      "silhouette_incl_noise": -0.0078,
+      "top_10_cluster_sizes": [
+        {
+          "cluster_id": 36,
+          "n_members": 128
+        },
+        {
+          "cluster_id": 2,
+          "n_members": 114
+        },
+        {
+          "cluster_id": 26,
+          "n_members": 108
+        },
+        {
+          "cluster_id": 19,
+          "n_members": 107
+        },
+        {
+          "cluster_id": 31,
+          "n_members": 104
+        },
+        {
+          "cluster_id": 0,
+          "n_members": 101
+        },
+        {
+          "cluster_id": 33,
+          "n_members": 95
+        },
+        {
+          "cluster_id": 21,
+          "n_members": 93
+        },
+        {
+          "cluster_id": 43,
+          "n_members": 80
+        },
+        {
+          "cluster_id": 46,
+          "n_members": 79
+        }
+      ],
+      "umap_elapsed_s": 16.0,
+      "hdbscan_elapsed_s": 0.2,
+      "ari_vs_kmeans": 0.0274
+    }
+  ],
+  "best_config": "umap10_mcs10_eom",
+  "best_noise_fraction": 0.3336,
+  "best_silhouette_incl_noise": 0.1735,
+  "verdict": "UMAP+HDBSCAN (umap10_mcs10_eom) reduced noise from 83.9% → 33.4%. Silhouette (incl noise): 0.1735 vs KMeans 0.0198. Clusters: 164. ARI vs KMeans: 0.0223.",
+  "ran_at": 1786252467,
+  "determinism": {
+    "NUMBA_NUM_THREADS": "1",
+    "random_state": 42
+  }
+}
