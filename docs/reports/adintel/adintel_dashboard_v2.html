@@ -1379,7 +1379,7 @@ text.split('\n').forEach(line => {
 if (!line.trim()) return;
 try {
 const r = JSON.parse(line);
-window.__HDBSCAN_LABELS__[r.record_id] = r.hdbscan_cluster;
+window.__HDBSCAN_LABELS__[r.record_id.slice(0,16)] = r.hdbscan_cluster;
 } catch(e) {}
 });
 renderUmapMap();
