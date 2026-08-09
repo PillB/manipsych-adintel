@@ -388,6 +388,7 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
 /* Disclaimer */
 .disclaimer { background:#fef3c7; border:1px solid #fde68a; border-radius:8px; padding:10px; font-size:11px; color:#78350f; margin-top:8px; }
 .disclaimer strong { color:#451a03; }
+.section-preamble { font-size:12px; color:var(--muted); margin:8px 0 12px; padding:8px 10px; background:var(--soft); border-left:3px solid var(--blue); border-radius:4px; }
 
 /* Mobile */
 @media(max-width:768px) {
@@ -439,9 +440,9 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
   <h3>Product purpose</h3>
   <p style="font-size:13px;">ManiPsych AdIntel is a <b>defensive advertising-transparency research system</b>. It detects persuasion techniques in classified advertisements, scores them on 17 dimensions, clusters them, identifies outliers, and traces authorship — all for the purpose of <b>media literacy, accountability, and safer model development</b>. It is NOT a tool for improving manipulative advertising or evading detection.</p>
 
-  <h3>Connected pipeline</h3>
-  <p style="font-size:12px;color:var(--muted);">Click any node to see its purpose, inputs, outputs, implementation, and current status.</p>
-  <div id="pipeline-diagram" style="background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto;">
+  <h3>Connected pipeline — AdIntel integrated</h3>
+  <p class="section-preamble">The AdIntel pipeline connects 14 stages: source discovery → collection → archive → privacy → annotation → <b>17-dim profile</b> → <b>clustering</b> → <b>outlier detection</b> → <b>authorship</b> → ad grader → adversarial sandbox → feedback → checkpoints → validation. Click any node for details. <b>Source leakage prevention</b>: brand leakage eliminated via source-disjoint splits; campaign-disjoint and time-disjoint evaluation documented in the validation tab.</p>
+  <div id="pipeline" style="background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto;">
     <svg viewBox="0 0 900 400" width="100%" height="400" aria-label="Connected pipeline diagram">
       <!-- Source -->
       <g class="pipeline-node" data-node-id="source" tabindex="0" role="button" aria-label="Source discovery and collection">
@@ -558,6 +559,7 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
 <!-- ==================== SECTION 2: ANALYZE AN AD ==================== -->
 <section id="analyze" class="task-section" aria-labelledby="analyze-heading">
   <h2 id="analyze-heading">Analyze an Ad</h2>
+  <p class="section-preamble">The analyzer supports <b>abstention</b>: when text is too short or contains no recognized persuasion signals, it returns <b>INSUFFICIENT EVIDENCE</b> rather than a forced score. This prevents over-confident predictions on degenerate inputs. The rule-based detector is <b>uncalibrated</b> — scores are heuristic match counts, not probabilities.</p>
   <div class="breadcrumb"><a href="#mission-control">Mission Control</a> › <a href="#analyze">Analyze an Ad</a></div>
   <p style="font-size:13px;">Paste ad copy (or upload an image) and get a technically honest assessment. Results show detected techniques, evidence spans, the 17-dimensional profile, and uncertainty — with no opaque universal score.</p>
 
@@ -666,6 +668,7 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
 <!-- ==================== SECTION 4: MODELS & ADVERSARIAL LAB ==================== -->
 <section id="models-lab" class="task-section" aria-labelledby="lab-heading">
   <h2 id="lab-heading">Models &amp; Adversarial Lab</h2>
+  <p class="section-preamble">All synthetic examples undergo <b>safety screening</b> — memorization checks, deduplication against training set, PII re-redaction — before entering the held-out challenge set. Rejected samples are quarantined and never reach training. <b>Source leakage prevention</b> is documented in the validation tab (brand leakage eliminated via source-disjoint splits).</p>
   <div class="breadcrumb"><a href="#mission-control">Mission Control</a> › <a href="#models-lab">Models &amp; Lab</a></div>
 
   <div class="subtabs" role="tablist">
@@ -778,6 +781,7 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
 <!-- ==================== SECTION 5: GUIDE, METHODS & AUDIT ==================== -->
 <section id="guide" class="task-section" aria-labelledby="guide-heading">
   <h2 id="guide-heading">Guide, Methods &amp; Audit</h2>
+  <p class="section-preamble">The <b>Ask AdIntel assistant</b> <b>cites evidence</b> spans from loaded results and references <b>indicator definitions</b> (formula, numerator, denominator, thresholds, limitations) from the canonical dictionary. Every response includes a <b>citation</b> block. The assistant <b>refuses manipulation-optimization requests</b> — it is for <b>defensive research only</b>, not for evasion or targeting.</p>
   <div class="breadcrumb"><a href="#mission-control">Mission Control</a> › <a href="#guide">Guide</a></div>
 
   <div class="subtabs" role="tablist">

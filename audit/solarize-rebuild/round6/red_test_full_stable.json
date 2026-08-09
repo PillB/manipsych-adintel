@@ -1,0 +1,89 @@
+{
+  "live_url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard_v2.html?cb=1786248139",
+  "expected_sha": "02da76d",
+  "ran_at": 1786248262,
+  "passed": 13,
+  "failed": 2,
+  "errors": 0,
+  "timeouts": 0,
+  "skipped": 0,
+  "unknown": 0,
+  "total": 15,
+  "tests": [
+    {
+      "test": "test_R001_top_level_navigation_is_task_oriented",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R002_old_unique_capabilities_have_parity_decision",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R003_every_production_artifact_has_consumer",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R004_canonical_definitions_not_duplicated",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R005_adintel_integrated_into_central_pipeline",
+      "status": "FAILED",
+      "detail": "E   playwright._impl._errors.TimeoutError: Locator.inner_text: Timeout 30000ms exceeded."
+    },
+    {
+      "test": "test_R006_analyzer_reachable_through_main_application",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R007_pipeline_nodes_link_to_real_modules",
+      "status": "FAILED",
+      "detail": "E   AssertionError: False is not true : Pipeline has no interactive/selectable nodes"
+    },
+    {
+      "test": "test_R008_rule_based_not_labeled_as_trained_model",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R009_phrase_injection_not_labeled_gan",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R010_uncalibrated_scores_not_labeled_calibrated",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R011_observational_not_labeled_causal",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R012_synthetic_examples_always_marked",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R013_text_only_input_supported",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R014_image_upload_supported",
+      "status": "PASSED",
+      "detail": ""
+    },
+    {
+      "test": "test_R015_empty_input_handled",
+      "status": "PASSED",
+      "detail": ""
+    }
+  ]
+}
