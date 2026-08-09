@@ -1523,19 +1523,19 @@ function renderValidation() {
  <li>9 defects found (3 high, 4 medium, 2 low) · 3 fixed · 6 documented</li>
  </ul>
  <h4>Contrast-set evaluation — measured detection rates per perturbation type</h4>
- <p style="font-size:11px;color:var(--muted);">Source: <code>reports/adintel/contrast_set_results.json</code> · 82 ads × 6 perturbations = 492 · seed=42 · detector=fallback_regex</p>
+ <p style="font-size:11px;color:var(--muted);">Source: <code>reports/adintel/contrast_set_results.json</code> · 82 ads × 6 perturbations = 492 · seed=42 · detector=v2 (expanded keywords, 63 phrases)</p>
  <table style="width:100%;font-size:11px;border-collapse:collapse;">
  <thead><tr style="background:var(--soft);"><th style="text-align:left;padding:6px;">Perturbation</th><th class="num">N</th><th class="num">Baseline</th><th class="num">Perturbed</th><th class="num">Drop</th><th>Severity</th></tr></thead>
  <tbody>
- <tr><td><b>synonym_swap</b></td><td class="num">82</td><td class="num">0.037</td><td class="num">0.012</td><td class="num" style="color:#0f766e;">+0.024</td><td><span style="color:#0f766e;">low</span></td></tr>
- <tr><td><b>negation_insert</b></td><td class="num">82</td><td class="num">0.037</td><td class="num">0.037</td><td class="num" style="color:#0f766e;">+0.000</td><td><span style="color:#0f766e;">low</span></td></tr>
- <tr><td><b>formality_shift</b></td><td class="num">82</td><td class="num">0.037</td><td class="num">0.037</td><td class="num" style="color:#0f766e;">+0.000</td><td><span style="color:#0f766e;">low</span></td></tr>
- <tr><td><b>perspective_shift</b></td><td class="num">82</td><td class="num">0.037</td><td class="num">0.037</td><td class="num" style="color:#0f766e;">+0.000</td><td><span style="color:#0f766e;">low</span></td></tr>
- <tr><td><b>paraphrase</b></td><td class="num">82</td><td class="num">0.037</td><td class="num">0.049</td><td class="num" style="color:#0f766e;">-0.012</td><td><span style="color:#0f766e;">low</span></td></tr>
- <tr><td><b>length_truncate</b></td><td class="num">82</td><td class="num">0.037</td><td class="num">0.195</td><td class="num" style="color:#0f766e;">-0.159</td><td><span style="color:#0f766e;">low</span></td></tr>
+ <tr><td><b>synonym_swap</b></td><td class="num">82</td><td class="num">0.963</td><td class="num">0.951</td><td class="num" style="color:#0f766e;">+0.012</td><td><span style="color:#0f766e;">low</span></td></tr>
+ <tr><td><b>negation_insert</b></td><td class="num">82</td><td class="num">0.963</td><td class="num">0.963</td><td class="num" style="color:#0f766e;">+0.000</td><td><span style="color:#0f766e;">low</span></td></tr>
+ <tr><td><b>formality_shift</b></td><td class="num">82</td><td class="num">0.963</td><td class="num">0.963</td><td class="num" style="color:#0f766e;">+0.000</td><td><span style="color:#0f766e;">low</span></td></tr>
+ <tr><td><b>perspective_shift</b></td><td class="num">82</td><td class="num">0.963</td><td class="num">0.963</td><td class="num" style="color:#0f766e;">+0.000</td><td><span style="color:#0f766e;">low</span></td></tr>
+ <tr><td><b>paraphrase</b></td><td class="num">82</td><td class="num">0.963</td><td class="num">0.902</td><td class="num" style="color:#0f766e;">+0.061</td><td><span style="color:#0f766e;">low</span></td></tr>
+ <tr><td><b>length_truncate</b></td><td class="num">82</td><td class="num">0.963</td><td class="num">0.854</td><td class="num" style="color:#b45309;">+0.110</td><td><span style="color:#b45309;">medium</span></td></tr>
  </tbody>
  </table>
- <p style="font-size:11px;margin-top:8px;"><b>Verdict:</b> 0 high-severity drops (>0.25), 0 medium (>0.10). Length_truncate increases detection (keyword density rises in shorter text). <a href="../../../../repo/reports/adintel/contrast_set_results.json" target="_blank">Full JSON</a></p>
+ <p style="font-size:11px;margin-top:8px;"><b>Verdict:</b> v2 baseline 96.3% (was 3.7%). 0 high-severity, 1 medium-severity (length_truncate, +0.110 drop). Detector now actually works. <a href="../../../../repo/reports/adintel/contrast_set_results.json" target="_blank">Full JSON</a></p>
  <h4>Model integrity</h4>
  <ul style="font-size:11px;">
  <li>Source leakage: brand leakage eliminated in persuasive + rhetorical spaces</li>
