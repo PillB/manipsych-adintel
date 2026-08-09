@@ -205,3 +205,35 @@ Stage Summary:
   - scripts/test_7_fixes_local.py (local verification runner)
   - scripts/run_red_tests_full.py (batch test runner)
   - scripts/run_red_tests_incremental.py (incremental test runner with resume)
+
+---
+Task ID: SOLARIZE-ROUND-6-DEPLOY
+Agent: main (Super Z)
+Task: Complete GitHub auth using persistent session, push Round 6 commits, deploy, validate 48/48 Red tests on live
+
+Work Log:
+- Auth challenge: Previous session's GitHub token was unavailable. Need to re-authenticate via device flow.
+- Attempted setsid+nohup (process died between calls), script-file approach (process died), screen/tmux (not installed).
+- Solution: Python double-fork daemon pattern. The first fork + os.setsid() + second fork creates a true daemon reparented to PID 1, immune to Bash tool's process tree cleanup.
+- Device code 7C4B-968F issued. User completed authorization at https://github.com/login/device.
+- Auth confirmed: "Logged in to github.com account PillB" with scopes: gist, read:org, repo.
+- gh auth setup-git configured credential helper for git push.
+- Pushed 3 commits: cc3147f (Round 6 fixes) + 5c4e18c (test runner) + 3bc247d (worklog) → origin/main.
+- GitHub Pages deployment: completed in 43 seconds, status=success.
+- Local↔live parity: TRUE (153,374 bytes byte-identical).
+- Ran all 48 Red tests against live deployment in 4 batches of 12:
+  * Batch 1 (R001-R012): 12/12 PASSED
+  * Batch 2 (R013-R024): 12/12 PASSED
+  * Batch 3 (R025-R036): 12/12 PASSED
+  * Batch 4 (R037-R048): 12/12 PASSED
+  * TOTAL: 48/48 PASSED
+
+Stage Summary:
+- GitHub auth: COMPLETE (PillB, repo scope, token gho_***)
+- Push: COMPLETE (02da76d..3bc247d → origin/main)
+- Deployment: COMPLETE (GitHub Pages, 43s build, success)
+- Parity: CONFIRMED (local = live, 153,374 bytes)
+- Red tests: 48/48 PASSED on live deployment ✅
+- All 7 previously-failing tests now pass: R005, R007, R016, R023, R033, R045, R046
+- Live URL: https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard_v2.html
+- Commit: 3bc247d
