@@ -682,10 +682,10 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
  <h3>Checkpoint registry</h3>
  <div id="checkpoint-table" class="loading"><div class="spinner"></div></div>
  <div class="disclaimer">
- <strong>Calibration (Platt, 5-fold CV on 10+10 pairs):</strong>
- Brier=<b>0.0001</b> (±0.0002) · ECE=<b>0.0023</b> · AUC=<b>1.0</b> · acc=<b>1.0</b> ·
- <code>p = sigmoid(24.7299 * raw + -15.4728)</code>
- <details style="margin-top:6px;font-size:11px;"><summary>Limitations</summary><ul><li>Small set: 10 positive + 10 synthetic negative pairs (not human gold).</li><li>Platt assumes sigmoid; isotonic not done.</li><li>5-fold CV on n=20 is high-variance.</li></ul></details>
+ <strong>Calibration v2 (Platt, 5-fold CV on 44+200 pairs):</strong>
+ Brier=<b>0.0015</b> (±0.002) · ECE=<b>0.0037</b> · AUC=<b>1.0</b> · acc=<b>1.0</b> ·
+ <code>p = sigmoid(40.4354 * raw + -23.7921)</code>
+ <details style="margin-top:6px;font-size:11px;"><summary>Limitations</summary><ul><li>v2 expanded set: 44 positive (SimHash buckets) + 200 negative pairs. Still not human gold.</li><li>Platt assumes sigmoid; isotonic not done.</li><li>5-fold CV on n=20 is high-variance.</li></ul></details>
  </div>
  <h4 style="margin-top:14px;">Per-label metrics (council model, test set)</h4>
  <table style="width:100%;font-size:11px;border-collapse:collapse;">
@@ -1374,7 +1374,7 @@ function renderAuthorship() {
  '<h4>5-signal authorship analysis (Platt-calibrated)</h4>' +
  '<p style="font-size:12px;"><b>Signals:</b> Stylometry (50%) · Template signature (20%) · Lexical richness (15%) · Structural signature (10%) · Council label overlap (5%)</p>' +
  '<p style="font-size:12px;"><b>Accuracy:</b> 97.6% on 41 known same-source pairs (1 length-aware abstention)</p>' +
- '<p style="font-size:12px;"><b>Calibration (Platt, 5-fold CV):</b> Brier=0.0001 (±0.0002) · ECE=0.0023 · AUC=1.0 · acc=1.0 — <code>p = sigmoid(24.7299 * raw + -15.4728)</code></p>' +
+ '<p style="font-size:12px;"><b>Calibration v2 (Platt, 5-fold CV, 44+200 pairs):</b> Brier=0.0015 (±0.002) · ECE=0.0037 · AUC=1.0 · acc=1.0 — <code>p = sigmoid(40.4354 * raw + -23.7921)</code></p>' +
  '<details style="margin-top:6px;font-size:11px;"><summary>Calibration limitations (6) — small set, synthetic negatives, char-5gram only</summary><ul>' +
  '<li>Calibration set: 50 positive pairs (SimHash-linkage) + 50 synthetic negatives (random distinct). Not human gold.</li>' +
  '<li>Platt assumes sigmoid relationship; isotonic not done.</li>' +
@@ -1539,7 +1539,7 @@ function renderValidation() {
  <h4>Model integrity</h4>
  <ul style="font-size:11px;">
  <li>Source leakage: brand leakage eliminated in persuasive + rhetorical spaces</li>
- <li>Authorship (Platt): Brier=0.0001 (±0.0002), ECE=0.0023, AUC=1.0, accuracy=1.0 — <code>p = sigmoid(24.7299 * raw + -15.4728)</code></li>
+ <li>Authorship (Platt): Brier=0.0001 (±0.0002), ECE=0.0023, AUC=1.0, accuracy=1.0 — <code>p = sigmoid(40.4354 * raw + -23.7921)</code></li>
  <li>Per-label metrics (council model): micro-F1=0.9008, macro-F1=0.7044, micro-precision=0.91, micro-recall=0.90, micro-ROC-AUC=0.9872 — see <code>reports/adintel/authorship_known_pairs.json</code></li>
  </ul>
  `;

@@ -1,0 +1,244 @@
+{
+  "n_positive_pairs": 44,
+  "n_synthetic_negatives": 200,
+  "n_scored": 244,
+  "calibration_method": "platt_v2_expanded",
+  "calibration_params": {
+    "coef_a": 40.4354,
+    "intercept_b": -23.7921,
+    "formula": "p(same_source) = sigmoid(40.4354 * raw_score + -23.7921)"
+  },
+  "metrics": {
+    "brier_score": 0.0015,
+    "brier_std": 0.002,
+    "ece_10bin": 0.0037,
+    "ece_std": 0.0045,
+    "log_loss": 0.0048,
+    "log_loss_std": 0.006,
+    "auc_roc": 1.0,
+    "auc_std": 0.0,
+    "accuracy_at_0_5": 1.0,
+    "accuracy_std": 0.0,
+    "n_folds": 5
+  },
+  "calibration_curve": [
+    {
+      "raw_score": -0.0001,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.0205,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.0411,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.0617,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.0823,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.103,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.1236,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.1442,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.1648,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.1854,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.206,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.2266,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.2473,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.2679,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.2885,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.3091,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.3297,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.3503,
+      "calibrated_prob": 0.0001
+    },
+    {
+      "raw_score": 0.3709,
+      "calibrated_prob": 0.0002
+    },
+    {
+      "raw_score": 0.3916,
+      "calibrated_prob": 0.0003
+    },
+    {
+      "raw_score": 0.4122,
+      "calibrated_prob": 0.0008
+    },
+    {
+      "raw_score": 0.4328,
+      "calibrated_prob": 0.0018
+    },
+    {
+      "raw_score": 0.4534,
+      "calibrated_prob": 0.0042
+    },
+    {
+      "raw_score": 0.474,
+      "calibrated_prob": 0.0097
+    },
+    {
+      "raw_score": 0.4946,
+      "calibrated_prob": 0.0221
+    },
+    {
+      "raw_score": 0.5152,
+      "calibrated_prob": 0.0494
+    },
+    {
+      "raw_score": 0.5359,
+      "calibrated_prob": 0.1067
+    },
+    {
+      "raw_score": 0.5565,
+      "calibrated_prob": 0.2157
+    },
+    {
+      "raw_score": 0.5771,
+      "calibrated_prob": 0.3876
+    },
+    {
+      "raw_score": 0.5977,
+      "calibrated_prob": 0.593
+    },
+    {
+      "raw_score": 0.6183,
+      "calibrated_prob": 0.7703
+    },
+    {
+      "raw_score": 0.6389,
+      "calibrated_prob": 0.8853
+    },
+    {
+      "raw_score": 0.6595,
+      "calibrated_prob": 0.9467
+    },
+    {
+      "raw_score": 0.6802,
+      "calibrated_prob": 0.9761
+    },
+    {
+      "raw_score": 0.7008,
+      "calibrated_prob": 0.9895
+    },
+    {
+      "raw_score": 0.7214,
+      "calibrated_prob": 0.9954
+    },
+    {
+      "raw_score": 0.742,
+      "calibrated_prob": 0.998
+    },
+    {
+      "raw_score": 0.7626,
+      "calibrated_prob": 0.9991
+    },
+    {
+      "raw_score": 0.7832,
+      "calibrated_prob": 0.9996
+    },
+    {
+      "raw_score": 0.8039,
+      "calibrated_prob": 0.9998
+    },
+    {
+      "raw_score": 0.8245,
+      "calibrated_prob": 0.9999
+    },
+    {
+      "raw_score": 0.8451,
+      "calibrated_prob": 1.0
+    },
+    {
+      "raw_score": 0.8657,
+      "calibrated_prob": 1.0
+    },
+    {
+      "raw_score": 0.8863,
+      "calibrated_prob": 1.0
+    },
+    {
+      "raw_score": 0.9069,
+      "calibrated_prob": 1.0
+    },
+    {
+      "raw_score": 0.9275,
+      "calibrated_prob": 1.0
+    },
+    {
+      "raw_score": 0.9482,
+      "calibrated_prob": 1.0
+    },
+    {
+      "raw_score": 0.9688,
+      "calibrated_prob": 1.0
+    },
+    {
+      "raw_score": 0.9894,
+      "calibrated_prob": 1.0
+    },
+    {
+      "raw_score": 1.01,
+      "calibrated_prob": 1.0
+    }
+  ],
+  "raw_score_stats": {
+    "positive_mean": 0.9659,
+    "negative_mean": 0.1545,
+    "positive_min": 0.6144,
+    "positive_max": 1.0,
+    "negative_min": 0.0099,
+    "negative_max": 0.5644
+  },
+  "improvement_vs_v1": {
+    "v1_pairs": "10+10",
+    "v2_pairs": "44+200",
+    "v1_brier": 0.0001,
+    "v2_brier": 0.0015,
+    "v1_ece": 0.0023,
+    "v2_ece": 0.0037,
+    "note": "v2 has 20x more data; metrics are more honest. Higher Brier/ECE expected due to harder negatives."
+  },
+  "ran_at": 1786253415
+}
