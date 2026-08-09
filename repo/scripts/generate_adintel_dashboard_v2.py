@@ -1207,7 +1207,7 @@ function renderCorpusSearch(data, query) {{
   function getBody(ad) {{ return ad.b || ad.body_preview || ''; }}
   function getRid(ad) {{ return ad.r || ad.record_id || ''; }}
   function getSil(ad) {{ return ad.s !== undefined ? ad.s : (ad.silhouette || 0); }}
-{{
+
   const filtered = query ? data.filter(ad => {{
     const q = query.toLowerCase();
     return getRid(ad).toLowerCase().includes(q) ||

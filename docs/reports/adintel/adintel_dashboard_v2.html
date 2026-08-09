@@ -264,7 +264,7 @@ function advClearLog() {
 </script>
 
 <!doctype html>
-<html lang="en" data-build-fingerprint="solarize-rebuild-74b662c2-1786219787" data-commit-sha="74b662c2ebe3c1d538c9d81d7bc5ff95b63b60f1" data-solarize-version="2.0">
+<html lang="en" data-build-fingerprint="solarize-rebuild-e1d44a77-1786236610" data-commit-sha="e1d44a776bb2f4709ccfac50b180d04826213f07" data-solarize-version="2.0">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1154,7 +1154,7 @@ function renderCorpusSearch(data, query) {
   function getBody(ad) { return ad.b || ad.body_preview || ''; }
   function getRid(ad) { return ad.r || ad.record_id || ''; }
   function getSil(ad) { return ad.s !== undefined ? ad.s : (ad.silhouette || 0); }
-{
+
   const filtered = query ? data.filter(ad => {
     const q = query.toLowerCase();
     return getRid(ad).toLowerCase().includes(q) ||
