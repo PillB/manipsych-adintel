@@ -1247,6 +1247,19 @@ async function highlightClusterOnMap(clusterId, source) {
   } catch(e) { console.warn('UMAP fetch failed:', e); }
  }
 
+ // Load full per-ad table so all cluster members are visible (not just 50 embedded)
+ if (source === 'hdbscan' && (!perAdTable || perAdTable.length < 1000)) {
+  if (container) container.innerHTML = '<div class="loading"><div class="spinner"></div><p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px;">Loading full ad dataset (4,427 ads) to show all cluster members…</p></div>';
+  try {
+   const resp = await fetch('solarize_per_ad.jsonl');
+   const text = await resp.text();
+   const nl = String.fromCharCode(10);
+   perAdTable = text.split(nl).filter(l => l.trim()).map(l => {
+    try { return JSON.parse(l); } catch { return null; }
+   }).filter(Boolean);
+  } catch(e) { console.warn('Full ad table fetch failed:', e); }
+ }
+
  renderUmapMap();
 
  if (info) {
