@@ -68,3 +68,31 @@ Stage Summary:
 - Live deployment: still at previous Solarize round 1 (commit abca4d6) — Round 2 changes are NOT deployed
 - Live validation: BLOCKED (push permissions unavailable)
 - Final status: PARTIAL — source changes complete, live validation blocked
+
+---
+Task ID: SOLARIZE-ROUND-5-RESEARCH
+Agent: general-purpose (research)
+Task: Research best-in-class approaches for 5 gap items (HDBSCAN, UMAP, authorship calibration, contrast-sets, dashboard embedding)
+
+Work Log:
+- Read /home/z/my-project/worklog.md (70 lines) to establish prior context: Tasks 1, 2-9, SOLARIZE-ROUND-2. Confirmed corpus = 5,738 ads, baseline pipeline = TF-IDF + KMeans (k=5, silhouette 0.0097), 17-dim persuasive profile, rule-based manipulation detector, 145KB static HTML dashboard at GitHub Pages.
+- Verified environment: umap-learn 0.5.12, sklearn 1.9.0, scipy 1.14.1, numpy 2.1.3 confirmed importable; hdbscan module importable (version attribute absent but functional, matches context claim of 0.8.44).
+- Drafted Section 1 (HDBSCAN for short-text clustering): recommended HDBSCAN(min_cluster_size=8, min_samples=3, cluster_selection_epsilon=0.05, cluster_selection_method='leaf', metric='cosine') on L2-normed TF-IDF; noise handling via KPI reporting + soft-assignment for viz only; cited Campello 2013, McInnes 2017 JOSS, McInnes & Healy 2017 ICDMW, Aggarwal & Zhai 2012, Xu 2015.
+- Drafted Section 2 (UMAP for short-text viz): recommended UMAP(n_neighbors=12, min_dist=0.1, n_components=2, metric='cosine', random_state=42, transform_seed=42, n_jobs=1); reproducibility via NUMBA_NUM_THREADS=1 + pinned versions + cached .npy; server-computed embedding inlined as base64 Float32Array (reject umap-js for static HTML); comparison table PCA/t-SNE/UMAP/PaCMAP; cited McInnes 2018, Coenen 2019 Distill, Maaten & Hinton 2008, Wang 2020 PaCMAP.
+- Drafted Section 3 (Authorship verification calibration): recommended Platt scaling via LogisticRegression(C=1e6) on 50k synthetic random-pair negatives (with SimHash exclusion of 642 known positives); rejected isotonic (overfits) and temperature (requires logits); PU-learning and 2-component GMM documented as alternatives; evaluation via Brier + ECE (15 bins) + log-loss + AUC-ROC; cited Platt 1999, Guo 2017, Zadrozny & Elkan 2002, Koppel & Seidman 2018, Potha & Stamatatos 2014.
+- Drafted Section 4 (Contrast-set evaluation): recommended 6-type perturbation suite (synonym swap, negation insert, formality shift, perspective shift, paraphrase via back-translation, length truncate) over 100 ads/type; detection rate + robustness drop table; tools = spaCy es_core_news_sm + OpenMultilingualWordNet + MarianMT; cited Gardner 2020, Ribeiro 2020 CheckList, He 2019, Garcia 2019.
+- Drafted Section 5 (Static HTML dashboard embedding): recommended packed Float32Array base64 inline for 2D coords (~61KB for 5738x2), Canvas + rbush for scatter (reject SVG at >2000 points, reject deck.gl as overkill), keep SVG only for cluster-card insets; inline-vs-fetch threshold table; performance budget (HTML ≤210KB raw / 65KB gzipped, FCP <1.8s, TTI <3s, 60fps pan/zoom).
+- Wrote Summary table ranking 5 gaps by Priority (P0: HDBSCAN, UMAP, dashboard embedding; P1: authorship calibration, contrast-set eval).
+- Wrote Concrete Implementation Recipe: 7-step / 7-day plan with explicit module names (adintel/clustering_hdbscan.py, adintel/umap_project.py, adintel/authorship_calibration.py, adintel/contrast_sets.py), success criteria, and dependency notes (rbush vendored ~5KB; MarianMT optional).
+- Verified final report: 4,862 words (including code snippets), 485 lines, all 5 "RECOMMENDED CHOICE FOR MANIPSYCH" lines present, file size 26KB.
+
+Stage Summary:
+- Report saved at: /home/z/my-project/audit/solarize-rebuild/round5/research_best_in_class.md
+- Key recommendations:
+  * HDBSCAN: min_cluster_size=8, min_samples=3, cluster_selection_epsilon=0.05, method='leaf', metric='cosine' on L2-normed TF-IDF (sublinear_tf=True, min_df=2, max_df=0.85, ngram_range=(1,2)); report noise fraction as KPI.
+  * UMAP: n_neighbors=12, min_dist=0.1, metric='cosine', random_state=42, n_jobs=1; cache + inline as base64 Float32Array; reject client-side umap-js for static HTML.
+  * Authorship calibration: Platt scaling (LogisticRegression(C=1e6)) on 50k synthetic negatives (SimHash-excluded) + 642 known positives; report Brier/ECE/log-loss/AUC; document synthetic-negative limitation.
+  * Contrast-sets: 6-type perturbation suite × 100 ads/type = 600 perturbations; per-type detection rate + robustness drop table; flag drop >0.25 as high-severity defect.
+  * Dashboard embedding: pack coords as Float32 base64 (~61KB inline), Canvas + rbush for 5738-point scatter, fetch JSONL lazily; budget HTML ≤210KB raw / 65KB gzipped.
+  * Priority ranking: P0 = HDBSCAN + UMAP + dashboard embedding (blocking v2 release); P1 = authorship calibration + contrast-set eval (ship in v2.1).
+  * Total implementation effort: ~7 working days; all required packages already installed.

@@ -1,0 +1,247 @@
+{
+  "n_positive_pairs": 10,
+  "n_synthetic_negatives": 10,
+  "calibration_method": "platt",
+  "calibration_params": {
+    "coef_a": 24.7299,
+    "intercept_b": -15.4728,
+    "formula": "p(same_source) = sigmoid(24.7299 * raw_score + -15.4728)",
+    "regularization_C": 1000000.0,
+    "solver": "lbfgs"
+  },
+  "metrics": {
+    "brier_score": 0.0001,
+    "brier_std": 0.0002,
+    "ece_10bin": 0.0023,
+    "ece_std": 0.0043,
+    "log_loss": 0.0024,
+    "log_loss_std": 0.0044,
+    "auc_roc": 1.0,
+    "auc_std": 0.0,
+    "accuracy_at_0_5": 1.0,
+    "accuracy_std": 0.0,
+    "n_folds": 5
+  },
+  "calibration_curve": [
+    {
+      "raw_score": 0.0188,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.0391,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.0593,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.0795,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.0997,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.12,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.1402,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.1604,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.1807,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.2009,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.2211,
+      "calibrated_prob": 0.0
+    },
+    {
+      "raw_score": 0.2413,
+      "calibrated_prob": 0.0001
+    },
+    {
+      "raw_score": 0.2616,
+      "calibrated_prob": 0.0001
+    },
+    {
+      "raw_score": 0.2818,
+      "calibrated_prob": 0.0002
+    },
+    {
+      "raw_score": 0.302,
+      "calibrated_prob": 0.0003
+    },
+    {
+      "raw_score": 0.3223,
+      "calibrated_prob": 0.0006
+    },
+    {
+      "raw_score": 0.3425,
+      "calibrated_prob": 0.0009
+    },
+    {
+      "raw_score": 0.3627,
+      "calibrated_prob": 0.0015
+    },
+    {
+      "raw_score": 0.3829,
+      "calibrated_prob": 0.0025
+    },
+    {
+      "raw_score": 0.4032,
+      "calibrated_prob": 0.0041
+    },
+    {
+      "raw_score": 0.4234,
+      "calibrated_prob": 0.0067
+    },
+    {
+      "raw_score": 0.4436,
+      "calibrated_prob": 0.011
+    },
+    {
+      "raw_score": 0.4638,
+      "calibrated_prob": 0.018
+    },
+    {
+      "raw_score": 0.4841,
+      "calibrated_prob": 0.0293
+    },
+    {
+      "raw_score": 0.5043,
+      "calibrated_prob": 0.0474
+    },
+    {
+      "raw_score": 0.5245,
+      "calibrated_prob": 0.0758
+    },
+    {
+      "raw_score": 0.5448,
+      "calibrated_prob": 0.1191
+    },
+    {
+      "raw_score": 0.565,
+      "calibrated_prob": 0.1823
+    },
+    {
+      "raw_score": 0.5852,
+      "calibrated_prob": 0.2689
+    },
+    {
+      "raw_score": 0.6054,
+      "calibrated_prob": 0.3775
+    },
+    {
+      "raw_score": 0.6257,
+      "calibrated_prob": 0.5
+    },
+    {
+      "raw_score": 0.6459,
+      "calibrated_prob": 0.6225
+    },
+    {
+      "raw_score": 0.6661,
+      "calibrated_prob": 0.7312
+    },
+    {
+      "raw_score": 0.6864,
+      "calibrated_prob": 0.8177
+    },
+    {
+      "raw_score": 0.7066,
+      "calibrated_prob": 0.8809
+    },
+    {
+      "raw_score": 0.7268,
+      "calibrated_prob": 0.9242
+    },
+    {
+      "raw_score": 0.747,
+      "calibrated_prob": 0.9526
+    },
+    {
+      "raw_score": 0.7673,
+      "calibrated_prob": 0.9707
+    },
+    {
+      "raw_score": 0.7875,
+      "calibrated_prob": 0.982
+    },
+    {
+      "raw_score": 0.8077,
+      "calibrated_prob": 0.989
+    },
+    {
+      "raw_score": 0.8279,
+      "calibrated_prob": 0.9933
+    },
+    {
+      "raw_score": 0.8482,
+      "calibrated_prob": 0.9959
+    },
+    {
+      "raw_score": 0.8684,
+      "calibrated_prob": 0.9975
+    },
+    {
+      "raw_score": 0.8886,
+      "calibrated_prob": 0.9985
+    },
+    {
+      "raw_score": 0.9089,
+      "calibrated_prob": 0.9991
+    },
+    {
+      "raw_score": 0.9291,
+      "calibrated_prob": 0.9994
+    },
+    {
+      "raw_score": 0.9493,
+      "calibrated_prob": 0.9997
+    },
+    {
+      "raw_score": 0.9695,
+      "calibrated_prob": 0.9998
+    },
+    {
+      "raw_score": 0.9898,
+      "calibrated_prob": 0.9999
+    },
+    {
+      "raw_score": 1.01,
+      "calibrated_prob": 0.9999
+    }
+  ],
+  "raw_score_stats": {
+    "positive_mean": 0.9651,
+    "positive_min": 0.9151,
+    "positive_max": 1.0,
+    "negative_mean": 0.1615,
+    "negative_min": 0.0288,
+    "negative_max": 0.3989
+  },
+  "limitations": [
+    "Calibration set is small: only 50 positive pairs (from accepted similarity_links) + 50 synthetic negatives (random distinct ads).",
+    "Synthetic negatives are random pairs, not curated hard negatives; true negative-pair calibration requires a manually labelled set.",
+    "Stylometry_similarity is a char-5-gram TF-IDF cosine; it does not capture semantic content. Two ads with same template but different topics will score high.",
+    "Platt scaling assumes a sigmoid relationship between raw score and probability; if the true relationship is non-monotonic, isotonic regression may be needed (not done here).",
+    "5-fold CV on n=100 is high-variance; report Brier/ECE with ±1 std.",
+    "All 50 known positive pairs are same-source by linkage heuristic (SimHash + token-trigram Jaccard), not by human gold. The 'ground truth' itself is approximate."
+  ],
+  "ran_at": 1786239747,
+  "determinism": {
+    "random_state": 42
+  }
+}

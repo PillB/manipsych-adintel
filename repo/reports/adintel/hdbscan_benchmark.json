@@ -1,0 +1,133 @@
+{
+  "n_records": 5738,
+  "tfidf_shape": [
+    5738,
+    21660
+  ],
+  "tfidf_nnz": 321877,
+  "kmeans_baseline": {
+    "k": 5,
+    "silhouette_cosine": 0.0198,
+    "random_state": 42
+  },
+  "hdbscan_primary": {
+    "params": {
+      "min_cluster_size": 8,
+      "min_samples": 3,
+      "cluster_selection_epsilon": 0.05,
+      "cluster_selection_method": "leaf",
+      "metric": "cosine",
+      "alpha": 1.0,
+      "core_dist_n_jobs": 1
+    },
+    "n_clusters": 68,
+    "n_noise": 4815,
+    "noise_fraction": 0.8391,
+    "silhouette_excl_noise": 0.3267,
+    "silhouette_incl_noise": -0.0205,
+    "top_10_cluster_sizes": [
+      {
+        "cluster_id": 53,
+        "n_members": 39
+      },
+      {
+        "cluster_id": 35,
+        "n_members": 35
+      },
+      {
+        "cluster_id": 28,
+        "n_members": 27
+      },
+      {
+        "cluster_id": 60,
+        "n_members": 26
+      },
+      {
+        "cluster_id": 4,
+        "n_members": 25
+      },
+      {
+        "cluster_id": 18,
+        "n_members": 24
+      },
+      {
+        "cluster_id": 34,
+        "n_members": 23
+      },
+      {
+        "cluster_id": 61,
+        "n_members": 21
+      },
+      {
+        "cluster_id": 57,
+        "n_members": 20
+      },
+      {
+        "cluster_id": 11,
+        "n_members": 20
+      }
+    ],
+    "elapsed_ms": 1703.8
+  },
+  "hdbscan_fallback": {
+    "params": {
+      "min_cluster_size": 20,
+      "min_samples": 5,
+      "cluster_selection_epsilon": 0.1,
+      "cluster_selection_method": "eom",
+      "metric": "cosine",
+      "alpha": 1.0,
+      "core_dist_n_jobs": 1
+    },
+    "n_clusters": 8,
+    "n_noise": 4840,
+    "noise_fraction": 0.8435,
+    "silhouette_excl_noise": 0.1148,
+    "top_10_cluster_sizes": [
+      {
+        "cluster_id": 6,
+        "n_members": 621
+      },
+      {
+        "cluster_id": 7,
+        "n_members": 101
+      },
+      {
+        "cluster_id": 1,
+        "n_members": 37
+      },
+      {
+        "cluster_id": 3,
+        "n_members": 37
+      },
+      {
+        "cluster_id": 4,
+        "n_members": 33
+      },
+      {
+        "cluster_id": 5,
+        "n_members": 26
+      },
+      {
+        "cluster_id": 2,
+        "n_members": 22
+      },
+      {
+        "cluster_id": 0,
+        "n_members": 21
+      }
+    ],
+    "elapsed_ms": 1733.9
+  },
+  "best_config": "primary",
+  "ari_kmeans_vs_primary": 0.0028,
+  "ari_kmeans_vs_fallback": 0.0643,
+  "verdict": "HDBSCAN (primary config) outperforms KMeans on silhouette (0.3267 vs 0.0198, excluding noise). Recommended as primary clusterer. Noise fraction 83.9% is a corpus finding worth reporting.",
+  "ran_at": 1786239633,
+  "determinism": {
+    "NUMBA_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "random_state": 42
+  }
+}

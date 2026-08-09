@@ -1,0 +1,50 @@
+{
+  "n_records": 5738,
+  "params": {
+    "n_neighbors": 12,
+    "min_dist": 0.1,
+    "n_components": 2,
+    "metric": "cosine",
+    "init": "spectral",
+    "random_state": 42,
+    "transform_seed": 42,
+    "n_jobs": 1,
+    "low_memory": true,
+    "verbose": false
+  },
+  "tfidf_shape": [
+    5738,
+    21660
+  ],
+  "tfidf_nnz": 321877,
+  "coord_range_raw": {
+    "x_min": -8.989861488342285,
+    "x_max": 13.102423667907715,
+    "y_min": 4.928621768951416,
+    "y_max": 15.01380729675293
+  },
+  "coord_range_normalized": {
+    "x": [
+      0.0,
+      1.0
+    ],
+    "y": [
+      0.0,
+      1.0
+    ]
+  },
+  "elapsed_seconds": 29.07,
+  "ran_at": 1786239697,
+  "determinism": {
+    "NUMBA_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "random_state": 42,
+    "transform_seed": 42
+  },
+  "files": {
+    "full_json": "reports/adintel/umap_coords.json",
+    "packed_b64": "reports/adintel/umap_coords.b64",
+    "sample_50": "reports/adintel/umap_coords_sample.json"
+  }
+}

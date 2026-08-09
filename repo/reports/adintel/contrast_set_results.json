@@ -1,0 +1,206 @@
+{
+  "n_source_ads": 82,
+  "n_perturbations_per_type": 82,
+  "total_perturbations": 492,
+  "baseline_detection_rate": 0.037,
+  "baseline_mean_score": 0.25,
+  "detection_threshold": 0.5,
+  "perturbation_types": [
+    {
+      "name": "synonym_swap",
+      "n": 82,
+      "detection_rate": 0.012,
+      "mean_score": 0.235,
+      "baseline_detection_rate": 0.037,
+      "robustness_drop": 0.024,
+      "severity": "low",
+      "elapsed_ms": 1.8,
+      "examples": [
+        {
+          "original": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "perturbed": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "original_score": 0.322,
+          "perturbed_score": 0.322
+        },
+        {
+          "original": "Doy servicio x ayuda económica - Arequipa Doy servicio a cambio de ayuda económica soy pasivo whatsap [REDACTED_PHONE]",
+          "perturbed": "Doy servicio x ayuda monetaria - Arequipa Doy servicio a cambio de ayuda económica soy pasivo whatsap [REDACTED_PHONE]",
+          "original_score": 0.306,
+          "perturbed_score": 0.306
+        },
+        {
+          "original": "busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida,",
+          "perturbed": "busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida,",
+          "original_score": 0.102,
+          "perturbed_score": 0.102
+        }
+      ]
+    },
+    {
+      "name": "negation_insert",
+      "n": 82,
+      "detection_rate": 0.037,
+      "mean_score": 0.248,
+      "baseline_detection_rate": 0.037,
+      "robustness_drop": 0.0,
+      "severity": "low",
+      "elapsed_ms": 1.5,
+      "examples": [
+        {
+          "original": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "perturbed": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "original_score": 0.322,
+          "perturbed_score": 0.322
+        },
+        {
+          "original": "Doy servicio x ayuda económica - Arequipa Doy servicio a cambio de ayuda económica soy pasivo whatsap [REDACTED_PHONE]",
+          "perturbed": "no Doy servicio x ayuda económica - Arequipa Doy servicio a cambio de ayuda económica soy pasivo whatsap [REDACTED_PHONE]",
+          "original_score": 0.306,
+          "perturbed_score": 0.302
+        },
+        {
+          "original": "busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida,",
+          "perturbed": "no busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidi",
+          "original_score": 0.102,
+          "perturbed_score": 0.102
+        }
+      ]
+    },
+    {
+      "name": "formality_shift",
+      "n": 82,
+      "detection_rate": 0.037,
+      "mean_score": 0.25,
+      "baseline_detection_rate": 0.037,
+      "robustness_drop": 0.0,
+      "severity": "low",
+      "elapsed_ms": 0.9,
+      "examples": [
+        {
+          "original": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "perturbed": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "original_score": 0.322,
+          "perturbed_score": 0.322
+        },
+        {
+          "original": "Doy servicio x ayuda económica - Arequipa Doy servicio a cambio de ayuda económica soy pasivo whatsap [REDACTED_PHONE]",
+          "perturbed": "Doy servicio x ayuda económica - Arequipa Doy servicio a cambio de ayuda económica soy pasivo whatsap [REDACTED_PHONE]",
+          "original_score": 0.306,
+          "perturbed_score": 0.306
+        },
+        {
+          "original": "busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida,",
+          "perturbed": "busco señora madura para brindarte apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida,",
+          "original_score": 0.102,
+          "perturbed_score": 0.102
+        }
+      ]
+    },
+    {
+      "name": "perspective_shift",
+      "n": 82,
+      "detection_rate": 0.037,
+      "mean_score": 0.255,
+      "baseline_detection_rate": 0.037,
+      "robustness_drop": 0.0,
+      "severity": "low",
+      "elapsed_ms": 1.1,
+      "examples": [
+        {
+          "original": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "perturbed": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "original_score": 0.322,
+          "perturbed_score": 0.322
+        },
+        {
+          "original": "Doy servicio x ayuda económica - Arequipa Doy servicio a cambio de ayuda económica soy pasivo whatsap [REDACTED_PHONE]",
+          "perturbed": "Doy servicio x ayuda económica - Arequipa Da servicio a cambio de ayuda económica es pasivo whatsap [REDACTED_PHONE]",
+          "original_score": 0.306,
+          "perturbed_score": 0.309
+        },
+        {
+          "original": "busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida,",
+          "perturbed": "busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, es un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida, ",
+          "original_score": 0.102,
+          "perturbed_score": 0.102
+        }
+      ]
+    },
+    {
+      "name": "paraphrase",
+      "n": 82,
+      "detection_rate": 0.049,
+      "mean_score": 0.226,
+      "baseline_detection_rate": 0.037,
+      "robustness_drop": -0.012,
+      "severity": "low",
+      "elapsed_ms": 2.8,
+      "examples": [
+        {
+          "original": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "perturbed": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "original_score": 0.322,
+          "perturbed_score": 0.322
+        },
+        {
+          "original": "Doy servicio x ayuda económica - Arequipa Doy servicio a cambio de ayuda económica soy pasivo whatsap [REDACTED_PHONE]",
+          "perturbed": "Doy servicio x ayuda económica - Arequipa Doy servicio a cambio de ayuda financiera soy pasivo whatsap [REDACTED_PHONE]",
+          "original_score": 0.306,
+          "perturbed_score": 0.304
+        },
+        {
+          "original": "busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida,",
+          "perturbed": "busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida,",
+          "original_score": 0.102,
+          "perturbed_score": 0.102
+        }
+      ]
+    },
+    {
+      "name": "length_truncate",
+      "n": 82,
+      "detection_rate": 0.195,
+      "mean_score": 0.296,
+      "baseline_detection_rate": 0.037,
+      "robustness_drop": -0.159,
+      "severity": "low",
+      "elapsed_ms": 0.6,
+      "examples": [
+        {
+          "original": "Apoyo económico - Juliaca brindó apoyó económico a chicas de toda edad mas información al[REDACTED_CONTACT]",
+          "perturbed": "Apoyo económico - Juliaca brindó apoyó económico",
+          "original_score": 0.322,
+          "perturbed_score": 0.225
+        },
+        {
+          "original": "Doy servicio x ayuda económica - Arequipa Doy servicio a cambio de ayuda económica soy pasivo whatsap [REDACTED_PHONE]",
+          "perturbed": "Doy servicio x ayuda económica - Arequipa Doy servicio",
+          "original_score": 0.306,
+          "perturbed_score": 0.216
+        },
+        {
+          "original": "busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida,",
+          "perturbed": "busco señora madura para brindarle apoyo económico Chiclayo – 30 Descripción Saludos, soy un varón de 30 años, de buen carácter y con muchas ganas de conocer una mujer divertida y sobre todo decidida,",
+          "original_score": 0.102,
+          "perturbed_score": 0.093
+        }
+      ]
+    }
+  ],
+  "n_high_severity": 0,
+  "n_medium_severity": 0,
+  "verdict": "Tested 6 perturbation types × 82 ads = 492 perturbations. Baseline detection rate: 0.037. 0 type(s) had high-severity robustness drop (>0.25); 0 had medium-severity drop (>0.10). Rule-based detectors are inherently brittle to synonym swap and paraphrase; this is documented behavior, not a defect.",
+  "limitations": [
+    "Perturbations are rule-based; no neural paraphrase model (MarianMT back-translation) was used to keep the dashboard dependency-free.",
+    "Detection threshold is fixed at 0.5; a different threshold would change the rates.",
+    "Source ads are sampled with seed=42; a different seed may produce slightly different rates.",
+    "The detector is keyword-density-based; it cannot detect semantic manipulation that avoids the keyword list.",
+    "Synonym dictionary is small (22 entries); a larger dictionary would surface more brittleness.",
+    "Negation insert places 'no' before the first verb-like word; some ads may not have a detectable verb, resulting in no perturbation."
+  ],
+  "detector": "fallback_regex",
+  "ran_at": 1786239802,
+  "determinism": {
+    "seed": 42
+  }
+}
