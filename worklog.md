@@ -355,3 +355,33 @@ Stage Summary:
 - Local↔live parity: TRUE (153,321 bytes)
 - Live URL: https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard_v2.html
 - Final commit: 0eee85d
+
+---
+Task ID: SOLARIZE-ROUND-10 (6 iterations — t-SNE + ad-to-cluster explanation + VLM validation)
+Agent: main (Super Z)
+Task: Run full 48 Red tests, fix cluster highlight timing, add t-SNE projection, ad-to-cluster explanation, VLM analysis, final validation
+
+Work Log:
+- STEP 1: Ran all 48 Red tests in 3 batches of 16 — 48/48 PASSED on live ✅
+- ITER 1: Fixed cluster highlight timing. highlightClusterOnMap is now async, pre-loads HDBSCAN labels + UMAP coords with loading spinners. VLM confirmed highlight now visible (blue stroke, bigger size, dimmed non-members).
+- ITER 2: Skipped Canvas rendering — SVG works fine for 50 embedded points.
+- ITER 3: Added t-SNE projection option (perplexity=30, SVD pre-reduction to 50 dims, PCA init). Projection dropdown (UMAP/t-SNE) in corpus map. Computed tsne_coords.b64 (59.8KB). VLM confirmed "TSNE projection" title appears.
+- ITER 4: Ad-to-cluster explanation. When clicking a point, shows "why C{id}?" section with distinguishing terms split into: ✓ Present in this ad (green, with Cohen's h) vs Other cluster drivers (muted). Pre-loads hdbscan_cluster_details.json.
+- ITER 5: VLM screenshot analysis. Found critical bug: cluster 126 (top card) had 0 members in EMBEDDED_ADS (50 ads). Fixed by loading full solarize_per_ad.jsonl (4,427 ads) when highlighting HDBSCAN cluster. VLM confirmed: "Highlighted points deep saturated blue, larger, fully opaque. Dimmed points low opacity."
+- ITER 6: Final validation. R036 failed initially (150.3 KB) — reduced HDBSCAN cluster cards from 8 to 5 to save 1.4 KB. Now 148.8 KB. R036 PASSED.
+
+Stage Summary:
+- 48/48 Red tests PASSED on live (confirmed zero regressions)
+- Cluster highlight timing fixed (async pre-load with loading indicators)
+- t-SNE projection added alongside UMAP (toggle dropdown)
+- Ad-to-cluster explanation: semantic drivers shown per clicked ad
+- Full dataset loaded on cluster highlight (4,427 ads, not just 50)
+- VLM confirmed all features working:
+  * UMAP projection with meaningful 2D clusters ✓
+  * t-SNE projection toggle working ✓
+  * Cluster highlight with blue stroke + dimmed non-members ✓
+  * Ad detail with distinguishing terms explanation ✓
+- HTML size: 148.8 KB (under 150 KB budget)
+- Local↔live parity: TRUE (152,397 bytes byte-identical)
+- Live URL: https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard_v2.html
+- Final commit: fec56b9
