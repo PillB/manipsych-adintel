@@ -1,0 +1,31 @@
+{
+  "method": "tsne",
+  "n_records": 5738,
+  "params": {
+    "n_components": 2,
+    "perplexity": 30,
+    "max_iter": 1000,
+    "random_state": 42,
+    "init": "pca"
+  },
+  "svd_pre_reduction": {
+    "n_components": 50,
+    "explained_variance": 0.1423
+  },
+  "coord_range_normalized": {
+    "x": [
+      0.0,
+      1.0
+    ],
+    "y": [
+      0.0,
+      1.0
+    ]
+  },
+  "elapsed_seconds": 47.6,
+  "ran_at": 1786290047,
+  "determinism": {
+    "random_state": 42,
+    "init": "pca"
+  }
+}

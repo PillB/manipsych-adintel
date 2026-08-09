@@ -644,7 +644,7 @@ th,td { padding:4px 5px; }
 
 <div id="subtab-corpus-map" class="subpanel" role="tabpanel">
 <h3>Corpus map — real UMAP 2D projection (click points to inspect)</h3>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;"><label class="small" for="umapColor">Color by</label><select id="umapColor" class="control" aria-label="Color mode" onchange="renderUmapMap()"><option value="cluster">Cluster</option><option value="platform">Platform</option><option value="outlier">Outlier kind</option><option value="hdbscan">HDBSCAN v2</option></select><span id="umap-count" style="font-size:11px;color:var(--muted);align-self:center;">5,738 ads (real UMAP)</span></div><div id="corpus-map-viz" style="background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px;min-height:400px;"><div class="loading"><div class="spinner"></div></div></div><div id="umap-detail" style="margin-top:10px;"></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;"><label class="small" for="umapColor">Color by</label><select id="umapColor" class="control" aria-label="Color mode" onchange="renderUmapMap()"><option value="cluster">Cluster</option><option value="platform">Platform</option><option value="outlier">Outlier kind</option><option value="hdbscan">HDBSCAN v2</option></select><label class="small" for="projMode">Projection</label><select id="projMode" class="control" aria-label="Projection method" onchange="renderUmapMap()"><option value="umap">UMAP</option><option value="tsne">t-SNE</option></select><span id="umap-count" style="font-size:11px;color:var(--muted);align-self:center;">5,738 ads (real UMAP)</span></div><div id="corpus-map-viz" style="background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px;min-height:400px;"><div class="loading"><div class="spinner"></div></div></div><div id="umap-detail" style="margin-top:10px;"></div>
 </div>
 
 <div id="subtab-profile" class="subpanel" role="tabpanel">
@@ -1229,7 +1229,7 @@ async function highlightClusterOnMap(clusterId, source) {
   } catch(e) { console.warn('HDBSCAN labels fetch failed:', e); }
  }
 
- if (!window.__UMAP_COORD_MAP__) {
+ if (!window.__UMAP_COORD_MAP__ && !window.__TSNE_COORD_MAP__) {
   if (container) container.innerHTML = '<div class="loading"><div class="spinner"></div><p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px;">Loading UMAP coordinates…</p></div>';
   try {
    const [b64Resp, orderResp] = await Promise.all([
@@ -1334,7 +1334,7 @@ setMapPoints(pts);
 const ch = pts.map((p, i) => `<circle class="umap-point" data-idx="${i}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.r}" fill="${p.fill}" opacity=".75" style="cursor:pointer;"><title>${(p.ad.title || 'Untitled').slice(0, 60)} · ${p.ad.platform || p.ad.source_platform || '?'} · C${p.ad.cluster_id}</title></circle>`).join('');
 const legend = colorMode === 'cluster' ? [0,1,2,3,4].map(c => `<text x="${pad + c * 100}" y="${h - 10}" style="font-size:10px;fill:${cc[c]};font-weight:600;">C${c}</text>`).join('') : '';
 
-container.innerHTML = `<svg viewBox="0 0 ${w} ${h}" width="100%" height="480" aria-label="corpus map (real UMAP)"><text x="${w/2}" y="20" text-anchor="middle" style="font-size:13px;fill:var(--ink);font-weight:600;">Real UMAP projection — ${colorMode} mode</text><text x="${w/2}" y="36" text-anchor="middle" style="font-size:10px;fill:var(--muted);">n_neighbors=12, min_dist=0.1, metric=cosine, random_state=42 · ${umapCoordMap ? Object.keys(umapCoordMap).length + ' coords (matched by record_id)' : 'fallback radial'}</text>${ch}${legend}<text x="${w/2}" y="${h - 25}" text-anchor="middle" style="font-size:10px;fill:var(--muted);">Point size = |silhouette| · Click to inspect · Coords matched by record_id (not position)</text></svg>`;
+container.innerHTML = `<svg viewBox="0 0 ${w} ${h}" width="100%" height="480" aria-label="corpus map (real projection)"><text x="${w/2}" y="20" text-anchor="middle" style="font-size:13px;fill:var(--ink);font-weight:600;">${(document.getElementById('projMode') ? document.getElementById('projMode').value : 'umap').toUpperCase()} projection — ${colorMode} mode</text><text x="${w/2}" y="36" text-anchor="middle" style="font-size:10px;fill:var(--muted);">${umapCoordMap ? Object.keys(umapCoordMap).length + ' coords (matched by record_id)' : 'fallback radial'}</text>${ch}${legend}<text x="${w/2}" y="${h - 25}" text-anchor="middle" style="font-size:10px;fill:var(--muted);">Point size = |silhouette| · Click to inspect · Coords matched by record_id</text></svg>`;
 
 if (highlightedCluster !== null) {
 const colorModeNow = document.getElementById('umapColor') ? document.getElementById('umapColor').value : 'cluster';
@@ -1386,15 +1386,18 @@ container.innerHTML = '<div class="loading"><div class="spinner"></div><p style=
 return;
 }
 
-if (window.__UMAP_COORD_MAP__) {
-decodeAndRender(window.__UMAP_COORD_MAP__);
+const projMode = document.getElementById('projMode') ? document.getElementById('projMode').value : 'umap';
+const cacheKey = projMode === 'tsne' ? '__TSNE_COORD_MAP__' : '__UMAP_COORD_MAP__';
+if (window[cacheKey]) {
+decodeAndRender(window[cacheKey]);
 return;
 }
 
-container.innerHTML = '<div class="loading"><div class="spinner"></div><p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px;">Fetching real UMAP coordinates (60KB + 107KB record order)…</p></div>';
+container.innerHTML = '<div class="loading"><div class="spinner"></div><p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px;">Fetching ' + projMode.toUpperCase() + ' coordinates…</p></div>';
 
+const coordsFile = projMode === 'tsne' ? 'tsne_coords.b64' : 'umap_coords.b64';
 Promise.all([
-fetch('umap_coords.b64').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); }),
+fetch(coordsFile).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); }),
 fetch('umap_record_order.json').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
 ]).then(([b64, orderData]) => {
 const bytes = Uint8Array.from(atob(b64.trim()), c => c.charCodeAt(0));
@@ -1404,10 +1407,10 @@ const map = {};
 for (let i = 0; i < ids.length && i * 2 + 1 < floats.length; i++) {
 map[ids[i]] = [floats[i * 2], floats[i * 2 + 1]];
 }
-window.__UMAP_COORD_MAP__ = map; // cache for next render
+window[cacheKey] = map;
 decodeAndRender(map);
 }).catch(err => {
-console.warn('UMAP fetch failed, using radial fallback:', err);
+console.warn(projMode.toUpperCase() + ' fetch failed, using radial fallback:', err);
 decodeAndRender(null);
 });
 }
