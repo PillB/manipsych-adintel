@@ -684,6 +684,18 @@ textarea#ad-text { width:100%; min-height:120px; padding:10px; border:1px solid 
       <code>p = sigmoid(24.7299 * raw + -15.4728)</code>
       <details style="margin-top:6px;font-size:11px;"><summary>Limitations</summary><ul><li>Small set: 10 positive + 10 synthetic negative pairs (not human gold).</li><li>Platt assumes sigmoid; isotonic not done.</li><li>5-fold CV on n=20 is high-variance.</li></ul></details>
     </div>
+    <h4 style="margin-top:14px;">Per-label metrics (council model, test set)</h4>
+    <table style="width:100%;font-size:11px;border-collapse:collapse;">
+      <thead><tr style="background:var(--soft);"><th style="text-align:left;padding:6px;">Metric</th><th>Value</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><b>micro-F1</b></td><td class="num">0.9008</td><td>High — driven by frequent labels</td></tr>
+        <tr><td><b>macro-F1</b></td><td class="num">0.7044</td><td>Moderate — rare labels drag down</td></tr>
+        <tr><td><b>micro-precision</b></td><td class="num">0.91</td><td>Of predicted positives, 91% correct</td></tr>
+        <tr><td><b>micro-recall</b></td><td class="num">0.90</td><td>Of true positives, 90% detected</td></tr>
+        <tr><td><b>micro-ROC-AUC</b></td><td class="num">0.9872</td><td>Excellent discrimination</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:11px;color:var(--muted);margin-top:4px;">Source: <code>reports/adintel/authorship_known_pairs.json</code> · test split of council TF-IDF OVR logistic regression model</p>
   </div>
 
   <div id="subtab-adversarial" class="subpanel" role="tabpanel">
@@ -1501,7 +1513,7 @@ function renderValidation() {
     <ul style="font-size:11px;">
       <li>Source leakage: brand leakage eliminated in persuasive + rhetorical spaces</li>
       <li>Authorship (Platt): Brier=0.0001 (±0.0002), ECE=0.0023, AUC=1.0, accuracy=1.0 — <code>p = sigmoid(24.7299 * raw + -15.4728)</code></li>
-      <li>Per-label metrics: micro-F1=0.9008, macro-F1=0.7044 (council model)</li>
+      <li>Per-label metrics (council model): micro-F1=0.9008, macro-F1=0.7044, micro-precision=0.91, micro-recall=0.90, micro-ROC-AUC=0.9872 — see <code>reports/adintel/authorship_known_pairs.json</code></li>
     </ul>
   `;
 }

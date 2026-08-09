@@ -1,0 +1,33 @@
+{
+  "live_url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard_v2.html?cb=1786241370",
+  "expected_sha": "39186d9f",
+  "ran_at": 1786241409,
+  "passed": 5,
+  "total": 6,
+  "tests": [
+    {
+      "test": "R009_phrase_injection_not_labeled_gan",
+      "status": "PASSED"
+    },
+    {
+      "test": "R010_uncalibrated_scores_not_labeled_calibrated",
+      "status": "PASSED"
+    },
+    {
+      "test": "R013_text_only_input_supported",
+      "status": "PASSED"
+    },
+    {
+      "test": "R021_gan_label_requires_genuine_gan_evidence",
+      "status": "PASSED"
+    },
+    {
+      "test": "R035_per_label_metrics_present",
+      "status": "FAILED"
+    },
+    {
+      "test": "R037_no_duplicated_data_payload",
+      "status": "PASSED"
+    }
+  ]
+}

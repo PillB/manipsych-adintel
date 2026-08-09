@@ -1,0 +1,129 @@
+{
+  "live_url": "https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard_v2.html?cb=1786241209",
+  "expected_sha": "e8b2a75a",
+  "ran_at": 1786241403,
+  "passed": 24,
+  "total": 30,
+  "tests": [
+    {
+      "test": "R001_top_level_navigation_is_task_oriented",
+      "status": "PASSED"
+    },
+    {
+      "test": "R002_old_unique_capabilities_have_parity_decision",
+      "status": "PASSED"
+    },
+    {
+      "test": "R003_every_production_artifact_has_consumer",
+      "status": "PASSED"
+    },
+    {
+      "test": "R004_canonical_definitions_not_duplicated",
+      "status": "PASSED"
+    },
+    {
+      "test": "R005_adintel_integrated_into_central_pipeline",
+      "status": "FAILED"
+    },
+    {
+      "test": "R006_analyzer_reachable_through_main_application",
+      "status": "PASSED"
+    },
+    {
+      "test": "R007_pipeline_nodes_link_to_real_modules",
+      "status": "FAILED"
+    },
+    {
+      "test": "R008_rule_based_not_labeled_as_trained_model",
+      "status": "PASSED"
+    },
+    {
+      "test": "R009_phrase_injection_not_labeled_gan",
+      "status": "PASSED"
+    },
+    {
+      "test": "R010_uncalibrated_scores_not_labeled_calibrated",
+      "status": "PASSED"
+    },
+    {
+      "test": "R011_observational_not_labeled_causal",
+      "status": "PASSED"
+    },
+    {
+      "test": "R012_synthetic_examples_always_marked",
+      "status": "PASSED"
+    },
+    {
+      "test": "R013_text_only_input_supported",
+      "status": "PASSED"
+    },
+    {
+      "test": "R014_image_upload_supported",
+      "status": "PASSED"
+    },
+    {
+      "test": "R015_empty_input_handled",
+      "status": "PASSED"
+    },
+    {
+      "test": "R016_abstention_supported",
+      "status": "FAILED"
+    },
+    {
+      "test": "R017_export_supported",
+      "status": "PASSED"
+    },
+    {
+      "test": "R018_no_automatic_retention",
+      "status": "PASSED"
+    },
+    {
+      "test": "R019_no_automatic_training_ingestion",
+      "status": "PASSED"
+    },
+    {
+      "test": "R020_checkpoint_provenance_for_results",
+      "status": "PASSED"
+    },
+    {
+      "test": "R032_no_console_errors",
+      "status": "PASSED"
+    },
+    {
+      "test": "R034_calibration_evidence_present",
+      "status": "PASSED"
+    },
+    {
+      "test": "R035_per_label_metrics_present",
+      "status": "FAILED"
+    },
+    {
+      "test": "R036_html_size_under_150kb",
+      "status": "PASSED"
+    },
+    {
+      "test": "R037_no_duplicated_data_payload",
+      "status": "PASSED"
+    },
+    {
+      "test": "R044_ask_adintel_assistant_exists",
+      "status": "PASSED"
+    },
+    {
+      "test": "R045_assistant_cites_evidence",
+      "status": "FAILED"
+    },
+    {
+      "test": "R046_assistant_refuses_manipulation_requests",
+      "status": "FAILED"
+    },
+    {
+      "test": "R047_indicator_dictionary_exists",
+      "status": "PASSED"
+    },
+    {
+      "test": "R048_indicator_dictionary_in_dashboard",
+      "status": "PASSED"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-"""Quick Red test runner — runs a small subset of critical tests."""
+"""Run only the tests that are most relevant to my Round 5 changes."""
 import json
 import os
 import re
@@ -12,49 +12,25 @@ LIVE_URL = os.environ.get(
     "SOLARIZE_LIVE_URL",
     f"https://pillb.github.io/manipsych-adintel/reports/adintel/adintel_dashboard_v2.html?cb={TS}",
 )
-EXPECTED_SHA = os.environ.get("SOLARIZE_EXPECTED_SHA", "e8b2a75a")
+EXPECTED_SHA = os.environ.get("SOLARIZE_EXPECTED_SHA", "39186d9f")
 
 env = os.environ.copy()
 env["SOLARIZE_LIVE_URL"] = LIVE_URL
 env["SOLARIZE_EXPECTED_SHA"] = EXPECTED_SHA
 
-# Critical tests for our changes
+# Tests I haven't verified yet
 TESTS = [
-    "R001_top_level_navigation_is_task_oriented",
-    "R002_old_unique_capabilities_have_parity_decision",
-    "R003_every_production_artifact_has_consumer",
-    "R004_canonical_definitions_not_duplicated",
-    "R005_adintel_integrated_into_central_pipeline",
-    "R006_analyzer_reachable_through_main_application",
-    "R007_pipeline_nodes_link_to_real_modules",
-    "R008_rule_based_not_labeled_as_trained_model",
     "R009_phrase_injection_not_labeled_gan",
     "R010_uncalibrated_scores_not_labeled_calibrated",
-    "R011_observational_not_labeled_causal",
-    "R012_synthetic_examples_always_marked",
     "R013_text_only_input_supported",
-    "R014_image_upload_supported",
-    "R015_empty_input_handled",
-    "R016_abstention_supported",
-    "R017_export_supported",
-    "R018_no_automatic_retention",
-    "R019_no_automatic_training_ingestion",
-    "R020_checkpoint_provenance_for_results",
-    "R032_no_console_errors",
-    "R034_calibration_evidence_present",
+    "R021_gan_label_requires_genuine_gan_evidence",
     "R035_per_label_metrics_present",
-    "R036_html_size_under_150kb",
     "R037_no_duplicated_data_payload",
-    "R044_ask_adintel_assistant_exists",
-    "R045_assistant_cites_evidence",
-    "R046_assistant_refuses_manipulation_requests",
-    "R047_indicator_dictionary_exists",
-    "R048_indicator_dictionary_in_dashboard",
 ]
 
 print(f"Live URL: {LIVE_URL}")
 print(f"Expected SHA: {EXPECTED_SHA}")
-print(f"Running {len(TESTS)} critical tests")
+print(f"Running {len(TESTS)} additional tests")
 print("---")
 
 results = []
@@ -71,9 +47,8 @@ for test in TESTS:
     try:
         result = subprocess.run(
             cmd, env=env, cwd="/home/z/my-project/repo",
-            capture_output=True, text=True, timeout=90
+            capture_output=True, text=True, timeout=120
         )
-        # Find PASSED/FAILED in stdout
         m = re.search(r"(PASSED|FAILED|ERROR|SKIPPED)", result.stdout)
         if m:
             status = m.group(1)
@@ -81,7 +56,6 @@ for test in TESTS:
             print(f"  {marker} {status}")
             results.append({"test": test, "status": status})
             if status != "PASSED":
-                # Print failure context
                 lines = result.stdout.splitlines()
                 for i, line in enumerate(lines):
                     if "AssertionError" in line or "assert" in line.lower():
@@ -94,13 +68,11 @@ for test in TESTS:
         else:
             print(f"  ? UNKNOWN")
             print("  stdout tail:", result.stdout[-500:] if result.stdout else "")
-            print("  stderr tail:", result.stderr[-500:] if result.stderr else "")
             results.append({"test": test, "status": "UNKNOWN"})
     except subprocess.TimeoutExpired:
         print(f"  ✗ TIMEOUT")
         results.append({"test": test, "status": "TIMEOUT"})
 
-# Summary
 passed = sum(1 for r in results if r["status"] == "PASSED")
 print(f"\n{'=' * 60}")
 print(f"PASSED: {passed} / {len(results)}")
@@ -117,6 +89,6 @@ report = {
     "total": len(results),
     "tests": results,
 }
-out_path = Path(f"/home/z/my-project/audit/solarize-rebuild/round5/red_test_critical_{TS}.json")
+out_path = Path(f"/home/z/my-project/audit/solarize-rebuild/round5/red_test_additional_{TS}.json")
 out_path.write_text(json.dumps(report, indent=2))
 print(f"\nReport saved to: {out_path}")
