@@ -4,3 +4,6 @@ upload/
 tool-results/
 data/data/annotation/annotations.sqlite3
 data/data/annotation/annotations_export.jsonl
+
+# Round 10 screenshots (large, not tracked)
+audit/solarize-rebuild/round10/screenshots/
