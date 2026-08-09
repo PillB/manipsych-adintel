@@ -1675,7 +1675,6 @@ function generateAssistantResponse(msg) {{
 renderCheckpoints();
 // Instant corpus search with embedded data
 setTimeout(initCorpusSearch, 100);
-}};
 </script>
 </body>
 </html>"""
