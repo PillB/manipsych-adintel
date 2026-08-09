@@ -1,0 +1,88 @@
+{
+  "n_total": 5738,
+  "n_clusters": 164,
+  "n_noise": 1914,
+  "noise_fraction": 0.3336,
+  "top_20_clusters": [
+    {
+      "cluster_id": 126,
+      "n_members": 143
+    },
+    {
+      "cluster_id": 8,
+      "n_members": 114
+    },
+    {
+      "cluster_id": 0,
+      "n_members": 101
+    },
+    {
+      "cluster_id": 163,
+      "n_members": 72
+    },
+    {
+      "cluster_id": 119,
+      "n_members": 66
+    },
+    {
+      "cluster_id": 96,
+      "n_members": 65
+    },
+    {
+      "cluster_id": 86,
+      "n_members": 65
+    },
+    {
+      "cluster_id": 15,
+      "n_members": 65
+    },
+    {
+      "cluster_id": 110,
+      "n_members": 59
+    },
+    {
+      "cluster_id": 81,
+      "n_members": 59
+    },
+    {
+      "cluster_id": 151,
+      "n_members": 51
+    },
+    {
+      "cluster_id": 152,
+      "n_members": 50
+    },
+    {
+      "cluster_id": 92,
+      "n_members": 50
+    },
+    {
+      "cluster_id": 123,
+      "n_members": 45
+    },
+    {
+      "cluster_id": 120,
+      "n_members": 45
+    },
+    {
+      "cluster_id": 76,
+      "n_members": 41
+    },
+    {
+      "cluster_id": 100,
+      "n_members": 40
+    },
+    {
+      "cluster_id": 130,
+      "n_members": 40
+    },
+    {
+      "cluster_id": 97,
+      "n_members": 36
+    },
+    {
+      "cluster_id": 98,
+      "n_members": 36
+    }
+  ]
+}
